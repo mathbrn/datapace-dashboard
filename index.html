@@ -106,22 +106,14 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 .cmp-dot{width:5px;height:5px;border-radius:50%;background:#22C55E;flex-shrink:0;}
 .cmp-sub{font-size:11px;color:var(--text3);margin-top:2px;}
 .cmp-placeholder{color:var(--text3);font-size:12px;padding:2rem;text-align:center;border:.5px solid var(--border);border-radius:6px;}
-#data-table.tbl-frozen{table-layout:fixed;width:auto;min-width:100%;}
-#data-table.tbl-frozen th:nth-child(1),#data-table.tbl-frozen td:nth-child(1){position:sticky;left:0;z-index:2;width:82px;}
-#data-table.tbl-frozen th:nth-child(2),#data-table.tbl-frozen td:nth-child(2){position:sticky;left:82px;z-index:2;width:88px;}
-#data-table.tbl-frozen th:nth-child(3),#data-table.tbl-frozen td:nth-child(3){position:sticky;left:170px;z-index:2;width:132px;}
-#data-table.tbl-frozen th:nth-child(4),#data-table.tbl-frozen td:nth-child(4){position:sticky;left:302px;z-index:2;width:188px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;box-shadow:2px 0 6px rgba(0,0,0,0.45);}
-#data-table.tbl-frozen thead th:nth-child(1),#data-table.tbl-frozen thead th:nth-child(2),#data-table.tbl-frozen thead th:nth-child(3),#data-table.tbl-frozen thead th:nth-child(4){z-index:3;}
-#data-table.tbl-frozen td:nth-child(1),#data-table.tbl-frozen td:nth-child(2),#data-table.tbl-frozen td:nth-child(3),#data-table.tbl-frozen td:nth-child(4){background:var(--bg);}
-#data-table.tbl-frozen tr:hover td:nth-child(1),#data-table.tbl-frozen tr:hover td:nth-child(2),#data-table.tbl-frozen tr:hover td:nth-child(3),#data-table.tbl-frozen tr:hover td:nth-child(4){background:var(--bg2);}
-#data-table.tbl-frozen th:nth-child(n+5):not(:last-child),#data-table.tbl-frozen td:nth-child(n+5):not(:last-child){width:62px;text-align:right;}
-#data-table.tbl-frozen th:last-child,#data-table.tbl-frozen td:last-child{width:82px;}</style>
+#data-table.tbl-frozen td.frozen-cell{background:var(--bg);}
+#data-table.tbl-frozen tr:hover td.frozen-cell{background:var(--bg2);}</style>
 </head>
 <body>
 
 <div class="dp-header">
   <div><div class="dp-title">Finishers Monde - 10K &middot; 21K &middot; 42K</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
-  <div class="dp-updated">Genere le 19/03/2026 a 12:54</div>
+  <div class="dp-updated">Genere le 19/03/2026 a 13:00</div>
 </div>
 <div class="tabs">
   <div class="tab" onclick="switchTab('overview')">Vue d'ensemble</div>
@@ -514,6 +506,29 @@ function updateTemps(){
   cTm=new Chart(document.getElementById('chart-temps'),tempsCfg);
 }
 
+function applyFrozen(tbl){
+  if(!tbl)return;
+  var ths=tbl.querySelectorAll('thead tr th');
+  if(ths.length<4)return;
+  var left=0;
+  for(var i=0;i<4;i++){
+    var w=ths[i].offsetWidth;
+    tbl.querySelectorAll('tr th:nth-child('+(i+1)+'),tr td:nth-child('+(i+1)+')').forEach(function(c){
+      c.classList.add('frozen-cell');
+      c.style.position='sticky';
+      c.style.left=left+'px';
+      c.style.zIndex=c.tagName==='TH'?'3':'2';
+      c.style.minWidth=w+'px';
+      c.style.maxWidth=w+'px';
+      if(i===3)c.style.boxShadow='2px 0 6px rgba(0,0,0,0.45)';
+    });
+    left+=w;
+  }
+  tbl.querySelectorAll('tbody td:nth-child(4)').forEach(function(c){
+    c.style.overflow='hidden';c.style.textOverflow='ellipsis';c.style.whiteSpace='nowrap';
+  });
+}
+
 function filterTable(){
   var q=(document.getElementById('search-data').value||'').toLowerCase();
   var dist=document.getElementById('dist-data').value;
@@ -552,6 +567,11 @@ function filterTable(){
         +allYears.map(function(y){var v=(r.hist||{})[y];return'<td style="'+(v?'color:var(--text)':'')+'">'+(v?fmtFull(v):'—')+'</td>';}).join('')
         +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
     });
+    document.getElementById('table-body').innerHTML=html;
+    applyFrozen(tbl);
+    var cnt=f.length;
+    document.getElementById('table-count').textContent=cnt+' epreuve'+(cnt>1?'s':'')+' affichee'+(cnt>1?'s':'');
+    return;
   }else{
     if(tbl)tbl.classList.remove('tbl-frozen');
     if(thead)thead.innerHTML='<th>Mois</th><th>Ville</th><th>Distance</th><th>Epreuve</th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>Tendance</th>';
