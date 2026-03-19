@@ -110,8 +110,8 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 <body>
 
 <div class="dp-header">
-  <div><div class="dp-title">Finishers Monde - 10K &middot; 21K &middot; 42K</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2023-2026</div></div>
-  <div class="dp-updated">Genere le 19/03/2026 a 12:22</div>
+  <div><div class="dp-title">Finishers Monde - 10K &middot; 21K &middot; 42K</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
+  <div class="dp-updated">Genere le 19/03/2026 a 12:22 · Historique 2007-2026</div>
 </div>
 <div class="tabs">
   <div class="tab" onclick="switchTab('overview')">Vue d'ensemble</div>
@@ -157,8 +157,14 @@ tr:hover td{background:var(--bg2);color:var(--text);}
         <option value="8">Top 8</option><option value="12">Top 12</option><option value="16">Top 16</option><option value="20">Top 20</option>
       </select>
     </div>
+    <div class="ctrl-group"><span class="ctrl-label">Periode</span>
+      <select id="mode-trends" onchange="updateTrends()">
+        <option value="recent">2023 - 2026</option>
+        <option value="hist">2007 - 2026 (historique)</option>
+      </select>
+    </div>
   </div>
-  <div class="section-title">Evolution par evenement 2023-2025</div>
+  <div class="section-title" id="trends-section-title">Evolution par evenement 2023-2026</div>
   <div class="legend">
     <span class="leg-item"><span class="leg-dot" style="background:#5C00D4"></span>Mondial</span>
     <span class="leg-item"><span class="leg-dot" style="background:#FCDB00"></span>Evenements ASO</span>
@@ -253,6 +259,18 @@ const TEMPS_MARATHON={"2024": [{"race": "Milan Marathon 2024", "city": "", "fini
 const TEMPS_SEMI_2025=[{"race": "Semi de Paris 2025", "city": "Paris", "finishers": 47633, "avg": "02:01:02"}, {"race": "Göteborgsvarvet", "city": "Göteborg (Suède)", "finishers": 46706, "avg": "02:09:04"}, {"race": "Great North Run 2025", "city": "Newcastle", "finishers": 46258, "avg": "02:15:41"}, {"race": "Broløbet - The Bridge Run 2025", "city": "Copenhague", "finishers": 40241, "avg": "02:14:45"}, {"race": "Generali Berlin Half Marathon 2025", "city": "Berlin", "finishers": 34731, "avg": "02:01:03"}, {"race": "Copenhagen Half Marathon 2025", "city": "Copenhague", "finishers": 31440, "avg": "01:53:55"}, {"race": "United Airlines NYC Half 2025", "city": "New York", "finishers": 28677, "avg": "02:09:04"}, {"race": "NYRR RBC Brooklyn Half 2025", "city": "New York", "finishers": 28474, "avg": "02:10:14"}, {"race": "Mitja Marato Barcelona by Brooks 2025", "city": "Barcelone", "finishers": 26961, "avg": "01:55:21"}, {"race": "Valencia Half Marathon Trinidad Alfonso Zurich 2025", "city": "Valence", "finishers": 26060, "avg": "01:54:06"}, {"race": "Cardiff Half Marathon 2025", "city": "Cardiff", "finishers": 24634, "avg": "02:10:26"}, {"race": "NYCRUNS Brooklyn Experience Half Marathon 2025", "city": "New York", "finishers": 24590, "avg": "02:10:52"}, {"race": "Standard Chartered Hong Kong Half Marathon 2025", "city": "Hong Kong", "finishers": 22872, "avg": "02:12:24"}, {"race": "Manchester Half Marathon 2025", "city": "Manchester", "finishers": 22354, "avg": "02:03:06"}, {"race": "Media Maraton de Bogota apoya Samsung 2025", "city": "Bogota", "finishers": 21011, "avg": "02:34:25"}, {"race": "Movistar Madrid Medio Maraton 2025", "city": "Madrid", "finishers": 20918, "avg": "02:07:43"}, {"race": "Hoka Runaway Sydney Half Marathon 2025", "city": "Sydney", "finishers": 20531, "avg": "02:06:05"}, {"race": "London Landmarks Half Marathon 2025", "city": "Londres", "finishers": 19968, "avg": "02:13:00"}, {"race": "CPC Loop Den Haag NN Halve Marathon 2025", "city": "Rotterdam", "finishers": 19624, "avg": "01:55:23"}, {"race": "Zurich Rock ´n´ Roll Running Series Madrid 2025", "city": "Madrid", "finishers": 19356, "avg": "02:00:25"}, {"race": "Wizz Air Rome Half Marathon 2025", "city": "Rome", "finishers": 18564, "avg": "01:57:55"}, {"race": "EDP Lisboa Meia Maratona 2025", "city": "Lisbonne", "finishers": 17675, "avg": "02:00:09"}, {"race": "Tokyo Legacy Half Marathon 2025", "city": "Tokyo", "finishers": 14635, "avg": "02:05:00"}, {"race": "Medio Maraton de Sevilla 2025", "city": "Seville", "finishers": 13684, "avg": "01:55:35"}, {"race": "TCS Mizuno Half Marathon 2025", "city": "Amsterdam", "finishers": 13341, "avg": "01:59:17"}, {"race": "Asics Run Melbourne Half Marathon 2025", "city": "Melbourne", "finishers": 11218, "avg": "01:59:11"}, {"race": "Semi-Marathon de Boulogne-Billancourt 2025", "city": "Boulogne-Billancourt", "finishers": 10896, "avg": "02:00:44"}];
 const TIMES_DB={"milan marathon 2024": {"men": "", "women": "", "avg": "03:59:25", "yr": 2024}, "cologne marathon 2024": {"men": "", "women": "", "avg": "04:05:12", "yr": 2024}, "twin cities marathon 2024": {"men": "", "women": "", "avg": "04:20:32", "yr": 2024}, "houston marathon 2024": {"men": "", "women": "", "avg": "04:13:23", "yr": 2024}, "grandma’s marathon 2024": {"men": "", "women": "", "avg": "04:15:40", "yr": 2024}, "melbourne marathon 2024": {"men": "", "women": "", "avg": "04:01:10", "yr": 2024}, "california international marathon 2023": {"men": "", "women": "", "avg": "03:58:37", "yr": 2024}, "seville marathon 2024": {"men": "", "women": "", "avg": "03:42:15", "yr": 2024}, "brighton marathon 2024": {"men": "", "women": "", "avg": "04:30:23", "yr": 2024}, "philadelphia marathon 2024": {"men": "", "women": "", "avg": "04:15:12", "yr": 2024}, "marine corps marathon 2024": {"men": "", "women": "", "avg": "04:36:39", "yr": 2024}, "dublin marathon 2024": {"men": "", "women": "", "avg": "04:11:05", "yr": 2024}, "valence marathon 2024": {"men": "", "women": "", "avg": "03:39:12", "yr": 2024}, "berlin marathon 2024": {"men": "", "women": "", "avg": "03:52:34", "yr": 2024}, "boston marathon 2024": {"men": "", "women": "", "avg": "03:53:05", "yr": 2024}, "tokyo marathon 2023": {"men": "", "women": "", "avg": "03:57:42", "yr": 2024}, "marathon de paris 2024": {"men": "", "women": "", "avg": "04:11:23", "yr": 2024}, "manchester marathon 2024": {"men": "", "women": "", "avg": "04:13:51", "yr": 2024}, "sydney marathon 2024": {"men": "", "women": "", "avg": "04:17:11", "yr": 2024}, "chicago marathon 2024": {"men": "", "women": "", "avg": "04:20:01", "yr": 2024}, "london marathon 2024": {"men": "", "women": "", "avg": "04:27:30", "yr": 2024}, "new york city marathon 2024": {"men": "", "women": "", "avg": "04:31:31", "yr": 2024}, "mexico city marathon 2024": {"men": "", "women": "", "avg": "04:45:39", "yr": 2024}, "los angeles marathon 2024": {"men": "", "women": "", "avg": "05:31:23", "yr": 2024}, "tcs new york city marathon": {"men": "02:19:51", "women": "02:09:33", "avg": "04:32:35", "yr": 2025}, "tcs london marathon": {"men": "02:15:50", "women": "02:05:32", "avg": "04:40:01", "yr": 2025}, "schneider electric marathon de paris": {"men": "02:20:45", "women": "02:07:21", "avg": "04:12:16", "yr": 2025}, "bank of america chicago marathon": {"men": "02:14:57", "women": "02:05:08", "avg": "04:12:55", "yr": 2025}, "bmw berlin marathon": {"men": "02:21:05", "women": "02:07:36", "avg": "04:24:25", "yr": 2025}, "tokyo marathon": {"men": "02:14:28", "women": "02:04:26", "avg": "04:30:35", "yr": 2026}, "tcs sydney marathon presented by asics": {"men": "02:18:22", "women": "02:07:35", "avg": "04:25:03", "yr": 2025}, "valencia marathon trinidad alfonso zurich": {"men": "02:14:00", "women": "02:05:24", "avg": "03:37:25", "yr": 2025}, "marine corps marathon": {"men": "02:34:08", "women": "02:24:33", "avg": "04:48:37", "yr": 2025}, "maratón de la ciudad de méxico telcel": {"men": "02:23:22", "women": "02:16:44", "avg": "", "yr": 2025}, "boston marathon": {"men": "02:17:22", "women": "02:06:20", "avg": "03:43:13", "yr": 2025}, "adidas manchester marathon": {"men": "02:34:53", "women": "02:20:08", "avg": "04:28:00", "yr": 2025}, "semi de paris 2025": {"men": "01:00:16", "women": "01:07:14", "avg": "02:01:02", "yr": 2025}, "göteborgsvarvet": {"men": "01:03:39", "women": "01:08:33", "avg": "02:09:04", "yr": 2025}, "great north run 2025": {"men": "01:00:52", "women": "01:09:32", "avg": "02:15:41", "yr": 2025}, "broløbet - the bridge run 2025": {"men": "01:08:21", "women": "01:22:30", "avg": "02:14:45", "yr": 2025}, "generali berlin half marathon 2025": {"men": "00:58:43", "women": "01:03:35", "avg": "02:01:03", "yr": 2025}, "copenhagen half marathon 2025": {"men": "00:58:23", "women": "01:04:44", "avg": "01:53:55", "yr": 2025}, "united airlines nyc half 2025": {"men": "00:59:09", "women": "01:07:04", "avg": "02:09:04", "yr": 2025}, "nyrr rbc brooklyn half 2025": {"men": "01:04:57", "women": "01:15:37", "avg": "02:10:14", "yr": 2025}, "mitja marato barcelona by brooks 2025": {"men": "00:56:42", "women": "01:04:13", "avg": "01:55:21", "yr": 2025}, "valencia half marathon trinidad alfonso zurich 2025": {"men": "00:58:02", "women": "01:03:08", "avg": "01:54:06", "yr": 2025}, "cardiff half marathon 2025": {"men": "00:59:22", "women": "01:06:36", "avg": "02:10:26", "yr": 2025}, "nycruns brooklyn experience half marathon 2025": {"men": "01:06:55", "women": "01:20:38", "avg": "02:10:52", "yr": 2025}, "standard chartered hong kong half marathon 2025": {"men": "01:07:36", "women": "01:15:08", "avg": "02:12:24", "yr": 2025}, "manchester half marathon 2025": {"men": "01:02:04", "women": "01:09:34", "avg": "02:03:06", "yr": 2025}, "media maraton de bogota apoya samsung 2025": {"men": "01:02:56", "women": "01:12:20", "avg": "02:34:25", "yr": 2025}, "movistar madrid medio maraton 2025": {"men": "01:00:45", "women": "01:09:09", "avg": "02:07:43", "yr": 2025}, "hoka runaway sydney half marathon 2025": {"men": "01:06:11", "women": "01:17:25", "avg": "02:06:05", "yr": 2025}, "london landmarks half marathon 2025": {"men": "01:08:38", "women": "01:17:17", "avg": "02:13:00", "yr": 2025}, "cpc loop den haag nn halve marathon 2025": {"men": "00:59:37", "women": "01:08:17", "avg": "01:55:23", "yr": 2025}, "zurich rock ´n´ roll running series madrid 2025": {"men": "01:00:44", "women": "01:14:05", "avg": "02:00:25", "yr": 2025}, "wizz air rome half marathon 2025": {"men": "00:58:49", "women": "01:08:20", "avg": "01:57:55", "yr": 2025}, "iu health 500 festival mini-marathon": {"men": "01:04:39", "women": "01:10:31", "avg": "", "yr": 2025}, "edp lisboa meia maratona 2025": {"men": "00:59:42", "women": "01:04:20", "avg": "02:00:09", "yr": 2025}, "the big half 2025": {"men": "01:04:08", "women": "01:10:35", "avg": "", "yr": 2025}, "rock ‘n’ roll san diego half marathon 2025": {"men": "01:05:15", "women": "01:14:05", "avg": "", "yr": 2025}, "taipei half marathon 2025": {"men": "01:05:23", "women": "01:14:15", "avg": "", "yr": 2025}, "royal parks half marathon 2025": {"men": "01:09:53", "women": "01:16:48", "avg": "", "yr": 2025}, "disney princess half marathon 2025": {"men": "01:15:07", "women": "01:19:21", "avg": "", "yr": 2025}, "standard chartered singapore half marathon 2025": {"men": "01:11:01", "women": "01:23:45", "avg": "", "yr": 2025}, "tokyo legacy half marathon 2025": {"men": "01:01:21", "women": "01:08:45", "avg": "02:05:00", "yr": 2025}, "aramco houston half marathon 2025": {"men": "00:59:17", "women": "01:06:05", "avg": "", "yr": 2025}, "generali prague half marathon 2025": {"men": "00:58:54", "women": "01:05:27", "avg": "", "yr": 2025}, "medio maraton de sevilla 2025": {"men": "00:59:33", "women": "01:07:18", "avg": "01:55:35", "yr": 2025}, "tcs mizuno half marathon 2025": {"men": "01:04:22", "women": "01:10:04", "avg": "01:59:17", "yr": 2025}, "vienna city half marathon 2025": {"men": "01:04:22", "women": "01:18:39", "avg": "", "yr": 2025}, "rock ‘n’ roll washington dc half marathon 2025": {"men": "01:07:22", "women": "01:15:12", "avg": "", "yr": 2025}, "nike melbourne half marathon 2025": {"men": "01:02:13", "women": "01:08:54", "avg": "", "yr": 2025}, "great manchester run half marathon 2025": {"men": "01:06:25", "women": "01:16:27", "avg": "", "yr": 2025}, "rock ‘n’ roll las vegas half marathon 2025": {"men": "01:04:13", "women": "01:17:21", "avg": "", "yr": 2025}, "21k de montréal 2025": {"men": "01:04:03", "women": "01:14:07", "avg": "", "yr": 2025}, "vedanta delhi half marathon 2025": {"men": "00:59:50", "women": "01:07:20", "avg": "", "yr": 2025}, "asics run melbourne half marathon 2025": {"men": "01:08:50", "women": "01:17:14", "avg": "01:59:11", "yr": 2025}, "getpro bath half 2025": {"men": "01:02:20", "women": "01:09:54", "avg": "", "yr": 2025}, "semi-marathon de boulogne-billancourt 2025": {"men": "01:03:29", "women": "01:13:12", "avg": "02:00:44", "yr": 2025}, "rock ‘n’ roll nashville half marathon 2025": {"men": "01:07:49", "women": "01:19:31", "avg": "", "yr": 2025}, "great bristol run half marathon 2025": {"men": "01:06:24", "women": "01:15:58", "avg": "", "yr": 2025}, "half marathon munchen by brooks 2025": {"men": "01:04:01", "women": "01:12:08", "avg": "", "yr": 2025}, "zurich maratón de sevilla": {"men": "02:20:39", "women": "02:05:51", "avg": "03:41:19", "yr": 2026}, "tata mumbai marathon": {"men": "02:25:13", "women": "02:13:49", "avg": "", "yr": 2026}, "chevron houston marathon": {"men": "02:24:17", "women": "02:11:32", "avg": "", "yr": 2026}};
 const ASO_KEYWORDS=["schneider electric", "hoka semi de paris", "semi de paris", "run in lyon", "beaujolais", "adidas 10k paris", "10k montmartre", "cancer research", "asics ldnx", "adidas manchester"];
+const HIST={
+  "Tokyo Marathon":{2007:25102,2008:26665,2009:29128,2010:30182,2011:32415,2012:34678,2013:34819,2014:34126,2015:34049,2016:34697,2017:33974,2018:34542,2019:35460,2021:18272},
+  "TCS New York City Marathon":{2007:38557,2008:37790,2009:43660,2010:44829,2011:46795,2013:50062,2014:50432,2015:49330,2016:51388,2017:50766,2018:52813,2019:53627},
+  "BMW Berlin Marathon":{2008:35783,2015:36768,2016:35999,2017:39235,2018:40650,2019:44065,2021:23097,2022:34777},
+  "TCS London Marathon":{2010:36549,2018:40179},
+  "Schneider Electric Marathon de Paris":{2017:43754,2018:42091,2019:48073},
+  "Boston Marathon":{2013:17584},
+  "HOKA Semi de Paris":{2010:22030,2011:23674,2012:24990},
+  "Göteborgsvarvet":{2010:44099,2013:45015},
+  "AJ Bell Great North Run":{2007:35777,2010:39459,2014:41615,2019:43768}
+};
+function getHist(rn){var l=rn.toLowerCase().trim();var keys=Object.keys(HIST);for(var i=0;i<keys.length;i++){var k=keys[i].toLowerCase().trim();if(l.indexOf(k)>=0||k.indexOf(l)>=0)return HIST[keys[i]];}return null;}
 
 function isAso(r){var l=r.toLowerCase();return ASO_KEYWORDS.some(function(k){return l.indexOf(k)>=0;});}
 function col(r){return isAso(r)?'#FCDB00':'#5C00D4';}
@@ -321,7 +339,11 @@ function ovSelect(idx){
   var ev=RAW[idx];
   var ac=col(ev.r),aso=isAso(ev.r);
   var dl=ev.d==='MARATHON'?'Marathon':ev.d==='SEMI'?'Semi-marathon':'10 km';
-  var finHistory=[{yr:2023,v:ev.y3},{yr:2024,v:ev.y4},{yr:2025,v:ev.y5},{yr:2026,v:ev.y6}].filter(function(e){return e.v&&!isNaN(e.v);});
+  var histData=getHist(ev.r)||{};
+  var allPts={};
+  Object.keys(histData).forEach(function(y){if(histData[y])allPts[parseInt(y)]=histData[y];});
+  [{yr:2023,v:ev.y3},{yr:2024,v:ev.y4},{yr:2025,v:ev.y5},{yr:2026,v:ev.y6}].forEach(function(e){if(e.v&&!isNaN(e.v))allPts[e.yr]=e.v;});
+  var finHistory=Object.keys(allPts).map(function(y){return{yr:parseInt(y),v:allPts[y]};}).sort(function(a,b){return a.yr-b.yr;});
   var lastEd=finHistory[finHistory.length-1];
   var td=getTimeData(ev.r);
   var finStr=lastEd?fmtFull(lastEd.v):'-';
@@ -345,7 +367,7 @@ function ovSelect(idx){
     +'<div class="ov-stat"><div class="ov-stat-label">'+wmLbl+'</div><div class="ov-stat-value" style="font-size:14px;color:var(--yellow)">'+(td&&td.women?td.women:'-')+'</div></div>'
     +'</div>'
     +'<div class="ov-charts">'
-    +'<div class="ov-chart-box"><div class="ov-chart-label">Finishers par edition</div><div style="position:relative;height:150px"><canvas id="ov-chart-fin"></canvas></div></div>'
+    +'<div class="ov-chart-box"><div class="ov-chart-label">Finishers par edition'+(Object.keys(histData).length?' (historique)':'')+'</div><div style="position:relative;height:150px"><canvas id="ov-chart-fin"></canvas></div></div>'
     +'<div class="ov-chart-box"><div class="ov-chart-label">Temps moyen par edition</div><div style="position:relative;height:150px"><canvas id="ov-chart-time"></canvas></div></div>'
     +'</div>'
     +'</div>';
@@ -383,13 +405,30 @@ function ovSelect(idx){
 function updateTrends(){
   var dist=document.getElementById('dist-trends').value;
   var topn=parseInt(document.getElementById('topn-trends').value);
+  var modeEl=document.getElementById('mode-trends');
+  var mode=modeEl?modeEl.value:'recent';
   var src=dist==='ALL'?RAW:RAW.filter(function(r){return r.d===dist;});
   var sorted=src.filter(function(r){return r.y5&&!isNaN(r.y5);}).sort(function(a,b){return(b.y5||0)-(a.y5||0);}).slice(0,topn);
-  var datasets=sorted.map(function(r){return{label:r.r,data:[r.y3||null,r.y4||null,r.y5||null],borderColor:col(r.r),backgroundColor:'transparent',tension:0.35,fill:false,pointRadius:3,pointHoverRadius:6,spanGaps:true,borderWidth:1.5,pointBackgroundColor:col(r.r)};});
+  var labels,datasets,pr,ps;
+  if(mode==='hist'){
+    labels=['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2021','2022','2023','2024','2025','2026'];
+    datasets=sorted.map(function(r){
+      var h=getHist(r.r)||{};
+      var data=labels.map(function(yr){var y=parseInt(yr);if(y===2023)return r.y3||null;if(y===2024)return r.y4||null;if(y===2025)return r.y5||null;if(y===2026)return r.y6||null;return h[y]||null;});
+      return{label:r.r,data:data,borderColor:col(r.r),backgroundColor:'transparent',tension:0.35,fill:false,pointRadius:2,pointHoverRadius:5,spanGaps:true,borderWidth:1.5,pointBackgroundColor:col(r.r)};
+    });
+    pr=3;ps=5;
+    document.getElementById('trends-section-title').textContent='Evolution par evenement 2007-2026 (donnees disponibles)';
+  } else {
+    labels=['2023','2024','2025','2026'];
+    datasets=sorted.map(function(r){return{label:r.r,data:[r.y3||null,r.y4||null,r.y5||null,r.y6||null],borderColor:col(r.r),backgroundColor:'transparent',tension:0.35,fill:false,pointRadius:3,pointHoverRadius:6,spanGaps:true,borderWidth:1.5,pointBackgroundColor:col(r.r)};});
+    pr=3;ps=6;
+    document.getElementById('trends-section-title').textContent='Evolution par evenement 2023-2026';
+  }
   if(cT)cT.destroy();
   var trendCfg={
     type:'line',
-    data:{labels:['2023','2024','2025'],datasets:datasets},
+    data:{labels:labels,datasets:datasets},
     options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'nearest',intersect:true},
       plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{title:function(items){return items.length?items[0].dataset.label:'';},label:function(ctx){return' '+fmtFull(ctx.parsed.y)+' finishers';}}}},
       scales:{x:{grid:{color:GRID},ticks:TICK,border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmt(v);}},border:{color:'#ffffff08'}}}
