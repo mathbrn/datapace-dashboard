@@ -105,13 +105,23 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 .cmp-bar{height:2px;background:#22C55E;border-radius:1px;margin-top:3px;}
 .cmp-dot{width:5px;height:5px;border-radius:50%;background:#22C55E;flex-shrink:0;}
 .cmp-sub{font-size:11px;color:var(--text3);margin-top:2px;}
-.cmp-placeholder{color:var(--text3);font-size:12px;padding:2rem;text-align:center;border:.5px solid var(--border);border-radius:6px;}</style>
+.cmp-placeholder{color:var(--text3);font-size:12px;padding:2rem;text-align:center;border:.5px solid var(--border);border-radius:6px;}
+#data-table.tbl-frozen{table-layout:fixed;width:auto;min-width:100%;}
+#data-table.tbl-frozen th:nth-child(1),#data-table.tbl-frozen td:nth-child(1){position:sticky;left:0;z-index:2;width:82px;}
+#data-table.tbl-frozen th:nth-child(2),#data-table.tbl-frozen td:nth-child(2){position:sticky;left:82px;z-index:2;width:88px;}
+#data-table.tbl-frozen th:nth-child(3),#data-table.tbl-frozen td:nth-child(3){position:sticky;left:170px;z-index:2;width:132px;}
+#data-table.tbl-frozen th:nth-child(4),#data-table.tbl-frozen td:nth-child(4){position:sticky;left:302px;z-index:2;width:188px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;box-shadow:2px 0 6px rgba(0,0,0,0.45);}
+#data-table.tbl-frozen thead th:nth-child(1),#data-table.tbl-frozen thead th:nth-child(2),#data-table.tbl-frozen thead th:nth-child(3),#data-table.tbl-frozen thead th:nth-child(4){z-index:3;}
+#data-table.tbl-frozen td:nth-child(1),#data-table.tbl-frozen td:nth-child(2),#data-table.tbl-frozen td:nth-child(3),#data-table.tbl-frozen td:nth-child(4){background:var(--bg);}
+#data-table.tbl-frozen tr:hover td:nth-child(1),#data-table.tbl-frozen tr:hover td:nth-child(2),#data-table.tbl-frozen tr:hover td:nth-child(3),#data-table.tbl-frozen tr:hover td:nth-child(4){background:var(--bg2);}
+#data-table.tbl-frozen th:nth-child(n+5):not(:last-child),#data-table.tbl-frozen td:nth-child(n+5):not(:last-child){width:62px;text-align:right;}
+#data-table.tbl-frozen th:last-child,#data-table.tbl-frozen td:last-child{width:82px;}</style>
 </head>
 <body>
 
 <div class="dp-header">
   <div><div class="dp-title">Finishers Monde - 10K &middot; 21K &middot; 42K</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
-  <div class="dp-updated">Genere le 19/03/2026 a 13:44</div>
+  <div class="dp-updated">Genere le 19/03/2026 a 13:53</div>
 </div>
 <div class="tabs">
   <div class="tab" onclick="switchTab('overview')">Vue d'ensemble</div>
@@ -248,7 +258,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
     </div>
   </div>
   <div class="table-wrap">
-    <table>
+    <table id="data-table">
       <thead><tr id="table-head-row"><th>Mois</th><th>Ville</th><th>Distance</th><th>Epreuve</th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>Tendance</th></tr></thead>
       <tbody id="table-body"></tbody>
     </table>
@@ -517,8 +527,10 @@ function filterTable(){
     if(afficher==='hist'&&!Object.keys(r.hist||{}).some(function(y){return parseInt(y)<2023;}))return false;
     return true;
   });
+  var tbl=document.getElementById('data-table');
   var html='';
   if(afficher==='hist'){
+    if(tbl)tbl.classList.add('tbl-frozen');
     var allYears=[];
     f.forEach(function(r){Object.keys(r.hist||{}).map(Number).forEach(function(y){if(allYears.indexOf(y)<0)allYears.push(y);});});
     allYears.sort(function(a,b){return a-b;});
@@ -536,11 +548,12 @@ function filterTable(){
       var raceColor=col(r.r)==='#FCDB00'?'#FCDB00':'var(--text2)';
       html+='<tr><td>'+r.p+'</td><td>'+r.c+'</td>'
         +'<td><span class="badge '+(aso?'badge-aso':'badge-world')+'">'+bl+' - '+(aso?'ASO':'Monde')+'</span></td>'
-        +'<td style="max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:'+raceColor+'">'+r.r+'</td>'
+        +'<td style="color:'+raceColor+'" title="'+r.r+'">'+r.r+'</td>'
         +allYears.map(function(y){var v=(r.hist||{})[y];return'<td style="'+(v?'color:var(--text)':'')+'">'+(v?fmtFull(v):'—')+'</td>';}).join('')
         +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
     });
   }else{
+    if(tbl)tbl.classList.remove('tbl-frozen');
     if(thead)thead.innerHTML='<th>Mois</th><th>Ville</th><th>Distance</th><th>Epreuve</th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>Tendance</th>';
     f.forEach(function(r){
       var hkeys=Object.keys(r.hist||{}).map(Number).sort(function(a,b){return a-b;});
