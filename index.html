@@ -111,7 +111,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 
 <div class="dp-header">
   <div><div class="dp-title">Finishers Monde - 10K &middot; 21K &middot; 42K</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
-  <div class="dp-updated">Genere le 19/03/2026 a 12:40</div>
+  <div class="dp-updated">Genere le 19/03/2026 a 12:45</div>
 </div>
 <div class="tabs">
   <div class="tab" onclick="switchTab('overview')">Vue d'ensemble</div>
@@ -240,10 +240,16 @@ tr:hover td{background:var(--bg2);color:var(--text);}
         <option>Septembre</option><option>Octobre</option><option>Novembre</option><option>Decembre</option>
       </select>
     </div>
+    <div class="ctrl-group"><span class="ctrl-label">Donnees</span>
+      <select id="afficher-data" onchange="filterTable()">
+        <option value="recent">Recentes (2023-2026)</option>
+        <option value="hist">Historiques (2007-2026)</option>
+      </select>
+    </div>
   </div>
   <div class="table-wrap">
     <table>
-      <thead><tr><th>Mois</th><th>Ville</th><th>Distance</th><th>Epreuve</th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>Tendance</th></tr></thead>
+      <thead><tr id="table-head-row"><th>Mois</th><th>Ville</th><th>Distance</th><th>Epreuve</th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>Tendance</th></tr></thead>
       <tbody id="table-body"></tbody>
     </table>
   </div>
@@ -502,31 +508,59 @@ function filterTable(){
   var q=(document.getElementById('search-data').value||'').toLowerCase();
   var dist=document.getElementById('dist-data').value;
   var month=document.getElementById('month-data').value;
+  var afficher=document.getElementById('afficher-data').value;
+  var thead=document.getElementById('table-head-row');
   var f=RAW.filter(function(r){
     if(dist!=='ALL'&&r.d!==dist)return false;
     if(month!=='ALL'&&r.p!==month)return false;
     if(q&&r.r.toLowerCase().indexOf(q)<0&&r.c.toLowerCase().indexOf(q)<0)return false;
+    if(afficher==='hist'&&!Object.keys(r.hist||{}).some(function(y){return parseInt(y)<2023;}))return false;
     return true;
   });
   var html='';
-  f.forEach(function(r){
-    var hkeys=Object.keys(r.hist||{}).map(Number).sort(function(a,b){return a-b;});
-    var hvals=hkeys.map(function(y){return(r.hist||{})[y];}).filter(function(v){return v&&!isNaN(v);});
-    var t=hvals.length>=2?delta(hvals[0],hvals[hvals.length-1]):null;
-    var firstYr=hkeys.length>=2?hkeys[0]:null;
-    var lastYr=hkeys.length>=2?hkeys[hkeys.length-1]:null;
-    var tc=t===null?'#555':t>=0?'#2DBF7E':'#FF4A6B';
-    var aso=isAso(r.r);
-    var bl=r.d==='MARATHON'?'Marathon':r.d==='SEMI'?'Semi':'10 km';
-    var tStr=t===null?'-':(t>=0?'+':'')+t.toFixed(1)+'%';
-    var tSub=firstYr&&lastYr&&(lastYr-firstYr>3)?'<div style="font-size:9px;color:#555;margin-top:1px">'+firstYr+'→'+lastYr+'</div>':'';
-    var raceColor=col(r.r)==='#FCDB00'?'#FCDB00':'var(--text2)';
-    html+='<tr><td>'+r.p+'</td><td>'+r.c+'</td>'
-      +'<td><span class="badge '+(aso?'badge-aso':'badge-world')+'">'+bl+' - '+(aso?'ASO':'Monde')+'</span></td>'
-      +'<td style="max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:'+raceColor+'">'+r.r+'</td>'
-      +'<td>'+fmtFull(r.y3)+'</td><td>'+fmtFull(r.y4)+'</td><td>'+fmtFull(r.y5)+'</td><td>'+fmtFull(r.y6)+'</td>'
-      +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
-  });
+  if(afficher==='hist'){
+    var allYears=[];
+    f.forEach(function(r){Object.keys(r.hist||{}).map(Number).forEach(function(y){if(allYears.indexOf(y)<0)allYears.push(y);});});
+    allYears.sort(function(a,b){return a-b;});
+    if(thead)thead.innerHTML='<th>Mois</th><th>Ville</th><th>Distance</th><th>Epreuve</th>'+allYears.map(function(y){return'<th>'+y+'</th>';}).join('')+'<th>Tendance</th>';
+    f.forEach(function(r){
+      var hkeys=Object.keys(r.hist||{}).map(Number).sort(function(a,b){return a-b;});
+      var hvals=hkeys.map(function(y){return(r.hist||{})[y];}).filter(function(v){return v&&!isNaN(v);});
+      var t=hvals.length>=2?delta(hvals[0],hvals[hvals.length-1]):null;
+      var tc=t===null?'#555':t>=0?'#2DBF7E':'#FF4A6B';
+      var tStr=t===null?'-':(t>=0?'+':'')+t.toFixed(1)+'%';
+      var firstYr=hkeys[0],lastYr=hkeys[hkeys.length-1];
+      var tSub=firstYr&&lastYr?'<div style="font-size:9px;color:#555;margin-top:1px">'+firstYr+'→'+lastYr+'</div>':'';
+      var aso=isAso(r.r);
+      var bl=r.d==='MARATHON'?'Marathon':r.d==='SEMI'?'Semi':'10 km';
+      var raceColor=col(r.r)==='#FCDB00'?'#FCDB00':'var(--text2)';
+      html+='<tr><td>'+r.p+'</td><td>'+r.c+'</td>'
+        +'<td><span class="badge '+(aso?'badge-aso':'badge-world')+'">'+bl+' - '+(aso?'ASO':'Monde')+'</span></td>'
+        +'<td style="max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:'+raceColor+'">'+r.r+'</td>'
+        +allYears.map(function(y){var v=(r.hist||{})[y];return'<td style="'+(v?'color:var(--text)':'')+'">'+(v?fmtFull(v):'—')+'</td>';}).join('')
+        +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
+    });
+  }else{
+    if(thead)thead.innerHTML='<th>Mois</th><th>Ville</th><th>Distance</th><th>Epreuve</th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>Tendance</th>';
+    f.forEach(function(r){
+      var hkeys=Object.keys(r.hist||{}).map(Number).sort(function(a,b){return a-b;});
+      var hvals=hkeys.map(function(y){return(r.hist||{})[y];}).filter(function(v){return v&&!isNaN(v);});
+      var t=hvals.length>=2?delta(hvals[0],hvals[hvals.length-1]):null;
+      var firstYr=hkeys.length>=2?hkeys[0]:null;
+      var lastYr=hkeys.length>=2?hkeys[hkeys.length-1]:null;
+      var tc=t===null?'#555':t>=0?'#2DBF7E':'#FF4A6B';
+      var tStr=t===null?'-':(t>=0?'+':'')+t.toFixed(1)+'%';
+      var tSub=firstYr&&lastYr&&(lastYr-firstYr>3)?'<div style="font-size:9px;color:#555;margin-top:1px">'+firstYr+'→'+lastYr+'</div>':'';
+      var raceColor=col(r.r)==='#FCDB00'?'#FCDB00':'var(--text2)';
+      var aso=isAso(r.r);
+      var bl=r.d==='MARATHON'?'Marathon':r.d==='SEMI'?'Semi':'10 km';
+      html+='<tr><td>'+r.p+'</td><td>'+r.c+'</td>'
+        +'<td><span class="badge '+(aso?'badge-aso':'badge-world')+'">'+bl+' - '+(aso?'ASO':'Monde')+'</span></td>'
+        +'<td style="max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:'+raceColor+'">'+r.r+'</td>'
+        +'<td>'+fmtFull(r.y3)+'</td><td>'+fmtFull(r.y4)+'</td><td>'+fmtFull(r.y5)+'</td><td>'+fmtFull(r.y6)+'</td>'
+        +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
+    });
+  }
   document.getElementById('table-body').innerHTML=html;
   var cnt=f.length;
   document.getElementById('table-count').textContent=cnt+' epreuve'+(cnt>1?'s':'')+' affichee'+(cnt>1?'s':'');
