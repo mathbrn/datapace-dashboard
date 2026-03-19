@@ -32,6 +32,7 @@ FILES = {
     "marathon_2025": SCRIPT_DIR / "Temps_moyen_par_marathon_2025.xlsx",
     "marathon_2026": SCRIPT_DIR / "Temps_moyen_par_marathon_2026.xlsx",
     "semi_2025":     SCRIPT_DIR / "Temps_moyen_semi-marathon_2025.xlsx",
+    "winners":       SCRIPT_DIR / "Chronos_Vainqueurs.xlsx",
 }
 OUTPUT_FILE = SCRIPT_DIR / "datapace_dashboard.html"
 
@@ -154,6 +155,25 @@ def load_semi():
     return rows
 
 
+def load_winners():
+    path = FILES["winners"]
+    if not path.exists():
+        print("  Winners    : fichier absent, onglet desactive")
+        return []
+    import openpyxl
+    wb = openpyxl.load_workbook(path, data_only=True)
+    ws = wb.active
+    rows = []
+    for row in ws.iter_rows(min_row=2, values_only=True):
+        course, distance, year, men, women = row
+        if (men and men != "N/A" and men != "Annule") or (women and women != "N/A" and women != "Annule"):
+            rows.append({"r": str(course), "d": str(distance), "y": int(year),
+                         "m": str(men) if men and men not in ("N/A", "Annule", "Annulé") else "",
+                         "w": str(women) if women and women not in ("N/A", "Annule", "Annulé") else ""})
+    print(f"  Winners    : {len(rows)} resultats")
+    return rows
+
+
 def build_times_db(md, sd):
     db = {}; all_e = []
     for rows in md.values(): all_e.extend(rows)
@@ -199,13 +219,14 @@ function buildTimeHistory(rn){
 var cT=null,cB=null,cTm=null,ovChartF=null,ovChartT=null;
 
 function switchTab(name){
-  var names=['overview','compare','trends','biggest','temps','data'];
+  var names=['overview','compare','trends','biggest','temps','winners','data'];
   document.querySelectorAll('.tab').forEach(function(t,i){t.classList.toggle('active',names[i]===name);});
   document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active');});
   document.getElementById('panel-'+name).classList.add('active');
   if(name==='trends')updateTrends();
   if(name==='biggest')updateBiggest();
   if(name==='temps')updateTemps();
+  if(name==='winners')updateWinners();
   if(name==='data')filterTable();
 }
 
@@ -747,6 +768,62 @@ document.addEventListener('click', function(e){
     if(db)db.style.display='none';
   }
 });
+
+// ── WINNERS TIMES ─────────────────────────────────────────────────────────────
+var cW=null;
+function winToSec(t){if(!t)return null;var p=t.split(':');if(p.length===3)return+p[0]*3600+(+p[1])*60+(+p[2]);if(p.length===2)return+p[0]*60+(+p[1]);return null;}
+function secToTime(s){if(s==null)return'-';var h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sc=Math.round(s%60);return(h?h+':':'')+(h?String(m).padStart(2,'0'):m)+':'+String(sc).padStart(2,'0');}
+function secToMin(s){return s!=null?s/60:null;}
+
+function updateWinners(){
+  var dist=document.getElementById('win-dist').value;
+  var gender=document.getElementById('win-gender').value;
+  var sortMode=document.getElementById('win-sort').value;
+  var topN=+document.getElementById('win-topn').value;
+  var filtered=WINNERS.filter(function(w){return w.d===dist;});
+  var races={};
+  filtered.forEach(function(w){if(!races[w.r])races[w.r]={name:w.r,years:[]};races[w.r].years.push({y:w.y,m:winToSec(w.m),w:winToSec(w.w),ms:w.m,ws:w.w});});
+  var raceList=Object.values(races).filter(function(r){return r.years.length>0;});
+  raceList.forEach(function(r){r.years.sort(function(a,b){return a.y-b.y;});});
+  if(sortMode==='fastest'){raceList.sort(function(a,b){var la=a.years[a.years.length-1],lb=b.years[b.years.length-1];var va=gender==='w'?(la.w||9999):(la.m||9999),vb=gender==='w'?(lb.w||9999):(lb.m||9999);return va-vb;});}
+  else if(sortMode==='alpha'){raceList.sort(function(a,b){return a.name.localeCompare(b.name);});}
+  else if(sortMode==='progress'){raceList.sort(function(a,b){function prog(r){if(r.years.length<2)return 0;var f=r.years[0],l=r.years[r.years.length-1];var fv=gender==='w'?f.w:f.m,lv=gender==='w'?l.w:l.m;if(!fv||!lv)return 0;return fv-lv;}return prog(b)-prog(a);});}
+  if(topN<999)raceList=raceList.slice(0,topN);
+  var allYears=[];
+  raceList.forEach(function(r){r.years.forEach(function(y){if(allYears.indexOf(y.y)<0)allYears.push(y.y);});});
+  allYears.sort();
+  var palette=['#9B6FFF','#FF8A50','#5CDFA0','#FCDB00','#FF6B9D','#00D4AA','#FF4444','#44AAFF','#FFD700','#FF69B4','#00CED1','#FFA07A','#98FB98','#DDA0DD','#87CEEB','#F0E68C','#CD853F','#8FBC8F','#E6E6FA','#FFDAB9'];
+  var datasets=[];
+  raceList.forEach(function(r,i){var c=palette[i%palette.length];
+    if(gender!=='w'){var mData=allYears.map(function(yr){var yd=r.years.find(function(y){return y.y===yr;});return yd&&yd.m?secToMin(yd.m):null;});datasets.push({label:r.name+(gender==='both'?' (H)':''),data:mData,borderColor:c,backgroundColor:c+'33',pointBackgroundColor:c,pointRadius:4,pointHoverRadius:6,tension:.3,borderWidth:2,spanGaps:true});}
+    if(gender!=='m'){var wData=allYears.map(function(yr){var yd=r.years.find(function(y){return y.y===yr;});return yd&&yd.w?secToMin(yd.w):null;});datasets.push({label:r.name+(gender==='both'?' (F)':''),data:wData,borderColor:c,backgroundColor:c+'33',pointBackgroundColor:c,pointRadius:4,pointHoverRadius:6,tension:.3,borderWidth:gender==='both'?1:2,borderDash:gender==='both'?[5,3]:[],spanGaps:true});}
+  });
+  var allM=[],allW=[];
+  filtered.forEach(function(w){var ms=winToSec(w.m),ws=winToSec(w.w);if(ms)allM.push(ms);if(ws)allW.push(ws);});
+  allM.sort(function(a,b){return a-b;});allW.sort(function(a,b){return a-b;});
+  var mH='';
+  if(allM.length){mH+='<div class="metric"><div class="metric-label">Record Homme</div><div class="metric-value" style="color:#9B6FFF">'+secToTime(allM[0])+'</div><div class="metric-sub">sur '+allM.length+' courses</div></div>';}
+  if(allW.length){mH+='<div class="metric"><div class="metric-label">Record Femme</div><div class="metric-value" style="color:#FF8A50">'+secToTime(allW[0])+'</div><div class="metric-sub">sur '+allW.length+' courses</div></div>';}
+  if(allM.length){var avg=allM.reduce(function(a,b){return a+b;},0)/allM.length;mH+='<div class="metric"><div class="metric-label">Moy. Homme</div><div class="metric-value">'+secToTime(avg)+'</div></div>';}
+  if(allW.length){var avg=allW.reduce(function(a,b){return a+b;},0)/allW.length;mH+='<div class="metric"><div class="metric-label">Moy. Femme</div><div class="metric-value">'+secToTime(avg)+'</div></div>';}
+  mH+='<div class="metric"><div class="metric-label">Courses</div><div class="metric-value">'+raceList.length+'</div><div class="metric-sub">'+filtered.length+' resultats</div></div>';
+  document.getElementById('win-metrics').innerHTML=mH;
+  var distLabel=dist==='42K'?'Marathon':dist==='21K'?'Semi-marathon':'10 km';
+  document.getElementById('win-section-lbl').textContent='Temps des vainqueurs - '+distLabel;
+  var legH='';
+  raceList.forEach(function(r,i){legH+='<span class="leg-item"><span class="leg-dot" style="background:'+palette[i%palette.length]+'"></span>'+r.name+'</span>';});
+  if(gender==='both')legH+='<span class="leg-item" style="margin-left:12px;font-style:italic;color:var(--text3)">&mdash; plein = Homme &middot; - - - = Femme</span>';
+  document.getElementById('win-legend').innerHTML=legH;
+  if(cW){cW.destroy();cW=null;}
+  var ctx=document.getElementById('chart-winners').getContext('2d');
+  cW=new Chart(ctx,{type:'line',data:{labels:allYears.map(String),datasets:datasets},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{display:false},tooltip:{backgroundColor:'#1a1a1a',titleColor:'#f0f0f0',bodyColor:'#ccc',borderColor:'#333',borderWidth:1,padding:10,callbacks:{label:function(ctx){var v=ctx.parsed.y;if(v==null)return null;var h=Math.floor(v/60),m=Math.floor(v%60),s=Math.round((v*60)%60);return ctx.dataset.label+': '+(h?h+':':'')+String(m).padStart(h?2:1,'0')+':'+String(s).padStart(2,'0');}}}},scales:{x:{ticks:{color:'#555',font:{size:11}},grid:{color:'#ffffff08'}},y:{reverse:true,ticks:{color:'#555',font:{size:11},callback:function(v){var h=Math.floor(v/60),m=Math.round(v%60);return(h?h+'h':'')+(h?String(m).padStart(2,'0'):m)+'min';}},grid:{color:'#ffffff08'}}}}});
+  var tbody=document.getElementById('win-tbody');
+  var tRows=[];
+  filtered.forEach(function(w){var ms=winToSec(w.m),ws=winToSec(w.w);var gap=(ms&&ws)?secToTime(ws-ms):'\\u2014';tRows.push({r:w.r,y:w.y,m:w.m||'\\u2014',w:w.w||'\\u2014',gap:gap});});
+  tRows.sort(function(a,b){return a.r.localeCompare(b.r)||a.y-b.y;});
+  tbody.innerHTML=tRows.map(function(r){return'<tr><td>'+r.r+'</td><td style="text-align:center">'+r.y+'</td><td style="text-align:center;color:#9B6FFF">'+r.m+'</td><td style="text-align:center;color:#FF8A50">'+r.w+'</td><td style="text-align:center;color:var(--text3)">'+r.gap+'</td></tr>';}).join('');
+  document.getElementById('win-count').textContent=tRows.length+' resultats';
+}
 '''
 
 
@@ -866,6 +943,7 @@ HTML_BODY = """
   <div class="tab active" onclick="switchTab('trends')">Evolution</div>
   <div class="tab" onclick="switchTab('biggest')">Top evenements</div>
   <div class="tab" onclick="switchTab('temps')">Temps moyen</div>
+  <div class="tab" onclick="switchTab('winners')">Winners Times</div>
   <div class="tab" onclick="switchTab('data')">Tableau</div>
 </div>
 <div id="panel-overview" class="panel">
@@ -971,6 +1049,40 @@ HTML_BODY = """
   <div class="section-title" style="margin-top:.5rem">Comparaison graphique (minutes)</div>
   <div class="chart-wrap" id="chart-temps-wrap" style="height:280px;"><canvas id="chart-temps"></canvas></div>
 </div>
+<div id="panel-winners" class="panel">
+  <div class="controls">
+    <div class="ctrl-group"><span class="ctrl-label">Distance</span>
+      <select id="win-dist" onchange="updateWinners()">
+        <option value="42K">Marathon (42K)</option><option value="21K">Semi-marathon (21K)</option><option value="10K">10 km</option>
+      </select>
+    </div>
+    <div class="ctrl-group"><span class="ctrl-label">Genre</span>
+      <select id="win-gender" onchange="updateWinners()">
+        <option value="both">Homme &amp; Femme</option><option value="m">Homme</option><option value="w">Femme</option>
+      </select>
+    </div>
+    <div class="ctrl-group"><span class="ctrl-label">Tri</span>
+      <select id="win-sort" onchange="updateWinners()">
+        <option value="fastest">Plus rapide (derniere annee)</option><option value="alpha">Alphabetique</option><option value="progress">Meilleure progression</option>
+      </select>
+    </div>
+    <div class="ctrl-group"><span class="ctrl-label">Nb courses</span>
+      <select id="win-topn" onchange="updateWinners()">
+        <option value="8">8</option><option value="12" selected>12</option><option value="16">16</option><option value="999">Toutes</option>
+      </select>
+    </div>
+  </div>
+  <div class="metrics" id="win-metrics"></div>
+  <div class="section-title" id="win-section-lbl">Temps des vainqueurs - Marathon</div>
+  <div class="legend" id="win-legend"></div>
+  <div class="chart-wrap" style="height:420px;"><canvas id="chart-winners"></canvas></div>
+  <div class="section-title" style="margin-top:1.5rem">Classement detaille</div>
+  <div class="table-wrap" style="max-height:400px;overflow-y:auto">
+    <table><thead><tr><th>Course</th><th>Annee</th><th>Homme</th><th>Femme</th><th>Ecart H/F</th></tr></thead>
+    <tbody id="win-tbody"></tbody></table>
+  </div>
+  <div class="count" id="win-count"></div>
+</div>
 <div id="panel-data" class="panel">
   <div class="controls">
     <div class="search-wrap"><span class="search-icon">&#x2315;</span>
@@ -1006,7 +1118,7 @@ HTML_BODY = """
 </div>"""
 
 
-def generate_html(finishers, biggest, md, sd, tdb):
+def generate_html(finishers, biggest, md, sd, tdb, winners):
     now = datetime.datetime.now().strftime("%d/%m/%Y a %H:%M")
     tmjs = {str(yr): [{"race": r["race"], "city": r["city"], "finishers": r["finishers"] or 0, "avg": r["avg"] or ""}
                        for r in rows if r.get("avg")] for yr, rows in md.items()}
@@ -1015,7 +1127,8 @@ def generate_html(finishers, biggest, md, sd, tdb):
     tdbjs = {k: {"men": v["men"], "women": v["women"], "avg": v["avg"], "yr": v["yr"]} for k, v in tdb.items()}
     js_data = ("const RAW=" + j(finishers) + ";\nconst BIGGEST=" + j(biggest) + ";\n"
                "const TEMPS_MARATHON=" + j(tmjs) + ";\nconst TEMPS_SEMI_2025=" + j(tsjs) + ";\n"
-               "const TIMES_DB=" + j(tdbjs) + ";\nconst ASO_KEYWORDS=" + j(ASO_KEYWORDS) + ";\n")
+               "const TIMES_DB=" + j(tdbjs) + ";\nconst ASO_KEYWORDS=" + j(ASO_KEYWORDS) + ";\n"
+               "const WINNERS=" + j(winners) + ";\n")
     body = HTML_BODY.format(now=now)
     return f"""<!DOCTYPE html>
 <html lang="fr">
@@ -1046,8 +1159,9 @@ def main():
     md = {yr: load_marathon(yr) for yr in [2024, 2025, 2026]}
     sd = load_semi()
     tdb = build_times_db(md, sd)
+    winners = load_winners()
     print("\nGeneration du HTML...")
-    html = generate_html(finishers, biggest, md, sd, tdb)
+    html = generate_html(finishers, biggest, md, sd, tdb, winners)
     OUTPUT_FILE.write_text(html, encoding="utf-8")
     print(f"\nDashboard genere : {OUTPUT_FILE.name}  ({OUTPUT_FILE.stat().st_size // 1024} Ko)")
     print("Ouvre ce fichier dans le navigateur via http://localhost:8000/datapace_dashboard.html\n")
