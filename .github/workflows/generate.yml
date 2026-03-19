@@ -1,0 +1,37 @@
+name: Générer le dashboard DataPace
+
+on:
+  push:
+    paths:
+      - '**.xlsx'        # Se déclenche uniquement si un fichier Excel change
+  workflow_dispatch:     # Permet aussi de lancer manuellement depuis GitHub
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupérer les fichiers
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installer les dépendances
+        run: pip install pandas openpyxl
+
+      - name: Générer le dashboard
+        run: python generate_dashboard.py
+
+      - name: Renommer en index.html pour GitHub Pages
+        run: mv datapace_dashboard.html index.html
+
+      - name: Publier sur GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: gh-pages
+          exclude_assets: '**.xlsx,**.py,**.yml,**.bat'

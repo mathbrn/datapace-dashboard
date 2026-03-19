@@ -1,0 +1,659 @@
+#!/usr/bin/env python3
+"""
+DataPace Dashboard Generator
+=============================
+Lit les fichiers Excel et génère datapace_dashboard.html.
+
+Usage :
+    python generate_dashboard.py
+
+Fichiers Excel requis (même dossier que ce script) :
+    - Suivi_Finishers_Monde_10k_-_21k_-_42k.xlsx
+    - Temps_moyen_par_marathon_2024.xlsx
+    - Temps_moyen_par_marathon_2025.xlsx
+    - Temps_moyen_par_marathon_2026.xlsx
+    - Temps_moyen_semi-marathon_2025.xlsx
+
+Sortie :
+    - datapace_dashboard.html  (ouvrir dans le navigateur)
+"""
+
+import pandas as pd
+import json
+import datetime
+import sys
+from pathlib import Path
+
+SCRIPT_DIR = Path(__file__).parent
+
+FILES = {
+    "finishers":     SCRIPT_DIR / "Suivi_Finishers_Monde_10k_-_21k_-_42k.xlsx",
+    "marathon_2024": SCRIPT_DIR / "Temps_moyen_par_marathon_2024.xlsx",
+    "marathon_2025": SCRIPT_DIR / "Temps_moyen_par_marathon_2025.xlsx",
+    "marathon_2026": SCRIPT_DIR / "Temps_moyen_par_marathon_2026.xlsx",
+    "semi_2025":     SCRIPT_DIR / "Temps_moyen_semi-marathon_2025.xlsx",
+}
+OUTPUT_FILE = SCRIPT_DIR / "datapace_dashboard.html"
+
+ASO_KEYWORDS = [
+    "schneider electric", "hoka semi de paris", "semi de paris",
+    "run in lyon", "beaujolais", "adidas 10k paris", "10k montmartre",
+    "cancer research", "asics ldnx", "adidas manchester",
+]
+
+
+def fmt_time(val):
+    if val is None or (isinstance(val, float) and pd.isna(val)): return None
+    if isinstance(val, datetime.time): return val.strftime("%H:%M:%S")
+    s = str(val).strip()
+    return None if s in ("", "nan", "NaT", "None") else s
+
+
+def safe_int(val):
+    try: v = int(float(val)); return v if v > 0 else None
+    except: return None
+
+
+def j(obj): return json.dumps(obj, ensure_ascii=False, default=str)
+
+
+def check_files():
+    missing = [k for k, p in FILES.items() if not p.exists()]
+    if missing:
+        print("Fichiers manquants :")
+        for k in missing:
+            print(f"  - {FILES[k].name}")
+        print("\nPlace les fichiers Excel dans le meme dossier que ce script.")
+        sys.exit(1)
+    print("Tous les fichiers Excel trouves.")
+
+
+def load_finishers():
+    df = pd.read_excel(FILES["finishers"], sheet_name="ALL")
+    rows = []
+    for _, r in df.iterrows():
+        race = str(r.get("Race", "")).strip()
+        if not race or race == "nan": continue
+        def gv(col, r=r):
+            v = r.get(col)
+            if v is None or (isinstance(v, float) and pd.isna(v)): return None
+            try: iv = int(float(v)); return iv if iv > 0 else None
+            except: return None
+        rows.append({"p": str(r.get("Période", "")).strip(), "c": str(r.get("City", "")).strip(),
+                     "d": str(r.get("Distance", "")).strip(), "r": race,
+                     "y3": gv(2023), "y4": gv(2024), "y5": gv(2025), "y6": gv(2026)})
+    print(f"  Finishers  : {len(rows)} courses")
+    return rows
+
+
+def load_biggest():
+    df = pd.read_excel(FILES["finishers"], sheet_name="BIGGEST EVENTS")
+    rows = []
+    for _, r in df.iterrows():
+        race = str(r.get("Race", "")).strip()
+        if not race or race == "nan": continue
+        def gv(col, r=r):
+            v = r.get(col)
+            if v is None or (isinstance(v, float) and pd.isna(v)): return None
+            try: iv = int(float(v)); return iv if iv > 0 else None
+            except: return None
+        rows.append({"c": str(r.get("City", "")).strip(), "r": race,
+                     "y3": gv(2023), "y4": gv(2024), "y5": gv(2025), "y6": gv(2026)})
+    print(f"  Biggest    : {len(rows)} courses")
+    return rows
+
+
+def load_marathon(year):
+    path = FILES[f"marathon_{year}"]
+    if year == 2024:
+        df = pd.read_excel(path, header=None); rows = []
+        for _, r in df.iterrows():
+            vals = r.tolist(); race = avg = None; finishers = None
+            for v in vals:
+                if isinstance(v, str) and len(v) > 4 and v not in ("nan", "RACE", "Race"): race = v.strip()
+                elif isinstance(v, (int, float)) and not (isinstance(v, float) and pd.isna(v)) and float(v) > 100: finishers = int(float(v))
+                elif isinstance(v, datetime.time): avg = v.strftime("%H:%M:%S")
+            if race: rows.append({"race": race, "city": "", "finishers": finishers,
+                                  "avg": avg, "men": None, "women": None, "year": year})
+    else:
+        df = pd.read_excel(path, sheet_name="Finishers", header=None)
+        df.columns = ["_", "city", "race", "finishers", "avg_time", "best",
+                      "men_time", "women_time", "top10_avg", "sub3"]
+        rows = []
+        for _, r in df.iloc[3:].iterrows():
+            race = str(r["race"]).strip() if pd.notna(r["race"]) else ""
+            if not race or race in ("nan", "Race"): continue
+            rows.append({"race": race,
+                         "city": str(r["city"]).strip() if pd.notna(r["city"]) else "",
+                         "finishers": safe_int(r["finishers"]),
+                         "avg": fmt_time(r["avg_time"]), "men": fmt_time(r["men_time"]),
+                         "women": fmt_time(r["women_time"]), "year": year})
+    print(f"  Marathon {year}: {len(rows)} courses")
+    return rows
+
+
+def load_semi():
+    df = pd.read_excel(FILES["semi_2025"], sheet_name="2025", header=None)
+    df.columns = ["_", "city", "race", "finishers", "avg_time", "men_time", "women_time", "top10_avg"]
+    rows = []
+    for _, r in df.iloc[4:].iterrows():
+        race = str(r["race"]).strip() if pd.notna(r["race"]) else ""
+        if not race or race in ("nan", "Race"): continue
+        rows.append({"race": race,
+                     "city": str(r["city"]).strip() if pd.notna(r["city"]) else "",
+                     "finishers": safe_int(r["finishers"]),
+                     "avg": fmt_time(r["avg_time"]), "men": fmt_time(r["men_time"]),
+                     "women": fmt_time(r["women_time"]), "year": 2025})
+    print(f"  Semi 2025  : {len(rows)} courses")
+    return rows
+
+
+def build_times_db(md, sd):
+    db = {}; all_e = []
+    for rows in md.values(): all_e.extend(rows)
+    all_e.extend(sd); all_e.sort(key=lambda x: x.get("year", 0))
+    for row in all_e:
+        if row.get("avg") or row.get("men"):
+            db[row["race"].lower()] = {
+                "men": row.get("men") or "", "women": row.get("women") or "",
+                "avg": row.get("avg") or "", "yr": row.get("year")}
+    return db
+
+
+JS_LOGIC = '''function isAso(r){var l=r.toLowerCase();return ASO_KEYWORDS.some(function(k){return l.indexOf(k)>=0;});}
+function col(r){return isAso(r)?'#FCDB00':'#5C00D4';}
+function toMin(t){if(!t)return null;var p=String(t).split(':');if(p.length===3)return parseInt(p[0])*60+parseInt(p[1])+parseInt(p[2])/60;return null;}
+function fmt(n){if(!n||isNaN(n))return'\u2014';return n>=1000?(n/1000).toFixed(1)+'k':n.toString();}
+function fmtFull(n){if(!n||isNaN(n))return'\u2014';return Math.round(n).toLocaleString('fr-FR');}
+function delta(a,b){if(!a||!b||isNaN(a)||isNaN(b))return null;return((b-a)/a*100);}
+function fmtHM(mins){var h=Math.floor(mins/60),m=Math.round(mins%60);return h+'h'+String(m).padStart(2,'0');}
+function fmtHMMin(mins){return fmtHM(mins)+'min';}
+var GRID='rgba(255,255,255,0.04)';
+var TICK={color:'#555',font:{size:11}};
+var TT={backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10};
+
+
+function getTimeData(rn){
+  var l=rn.toLowerCase();
+  var keys=Object.keys(TIMES_DB);
+  for(var i=0;i<keys.length;i++){var k=keys[i];if(l.indexOf(k)>=0||k.indexOf(l.substring(0,12))>=0)return TIMES_DB[k];}
+  return null;
+}
+function buildTimeHistory(rn){
+  var l=rn.toLowerCase(),hist=[];
+  [2024,2025,2026].forEach(function(yr){
+    var rows=TEMPS_MARATHON[String(yr)]||[];
+    for(var i=0;i<rows.length;i++){var rl=rows[i].race.toLowerCase();if(l.indexOf(rl.substring(0,10))>=0||rl.indexOf(l.substring(0,10))>=0){if(toMin(rows[i].avg))hist.push({yr:String(yr),min:toMin(rows[i].avg)});break;}}
+  });
+  if(!hist.length){for(var i=0;i<TEMPS_SEMI_2025.length;i++){var rl=TEMPS_SEMI_2025[i].race.toLowerCase();if(l.indexOf(rl.substring(0,10))>=0||rl.indexOf(l.substring(0,10))>=0){if(toMin(TEMPS_SEMI_2025[i].avg))hist.push({yr:'2025',min:toMin(TEMPS_SEMI_2025[i].avg)});break;}}}
+  return hist;
+}
+var cT=null,cB=null,cTm=null,ovChartF=null,ovChartT=null;
+
+function switchTab(name){
+  var names=['overview','trends','biggest','temps','data'];
+  document.querySelectorAll('.tab').forEach(function(t,i){t.classList.toggle('active',names[i]===name);});
+  document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active');});
+  document.getElementById('panel-'+name).classList.add('active');
+  if(name==='trends')updateTrends();
+  if(name==='biggest')updateBiggest();
+  if(name==='temps')updateTemps();
+  if(name==='data')filterTable();
+}
+
+function ovSearch(){
+  var q=document.getElementById('ov-search').value.toLowerCase().trim();
+  var box=document.getElementById('ov-results');
+  if(q.length<2){box.innerHTML='<div class="ov-placeholder">Tapez au moins 2 caracteres</div>';return;}
+  var matches=RAW.filter(function(r){return r.r.toLowerCase().indexOf(q)>=0||r.c.toLowerCase().indexOf(q)>=0;});
+  if(!matches.length){box.innerHTML='<div class="ov-placeholder">Aucun resultat</div>';return;}
+  var dc={MARATHON:'#5C00D418',SEMI:'#2563eb18','10KM':'#2DBF7E18'};
+  var dt={MARATHON:'#9B6FFF',SEMI:'#79AAFF','10KM':'#5CDFA0'};
+  var html='';
+  matches.forEach(function(r){
+    var idx=RAW.indexOf(r);
+    var dl=r.d==='10KM'?'10 km':r.d==='SEMI'?'Semi':'Marathon';
+    html+='<div class="ov-result-item" data-idx="'+idx+'" onclick="ovSelect('+idx+')">'
+      +'<span class="ov-result-dist" style="background:'+dc[r.d]+';color:'+dt[r.d]+'">'+dl+'</span>'
+      +'<span style="flex:1">'+r.r+'</span>'
+      +'<span style="font-size:11px;color:var(--text3)">'+r.c+' - '+r.p+'</span>'
+      +'</div>';
+  });
+  box.innerHTML=html;
+}
+
+function ovSelect(idx){
+  document.querySelectorAll('.ov-result-item').forEach(function(el){el.classList.toggle('selected',parseInt(el.dataset.idx)===idx);});
+  var ev=RAW[idx];
+  var ac=col(ev.r),aso=isAso(ev.r);
+  var dl=ev.d==='MARATHON'?'Marathon':ev.d==='SEMI'?'Semi-marathon':'10 km';
+  var finHistory=[{yr:2023,v:ev.y3},{yr:2024,v:ev.y4},{yr:2025,v:ev.y5},{yr:2026,v:ev.y6}].filter(function(e){return e.v&&!isNaN(e.v);});
+  var lastEd=finHistory[finHistory.length-1];
+  var td=getTimeData(ev.r);
+  var finStr=lastEd?fmtFull(lastEd.v):'-';
+  var finLbl='Finishers'+(lastEd?' ('+lastEd.yr+')':'');
+  var avgLbl='Temps moyen'+(td?' ('+td.yr+')':'');
+  var menLbl='Record homme'+(td?' ('+td.yr+')':'');
+  var wmLbl='Record femme'+(td?' ('+td.yr+')':'');
+  var badgeBg=aso?'#FCDB0018':'#5C00D418';
+  var badgeCol=aso?'#FCDB00':'#9B6FFF';
+  var html='<div class="ov-card">'
+    +'<div class="ov-card-header"><div>'
+    +'<div class="ov-card-title">'+ev.r+'</div>'
+    +'<div class="ov-card-meta"><span>&#x1F4CD; '+ev.c+'</span><span>&#x1F4C5; '+ev.p+'</span></div>'
+    +'</div>'
+    +'<span class="ov-badge" style="background:'+badgeBg+';color:'+badgeCol+'">'+dl+' - '+(aso?'ASO':'Mondial')+'</span>'
+    +'</div>'
+    +'<div class="ov-stats">'
+    +'<div class="ov-stat"><div class="ov-stat-label">'+finLbl+'</div><div class="ov-stat-value">'+finStr+'</div></div>'
+    +'<div class="ov-stat"><div class="ov-stat-label">'+avgLbl+'</div><div class="ov-stat-value" style="font-size:14px">'+(td&&td.avg?td.avg:'-')+'</div></div>'
+    +'<div class="ov-stat"><div class="ov-stat-label">'+menLbl+'</div><div class="ov-stat-value" style="font-size:14px;color:var(--yellow)">'+(td&&td.men?td.men:'-')+'</div></div>'
+    +'<div class="ov-stat"><div class="ov-stat-label">'+wmLbl+'</div><div class="ov-stat-value" style="font-size:14px;color:var(--yellow)">'+(td&&td.women?td.women:'-')+'</div></div>'
+    +'</div>'
+    +'<div class="ov-charts">'
+    +'<div class="ov-chart-box"><div class="ov-chart-label">Finishers par edition</div><div style="position:relative;height:150px"><canvas id="ov-chart-fin"></canvas></div></div>'
+    +'<div class="ov-chart-box"><div class="ov-chart-label">Temps moyen par edition</div><div style="position:relative;height:150px"><canvas id="ov-chart-time"></canvas></div></div>'
+    +'</div>'
+    +'</div>';
+  document.getElementById('ov-card-wrap').innerHTML=html;
+
+  if(ovChartF)ovChartF.destroy();
+  var fc=document.getElementById('ov-chart-fin');
+  if(fc&&finHistory.length){
+    var finCfg={
+      type:'bar',
+      data:{labels:finHistory.map(function(e){return e.yr;}),datasets:[{data:finHistory.map(function(e){return e.v;}),backgroundColor:ac+'99',borderRadius:3,borderSkipped:false}]},
+      options:{responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{label:function(ctx){return' '+fmtFull(ctx.parsed.y)+' finishers';}}}},
+        scales:{x:{grid:{display:false},ticks:TICK,border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmt(v);}},border:{color:'#ffffff08'}}}
+      }
+    };
+    ovChartF=new Chart(fc,finCfg);
+  }
+  if(ovChartT)ovChartT.destroy();
+  var th=buildTimeHistory(ev.r);
+  var tc=document.getElementById('ov-chart-time');
+  if(tc&&th.length>1){
+    var timeCfg={
+      type:'line',
+      data:{labels:th.map(function(e){return e.yr;}),datasets:[{data:th.map(function(e){return e.min;}),borderColor:ac,backgroundColor:'transparent',tension:0.3,pointRadius:4,pointBackgroundColor:ac,borderWidth:2}]},
+      options:{responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{label:function(ctx){return' '+fmtHMMin(ctx.parsed.y);}}}},
+        scales:{x:{grid:{display:false},ticks:TICK,border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmtHM(v);}},border:{color:'#ffffff08'}}}
+      }
+    };
+    ovChartT=new Chart(tc,timeCfg);
+  }
+}
+
+function updateTrends(){
+  var dist=document.getElementById('dist-trends').value;
+  var topn=parseInt(document.getElementById('topn-trends').value);
+  var src=dist==='ALL'?RAW:RAW.filter(function(r){return r.d===dist;});
+  var sorted=src.filter(function(r){return r.y5&&!isNaN(r.y5);}).sort(function(a,b){return(b.y5||0)-(a.y5||0);}).slice(0,topn);
+  var datasets=sorted.map(function(r){return{label:r.r,data:[r.y3||null,r.y4||null,r.y5||null],borderColor:col(r.r),backgroundColor:'transparent',tension:0.35,fill:false,pointRadius:3,pointHoverRadius:6,spanGaps:true,borderWidth:1.5,pointBackgroundColor:col(r.r)};});
+  if(cT)cT.destroy();
+  var trendCfg={
+    type:'line',
+    data:{labels:['2023','2024','2025'],datasets:datasets},
+    options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'nearest',intersect:true},
+      plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{title:function(items){return items.length?items[0].dataset.label:'';},label:function(ctx){return' '+fmtFull(ctx.parsed.y)+' finishers';}}}},
+      scales:{x:{grid:{color:GRID},ticks:TICK,border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmt(v);}},border:{color:'#ffffff08'}}}
+    }
+  };
+  cT=new Chart(document.getElementById('chart-trends'),trendCfg);
+}
+
+function updateBiggest(){
+  var n=parseInt(document.getElementById('topn-biggest').value);
+  var yr=document.getElementById('year-biggest').value;
+  var ymap={'2025':'y5','2024':'y4','2023':'y3'};
+  var k=ymap[yr];
+  var sorted=BIGGEST.filter(function(r){return r[k]&&!isNaN(r[k]);}).sort(function(a,b){return b[k]-a[k];}).slice(0,n);
+  document.getElementById('biggest-wrap').style.height=Math.max(300,n*44+80)+'px';
+  if(cB)cB.destroy();
+  var bigCfg={
+    type:'bar',
+    data:{labels:sorted.map(function(r){return r.r;}),datasets:[{data:sorted.map(function(r){return r[k];}),backgroundColor:sorted.map(function(r){return col(r.r)+'CC';}),borderRadius:2,borderSkipped:false}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{title:function(items){return sorted[items[0].dataIndex].r;},label:function(ctx){return' '+fmtFull(ctx.parsed.y)+' finishers';}}}},
+      scales:{x:{grid:{display:false},ticks:{color:'#555',font:{size:10},maxRotation:45,autoSkip:false},border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmt(v);}},border:{color:'#ffffff08'}}}
+    }
+  };
+  cB=new Chart(document.getElementById('chart-biggest'),bigCfg);
+}
+
+function updateTemps(){
+  var dist=document.getElementById('dist-temps').value;
+  var yr=parseInt(document.getElementById('year-temps').value);
+  var sortMode=document.getElementById('sort-temps').value;
+  var topn=parseInt(document.getElementById('topn-temps').value);
+  if(dist==='SEMI'&&yr!==2025){document.getElementById('year-temps').value='2025';updateTemps();return;}
+  var src=dist==='SEMI'?TEMPS_SEMI_2025:(TEMPS_MARATHON[String(yr)]||[]);
+  var data=src.slice();
+  if(sortMode==='avg'){data.sort(function(a,b){var ma=toMin(a.avg),mb=toMin(b.avg);if(!ma)return 1;if(!mb)return -1;return ma-mb;});}
+  else{data.sort(function(a,b){return b.finishers-a.finishers;});}
+  var withAvg=data.filter(function(d){return toMin(d.avg);});
+  var displayed=data.slice(0,topn);
+  var displayedWithAvg=displayed.filter(function(d){return toMin(d.avg);});
+  var fastest=withAvg.length?withAvg.reduce(function(a,b){return toMin(a.avg)<toMin(b.avg)?a:b;}):null;
+  var slowest=withAvg.length?withAvg.reduce(function(a,b){return toMin(a.avg)>toMin(b.avg)?a:b;}):null;
+  var avgAll=withAvg.length?withAvg.reduce(function(s,d){return s+toMin(d.avg);},0)/withAvg.length:0;
+  var avgH=Math.floor(avgAll/60),avgM=Math.floor(avgAll%60),avgS=Math.round((avgAll-Math.floor(avgAll))*60);
+  var distLabel=dist==='SEMI'?'Semi-marathon':'Marathon';
+  var yrLabel=dist==='SEMI'?2025:yr;
+  document.getElementById('metrics-temps').innerHTML=
+    '<div class="metric"><div class="metric-label">Courses</div><div class="metric-value">'+src.length+'</div><div class="metric-sub">'+distLabel+' '+yrLabel+'</div></div>'
+    +'<div class="metric"><div class="metric-label">Temps moyen</div><div class="metric-value" style="font-size:16px">'+avgH+'h'+String(avgM).padStart(2,'0')+'m'+String(avgS).padStart(2,'0')+'</div></div>'
+    +'<div class="metric"><div class="metric-label">Plus rapide</div><div class="metric-value" style="font-size:14px;color:#FCDB00">'+(fastest?fastest.avg:'-')+'</div></div>'
+    +'<div class="metric"><div class="metric-label">Plus lent</div><div class="metric-value" style="font-size:14px">'+(slowest?slowest.avg:'-')+'</div></div>';
+  var minM=withAvg.length?Math.min.apply(null,withAvg.map(function(d){return toMin(d.avg);})):0;
+  var maxM=withAvg.length?Math.max.apply(null,withAvg.map(function(d){return toMin(d.avg);})):1;
+  var barsHtml='';
+  displayed.forEach(function(d){
+    var m=toMin(d.avg);var pct=m?((m-minM)/(maxM-minM+0.001)*75+5).toFixed(1):'0';
+    barsHtml+='<div class="time-bar-row"><div class="time-bar-label">'+d.race+'</div><div class="time-bar-track"><div class="time-bar-fill" style="width:'+(m?pct:0)+'%;background:'+col(d.race)+'88"></div></div><div class="time-bar-val">'+(d.avg||'-')+'</div></div>';
+  });
+  document.getElementById('time-bars').innerHTML=barsHtml;
+  var chartH=Math.max(260,displayedWithAvg.length*28+80);
+  document.getElementById('chart-temps-wrap').style.height=chartH+'px';
+  if(cTm)cTm.destroy();
+  var minY=dist==='SEMI'?90:200;
+  var tempsCfg={
+    type:'bar',
+    data:{
+      labels:displayedWithAvg.map(function(d){return d.race.length>22?d.race.substring(0,22)+'...':d.race;}),
+      datasets:[{data:displayedWithAvg.map(function(d){return parseFloat(toMin(d.avg).toFixed(1));}),backgroundColor:displayedWithAvg.map(function(d){return col(d.race)+'BB';}),borderRadius:2,borderSkipped:false}]
+    },
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{
+        title:function(items){return displayedWithAvg[items[0].dataIndex].race;},
+        label:function(ctx){return' '+displayedWithAvg[ctx.dataIndex].avg+' ('+fmtHM(ctx.parsed.y)+')';}
+      }}},
+      scales:{
+        x:{grid:{display:false},ticks:{color:'#555',font:{size:10},maxRotation:45,autoSkip:false},border:{color:'#ffffff08'}},
+        y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmtHM(v);}},border:{color:'#ffffff08'},min:minY}
+      }
+    }
+  };
+  cTm=new Chart(document.getElementById('chart-temps'),tempsCfg);
+}
+
+function filterTable(){
+  var q=(document.getElementById('search-data').value||'').toLowerCase();
+  var dist=document.getElementById('dist-data').value;
+  var month=document.getElementById('month-data').value;
+  var f=RAW.filter(function(r){
+    if(dist!=='ALL'&&r.d!==dist)return false;
+    if(month!=='ALL'&&r.p!==month)return false;
+    if(q&&r.r.toLowerCase().indexOf(q)<0&&r.c.toLowerCase().indexOf(q)<0)return false;
+    return true;
+  });
+  var html='';
+  f.forEach(function(r){
+    var vals=[r.y3,r.y4,r.y5,r.y6].filter(function(v){return v&&!isNaN(v);});
+    var t=vals.length>=2?delta(vals[0],vals[vals.length-1]):null;
+    var tc=t===null?'#555':t>=0?'#2DBF7E':'#FF4A6B';
+    var aso=isAso(r.r);
+    var bl=r.d==='MARATHON'?'Marathon':r.d==='SEMI'?'Semi':'10 km';
+    var tStr=t===null?'-':(t>=0?'+':'')+t.toFixed(1)+'%';
+    var raceColor=col(r.r)==='#FCDB00'?'#FCDB00':'var(--text2)';
+    html+='<tr><td>'+r.p+'</td><td>'+r.c+'</td>'
+      +'<td><span class="badge '+(aso?'badge-aso':'badge-world')+'">'+bl+' - '+(aso?'ASO':'Monde')+'</span></td>'
+      +'<td style="max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:'+raceColor+'">'+r.r+'</td>'
+      +'<td>'+fmtFull(r.y3)+'</td><td>'+fmtFull(r.y4)+'</td><td>'+fmtFull(r.y5)+'</td><td>'+fmtFull(r.y6)+'</td>'
+      +'<td style="color:'+tc+'">'+tStr+'</td></tr>';
+  });
+  document.getElementById('table-body').innerHTML=html;
+  var cnt=f.length;
+  document.getElementById('table-count').textContent=cnt+' epreuve'+(cnt>1?'s':'')+' affichee'+(cnt>1?'s':'');
+}
+
+updateTrends();
+'''
+
+
+CSS = """*{box-sizing:border-box;margin:0;padding:0;}
+:root{--bg:#0a0a0a;--bg2:#111;--bg3:#161616;--border:#ffffff0f;--border2:#ffffff18;--text:#f0f0f0;--text2:#888;--text3:#555;--purple:#5C00D4;--yellow:#FCDB00;}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:1.5rem;}
+.dp-header{padding-bottom:1.25rem;border-bottom:.5px solid var(--border);margin-bottom:1.5rem;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:.5rem;}
+.dp-title{font-size:15px;font-weight:500;letter-spacing:.02em;}
+.dp-sub{font-size:12px;color:var(--text3);margin-top:4px;}
+.dp-updated{font-size:11px;color:var(--text3);}
+.tabs{display:flex;border-bottom:.5px solid var(--border);margin-bottom:1.5rem;overflow-x:auto;}
+.tab{padding:8px 14px;font-size:12px;color:var(--text3);cursor:pointer;border-bottom:1px solid transparent;margin-bottom:-1px;letter-spacing:.04em;text-transform:uppercase;transition:color .15s;white-space:nowrap;}
+.tab.active{color:var(--text);border-bottom-color:var(--purple);}
+.tab:hover:not(.active){color:var(--text2);}
+.panel{display:none;}.panel.active{display:block;}
+.controls{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:1.5rem;align-items:flex-end;}
+.ctrl-group{display:flex;flex-direction:column;gap:5px;}
+.ctrl-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;}
+select{font-size:12px;padding:5px 10px;border:.5px solid var(--border2);border-radius:4px;background:var(--bg2);color:var(--text2);cursor:pointer;outline:none;}
+select:focus{border-color:var(--purple);color:var(--text);}
+.section-title{font-size:10px;color:var(--text3);margin-bottom:12px;text-transform:uppercase;letter-spacing:.1em;}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;}
+.leg-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text3);}
+.leg-dot{width:8px;height:8px;border-radius:1px;flex-shrink:0;}
+.chart-wrap{position:relative;width:100%;margin-bottom:1.5rem;}
+.table-wrap{overflow-x:auto;border:.5px solid var(--border);border-radius:4px;}
+table{width:100%;border-collapse:collapse;font-size:12px;}
+th{background:var(--bg2);padding:7px 12px;text-align:left;font-weight:400;color:var(--text3);font-size:10px;text-transform:uppercase;letter-spacing:.08em;border-bottom:.5px solid var(--border);}
+td{padding:7px 12px;border-bottom:.5px solid var(--border);color:var(--text2);}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:var(--bg2);color:var(--text);}
+.badge{font-size:10px;padding:2px 7px;border-radius:2px;font-weight:400;}
+.badge-aso{background:#FCDB0018;color:#FCDB00;}
+.badge-world{background:#5C00D418;color:#9B6FFF;}
+.search-wrap{position:relative;flex:1;min-width:160px;}
+.search-wrap input{width:100%;font-size:12px;padding:5px 10px 5px 26px;border:.5px solid var(--border2);border-radius:4px;background:var(--bg2);color:var(--text);}
+.search-wrap input::placeholder{color:var(--text3);}
+.search-icon{position:absolute;left:8px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:12px;pointer-events:none;}
+.count{font-size:11px;color:var(--text3);margin-top:8px;}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:1.5rem;}
+.metric{background:var(--bg2);border-radius:4px;padding:12px 14px;border:.5px solid var(--border);}
+.metric-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;}
+.metric-value{font-size:20px;font-weight:500;color:var(--text);margin-top:4px;}
+.metric-sub{font-size:11px;color:var(--text3);margin-top:2px;}
+.time-bar-wrap{margin-bottom:1.5rem;max-height:360px;overflow-y:auto;}
+.time-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:5px;}
+.time-bar-label{font-size:11px;color:var(--text2);width:210px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.time-bar-track{flex:1;background:var(--bg2);border-radius:2px;height:5px;}
+.time-bar-fill{height:100%;border-radius:2px;}
+.time-bar-val{font-size:11px;color:var(--text3);width:56px;flex-shrink:0;text-align:right;}
+.ov-search-wrap{position:relative;margin-bottom:1rem;}
+.ov-search-wrap input{width:100%;font-size:13px;padding:8px 12px 8px 32px;border:.5px solid var(--border2);border-radius:4px;background:var(--bg2);color:var(--text);outline:none;}
+.ov-search-wrap input:focus{border-color:var(--purple);}
+.ov-search-wrap input::placeholder{color:var(--text3);}
+.ov-search-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px;pointer-events:none;}
+.ov-results{border:.5px solid var(--border);border-radius:4px;overflow:hidden;margin-bottom:1.5rem;max-height:220px;overflow-y:auto;}
+.ov-result-item{padding:8px 14px;font-size:12px;color:var(--text2);cursor:pointer;border-bottom:.5px solid var(--border);display:flex;align-items:center;gap:10px;transition:background .1s;}
+.ov-result-item:last-child{border-bottom:none;}
+.ov-result-item:hover,.ov-result-item.selected{background:var(--bg2);color:var(--text);}
+.ov-result-item.selected{border-left:2px solid var(--purple);}
+.ov-result-dist{font-size:10px;padding:1px 6px;border-radius:2px;flex-shrink:0;}
+.ov-placeholder{color:var(--text3);font-size:12px;padding:1.5rem;text-align:center;}
+.ov-card{border:.5px solid var(--border2);border-radius:6px;padding:1.25rem;margin-bottom:1.5rem;background:var(--bg2);}
+.ov-card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1.25rem;flex-wrap:wrap;}
+.ov-card-title{font-size:16px;font-weight:500;letter-spacing:-.2px;}
+.ov-card-meta{font-size:12px;color:var(--text3);margin-top:4px;display:flex;gap:12px;flex-wrap:wrap;}
+.ov-badge{font-size:10px;padding:2px 8px;border-radius:2px;font-weight:400;flex-shrink:0;}
+.ov-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-bottom:1.25rem;}
+.ov-stat{background:var(--bg3);border-radius:4px;padding:10px 12px;border:.5px solid var(--border);}
+.ov-stat-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;}
+.ov-stat-value{font-size:16px;font-weight:500;margin-top:3px;}
+.ov-charts{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:560px){.ov-charts{grid-template-columns:1fr;}}
+.ov-chart-box{background:var(--bg3);border:.5px solid var(--border);border-radius:4px;padding:12px;}
+.ov-chart-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}"""
+
+HTML_BODY = """
+<div class="dp-header">
+  <div><div class="dp-title">Finishers Monde - 10K &middot; 21K &middot; 42K</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2023-2026</div></div>
+  <div class="dp-updated">Genere le {now}</div>
+</div>
+<div class="tabs">
+  <div class="tab" onclick="switchTab('overview')">Vue d'ensemble</div>
+  <div class="tab active" onclick="switchTab('trends')">Evolution</div>
+  <div class="tab" onclick="switchTab('biggest')">Top evenements</div>
+  <div class="tab" onclick="switchTab('temps')">Temps moyen</div>
+  <div class="tab" onclick="switchTab('data')">Tableau</div>
+</div>
+<div id="panel-overview" class="panel">
+  <div class="ov-search-wrap"><span class="ov-search-icon">&#x2315;</span>
+    <input type="text" id="ov-search" placeholder="Rechercher un evenement..." oninput="ovSearch()" autocomplete="off">
+  </div>
+  <div id="ov-results" class="ov-results"><div class="ov-placeholder">Tapez le nom d'un evenement pour commencer</div></div>
+  <div id="ov-card-wrap"></div>
+</div>
+<div id="panel-trends" class="panel active">
+  <div class="controls">
+    <div class="ctrl-group"><span class="ctrl-label">Distance</span>
+      <select id="dist-trends" onchange="updateTrends()">
+        <option value="ALL">Toutes distances</option>
+        <option value="MARATHON">Marathon</option><option value="SEMI">Semi-marathon</option><option value="10KM">10 km</option>
+      </select>
+    </div>
+    <div class="ctrl-group"><span class="ctrl-label">Top evenements</span>
+      <select id="topn-trends" onchange="updateTrends()">
+        <option value="8">Top 8</option><option value="12">Top 12</option><option value="16">Top 16</option><option value="20">Top 20</option>
+      </select>
+    </div>
+  </div>
+  <div class="section-title">Evolution par evenement 2023-2025</div>
+  <div class="legend">
+    <span class="leg-item"><span class="leg-dot" style="background:#5C00D4"></span>Mondial</span>
+    <span class="leg-item"><span class="leg-dot" style="background:#FCDB00"></span>Evenements ASO</span>
+  </div>
+  <div class="chart-wrap" style="height:320px;"><canvas id="chart-trends"></canvas></div>
+</div>
+<div id="panel-biggest" class="panel">
+  <div class="controls">
+    <div class="ctrl-group"><span class="ctrl-label">Top N</span>
+      <select id="topn-biggest" onchange="updateBiggest()">
+        <option value="10">Top 10</option><option value="15">Top 15</option><option value="20">Top 20</option><option value="999">Tous</option>
+      </select>
+    </div>
+    <div class="ctrl-group"><span class="ctrl-label">Annee</span>
+      <select id="year-biggest" onchange="updateBiggest()">
+        <option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option>
+      </select>
+    </div>
+  </div>
+  <div class="section-title">Top evenements par nombre de finishers</div>
+  <div class="legend">
+    <span class="leg-item"><span class="leg-dot" style="background:#5C00D4"></span>Mondial</span>
+    <span class="leg-item"><span class="leg-dot" style="background:#FCDB00"></span>Evenements ASO</span>
+  </div>
+  <div class="chart-wrap" id="biggest-wrap" style="height:300px;"><canvas id="chart-biggest"></canvas></div>
+</div>
+<div id="panel-temps" class="panel">
+  <div class="controls">
+    <div class="ctrl-group"><span class="ctrl-label">Distance</span>
+      <select id="dist-temps" onchange="updateTemps()">
+        <option value="MARATHON">Marathon</option><option value="SEMI">Semi-marathon</option>
+      </select>
+    </div>
+    <div class="ctrl-group"><span class="ctrl-label">Annee</span>
+      <select id="year-temps" onchange="updateTemps()">
+        <option value="2025">2025</option><option value="2024">2024</option><option value="2026">2026</option>
+      </select>
+    </div>
+    <div class="ctrl-group"><span class="ctrl-label">Tri</span>
+      <select id="sort-temps" onchange="updateTemps()">
+        <option value="avg">Temps moyen (croissant)</option><option value="finishers">Finishers (decroissant)</option>
+      </select>
+    </div>
+    <div class="ctrl-group"><span class="ctrl-label">Top N</span>
+      <select id="topn-temps" onchange="updateTemps()">
+        <option value="15">Top 15</option><option value="25">Top 25</option><option value="999">Tous</option>
+      </select>
+    </div>
+  </div>
+  <div class="metrics" id="metrics-temps"></div>
+  <div class="section-title">Temps moyen par course</div>
+  <div class="legend">
+    <span class="leg-item"><span class="leg-dot" style="background:#5C00D4"></span>Mondial</span>
+    <span class="leg-item"><span class="leg-dot" style="background:#FCDB00"></span>Evenements ASO</span>
+  </div>
+  <div class="time-bar-wrap" id="time-bars"></div>
+  <div class="section-title" style="margin-top:.5rem">Comparaison graphique (minutes)</div>
+  <div class="chart-wrap" id="chart-temps-wrap" style="height:280px;"><canvas id="chart-temps"></canvas></div>
+</div>
+<div id="panel-data" class="panel">
+  <div class="controls">
+    <div class="search-wrap"><span class="search-icon">&#x2315;</span>
+      <input type="text" id="search-data" placeholder="Rechercher course, ville..." oninput="filterTable()">
+    </div>
+    <div class="ctrl-group"><span class="ctrl-label">Distance</span>
+      <select id="dist-data" onchange="filterTable()">
+        <option value="ALL">Toutes</option><option value="MARATHON">Marathon</option><option value="SEMI">Semi</option><option value="10KM">10 km</option>
+      </select>
+    </div>
+    <div class="ctrl-group"><span class="ctrl-label">Mois</span>
+      <select id="month-data" onchange="filterTable()">
+        <option value="ALL">Tous</option>
+        <option>Janvier</option><option>Fevrier</option><option>Mars</option><option>Avril</option>
+        <option>Mai</option><option>Juin</option><option>Juillet</option><option>Aout</option>
+        <option>Septembre</option><option>Octobre</option><option>Novembre</option><option>Decembre</option>
+      </select>
+    </div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Mois</th><th>Ville</th><th>Distance</th><th>Epreuve</th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>Tendance</th></tr></thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </div>
+  <div class="count" id="table-count"></div>
+</div>"""
+
+
+def generate_html(finishers, biggest, md, sd, tdb):
+    now = datetime.datetime.now().strftime("%d/%m/%Y a %H:%M")
+    tmjs = {str(yr): [{"race": r["race"], "city": r["city"], "finishers": r["finishers"] or 0, "avg": r["avg"] or ""}
+                       for r in rows if r.get("avg")] for yr, rows in md.items()}
+    tsjs = [{"race": r["race"], "city": r["city"], "finishers": r["finishers"] or 0, "avg": r["avg"] or ""}
+            for r in sd if r.get("avg")]
+    tdbjs = {k: {"men": v["men"], "women": v["women"], "avg": v["avg"], "yr": v["yr"]} for k, v in tdb.items()}
+    js_data = ("const RAW=" + j(finishers) + ";\nconst BIGGEST=" + j(biggest) + ";\n"
+               "const TEMPS_MARATHON=" + j(tmjs) + ";\nconst TEMPS_SEMI_2025=" + j(tsjs) + ";\n"
+               "const TIMES_DB=" + j(tdbjs) + ";\nconst ASO_KEYWORDS=" + j(ASO_KEYWORDS) + ";\n")
+    body = HTML_BODY.format(now=now)
+    return f"""<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DataPace - Finishers Monde</title>
+<style>{CSS}</style>
+</head>
+<body>
+{body}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+{js_data}
+{JS_LOGIC}
+</script>
+</body>
+</html>"""
+
+
+def main():
+    print("\nDataPace Dashboard Generator")
+    print("-" * 40)
+    check_files()
+    print("\nLecture des donnees...")
+    finishers = load_finishers()
+    biggest = load_biggest()
+    md = {yr: load_marathon(yr) for yr in [2024, 2025, 2026]}
+    sd = load_semi()
+    tdb = build_times_db(md, sd)
+    print("\nGeneration du HTML...")
+    html = generate_html(finishers, biggest, md, sd, tdb)
+    OUTPUT_FILE.write_text(html, encoding="utf-8")
+    print(f"\nDashboard genere : {OUTPUT_FILE.name}  ({OUTPUT_FILE.stat().st_size // 1024} Ko)")
+    print("Ouvre ce fichier dans le navigateur via http://localhost:8000/datapace_dashboard.html\n")
+
+
+if __name__ == "__main__":
+    main()
