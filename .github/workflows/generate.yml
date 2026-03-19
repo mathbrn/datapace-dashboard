@@ -2,8 +2,8 @@ name: Générer le dashboard DataPace
 
 on:
   push:
-    paths:
-      - '**.xlsx'        # Se déclenche uniquement si un fichier Excel change
+    branches:
+      - main             # Se déclenche sur tout push vers main
   workflow_dispatch:     # Permet aussi de lancer manuellement depuis GitHub
 
 jobs:
