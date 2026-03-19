@@ -324,17 +324,24 @@ function updateTrends(){
   }
 }
 
+function initBiggestYears(){
+  var allYears=[];
+  BIGGEST.forEach(function(r){Object.keys(r.hist||{}).forEach(function(y){var yi=parseInt(y);if(allYears.indexOf(yi)<0)allYears.push(yi);});});
+  allYears.sort(function(a,b){return b-a;});
+  var sel=document.getElementById('year-biggest');
+  sel.innerHTML='';
+  allYears.forEach(function(y){var o=document.createElement('option');o.value=y;o.textContent=y;sel.appendChild(o);});
+}
+
 function updateBiggest(){
   var n=parseInt(document.getElementById('topn-biggest').value);
-  var yr=document.getElementById('year-biggest').value;
-  var ymap={'2025':'y5','2024':'y4','2023':'y3'};
-  var k=ymap[yr];
-  var sorted=BIGGEST.filter(function(r){return r[k]&&!isNaN(r[k]);}).sort(function(a,b){return b[k]-a[k];}).slice(0,n);
+  var yr=parseInt(document.getElementById('year-biggest').value);
+  var sorted=BIGGEST.filter(function(r){var v=(r.hist||{})[yr];return v&&!isNaN(v);}).sort(function(a,b){return((b.hist||{})[yr]||0)-((a.hist||{})[yr]||0);}).slice(0,n);
   document.getElementById('biggest-wrap').style.height=Math.max(300,n*44+80)+'px';
   if(cB)cB.destroy();
   var bigCfg={
     type:'bar',
-    data:{labels:sorted.map(function(r){return r.r;}),datasets:[{data:sorted.map(function(r){return r[k];}),backgroundColor:sorted.map(function(r){return col(r.r)+'CC';}),borderRadius:2,borderSkipped:false}]},
+    data:{labels:sorted.map(function(r){return r.r;}),datasets:[{data:sorted.map(function(r){return(r.hist||{})[yr];}),backgroundColor:sorted.map(function(r){return col(r.r)+'CC';}),borderRadius:2,borderSkipped:false}]},
     options:{responsive:true,maintainAspectRatio:false,
       plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{title:function(items){return sorted[items[0].dataIndex].r;},label:function(ctx){return' '+fmtFull(ctx.parsed.y)+' finishers';}}}},
       scales:{x:{grid:{display:false},ticks:{color:'#555',font:{size:10},maxRotation:45,autoSkip:false},border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmt(v);}},border:{color:'#ffffff08'}}}
@@ -411,18 +418,22 @@ function filterTable(){
   });
   var html='';
   f.forEach(function(r){
-    var vals=[r.y3,r.y4,r.y5,r.y6].filter(function(v){return v&&!isNaN(v);});
-    var t=vals.length>=2?delta(vals[0],vals[vals.length-1]):null;
+    var hkeys=Object.keys(r.hist||{}).map(Number).sort(function(a,b){return a-b;});
+    var hvals=hkeys.map(function(y){return(r.hist||{})[y];}).filter(function(v){return v&&!isNaN(v);});
+    var t=hvals.length>=2?delta(hvals[0],hvals[hvals.length-1]):null;
+    var firstYr=hkeys.length>=2?hkeys[0]:null;
+    var lastYr=hkeys.length>=2?hkeys[hkeys.length-1]:null;
     var tc=t===null?'#555':t>=0?'#2DBF7E':'#FF4A6B';
     var aso=isAso(r.r);
     var bl=r.d==='MARATHON'?'Marathon':r.d==='SEMI'?'Semi':'10 km';
     var tStr=t===null?'-':(t>=0?'+':'')+t.toFixed(1)+'%';
+    var tSub=firstYr&&lastYr&&(lastYr-firstYr>3)?'<div style="font-size:9px;color:#555;margin-top:1px">'+firstYr+'\u2192'+lastYr+'</div>':'';
     var raceColor=col(r.r)==='#FCDB00'?'#FCDB00':'var(--text2)';
     html+='<tr><td>'+r.p+'</td><td>'+r.c+'</td>'
       +'<td><span class="badge '+(aso?'badge-aso':'badge-world')+'">'+bl+' - '+(aso?'ASO':'Monde')+'</span></td>'
       +'<td style="max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:'+raceColor+'">'+r.r+'</td>'
       +'<td>'+fmtFull(r.y3)+'</td><td>'+fmtFull(r.y4)+'</td><td>'+fmtFull(r.y5)+'</td><td>'+fmtFull(r.y6)+'</td>'
-      +'<td style="color:'+tc+'">'+tStr+'</td></tr>';
+      +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
   });
   document.getElementById('table-body').innerHTML=html;
   var cnt=f.length;
@@ -430,6 +441,7 @@ function filterTable(){
 }
 
 updateTrends();
+initBiggestYears();
 
 // ── COMPARE ──────────────────────────────────────────────────────────────────
 var cmpSelectedA = null;
@@ -851,9 +863,7 @@ HTML_BODY = """
       </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Annee</span>
-      <select id="year-biggest" onchange="updateBiggest()">
-        <option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option>
-      </select>
+      <select id="year-biggest" onchange="updateBiggest()"></select>
     </div>
   </div>
   <div class="section-title">Top evenements par nombre de finishers</div>
