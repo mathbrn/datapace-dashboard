@@ -27,7 +27,7 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).parent
 
 FILES = {
-    "finishers":     SCRIPT_DIR / "Suivi_Finishers_Monde_10k_-_21k_-_42k.xlsx",
+    "finishers":     SCRIPT_DIR / "Suivi_Finishers_Monde_10k_-_21k_-_42k_HISTORIQUE.xlsx",
     "marathon_2024": SCRIPT_DIR / "Temps_moyen_par_marathon_2024.xlsx",
     "marathon_2025": SCRIPT_DIR / "Temps_moyen_par_marathon_2025.xlsx",
     "marathon_2026": SCRIPT_DIR / "Temps_moyen_par_marathon_2026.xlsx",
