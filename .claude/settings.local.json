@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python generate_dashboard.py)",
+      "WebFetch(domain:mathbrn.github.io)",
+      "Bash(gh run:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(python -c \":*)",
+      "Bash(python inject_historique.py)"
+    ]
+  }
+}
