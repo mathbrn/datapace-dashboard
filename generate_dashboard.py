@@ -168,6 +168,7 @@ def build_times_db(md, sd):
 
 JS_LOGIC = '''function isAso(r){var l=r.toLowerCase();return ASO_KEYWORDS.some(function(k){return l.indexOf(k)>=0;});}
 function col(r){return isAso(r)?'#FCDB00':'#5C00D4';}
+function colDist(d){return d==='10KM'?'#5CDFA0':d==='SEMI'?'#79AAFF':'#9B6FFF';}
 function toMin(t){if(!t)return null;var p=String(t).split(':');if(p.length===3)return parseInt(p[0])*60+parseInt(p[1])+parseInt(p[2])/60;return null;}
 function fmt(n){if(!n||isNaN(n))return'\u2014';return n>=1000?(n/1000).toFixed(1)+'k':n.toString();}
 function fmtFull(n){if(!n||isNaN(n))return'\u2014';return Math.round(n).toLocaleString('fr-FR');}
@@ -311,13 +312,13 @@ function updateTrends(){
     var allYears=[];
     sorted.forEach(function(r){Object.keys(r.hist||{}).map(Number).forEach(function(y){if(allYears.indexOf(y)<0)allYears.push(y);});});
     allYears.sort(function(a,b){return a-b;});
-    var datasets=sorted.map(function(r){return{label:r.r,data:allYears.map(function(yr){return(r.hist||{})[yr]||null;}),borderColor:col(r.r),backgroundColor:'transparent',tension:0.35,fill:false,pointRadius:4,pointHoverRadius:7,spanGaps:true,borderWidth:2,pointBackgroundColor:col(r.r)};});
+    var datasets=sorted.map(function(r){return{label:r.r,data:allYears.map(function(yr){return(r.hist||{})[yr]||null;}),borderColor:colDist(r.d),backgroundColor:'transparent',tension:0.35,fill:false,pointRadius:4,pointHoverRadius:7,spanGaps:true,borderWidth:2,pointBackgroundColor:colDist(r.d)};});
     if(lbl)lbl.textContent='Tendances historiques - grands evenements';
     var trendCfg={type:'line',data:{labels:allYears.map(String),datasets:datasets},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'nearest',intersect:true},plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{title:function(items){return items.length?items[0].dataset.label:'';},label:function(ctx){return' '+fmtFull(ctx.parsed.y)+' finishers';}}}},scales:{x:{grid:{color:GRID},ticks:TICK,border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmt(v);}},border:{color:'#ffffff08'}}}}};
     cT=new Chart(document.getElementById('chart-trends'),trendCfg);
   }else{
     var sorted=src.filter(function(r){return r.y5&&!isNaN(r.y5);}).sort(function(a,b){return(b.y5||0)-(a.y5||0);}).slice(0,topn);
-    var datasets=sorted.map(function(r){return{label:r.r,data:[r.y3||null,r.y4||null,r.y5||null],borderColor:col(r.r),backgroundColor:'transparent',tension:0.35,fill:false,pointRadius:3,pointHoverRadius:6,spanGaps:true,borderWidth:1.5,pointBackgroundColor:col(r.r)};});
+    var datasets=sorted.map(function(r){return{label:r.r,data:[r.y3||null,r.y4||null,r.y5||null],borderColor:colDist(r.d),backgroundColor:'transparent',tension:0.35,fill:false,pointRadius:3,pointHoverRadius:6,spanGaps:true,borderWidth:1.5,pointBackgroundColor:colDist(r.d)};});
     if(lbl)lbl.textContent='Evolution par evenement 2023-2025';
     var trendCfg={type:'line',data:{labels:['2023','2024','2025'],datasets:datasets},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'nearest',intersect:true},plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{title:function(items){return items.length?items[0].dataset.label:'';},label:function(ctx){return' '+fmtFull(ctx.parsed.y)+' finishers';}}}},scales:{x:{grid:{color:GRID},ticks:TICK,border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmt(v);}},border:{color:'#ffffff08'}}}}};
     cT=new Chart(document.getElementById('chart-trends'),trendCfg);
@@ -911,8 +912,9 @@ HTML_BODY = """
   </div>
   <div class="section-title" id="trends-section-lbl">Evolution par evenement 2023-2025</div>
   <div class="legend">
-    <span class="leg-item"><span class="leg-dot" style="background:#5C00D4"></span>Mondial</span>
-    <span class="leg-item"><span class="leg-dot" style="background:#FCDB00"></span>Evenements ASO</span>
+    <span class="leg-item"><span class="leg-dot" style="background:#9B6FFF"></span>Marathon</span>
+    <span class="leg-item"><span class="leg-dot" style="background:#79AAFF"></span>Semi-marathon</span>
+    <span class="leg-item"><span class="leg-dot" style="background:#5CDFA0"></span>10 km</span>
   </div>
   <div class="chart-wrap" style="height:320px;"><canvas id="chart-trends"></canvas></div>
 </div>
