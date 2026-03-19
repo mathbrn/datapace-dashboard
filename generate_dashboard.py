@@ -27,7 +27,7 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).parent
 
 FILES = {
-    "finishers":     SCRIPT_DIR / "Suivi_Finishers_Monde_10k_-_21k_-_42k.xlsx",
+    "finishers":     SCRIPT_DIR / "Suivi_Finishers_Monde_10k_-_21k_-_42k_HISTORIQUE.xlsx",
     "marathon_2024": SCRIPT_DIR / "Temps_moyen_par_marathon_2024.xlsx",
     "marathon_2025": SCRIPT_DIR / "Temps_moyen_par_marathon_2025.xlsx",
     "marathon_2026": SCRIPT_DIR / "Temps_moyen_par_marathon_2026.xlsx",
@@ -70,6 +70,7 @@ def check_files():
 
 def load_finishers():
     df = pd.read_excel(FILES["finishers"], sheet_name="ALL")
+    year_cols = sorted([c for c in df.columns if isinstance(c, int) and 2000 <= c <= 2030])
     rows = []
     for _, r in df.iterrows():
         race = str(r.get("Race", "")).strip()
@@ -79,15 +80,18 @@ def load_finishers():
             if v is None or (isinstance(v, float) and pd.isna(v)): return None
             try: iv = int(float(v)); return iv if iv > 0 else None
             except: return None
+        hist = {yr: v for yr in year_cols if (v := gv(yr)) is not None}
         rows.append({"p": str(r.get("Période", "")).strip(), "c": str(r.get("City", "")).strip(),
                      "d": str(r.get("Distance", "")).strip(), "r": race,
-                     "y3": gv(2023), "y4": gv(2024), "y5": gv(2025), "y6": gv(2026)})
+                     "y3": gv(2023), "y4": gv(2024), "y5": gv(2025), "y6": gv(2026),
+                     "hist": hist})
     print(f"  Finishers  : {len(rows)} courses")
     return rows
 
 
 def load_biggest():
     df = pd.read_excel(FILES["finishers"], sheet_name="BIGGEST EVENTS")
+    year_cols = sorted([c for c in df.columns if isinstance(c, int) and 2000 <= c <= 2030])
     rows = []
     for _, r in df.iterrows():
         race = str(r.get("Race", "")).strip()
@@ -97,8 +101,10 @@ def load_biggest():
             if v is None or (isinstance(v, float) and pd.isna(v)): return None
             try: iv = int(float(v)); return iv if iv > 0 else None
             except: return None
+        hist = {yr: v for yr in year_cols if (v := gv(yr)) is not None}
         rows.append({"c": str(r.get("City", "")).strip(), "r": race,
-                     "y3": gv(2023), "y4": gv(2024), "y5": gv(2025), "y6": gv(2026)})
+                     "y3": gv(2023), "y4": gv(2024), "y5": gv(2025), "y6": gv(2026),
+                     "hist": hist})
     print(f"  Biggest    : {len(rows)} courses")
     return rows
 
@@ -227,7 +233,9 @@ function ovSelect(idx){
   var ev=RAW[idx];
   var ac=col(ev.r),aso=isAso(ev.r);
   var dl=ev.d==='MARATHON'?'Marathon':ev.d==='SEMI'?'Semi-marathon':'10 km';
-  var finHistory=[{yr:2023,v:ev.y3},{yr:2024,v:ev.y4},{yr:2025,v:ev.y5},{yr:2026,v:ev.y6}].filter(function(e){return e.v&&!isNaN(e.v);});
+  var histKeys=Object.keys(ev.hist||{}).map(Number).sort(function(a,b){return a-b;});
+  var finHistory=histKeys.map(function(yr){return{yr:yr,v:(ev.hist||{})[yr]};}).filter(function(e){return e.v&&!isNaN(e.v);});
+  if(!finHistory.length)finHistory=[{yr:2023,v:ev.y3},{yr:2024,v:ev.y4},{yr:2025,v:ev.y5},{yr:2026,v:ev.y6}].filter(function(e){return e.v&&!isNaN(e.v);});
   var lastEd=finHistory[finHistory.length-1];
   var td=getTimeData(ev.r);
   var finStr=lastEd?fmtFull(lastEd.v):'-';
@@ -289,19 +297,31 @@ function ovSelect(idx){
 function updateTrends(){
   var dist=document.getElementById('dist-trends').value;
   var topn=parseInt(document.getElementById('topn-trends').value);
+  var periode=document.getElementById('periode-trends').value;
   var src=dist==='ALL'?RAW:RAW.filter(function(r){return r.d===dist;});
-  var sorted=src.filter(function(r){return r.y5&&!isNaN(r.y5);}).sort(function(a,b){return(b.y5||0)-(a.y5||0);}).slice(0,topn);
-  var datasets=sorted.map(function(r){return{label:r.r,data:[r.y3||null,r.y4||null,r.y5||null],borderColor:col(r.r),backgroundColor:'transparent',tension:0.35,fill:false,pointRadius:3,pointHoverRadius:6,spanGaps:true,borderWidth:1.5,pointBackgroundColor:col(r.r)};});
   if(cT)cT.destroy();
-  var trendCfg={
-    type:'line',
-    data:{labels:['2023','2024','2025'],datasets:datasets},
-    options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'nearest',intersect:true},
-      plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{title:function(items){return items.length?items[0].dataset.label:'';},label:function(ctx){return' '+fmtFull(ctx.parsed.y)+' finishers';}}}},
-      scales:{x:{grid:{color:GRID},ticks:TICK,border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmt(v);}},border:{color:'#ffffff08'}}}
-    }
-  };
-  cT=new Chart(document.getElementById('chart-trends'),trendCfg);
+  var lbl=document.getElementById('trends-section-lbl');
+  if(periode==='hist'){
+    var histSrc=src.filter(function(r){return r.hist&&Object.keys(r.hist).some(function(y){return parseInt(y)<2023;});});
+    var sorted=histSrc.slice().sort(function(a,b){
+      var ka=Object.keys(a.hist||{}).map(Number).sort(function(x,y){return y-x;});
+      var kb=Object.keys(b.hist||{}).map(Number).sort(function(x,y){return y-x;});
+      return((a.hist||{})[ka[0]]||0)<((b.hist||{})[kb[0]]||0)?1:-1;
+    }).slice(0,topn);
+    var allYears=[];
+    sorted.forEach(function(r){Object.keys(r.hist||{}).map(Number).forEach(function(y){if(allYears.indexOf(y)<0)allYears.push(y);});});
+    allYears.sort(function(a,b){return a-b;});
+    var datasets=sorted.map(function(r){return{label:r.r,data:allYears.map(function(yr){return(r.hist||{})[yr]||null;}),borderColor:col(r.r),backgroundColor:'transparent',tension:0.35,fill:false,pointRadius:4,pointHoverRadius:7,spanGaps:true,borderWidth:2,pointBackgroundColor:col(r.r)};});
+    if(lbl)lbl.textContent='Tendances historiques - grands evenements';
+    var trendCfg={type:'line',data:{labels:allYears.map(String),datasets:datasets},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'nearest',intersect:true},plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{title:function(items){return items.length?items[0].dataset.label:'';},label:function(ctx){return' '+fmtFull(ctx.parsed.y)+' finishers';}}}},scales:{x:{grid:{color:GRID},ticks:TICK,border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmt(v);}},border:{color:'#ffffff08'}}}}};
+    cT=new Chart(document.getElementById('chart-trends'),trendCfg);
+  }else{
+    var sorted=src.filter(function(r){return r.y5&&!isNaN(r.y5);}).sort(function(a,b){return(b.y5||0)-(a.y5||0);}).slice(0,topn);
+    var datasets=sorted.map(function(r){return{label:r.r,data:[r.y3||null,r.y4||null,r.y5||null],borderColor:col(r.r),backgroundColor:'transparent',tension:0.35,fill:false,pointRadius:3,pointHoverRadius:6,spanGaps:true,borderWidth:1.5,pointBackgroundColor:col(r.r)};});
+    if(lbl)lbl.textContent='Evolution par evenement 2023-2025';
+    var trendCfg={type:'line',data:{labels:['2023','2024','2025'],datasets:datasets},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'nearest',intersect:true},plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{title:function(items){return items.length?items[0].dataset.label:'';},label:function(ctx){return' '+fmtFull(ctx.parsed.y)+' finishers';}}}},scales:{x:{grid:{color:GRID},ticks:TICK,border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmt(v);}},border:{color:'#ffffff08'}}}}};
+    cT=new Chart(document.getElementById('chart-trends'),trendCfg);
+  }
 }
 
 function updateBiggest(){
@@ -500,20 +520,20 @@ function renderCompare(){
   var fYrA = a.y6?2026:a.y5?2025:a.y4?2024:2023;
   var fYrB = b.y6?2026:b.y5?2025:b.y4?2024:2023;
 
-  // Evolution 2023->last
+  // Evolution premiere annee disponible -> derniere
   var evoA = null, evoB = null;
   var evoStrA = '-', evoStrB = '-';
   var evoSubA = '', evoSubB = '';
-  if(a.y3 && fA){
-    evoA = ((fA - a.y3)/a.y3*100);
-    evoStrA = (evoA>=0?'+':'')+evoA.toFixed(1)+'%';
-    evoSubA = fmtFull(a.y3)+' - '+fmtFull(fA);
-  }
-  if(b.y3 && fB){
-    evoB = ((fB - b.y3)/b.y3*100);
-    evoStrB = (evoB>=0?'+':'')+evoB.toFixed(1)+'%';
-    evoSubB = fmtFull(b.y3)+' - '+fmtFull(fB);
-  }
+  var haKeys=Object.keys(a.hist||{}).map(Number).sort(function(x,y){return x-y;});
+  var haFirst=haKeys.length?haKeys[0]:null;
+  var haFirstV=haFirst?(a.hist||{})[haFirst]:null;
+  if(haFirstV&&fA){evoA=((fA-haFirstV)/haFirstV*100);evoStrA=(evoA>=0?'+':'')+evoA.toFixed(1)+'%';evoSubA=fmtFull(haFirstV)+' ('+haFirst+') \u2192 '+fmtFull(fA)+' ('+fYrA+')';}
+  else if(a.y3&&fA){evoA=((fA-a.y3)/a.y3*100);evoStrA=(evoA>=0?'+':'')+evoA.toFixed(1)+'%';evoSubA=fmtFull(a.y3)+' \u2192 '+fmtFull(fA);}
+  var hbKeys=Object.keys(b.hist||{}).map(Number).sort(function(x,y){return x-y;});
+  var hbFirst=hbKeys.length?hbKeys[0]:null;
+  var hbFirstV=hbFirst?(b.hist||{})[hbFirst]:null;
+  if(hbFirstV&&fB){evoB=((fB-hbFirstV)/hbFirstV*100);evoStrB=(evoB>=0?'+':'')+evoB.toFixed(1)+'%';evoSubB=fmtFull(hbFirstV)+' ('+hbFirst+') \u2192 '+fmtFull(fB)+' ('+fYrB+')';}
+  else if(b.y3&&fB){evoB=((fB-b.y3)/b.y3*100);evoStrB=(evoB>=0?'+':'')+evoB.toFixed(1)+'%';evoSubB=fmtFull(b.y3)+' \u2192 '+fmtFull(fB);}
 
   var distA = a.d==='MARATHON'?'Marathon':a.d==='SEMI'?'Semi-marathon':'10 km';
   var distB = b.d==='MARATHON'?'Marathon':b.d==='SEMI'?'Semi-marathon':'10 km';
@@ -762,7 +782,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 
 HTML_BODY = """
 <div class="dp-header">
-  <div><div class="dp-title">Finishers Monde - 10K &middot; 21K &middot; 42K</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2023-2026</div></div>
+  <div><div class="dp-title">Finishers Monde - 10K &middot; 21K &middot; 42K</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
   <div class="dp-updated">Genere le {now}</div>
 </div>
 <div class="tabs">
@@ -804,13 +824,19 @@ HTML_BODY = """
         <option value="MARATHON">Marathon</option><option value="SEMI">Semi-marathon</option><option value="10KM">10 km</option>
       </select>
     </div>
+    <div class="ctrl-group"><span class="ctrl-label">Periode</span>
+      <select id="periode-trends" onchange="updateTrends()">
+        <option value="recent">Recent (2023-2025)</option>
+        <option value="hist">Historique (2007-2026)</option>
+      </select>
+    </div>
     <div class="ctrl-group"><span class="ctrl-label">Top evenements</span>
       <select id="topn-trends" onchange="updateTrends()">
         <option value="8">Top 8</option><option value="12">Top 12</option><option value="16">Top 16</option><option value="20">Top 20</option>
       </select>
     </div>
   </div>
-  <div class="section-title">Evolution par evenement 2023-2025</div>
+  <div class="section-title" id="trends-section-lbl">Evolution par evenement 2023-2025</div>
   <div class="legend">
     <span class="leg-item"><span class="leg-dot" style="background:#5C00D4"></span>Mondial</span>
     <span class="leg-item"><span class="leg-dot" style="background:#FCDB00"></span>Evenements ASO</span>
