@@ -168,7 +168,7 @@ def build_times_db(md, sd):
 
 JS_LOGIC = '''function isAso(r){var l=r.toLowerCase();return ASO_KEYWORDS.some(function(k){return l.indexOf(k)>=0;});}
 function col(r){return isAso(r)?'#FCDB00':'#5C00D4';}
-function colDist(r){return isAso(r.r)?'#FCDB00':r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#79AAFF':'#9B6FFF';}
+function colDist(r){return isAso(r.r)?'#FCDB00':r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':'#9B6FFF';}
 function toMin(t){if(!t)return null;var p=String(t).split(':');if(p.length===3)return parseInt(p[0])*60+parseInt(p[1])+parseInt(p[2])/60;return null;}
 function fmt(n){if(!n||isNaN(n))return'\u2014';return n>=1000?(n/1000).toFixed(1)+'k':n.toString();}
 function fmtFull(n){if(!n||isNaN(n))return'\u2014';return Math.round(n).toLocaleString('fr-FR');}
@@ -913,7 +913,7 @@ HTML_BODY = """
   <div class="section-title" id="trends-section-lbl">Evolution par evenement 2023-2025</div>
   <div class="legend">
     <span class="leg-item"><span class="leg-dot" style="background:#9B6FFF"></span>Marathon</span>
-    <span class="leg-item"><span class="leg-dot" style="background:#79AAFF"></span>Semi-marathon</span>
+    <span class="leg-item"><span class="leg-dot" style="background:#FF8A50"></span>Semi-marathon</span>
     <span class="leg-item"><span class="leg-dot" style="background:#5CDFA0"></span>10 km</span>
     <span class="leg-item"><span class="leg-dot" style="background:#FCDB00"></span>Evenements ASO</span>
   </div>
