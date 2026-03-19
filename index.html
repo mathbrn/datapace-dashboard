@@ -75,16 +75,47 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 .ov-charts{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
 @media(max-width:560px){.ov-charts{grid-template-columns:1fr;}}
 .ov-chart-box{background:var(--bg3);border:.5px solid var(--border);border-radius:4px;padding:12px;}
-.ov-chart-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}</style>
+.ov-chart-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.cmp-search-row{display:grid;grid-template-columns:1fr 48px 1fr;gap:12px;align-items:flex-start;margin-bottom:1.5rem;}
+.cmp-vs{text-align:center;font-size:11px;font-weight:500;color:var(--text3);letter-spacing:.1em;padding-top:8px;}
+.cmp-search-box{position:relative;}
+.cmp-input{width:100%;font-size:12px;padding:7px 10px 7px 28px;border:.5px solid var(--border2);border-radius:4px;background:var(--bg2);color:var(--text);outline:none;}
+.cmp-input:focus{border-color:var(--purple);}
+.cmp-input::placeholder{color:var(--text3);}
+.cmp-search-icon{position:absolute;left:9px;top:9px;color:var(--text3);font-size:12px;pointer-events:none;z-index:1;}
+.cmp-dropdown{border:.5px solid var(--border2);border-radius:4px;background:var(--bg2);margin-top:4px;overflow:hidden;max-height:180px;overflow-y:auto;position:absolute;width:100%;z-index:10;}
+.cmp-drop-item{padding:7px 10px;font-size:12px;color:var(--text2);cursor:pointer;display:flex;align-items:center;gap:8px;border-bottom:.5px solid var(--border);}
+.cmp-drop-item:last-child{border-bottom:none;}
+.cmp-drop-item:hover{background:var(--bg3);color:var(--text);}
+.cmp-dist-pill{font-size:10px;padding:1px 6px;border-radius:2px;flex-shrink:0;}
+.cmp-wrap{border:.5px solid var(--border2);border-radius:6px;overflow:hidden;}
+.cmp-header{display:grid;grid-template-columns:1fr 160px 1fr;background:var(--bg2);}
+.cmp-header-cell{padding:14px 16px;}
+.cmp-header-cell.ctr{text-align:center;border-left:.5px solid var(--border);border-right:.5px solid var(--border);}
+.cmp-race-name{font-size:13px;font-weight:500;color:var(--text);line-height:1.3;}
+.cmp-race-meta{font-size:11px;color:var(--text3);margin-top:3px;}
+.cmp-row{display:grid;grid-template-columns:1fr 160px 1fr;border-top:.5px solid var(--border);}
+.cmp-row:hover .cmp-cell,.cmp-row:hover .cmp-mid{background:var(--bg3);}
+.cmp-cell{padding:12px 16px;display:flex;align-items:center;gap:6px;}
+.cmp-cell.r{justify-content:flex-end;}
+.cmp-mid{padding:12px 16px;display:flex;align-items:center;justify-content:center;border-left:.5px solid var(--border);border-right:.5px solid var(--border);background:var(--bg2);}
+.cmp-mid-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;text-align:center;}
+.cmp-val-win{font-size:16px;font-weight:500;color:#22C55E;}
+.cmp-val-lose{font-size:14px;font-weight:500;color:var(--text2);}
+.cmp-bar{height:2px;background:#22C55E;border-radius:1px;margin-top:3px;}
+.cmp-dot{width:5px;height:5px;border-radius:50%;background:#22C55E;flex-shrink:0;}
+.cmp-sub{font-size:11px;color:var(--text3);margin-top:2px;}
+.cmp-placeholder{color:var(--text3);font-size:12px;padding:2rem;text-align:center;border:.5px solid var(--border);border-radius:6px;}</style>
 </head>
 <body>
 
 <div class="dp-header">
   <div><div class="dp-title">Finishers Monde - 10K &middot; 21K &middot; 42K</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2023-2026</div></div>
-  <div class="dp-updated">Genere le 19/03/2026 a 06:43</div>
+  <div class="dp-updated">Genere le 19/03/2026 a 07:29</div>
 </div>
 <div class="tabs">
   <div class="tab" onclick="switchTab('overview')">Vue d'ensemble</div>
+  <div class="tab" onclick="switchTab('compare')">Comparer</div>
   <div class="tab active" onclick="switchTab('trends')">Evolution</div>
   <div class="tab" onclick="switchTab('biggest')">Top evenements</div>
   <div class="tab" onclick="switchTab('temps')">Temps moyen</div>
@@ -96,6 +127,22 @@ tr:hover td{background:var(--bg2);color:var(--text);}
   </div>
   <div id="ov-results" class="ov-results"><div class="ov-placeholder">Tapez le nom d'un evenement pour commencer</div></div>
   <div id="ov-card-wrap"></div>
+</div>
+<div id="panel-compare" class="panel">
+  <div class="cmp-search-row">
+    <div class="cmp-search-box">
+      <span class="cmp-search-icon">&#x2315;</span>
+      <input type="text" id="cmp-input-a" class="cmp-input" placeholder="Rechercher evenement A..." oninput="cmpSearch('a')" autocomplete="off">
+      <div id="cmp-drop-a" class="cmp-dropdown" style="display:none"></div>
+    </div>
+    <div class="cmp-vs">VS</div>
+    <div class="cmp-search-box">
+      <span class="cmp-search-icon">&#x2315;</span>
+      <input type="text" id="cmp-input-b" class="cmp-input" placeholder="Rechercher evenement B..." oninput="cmpSearch('b')" autocomplete="off">
+      <div id="cmp-drop-b" class="cmp-dropdown" style="display:none"></div>
+    </div>
+  </div>
+  <div id="cmp-result"></div>
 </div>
 <div id="panel-trends" class="panel active">
   <div class="controls">
@@ -238,7 +285,7 @@ function buildTimeHistory(rn){
 var cT=null,cB=null,cTm=null,ovChartF=null,ovChartT=null;
 
 function switchTab(name){
-  var names=['overview','trends','biggest','temps','data'];
+  var names=['overview','compare','trends','biggest','temps','data'];
   document.querySelectorAll('.tab').forEach(function(t,i){t.classList.toggle('active',names[i]===name);});
   document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active');});
   document.getElementById('panel-'+name).classList.add('active');
@@ -457,6 +504,250 @@ function filterTable(){
 }
 
 updateTrends();
+
+// ── COMPARE ──────────────────────────────────────────────────────────────────
+var cmpSelectedA = null;
+var cmpSelectedB = null;
+
+function cmpSearch(side){
+  var inputId='cmp-input-'+side;
+  var dropId='cmp-drop-'+side;
+  var q=document.getElementById(inputId).value.toLowerCase().trim();
+  var drop=document.getElementById(dropId);
+  if(q.length<2){drop.style.display='none';return;}
+  var matches=RAW.filter(function(r){return r.r.toLowerCase().indexOf(q)>=0||r.c.toLowerCase().indexOf(q)>=0;});
+  if(!matches.length){drop.style.display='none';return;}
+  var dc={MARATHON:'#5C00D418',SEMI:'#2563eb18','10KM':'#2DBF7E18'};
+  var dt={MARATHON:'#9B6FFF',SEMI:'#79AAFF','10KM':'#5CDFA0'};
+  drop.innerHTML='';
+  drop.style.display='block';
+  matches.slice(0,10).forEach(function(r){
+    var rawIdx=RAW.indexOf(r);
+    var dl=r.d==='10KM'?'10 km':r.d==='SEMI'?'Semi':'Marathon';
+    var item=document.createElement('div');
+    item.className='cmp-drop-item';
+    item.innerHTML='<span class="cmp-dist-pill" style="background:'+dc[r.d]+';color:'+dt[r.d]+'">'+dl+'</span>'+r.r;
+    item.addEventListener('click',(function(i,s){return function(){cmpSelect(i,s);};})(rawIdx,side));
+    drop.appendChild(item);
+  });
+}
+function cmpSelectEl(el){
+  cmpSelect(parseInt(el.dataset.idx), el.dataset.side);
+}
+function cmpSelect(idx, side){
+  var ev = RAW[idx];
+  if(side==='a'){
+    cmpSelectedA = ev;
+    document.getElementById('cmp-input-a').value = ev.r;
+  } else {
+    cmpSelectedB = ev;
+    document.getElementById('cmp-input-b').value = ev.r;
+  }
+  document.getElementById('cmp-drop-'+side).style.display='none';
+  if(cmpSelectedA && cmpSelectedB) renderCompare();
+}
+
+function cmpTimeToMin(t){
+  if(!t)return null;
+  var p=String(t).split(':');
+  if(p.length===3)return parseInt(p[0])*60+parseInt(p[1])+parseInt(p[2])/60;
+  return null;
+}
+
+function cmpMeasureText(text, fontStr){
+  var c=document.createElement('canvas');
+  var ctx=c.getContext('2d');
+  ctx.font=fontStr;
+  return ctx.measureText(text).width;
+}
+
+function cmpRow(labelA, labelB, catLabel, winA){
+  // winA: true=A wins, false=B wins, null=draw/no data
+  var cellA, cellB;
+  if(winA === true){
+    cellA = '<div class="cmp-cell"><div><div class="cmp-val-win" id="cmpbar-txt-'+catLabel.replace(/[^a-z]/gi,'')+'">'+labelA+'</div>'
+           +'<div class="cmp-bar" id="cmpbar-'+catLabel.replace(/[^a-z]/gi,'')+'"></div></div><div class="cmp-dot"></div></div>';
+    cellB = '<div class="cmp-cell r"><div style="text-align:right"><div class="cmp-val-lose">'+labelB+'</div></div></div>';
+  } else if(winA === false){
+    cellA = '<div class="cmp-cell"><div><div class="cmp-val-lose">'+labelA+'</div></div></div>';
+    cellB = '<div class="cmp-cell r"><div class="cmp-dot"></div><div><div class="cmp-val-win" id="cmpbar-txt-'+catLabel.replace(/[^a-z]/gi,'')+'">'+labelB+'</div>'
+           +'<div class="cmp-bar" id="cmpbar-'+catLabel.replace(/[^a-z]/gi,'')+'"></div></div></div>';
+  } else {
+    cellA = '<div class="cmp-cell"><div><div class="cmp-val-lose">'+labelA+'</div></div></div>';
+    cellB = '<div class="cmp-cell r"><div style="text-align:right"><div class="cmp-val-lose">'+labelB+'</div></div></div>';
+  }
+  var midLabel = catLabel.replace(/([A-Z])/g,' $1').trim();
+  return '<div class="cmp-row">'+cellA
+    +'<div class="cmp-mid"><div class="cmp-mid-label">'+catLabel+'</div></div>'
+    +cellB+'</div>';
+}
+
+function renderCompare(){
+  var a = cmpSelectedA;
+  var b = cmpSelectedB;
+  var tdA = getTimeData(a.r);
+  var tdB = getTimeData(b.r);
+
+  // Last finishers
+  var fA = a.y6||a.y5||a.y4||a.y3;
+  var fB = b.y6||b.y5||b.y4||b.y3;
+  var fYrA = a.y6?2026:a.y5?2025:a.y4?2024:2023;
+  var fYrB = b.y6?2026:b.y5?2025:b.y4?2024:2023;
+
+  // Evolution 2023->last
+  var evoA = null, evoB = null;
+  var evoStrA = '-', evoStrB = '-';
+  var evoSubA = '', evoSubB = '';
+  if(a.y3 && fA){
+    evoA = ((fA - a.y3)/a.y3*100);
+    evoStrA = (evoA>=0?'+':'')+evoA.toFixed(1)+'%';
+    evoSubA = fmtFull(a.y3)+' - '+fmtFull(fA);
+  }
+  if(b.y3 && fB){
+    evoB = ((fB - b.y3)/b.y3*100);
+    evoStrB = (evoB>=0?'+':'')+evoB.toFixed(1)+'%';
+    evoSubB = fmtFull(b.y3)+' - '+fmtFull(fB);
+  }
+
+  var distA = a.d==='MARATHON'?'Marathon':a.d==='SEMI'?'Semi-marathon':'10 km';
+  var distB = b.d==='MARATHON'?'Marathon':b.d==='SEMI'?'Semi-marathon':'10 km';
+  var asoA = isAso(a.r)?'ASO':'Mondial';
+  var asoB = isAso(b.r)?'ASO':'Mondial';
+
+  var avgA = tdA?tdA.avg:null;
+  var avgB = tdB?tdB.avg:null;
+  var menA = tdA?tdA.men:null;
+  var menB = tdB?tdB.men:null;
+  var wmA  = tdA?tdA.women:null;
+  var wmB  = tdB?tdB.women:null;
+
+  // Win conditions
+  var winFin   = fA&&fB ? (fA>fB?true:fA<fB?false:null) : null;
+  var winAvg   = avgA&&avgB ? (cmpTimeToMin(avgA)<cmpTimeToMin(avgB)?true:cmpTimeToMin(avgA)>cmpTimeToMin(avgB)?false:null) : null;
+  var winMen   = menA&&menB ? (cmpTimeToMin(menA)<cmpTimeToMin(menB)?true:cmpTimeToMin(menA)>cmpTimeToMin(menB)?false:null) : null;
+  var winWm    = wmA&&wmB  ? (cmpTimeToMin(wmA)<cmpTimeToMin(wmB)?true:cmpTimeToMin(wmA)>cmpTimeToMin(wmB)?false:null) : null;
+  var winEvo   = evoA!==null&&evoB!==null ? (evoA>evoB?true:evoA<evoB?false:null) : null;
+
+  var finLblA = fA?fmtFull(fA)+' ('+fYrA+')':'-';
+  var finLblB = fB?fmtFull(fB)+' ('+fYrB+')':'-';
+
+  var html = '<div class="cmp-wrap">'
+    +'<div class="cmp-header">'
+    +'<div class="cmp-header-cell"><div class="cmp-race-name">'+a.r+'</div><div class="cmp-race-meta">'+a.c+' &middot; '+a.p+' &middot; '+distA+'</div></div>'
+    +'<div class="cmp-header-cell ctr"><div class="cmp-mid-label">Categorie</div></div>'
+    +'<div class="cmp-header-cell" style="text-align:right"><div class="cmp-race-name">'+b.r+'</div><div class="cmp-race-meta">'+b.c+' &middot; '+b.p+' &middot; '+distB+'</div></div>'
+    +'</div>';
+
+  // Finishers row
+  html += buildCmpRow(finLblA, finLblB, 'Finishers', winFin, '', '');
+  // Temps moyen
+  html += buildCmpRow(avgA||'-', avgB||'-', 'Temps moyen', winAvg, '', '');
+  // Record homme
+  html += buildCmpRow(menA||'-', menB||'-', 'Record homme', winMen, '', '');
+  // Record femme
+  html += buildCmpRow(wmA||'-', wmB||'-', 'Record femme', winWm, '', '');
+  // Evolution
+  html += buildCmpRowEvo(evoStrA, evoStrB, 'Evolution', winEvo, evoSubA, evoSubB);
+  // Statut
+  html += buildCmpRow(asoA, asoB, 'Statut', null, '', '');
+
+  html += '</div>';
+  document.getElementById('cmp-result').innerHTML = html;
+
+  // Fix bar widths after render
+  setTimeout(function(){
+    fixCmpBar('Finishers', winFin);
+    fixCmpBar('Tempsmoyen', winAvg);
+    fixCmpBar('Recordhomme', winMen);
+    fixCmpBar('Recordfemme', winWm);
+    fixCmpBarEvo(winEvo);
+  }, 50);
+}
+
+function buildCmpRow(valA, valB, label, winA, subA, subB){
+  var idKey = label.replace(/[^a-zA-Z]/g,'');
+  var cellA, cellB;
+  if(winA===true){
+    cellA='<div class="cmp-cell"><div><div class="cmp-val-win" id="cmptxt-'+idKey+'">'+valA+'</div>'
+      +'<div class="cmp-bar" id="cmpbar-'+idKey+'"></div>'+(subA?'<div class="cmp-sub">'+subA+'</div>':'')+'</div><div class="cmp-dot"></div></div>';
+    cellB='<div class="cmp-cell r"><div style="text-align:right"><div class="cmp-val-lose">'+valB+'</div>'+(subB?'<div class="cmp-sub">'+subB+'</div>':'')+'</div></div>';
+  } else if(winA===false){
+    cellA='<div class="cmp-cell"><div><div class="cmp-val-lose">'+valA+'</div>'+(subA?'<div class="cmp-sub">'+subA+'</div>':'')+'</div></div>';
+    cellB='<div class="cmp-cell r"><div class="cmp-dot"></div><div><div class="cmp-val-win" id="cmptxt-'+idKey+'">'+valB+'</div>'
+      +'<div class="cmp-bar" id="cmpbar-'+idKey+'"></div>'+(subB?'<div class="cmp-sub">'+subB+'</div>':'')+'</div></div>';
+  } else {
+    cellA='<div class="cmp-cell"><div><div class="cmp-val-lose">'+valA+'</div>'+(subA?'<div class="cmp-sub">'+subA+'</div>':'')+'</div></div>';
+    cellB='<div class="cmp-cell r"><div style="text-align:right"><div class="cmp-val-lose">'+valB+'</div>'+(subB?'<div class="cmp-sub">'+subB+'</div>':'')+'</div></div>';
+  }
+  return '<div class="cmp-row">'+cellA
+    +'<div class="cmp-mid"><div class="cmp-mid-label">'+label+'</div></div>'
+    +cellB+'</div>';
+}
+
+function buildCmpRowEvo(valA, valB, label, winA, subA, subB){
+  var cellA, cellB;
+  if(winA===true){
+    cellA='<div class="cmp-cell" style="align-items:flex-start;padding-top:14px;padding-bottom:14px;">'
+      +'<div style="display:inline-flex;align-items:center;gap:6px;">'
+      +'<div><span class="cmp-val-win" id="cmptxt-evo-a">'+valA+'</span>'
+      +'<div class="cmp-bar" id="cmpbar-evo-a" style="width:10px"></div>'
+      +(subA?'<div class="cmp-sub">'+subA+'</div>':'')+'</div>'
+      +'<div class="cmp-dot" style="align-self:center;margin-top:-8px"></div>'
+      +'</div></div>';
+    cellB='<div class="cmp-cell r"><div style="text-align:right"><div class="cmp-val-lose">'+valB+'</div>'+(subB?'<div class="cmp-sub">'+subB+'</div>':'')+'</div></div>';
+  } else if(winA===false){
+    cellA='<div class="cmp-cell"><div><div class="cmp-val-lose">'+valA+'</div>'+(subA?'<div class="cmp-sub">'+subA+'</div>':'')+'</div></div>';
+    cellB='<div class="cmp-cell r" style="align-items:flex-start;padding-top:14px;padding-bottom:14px;">'
+      +'<div style="display:inline-flex;align-items:center;gap:6px;">'
+      +'<div class="cmp-dot" style="align-self:center;margin-bottom:-8px"></div>'
+      +'<div><span class="cmp-val-win" id="cmptxt-evo-b">'+valB+'</span>'
+      +'<div class="cmp-bar" id="cmpbar-evo-b" style="width:10px"></div>'
+      +(subB?'<div class="cmp-sub">'+subB+'</div>':'')+'</div>'
+      +'</div></div>';
+  } else {
+    cellA='<div class="cmp-cell"><div><div class="cmp-val-lose">'+valA+'</div>'+(subA?'<div class="cmp-sub">'+subA+'</div>':'')+'</div></div>';
+    cellB='<div class="cmp-cell r"><div style="text-align:right"><div class="cmp-val-lose">'+valB+'</div>'+(subB?'<div class="cmp-sub">'+subB+'</div>':'')+'</div></div>';
+  }
+  return '<div class="cmp-row">'+cellA
+    +'<div class="cmp-mid"><div class="cmp-mid-label">'+label+'</div></div>'
+    +cellB+'</div>';
+}
+
+function fixCmpBar(idKey, winA){
+  var txtEl = document.getElementById('cmptxt-'+idKey);
+  var barEl = document.getElementById('cmpbar-'+idKey);
+  if(!txtEl||!barEl) return;
+  var st = window.getComputedStyle(txtEl);
+  var font = st.fontWeight+' '+st.fontSize+' '+st.fontFamily;
+  var c = document.createElement('canvas');
+  var ctx = c.getContext('2d');
+  ctx.font = font;
+  barEl.style.width = Math.ceil(ctx.measureText(txtEl.textContent).width)+'px';
+}
+
+function fixCmpBarEvo(winA){
+  var side = winA===true?'a':(winA===false?'b':null);
+  if(!side) return;
+  var txtEl = document.getElementById('cmptxt-evo-'+side);
+  var barEl = document.getElementById('cmpbar-evo-'+side);
+  if(!txtEl||!barEl) return;
+  var st = window.getComputedStyle(txtEl);
+  var font = st.fontWeight+' '+st.fontSize+' '+st.fontFamily;
+  var c = document.createElement('canvas');
+  var ctx = c.getContext('2d');
+  ctx.font = font;
+  barEl.style.width = Math.ceil(ctx.measureText(txtEl.textContent).width)+'px';
+}
+
+// Close dropdowns on outside click
+document.addEventListener('click', function(e){
+  if(!e.target.closest('.cmp-search-box')){
+    var da=document.getElementById('cmp-drop-a');
+    var db=document.getElementById('cmp-drop-b');
+    if(da)da.style.display='none';
+    if(db)db.style.display='none';
+  }
+});
 
 </script>
 </body>
