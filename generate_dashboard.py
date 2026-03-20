@@ -952,7 +952,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 
 HTML_BODY = """
 <div class="dp-header">
-  <div><div class="dp-title">Finishers Monde - 10K &middot; 21K &middot; 42K</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
+  <div><div class="dp-title">Dashboard Running</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
   <div class="dp-updated">Genere le {now}</div>
 </div>
 <div class="tabs">
