@@ -241,7 +241,7 @@ function buildTimeHistory(rn){
 var cT=null,cTm=null,ovChartF=null,ovChartT=null;
 
 function switchTab(name){
-  var names=['overview','compare','trends','biggest','temps','winners','data'];
+  var names=['data','overview','compare','trends','biggest','temps','winners'];
   document.querySelectorAll('.tab').forEach(function(t,i){t.classList.toggle('active',names[i]===name);});
   document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active');});
   document.getElementById('panel-'+name).classList.add('active');
@@ -526,8 +526,8 @@ function filterTable(){
   document.getElementById('table-count').textContent=cnt+' epreuve'+(cnt>1?'s':'')+' affichee'+(cnt>1?'s':'');
 }
 
-updateTrends();
 initBiggestYears();
+filterTable();
 
 // ── COMPARE ──────────────────────────────────────────────────────────────────
 var cmpSelectedA = null;
@@ -969,13 +969,13 @@ HTML_BODY = """
   <div class="dp-updated">Genere le {now}</div>
 </div>
 <div class="tabs">
+  <div class="tab active" onclick="switchTab('data')">Tableau</div>
   <div class="tab" onclick="switchTab('overview')">Vue d'ensemble</div>
   <div class="tab" onclick="switchTab('compare')">Comparer</div>
-  <div class="tab active" onclick="switchTab('trends')">Evolution</div>
+  <div class="tab" onclick="switchTab('trends')">Evolution</div>
   <div class="tab" onclick="switchTab('biggest')">Top evenements</div>
   <div class="tab" onclick="switchTab('temps')">Temps moyen</div>
   <div class="tab" onclick="switchTab('winners')">Winners Times</div>
-  <div class="tab" onclick="switchTab('data')">Tableau</div>
 </div>
 <div id="panel-overview" class="panel">
   <div class="ov-search-wrap"><span class="ov-search-icon">&#x2315;</span>
@@ -1000,7 +1000,7 @@ HTML_BODY = """
   </div>
   <div id="cmp-result"></div>
 </div>
-<div id="panel-trends" class="panel active">
+<div id="panel-trends" class="panel">
   <div class="controls">
     <div class="ctrl-group"><span class="ctrl-label">Distance</span>
       <select id="dist-trends" onchange="updateTrends()">
@@ -1120,7 +1120,7 @@ HTML_BODY = """
   </div>
   <div class="count" id="win-count"></div>
 </div>
-<div id="panel-data" class="panel">
+<div id="panel-data" class="panel active">
   <div class="controls">
     <div class="search-wrap"><span class="search-icon">&#x2315;</span>
       <input type="text" id="search-data" placeholder="Rechercher course, ville..." oninput="filterTable()">
