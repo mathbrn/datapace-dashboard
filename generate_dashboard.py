@@ -327,31 +327,22 @@ function ovSelect(idx){
 function updateTrends(){
   var dist=document.getElementById('dist-trends').value;
   var topn=parseInt(document.getElementById('topn-trends').value);
-  var periode=document.getElementById('periode-trends').value;
   var src=dist==='ALL'?RAW:RAW.filter(function(r){return r.d===dist;});
   if(cT)cT.destroy();
   var lbl=document.getElementById('trends-section-lbl');
-  if(periode==='hist'){
-    var histSrc=src.filter(function(r){return r.hist&&Object.keys(r.hist).some(function(y){return parseInt(y)<2023;});});
-    var sorted=histSrc.slice().sort(function(a,b){
-      var ka=Object.keys(a.hist||{}).map(Number).sort(function(x,y){return y-x;});
-      var kb=Object.keys(b.hist||{}).map(Number).sort(function(x,y){return y-x;});
-      return((a.hist||{})[ka[0]]||0)<((b.hist||{})[kb[0]]||0)?1:-1;
-    }).slice(0,topn);
-    var allYears=[];
-    sorted.forEach(function(r){Object.keys(r.hist||{}).map(Number).forEach(function(y){if(allYears.indexOf(y)<0)allYears.push(y);});});
-    allYears.sort(function(a,b){return a-b;});
-    var datasets=sorted.map(function(r){return{label:r.r,data:allYears.map(function(yr){return(r.hist||{})[yr]||null;}),borderColor:colDist(r),backgroundColor:'transparent',tension:0.35,fill:false,pointRadius:4,pointHoverRadius:7,spanGaps:true,borderWidth:2,pointBackgroundColor:colDist(r)};});
-    if(lbl)lbl.textContent='Tendances historiques - grands evenements';
-    var trendCfg={type:'line',data:{labels:allYears.map(String),datasets:datasets},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'nearest',intersect:true},plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{title:function(items){return items.length?items[0].dataset.label:'';},label:function(ctx){return' '+fmtFull(ctx.parsed.y)+' finishers';}}}},scales:{x:{grid:{color:GRID},ticks:TICK,border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmt(v);}},border:{color:'#ffffff08'}}}}};
-    cT=new Chart(document.getElementById('chart-trends'),trendCfg);
-  }else{
-    var sorted=src.filter(function(r){return r.y5&&!isNaN(r.y5);}).sort(function(a,b){return(b.y5||0)-(a.y5||0);}).slice(0,topn);
-    var datasets=sorted.map(function(r){return{label:r.r,data:[r.y3||null,r.y4||null,r.y5||null],borderColor:colDist(r),backgroundColor:'transparent',tension:0.35,fill:false,pointRadius:3,pointHoverRadius:6,spanGaps:true,borderWidth:1.5,pointBackgroundColor:colDist(r)};});
-    if(lbl)lbl.textContent='Evolution par evenement 2023-2025';
-    var trendCfg={type:'line',data:{labels:['2023','2024','2025'],datasets:datasets},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'nearest',intersect:true},plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{title:function(items){return items.length?items[0].dataset.label:'';},label:function(ctx){return' '+fmtFull(ctx.parsed.y)+' finishers';}}}},scales:{x:{grid:{color:GRID},ticks:TICK,border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmt(v);}},border:{color:'#ffffff08'}}}}};
-    cT=new Chart(document.getElementById('chart-trends'),trendCfg);
-  }
+  var sorted=src.slice().sort(function(a,b){
+    var ka=Object.keys(a.hist||{}).map(Number).sort(function(x,y){return y-x;});
+    var kb=Object.keys(b.hist||{}).map(Number).sort(function(x,y){return y-x;});
+    return((a.hist||{})[ka[0]]||0)<((b.hist||{})[kb[0]]||0)?1:-1;
+  }).slice(0,topn);
+  var allYears=[];
+  sorted.forEach(function(r){Object.keys(r.hist||{}).map(Number).forEach(function(y){if(allYears.indexOf(y)<0)allYears.push(y);});});
+  allYears.sort(function(a,b){return a-b;});
+  var datasets=sorted.map(function(r){return{label:r.r,data:allYears.map(function(yr){return(r.hist||{})[yr]||null;}),borderColor:colDist(r),backgroundColor:'transparent',tension:0.35,fill:false,pointRadius:3,pointHoverRadius:7,spanGaps:true,borderWidth:2,pointBackgroundColor:colDist(r)};});
+  var minYr=allYears.length?allYears[0]:'';var maxYr=allYears.length?allYears[allYears.length-1]:'';
+  if(lbl)lbl.textContent='Evolution par evenement '+minYr+'-'+maxYr;
+  var trendCfg={type:'line',data:{labels:allYears.map(String),datasets:datasets},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'nearest',intersect:true},plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{title:function(items){return items.length?items[0].dataset.label:'';},label:function(ctx){return' '+fmtFull(ctx.parsed.y)+' finishers';}}}},scales:{x:{grid:{color:GRID},ticks:TICK,border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmt(v);}},border:{color:'#ffffff08'}}}}};
+  cT=new Chart(document.getElementById('chart-trends'),trendCfg);
 }
 
 function initBiggestYears(){
@@ -1007,12 +998,6 @@ HTML_BODY = """
       <select id="dist-trends" onchange="updateTrends()">
         <option value="ALL">Toutes distances</option>
         <option value="MARATHON">Marathon</option><option value="SEMI">Semi-marathon</option><option value="10KM">10 km</option>
-      </select>
-    </div>
-    <div class="ctrl-group"><span class="ctrl-label">Periode</span>
-      <select id="periode-trends" onchange="updateTrends()">
-        <option value="recent">Recent (2023-2025)</option>
-        <option value="hist">Historique (2007-2026)</option>
       </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Top evenements</span>
