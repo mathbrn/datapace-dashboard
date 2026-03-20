@@ -459,23 +459,21 @@ function applyFrozen(tbl){
   if(!tbl)return;
   var ths=tbl.querySelectorAll('thead tr th');
   if(ths.length<4)return;
+  var widths=[62,70,110,180];
   var left=0;
   for(var i=0;i<4;i++){
-    var w=ths[i].offsetWidth;
+    var w=widths[i];
     tbl.querySelectorAll('tr th:nth-child('+(i+1)+'),tr td:nth-child('+(i+1)+')').forEach(function(c){
       c.classList.add('frozen-cell');
       c.style.position='sticky';
       c.style.left=left+'px';
       c.style.zIndex=c.tagName==='TH'?'3':'2';
       c.style.minWidth=w+'px';
-      c.style.maxWidth=w+'px';
-      if(i===3)c.style.boxShadow='2px 0 6px rgba(0,0,0,0.45)';
+      c.style.width=w+'px';
+      if(i===3){c.style.boxShadow='2px 0 6px rgba(0,0,0,0.45)';c.style.overflow='hidden';c.style.textOverflow='ellipsis';c.style.whiteSpace='nowrap';}
     });
     left+=w;
   }
-  tbl.querySelectorAll('tbody td:nth-child(4)').forEach(function(c){
-    c.style.overflow='hidden';c.style.textOverflow='ellipsis';c.style.whiteSpace='nowrap';
-  });
 }
 
 function filterTable(){
@@ -499,8 +497,10 @@ function filterTable(){
     if(q&&r.r.toLowerCase().indexOf(q)<0&&r.c.toLowerCase().indexOf(q)<0)return false;
     return globalYears.some(function(y){return(r.hist||{})[y];});
   });
-  if(tbl)tbl.classList.toggle('tbl-frozen',globalYears.length>5);
-  if(thead)thead.innerHTML='<th>Mois</th><th>Ville</th><th>Distance</th><th>Epreuve</th>'+globalYears.map(function(y){return'<th>'+y+'</th>';}).join('')+'<th>Tendance</th>';
+  var frozen=globalYears.length>4;
+  if(tbl){tbl.classList.toggle('tbl-frozen',frozen);if(!frozen)tbl.style.tableLayout='';tbl.querySelectorAll('.frozen-cell').forEach(function(c){c.classList.remove('frozen-cell');c.style.position='';c.style.left='';c.style.zIndex='';c.style.minWidth='';c.style.width='';c.style.boxShadow='';});}
+  var yrTh=globalYears.map(function(y){return frozen?'<th style="min-width:58px;width:58px;text-align:center;padding:7px 6px">'+y+'</th>':'<th>'+y+'</th>';}).join('');
+  if(thead)thead.innerHTML='<th>Mois</th><th>Ville</th><th>Distance</th><th>Epreuve</th>'+yrTh+'<th>Tendance</th>';
   var html='';
   f.forEach(function(r){
     var vals=globalYears.map(function(y){return(r.hist||{})[y]||null;}).filter(function(v){return v&&!isNaN(v);});
@@ -522,7 +522,7 @@ function filterTable(){
       +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
   });
   document.getElementById('table-body').innerHTML=html;
-  if(globalYears.length>5)applyFrozen(tbl);
+  if(frozen)applyFrozen(tbl);
   var cnt=f.length;
   document.getElementById('table-count').textContent=cnt+' epreuve'+(cnt>1?'s':'')+' affichee'+(cnt>1?'s':'');
 }
@@ -958,8 +958,11 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 .cmp-dot{width:5px;height:5px;border-radius:50%;background:#22C55E;flex-shrink:0;}
 .cmp-sub{font-size:11px;color:var(--text3);margin-top:2px;}
 .cmp-placeholder{color:var(--text3);font-size:12px;padding:2rem;text-align:center;border:.5px solid var(--border);border-radius:6px;}
-#data-table.tbl-frozen td.frozen-cell{background:var(--bg);}
-#data-table.tbl-frozen tr:hover td.frozen-cell{background:var(--bg2);}"""
+#data-table.tbl-frozen{table-layout:fixed;width:max-content;min-width:100%;}
+#data-table.tbl-frozen td.frozen-cell,#data-table.tbl-frozen th.frozen-cell{background:var(--bg);}
+#data-table.tbl-frozen tr:hover td.frozen-cell{background:var(--bg2);}
+#data-table.tbl-frozen th:not(.frozen-cell),#data-table.tbl-frozen td:not(.frozen-cell){min-width:58px;width:58px;text-align:center;font-size:11px;padding:7px 6px;}
+#data-table.tbl-frozen td:not(.frozen-cell){white-space:nowrap;}"""
 
 HTML_BODY = """
 <div class="dp-header">
