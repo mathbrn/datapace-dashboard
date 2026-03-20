@@ -6,7 +6,7 @@ Usage:
     python add_event.py "Period" "City" "Distance" "Race Name" [YEAR COUNT ...]
     python add_event.py "Avril" "Hamburg" "MARATHON" "Haspa Marathon Hamburg" 2023 12000 2024 13500 2025 15000
 
-Distance must be: MARATHON, SEMI, 10KM
+Distance must be: MARATHON, SEMI, 10KM, AUTRE
 Period must be: Janvier, Février, Mars, Avril, Mai, Juin, Juillet, Août, Septembre, Octobre, Novembre, Décembre
 """
 import sys
@@ -64,7 +64,7 @@ if __name__ == "__main__":
     distance = sys.argv[3]
     race_name = sys.argv[4]
 
-    if distance not in ("MARATHON", "SEMI", "10KM"):
+    if distance not in ("MARATHON", "SEMI", "10KM", "AUTRE"):
         print(f"ERREUR: Distance '{distance}' invalide.")
         sys.exit(1)
 

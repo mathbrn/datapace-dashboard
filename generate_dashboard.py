@@ -221,7 +221,7 @@ def build_times_db(md, sd):
 JS_LOGIC = '''function isAso(r){var l=r.toLowerCase();return ASO_KEYWORDS.some(function(k){return l.indexOf(k)>=0;});}
 function isWmm(r){var l=r.toLowerCase();return WMM_KEYWORDS.some(function(k){return l.indexOf(k)>=0;});}
 function col(r){return isWmm(r)?'#38BDF8':isAso(r)?'#FCDB00':'#5C00D4';}
-function colDist(r){return isWmm(r.r)?'#38BDF8':isAso(r.r)?'#FCDB00':r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':'#9B6FFF';}
+function colDist(r){return isWmm(r.r)?'#38BDF8':isAso(r.r)?'#FCDB00':r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':r.d==='AUTRE'?'#F472B6':'#9B6FFF';}
 function colByName(name){var r=RAW.find(function(x){return x.r===name;});return r?colDist(r):'#9B6FFF';}
 function toMin(t){if(!t)return null;var p=String(t).split(':');if(p.length===3)return parseInt(p[0])*60+parseInt(p[1])+parseInt(p[2])/60;return null;}
 function fmt(n){if(!n||isNaN(n))return'\u2014';return n>=1000?(n/1000).toFixed(1)+'k':n.toString();}
@@ -289,7 +289,7 @@ function ovSearch(){
   var html='';
   matches.forEach(function(r){
     var idx=RAW.indexOf(r);
-    var dl=r.d==='10KM'?'10 km':r.d==='SEMI'?'Semi':'Marathon';
+    var dl=r.d==='10KM'?'10 km':r.d==='SEMI'?'Semi':r.d==='AUTRE'?'Autre':'Marathon';
     html+='<div class="ov-result-item" data-idx="'+idx+'" onclick="ovSelect('+idx+')">'
       +'<span class="ov-result-dist" style="background:'+dc[r.d]+';color:'+dt[r.d]+'">'+dl+'</span>'
       +'<span style="flex:1">'+r.r+'</span>'
@@ -303,7 +303,7 @@ function ovSelect(idx){
   document.querySelectorAll('.ov-result-item').forEach(function(el){el.classList.toggle('selected',parseInt(el.dataset.idx)===idx);});
   var ev=RAW[idx];
   var ac=colDist(ev),aso=isAso(ev.r);
-  var dl=ev.d==='MARATHON'?'Marathon':ev.d==='SEMI'?'Semi-marathon':'10 km';
+  var dl=ev.d==='MARATHON'?'Marathon':ev.d==='SEMI'?'Semi-marathon':ev.d==='AUTRE'?'Autre':'10 km';
   var histKeys=Object.keys(ev.hist||{}).map(Number).sort(function(a,b){return a-b;});
   var finHistory=histKeys.map(function(yr){return{yr:yr,v:(ev.hist||{})[yr]};}).filter(function(e){return e.v&&!isNaN(e.v);});
   if(!finHistory.length)finHistory=[{yr:2023,v:ev.y3},{yr:2024,v:ev.y4},{yr:2025,v:ev.y5},{yr:2026,v:ev.y6}].filter(function(e){return e.v&&!isNaN(e.v);});
@@ -513,7 +513,7 @@ function filterTable(){
   // Sort
   var sortMode=document.getElementById('sort-data').value;
   var monthOrder={Janvier:1,Fevrier:2,Février:2,Mars:3,Avril:4,Mai:5,Juin:6,Juillet:7,Aout:8,Août:8,Septembre:9,Octobre:10,Novembre:11,Decembre:12,Décembre:12};
-  var distOrder={MARATHON:1,SEMI:2,'10KM':3};
+  var distOrder={MARATHON:1,SEMI:2,'10KM':3,AUTRE:4};
   var lastYr=globalYears.length?globalYears[globalYears.length-1]:0;
   if(sortMode==='month'){f.sort(function(a,b){return(monthOrder[a.p]||99)-(monthOrder[b.p]||99);});}
   else if(sortMode==='distance'){f.sort(function(a,b){return(distOrder[a.d]||9)-(distOrder[b.d]||9);});}
@@ -533,7 +533,7 @@ function filterTable(){
     var firstYr=yrKeys[0],lastYr=yrKeys[yrKeys.length-1];
     var tSub=firstYr&&lastYr&&firstYr!==lastYr?'<div style="font-size:9px;color:#555;margin-top:1px">'+firstYr+'\u2192'+lastYr+'</div>':'';
     var wmm=isWmm(r.r);var aso=isAso(r.r);
-    var bl=r.d==='MARATHON'?'Marathon':r.d==='SEMI'?'Semi':'10 km';
+    var bl=r.d==='MARATHON'?'Marathon':r.d==='SEMI'?'Semi':r.d==='AUTRE'?'Autre':'10 km';
     var raceColor=colDist(r);
     var badgeLabel=wmm?bl+' - WMM':aso?bl+' - ASO':bl;
     html+='<tr><td>'+r.p+'</td><td>'+r.c+'</td>'
@@ -569,7 +569,7 @@ function cmpSearch(side){
   drop.style.display='block';
   matches.slice(0,10).forEach(function(r){
     var rawIdx=RAW.indexOf(r);
-    var dl=r.d==='10KM'?'10 km':r.d==='SEMI'?'Semi':'Marathon';
+    var dl=r.d==='10KM'?'10 km':r.d==='SEMI'?'Semi':r.d==='AUTRE'?'Autre':'Marathon';
     var item=document.createElement('div');
     item.className='cmp-drop-item';
     item.innerHTML='<span class="cmp-dist-pill" style="background:'+dc[r.d]+';color:'+dt[r.d]+'">'+dl+'</span>'+r.r;
@@ -657,8 +657,8 @@ function renderCompare(){
   if(hbFirstV&&fB){evoB=((fB-hbFirstV)/hbFirstV*100);evoStrB=(evoB>=0?'+':'')+evoB.toFixed(1)+'%';evoSubB=fmtFull(hbFirstV)+' ('+hbFirst+') \u2192 '+fmtFull(fB)+' ('+fYrB+')';}
   else if(b.y3&&fB){evoB=((fB-b.y3)/b.y3*100);evoStrB=(evoB>=0?'+':'')+evoB.toFixed(1)+'%';evoSubB=fmtFull(b.y3)+' \u2192 '+fmtFull(fB);}
 
-  var distA = a.d==='MARATHON'?'Marathon':a.d==='SEMI'?'Semi-marathon':'10 km';
-  var distB = b.d==='MARATHON'?'Marathon':b.d==='SEMI'?'Semi-marathon':'10 km';
+  var distA = a.d==='MARATHON'?'Marathon':a.d==='SEMI'?'Semi-marathon':a.d==='AUTRE'?'Autre':'10 km';
+  var distB = b.d==='MARATHON'?'Marathon':b.d==='SEMI'?'Semi-marathon':b.d==='AUTRE'?'Autre':'10 km';
   var asoA = isWmm(a.r)?'WMM':isAso(a.r)?'ASO':'Autre';
   var asoB = isWmm(b.r)?'WMM':isAso(b.r)?'ASO':'Autre';
 
@@ -1027,7 +1027,7 @@ HTML_BODY = """
     <div class="ctrl-group"><span class="ctrl-label">Distance</span>
       <select id="dist-trends" onchange="updateTrends()">
         <option value="ALL">Toutes distances</option>
-        <option value="MARATHON">Marathon</option><option value="SEMI">Semi-marathon</option><option value="10KM">10 km</option>
+        <option value="MARATHON">Marathon</option><option value="SEMI">Semi-marathon</option><option value="10KM">10 km</option><option value="AUTRE">Autre</option>
       </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Top evenements</span>
@@ -1041,6 +1041,7 @@ HTML_BODY = """
     <span class="leg-item"><span class="leg-dot" style="background:#9B6FFF"></span>Marathon</span>
     <span class="leg-item"><span class="leg-dot" style="background:#FF8A50"></span>Semi-marathon</span>
     <span class="leg-item"><span class="leg-dot" style="background:#5CDFA0"></span>10 km</span>
+    <span class="leg-item"><span class="leg-dot" style="background:#F472B6"></span>Autre</span>
     <span class="leg-item"><span class="leg-dot" style="background:#FCDB00"></span>Evenements ASO</span>
     <span class="leg-item"><span class="leg-dot" style="background:#38BDF8"></span>World Marathon Majors</span>
   </div>
@@ -1051,7 +1052,7 @@ HTML_BODY = """
     <div class="ctrl-group"><span class="ctrl-label">Distance</span>
       <select id="dist-biggest" onchange="initBiggestYears();updateBiggest()">
         <option value="ALL">Toutes distances</option>
-        <option value="MARATHON">Marathon</option><option value="SEMI">Semi-marathon</option><option value="10KM">10 km</option>
+        <option value="MARATHON">Marathon</option><option value="SEMI">Semi-marathon</option><option value="10KM">10 km</option><option value="AUTRE">Autre</option>
       </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Top N</span>
@@ -1147,7 +1148,7 @@ HTML_BODY = """
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Distance</span>
       <select id="dist-data" onchange="filterTable()">
-        <option value="ALL">Toutes</option><option value="MARATHON">Marathon</option><option value="SEMI">Semi</option><option value="10KM">10 km</option>
+        <option value="ALL">Toutes</option><option value="MARATHON">Marathon</option><option value="SEMI">Semi</option><option value="10KM">10 km</option><option value="AUTRE">Autre</option>
       </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Mois</span>
