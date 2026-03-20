@@ -12,7 +12,7 @@ Fichiers Excel requis (même dossier que ce script) :
     - Temps_moyen_par_marathon_2024.xlsx
     - Temps_moyen_par_marathon_2025.xlsx
     - Temps_moyen_par_marathon_2026.xlsx
-    - Temps_moyen_semi-marathon_2025.xlsx
+    - Temps_moyen_semi-marathon.xlsx
 
 Sortie :
     - datapace_dashboard.html  (ouvrir dans le navigateur)
@@ -31,7 +31,7 @@ FILES = {
     "marathon_2024": SCRIPT_DIR / "Temps_moyen_par_marathon_2024.xlsx",
     "marathon_2025": SCRIPT_DIR / "Temps_moyen_par_marathon_2025.xlsx",
     "marathon_2026": SCRIPT_DIR / "Temps_moyen_par_marathon_2026.xlsx",
-    "semi_2025":     SCRIPT_DIR / "Temps_moyen_semi-marathon_2025.xlsx",
+    "semi":          SCRIPT_DIR / "Temps_moyen_semi-marathon.xlsx",
     "winners":       SCRIPT_DIR / "Chronos_Vainqueurs.xlsx",
 }
 OUTPUT_FILE = SCRIPT_DIR / "datapace_dashboard.html"
@@ -153,19 +153,37 @@ def load_marathon(year):
 
 
 def load_semi():
-    df = pd.read_excel(FILES["semi_2025"], sheet_name="2025", header=None)
-    df.columns = ["_", "city", "race", "finishers", "avg_time", "men_time", "women_time", "top10_avg"]
-    rows = []
-    for _, r in df.iloc[4:].iterrows():
-        race = str(r["race"]).strip() if pd.notna(r["race"]) else ""
-        if not race or race in ("nan", "Race"): continue
-        rows.append({"race": race,
-                     "city": str(r["city"]).strip() if pd.notna(r["city"]) else "",
-                     "finishers": safe_int(r["finishers"]),
-                     "avg": fmt_time(r["avg_time"]), "men": fmt_time(r["men_time"]),
-                     "women": fmt_time(r["women_time"]), "year": 2025})
-    print(f"  Semi 2025  : {len(rows)} courses")
-    return rows
+    path = FILES["semi"]
+    xls = pd.ExcelFile(path)
+    all_data = {}
+    for sheet in xls.sheet_names:
+        try:
+            yr = int(sheet)
+        except ValueError:
+            continue
+        df = pd.read_excel(path, sheet_name=sheet, header=None)
+        if len(df.columns) < 8:
+            df = df.reindex(columns=range(8))
+        df.columns = ["_", "city", "race", "finishers", "avg_time", "men_time", "women_time", "top10_avg"]
+        # Find header row
+        start = 3
+        for i, row in df.iterrows():
+            if str(row.get("race", "")).strip().lower() in ("race", "race "):
+                start = i + 1
+                break
+        rows = []
+        for _, r in df.iloc[start:].iterrows():
+            race = str(r["race"]).strip() if pd.notna(r["race"]) else ""
+            if not race or race in ("nan", "Race"): continue
+            rows.append({"race": race,
+                         "city": str(r["city"]).strip() if pd.notna(r["city"]) else "",
+                         "finishers": safe_int(r["finishers"]),
+                         "avg": fmt_time(r["avg_time"]), "men": fmt_time(r["men_time"]),
+                         "women": fmt_time(r["women_time"]), "year": yr})
+        if rows:
+            all_data[yr] = rows
+            print(f"  Semi {yr}   : {len(rows)} courses")
+    return all_data
 
 
 def load_winners():
@@ -190,7 +208,8 @@ def load_winners():
 def build_times_db(md, sd):
     db = {}; all_e = []
     for rows in md.values(): all_e.extend(rows)
-    all_e.extend(sd); all_e.sort(key=lambda x: x.get("year", 0))
+    for rows in sd.values(): all_e.extend(rows)
+    all_e.sort(key=lambda x: x.get("year", 0))
     for row in all_e:
         if row.get("avg") or row.get("men"):
             db[row["race"].lower()] = {
@@ -242,7 +261,7 @@ function buildTimeHistory(rn){
     var rows=TEMPS_MARATHON[String(yr)]||[];
     for(var i=0;i<rows.length;i++){var rl=rows[i].race.toLowerCase();if(l.indexOf(rl.substring(0,10))>=0||rl.indexOf(l.substring(0,10))>=0){if(toMin(rows[i].avg))hist.push({yr:String(yr),min:toMin(rows[i].avg)});break;}}
   });
-  if(!hist.length){for(var i=0;i<TEMPS_SEMI_2025.length;i++){var rl=TEMPS_SEMI_2025[i].race.toLowerCase();if(l.indexOf(rl.substring(0,10))>=0||rl.indexOf(l.substring(0,10))>=0){if(toMin(TEMPS_SEMI_2025[i].avg))hist.push({yr:'2025',min:toMin(TEMPS_SEMI_2025[i].avg)});break;}}}
+  if(!hist.length){var sKeys=Object.keys(TEMPS_SEMI);sKeys.forEach(function(syr){var srows=TEMPS_SEMI[syr]||[];for(var i=0;i<srows.length;i++){var rl=srows[i].race.toLowerCase();if(l.indexOf(rl.substring(0,10))>=0||rl.indexOf(l.substring(0,10))>=0){if(toMin(srows[i].avg))hist.push({yr:syr,min:toMin(srows[i].avg)});break;}}});}
   return hist;
 }
 var cT=null,ovChartF=null,ovChartT=null;
@@ -409,13 +428,10 @@ function updateTempsYears(){
   var dist=document.getElementById('dist-temps').value;
   var sel=document.getElementById('year-temps');
   var prev=sel.value;
-  if(dist==='SEMI'){
-    sel.innerHTML='<option value="2025">2025</option>';
-  }else{
-    var yrs=Object.keys(TEMPS_MARATHON).sort(function(a,b){return parseInt(b)-parseInt(a);});
-    sel.innerHTML=yrs.map(function(y){return'<option value="'+y+'">'+y+'</option>';}).join('');
-    if(yrs.indexOf(prev)>=0)sel.value=prev;
-  }
+  var srcObj=dist==='SEMI'?TEMPS_SEMI:TEMPS_MARATHON;
+  var yrs=Object.keys(srcObj).sort(function(a,b){return parseInt(b)-parseInt(a);});
+  sel.innerHTML=yrs.map(function(y){return'<option value="'+y+'">'+y+'</option>';}).join('');
+  if(yrs.indexOf(prev)>=0)sel.value=prev;
 }
 
 function updateTemps(){
@@ -423,7 +439,7 @@ function updateTemps(){
   var yr=parseInt(document.getElementById('year-temps').value);
   var sortMode=document.getElementById('sort-temps').value;
   var topn=parseInt(document.getElementById('topn-temps').value);
-  var src=dist==='SEMI'?TEMPS_SEMI_2025:(TEMPS_MARATHON[String(yr)]||[]);
+  var src=dist==='SEMI'?(TEMPS_SEMI[String(yr)]||[]):(TEMPS_MARATHON[String(yr)]||[]);
   var data=src.slice();
   if(sortMode==='avg'){data.sort(function(a,b){var ma=toMin(a.avg),mb=toMin(b.avg);if(!ma)return 1;if(!mb)return -1;return ma-mb;});}
   else{data.sort(function(a,b){return b.finishers-a.finishers;});}
@@ -1174,11 +1190,11 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
     now = datetime.datetime.now().strftime("%d/%m/%Y a %H:%M")
     tmjs = {str(yr): [{"race": r["race"], "city": r["city"], "finishers": r["finishers"] or 0, "avg": r["avg"] or ""}
                        for r in rows if r.get("avg")] for yr, rows in md.items()}
-    tsjs = [{"race": r["race"], "city": r["city"], "finishers": r["finishers"] or 0, "avg": r["avg"] or ""}
-            for r in sd if r.get("avg")]
+    tsjs = {str(yr): [{"race": r["race"], "city": r["city"], "finishers": r["finishers"] or 0, "avg": r["avg"] or ""}
+                       for r in rows if r.get("avg")] for yr, rows in sd.items()}
     tdbjs = {k: {"men": v["men"], "women": v["women"], "avg": v["avg"], "yr": v["yr"]} for k, v in tdb.items()}
     js_data = ("const RAW=" + j(finishers) + ";\nconst BIGGEST=" + j(biggest) + ";\n"
-               "const TEMPS_MARATHON=" + j(tmjs) + ";\nconst TEMPS_SEMI_2025=" + j(tsjs) + ";\n"
+               "const TEMPS_MARATHON=" + j(tmjs) + ";\nconst TEMPS_SEMI=" + j(tsjs) + ";\n"
                "const TIMES_DB=" + j(tdbjs) + ";\nconst ASO_KEYWORDS=" + j(ASO_KEYWORDS) + ";\n"
                "const WMM_KEYWORDS=" + j(WMM_KEYWORDS) + ";\n"
                "const WINNERS=" + j(winners) + ";\n")
