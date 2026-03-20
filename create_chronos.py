@@ -9,6 +9,102 @@ data = []
 # ============================================================
 
 marathon_data = [
+    # ============================================================
+    # HISTORICAL DATA (2015-2022)
+    # ============================================================
+    # BMW Berlin Marathon
+    ("BMW Berlin Marathon", "42K", 2015, "2:04:00", "2:19:25"),
+    ("BMW Berlin Marathon", "42K", 2016, "2:03:03", "N/A"),
+    ("BMW Berlin Marathon", "42K", 2017, "2:03:32", "2:20:53"),
+    ("BMW Berlin Marathon", "42K", 2018, "2:01:39", "2:18:11"),
+    ("BMW Berlin Marathon", "42K", 2019, "2:01:41", "N/A"),
+    ("BMW Berlin Marathon", "42K", 2021, "2:05:45", "N/A"),
+    ("BMW Berlin Marathon", "42K", 2022, "2:01:09", "N/A"),
+    # Bank of America Chicago Marathon
+    ("Bank of America Chicago Marathon", "42K", 2015, "2:09:25", "2:23:33"),
+    ("Bank of America Chicago Marathon", "42K", 2016, "2:11:23", "2:21:32"),
+    ("Bank of America Chicago Marathon", "42K", 2017, "2:09:20", "2:18:31"),
+    ("Bank of America Chicago Marathon", "42K", 2018, "2:05:11", "2:18:35"),
+    ("Bank of America Chicago Marathon", "42K", 2019, "2:05:45", "2:14:04"),
+    ("Bank of America Chicago Marathon", "42K", 2021, "2:06:12", "2:22:31"),
+    ("Bank of America Chicago Marathon", "42K", 2022, "2:04:24", "2:14:18"),
+    # TCS London Marathon
+    ("TCS London Marathon", "42K", 2015, "2:04:42", "N/A"),
+    ("TCS London Marathon", "42K", 2016, "2:03:05", "N/A"),
+    ("TCS London Marathon", "42K", 2017, "2:05:48", "2:17:01"),
+    ("TCS London Marathon", "42K", 2018, "2:04:17", "2:18:31"),
+    ("TCS London Marathon", "42K", 2019, "2:02:37", "N/A"),
+    ("TCS London Marathon", "42K", 2021, "2:04:01", "N/A"),
+    ("TCS London Marathon", "42K", 2022, "2:04:39", "2:17:26"),
+    # TCS New York City Marathon
+    ("TCS New York City Marathon", "42K", 2015, "2:10:34", "2:24:25"),
+    ("TCS New York City Marathon", "42K", 2016, "2:07:51", "2:24:26"),
+    ("TCS New York City Marathon", "42K", 2017, "2:10:53", "N/A"),
+    ("TCS New York City Marathon", "42K", 2018, "2:05:59", "2:22:48"),
+    ("TCS New York City Marathon", "42K", 2019, "2:08:13", "2:22:38"),
+    ("TCS New York City Marathon", "42K", 2021, "2:08:22", "2:22:39"),
+    ("TCS New York City Marathon", "42K", 2022, "2:08:41", "2:23:23"),
+    # Boston Marathon
+    ("Boston Marathon", "42K", 2015, "2:09:17", "2:24:55"),
+    ("Boston Marathon", "42K", 2016, "2:12:45", "2:29:19"),
+    ("Boston Marathon", "42K", 2017, "2:09:37", "2:21:52"),
+    ("Boston Marathon", "42K", 2018, "2:15:58", "2:39:54"),
+    ("Boston Marathon", "42K", 2019, "2:07:57", "2:23:31"),
+    ("Boston Marathon", "42K", 2021, "2:09:51", "N/A"),
+    ("Boston Marathon", "42K", 2022, "2:06:51", "2:21:01"),
+    # Tokyo Marathon
+    ("Tokyo Marathon", "42K", 2015, "2:06:00", "2:23:15"),
+    ("Tokyo Marathon", "42K", 2016, "2:06:56", "2:21:27"),
+    ("Tokyo Marathon", "42K", 2017, "2:03:58", "N/A"),
+    ("Tokyo Marathon", "42K", 2018, "2:05:30", "2:19:51"),
+    ("Tokyo Marathon", "42K", 2019, "2:04:15", "N/A"),
+    ("Tokyo Marathon", "42K", 2021, "2:02:40", "2:16:02"),
+    # Schneider Electric Marathon de Paris
+    ("Schneider Electric Marathon de Paris", "42K", 2017, "2:06:10", "N/A"),
+    ("Schneider Electric Marathon de Paris", "42K", 2018, "2:06:25", "2:22:56"),
+    ("Schneider Electric Marathon de Paris", "42K", 2019, "2:07:05", "2:22:47"),
+    ("Schneider Electric Marathon de Paris", "42K", 2022, "2:05:00", "2:19:48"),
+    # NN Marathon Rotterdam
+    ("NN Marathon Rotterdam", "42K", 2015, "2:06:47", "2:26:30"),
+    ("NN Marathon Rotterdam", "42K", 2016, "2:06:11", "2:26:15"),
+    ("NN Marathon Rotterdam", "42K", 2017, "2:06:04", "2:24:18"),
+    ("NN Marathon Rotterdam", "42K", 2018, "2:04:11", "2:22:55"),
+    ("NN Marathon Rotterdam", "42K", 2021, "2:03:36", "N/A"),
+    ("NN Marathon Rotterdam", "42K", 2022, "2:04:45", "N/A"),
+    # TCS Amsterdam Marathon
+    ("TCS Amsterdam Marathon", "42K", 2015, "2:06:19", "2:24:11"),
+    ("TCS Amsterdam Marathon", "42K", 2016, "2:05:20", "2:23:20"),
+    ("TCS Amsterdam Marathon", "42K", 2017, "2:05:09", "2:21:53"),
+    ("TCS Amsterdam Marathon", "42K", 2018, "2:04:06", "N/A"),
+    ("TCS Amsterdam Marathon", "42K", 2021, "2:03:38", "2:17:57"),
+    ("TCS Amsterdam Marathon", "42K", 2022, "N/A", "2:17:20"),
+    # Valencia Marathon Trinidad Alfonso Zurich
+    ("Valencia Marathon Trinidad Alfonso Zurich", "42K", 2015, "2:06:13", "N/A"),
+    ("Valencia Marathon Trinidad Alfonso Zurich", "42K", 2022, "2:01:53", "2:14:57"),
+    # Irish Life Dublin Marathon
+    ("Irish Life Dublin Marathon", "42K", 2015, "2:14:01", "2:30:00"),
+    ("Irish Life Dublin Marathon", "42K", 2016, "2:12:18", "2:32:32"),
+    ("Irish Life Dublin Marathon", "42K", 2017, "2:15:52", "2:28:57"),
+    ("Irish Life Dublin Marathon", "42K", 2018, "2:13:23", "2:33:48"),
+    ("Irish Life Dublin Marathon", "42K", 2019, "2:08:06", "2:27:48"),
+    ("Irish Life Dublin Marathon", "42K", 2022, "2:11:30", "2:28:32"),
+    # Vienna City Marathon
+    ("Vienna City Marathon", "42K", 2015, "2:07:31", "2:30:09"),
+    ("Vienna City Marathon", "42K", 2017, "2:08:40", "2:24:20"),
+    ("Vienna City Marathon", "42K", 2019, "2:06:56", "2:22:12"),
+    ("Vienna City Marathon", "42K", 2021, "2:09:25", "2:24:29"),
+    ("Vienna City Marathon", "42K", 2022, "2:06:53", "2:20:59"),
+    # Honolulu Marathon
+    ("Honolulu Marathon", "42K", 2015, "2:11:43", "2:28:34"),
+    ("Honolulu Marathon", "42K", 2016, "2:09:37", "2:31:10"),
+    ("Honolulu Marathon", "42K", 2017, "2:08:27", "2:22:15"),
+    ("Honolulu Marathon", "42K", 2018, "2:09:01", "2:36:22"),
+    ("Honolulu Marathon", "42K", 2019, "2:07:59", "2:31:09"),
+    ("Honolulu Marathon", "42K", 2021, "2:14:30", "2:41:24"),
+    ("Honolulu Marathon", "42K", 2022, "2:14:40", "2:30:58"),
+    # ============================================================
+    # RECENT DATA (2023-2026)
+    # ============================================================
     # Chevron Houston Marathon
     ("Chevron Houston Marathon", "42K", 2023, "2:10:26", "2:19:24"),
     ("Chevron Houston Marathon", "42K", 2024, "2:06:39", "2:19:33"),
