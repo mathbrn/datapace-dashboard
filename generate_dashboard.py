@@ -510,13 +510,12 @@ function filterTable(){
     var yrKeys=globalYears.filter(function(y){return(r.hist||{})[y];});
     var firstYr=yrKeys[0],lastYr=yrKeys[yrKeys.length-1];
     var tSub=firstYr&&lastYr&&firstYr!==lastYr?'<div style="font-size:9px;color:#555;margin-top:1px">'+firstYr+'\u2192'+lastYr+'</div>':'';
-    var aso=isAso(r.r);var wmm=isWmm(r.r);
+    var wmm=isWmm(r.r);var aso=isAso(r.r);
     var bl=r.d==='MARATHON'?'Marathon':r.d==='SEMI'?'Semi':'10 km';
     var raceColor=colDist(r);
-    var badgeClass=wmm?'badge-wmm':aso?'badge-aso':'badge-world';
-    var badgeLabel=wmm?bl+' - WMM':bl+' - '+(aso?'ASO':'Autre');
+    var badgeLabel=wmm?bl+' - WMM':aso?bl+' - ASO':bl;
     html+='<tr><td>'+r.p+'</td><td>'+r.c+'</td>'
-      +'<td><span class="badge '+badgeClass+'">'+badgeLabel+'</span></td>'
+      +'<td><span class="badge" style="background:'+raceColor+'18;color:'+raceColor+'">'+badgeLabel+'</span></td>'
       +'<td style="color:'+raceColor+'" title="'+r.r+'">'+r.r+'</td>'
       +globalYears.map(function(y){var v=(r.hist||{})[y];return'<td style="'+(v?'color:var(--text)':'')+'">'+(v?fmtFull(v):'\u2014')+'</td>';}).join('')
       +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
