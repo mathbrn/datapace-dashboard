@@ -52,6 +52,13 @@ WMM_KEYWORDS = [
 def fmt_time(val):
     if val is None or (isinstance(val, float) and pd.isna(val)): return None
     if isinstance(val, datetime.time): return val.strftime("%H:%M:%S")
+    if isinstance(val, float) and 0 < val < 1:
+        # Excel fraction of day -> HH:MM:SS
+        total_seconds = int(round(val * 86400))
+        h = total_seconds // 3600
+        m = (total_seconds % 3600) // 60
+        s = total_seconds % 60
+        return f"{h:02d}:{m:02d}:{s:02d}"
     s = str(val).strip()
     return None if s in ("", "nan", "NaT", "None") else s
 
