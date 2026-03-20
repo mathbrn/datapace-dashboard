@@ -114,7 +114,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 
 <div class="dp-header">
   <div><div class="dp-title">Finishers Monde - 10K &middot; 21K &middot; 42K</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
-  <div class="dp-updated">Genere le 20/03/2026 a 09:48</div>
+  <div class="dp-updated">Genere le 20/03/2026 a 09:51</div>
 </div>
 <div class="tabs">
   <div class="tab" onclick="switchTab('overview')">Vue d'ensemble</div>
@@ -472,7 +472,7 @@ function updateBiggest(){
   var n=parseInt(document.getElementById('topn-biggest').value);
   var yr=parseInt(document.getElementById('year-biggest').value);
   var sorted=BIGGEST.filter(function(r){var v=(r.hist||{})[yr];return v&&!isNaN(v);}).sort(function(a,b){return((b.hist||{})[yr]||0)-((a.hist||{})[yr]||0);}).slice(0,n);
-  document.getElementById('biggest-wrap').style.height=Math.max(300,n*44+80)+'px';
+  document.getElementById('biggest-wrap').style.height='520px';
   if(cB)cB.destroy();
   var bigCfg={
     type:'bar',

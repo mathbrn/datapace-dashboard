@@ -358,7 +358,7 @@ function updateBiggest(){
   var n=parseInt(document.getElementById('topn-biggest').value);
   var yr=parseInt(document.getElementById('year-biggest').value);
   var sorted=BIGGEST.filter(function(r){var v=(r.hist||{})[yr];return v&&!isNaN(v);}).sort(function(a,b){return((b.hist||{})[yr]||0)-((a.hist||{})[yr]||0);}).slice(0,n);
-  document.getElementById('biggest-wrap').style.height=Math.max(300,n*44+80)+'px';
+  document.getElementById('biggest-wrap').style.height='520px';
   if(cB)cB.destroy();
   var bigCfg={
     type:'bar',
