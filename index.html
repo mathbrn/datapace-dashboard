@@ -117,7 +117,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 
 <div class="dp-header">
   <div><div class="dp-title">Dashboard Running</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
-  <div class="dp-updated">Genere le 20/03/2026 a 13:52</div>
+  <div class="dp-updated">Genere le 20/03/2026 a 13:55</div>
 </div>
 <div class="tabs">
   <div class="tab active" onclick="switchTab('data')">Tableau</div>
@@ -203,7 +203,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 <div id="panel-temps" class="panel">
   <div class="controls">
     <div class="ctrl-group"><span class="ctrl-label">Distance</span>
-      <select id="dist-temps" onchange="updateTemps()">
+      <select id="dist-temps" onchange="updateTempsYears();updateTemps()">
         <option value="MARATHON">Marathon</option><option value="SEMI">Semi-marathon</option>
       </select>
     </div>
@@ -530,12 +530,24 @@ function updateBiggest(){
   document.getElementById('biggest-bars').innerHTML=html;
 }
 
+function updateTempsYears(){
+  var dist=document.getElementById('dist-temps').value;
+  var sel=document.getElementById('year-temps');
+  var prev=sel.value;
+  if(dist==='SEMI'){
+    sel.innerHTML='<option value="2025">2025</option>';
+  }else{
+    var yrs=Object.keys(TEMPS_MARATHON).sort(function(a,b){return parseInt(b)-parseInt(a);});
+    sel.innerHTML=yrs.map(function(y){return'<option value="'+y+'">'+y+'</option>';}).join('');
+    if(yrs.indexOf(prev)>=0)sel.value=prev;
+  }
+}
+
 function updateTemps(){
   var dist=document.getElementById('dist-temps').value;
   var yr=parseInt(document.getElementById('year-temps').value);
   var sortMode=document.getElementById('sort-temps').value;
   var topn=parseInt(document.getElementById('topn-temps').value);
-  if(dist==='SEMI'&&yr!==2025){document.getElementById('year-temps').value='2025';updateTemps();return;}
   var src=dist==='SEMI'?TEMPS_SEMI_2025:(TEMPS_MARATHON[String(yr)]||[]);
   var data=src.slice();
   if(sortMode==='avg'){data.sort(function(a,b){var ma=toMin(a.avg),mb=toMin(b.avg);if(!ma)return 1;if(!mb)return -1;return ma-mb;});}
