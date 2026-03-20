@@ -42,6 +42,12 @@ ASO_KEYWORDS = [
     "cancer research", "asics ldnx", "adidas manchester",
 ]
 
+WMM_KEYWORDS = [
+    "tcs new york city marathon", "tcs london marathon", "boston marathon",
+    "tcs sydney marathon", "bmw berlin marathon",
+    "bank of america chicago marathon", "tokyo marathon",
+]
+
 
 def fmt_time(val):
     if val is None or (isinstance(val, float) and pd.isna(val)): return None
@@ -187,6 +193,7 @@ def build_times_db(md, sd):
 
 
 JS_LOGIC = '''function isAso(r){var l=r.toLowerCase();return ASO_KEYWORDS.some(function(k){return l.indexOf(k)>=0;});}
+function isWmm(r){var l=r.toLowerCase();return WMM_KEYWORDS.some(function(k){return l.indexOf(k)>=0;});}
 function col(r){return isAso(r)?'#FCDB00':'#5C00D4';}
 function colDist(r){return isAso(r.r)?'#FCDB00':r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':'#9B6FFF';}
 function colByName(name){var r=RAW.find(function(x){return x.r===name;});return r?colDist(r):'#9B6FFF';}
@@ -274,6 +281,7 @@ function ovSelect(idx){
     +'<div class="ov-card-meta"><span>&#x1F4CD; '+ev.c+'</span><span>&#x1F4C5; '+ev.p+'</span></div>'
     +'</div>'
     +'<span class="ov-badge" style="background:'+badgeBg+';color:'+badgeCol+'">'+dl+' - '+(aso?'ASO':'Mondial')+'</span>'
+    +(isWmm(ev.r)?'<span class="ov-badge" style="background:#38BDF818;color:#38BDF8;margin-left:4px">World Marathon Majors</span>':'')
     +'</div>'
     +'<div class="ov-stats">'
     +'<div class="ov-stat"><div class="ov-stat-label">'+finLbl+'</div><div class="ov-stat-value">'+finStr+'</div></div>'
@@ -481,11 +489,11 @@ function filterTable(){
       var tStr=t===null?'-':(t>=0?'+':'')+t.toFixed(1)+'%';
       var firstYr=hkeys[0],lastYr=hkeys[hkeys.length-1];
       var tSub=firstYr&&lastYr?'<div style="font-size:9px;color:#555;margin-top:1px">'+firstYr+'\u2192'+lastYr+'</div>':'';
-      var aso=isAso(r.r);
+      var aso=isAso(r.r);var wmm=isWmm(r.r);
       var bl=r.d==='MARATHON'?'Marathon':r.d==='SEMI'?'Semi':'10 km';
       var raceColor=colDist(r);
       html+='<tr><td>'+r.p+'</td><td>'+r.c+'</td>'
-        +'<td><span class="badge '+(aso?'badge-aso':'badge-world')+'">'+bl+' - '+(aso?'ASO':'Monde')+'</span></td>'
+        +'<td><span class="badge '+(aso?'badge-aso':'badge-world')+'">'+bl+' - '+(aso?'ASO':'Monde')+'</span>'+(wmm?'<span class="badge badge-wmm">WMM</span>':'')+'</td>'
         +'<td style="color:'+raceColor+'" title="'+r.r+'">'+r.r+'</td>'
         +allYears.map(function(y){var v=(r.hist||{})[y];return'<td style="'+(v?'color:var(--text)':'')+'">'+(v?fmtFull(v):'\u2014')+'</td>';}).join('')
         +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
@@ -508,10 +516,10 @@ function filterTable(){
       var tStr=t===null?'-':(t>=0?'+':'')+t.toFixed(1)+'%';
       var tSub=firstYr&&lastYr&&(lastYr-firstYr>3)?'<div style="font-size:9px;color:#555;margin-top:1px">'+firstYr+'\u2192'+lastYr+'</div>':'';
       var raceColor=colDist(r);
-      var aso=isAso(r.r);
+      var aso=isAso(r.r);var wmm=isWmm(r.r);
       var bl=r.d==='MARATHON'?'Marathon':r.d==='SEMI'?'Semi':'10 km';
       html+='<tr><td>'+r.p+'</td><td>'+r.c+'</td>'
-        +'<td><span class="badge '+(aso?'badge-aso':'badge-world')+'">'+bl+' - '+(aso?'ASO':'Monde')+'</span></td>'
+        +'<td><span class="badge '+(aso?'badge-aso':'badge-world')+'">'+bl+' - '+(aso?'ASO':'Monde')+'</span>'+(wmm?'<span class="badge badge-wmm">WMM</span>':'')+'</td>'
         +'<td style="max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:'+raceColor+'">'+r.r+'</td>'
         +'<td>'+fmtFull(r.y3)+'</td><td>'+fmtFull(r.y4)+'</td><td>'+fmtFull(r.y5)+'</td><td>'+fmtFull(r.y6)+'</td>'
         +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
@@ -633,6 +641,8 @@ function renderCompare(){
   var distB = b.d==='MARATHON'?'Marathon':b.d==='SEMI'?'Semi-marathon':'10 km';
   var asoA = isAso(a.r)?'ASO':'Mondial';
   var asoB = isAso(b.r)?'ASO':'Mondial';
+  if(isWmm(a.r))asoA+=' / WMM';
+  if(isWmm(b.r))asoB+=' / WMM';
 
   var avgA = tdA?tdA.avg:null;
   var avgB = tdB?tdB.avg:null;
@@ -879,6 +889,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 .badge{font-size:10px;padding:2px 7px;border-radius:2px;font-weight:400;}
 .badge-aso{background:#FCDB0018;color:#FCDB00;}
 .badge-world{background:#5C00D418;color:#9B6FFF;}
+.badge-wmm{background:#38BDF818;color:#38BDF8;margin-left:4px;}
 .search-wrap{position:relative;flex:1;min-width:160px;}
 .search-wrap input{width:100%;font-size:12px;padding:5px 10px 5px 26px;border:.5px solid var(--border2);border-radius:4px;background:var(--bg2);color:var(--text);}
 .search-wrap input::placeholder{color:var(--text3);}
@@ -1016,6 +1027,7 @@ HTML_BODY = """
     <span class="leg-item"><span class="leg-dot" style="background:#FF8A50"></span>Semi-marathon</span>
     <span class="leg-item"><span class="leg-dot" style="background:#5CDFA0"></span>10 km</span>
     <span class="leg-item"><span class="leg-dot" style="background:#FCDB00"></span>Evenements ASO</span>
+    <span class="leg-item"><span class="leg-dot" style="background:#38BDF8"></span>World Marathon Majors</span>
   </div>
   <div class="chart-wrap" style="height:320px;"><canvas id="chart-trends"></canvas></div>
 </div>
@@ -1034,6 +1046,7 @@ HTML_BODY = """
   <div class="legend">
     <span class="leg-item"><span class="leg-dot" style="background:#5C00D4"></span>Mondial</span>
     <span class="leg-item"><span class="leg-dot" style="background:#FCDB00"></span>Evenements ASO</span>
+    <span class="leg-item"><span class="leg-dot" style="background:#38BDF8"></span>World Marathon Majors</span>
   </div>
   <div class="chart-wrap" id="biggest-wrap" style="height:300px;"><canvas id="chart-biggest"></canvas></div>
 </div>
@@ -1065,6 +1078,7 @@ HTML_BODY = """
   <div class="legend">
     <span class="leg-item"><span class="leg-dot" style="background:#5C00D4"></span>Mondial</span>
     <span class="leg-item"><span class="leg-dot" style="background:#FCDB00"></span>Evenements ASO</span>
+    <span class="leg-item"><span class="leg-dot" style="background:#38BDF8"></span>World Marathon Majors</span>
   </div>
   <div class="time-bar-wrap" id="time-bars"></div>
   <div class="section-title" style="margin-top:.5rem">Comparaison graphique (minutes)</div>
@@ -1152,6 +1166,7 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
     js_data = ("const RAW=" + j(finishers) + ";\nconst BIGGEST=" + j(biggest) + ";\n"
                "const TEMPS_MARATHON=" + j(tmjs) + ";\nconst TEMPS_SEMI_2025=" + j(tsjs) + ";\n"
                "const TIMES_DB=" + j(tdbjs) + ";\nconst ASO_KEYWORDS=" + j(ASO_KEYWORDS) + ";\n"
+               "const WMM_KEYWORDS=" + j(WMM_KEYWORDS) + ";\n"
                "const WINNERS=" + j(winners) + ";\n")
     body = HTML_BODY.format(now=now)
     return f"""<!DOCTYPE html>
