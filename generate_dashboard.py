@@ -238,7 +238,7 @@ function buildTimeHistory(rn){
   if(!hist.length){for(var i=0;i<TEMPS_SEMI_2025.length;i++){var rl=TEMPS_SEMI_2025[i].race.toLowerCase();if(l.indexOf(rl.substring(0,10))>=0||rl.indexOf(l.substring(0,10))>=0){if(toMin(TEMPS_SEMI_2025[i].avg))hist.push({yr:'2025',min:toMin(TEMPS_SEMI_2025[i].avg)});break;}}}
   return hist;
 }
-var cT=null,cTm=null,ovChartF=null,ovChartT=null;
+var cT=null,ovChartF=null,ovChartT=null;
 
 function switchTab(name){
   var names=['data','overview','compare','trends','biggest','temps','winners'];
@@ -431,28 +431,6 @@ function updateTemps(){
     barsHtml+='<div class="time-bar-row"><div class="time-bar-label">'+d.race+'</div><div class="time-bar-track"><div class="time-bar-fill" style="width:'+(m?pct:0)+'%;background:'+barCol+'88"></div></div><div class="time-bar-val">'+(d.avg||'-')+'</div></div>';
   });
   document.getElementById('time-bars').innerHTML=barsHtml;
-  var chartH=Math.max(260,displayedWithAvg.length*28+80);
-  document.getElementById('chart-temps-wrap').style.height=chartH+'px';
-  if(cTm)cTm.destroy();
-  var minY=dist==='SEMI'?90:200;
-  var tempsCfg={
-    type:'bar',
-    data:{
-      labels:displayedWithAvg.map(function(d){return d.race.length>22?d.race.substring(0,22)+'...':d.race;}),
-      datasets:[{data:displayedWithAvg.map(function(d){return parseFloat(toMin(d.avg).toFixed(1));}),backgroundColor:displayedWithAvg.map(function(d){return(isWmm(d.race)?'#38BDF8':isAso(d.race)?'#FCDB00':dist==='SEMI'?'#FF8A50':'#9B6FFF')+'BB';}),borderRadius:2,borderSkipped:false}]
-    },
-    options:{responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{
-        title:function(items){return displayedWithAvg[items[0].dataIndex].race;},
-        label:function(ctx){return' '+displayedWithAvg[ctx.dataIndex].avg+' ('+fmtHM(ctx.parsed.y)+')';}
-      }}},
-      scales:{
-        x:{grid:{display:false},ticks:{color:'#555',font:{size:10},maxRotation:45,autoSkip:false},border:{color:'#ffffff08'}},
-        y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmtHM(v);}},border:{color:'#ffffff08'},min:minY}
-      }
-    }
-  };
-  cTm=new Chart(document.getElementById('chart-temps'),tempsCfg);
 }
 
 function applyFrozen(tbl){
@@ -1080,8 +1058,6 @@ HTML_BODY = """
     <span class="leg-item"><span class="leg-dot" style="background:#38BDF8"></span>World Marathon Majors</span>
   </div>
   <div class="time-bar-wrap" id="time-bars"></div>
-  <div class="section-title" style="margin-top:.5rem">Comparaison graphique (minutes)</div>
-  <div class="chart-wrap" id="chart-temps-wrap" style="height:280px;"><canvas id="chart-temps"></canvas></div>
 </div>
 <div id="panel-winners" class="panel">
   <div class="controls">
