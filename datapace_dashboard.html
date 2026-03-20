@@ -114,7 +114,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 
 <div class="dp-header">
   <div><div class="dp-title">Finishers Monde - 10K &middot; 21K &middot; 42K</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
-  <div class="dp-updated">Genere le 20/03/2026 a 09:40</div>
+  <div class="dp-updated">Genere le 20/03/2026 a 09:45</div>
 </div>
 <div class="tabs">
   <div class="tab" onclick="switchTab('overview')">Vue d'ensemble</div>
@@ -314,8 +314,8 @@ const WINNERS=[{"r": "ASICS Los Angeles Marathon", "d": "42K", "y": 2023, "m": "
 
 function isAso(r){var l=r.toLowerCase();return ASO_KEYWORDS.some(function(k){return l.indexOf(k)>=0;});}
 function isWmm(r){var l=r.toLowerCase();return WMM_KEYWORDS.some(function(k){return l.indexOf(k)>=0;});}
-function col(r){return isAso(r)?'#FCDB00':'#5C00D4';}
-function colDist(r){return isAso(r.r)?'#FCDB00':r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':'#9B6FFF';}
+function col(r){return isWmm(r)?'#38BDF8':isAso(r)?'#FCDB00':'#5C00D4';}
+function colDist(r){return isWmm(r.r)?'#38BDF8':isAso(r.r)?'#FCDB00':r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':'#9B6FFF';}
 function colByName(name){var r=RAW.find(function(x){return x.r===name;});return r?colDist(r):'#9B6FFF';}
 function toMin(t){if(!t)return null;var p=String(t).split(':');if(p.length===3)return parseInt(p[0])*60+parseInt(p[1])+parseInt(p[2])/60;return null;}
 function fmt(n){if(!n||isNaN(n))return'—';return n>=1000?(n/1000).toFixed(1)+'k':n.toString();}
@@ -400,8 +400,7 @@ function ovSelect(idx){
     +'<div class="ov-card-title">'+ev.r+'</div>'
     +'<div class="ov-card-meta"><span>&#x1F4CD; '+ev.c+'</span><span>&#x1F4C5; '+ev.p+'</span></div>'
     +'</div>'
-    +'<span class="ov-badge" style="background:'+badgeBg+';color:'+badgeCol+'">'+dl+' - '+(aso?'ASO':'Mondial')+'</span>'
-    +(isWmm(ev.r)?'<span class="ov-badge" style="background:#38BDF818;color:#38BDF8;margin-left:4px">World Marathon Majors</span>':'')
+    +(isWmm(ev.r)?'<span class="ov-badge" style="background:#38BDF818;color:#38BDF8">'+dl+' - World Marathon Majors</span>':'<span class="ov-badge" style="background:'+badgeBg+';color:'+badgeCol+'">'+dl+' - '+(aso?'ASO':'Mondial')+'</span>')
     +'</div>'
     +'<div class="ov-stats">'
     +'<div class="ov-stat"><div class="ov-stat-label">'+finLbl+'</div><div class="ov-stat-value">'+finStr+'</div></div>'
@@ -530,7 +529,8 @@ function updateTemps(){
   var barsHtml='';
   displayed.forEach(function(d){
     var m=toMin(d.avg);var pct=m?((m-minM)/(maxM-minM+0.001)*75+5).toFixed(1):'0';
-    barsHtml+='<div class="time-bar-row"><div class="time-bar-label">'+d.race+'</div><div class="time-bar-track"><div class="time-bar-fill" style="width:'+(m?pct:0)+'%;background:'+(isAso(d.race)?'#FCDB00':dist==='SEMI'?'#FF8A50':'#9B6FFF')+'88"></div></div><div class="time-bar-val">'+(d.avg||'-')+'</div></div>';
+    var barCol=isWmm(d.race)?'#38BDF8':isAso(d.race)?'#FCDB00':dist==='SEMI'?'#FF8A50':'#9B6FFF';
+    barsHtml+='<div class="time-bar-row"><div class="time-bar-label">'+d.race+'</div><div class="time-bar-track"><div class="time-bar-fill" style="width:'+(m?pct:0)+'%;background:'+barCol+'88"></div></div><div class="time-bar-val">'+(d.avg||'-')+'</div></div>';
   });
   document.getElementById('time-bars').innerHTML=barsHtml;
   var chartH=Math.max(260,displayedWithAvg.length*28+80);
@@ -541,7 +541,7 @@ function updateTemps(){
     type:'bar',
     data:{
       labels:displayedWithAvg.map(function(d){return d.race.length>22?d.race.substring(0,22)+'...':d.race;}),
-      datasets:[{data:displayedWithAvg.map(function(d){return parseFloat(toMin(d.avg).toFixed(1));}),backgroundColor:displayedWithAvg.map(function(d){return(isAso(d.race)?'#FCDB00':dist==='SEMI'?'#FF8A50':'#9B6FFF')+'BB';}),borderRadius:2,borderSkipped:false}]
+      datasets:[{data:displayedWithAvg.map(function(d){return parseFloat(toMin(d.avg).toFixed(1));}),backgroundColor:displayedWithAvg.map(function(d){return(isWmm(d.race)?'#38BDF8':isAso(d.race)?'#FCDB00':dist==='SEMI'?'#FF8A50':'#9B6FFF')+'BB';}),borderRadius:2,borderSkipped:false}]
     },
     options:{responsive:true,maintainAspectRatio:false,
       plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{
@@ -612,8 +612,10 @@ function filterTable(){
       var aso=isAso(r.r);var wmm=isWmm(r.r);
       var bl=r.d==='MARATHON'?'Marathon':r.d==='SEMI'?'Semi':'10 km';
       var raceColor=colDist(r);
+      var badgeClass=wmm?'badge-wmm':aso?'badge-aso':'badge-world';
+      var badgeLabel=wmm?bl+' - WMM':bl+' - '+(aso?'ASO':'Monde');
       html+='<tr><td>'+r.p+'</td><td>'+r.c+'</td>'
-        +'<td><span class="badge '+(aso?'badge-aso':'badge-world')+'">'+bl+' - '+(aso?'ASO':'Monde')+'</span>'+(wmm?'<span class="badge badge-wmm">WMM</span>':'')+'</td>'
+        +'<td><span class="badge '+badgeClass+'">'+badgeLabel+'</span></td>'
         +'<td style="color:'+raceColor+'" title="'+r.r+'">'+r.r+'</td>'
         +allYears.map(function(y){var v=(r.hist||{})[y];return'<td style="'+(v?'color:var(--text)':'')+'">'+(v?fmtFull(v):'—')+'</td>';}).join('')
         +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
@@ -759,10 +761,8 @@ function renderCompare(){
 
   var distA = a.d==='MARATHON'?'Marathon':a.d==='SEMI'?'Semi-marathon':'10 km';
   var distB = b.d==='MARATHON'?'Marathon':b.d==='SEMI'?'Semi-marathon':'10 km';
-  var asoA = isAso(a.r)?'ASO':'Mondial';
-  var asoB = isAso(b.r)?'ASO':'Mondial';
-  if(isWmm(a.r))asoA+=' / WMM';
-  if(isWmm(b.r))asoB+=' / WMM';
+  var asoA = isWmm(a.r)?'WMM':isAso(a.r)?'ASO':'Mondial';
+  var asoB = isWmm(b.r)?'WMM':isAso(b.r)?'ASO':'Mondial';
 
   var avgA = tdA?tdA.avg:null;
   var avgB = tdB?tdB.avg:null;
