@@ -113,7 +113,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 
 <div class="dp-header">
   <div><div class="dp-title">Finishers Monde - 10K &middot; 21K &middot; 42K</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
-  <div class="dp-updated">Genere le 19/03/2026 a 16:55</div>
+  <div class="dp-updated">Genere le 20/03/2026 a 08:21</div>
 </div>
 <div class="tabs">
   <div class="tab" onclick="switchTab('overview')">Vue d'ensemble</div>
@@ -254,9 +254,12 @@ tr:hover td{background:var(--bg2);color:var(--text);}
   <div class="section-title" id="win-section-lbl">Temps des vainqueurs - Marathon</div>
   <div class="legend" id="win-legend"></div>
   <div class="chart-wrap" style="height:420px;"><canvas id="chart-winners"></canvas></div>
-  <div class="section-title" style="margin-top:1.5rem">Classement detaille</div>
+  <div style="display:flex;align-items:center;gap:12px;margin-top:1.5rem;margin-bottom:12px">
+    <span class="section-title" style="margin:0">Classement detaille</span>
+    <select id="win-year" onchange="updateWinnersTable()" style="font-size:11px;padding:3px 8px;"></select>
+  </div>
   <div class="table-wrap" style="max-height:400px;overflow-y:auto">
-    <table><thead><tr><th>Course</th><th>Annee</th><th>Homme</th><th>Femme</th><th>Ecart H/F</th></tr></thead>
+    <table><thead><tr><th>Course</th><th>Homme</th><th>Femme</th><th>Ecart H/F</th></tr></thead>
     <tbody id="win-tbody"></tbody></table>
   </div>
   <div class="count" id="win-count"></div>
@@ -935,12 +938,33 @@ function updateWinners(){
   if(cW){cW.destroy();cW=null;}
   var ctx=document.getElementById('chart-winners').getContext('2d');
   cW=new Chart(ctx,{type:'line',data:{labels:allYears.map(String),datasets:datasets},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{display:false},tooltip:{backgroundColor:'#1a1a1a',titleColor:'#f0f0f0',bodyColor:'#ccc',borderColor:'#333',borderWidth:1,padding:10,callbacks:{label:function(ctx){var v=ctx.parsed.y;if(v==null)return null;var h=Math.floor(v/60),m=Math.floor(v%60),s=Math.round((v*60)%60);return ctx.dataset.label+': '+(h?h+':':'')+String(m).padStart(h?2:1,'0')+':'+String(s).padStart(2,'0');}}}},scales:{x:{ticks:{color:'#555',font:{size:11}},grid:{color:'#ffffff08'}},y:{reverse:true,ticks:{color:'#555',font:{size:11},callback:function(v){var h=Math.floor(v/60),m=Math.round(v%60);return(h?h+'h':'')+(h?String(m).padStart(2,'0'):m)+'min';}},grid:{color:'#ffffff08'}}}}});
+  // Populate year filter
+  var yrSel=document.getElementById('win-year');
+  var prevYr=yrSel.value;
+  var availYears=[];
+  filtered.forEach(function(w){if(availYears.indexOf(w.y)<0)availYears.push(w.y);});
+  availYears.sort(function(a,b){return b-a;});
+  yrSel.innerHTML=availYears.map(function(y){return'<option value="'+y+'">'+y+'</option>';}).join('');
+  if(prevYr&&availYears.indexOf(+prevYr)>=0)yrSel.value=prevYr;
+  updateWinnersTable();
+}
+
+function updateWinnersTable(){
+  var dist=document.getElementById('win-dist').value;
+  var yr=+document.getElementById('win-year').value;
+  if(!yr)return;
+  var filtered=WINNERS.filter(function(w){return w.d===dist&&w.y===yr;});
+  filtered.sort(function(a,b){
+    var ma=winToSec(a.m)||9999,mb=winToSec(b.m)||9999;
+    return ma-mb;
+  });
   var tbody=document.getElementById('win-tbody');
-  var tRows=[];
-  filtered.forEach(function(w){var ms=winToSec(w.m),ws=winToSec(w.w);var gap=(ms&&ws)?secToTime(ws-ms):'\u2014';tRows.push({r:w.r,y:w.y,m:w.m||'\u2014',w:w.w||'\u2014',gap:gap});});
-  tRows.sort(function(a,b){return a.r.localeCompare(b.r)||a.y-b.y;});
-  tbody.innerHTML=tRows.map(function(r){return'<tr><td>'+r.r+'</td><td style="text-align:center">'+r.y+'</td><td style="text-align:center;color:#9B6FFF">'+r.m+'</td><td style="text-align:center;color:#FF8A50">'+r.w+'</td><td style="text-align:center;color:var(--text3)">'+r.gap+'</td></tr>';}).join('');
-  document.getElementById('win-count').textContent=tRows.length+' resultats';
+  tbody.innerHTML=filtered.map(function(w){
+    var ms=winToSec(w.m),ws=winToSec(w.w);
+    var gap=(ms&&ws)?secToTime(ws-ms):'\u2014';
+    return'<tr><td>'+w.r+'</td><td style="text-align:center;color:#9B6FFF">'+(w.m||'\u2014')+'</td><td style="text-align:center;color:#FF8A50">'+(w.w||'\u2014')+'</td><td style="text-align:center;color:var(--text3)">'+gap+'</td></tr>';
+  }).join('');
+  document.getElementById('win-count').textContent=filtered.length+' courses - '+yr;
 }
 
 </script>
