@@ -345,19 +345,28 @@ function updateTrends(){
   cT=new Chart(document.getElementById('chart-trends'),trendCfg);
 }
 
+function getBiggestSrc(){
+  var dist=document.getElementById('dist-biggest').value;
+  return dist==='ALL'?RAW:RAW.filter(function(r){return r.d===dist;});
+}
+
 function initBiggestYears(){
+  var src=getBiggestSrc();
   var allYears=[];
-  BIGGEST.forEach(function(r){Object.keys(r.hist||{}).forEach(function(y){var yi=parseInt(y);if(allYears.indexOf(yi)<0)allYears.push(yi);});});
+  src.forEach(function(r){Object.keys(r.hist||{}).forEach(function(y){var yi=parseInt(y);if(allYears.indexOf(yi)<0)allYears.push(yi);});});
   allYears.sort(function(a,b){return b-a;});
   var sel=document.getElementById('year-biggest');
+  var prev=sel.value;
   sel.innerHTML='';
   allYears.forEach(function(y){var o=document.createElement('option');o.value=y;o.textContent=y;sel.appendChild(o);});
+  if(prev&&allYears.indexOf(+prev)>=0)sel.value=prev;
 }
 
 function updateBiggest(){
   var n=parseInt(document.getElementById('topn-biggest').value);
   var yr=parseInt(document.getElementById('year-biggest').value);
-  var sorted=BIGGEST.filter(function(r){var v=(r.hist||{})[yr];return v&&!isNaN(v);}).sort(function(a,b){return((b.hist||{})[yr]||0)-((a.hist||{})[yr]||0);}).slice(0,n);
+  var src=getBiggestSrc();
+  var sorted=src.filter(function(r){var v=(r.hist||{})[yr];return v&&!isNaN(v);}).sort(function(a,b){return((b.hist||{})[yr]||0)-((a.hist||{})[yr]||0);}).slice(0,n);
   document.getElementById('biggest-wrap').style.height='520px';
   if(cB)cB.destroy();
   var shortLabels=sorted.map(function(r){
@@ -1026,6 +1035,12 @@ HTML_BODY = """
 </div>
 <div id="panel-biggest" class="panel">
   <div class="controls">
+    <div class="ctrl-group"><span class="ctrl-label">Distance</span>
+      <select id="dist-biggest" onchange="initBiggestYears();updateBiggest()">
+        <option value="ALL">Toutes distances</option>
+        <option value="MARATHON">Marathon</option><option value="SEMI">Semi-marathon</option><option value="10KM">10 km</option>
+      </select>
+    </div>
     <div class="ctrl-group"><span class="ctrl-label">Top N</span>
       <select id="topn-biggest" onchange="updateBiggest()">
         <option value="10">Top 10</option><option value="15">Top 15</option><option value="20">Top 20</option><option value="999">Tous</option>
