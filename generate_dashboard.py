@@ -475,6 +475,15 @@ function filterTable(){
     if(q&&r.r.toLowerCase().indexOf(q)<0&&r.c.toLowerCase().indexOf(q)<0)return false;
     return globalYears.some(function(y){return(r.hist||{})[y];});
   });
+  // Sort
+  var sortMode=document.getElementById('sort-data').value;
+  var monthOrder={Janvier:1,Fevrier:2,Février:2,Mars:3,Avril:4,Mai:5,Juin:6,Juillet:7,Aout:8,Août:8,Septembre:9,Octobre:10,Novembre:11,Decembre:12,Décembre:12};
+  var distOrder={MARATHON:1,SEMI:2,'10KM':3};
+  var lastYr=globalYears.length?globalYears[globalYears.length-1]:0;
+  if(sortMode==='month'){f.sort(function(a,b){return(monthOrder[a.p]||99)-(monthOrder[b.p]||99);});}
+  else if(sortMode==='distance'){f.sort(function(a,b){return(distOrder[a.d]||9)-(distOrder[b.d]||9);});}
+  else if(sortMode==='finishers'){f.sort(function(a,b){var va=(a.hist||{})[lastYr]||0,vb=(b.hist||{})[lastYr]||0;return vb-va;});}
+  else if(sortMode==='trend'){f.sort(function(a,b){function getTrend(r){var vals=globalYears.map(function(y){return(r.hist||{})[y]||null;}).filter(function(v){return v&&!isNaN(v);});return vals.length>=2?delta(vals[0],vals[vals.length-1]):null;}var ta=getTrend(a),tb=getTrend(b);if(ta===null&&tb===null)return 0;if(ta===null)return 1;if(tb===null)return-1;return tb-ta;});}
   var frozen=globalYears.length>4;
   if(tbl){tbl.classList.toggle('tbl-frozen',frozen);if(!frozen)tbl.style.tableLayout='';tbl.querySelectorAll('.frozen-cell').forEach(function(c){c.classList.remove('frozen-cell');c.style.position='';c.style.left='';c.style.zIndex='';c.style.minWidth='';c.style.width='';c.style.boxShadow='';});}
   var yrTh=globalYears.map(function(y){return frozen?'<th style="min-width:58px;width:58px;text-align:center;padding:7px 6px">'+y+'</th>':'<th>'+y+'</th>';}).join('');
@@ -1112,6 +1121,15 @@ HTML_BODY = """
         <option>Janvier</option><option>Fevrier</option><option>Mars</option><option>Avril</option>
         <option>Mai</option><option>Juin</option><option>Juillet</option><option>Aout</option>
         <option>Septembre</option><option>Octobre</option><option>Novembre</option><option>Decembre</option>
+      </select>
+    </div>
+    <div class="ctrl-group"><span class="ctrl-label">Tri</span>
+      <select id="sort-data" onchange="filterTable()">
+        <option value="default">Par defaut</option>
+        <option value="month">Par mois</option>
+        <option value="distance">Par distance</option>
+        <option value="finishers">Finishers (decroissant)</option>
+        <option value="trend">Meilleure tendance</option>
       </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Periode</span>
