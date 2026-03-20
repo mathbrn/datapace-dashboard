@@ -114,7 +114,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 
 <div class="dp-header">
   <div><div class="dp-title">Finishers Monde - 10K &middot; 21K &middot; 42K</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
-  <div class="dp-updated">Genere le 20/03/2026 a 09:05</div>
+  <div class="dp-updated">Genere le 20/03/2026 a 09:10</div>
 </div>
 <div class="tabs">
   <div class="tab" onclick="switchTab('overview')">Vue d'ensemble</div>
@@ -334,6 +334,21 @@ function getTimeData(rn){
   for(var i=0;i<keys.length;i++){var k=keys[i];if(l.indexOf(k)>=0||k.indexOf(l.substring(0,12))>=0)return TIMES_DB[k];}
   return null;
 }
+function getWinnersRecords(rn){
+  var entries=WINNERS.filter(function(w){return w.r===rn;});
+  if(!entries.length){
+    var l=rn.toLowerCase();
+    entries=WINNERS.filter(function(w){return w.r.toLowerCase().indexOf(l.substring(0,15))>=0||l.indexOf(w.r.toLowerCase().substring(0,15))>=0;});
+  }
+  if(!entries.length)return null;
+  var bestM=null,bestMyr=null,bestW=null,bestWyr=null;
+  entries.forEach(function(w){
+    var ms=winToSec(w.m),ws=winToSec(w.w);
+    if(ms&&(bestM===null||ms<bestM)){bestM=ms;bestMyr=w.y;}
+    if(ws&&(bestW===null||ws<bestW)){bestW=ws;bestWyr=w.y;}
+  });
+  return{men:bestM?secToTime(bestM):'',menYr:bestMyr,women:bestW?secToTime(bestW):'',womenYr:bestWyr};
+}
 function buildTimeHistory(rn){
   var l=rn.toLowerCase(),hist=[];
   [2024,2025,2026].forEach(function(yr){
@@ -388,11 +403,16 @@ function ovSelect(idx){
   if(!finHistory.length)finHistory=[{yr:2023,v:ev.y3},{yr:2024,v:ev.y4},{yr:2025,v:ev.y5},{yr:2026,v:ev.y6}].filter(function(e){return e.v&&!isNaN(e.v);});
   var lastEd=finHistory[finHistory.length-1];
   var td=getTimeData(ev.r);
+  var wr=getWinnersRecords(ev.r);
   var finStr=lastEd?fmtFull(lastEd.v):'-';
   var finLbl='Finishers'+(lastEd?' ('+lastEd.yr+')':'');
   var avgLbl='Temps moyen'+(td?' ('+td.yr+')':'');
-  var menLbl='Record homme'+(td?' ('+td.yr+')':'');
-  var wmLbl='Record femme'+(td?' ('+td.yr+')':'');
+  var menVal=wr&&wr.men?wr.men:(td&&td.men?td.men:'-');
+  var menYrVal=wr&&wr.menYr?wr.menYr:(td?td.yr:null);
+  var wmVal=wr&&wr.women?wr.women:(td&&td.women?td.women:'-');
+  var wmYrVal=wr&&wr.womenYr?wr.womenYr:(td?td.yr:null);
+  var menLbl='Record homme'+(menYrVal?' ('+menYrVal+')':'');
+  var wmLbl='Record femme'+(wmYrVal?' ('+wmYrVal+')':'');
   var badgeBg=ac+'18';
   var badgeCol=ac;
   var html='<div class="ov-card">'
@@ -405,8 +425,8 @@ function ovSelect(idx){
     +'<div class="ov-stats">'
     +'<div class="ov-stat"><div class="ov-stat-label">'+finLbl+'</div><div class="ov-stat-value">'+finStr+'</div></div>'
     +'<div class="ov-stat"><div class="ov-stat-label">'+avgLbl+'</div><div class="ov-stat-value" style="font-size:14px">'+(td&&td.avg?td.avg:'-')+'</div></div>'
-    +'<div class="ov-stat"><div class="ov-stat-label">'+menLbl+'</div><div class="ov-stat-value" style="font-size:14px;color:var(--yellow)">'+(td&&td.men?td.men:'-')+'</div></div>'
-    +'<div class="ov-stat"><div class="ov-stat-label">'+wmLbl+'</div><div class="ov-stat-value" style="font-size:14px;color:var(--yellow)">'+(td&&td.women?td.women:'-')+'</div></div>'
+    +'<div class="ov-stat"><div class="ov-stat-label">'+menLbl+'</div><div class="ov-stat-value" style="font-size:14px;color:#9B6FFF">'+menVal+'</div></div>'
+    +'<div class="ov-stat"><div class="ov-stat-label">'+wmLbl+'</div><div class="ov-stat-value" style="font-size:14px;color:#FF8A50">'+wmVal+'</div></div>'
     +'</div>'
     +'<div class="ov-charts">'
     +'<div class="ov-chart-box"><div class="ov-chart-label">Finishers par edition</div><div style="position:relative;height:150px"><canvas id="ov-chart-fin"></canvas></div></div>'
@@ -735,6 +755,8 @@ function renderCompare(){
   var b = cmpSelectedB;
   var tdA = getTimeData(a.r);
   var tdB = getTimeData(b.r);
+  var wrA = getWinnersRecords(a.r);
+  var wrB = getWinnersRecords(b.r);
 
   // Last finishers
   var fA = a.y6||a.y5||a.y4||a.y3;
@@ -764,10 +786,10 @@ function renderCompare(){
 
   var avgA = tdA?tdA.avg:null;
   var avgB = tdB?tdB.avg:null;
-  var menA = tdA?tdA.men:null;
-  var menB = tdB?tdB.men:null;
-  var wmA  = tdA?tdA.women:null;
-  var wmB  = tdB?tdB.women:null;
+  var menA = wrA&&wrA.men?wrA.men:(tdA?tdA.men:null);
+  var menB = wrB&&wrB.men?wrB.men:(tdB?tdB.men:null);
+  var wmA  = wrA&&wrA.women?wrA.women:(tdA?tdA.women:null);
+  var wmB  = wrB&&wrB.women?wrB.women:(tdB?tdB.women:null);
 
   // Win conditions
   var winFin   = fA&&fB ? (fA>fB?true:fA<fB?false:null) : null;
