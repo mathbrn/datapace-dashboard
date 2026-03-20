@@ -482,70 +482,47 @@ function filterTable(){
   var q=(document.getElementById('search-data').value||'').toLowerCase();
   var dist=document.getElementById('dist-data').value;
   var month=document.getElementById('month-data').value;
-  var afficher=document.getElementById('afficher-data').value;
+  var periode=document.getElementById('afficher-data').value;
   var thead=document.getElementById('table-head-row');
+  var tbl=document.getElementById('data-table');
+  // Determine year range
+  var now=new Date().getFullYear();
+  var minYr=periode==='all'?0:now-parseInt(periode)+1;
+  // Collect all years across all data
+  var globalYears=[];
+  RAW.forEach(function(r){Object.keys(r.hist||{}).map(Number).forEach(function(y){if(y>=minYr&&globalYears.indexOf(y)<0)globalYears.push(y);});});
+  globalYears.sort(function(a,b){return a-b;});
+  // Filter races
   var f=RAW.filter(function(r){
     if(dist!=='ALL'&&r.d!==dist)return false;
     if(month!=='ALL'&&r.p!==month)return false;
     if(q&&r.r.toLowerCase().indexOf(q)<0&&r.c.toLowerCase().indexOf(q)<0)return false;
-    if(afficher==='hist'&&!Object.keys(r.hist||{}).some(function(y){return parseInt(y)<2023;}))return false;
-    return true;
+    return globalYears.some(function(y){return(r.hist||{})[y];});
   });
-  var tbl=document.getElementById('data-table');
+  if(tbl)tbl.classList.toggle('tbl-frozen',globalYears.length>5);
+  if(thead)thead.innerHTML='<th>Mois</th><th>Ville</th><th>Distance</th><th>Epreuve</th>'+globalYears.map(function(y){return'<th>'+y+'</th>';}).join('')+'<th>Tendance</th>';
   var html='';
-  if(afficher==='hist'){
-    if(tbl)tbl.classList.add('tbl-frozen');
-    var allYears=[];
-    f.forEach(function(r){Object.keys(r.hist||{}).map(Number).forEach(function(y){if(allYears.indexOf(y)<0)allYears.push(y);});});
-    allYears.sort(function(a,b){return a-b;});
-    if(thead)thead.innerHTML='<th>Mois</th><th>Ville</th><th>Distance</th><th>Epreuve</th>'+allYears.map(function(y){return'<th>'+y+'</th>';}).join('')+'<th>Tendance</th>';
-    f.forEach(function(r){
-      var hkeys=Object.keys(r.hist||{}).map(Number).sort(function(a,b){return a-b;});
-      var hvals=hkeys.map(function(y){return(r.hist||{})[y];}).filter(function(v){return v&&!isNaN(v);});
-      var t=hvals.length>=2?delta(hvals[0],hvals[hvals.length-1]):null;
-      var tc=t===null?'#555':t>=0?'#2DBF7E':'#FF4A6B';
-      var tStr=t===null?'-':(t>=0?'+':'')+t.toFixed(1)+'%';
-      var firstYr=hkeys[0],lastYr=hkeys[hkeys.length-1];
-      var tSub=firstYr&&lastYr?'<div style="font-size:9px;color:#555;margin-top:1px">'+firstYr+'\u2192'+lastYr+'</div>':'';
-      var aso=isAso(r.r);var wmm=isWmm(r.r);
-      var bl=r.d==='MARATHON'?'Marathon':r.d==='SEMI'?'Semi':'10 km';
-      var raceColor=colDist(r);
-      var badgeClass=wmm?'badge-wmm':aso?'badge-aso':'badge-world';
-      var badgeLabel=wmm?bl+' - WMM':bl+' - '+(aso?'ASO':'Autre');
-      html+='<tr><td>'+r.p+'</td><td>'+r.c+'</td>'
-        +'<td><span class="badge '+badgeClass+'">'+badgeLabel+'</span></td>'
-        +'<td style="color:'+raceColor+'" title="'+r.r+'">'+r.r+'</td>'
-        +allYears.map(function(y){var v=(r.hist||{})[y];return'<td style="'+(v?'color:var(--text)':'')+'">'+(v?fmtFull(v):'\u2014')+'</td>';}).join('')
-        +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
-    });
-    document.getElementById('table-body').innerHTML=html;
-    applyFrozen(tbl);
-    var cnt=f.length;
-    document.getElementById('table-count').textContent=cnt+' epreuve'+(cnt>1?'s':'')+' affichee'+(cnt>1?'s':'');
-    return;
-  }else{
-    if(tbl)tbl.classList.remove('tbl-frozen');
-    if(thead)thead.innerHTML='<th>Mois</th><th>Ville</th><th>Distance</th><th>Epreuve</th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>Tendance</th>';
-    f.forEach(function(r){
-      var hkeys=Object.keys(r.hist||{}).map(Number).sort(function(a,b){return a-b;});
-      var hvals=hkeys.map(function(y){return(r.hist||{})[y];}).filter(function(v){return v&&!isNaN(v);});
-      var t=hvals.length>=2?delta(hvals[0],hvals[hvals.length-1]):null;
-      var firstYr=hkeys.length>=2?hkeys[0]:null;
-      var lastYr=hkeys.length>=2?hkeys[hkeys.length-1]:null;
-      var tc=t===null?'#555':t>=0?'#2DBF7E':'#FF4A6B';
-      var tStr=t===null?'-':(t>=0?'+':'')+t.toFixed(1)+'%';
-      var tSub=firstYr&&lastYr&&(lastYr-firstYr>3)?'<div style="font-size:9px;color:#555;margin-top:1px">'+firstYr+'\u2192'+lastYr+'</div>':'';
-      var raceColor=colDist(r);
-      var aso=isAso(r.r);var wmm=isWmm(r.r);
-      var bl=r.d==='MARATHON'?'Marathon':r.d==='SEMI'?'Semi':'10 km';
-      html+='<tr><td>'+r.p+'</td><td>'+r.c+'</td>'
-        +'<td><span class="badge '+(aso?'badge-aso':'badge-world')+'">'+bl+' - '+(aso?'ASO':'Autre')+'</span>'+(wmm?'<span class="badge badge-wmm">WMM</span>':'')+'</td>'
-        +'<td style="max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:'+raceColor+'">'+r.r+'</td>'
-        +'<td>'+fmtFull(r.y3)+'</td><td>'+fmtFull(r.y4)+'</td><td>'+fmtFull(r.y5)+'</td><td>'+fmtFull(r.y6)+'</td>'
-        +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
-    });
-  }
+  f.forEach(function(r){
+    var vals=globalYears.map(function(y){return(r.hist||{})[y]||null;}).filter(function(v){return v&&!isNaN(v);});
+    var t=vals.length>=2?delta(vals[0],vals[vals.length-1]):null;
+    var tc=t===null?'#555':t>=0?'#2DBF7E':'#FF4A6B';
+    var tStr=t===null?'-':(t>=0?'+':'')+t.toFixed(1)+'%';
+    var yrKeys=globalYears.filter(function(y){return(r.hist||{})[y];});
+    var firstYr=yrKeys[0],lastYr=yrKeys[yrKeys.length-1];
+    var tSub=firstYr&&lastYr&&firstYr!==lastYr?'<div style="font-size:9px;color:#555;margin-top:1px">'+firstYr+'\u2192'+lastYr+'</div>':'';
+    var aso=isAso(r.r);var wmm=isWmm(r.r);
+    var bl=r.d==='MARATHON'?'Marathon':r.d==='SEMI'?'Semi':'10 km';
+    var raceColor=colDist(r);
+    var badgeClass=wmm?'badge-wmm':aso?'badge-aso':'badge-world';
+    var badgeLabel=wmm?bl+' - WMM':bl+' - '+(aso?'ASO':'Autre');
+    html+='<tr><td>'+r.p+'</td><td>'+r.c+'</td>'
+      +'<td><span class="badge '+badgeClass+'">'+badgeLabel+'</span></td>'
+      +'<td style="color:'+raceColor+'" title="'+r.r+'">'+r.r+'</td>'
+      +globalYears.map(function(y){var v=(r.hist||{})[y];return'<td style="'+(v?'color:var(--text)':'')+'">'+(v?fmtFull(v):'\u2014')+'</td>';}).join('')
+      +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
+  });
   document.getElementById('table-body').innerHTML=html;
+  if(globalYears.length>5)applyFrozen(tbl);
   var cnt=f.length;
   document.getElementById('table-count').textContent=cnt+' epreuve'+(cnt>1?'s':'')+' affichee'+(cnt>1?'s':'');
 }
@@ -1159,10 +1136,12 @@ HTML_BODY = """
         <option>Septembre</option><option>Octobre</option><option>Novembre</option><option>Decembre</option>
       </select>
     </div>
-    <div class="ctrl-group"><span class="ctrl-label">Donnees</span>
+    <div class="ctrl-group"><span class="ctrl-label">Periode</span>
       <select id="afficher-data" onchange="filterTable()">
-        <option value="recent">Recentes (2023-2026)</option>
-        <option value="hist">Historiques (2007-2026)</option>
+        <option value="3">3 dernieres annees</option>
+        <option value="5">5 dernieres annees</option>
+        <option value="10">10 dernieres annees</option>
+        <option value="all">Historique complet</option>
       </select>
     </div>
   </div>
