@@ -92,6 +92,7 @@ def load_finishers():
         def gv(col, r=r):
             v = r.get(col)
             if v is None or (isinstance(v, float) and pd.isna(v)): return None
+            if str(v).strip() == "-": return -1  # Edition annulee
             try: iv = int(float(v)); return iv if iv > 0 else None
             except: return None
         hist = {yr: v for yr in year_cols if (v := gv(yr)) is not None}
@@ -113,6 +114,7 @@ def load_biggest():
         def gv(col, r=r):
             v = r.get(col)
             if v is None or (isinstance(v, float) and pd.isna(v)): return None
+            if str(v).strip() == "-": return -1  # Edition annulee
             try: iv = int(float(v)); return iv if iv > 0 else None
             except: return None
         hist = {yr: v for yr in year_cols if (v := gv(yr)) is not None}
@@ -224,8 +226,8 @@ function col(r){return isWmm(r)?'#38BDF8':isAso(r)?'#FCDB00':'#5C00D4';}
 function colDist(r){return isWmm(r.r)?'#38BDF8':isAso(r.r)?'#FCDB00':r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':r.d==='AUTRE'?'#F472B6':'#9B6FFF';}
 function colByName(name){var r=RAW.find(function(x){return x.r===name;});return r?colDist(r):'#9B6FFF';}
 function toMin(t){if(!t)return null;var p=String(t).split(':');if(p.length===3)return parseInt(p[0])*60+parseInt(p[1])+parseInt(p[2])/60;return null;}
-function fmt(n){if(!n||isNaN(n))return'\u2014';return n>=1000?(n/1000).toFixed(1)+'k':n.toString();}
-function fmtFull(n){if(!n||isNaN(n))return'\u2014';return Math.round(n).toLocaleString('fr-FR');}
+function fmt(n){if(n===-1)return'Annul\u00e9';if(!n||isNaN(n))return'\u2014';return n>=1000?(n/1000).toFixed(1)+'k':n.toString();}
+function fmtFull(n){if(n===-1)return'Annul\u00e9';if(!n||isNaN(n))return'\u2014';return Math.round(n).toLocaleString('fr-FR');}
 function delta(a,b){if(!a||!b||isNaN(a)||isNaN(b))return null;return((b-a)/a*100);}
 function fmtHM(mins){var h=Math.floor(mins/60),m=Math.round(mins%60);return h+'h'+String(m).padStart(2,'0');}
 function fmtHMMin(mins){return fmtHM(mins)+'min';}
@@ -384,7 +386,7 @@ function updateTrends(){
   var allYears=[];
   sorted.forEach(function(r){Object.keys(r.hist||{}).map(Number).forEach(function(y){if(allYears.indexOf(y)<0)allYears.push(y);});});
   allYears.sort(function(a,b){return a-b;});
-  var datasets=sorted.map(function(r){return{label:r.r,data:allYears.map(function(yr){return(r.hist||{})[yr]||null;}),borderColor:colDist(r),backgroundColor:'transparent',tension:0.35,fill:false,pointRadius:3,pointHoverRadius:7,spanGaps:true,borderWidth:2,pointBackgroundColor:colDist(r)};});
+  var datasets=sorted.map(function(r){return{label:r.r,data:allYears.map(function(yr){var v=(r.hist||{})[yr];return v&&v>0?v:null;}),borderColor:colDist(r),backgroundColor:'transparent',tension:0.35,fill:false,pointRadius:3,pointHoverRadius:7,spanGaps:true,borderWidth:2,pointBackgroundColor:colDist(r)};});
   var minYr=allYears.length?allYears[0]:'';var maxYr=allYears.length?allYears[allYears.length-1]:'';
   if(lbl)lbl.textContent='Evolution par evenement '+minYr+'-'+maxYr;
   var trendCfg={type:'line',data:{labels:allYears.map(String),datasets:datasets},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'nearest',intersect:true},plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{title:function(items){return items.length?items[0].dataset.label:'';},label:function(ctx){return' '+fmtFull(ctx.parsed.y)+' finishers';}}}},scales:{x:{grid:{color:GRID},ticks:TICK,border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmt(v);}},border:{color:'#ffffff08'}}}}};
@@ -525,11 +527,11 @@ function filterTable(){
   if(thead)thead.innerHTML='<th>Mois</th><th>Ville</th><th>Distance</th><th>Epreuve</th>'+yrTh+'<th>Tendance</th>';
   var html='';
   f.forEach(function(r){
-    var vals=globalYears.map(function(y){return(r.hist||{})[y]||null;}).filter(function(v){return v&&!isNaN(v);});
+    var vals=globalYears.map(function(y){return(r.hist||{})[y]||null;}).filter(function(v){return v&&v>0&&!isNaN(v);});
     var t=vals.length>=2?delta(vals[0],vals[vals.length-1]):null;
     var tc=t===null?'#555':t>=0?'#2DBF7E':'#FF4A6B';
     var tStr=t===null?'-':(t>=0?'+':'')+t.toFixed(1)+'%';
-    var yrKeys=globalYears.filter(function(y){return(r.hist||{})[y];});
+    var yrKeys=globalYears.filter(function(y){var v=(r.hist||{})[y];return v&&v>0;});
     var firstYr=yrKeys[0],lastYr=yrKeys[yrKeys.length-1];
     var tSub=firstYr&&lastYr&&firstYr!==lastYr?'<div style="font-size:9px;color:#555;margin-top:1px">'+firstYr+'\u2192'+lastYr+'</div>':'';
     var wmm=isWmm(r.r);var aso=isAso(r.r);
@@ -539,7 +541,7 @@ function filterTable(){
     html+='<tr><td>'+r.p+'</td><td>'+r.c+'</td>'
       +'<td><span class="badge" style="background:'+raceColor+'18;color:'+raceColor+'">'+badgeLabel+'</span></td>'
       +'<td style="color:'+raceColor+'" title="'+r.r+'">'+r.r+'</td>'
-      +globalYears.map(function(y){var v=(r.hist||{})[y];return'<td style="'+(v?'color:var(--text)':'')+'">'+(v?fmtFull(v):'\u2014')+'</td>';}).join('')
+      +globalYears.map(function(y){var v=(r.hist||{})[y];if(v===-1)return'<td style="color:#FF4A6B;font-size:10px;font-style:italic">Annul\u00e9</td>';return'<td style="'+(v?'color:var(--text)':'')+'">'+(v?fmtFull(v):'\u2014')+'</td>';}).join('')
       +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
   });
   document.getElementById('table-body').innerHTML=html;
