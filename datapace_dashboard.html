@@ -117,7 +117,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 
 <div class="dp-header">
   <div><div class="dp-title">Finishers Monde - 10K &middot; 21K &middot; 42K</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
-  <div class="dp-updated">Genere le 20/03/2026 a 14:27</div>
+  <div class="dp-updated">Genere le 20/03/2026 a 14:31</div>
 </div>
 <div class="tabs">
   <div class="tab active" onclick="switchTab('data')">Tableau</div>
@@ -923,7 +923,7 @@ function updateWinners(){
   document.getElementById('win-legend').innerHTML=legH;
   if(cW){cW.destroy();cW=null;}
   var ctx=document.getElementById('chart-winners').getContext('2d');
-  cW=new Chart(ctx,{type:'line',data:{labels:allYears.map(String),datasets:datasets},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{display:false},tooltip:{backgroundColor:'#1a1a1a',titleColor:'#f0f0f0',bodyColor:'#ccc',borderColor:'#333',borderWidth:1,padding:10,callbacks:{label:function(ctx){var v=ctx.parsed.y;if(v==null)return null;var h=Math.floor(v/60),m=Math.floor(v%60),s=Math.round((v*60)%60);return ctx.dataset.label+': '+(h?h+':':'')+String(m).padStart(h?2:1,'0')+':'+String(s).padStart(2,'0');}}}},scales:{x:{ticks:{color:'#555',font:{size:11}},grid:{color:'#ffffff08'}},y:{reverse:true,ticks:{color:'#555',font:{size:11},callback:function(v){var h=Math.floor(v/60),m=Math.round(v%60);return(h?h+'h':'')+(h?String(m).padStart(2,'0'):m)+'min';}},grid:{color:'#ffffff08'}}}}});
+  cW=new Chart(ctx,{type:'line',data:{labels:allYears.map(String),datasets:datasets},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'nearest',intersect:true},plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{title:function(items){return items.length?items[0].dataset.label:'';},label:function(ctx){var v=ctx.parsed.y;if(v==null)return null;var h=Math.floor(v/60),m=Math.floor(v%60),s=Math.round((v*60)%60);return' '+(h?h+':':'')+String(m).padStart(h?2:1,'0')+':'+String(s).padStart(2,'0');}}}},scales:{x:{ticks:{color:'#555',font:{size:11}},grid:{color:'#ffffff08'}},y:{reverse:true,ticks:{color:'#555',font:{size:11},callback:function(v){var h=Math.floor(v/60),m=Math.round(v%60);return(h?h+'h':'')+(h?String(m).padStart(2,'0'):m)+'min';}},grid:{color:'#ffffff08'}}}}});
   // Populate year filter
   var yrSel=document.getElementById('win-year');
   var prevYr=yrSel.value;
