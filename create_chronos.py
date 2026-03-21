@@ -249,6 +249,11 @@ marathon_data = [
     ("Honolulu Marathon", "42K", 2023, "2:15:42", "2:33:01"),
     ("Honolulu Marathon", "42K", 2024, "2:11:59", "2:31:14"),
     ("Honolulu Marathon", "42K", 2025, "2:13:38", "2:30:43"),
+    # Standard Chartered KL Marathon
+    ("Standard Chartered KL Marathon", "42K", 2025, "2:17:28", "2:41:36"),
+    # Standard Chartered Hong Kong Marathon
+    ("Standard Chartered Hong Kong Marathon", "42K", 2026, "N/A", "N/A"),
+    ("Standard Chartered Hong Kong Marathon", "42K", 2019, "2:09:20", "2:26:13"),
 ]
 
 # ============================================================
@@ -396,6 +401,11 @@ half_marathon_data = [
     ("Semi-Marathon de Boulogne-Billancourt", "21K", 2025, "N/A", "N/A"),
     ("Standard Chartered Singapore Half Marathon", "21K", 2025, "N/A", "N/A"),
     ("Rock 'n' Roll Running Series Mexico City", "21K", 2025, "N/A", "N/A"),
+    # Standard Chartered KL Half Marathon
+    ("Standard Chartered KL Half Marathon", "21K", 2025, "1:11:08", "1:23:55"),
+    # Standard Chartered Hong Kong Half Marathon
+    ("Standard Chartered Hong Kong Half Marathon", "21K", 2026, "N/A", "N/A"),
+    ("Standard Chartered Hong Kong Half Marathon", "21K", 2019, "1:01:13", "1:09:28"),
 ]
 
 # ============================================================
