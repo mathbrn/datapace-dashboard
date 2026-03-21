@@ -897,8 +897,9 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSy
 .dp-title{font-size:15px;font-weight:500;letter-spacing:.02em;}
 .dp-sub{font-size:12px;color:var(--text3);margin-top:4px;}
 .dp-updated{font-size:11px;color:var(--text3);}
-.tabs{display:flex;border-bottom:.5px solid var(--border);margin-bottom:1.5rem;overflow-x:auto;}
-.tab{padding:8px 14px;font-size:12px;color:var(--text3);cursor:pointer;border-bottom:1px solid transparent;margin-bottom:-1px;letter-spacing:.04em;text-transform:uppercase;transition:color .15s;white-space:nowrap;}
+.tabs{display:flex;border-bottom:.5px solid var(--border);margin-bottom:1.5rem;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{padding:8px 14px;font-size:12px;color:var(--text3);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;letter-spacing:.04em;text-transform:uppercase;transition:color .15s,border-color .15s;white-space:nowrap;}
 .tab.active{color:var(--text);border-bottom-color:var(--purple);}
 .tab:hover:not(.active){color:var(--text2);}
 .panel{display:none;}.panel.active{display:block;}
