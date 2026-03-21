@@ -117,7 +117,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 
 <div class="dp-header">
   <div><div class="dp-title">Dashboard Running</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
-  <div class="dp-updated">Genere le 20/03/2026 a 15:17</div>
+  <div class="dp-updated">Genere le 21/03/2026 a 08:33</div>
 </div>
 <div class="tabs">
   <div class="tab active" onclick="switchTab('data')">Tableau</div>
@@ -526,7 +526,7 @@ function updateBiggest(){
     var v=(r.hist||{})[yr];
     var pct=(v/maxVal*80+5).toFixed(1);
     var barCol=colDist(r);
-    html+='<div class="time-bar-row"><div class="time-bar-label" title="'+r.r+'">'+r.r+'</div><div class="time-bar-track"><div class="time-bar-fill" style="width:'+pct+'%;background:'+barCol+'88"></div></div><div class="time-bar-val">'+fmt(v)+'</div></div>';
+    html+='<div class="time-bar-row" style="position:relative;cursor:default" onmouseenter="showBarTip(this,''+r.r.replace(/'/g,"\'")+'',''+fmtFull(v)+' finishers')" onmouseleave="hideBarTip()"><div class="time-bar-label" title="'+r.r+'">'+r.r+'</div><div class="time-bar-track"><div class="time-bar-fill" style="width:'+pct+'%;background:'+barCol+'88"></div></div><div class="time-bar-val">'+fmt(v)+'</div></div>';
   });
   document.getElementById('biggest-bars').innerHTML=html;
 }
@@ -893,6 +893,18 @@ function fixCmpBarEvo(winA){
   ctx.font = font;
   barEl.style.width = Math.ceil(ctx.measureText(txtEl.textContent).width)+'px';
 }
+
+// Bar tooltip
+var barTipEl=null;
+function showBarTip(el,title,label){
+  if(!barTipEl){barTipEl=document.createElement('div');barTipEl.style.cssText='position:fixed;background:#111;border:1px solid #333;border-radius:4px;padding:8px 12px;pointer-events:none;z-index:100;font-size:12px;';document.body.appendChild(barTipEl);}
+  barTipEl.innerHTML='<div style="color:#888;font-size:11px;margin-bottom:3px">'+title+'</div><div style="color:#ccc">'+label+'</div>';
+  barTipEl.style.display='block';
+  var rect=el.getBoundingClientRect();
+  barTipEl.style.left=(rect.left+rect.width/2-60)+'px';
+  barTipEl.style.top=(rect.top-50)+'px';
+}
+function hideBarTip(){if(barTipEl)barTipEl.style.display='none';}
 
 // Close dropdowns on outside click
 document.addEventListener('click', function(e){
