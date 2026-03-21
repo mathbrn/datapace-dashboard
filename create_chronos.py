@@ -947,6 +947,24 @@ half_marathon_data = [
     # RomaOstia Half 2004-2012
     ("Eurospin RomaOstia Half Marathon", "21K", 2004, "N/A", "1:10:39"),
     ("Eurospin RomaOstia Half Marathon", "21K", 2012, "0:59:32", "1:06:38"),
+    # ── TRACX API: Winner times from first results ──
+    ("AJ Bell Great North Run", "21K", 2021, "0:58:57", "1:07:41"),
+    ("AJ Bell Great Bristol Run", "21K", 2021, "1:07:50", "1:18:15"),
+    ("AJ Bell Great Manchester Run", "21K", 2021, "0:52:12", "0:57:46"),
+    ("AJ Bell Great Manchester Run", "10K", 2021, "0:28:03", "0:30:51"),
+    ("AJ Bell Great South Run", "AUTRE", 2021, "0:47:19", "0:50:42"),
+    ("TCS Amsterdam Marathon", "42K", 2021, "2:03:36", "2:17:55"),
+    ("TCS Amsterdam Marathon", "42K", 2022, "2:04:48", "2:17:18"),
+    ("TCS Amsterdam Marathon", "42K", 2023, "2:04:18", "2:18:21"),
+    ("TCS Amsterdam Marathon", "42K", 2024, "2:05:35", "2:16:50"),
+    ("TCS Amsterdam Marathon", "42K", 2025, "2:07:59", "2:28:27"),
+    ("TCS Mizuno Half Marathon", "21K", 2023, "1:05:23", "1:13:59"),
+    ("TCS Mizuno Half Marathon", "21K", 2024, "1:06:28", "1:17:54"),
+    ("TCS Mizuno Half Marathon", "21K", 2025, "1:04:21", "1:10:02"),
+    ("NN Marathon Rotterdam", "42K", 2021, "2:03:34", "2:22:05"),
+    ("Dam tot Damloop", "AUTRE", 2022, "0:49:00", "0:55:44"),
+    ("NN CPC Loop Den Haag - Half Marathon", "21K", 2025, "0:59:36", "1:08:16"),
+    ("NN CPC Loop Den Haag - Half Marathon", "21K", 2026, "0:59:48", "1:07:34"),
 ]
 
 # ============================================================
