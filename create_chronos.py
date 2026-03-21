@@ -34,6 +34,7 @@ marathon_data = [
     ("TCS London Marathon", "42K", 2017, "2:05:48", "2:17:01"),
     ("TCS London Marathon", "42K", 2018, "2:04:17", "2:18:31"),
     ("TCS London Marathon", "42K", 2019, "2:02:37", "N/A"),
+    ("TCS London Marathon", "42K", 2020, "2:05:41", "2:18:58"),
     ("TCS London Marathon", "42K", 2021, "2:04:01", "N/A"),
     ("TCS London Marathon", "42K", 2022, "2:04:39", "2:17:26"),
     # TCS New York City Marathon
@@ -58,6 +59,7 @@ marathon_data = [
     ("Tokyo Marathon", "42K", 2017, "2:03:58", "N/A"),
     ("Tokyo Marathon", "42K", 2018, "2:05:30", "2:19:51"),
     ("Tokyo Marathon", "42K", 2019, "2:04:15", "N/A"),
+    ("Tokyo Marathon", "42K", 2020, "2:04:15", "2:17:45"),
     ("Tokyo Marathon", "42K", 2021, "2:02:40", "2:16:02"),
     # Schneider Electric Marathon de Paris
     ("Schneider Electric Marathon de Paris", "42K", 2017, "2:06:10", "N/A"),
@@ -80,6 +82,7 @@ marathon_data = [
     ("TCS Amsterdam Marathon", "42K", 2022, "N/A", "2:17:20"),
     # Valencia Marathon Trinidad Alfonso Zurich
     ("Valencia Marathon Trinidad Alfonso Zurich", "42K", 2015, "2:06:13", "N/A"),
+    ("Valencia Marathon Trinidad Alfonso Zurich", "42K", 2020, "2:03:00", "N/A"),
     ("Valencia Marathon Trinidad Alfonso Zurich", "42K", 2022, "2:01:53", "2:14:57"),
     # Irish Life Dublin Marathon
     ("Irish Life Dublin Marathon", "42K", 2015, "2:14:01", "2:30:00"),

@@ -92,7 +92,9 @@ def load_finishers():
         def gv(col, r=r):
             v = r.get(col)
             if v is None or (isinstance(v, float) and pd.isna(v)): return None
-            if str(v).strip() == "-": return -1  # Edition annulee
+            sv = str(v).strip()
+            if sv == "-": return -1  # Edition annulee
+            if sv.lower() == "elite": return -2  # Elite only
             try: iv = int(float(v)); return iv if iv > 0 else None
             except: return None
         hist = {yr: v for yr in year_cols if (v := gv(yr)) is not None}
@@ -114,7 +116,9 @@ def load_biggest():
         def gv(col, r=r):
             v = r.get(col)
             if v is None or (isinstance(v, float) and pd.isna(v)): return None
-            if str(v).strip() == "-": return -1  # Edition annulee
+            sv = str(v).strip()
+            if sv == "-": return -1  # Edition annulee
+            if sv.lower() == "elite": return -2  # Elite only
             try: iv = int(float(v)); return iv if iv > 0 else None
             except: return None
         hist = {yr: v for yr in year_cols if (v := gv(yr)) is not None}
@@ -226,8 +230,8 @@ function col(r){return isWmm(r)?'#38BDF8':isAso(r)?'#FCDB00':'#5C00D4';}
 function colDist(r){return isWmm(r.r)?'#38BDF8':isAso(r.r)?'#FCDB00':r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':r.d==='AUTRE'?'#F472B6':'#9B6FFF';}
 function colByName(name){var r=RAW.find(function(x){return x.r===name;});return r?colDist(r):'#9B6FFF';}
 function toMin(t){if(!t)return null;var p=String(t).split(':');if(p.length===3)return parseInt(p[0])*60+parseInt(p[1])+parseInt(p[2])/60;return null;}
-function fmt(n){if(n===-1)return'Annul\u00e9';if(!n||isNaN(n))return'\u2014';return n>=1000?(n/1000).toFixed(1)+'k':n.toString();}
-function fmtFull(n){if(n===-1)return'Annul\u00e9';if(!n||isNaN(n))return'\u2014';return Math.round(n).toLocaleString('fr-FR');}
+function fmt(n){if(n===-1)return'Annul\u00e9';if(n===-2)return'Elite';if(!n||isNaN(n))return'\u2014';return n>=1000?(n/1000).toFixed(1)+'k':n.toString();}
+function fmtFull(n){if(n===-1)return'Annul\u00e9';if(n===-2)return'Elite Only';if(!n||isNaN(n))return'\u2014';return Math.round(n).toLocaleString('fr-FR');}
 function delta(a,b){if(!a||!b||isNaN(a)||isNaN(b))return null;return((b-a)/a*100);}
 function fmtHM(mins){var h=Math.floor(mins/60),m=Math.round(mins%60);return h+'h'+String(m).padStart(2,'0');}
 function fmtHMMin(mins){return fmtHM(mins)+'min';}
@@ -542,7 +546,7 @@ function filterTable(){
     html+='<tr><td>'+r.p+'</td><td>'+r.c+'</td>'
       +'<td><span class="badge" style="background:'+raceColor+'18;color:'+raceColor+'">'+badgeLabel+'</span></td>'
       +'<td style="color:'+raceColor+'" title="'+r.r+'">'+r.r+'</td>'
-      +globalYears.map(function(y){var v=(r.hist||{})[y];if(v===-1)return'<td style="color:#FF4A6B;font-size:10px;font-style:italic">Annul\u00e9</td>';return'<td style="'+(v?'color:var(--text)':'')+'">'+(v?fmtFull(v):'\u2014')+'</td>';}).join('')
+      +globalYears.map(function(y){var v=(r.hist||{})[y];if(v===-1)return'<td style="color:#FF4A6B;font-size:10px;font-style:italic">Annul\u00e9</td>';if(v===-2)return'<td style="color:#38BDF8;font-size:10px;font-style:italic">Elite Only</td>';return'<td style="'+(v?'color:var(--text)':'')+'">'+(v?fmtFull(v):'\u2014')+'</td>';}).join('')
       +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
   });
   document.getElementById('table-body').innerHTML=html;
