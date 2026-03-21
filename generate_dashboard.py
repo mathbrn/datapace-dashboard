@@ -95,13 +95,21 @@ def load_finishers():
             sv = str(v).strip()
             if sv == "-": return -1  # Edition annulee
             if sv.lower() == "elite": return -2  # Elite only
+            if sv.lower() == "x": return -3  # Event did not exist yet
             try: iv = int(float(v)); return iv if iv > 0 else None
             except: return None
         hist = {yr: v for yr in year_cols if (v := gv(yr)) is not None}
+        # Find first edition year (first year with actual finisher data, not cancelled/x)
+        first_yr = None
+        for yr in sorted(year_cols):
+            v = gv(yr)
+            if v is not None and v > 0:
+                first_yr = yr
+                break
         rows.append({"p": str(r.get("Période", "")).strip(), "c": str(r.get("City", "")).strip(),
                      "d": str(r.get("Distance", "")).strip(), "r": race,
                      "y3": gv(2023), "y4": gv(2024), "y5": gv(2025), "y6": gv(2026),
-                     "hist": hist})
+                     "hist": hist, "fy": first_yr})
     print(f"  Finishers  : {len(rows)} courses")
     return rows
 
@@ -230,8 +238,8 @@ function col(r){return isWmm(r)?'#38BDF8':isAso(r)?'#FCDB00':'#5C00D4';}
 function colDist(r){return isWmm(r.r)?'#38BDF8':isAso(r.r)?'#FCDB00':r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':r.d==='AUTRE'?'#F472B6':'#9B6FFF';}
 function colByName(name){var r=RAW.find(function(x){return x.r===name;});return r?colDist(r):'#9B6FFF';}
 function toMin(t){if(!t)return null;var p=String(t).split(':');if(p.length===3)return parseInt(p[0])*60+parseInt(p[1])+parseInt(p[2])/60;return null;}
-function fmt(n){if(n===-1)return'Annul\u00e9';if(n===-2)return'Elite';if(!n||isNaN(n))return'\u2014';return n>=1000?(n/1000).toFixed(1)+'k':n.toString();}
-function fmtFull(n){if(n===-1)return'Annul\u00e9';if(n===-2)return'Elite Only';if(!n||isNaN(n))return'\u2014';return Math.round(n).toLocaleString('fr-FR');}
+function fmt(n){if(n===-1)return'Annul\u00e9';if(n===-2)return'Elite';if(n===-3)return'';if(!n||isNaN(n))return'\u2014';return n>=1000?(n/1000).toFixed(1)+'k':n.toString();}
+function fmtFull(n){if(n===-1)return'Annul\u00e9';if(n===-2)return'Elite Only';if(n===-3)return'';if(!n||isNaN(n))return'\u2014';return Math.round(n).toLocaleString('fr-FR');}
 function delta(a,b){if(!a||!b||isNaN(a)||isNaN(b))return null;return((b-a)/a*100);}
 function fmtHM(mins){var h=Math.floor(mins/60),m=Math.round(mins%60);return h+'h'+String(m).padStart(2,'0');}
 function fmtHMMin(mins){return fmtHM(mins)+'min';}
@@ -546,7 +554,7 @@ function filterTable(){
     html+='<tr><td>'+r.p+'</td><td>'+r.c+'</td>'
       +'<td><span class="badge" style="background:'+raceColor+'18;color:'+raceColor+'">'+badgeLabel+'</span></td>'
       +'<td style="color:'+raceColor+'" title="'+r.r+'">'+r.r+'</td>'
-      +globalYears.map(function(y){var v=(r.hist||{})[y];if(v===-1)return'<td style="color:#FF4A6B;font-size:10px;font-style:italic">Annul\u00e9</td>';if(v===-2)return'<td style="color:'+raceColor+';font-size:10px;font-style:italic">Elite Only</td>';return'<td style="'+(v?'color:var(--text)':'')+'">'+(v?fmtFull(v):'\u2014')+'</td>';}).join('')
+      +globalYears.map(function(y){var v=(r.hist||{})[y];if(v===-3)return'<td style="color:var(--text3);opacity:0.2">\u00b7</td>';if(v===-1)return'<td style="color:#FF4A6B;font-size:10px;font-style:italic">Annul\u00e9</td>';if(v===-2)return'<td style="color:'+raceColor+';font-size:10px;font-style:italic">Elite Only</td>';var isFirst=r.fy&&y===r.fy&&v&&v>0;if(isFirst)return'<td style="color:var(--text);position:relative"><span style="position:absolute;top:1px;left:2px;font-size:7px;color:'+raceColor+';opacity:0.7">\u2605</span>'+fmtFull(v)+'</td>';return'<td style="'+(v?'color:var(--text)':'')+'">'+(v?fmtFull(v):'\u2014')+'</td>';}).join('')
       +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
   });
   document.getElementById('table-body').innerHTML=html;
