@@ -421,9 +421,10 @@ function updateBiggest(){
     var v=(r.hist||{})[yr];
     var pct=(v/maxVal*80+5).toFixed(1);
     var barCol=colDist(r);
-    html+='<div class="time-bar-row" style="position:relative;cursor:default" onmouseenter="showBarTip(this,\''+r.r.replace(/'/g,"\\'")+'\',\''+fmtFull(v)+' finishers\')" onmouseleave="hideBarTip()"><div class="time-bar-label" title="'+r.r+'">'+r.r+'</div><div class="time-bar-track"><div class="time-bar-fill" style="width:'+pct+'%;background:'+barCol+'88"></div></div><div class="time-bar-val">'+fmt(v)+'</div></div>';
+    html+='<div class="time-bar-row bt-row" data-name="'+r.r.replace(/"/g,'&quot;')+'" data-val="'+fmtFull(v)+' finishers"><div class="time-bar-label" title="'+r.r+'">'+r.r+'</div><div class="time-bar-track"><div class="time-bar-fill" style="width:'+pct+'%;background:'+barCol+'88"></div></div><div class="time-bar-val">'+fmt(v)+'</div></div>';
   });
   document.getElementById('biggest-bars').innerHTML=html;
+  initBarTips();
 }
 
 function updateTempsYears(){
@@ -791,15 +792,19 @@ function fixCmpBarEvo(winA){
 
 // Bar tooltip
 var barTipEl=null;
-function showBarTip(el,title,label){
-  if(!barTipEl){barTipEl=document.createElement('div');barTipEl.style.cssText='position:fixed;background:#111;border:1px solid #333;border-radius:4px;padding:8px 12px;pointer-events:none;z-index:100;font-size:12px;';document.body.appendChild(barTipEl);}
-  barTipEl.innerHTML='<div style="color:#888;font-size:11px;margin-bottom:3px">'+title+'</div><div style="color:#ccc">'+label+'</div>';
-  barTipEl.style.display='block';
-  var rect=el.getBoundingClientRect();
-  barTipEl.style.left=(rect.left+rect.width/2-60)+'px';
-  barTipEl.style.top=(rect.top-50)+'px';
+function initBarTips(){
+  if(!barTipEl){barTipEl=document.createElement('div');barTipEl.style.cssText='position:fixed;background:#111;border:1px solid #333;border-radius:4px;padding:8px 12px;pointer-events:none;z-index:100;font-size:12px;display:none;';document.body.appendChild(barTipEl);}
+  document.querySelectorAll('.bt-row').forEach(function(el){
+    el.addEventListener('mouseenter',function(){
+      barTipEl.innerHTML='<div style="color:#888;font-size:11px;margin-bottom:3px">'+el.dataset.name+'</div><div style="color:#ccc">'+el.dataset.val+'</div>';
+      barTipEl.style.display='block';
+      var rect=el.getBoundingClientRect();
+      barTipEl.style.left=(rect.left+rect.width/2-60)+'px';
+      barTipEl.style.top=(rect.top-50)+'px';
+    });
+    el.addEventListener('mouseleave',function(){barTipEl.style.display='none';});
+  });
 }
-function hideBarTip(){if(barTipEl)barTipEl.style.display='none';}
 
 // Close dropdowns on outside click
 document.addEventListener('click', function(e){
