@@ -43,10 +43,13 @@ def update(race_name, distance, year, count):
         cell_race = str(row[3].value).strip() if row[3].value else ""
         if cell_dist == distance and cell_race == race_name:
             old_val = row[year_col - 1].value
+            # NEVER overwrite existing data
+            if old_val is not None and str(old_val).strip() != '':
+                print(f"[SKIP] {race_name} ({distance}) {year}: deja rempli ({old_val}), pas de modification.")
+                return True
             row[year_col - 1].value = count
             found = True
-            status = f"MIS A JOUR" if old_val else "NOUVEAU"
-            print(f"[{status}] {race_name} ({distance}) {year}: {old_val} -> {count}")
+            print(f"[NOUVEAU] {race_name} ({distance}) {year}: {old_val} -> {count}")
             break
 
     if not found:
