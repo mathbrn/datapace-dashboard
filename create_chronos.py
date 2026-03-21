@@ -493,7 +493,62 @@ tenk_data = [
     ("NN San Silvestre Vallecana", "10K", 2025, "0:27:41", "0:31:11"),
     # NN CPC Loop Den Haag - 10 KM Loop
     ("NN CPC Loop Den Haag - 10 KM Loop", "10K", 2026, "N/A", "N/A"),
+    # BOLDERBoulder 10K
+    ("BOLDERBoulder 10K", "10K", 2025, "0:28:36", "0:31:51"),
+    # Cooper River Bridge Run
+    ("Cooper River Bridge Run", "10K", 2025, "N/A", "N/A"),
+    # Standard Chartered KL 10K
+    ("Standard Chartered KL 10K", "10K", 2025, "0:32:26", "0:39:23"),
+    # Great Scottish Run 10K
+    ("Great Scottish Run 10K", "10K", 2025, "N/A", "N/A"),
+    # AJ Bell Great Bristol Run 10K
+    ("AJ Bell Great Bristol Run 10K", "10K", 2025, "N/A", "N/A"),
+    # AJ Bell Great Birmingham Run 10K
+    ("AJ Bell Great Birmingham Run 10K", "10K", 2025, "N/A", "N/A"),
+    # AJ Bell Great North 10K
+    ("AJ Bell Great North 10K", "10K", 2025, "N/A", "N/A"),
+    # AJ Bell Great Manchester Run 10K
+    ("AJ Bell Great Manchester Run", "10K", 2025, "N/A", "N/A"),
+    # Run in Lyon 10K
+    ("Run in Lyon", "10K", 2025, "N/A", "N/A"),
 ]
+
+# ============================================================
+# AUTRES (non-standard distances)
+# ============================================================
+
+autre_data = [
+    # Dam tot Damloop (10 miles / 16.1km)
+    ("Dam tot Damloop", "AUTRE", 2019, "0:45:15", "0:50:45"),
+    ("Dam tot Damloop", "AUTRE", 2024, "0:44:51", "0:51:15"),
+    ("Dam tot Damloop", "AUTRE", 2025, "0:46:07", "0:50:51"),
+    # Bay to Breakers (12K)
+    ("Bay to Breakers", "AUTRE", 2019, "0:35:01", "0:39:28"),
+    ("Bay to Breakers", "AUTRE", 2022, "0:36:10", "0:42:05"),
+    ("Bay to Breakers", "AUTRE", 2024, "0:37:02", "0:43:48"),
+    # Broad Street Run (10 miles)
+    ("Broad Street Run", "AUTRE", 2025, "0:46:13", "0:54:01"),
+    # Boilermaker Road Race (15K)
+    ("Boilermaker Road Race", "AUTRE", 2025, "0:42:44", "N/A"),
+    # AJ Bell Great South Run (10 miles)
+    ("AJ Bell Great South Run", "AUTRE", 2025, "N/A", "N/A"),
+    # Falmouth Road Race (7 miles)
+    ("Falmouth Road Race", "AUTRE", 2025, "N/A", "N/A"),
+    # City2Surf (14K)
+    ("City2Surf", "AUTRE", 2024, "N/A", "N/A"),
+    # Lilac Bloomsday Run (12K)
+    ("Lilac Bloomsday Run", "AUTRE", 2025, "N/A", "N/A"),
+    # Manchester Road Race (4.748 miles)
+    ("Manchester Road Race", "AUTRE", 2024, "N/A", "N/A"),
+    # Army Ten Miler
+    ("Army Ten Miler", "AUTRE", 2025, "N/A", "N/A"),
+    # Great Scottish Run HM
+    ("Great Scottish Run", "SEMI", 2025, "N/A", "N/A"),
+    # AJ Bell Great Birmingham Run HM
+    ("AJ Bell Great Birmingham Run", "SEMI", 2025, "N/A", "N/A"),
+]
+
+data.extend(autre_data)
 
 data.extend(marathon_data)
 data.extend(half_marathon_data)

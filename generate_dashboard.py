@@ -1142,7 +1142,7 @@ HTML_BODY = """
   <div class="controls">
     <div class="ctrl-group"><span class="ctrl-label">Distance</span>
       <select id="win-dist" onchange="updateWinners()">
-        <option value="42K">Marathon (42K)</option><option value="21K">Semi-marathon (21K)</option><option value="10K">10 km</option>
+        <option value="42K">Marathon (42K)</option><option value="21K">Semi-marathon (21K)</option><option value="10K">10 km</option><option value="AUTRE">Autre</option>
       </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Genre</span>
