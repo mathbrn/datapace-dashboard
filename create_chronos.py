@@ -876,6 +876,77 @@ half_marathon_data = [
     # Standard Chartered Hong Kong Half Marathon
     ("Standard Chartered Hong Kong Half Marathon", "21K", 2026, "N/A", "N/A"),
     ("Standard Chartered Hong Kong Half Marathon", "21K", 2019, "1:01:13", "1:09:28"),
+    # ── AGENT 4: Semi/10K/AUTRE 2000-2014 ──
+    # Semi de Paris 2002-2014
+    ("HOKA Semi de Paris", "21K", 2002, "1:01:33", "1:11:07"),
+    ("HOKA Semi de Paris", "21K", 2012, "0:59:44", "1:07:55"),
+    ("HOKA Semi de Paris", "21K", 2014, "1:00:08", "1:09:23"),
+    # Generali Berlin Half Marathon 2006-2012
+    ("Generali Berlin Half Marathon", "21K", 2006, "N/A", "1:07:16"),
+    ("Generali Berlin Half Marathon", "21K", 2007, "0:58:56", "N/A"),
+    ("Generali Berlin Half Marathon", "21K", 2010, "1:00:16", "1:09:43"),
+    ("Generali Berlin Half Marathon", "21K", 2012, "0:59:14", "N/A"),
+    # Great North Run 2000-2014
+    ("AJ Bell Great North Run", "21K", 2000, "1:01:57", "1:08:49"),
+    ("AJ Bell Great North Run", "21K", 2001, "1:00:30", "1:08:40"),
+    ("AJ Bell Great North Run", "21K", 2002, "0:59:58", "N/A"),
+    ("AJ Bell Great North Run", "21K", 2003, "1:00:01", "1:05:40"),
+    ("AJ Bell Great North Run", "21K", 2004, "0:59:37", "N/A"),
+    ("AJ Bell Great North Run", "21K", 2005, "0:59:05", "N/A"),
+    ("AJ Bell Great North Run", "21K", 2006, "1:01:04", "N/A"),
+    ("AJ Bell Great North Run", "21K", 2007, "1:00:08", "1:06:57"),
+    ("AJ Bell Great North Run", "21K", 2008, "0:59:45", "N/A"),
+    ("AJ Bell Great North Run", "21K", 2009, "0:59:32", "N/A"),
+    ("AJ Bell Great North Run", "21K", 2010, "0:59:33", "N/A"),
+    ("AJ Bell Great North Run", "21K", 2011, "0:58:56", "N/A"),
+    ("AJ Bell Great North Run", "21K", 2012, "0:59:06", "N/A"),
+    ("AJ Bell Great North Run", "21K", 2013, "1:00:09", "1:07:29"),
+    ("AJ Bell Great North Run", "21K", 2014, "1:00:00", "1:05:39"),
+    # NYC Half 2006-2014
+    ("United Airlines NYC Half", "21K", 2006, "1:01:22", "1:09:43"),
+    ("United Airlines NYC Half", "21K", 2007, "0:59:24", "1:10:32"),
+    ("United Airlines NYC Half", "21K", 2008, "1:00:58", "1:10:19"),
+    ("United Airlines NYC Half", "21K", 2009, "1:01:06", "1:09:32"),
+    ("United Airlines NYC Half", "21K", 2010, "0:59:52", "1:09:25"),
+    ("United Airlines NYC Half", "21K", 2011, "1:00:23", "1:08:52"),
+    ("United Airlines NYC Half", "21K", 2012, "0:59:39", "1:08:35"),
+    ("United Airlines NYC Half", "21K", 2013, "1:01:02", "1:09:09"),
+    ("United Airlines NYC Half", "21K", 2014, "1:00:50", "1:08:31"),
+    # Barcelona Half 2005-2014
+    ("Mitja Marato Barcelona by Brooks", "21K", 2005, "1:03:29", "1:09:34"),
+    ("Mitja Marato Barcelona by Brooks", "21K", 2006, "1:02:25", "1:09:26"),
+    ("Mitja Marato Barcelona by Brooks", "21K", 2007, "1:03:02", "1:09:05"),
+    ("Mitja Marato Barcelona by Brooks", "21K", 2008, "1:02:39", "1:09:15"),
+    ("Mitja Marato Barcelona by Brooks", "21K", 2009, "1:01:45", "1:09:34"),
+    ("Mitja Marato Barcelona by Brooks", "21K", 2010, "1:03:00", "1:08:52"),
+    ("Mitja Marato Barcelona by Brooks", "21K", 2011, "1:03:06", "1:08:13"),
+    ("Mitja Marato Barcelona by Brooks", "21K", 2012, "1:02:54", "1:10:51"),
+    ("Mitja Marato Barcelona by Brooks", "21K", 2013, "1:01:44", "1:08:28"),
+    ("Mitja Marato Barcelona by Brooks", "21K", 2014, "1:02:55", "1:08:35"),
+    # Lisbon Half 2000-2010
+    ("EDP Lisboa Meia Maratona", "21K", 2000, "0:59:06", "N/A"),
+    ("EDP Lisboa Meia Maratona", "21K", 2001, "1:00:26", "1:05:44"),
+    ("EDP Lisboa Meia Maratona", "21K", 2003, "1:00:10", "N/A"),
+    ("EDP Lisboa Meia Maratona", "21K", 2010, "0:58:23", "1:08:38"),
+    # Göteborgsvarvet 2000-2014
+    ("Göteborgsvarvet", "21K", 2000, "1:02:42", "1:09:28"),
+    ("Göteborgsvarvet", "21K", 2001, "1:03:00", "1:11:07"),
+    ("Göteborgsvarvet", "21K", 2002, "1:03:35", "1:13:03"),
+    ("Göteborgsvarvet", "21K", 2003, "1:03:43", "1:13:27"),
+    ("Göteborgsvarvet", "21K", 2004, "1:04:03", "1:18:06"),
+    ("Göteborgsvarvet", "21K", 2005, "1:03:19", "1:12:34"),
+    ("Göteborgsvarvet", "21K", 2006, "1:02:14", "1:12:34"),
+    ("Göteborgsvarvet", "21K", 2007, "1:04:03", "1:12:38"),
+    ("Göteborgsvarvet", "21K", 2008, "1:01:21", "1:10:19"),
+    ("Göteborgsvarvet", "21K", 2009, "1:01:55", "1:11:27"),
+    ("Göteborgsvarvet", "21K", 2010, "1:01:10", "1:11:40"),
+    ("Göteborgsvarvet", "21K", 2011, "1:00:52", "1:09:04"),
+    ("Göteborgsvarvet", "21K", 2012, "1:00:25", "1:09:27"),
+    ("Göteborgsvarvet", "21K", 2013, "1:03:13", "1:11:29"),
+    ("Göteborgsvarvet", "21K", 2014, "1:00:36", "1:10:12"),
+    # RomaOstia Half 2004-2012
+    ("Eurospin RomaOstia Half Marathon", "21K", 2004, "N/A", "1:10:39"),
+    ("Eurospin RomaOstia Half Marathon", "21K", 2012, "0:59:32", "1:06:38"),
 ]
 
 # ============================================================
@@ -989,10 +1060,20 @@ tenk_data = [
 
 autre_data = [
     # Dam tot Damloop (10 miles / 16.1km)
+    ("Dam tot Damloop", "AUTRE", 2009, "N/A", "0:50:39"),
+    ("Dam tot Damloop", "AUTRE", 2010, "N/A", "0:51:30"),
+    ("Dam tot Damloop", "AUTRE", 2011, "0:44:27", "0:51:57"),
+    ("Dam tot Damloop", "AUTRE", 2012, "0:44:48", "0:51:42"),
+    ("Dam tot Damloop", "AUTRE", 2013, "0:45:28", "0:51:33"),
+    ("Dam tot Damloop", "AUTRE", 2014, "0:45:45", "0:53:09"),
     ("Dam tot Damloop", "AUTRE", 2019, "0:45:15", "0:50:45"),
     ("Dam tot Damloop", "AUTRE", 2024, "0:44:51", "0:51:15"),
     ("Dam tot Damloop", "AUTRE", 2025, "0:46:07", "0:50:51"),
     # Bay to Breakers (12K)
+    ("Bay to Breakers", "AUTRE", 2005, "N/A", "0:38:22"),
+    ("Bay to Breakers", "AUTRE", 2009, "0:33:31", "N/A"),
+    ("Bay to Breakers", "AUTRE", 2010, "0:34:15", "0:38:07"),
+    ("Bay to Breakers", "AUTRE", 2012, "0:34:40", "0:39:02"),
     ("Bay to Breakers", "AUTRE", 2019, "0:35:01", "0:39:28"),
     ("Bay to Breakers", "AUTRE", 2022, "0:36:10", "0:42:05"),
     ("Bay to Breakers", "AUTRE", 2024, "0:37:02", "0:43:48"),
