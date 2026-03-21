@@ -99,13 +99,15 @@ def load_finishers():
             try: iv = int(float(v)); return iv if iv > 0 else None
             except: return None
         hist = {yr: v for yr in year_cols if (v := gv(yr)) is not None}
-        # Find first edition year (first year with actual finisher data, not cancelled/x)
+        # Find first edition year = first year that is NOT 'x' (event existed)
+        # Only show star for events created in 2000 or later
         first_yr = None
         for yr in sorted(year_cols):
             v = gv(yr)
-            if v is not None and v > 0:
-                first_yr = yr
-                break
+            if v != -3:  # first year that is not 'x' = event exists
+                if yr >= 2000:
+                    first_yr = yr
+                break  # stop at first non-x year regardless
         rows.append({"p": str(r.get("Période", "")).strip(), "c": str(r.get("City", "")).strip(),
                      "d": str(r.get("Distance", "")).strip(), "r": race,
                      "y3": gv(2023), "y4": gv(2024), "y5": gv(2025), "y6": gv(2026),
@@ -554,7 +556,7 @@ function filterTable(){
     html+='<tr><td>'+r.p+'</td><td>'+r.c+'</td>'
       +'<td><span class="badge" style="background:'+raceColor+'18;color:'+raceColor+'">'+badgeLabel+'</span></td>'
       +'<td style="color:'+raceColor+'" title="'+r.r+'">'+r.r+'</td>'
-      +globalYears.map(function(y){var v=(r.hist||{})[y];if(v===-3)return'<td style="color:var(--text3);opacity:0.2">\u00b7</td>';if(v===-1)return'<td style="color:#FF4A6B;font-size:10px;font-style:italic">Annul\u00e9</td>';if(v===-2)return'<td style="color:'+raceColor+';font-size:10px;font-style:italic">Elite Only</td>';var isFirst=r.fy&&y===r.fy&&v&&v>0;if(isFirst)return'<td style="color:var(--text);position:relative"><span style="position:absolute;top:1px;left:2px;font-size:7px;color:'+raceColor+';opacity:0.7">\u2605</span>'+fmtFull(v)+'</td>';return'<td style="'+(v?'color:var(--text)':'')+'">'+(v?fmtFull(v):'\u2014')+'</td>';}).join('')
+      +globalYears.map(function(y){var v=(r.hist||{})[y];var isFirst=r.fy&&y===r.fy;var starHtml=isFirst?'<span style="position:absolute;top:1px;left:2px;font-size:7px;color:'+raceColor+';opacity:0.7">\u2605</span>':'';if(v===-3)return'<td style="color:var(--text3);opacity:0.2">\u00b7</td>';if(v===-1)return'<td style="color:#FF4A6B;font-size:10px;font-style:italic;position:relative">'+starHtml+'Annul\u00e9</td>';if(v===-2)return'<td style="color:'+raceColor+';font-size:10px;font-style:italic;position:relative">'+starHtml+'Elite Only</td>';return'<td style="'+(v?'color:var(--text)':'')+';position:relative">'+starHtml+(v?fmtFull(v):'\u2014')+'</td>';}).join('')
       +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
   });
   document.getElementById('table-body').innerHTML=html;
