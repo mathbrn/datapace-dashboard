@@ -118,7 +118,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 
 <div class="dp-header">
   <div><div class="dp-title">Dashboard Running</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
-  <div class="dp-updated">Genere le 21/03/2026 a 08:53</div>
+  <div class="dp-updated">Genere le 21/03/2026 a 09:05</div>
 </div>
 <div class="tabs">
   <div class="tab active" onclick="switchTab('data')">Tableau</div>
@@ -648,7 +648,7 @@ function filterTable(){
     html+='<tr><td>'+r.p+'</td><td>'+r.c+'</td>'
       +'<td><span class="badge" style="background:'+raceColor+'18;color:'+raceColor+'">'+badgeLabel+'</span></td>'
       +'<td style="color:'+raceColor+'" title="'+r.r+'">'+r.r+'</td>'
-      +globalYears.map(function(y){var v=(r.hist||{})[y];if(v===-1)return'<td style="color:#FF4A6B;font-size:10px;font-style:italic">Annulé</td>';if(v===-2)return'<td style="color:#38BDF8;font-size:10px;font-style:italic">Elite Only</td>';return'<td style="'+(v?'color:var(--text)':'')+'">'+(v?fmtFull(v):'—')+'</td>';}).join('')
+      +globalYears.map(function(y){var v=(r.hist||{})[y];if(v===-1)return'<td style="color:#FF4A6B;font-size:10px;font-style:italic">Annulé</td>';if(v===-2)return'<td style="color:'+raceColor+';font-size:10px;font-style:italic">Elite Only</td>';return'<td style="'+(v?'color:var(--text)':'')+'">'+(v?fmtFull(v):'—')+'</td>';}).join('')
       +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
   });
   document.getElementById('table-body').innerHTML=html;
