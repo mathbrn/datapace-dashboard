@@ -943,5 +943,25 @@
     "avg_time": "2:01:57",
     "avg_speed_kmh": 0,
     "source": "tracx_median"
+  },
+  {
+    "label": "tracx_2023",
+    "race": "TCS Amsterdam Marathon",
+    "dist_m": 0,
+    "year": 2023,
+    "count": 0,
+    "avg_time": "3:59:15",
+    "avg_speed_kmh": 0,
+    "source": "tracx_sampled"
+  },
+  {
+    "label": "tracx_2025",
+    "race": "NN CPC Loop Den Haag - Half Marathon",
+    "dist_m": 0,
+    "year": 2025,
+    "count": 0,
+    "avg_time": "1:55:24",
+    "avg_speed_kmh": 0,
+    "source": "tracx_sampled"
   }
 ]
