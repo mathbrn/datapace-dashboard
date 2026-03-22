@@ -1,0 +1,68 @@
+[
+  {
+    "race": "TCS Amsterdam Marathon",
+    "year": 2021,
+    "avg": "3:55:22",
+    "samples": 613
+  },
+  {
+    "race": "TCS Amsterdam Marathon",
+    "year": 2022,
+    "avg": "3:57:58",
+    "samples": 450
+  },
+  {
+    "race": "TCS Amsterdam Marathon",
+    "year": 2023,
+    "avg": "4:01:10",
+    "samples": 360
+  },
+  {
+    "race": "TCS Amsterdam Marathon",
+    "year": 2024,
+    "avg": "3:54:51",
+    "samples": 360
+  },
+  {
+    "race": "TCS Amsterdam Marathon",
+    "year": 2025,
+    "avg": "3:52:13",
+    "samples": 360
+  },
+  {
+    "race": "NN Marathon Rotterdam",
+    "year": 2021,
+    "avg": "3:58:15",
+    "samples": 570
+  },
+  {
+    "race": "NN CPC Loop Den Haag - Half Marathon",
+    "year": 2025,
+    "avg": "1:54:11",
+    "samples": 510
+  },
+  {
+    "race": "NN CPC Loop Den Haag - Half Marathon",
+    "year": 2026,
+    "avg": "1:53:34",
+    "samples": 510
+  },
+  {
+    "race": "Dam tot Damloop",
+    "year": 2022,
+    "avg": "1:30:24",
+    "samples": 370
+  },
+  {
+    "race": "Dam tot Damloop",
+    "year": 2024,
+    "avg": "0:47:33",
+    "samples": 15
+  },
+  {
+    "race": "Dam tot Damloop",
+    "year": 2025,
+    "avg": "0:47:24",
+    "samples": 15
+  }
+]
