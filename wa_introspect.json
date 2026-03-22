@@ -1,0 +1,1 @@
+{"operationName":"IntrospectionQuery","variables":{},"query":"{ __schema { queryType { fields { name args { name type { name kind } } } } } }"}
