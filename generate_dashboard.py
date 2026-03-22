@@ -412,7 +412,7 @@ function ovSelect(idx){
       data:{labels:wh.men.map(function(e){return e.yr;}),datasets:[{data:wh.men.map(function(e){return e.sec/60;}),borderColor:'#9B6FFF',backgroundColor:'#9B6FFF22',tension:0.3,pointRadius:4,pointBackgroundColor:'#9B6FFF',borderWidth:2,fill:true}]},
       options:{responsive:true,maintainAspectRatio:false,
         plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{label:function(ctx){var i=ctx.dataIndex;return' '+wh.men[i].time;}}}},
-        scales:{x:{grid:{display:false},ticks:TICK,border:{color:'#ffffff08'}},y:{reverse:true,grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmtHM(v);}},border:{color:'#ffffff08'}}}
+        scales:{x:{grid:{display:false},ticks:TICK,border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmtHM(v);}},border:{color:'#ffffff08'}}}
       }
     });
   }
@@ -422,7 +422,7 @@ function ovSelect(idx){
       data:{labels:wh.women.map(function(e){return e.yr;}),datasets:[{data:wh.women.map(function(e){return e.sec/60;}),borderColor:'#FF8A50',backgroundColor:'#FF8A5022',tension:0.3,pointRadius:4,pointBackgroundColor:'#FF8A50',borderWidth:2,fill:true}]},
       options:{responsive:true,maintainAspectRatio:false,
         plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{label:function(ctx){var i=ctx.dataIndex;return' '+wh.women[i].time;}}}},
-        scales:{x:{grid:{display:false},ticks:TICK,border:{color:'#ffffff08'}},y:{reverse:true,grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmtHM(v);}},border:{color:'#ffffff08'}}}
+        scales:{x:{grid:{display:false},ticks:TICK,border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmtHM(v);}},border:{color:'#ffffff08'}}}
       }
     });
   }
