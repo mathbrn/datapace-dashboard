@@ -118,7 +118,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 
 <div class="dp-header">
   <div><div class="dp-title">Dashboard Running</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
-  <div class="dp-updated">Genere le 22/03/2026 a 10:26</div>
+  <div class="dp-updated">Genere le 22/03/2026 a 11:03</div>
 </div>
 <div class="tabs">
   <div class="tab active" onclick="switchTab('data')">Tableau</div>
@@ -372,7 +372,21 @@ function buildTimeHistory(rn){
   if(!hist.length){var sKeys=Object.keys(TEMPS_SEMI);sKeys.forEach(function(syr){var srows=TEMPS_SEMI[syr]||[];for(var i=0;i<srows.length;i++){var rl=srows[i].race.toLowerCase();if(l.indexOf(rl.substring(0,10))>=0||rl.indexOf(l.substring(0,10))>=0){if(toMin(srows[i].avg))hist.push({yr:syr,min:toMin(srows[i].avg)});break;}}});}
   return hist;
 }
-var cT=null,ovChartF=null,ovChartT=null;
+var cT=null,ovChartF=null,ovChartT=null,ovChartM=null,ovChartW=null;
+function buildWinnerHistory(rn){
+  var l=rn.toLowerCase();
+  var entries=WINNERS.filter(function(w){return w.r===rn;});
+  if(!entries.length){entries=WINNERS.filter(function(w){return w.r.toLowerCase().indexOf(l.substring(0,15))>=0||l.indexOf(w.r.toLowerCase().substring(0,15))>=0;});}
+  if(!entries.length)return{men:[],women:[]};
+  entries.sort(function(a,b){return a.y-b.y;});
+  var men=[],women=[];
+  entries.forEach(function(w){
+    var ms=winToSec(w.m),ws=winToSec(w.w);
+    if(ms)men.push({yr:w.y,sec:ms,time:w.m});
+    if(ws)women.push({yr:w.y,sec:ws,time:w.w});
+  });
+  return{men:men,women:women};
+}
 
 function switchTab(name){
   var names=['data','overview','compare','trends','biggest','temps','winners'];
@@ -446,6 +460,10 @@ function ovSelect(idx){
     +'<div class="ov-chart-box"><div class="ov-chart-label">Finishers par edition</div><div style="position:relative;height:150px"><canvas id="ov-chart-fin"></canvas></div></div>'
     +'<div class="ov-chart-box"><div class="ov-chart-label">Temps moyen par edition</div><div style="position:relative;height:150px"><canvas id="ov-chart-time"></canvas></div></div>'
     +'</div>'
+    +'<div class="ov-charts">'
+    +'<div class="ov-chart-box"><div class="ov-chart-label">Record Homme par edition</div><div style="position:relative;height:150px"><canvas id="ov-chart-men"></canvas></div></div>'
+    +'<div class="ov-chart-box"><div class="ov-chart-label">Record Femme par edition</div><div style="position:relative;height:150px"><canvas id="ov-chart-women"></canvas></div></div>'
+    +'</div>'
     +'</div>';
   document.getElementById('ov-card-wrap').innerHTML=html;
 
@@ -475,6 +493,30 @@ function ovSelect(idx){
       }
     };
     ovChartT=new Chart(tc,timeCfg);
+  }
+  // Winner time charts (men + women)
+  if(ovChartM)ovChartM.destroy();
+  if(ovChartW)ovChartW.destroy();
+  var wh=buildWinnerHistory(ev.r);
+  var mcv=document.getElementById('ov-chart-men');
+  if(mcv&&wh.men.length>1){
+    ovChartM=new Chart(mcv,{type:'line',
+      data:{labels:wh.men.map(function(e){return e.yr;}),datasets:[{data:wh.men.map(function(e){return e.sec/60;}),borderColor:'#9B6FFF',backgroundColor:'#9B6FFF22',tension:0.3,pointRadius:4,pointBackgroundColor:'#9B6FFF',borderWidth:2,fill:true}]},
+      options:{responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{label:function(ctx){var i=ctx.dataIndex;return' '+wh.men[i].time;}}}},
+        scales:{x:{grid:{display:false},ticks:TICK,border:{color:'#ffffff08'}},y:{reverse:true,grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmtHM(v);}},border:{color:'#ffffff08'}}}
+      }
+    });
+  }
+  var wcv=document.getElementById('ov-chart-women');
+  if(wcv&&wh.women.length>1){
+    ovChartW=new Chart(wcv,{type:'line',
+      data:{labels:wh.women.map(function(e){return e.yr;}),datasets:[{data:wh.women.map(function(e){return e.sec/60;}),borderColor:'#FF8A50',backgroundColor:'#FF8A5022',tension:0.3,pointRadius:4,pointBackgroundColor:'#FF8A50',borderWidth:2,fill:true}]},
+      options:{responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{label:function(ctx){var i=ctx.dataIndex;return' '+wh.women[i].time;}}}},
+        scales:{x:{grid:{display:false},ticks:TICK,border:{color:'#ffffff08'}},y:{reverse:true,grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmtHM(v);}},border:{color:'#ffffff08'}}}
+      }
+    });
   }
 }
 
