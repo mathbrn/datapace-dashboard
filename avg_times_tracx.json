@@ -1,0 +1,226 @@
+[
+  {
+    "label": "GNR 2021",
+    "race": "Great North Run",
+    "dist": 21082.4064,
+    "year": 2021,
+    "count": 49623,
+    "avg": "2:43:45"
+  },
+  {
+    "label": "Bristol 2021",
+    "race": "Great Bristol Half Marathon",
+    "dist": 21082.4064,
+    "year": 2021,
+    "count": 5947,
+    "avg": "2:14:07"
+  },
+  {
+    "label": "Bristol 2021",
+    "race": "Great Bristol 10K",
+    "dist": 10000,
+    "year": 2021,
+    "count": 3725,
+    "avg": "1:04:54"
+  },
+  {
+    "label": "Manchester 2021",
+    "race": "Great Manchester Run Half Marathon",
+    "dist": 21082.4064,
+    "year": 2021,
+    "count": 2495,
+    "avg": "2:02:23"
+  },
+  {
+    "label": "Manchester 2021",
+    "race": "Great Manchester Run 10k",
+    "dist": 10000,
+    "year": 2021,
+    "count": 6358,
+    "avg": "1:01:57"
+  },
+  {
+    "label": "South 2021",
+    "race": "Great South Run",
+    "dist": 16093.44,
+    "year": 2021,
+    "count": 15567,
+    "avg": "1:48:25"
+  },
+  {
+    "label": "Royal Parks 2021",
+    "race": "Half Marathon",
+    "dist": 21097.5,
+    "year": 2021,
+    "count": 15610,
+    "avg": "2:30:02"
+  },
+  {
+    "label": "Amsterdam M 2021",
+    "race": "TCS Marathon",
+    "dist": 42195,
+    "year": 2021,
+    "count": 6880,
+    "avg": "3:54:13"
+  },
+  {
+    "label": "Amsterdam M 2021",
+    "race": "Mizuno Half Marathon",
+    "dist": 21100,
+    "year": 2021,
+    "count": 10506,
+    "avg": "1:57:04"
+  },
+  {
+    "label": "Rotterdam 2021",
+    "race": "NN Marathon Rotterdam",
+    "dist": 42195,
+    "year": 2021,
+    "count": 11386,
+    "avg": "4:00:41"
+  },
+  {
+    "label": "Rotterdam 2021",
+    "race": "AA Drink 1/4 Marathon Rotterdam",
+    "dist": 10550,
+    "year": 2021,
+    "count": 7894,
+    "avg": "1:00:34"
+  },
+  {
+    "label": "ManM 2021",
+    "race": "Marathon",
+    "dist": 42000,
+    "year": 2021,
+    "count": 13844,
+    "avg": "4:29:23"
+  },
+  {
+    "label": "ManM 2021",
+    "race": "Half Marathon",
+    "dist": 21000,
+    "year": 2021,
+    "count": 5006,
+    "avg": "2:01:57"
+  },
+  {
+    "label": "DtD 2022",
+    "race": "10 Engelse Mijl",
+    "dist": 16100,
+    "year": 2022,
+    "count": 38387,
+    "avg": "1:39:20"
+  },
+  {
+    "label": "DtD 2024",
+    "race": "10 Engelse Mijl",
+    "dist": 16100,
+    "year": 2024,
+    "count": 46144,
+    "avg": "1:43:55"
+  },
+  {
+    "label": "DtD 2025",
+    "race": "10 Engelse Mijl",
+    "dist": 16100,
+    "year": 2025,
+    "count": 46148,
+    "avg": "1:36:23"
+  },
+  {
+    "label": "Amsterdam M 2022",
+    "race": "TCS Marathon",
+    "dist": 42200,
+    "year": 2022,
+    "count": 17644,
+    "avg": "4:12:20"
+  },
+  {
+    "label": "Amsterdam M 2022",
+    "race": "Mizuno Half Marathon",
+    "dist": 21100,
+    "year": 2022,
+    "count": 20398,
+    "avg": "2:06:54"
+  },
+  {
+    "label": "Amsterdam M 2023",
+    "race": "TCS Marathon",
+    "dist": 42200,
+    "year": 2023,
+    "count": 20532,
+    "avg": "4:56:39"
+  },
+  {
+    "label": "Amsterdam M 2023",
+    "race": "Mizuno Half Marathon",
+    "dist": 21100,
+    "year": 2023,
+    "count": 21390,
+    "avg": "2:37:07"
+  },
+  {
+    "label": "Amsterdam M 2024",
+    "race": "TCS Marathon",
+    "dist": 42200,
+    "year": 2024,
+    "count": 21859,
+    "avg": "4:44:20"
+  },
+  {
+    "label": "Amsterdam M 2024",
+    "race": "Mizuno Half Marathon",
+    "dist": 21100,
+    "year": 2024,
+    "count": 17662,
+    "avg": "2:05:41"
+  },
+  {
+    "label": "Amsterdam M 2025",
+    "race": "TCS Marathon",
+    "dist": 42200,
+    "year": 2025,
+    "count": 30312,
+    "avg": "4:08:42"
+  },
+  {
+    "label": "Amsterdam M 2025",
+    "race": "Mizuno Half Marathon",
+    "dist": 21100,
+    "year": 2025,
+    "count": 16780,
+    "avg": "2:03:00"
+  },
+  {
+    "label": "CPC 2025",
+    "race": "NN Halve Marathon",
+    "dist": 21100,
+    "year": 2025,
+    "count": 19624,
+    "avg": "1:59:14"
+  },
+  {
+    "label": "CPC 2025",
+    "race": "10KM",
+    "dist": 10000,
+    "year": 2025,
+    "count": 12862,
+    "avg": "1:00:56"
+  },
+  {
+    "label": "CPC 2026",
+    "race": "NN Halve Marathon",
+    "dist": 21100,
+    "year": 2026,
+    "count": 25537,
+    "avg": "1:58:39"
+  },
+  {
+    "label": "CPC 2026",
+    "race": "10 KM Loop",
+    "dist": 10000,
+    "year": 2026,
+    "count": 16283,
+    "avg": "1:01:28"
+  }
+]
