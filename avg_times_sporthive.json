@@ -1,7 +1,7 @@
 [
   {
     "label": "EDP Lisboa HM 2018",
-    "race": "EDP Meia Maratona de Lisboa",
+    "race": "EDP Lisboa Meia Maratona",
     "dist_m": 21097,
     "year": 2018,
     "count": 9191,
@@ -10,7 +10,7 @@
   },
   {
     "label": "EDP Lisboa HM 2022",
-    "race": "EDP Meia Maratona de Lisboa",
+    "race": "EDP Lisboa Meia Maratona",
     "dist_m": 21097,
     "year": 2022,
     "count": 8378,
@@ -19,7 +19,7 @@
   },
   {
     "label": "EDP Lisboa HM 2022",
-    "race": "Vodafone 10K",
+    "race": "EDP Meia Maratona de Lisboa - Vodafone 10K",
     "dist_m": 10000,
     "year": 2022,
     "count": 9926,
@@ -28,7 +28,7 @@
   },
   {
     "label": "EDP Lisboa HM 2023",
-    "race": "EDP Meia Maratona de Lisboa",
+    "race": "EDP Lisboa Meia Maratona",
     "dist_m": 21097,
     "year": 2023,
     "count": 11093,
@@ -37,7 +37,7 @@
   },
   {
     "label": "EDP Lisboa HM 2023",
-    "race": "Vodafone 10K",
+    "race": "EDP Meia Maratona de Lisboa - Vodafone 10K",
     "dist_m": 10000,
     "year": 2023,
     "count": 11275,
@@ -46,7 +46,7 @@
   },
   {
     "label": "EDP Lisboa HM 2024",
-    "race": "EDP Meia Maratona de Lisboa",
+    "race": "EDP Lisboa Meia Maratona",
     "dist_m": 21097,
     "year": 2024,
     "count": 13245,
@@ -55,7 +55,7 @@
   },
   {
     "label": "EDP Lisboa HM 2024",
-    "race": "Vodafone 10K",
+    "race": "EDP Meia Maratona de Lisboa - Vodafone 10K",
     "dist_m": 10000,
     "year": 2024,
     "count": 9800,
@@ -64,7 +64,7 @@
   },
   {
     "label": "EDP Lisboa HM 2025",
-    "race": "EDP Meia Maratona de Lisboa",
+    "race": "EDP Lisboa Meia Maratona",
     "dist_m": 21097,
     "year": 2025,
     "count": 17850,
@@ -73,7 +73,7 @@
   },
   {
     "label": "EDP Lisboa HM 2025",
-    "race": "Vodafone 10K",
+    "race": "EDP Meia Maratona de Lisboa - Vodafone 10K",
     "dist_m": 10000,
     "year": 2025,
     "count": 7256,
@@ -91,7 +91,7 @@
   },
   {
     "label": "Lisbon M 2021",
-    "race": "LUSO Meia Maratona",
+    "race": "Hyundai Meia Maratona",
     "dist_m": 21097,
     "year": 2021,
     "count": 2387,
@@ -109,7 +109,7 @@
   },
   {
     "label": "Lisbon M 2022",
-    "race": "LUSO Meia Maratona",
+    "race": "Hyundai Meia Maratona",
     "dist_m": 21097,
     "year": 2022,
     "count": 5660,
@@ -118,7 +118,7 @@
   },
   {
     "label": "Lisbon M 2023",
-    "race": "LUSO Meia Maratona",
+    "race": "Hyundai Meia Maratona",
     "dist_m": 21097,
     "year": 2023,
     "count": 6539,
@@ -163,7 +163,7 @@
   },
   {
     "label": "Lisbon M 2025",
-    "race": "Hyundai Meia Maratona ",
+    "race": "Hyundai Meia Maratona",
     "dist_m": 21097,
     "year": 2025,
     "count": 7594,
@@ -172,7 +172,7 @@
   },
   {
     "label": "Amsterdam 2024",
-    "race": "TCS Marathon",
+    "race": "TCS Amsterdam Marathon",
     "dist_m": 42195,
     "year": 2024,
     "count": 16815,
@@ -181,7 +181,7 @@
   },
   {
     "label": "Amsterdam 2024",
-    "race": "Mizuno Half Marathon",
+    "race": "TCS Mizuno Half Marathon",
     "dist_m": 21097,
     "year": 2024,
     "count": 13333,
@@ -190,7 +190,7 @@
   },
   {
     "label": "Amsterdam 2022",
-    "race": "TCS Marathon",
+    "race": "TCS Amsterdam Marathon",
     "dist_m": 42195,
     "year": 2022,
     "count": 12669,
@@ -199,7 +199,7 @@
   },
   {
     "label": "Amsterdam 2022",
-    "race": "Mizuno Half Marathon",
+    "race": "TCS Mizuno Half Marathon",
     "dist_m": 21097,
     "year": 2022,
     "count": 14627,
@@ -208,7 +208,7 @@
   },
   {
     "label": "Amsterdam 2021",
-    "race": "TCS Marathon",
+    "race": "TCS Amsterdam Marathon",
     "dist_m": 42195,
     "year": 2021,
     "count": 6612,
@@ -217,7 +217,7 @@
   },
   {
     "label": "Amsterdam 2021",
-    "race": "Mizuno Half Marathon",
+    "race": "TCS Mizuno Half Marathon",
     "dist_m": 21097,
     "year": 2021,
     "count": 10310,
@@ -226,7 +226,7 @@
   },
   {
     "label": "Amsterdam 2019",
-    "race": "TCS Marathon",
+    "race": "TCS Amsterdam Marathon",
     "dist_m": 42195,
     "year": 2019,
     "count": 13494,
@@ -235,7 +235,7 @@
   },
   {
     "label": "Amsterdam 2019",
-    "race": "Mizuno Halve Marathon",
+    "race": "TCS Mizuno Half Marathon",
     "dist_m": 21097,
     "year": 2019,
     "count": 14749,
@@ -244,7 +244,7 @@
   },
   {
     "label": "Amsterdam 2016",
-    "race": "TCS Marathon",
+    "race": "TCS Amsterdam Marathon",
     "dist_m": 42195,
     "year": 2016,
     "count": 12194,
@@ -253,7 +253,7 @@
   },
   {
     "label": "Amsterdam 2016",
-    "race": "Mizuno Half Marathon",
+    "race": "TCS Mizuno Half Marathon",
     "dist_m": 21097,
     "year": 2016,
     "count": 14837,
@@ -262,7 +262,7 @@
   },
   {
     "label": "CPC 2018",
-    "race": "NN Halve Marathon",
+    "race": "NN CPC Loop Den Haag - Half Marathon",
     "dist_m": 21100,
     "year": 2018,
     "count": 9493,
@@ -271,7 +271,7 @@
   },
   {
     "label": "CPC 2018",
-    "race": "AA Drink 10 KM Loop",
+    "race": "NN CPC Loop Den Haag - 10 KM Loop",
     "dist_m": 10000,
     "year": 2018,
     "count": 8134,
@@ -280,7 +280,7 @@
   },
   {
     "label": "CPC 2022",
-    "race": "NN Halve Marathon",
+    "race": "NN CPC Loop Den Haag - Half Marathon",
     "dist_m": 21097,
     "year": 2022,
     "count": 6510,
@@ -289,7 +289,7 @@
   },
   {
     "label": "CPC 2022",
-    "race": "10 KM Loop",
+    "race": "NN CPC Loop Den Haag - 10 KM Loop",
     "dist_m": 10000,
     "year": 2022,
     "count": 4850,
@@ -298,7 +298,7 @@
   },
   {
     "label": "CPC 2023",
-    "race": "NN Halve Marathon",
+    "race": "NN CPC Loop Den Haag - Half Marathon",
     "dist_m": 21097,
     "year": 2023,
     "count": 8567,
@@ -307,7 +307,7 @@
   },
   {
     "label": "CPC 2023",
-    "race": "10 KM Loop",
+    "race": "NN CPC Loop Den Haag - 10 KM Loop",
     "dist_m": 10000,
     "year": 2023,
     "count": 5777,
@@ -316,7 +316,7 @@
   },
   {
     "label": "CPC 2024",
-    "race": "NN Halve Marathon",
+    "race": "NN CPC Loop Den Haag - Half Marathon",
     "dist_m": 21097,
     "year": 2024,
     "count": 13569,
@@ -325,7 +325,7 @@
   },
   {
     "label": "CPC 2024",
-    "race": "10 KM Loop",
+    "race": "NN CPC Loop Den Haag - 10 KM Loop",
     "dist_m": 10000,
     "year": 2024,
     "count": 7501,
@@ -334,7 +334,7 @@
   },
   {
     "label": "DtD 2016",
-    "race": "10 EM Goede Doelen",
+    "race": "Dam tot Damloop",
     "dist_m": 16090,
     "year": 2016,
     "count": 3523,
@@ -343,7 +343,7 @@
   },
   {
     "label": "DtD 2016",
-    "race": "10 EM Recreatieloop",
+    "race": "Dam tot Damloop",
     "dist_m": 16090,
     "year": 2016,
     "count": 10017,
@@ -352,7 +352,7 @@
   },
   {
     "label": "DtD 2017",
-    "race": "10 EM Goede Doelen",
+    "race": "Dam tot Damloop",
     "dist_m": 16090,
     "year": 2017,
     "count": 3056,
@@ -361,7 +361,7 @@
   },
   {
     "label": "DtD 2017",
-    "race": "10 EM Recreatieloop",
+    "race": "Dam tot Damloop",
     "dist_m": 16090,
     "year": 2017,
     "count": 11718,
@@ -370,7 +370,7 @@
   },
   {
     "label": "DtD 2017",
-    "race": "10 EM Wedstrijd",
+    "race": "Dam tot Damloop",
     "dist_m": 16090,
     "year": 2017,
     "count": 546,
@@ -379,7 +379,7 @@
   },
   {
     "label": "DtD 2018",
-    "race": "10 EM Goede Doelen",
+    "race": "Dam tot Damloop",
     "dist_m": 16090,
     "year": 2018,
     "count": 2998,
@@ -388,7 +388,7 @@
   },
   {
     "label": "DtD 2018",
-    "race": "10 EM Recreatieloop",
+    "race": "Dam tot Damloop",
     "dist_m": 16090,
     "year": 2018,
     "count": 11157,
@@ -397,7 +397,7 @@
   },
   {
     "label": "DtD 2018",
-    "race": "10 EM Wedstrijd",
+    "race": "Dam tot Damloop",
     "dist_m": 16090,
     "year": 2018,
     "count": 512,
@@ -406,7 +406,7 @@
   },
   {
     "label": "DtD 2019",
-    "race": "10 EM Goede Doelen",
+    "race": "Dam tot Damloop",
     "dist_m": 16090,
     "year": 2019,
     "count": 2673,
@@ -415,7 +415,7 @@
   },
   {
     "label": "DtD 2019",
-    "race": "10 EM Recreatieloop",
+    "race": "Dam tot Damloop",
     "dist_m": 16090,
     "year": 2019,
     "count": 10747,
@@ -424,7 +424,7 @@
   },
   {
     "label": "DtD 2019",
-    "race": "10 EM Wedstrijd",
+    "race": "Dam tot Damloop",
     "dist_m": 16090,
     "year": 2019,
     "count": 531,
@@ -433,7 +433,7 @@
   },
   {
     "label": "DtD 2022",
-    "race": "10 EM Goede Doelen",
+    "race": "Dam tot Damloop",
     "dist_m": 16093,
     "year": 2022,
     "count": 1088,
@@ -442,7 +442,7 @@
   },
   {
     "label": "DtD 2022",
-    "race": "10 EM Recreatieloop",
+    "race": "Dam tot Damloop",
     "dist_m": 16093,
     "year": 2022,
     "count": 14275,
@@ -451,7 +451,7 @@
   },
   {
     "label": "DtD 2024",
-    "race": "10 EM recreatieloop",
+    "race": "Dam tot Damloop",
     "dist_m": 16093,
     "year": 2024,
     "count": 17841,
@@ -469,7 +469,7 @@
   },
   {
     "label": "DtD 2025",
-    "race": "10 EM Goede Doelen",
+    "race": "Dam tot Damloop",
     "dist_m": 16090,
     "year": 2025,
     "count": 1621,
@@ -478,7 +478,7 @@
   },
   {
     "label": "DtD 2025",
-    "race": "10 EM Recreatieloop",
+    "race": "Dam tot Damloop",
     "dist_m": 16090,
     "year": 2025,
     "count": 19819,
@@ -496,7 +496,7 @@
   },
   {
     "label": "Rotterdam 2018",
-    "race": "NN Marathon Rotterdam 2018",
+    "race": "NN Marathon Rotterdam",
     "dist_m": 42195,
     "year": 2018,
     "count": 13997,
@@ -505,7 +505,7 @@
   },
   {
     "label": "Rotterdam 2019",
-    "race": "NN Marathon Rotterdam 2019",
+    "race": "NN Marathon Rotterdam",
     "dist_m": 42195,
     "year": 2019,
     "count": 14558,
@@ -523,7 +523,7 @@
   },
   {
     "label": "Rotterdam 2021",
-    "race": "NN Marathon Rotterdam 2021",
+    "race": "NN Marathon Rotterdam",
     "dist_m": 42195,
     "year": 2021,
     "count": 10866,
@@ -541,7 +541,7 @@
   },
   {
     "label": "Rotterdam 2022",
-    "race": "NN Marathon Rotterdam 2022",
+    "race": "NN Marathon Rotterdam",
     "dist_m": 42195,
     "year": 2022,
     "count": 11722,
@@ -559,7 +559,7 @@
   },
   {
     "label": "Rotterdam 2023",
-    "race": "NN Marathon Rotterdam 2023",
+    "race": "NN Marathon Rotterdam",
     "dist_m": 42195,
     "year": 2023,
     "count": 16848,
@@ -577,7 +577,7 @@
   },
   {
     "label": "Rotterdam 2024",
-    "race": "NN Marathon Rotterdam 2024",
+    "race": "NN Marathon Rotterdam",
     "dist_m": 42195,
     "year": 2024,
     "count": 17088,
@@ -595,7 +595,7 @@
   },
   {
     "label": "LLHM 2023",
-    "race": "Half Marathon",
+    "race": "London Landmarks Half Marathon",
     "dist_m": 21000,
     "year": 2023,
     "count": 17255,
@@ -604,7 +604,7 @@
   },
   {
     "label": "LLHM 2024",
-    "race": "Half Marathon",
+    "race": "London Landmarks Half Marathon",
     "dist_m": 21000,
     "year": 2024,
     "count": 18959,
@@ -613,7 +613,7 @@
   },
   {
     "label": "Cardiff 2023",
-    "race": "Half Marathon",
+    "race": "Cardiff Half Marathon",
     "dist_m": 21082,
     "year": 2023,
     "count": 20097,
@@ -622,7 +622,7 @@
   },
   {
     "label": "Cardiff 2024",
-    "race": "Half Marathon",
+    "race": "Cardiff Half Marathon",
     "dist_m": 21082,
     "year": 2024,
     "count": 22294,
@@ -631,7 +631,7 @@
   },
   {
     "label": "Cardiff 2025",
-    "race": "Half Marathon",
+    "race": "Cardiff Half Marathon",
     "dist_m": 21082,
     "year": 2025,
     "count": 24634,
@@ -640,7 +640,7 @@
   },
   {
     "label": "Manchester HM 2022",
-    "race": "Half Marathon",
+    "race": "Manchester Half Marathon",
     "dist_m": 21082,
     "year": 2022,
     "count": 8279,
@@ -649,7 +649,7 @@
   },
   {
     "label": "Manchester HM 2023",
-    "race": "Half Marathon",
+    "race": "Manchester Half Marathon",
     "dist_m": 21000,
     "year": 2023,
     "count": 12976,
@@ -658,7 +658,7 @@
   },
   {
     "label": "Manchester HM 2024",
-    "race": "Half Marathon",
+    "race": "Manchester Half Marathon",
     "dist_m": 21082,
     "year": 2024,
     "count": 18271,
@@ -667,7 +667,7 @@
   },
   {
     "label": "Manchester HM 2025",
-    "race": "Half Marathon",
+    "race": "Manchester Half Marathon",
     "dist_m": 21082,
     "year": 2025,
     "count": 22376,
@@ -676,7 +676,7 @@
   },
   {
     "label": "Royal Parks 2022",
-    "race": "Half Marathon",
+    "race": "Royal Parks Half Marathon",
     "dist_m": 21098,
     "year": 2022,
     "count": 12073,
@@ -685,7 +685,7 @@
   },
   {
     "label": "Royal Parks 2023",
-    "race": "Half Marathon",
+    "race": "Royal Parks Half Marathon",
     "dist_m": 21082,
     "year": 2023,
     "count": 15985,
@@ -694,7 +694,7 @@
   },
   {
     "label": "ManM 2023",
-    "race": "Marathon",
+    "race": "Adidas Manchester Marathon",
     "dist_m": 42195,
     "year": 2023,
     "count": 18576,
@@ -703,7 +703,7 @@
   },
   {
     "label": "ManM 2024",
-    "race": "Marathon",
+    "race": "Adidas Manchester Marathon",
     "dist_m": 42165,
     "year": 2024,
     "count": 21846,
@@ -730,7 +730,7 @@
   },
   {
     "label": "Madrid 2021",
-    "race": "10 K",
+    "race": "Zurich Rock 'n' Roll Running Series Madrid",
     "dist_m": 10000,
     "year": 2021,
     "count": 2903,
@@ -757,7 +757,7 @@
   },
   {
     "label": "Madrid 2023",
-    "race": "10K",
+    "race": "Zurich Rock 'n' Roll Running Series Madrid",
     "dist_m": 10000,
     "year": 2023,
     "count": 6513,
@@ -784,7 +784,7 @@
   },
   {
     "label": "Madrid 2024",
-    "race": "10K",
+    "race": "Zurich Rock 'n' Roll Running Series Madrid",
     "dist_m": 10000,
     "year": 2024,
     "count": 7207,
@@ -811,7 +811,7 @@
   },
   {
     "label": "Madrid 2025",
-    "race": "10K",
+    "race": "Zurich Rock 'n' Roll Running Series Madrid",
     "dist_m": 10000,
     "year": 2025,
     "count": 7194,
@@ -856,7 +856,7 @@
   },
   {
     "label": "GNR 2021",
-    "race": "Great North Run",
+    "race": "AJ Bell Great North Run",
     "dist_m": 21082.4064,
     "year": 2021,
     "count": 49623,
@@ -866,7 +866,7 @@
   },
   {
     "label": "Bristol 2021",
-    "race": "Great Bristol Half Marathon",
+    "race": "AJ Bell Great Bristol Run",
     "dist_m": 21082.4064,
     "year": 2021,
     "count": 5947,
@@ -876,7 +876,7 @@
   },
   {
     "label": "Bristol 2021",
-    "race": "Great Bristol 10K",
+    "race": "AJ Bell Great Bristol Run 10K",
     "dist_m": 10000,
     "year": 2021,
     "count": 3725,
@@ -886,7 +886,7 @@
   },
   {
     "label": "Manchester 2021",
-    "race": "Great Manchester Run Half Marathon",
+    "race": "AJ Bell Great Manchester Run",
     "dist_m": 21082.4064,
     "year": 2021,
     "count": 2495,
@@ -896,7 +896,7 @@
   },
   {
     "label": "Manchester 2021",
-    "race": "Great Manchester Run 10k",
+    "race": "AJ Bell Great Manchester Run",
     "dist_m": 10000,
     "year": 2021,
     "count": 6358,
@@ -906,7 +906,7 @@
   },
   {
     "label": "South 2021",
-    "race": "Great South Run",
+    "race": "AJ Bell Great South Run",
     "dist_m": 16093.44,
     "year": 2021,
     "count": 15567,
@@ -916,7 +916,7 @@
   },
   {
     "label": "Royal Parks 2021",
-    "race": "Half Marathon",
+    "race": "Royal Parks Half Marathon",
     "dist_m": 21097.5,
     "year": 2021,
     "count": 15610,
@@ -926,7 +926,7 @@
   },
   {
     "label": "ManM 2021",
-    "race": "Marathon",
+    "race": "Adidas Manchester Marathon",
     "dist_m": 42000,
     "year": 2021,
     "count": 13844,
@@ -936,7 +936,7 @@
   },
   {
     "label": "ManM 2021",
-    "race": "Half Marathon",
+    "race": "Adidas Manchester Marathon",
     "dist_m": 21000,
     "year": 2021,
     "count": 5006,
