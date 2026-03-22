@@ -221,10 +221,63 @@ def load_winners():
     return rows
 
 
+def load_sporthive_avg():
+    """Load average times computed from Sporthive API."""
+    path = SCRIPT_DIR / "avg_times_sporthive.json"
+    if not path.exists():
+        return []
+    import json as jlib
+    with open(path, "r") as f:
+        data = jlib.load(f)
+    # Map to standard format: {race, year, avg, dist_category}
+    rows = []
+    race_map = {
+        "TCS Marathon": "TCS Amsterdam Marathon",
+        "Mizuno Half Marathon": "TCS Mizuno Half Marathon",
+        "Mizuno Halve Marathon": "TCS Mizuno Half Marathon",
+        "NN Marathon Rotterdam 2018": "NN Marathon Rotterdam",
+        "NN Marathon Rotterdam 2019": "NN Marathon Rotterdam",
+        "NN Marathon Rotterdam 2021": "NN Marathon Rotterdam",
+        "NN Marathon Rotterdam 2022": "NN Marathon Rotterdam",
+        "NN Marathon Rotterdam 2023": "NN Marathon Rotterdam",
+        "NN Marathon Rotterdam 2024": "NN Marathon Rotterdam",
+        "NN Halve Marathon": "NN CPC Loop Den Haag - Half Marathon",
+        "EDP Meia Maratona de Lisboa": "EDP Lisboa Meia Maratona",
+        "EDP Maratona de Lisboa": "EDP Maratona de Lisboa",
+        "Half Marathon": None,
+        "Maratón": None,
+        "Media Maratón": None,
+        "Marathon": None,
+    }
+    label_map = {
+        "LLHM": "London Landmarks Half Marathon",
+        "Cardiff": "Cardiff Half Marathon",
+        "Manchester HM": "Manchester Half Marathon",
+        "Royal Parks": "Royal Parks Half Marathon",
+        "ManM": "Adidas Manchester Marathon",
+        "Brighton HM": "Brighton Half Marathon",
+    }
+    for item in data:
+        rname = item["race"]
+        label = item["label"].rsplit(" ", 1)[0]  # remove year
+        mapped = race_map.get(rname)
+        if mapped is None:
+            mapped = label_map.get(label, rname)
+        elif mapped:
+            pass  # use mapped name
+        rows.append({"race": mapped, "year": item["year"],
+                     "avg": item["avg_time"], "men": "", "women": ""})
+    print(f"  Sporthive avg: {len(rows)} temps moyens")
+    return rows
+
+
 def build_times_db(md, sd):
     db = {}; all_e = []
     for rows in md.values(): all_e.extend(rows)
     for rows in sd.values(): all_e.extend(rows)
+    # Add Sporthive average times
+    sp_avg = load_sporthive_avg()
+    all_e.extend(sp_avg)
     all_e.sort(key=lambda x: x.get("year", 0))
     for row in all_e:
         if row.get("avg") or row.get("men"):
@@ -272,12 +325,17 @@ function getWinnersRecords(rn){
   return{men:bestM?secToTime(bestM):'',menYr:bestMyr,women:bestW?secToTime(bestW):'',womenYr:bestWyr};
 }
 function buildTimeHistory(rn){
-  var l=rn.toLowerCase(),hist=[];
+  var l=rn.toLowerCase(),hist=[],seen={};
+  // 1. Search TEMPS_MARATHON
   [2024,2025,2026].forEach(function(yr){
     var rows=TEMPS_MARATHON[String(yr)]||[];
-    for(var i=0;i<rows.length;i++){var rl=rows[i].race.toLowerCase();if(l.indexOf(rl.substring(0,10))>=0||rl.indexOf(l.substring(0,10))>=0){if(toMin(rows[i].avg))hist.push({yr:String(yr),min:toMin(rows[i].avg)});break;}}
+    for(var i=0;i<rows.length;i++){var rl=rows[i].race.toLowerCase();if(l.indexOf(rl.substring(0,10))>=0||rl.indexOf(l.substring(0,10))>=0){if(toMin(rows[i].avg)){hist.push({yr:String(yr),min:toMin(rows[i].avg)});seen[yr]=1;}break;}}
   });
-  if(!hist.length){var sKeys=Object.keys(TEMPS_SEMI);sKeys.forEach(function(syr){var srows=TEMPS_SEMI[syr]||[];for(var i=0;i<srows.length;i++){var rl=srows[i].race.toLowerCase();if(l.indexOf(rl.substring(0,10))>=0||rl.indexOf(l.substring(0,10))>=0){if(toMin(srows[i].avg))hist.push({yr:syr,min:toMin(srows[i].avg)});break;}}});}
+  // 2. Search TEMPS_SEMI
+  var sKeys=Object.keys(TEMPS_SEMI);sKeys.forEach(function(syr){if(seen[syr])return;var srows=TEMPS_SEMI[syr]||[];for(var i=0;i<srows.length;i++){var rl=srows[i].race.toLowerCase();if(l.indexOf(rl.substring(0,10))>=0||rl.indexOf(l.substring(0,10))>=0){if(toMin(srows[i].avg)){hist.push({yr:syr,min:toMin(srows[i].avg)});seen[syr]=1;}break;}}});
+  // 3. Search TEMPS_AVG (Sporthive computed averages)
+  if(typeof TEMPS_AVG!=='undefined'){TEMPS_AVG.forEach(function(ta){if(seen[ta.yr])return;var rl=ta.race.toLowerCase();if(l.indexOf(rl.substring(0,10))>=0||rl.indexOf(l.substring(0,10))>=0){if(toMin(ta.avg)){hist.push({yr:String(ta.yr),min:toMin(ta.avg)});seen[ta.yr]=1;}}});}
+  hist.sort(function(a,b){return parseInt(a.yr)-parseInt(b.yr);});
   return hist;
 }
 var cT=null,ovChartF=null,ovChartT=null,ovChartM=null,ovChartW=null;
@@ -1270,8 +1328,12 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
     tsjs = {str(yr): [{"race": r["race"], "city": r["city"], "finishers": r["finishers"] or 0, "avg": r["avg"] or ""}
                        for r in rows if r.get("avg")] for yr, rows in sd.items()}
     tdbjs = {k: {"men": v["men"], "women": v["women"], "avg": v["avg"], "yr": v["yr"]} for k, v in tdb.items()}
+    # Load Sporthive average times
+    sp_avg = load_sporthive_avg()
+    sp_avg_js = [{"race": r["race"], "yr": r["year"], "avg": r["avg"]} for r in sp_avg]
     js_data = ("const RAW=" + j(finishers) + ";\nconst BIGGEST=" + j(biggest) + ";\n"
                "const TEMPS_MARATHON=" + j(tmjs) + ";\nconst TEMPS_SEMI=" + j(tsjs) + ";\n"
+               "const TEMPS_AVG=" + j(sp_avg_js) + ";\n"
                "const TIMES_DB=" + j(tdbjs) + ";\nconst ASO_KEYWORDS=" + j(ASO_KEYWORDS) + ";\n"
                "const WMM_KEYWORDS=" + j(WMM_KEYWORDS) + ";\n"
                "const WINNERS=" + j(winners) + ";\n")
