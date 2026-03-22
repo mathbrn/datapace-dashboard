@@ -853,5 +853,95 @@
     "count": 8251,
     "avg_time": "2:03:19",
     "avg_speed_kmh": 10.22
+  },
+  {
+    "label": "GNR 2021",
+    "race": "Great North Run",
+    "dist_m": 21082.4064,
+    "year": 2021,
+    "count": 49623,
+    "avg_time": "2:15:23",
+    "avg_speed_kmh": 0,
+    "source": "tracx_sampled_avg"
+  },
+  {
+    "label": "Bristol 2021",
+    "race": "Great Bristol Half Marathon",
+    "dist_m": 21082.4064,
+    "year": 2021,
+    "count": 5947,
+    "avg_time": "2:14:07",
+    "avg_speed_kmh": 0,
+    "source": "tracx_median"
+  },
+  {
+    "label": "Bristol 2021",
+    "race": "Great Bristol 10K",
+    "dist_m": 10000,
+    "year": 2021,
+    "count": 3725,
+    "avg_time": "1:04:54",
+    "avg_speed_kmh": 0,
+    "source": "tracx_median"
+  },
+  {
+    "label": "Manchester 2021",
+    "race": "Great Manchester Run Half Marathon",
+    "dist_m": 21082.4064,
+    "year": 2021,
+    "count": 2495,
+    "avg_time": "2:02:23",
+    "avg_speed_kmh": 0,
+    "source": "tracx_median"
+  },
+  {
+    "label": "Manchester 2021",
+    "race": "Great Manchester Run 10k",
+    "dist_m": 10000,
+    "year": 2021,
+    "count": 6358,
+    "avg_time": "1:01:57",
+    "avg_speed_kmh": 0,
+    "source": "tracx_median"
+  },
+  {
+    "label": "South 2021",
+    "race": "Great South Run",
+    "dist_m": 16093.44,
+    "year": 2021,
+    "count": 15567,
+    "avg_time": "1:39:05",
+    "avg_speed_kmh": 0,
+    "source": "tracx_sampled_avg"
+  },
+  {
+    "label": "Royal Parks 2021",
+    "race": "Half Marathon",
+    "dist_m": 21097.5,
+    "year": 2021,
+    "count": 15610,
+    "avg_time": "2:07:32",
+    "avg_speed_kmh": 0,
+    "source": "tracx_sampled_avg"
+  },
+  {
+    "label": "ManM 2021",
+    "race": "Marathon",
+    "dist_m": 42000,
+    "year": 2021,
+    "count": 13844,
+    "avg_time": "4:19:55",
+    "avg_speed_kmh": 0,
+    "source": "tracx_sampled_avg"
+  },
+  {
+    "label": "ManM 2021",
+    "race": "Half Marathon",
+    "dist_m": 21000,
+    "year": 2021,
+    "count": 5006,
+    "avg_time": "2:01:57",
+    "avg_speed_kmh": 0,
+    "source": "tracx_median"
   }
 ]
