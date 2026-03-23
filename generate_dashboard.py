@@ -289,9 +289,12 @@ def build_times_db(md, sd):
 
 JS_LOGIC = '''function isAso(r){var l=r.toLowerCase();return ASO_KEYWORDS.some(function(k){return l.indexOf(k)>=0;});}
 function isWmm(r){var l=r.toLowerCase();return WMM_KEYWORDS.some(function(k){return l.indexOf(k)>=0;});}
-function col(r){return isWmm(r)?'#38BDF8':isAso(r)?'#FCDB00':'#5C00D4';}
-function colDist(r){return isWmm(r.r)?'#38BDF8':isAso(r.r)?'#FCDB00':r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':r.d==='AUTRE'?'#F472B6':'#9B6FFF';}
-function colByName(name){var r=RAW.find(function(x){return x.r===name;});return r?colDist(r):'#9B6FFF';}
+function isLight(){return document.documentElement.hasAttribute('data-theme');}
+var LIGHT_MAP={'#38BDF8':'#0B7BC0','#FCDB00':'#A88F00','#5C00D4':'#4800A8','#9B6FFF':'#6B3FCC','#FF8A50':'#CC5A20','#5CDFA0':'#2BA368','#F472B6':'#C04080','#FF4A6B':'#CC2040','#22C55E':'#1A8A42','#2DBF7E':'#1F8A5A','#FF6B9D':'#CC3870'};
+function lc(c){return isLight()?(LIGHT_MAP[c]||c):c;}
+function col(r){return lc(isWmm(r)?'#38BDF8':isAso(r)?'#FCDB00':'#5C00D4');}
+function colDist(r){return lc(isWmm(r.r)?'#38BDF8':isAso(r.r)?'#FCDB00':r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':r.d==='AUTRE'?'#F472B6':'#9B6FFF');}
+function colByName(name){var r=RAW.find(function(x){return x.r===name;});return r?colDist(r):lc('#9B6FFF');}
 function toMin(t){if(!t)return null;var p=String(t).split(':');if(p.length===3)return parseInt(p[0])*60+parseInt(p[1])+parseInt(p[2])/60;return null;}
 function fmt(n){if(n===-1)return'Annul\u00e9';if(n===-2)return'Elite';if(n===-3)return'';if(!n||isNaN(n))return'\u2014';return n>=1000?(n/1000).toFixed(1)+'k':n.toString();}
 function fmtFull(n){if(n===-1)return'Annul\u00e9';if(n===-2)return'Elite Only';if(n===-3)return'';if(!n||isNaN(n))return'\u2014';return Math.round(n).toLocaleString('fr-FR');}
@@ -390,6 +393,10 @@ function toggleTheme(){
       c.update('none');
     });
   }
+  // Re-render tabs to update colors
+  if(typeof filterTable==='function')filterTable();
+  if(typeof initBiggestYears==='function')initBiggestYears();
+  if(typeof updateWinnersTable==='function')updateWinnersTable();
 }
 (function(){var saved=localStorage.getItem('dp-theme');if(saved==='light'){document.documentElement.setAttribute('data-theme','light');var b=document.getElementById('theme-btn');if(b)b.innerHTML='&#x2600; Light';}})();
 
@@ -683,11 +690,11 @@ function filterTable(){
   f.forEach(function(r){
     var vals=globalYears.map(function(y){return(r.hist||{})[y]||null;}).filter(function(v){return v&&v>0&&!isNaN(v);});
     var t=vals.length>=2?delta(vals[0],vals[vals.length-1]):null;
-    var tc=t===null?csVar('--text3'):t>=0?'#2DBF7E':'#FF4A6B';
+    var tc=t===null?csVar('--text3'):t>=0?lc('#22C55E'):lc('#FF4A6B');
     var tStr=t===null?'-':(t>=0?'+':'')+t.toFixed(1)+'%';
     var yrKeys=globalYears.filter(function(y){var v=(r.hist||{})[y];return v&&v>0;});
     var firstYr=yrKeys[0],lastYr=yrKeys[yrKeys.length-1];
-    var tSub=firstYr&&lastYr&&firstYr!==lastYr?'<div style="font-size:9px;color:#555;margin-top:1px">'+firstYr+'\u2192'+lastYr+'</div>':'';
+    var tSub=firstYr&&lastYr&&firstYr!==lastYr?'<div style="font-size:9px;color:var(--text3);margin-top:1px">'+firstYr+'\u2192'+lastYr+'</div>':'';
     var wmm=isWmm(r.r);var aso=isAso(r.r);
     var bl=r.d==='MARATHON'?'Marathon':r.d==='SEMI'?'Semi':r.d==='AUTRE'?'Autre':'10 km';
     var raceColor=colDist(r);
