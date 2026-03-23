@@ -950,7 +950,7 @@ half_marathon_data = [
     # ── TRACX API: Winner times from first results ──
     ("AJ Bell Great North Run", "21K", 2021, "0:58:57", "1:07:41"),
     ("AJ Bell Great Bristol Run", "21K", 2021, "1:07:50", "1:18:15"),
-    ("AJ Bell Great Manchester Run", "21K", 2021, "0:52:12", "0:57:46"),
+    ("AJ Bell Great Manchester Run", "21K", 2021, "1:10:25", "1:21:56"),
     ("AJ Bell Great Manchester Run", "10K", 2021, "0:28:03", "0:30:51"),
     ("AJ Bell Great South Run", "AUTRE", 2021, "0:47:19", "0:50:42"),
     ("TCS Amsterdam Marathon", "42K", 2021, "2:03:36", "2:17:55"),
