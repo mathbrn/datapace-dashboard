@@ -6,7 +6,7 @@
 <title>DataPace - Finishers Monde</title>
 <style>*{box-sizing:border-box;margin:0;padding:0;}
 :root{--bg:#0d1117;--bg2:#161b22;--bg3:#1c2128;--border:#30363d;--border2:#30363d;--text:#e6edf3;--text2:#8b949e;--text3:#6e7681;--purple:#7B2FFF;--yellow:#FCDB00;}
-[data-theme="light"]{--bg:#ffffff;--bg2:#f6f8fa;--bg3:#eef1f5;--border:#d1d9e0;--border2:#d1d9e0;--text:#1f2328;--text2:#59636e;--text3:#818b98;--purple:#5C00D4;--yellow:#D4A800;}
+[data-theme="light"]{--bg:#f8f9fb;--bg2:#eef1f5;--bg3:#e4e8ee;--border:#c8ced6;--border2:#c8ced6;--text:#1a1d21;--text2:#3d454e;--text3:#636d78;--purple:#5C00D4;--yellow:#B8920A;}
 body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:1.5rem;}
 .dp-header{padding-bottom:1.25rem;border-bottom:.5px solid var(--border);margin-bottom:1.5rem;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:.5rem;}
 .dp-title{font-size:15px;font-weight:500;letter-spacing:.02em;}
@@ -116,9 +116,15 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 #data-table.tbl-frozen td:not(.frozen-cell){white-space:nowrap;}
 .theme-toggle{background:var(--bg2);border:.5px solid var(--border);border-radius:20px;padding:4px 10px;cursor:pointer;font-size:13px;display:flex;align-items:center;gap:6px;color:var(--text2);transition:all .2s;user-select:none;}
 .theme-toggle:hover{color:var(--text);border-color:var(--purple);}
-[data-theme="light"] .badge-aso{background:#FCDB0025;color:#9E7D00;}
-[data-theme="light"] .badge-world{background:#5C00D415;color:#5C00D4;}
-[data-theme="light"] .badge-wmm{background:#0284C720;color:#0369A1;}
+[data-theme="light"] .badge-aso{background:#FCDB0030;color:#7A6200;}
+[data-theme="light"] .badge-world{background:#5C00D420;color:#4800A8;}
+[data-theme="light"] .badge-wmm{background:#0284C728;color:#025E87;}
+[data-theme="light"] .time-bar-track{background:var(--bg3);}
+[data-theme="light"] .metric{border-color:var(--border);}
+[data-theme="light"] .ov-card{border-color:var(--border);}
+[data-theme="light"] .ov-chart-box{background:var(--bg2);border-color:var(--border);}
+[data-theme="light"] .cmp-mid{background:var(--bg2);}
+[data-theme="light"] .leg-item{color:var(--text2);}
 [data-theme="light"] select{background:var(--bg);border-color:var(--border);}
 [data-theme="light"] .search-wrap input,[data-theme="light"] .ov-search-wrap input,[data-theme="light"] .cmp-input{background:var(--bg);border-color:var(--border);}
 [data-theme="light"] .cmp-dropdown{background:var(--bg);}
@@ -131,7 +137,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
   <div><div class="dp-title">Dashboard Running</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
   <div style="display:flex;align-items:center;gap:12px;">
     <div class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Changer le theme">&#x263E; Dark</div>
-    <div class="dp-updated">Genere le 23/03/2026 a 21:57</div>
+    <div class="dp-updated">Genere le 23/03/2026 a 22:00</div>
   </div>
 </div>
 <div class="tabs">
