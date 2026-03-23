@@ -18,7 +18,17 @@ EXCEL_FILE = SCRIPT_DIR / "Suivi_Finishers_Monde_10k_-_21k_-_42k_HISTORIQUE.xlsx
 
 def update(race_name, distance, year, count):
     year = int(year)
-    count = int(count)
+    # Allow special text values: 'x', '-', 'Elite'
+    if isinstance(count, str) and count.strip().lower() in ('x', '-', 'elite'):
+        count = count.strip()
+        if count.lower() == 'x':
+            count = 'x'
+        elif count == '-':
+            count = '-'
+        else:
+            count = 'Elite'
+    else:
+        count = int(count)
 
     wb = openpyxl.load_workbook(EXCEL_FILE)
     ws = wb["ALL"]
@@ -79,6 +89,7 @@ if __name__ == "__main__":
         print(f"ERREUR: Distance '{dist}' invalide. Utiliser MARATHON, SEMI ou 10KM.")
         sys.exit(1)
 
-    success = update(race, dist, int(year), int(count))
+    # Pass count as string to allow special values (x, -, Elite)
+    success = update(race, dist, int(year), count)
     if not success:
         sys.exit(1)

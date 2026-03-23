@@ -298,9 +298,14 @@ function fmtFull(n){if(n===-1)return'Annul\u00e9';if(n===-2)return'Elite Only';i
 function delta(a,b){if(!a||!b||isNaN(a)||isNaN(b))return null;return((b-a)/a*100);}
 function fmtHM(mins){var h=Math.floor(mins/60),m=Math.round(mins%60);return h+'h'+String(m).padStart(2,'0');}
 function fmtHMMin(mins){return fmtHM(mins)+'min';}
-var GRID='rgba(255,255,255,0.04)';
-var TICK={color:'#555',font:{size:11}};
-var TT={backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10};
+function csVar(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim();}
+function mkGRID(){return csVar('--border');}
+function mkTICK(){return{color:csVar('--text3'),font:{size:11}};}
+function mkTT(){var isDark=!document.documentElement.hasAttribute('data-theme');return{backgroundColor:isDark?'#161b22':'#ffffff',borderColor:csVar('--border'),borderWidth:1,titleColor:csVar('--text2'),bodyColor:csVar('--text'),padding:10};}
+function mkBorder(){return csVar('--border');}
+var GRID=mkGRID();
+var TICK=mkTICK();
+var TT=mkTT();
 
 
 function getTimeData(rn){
@@ -353,6 +358,40 @@ function buildWinnerHistory(rn){
   });
   return{men:men,women:women};
 }
+
+function toggleTheme(){
+  var html=document.documentElement;
+  var btn=document.getElementById('theme-btn');
+  if(html.getAttribute('data-theme')==='light'){
+    html.removeAttribute('data-theme');
+    btn.innerHTML='&#x263E; Dark';
+    localStorage.setItem('dp-theme','dark');
+  }else{
+    html.setAttribute('data-theme','light');
+    btn.innerHTML='&#x2600; Light';
+    localStorage.setItem('dp-theme','light');
+  }
+  // Update all Chart.js instances
+  if(typeof Chart!=='undefined'){
+    var gridColor=getComputedStyle(html).getPropertyValue('--border').trim();
+    var textColor=getComputedStyle(html).getPropertyValue('--text3').trim();
+    Object.keys(Chart.instances||{}).forEach(function(k){
+      var c=Chart.instances[k];
+      if(c.options.scales){
+        ['x','y','y1'].forEach(function(ax){
+          if(c.options.scales[ax]){
+            c.options.scales[ax].ticks=c.options.scales[ax].ticks||{};
+            c.options.scales[ax].ticks.color=textColor;
+            c.options.scales[ax].grid=c.options.scales[ax].grid||{};
+            c.options.scales[ax].grid.color=gridColor;
+          }
+        });
+      }
+      c.update('none');
+    });
+  }
+}
+(function(){var saved=localStorage.getItem('dp-theme');if(saved==='light'){document.documentElement.setAttribute('data-theme','light');var b=document.getElementById('theme-btn');if(b)b.innerHTML='&#x2600; Light';}})();
 
 function switchTab(name){
   var names=['data','overview','compare','trends','biggest','temps','winners'];
@@ -440,8 +479,8 @@ function ovSelect(idx){
       type:'bar',
       data:{labels:finHistory.map(function(e){return e.yr;}),datasets:[{data:finHistory.map(function(e){return e.v;}),backgroundColor:ac+'99',borderRadius:3,borderSkipped:false}]},
       options:{responsive:true,maintainAspectRatio:false,
-        plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{label:function(ctx){return' '+fmtFull(ctx.parsed.y)+' finishers';}}}},
-        scales:{x:{grid:{display:false},ticks:TICK,border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmt(v);}},border:{color:'#ffffff08'}}}
+        plugins:{legend:{display:false},tooltip:{backgroundColor:mkTT().backgroundColor,borderColor:mkTT().borderColor,borderWidth:1,titleColor:mkTT().titleColor,bodyColor:mkTT().bodyColor,padding:10,callbacks:{label:function(ctx){return' '+fmtFull(ctx.parsed.y)+' finishers';}}}},
+        scales:{x:{grid:{display:false},ticks:TICK,border:{color:mkBorder()}},y:{grid:{color:mkGRID()},ticks:{color:mkTICK().color,font:{size:11},callback:function(v){return fmt(v);}},border:{color:mkBorder()}}}
       }
     };
     ovChartF=new Chart(fc,finCfg);
@@ -454,8 +493,8 @@ function ovSelect(idx){
       type:'line',
       data:{labels:th.map(function(e){return e.yr;}),datasets:[{data:th.map(function(e){return e.min;}),borderColor:ac,backgroundColor:'transparent',tension:0.3,pointRadius:4,pointBackgroundColor:ac,borderWidth:2}]},
       options:{responsive:true,maintainAspectRatio:false,
-        plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{label:function(ctx){return' '+fmtHMMin(ctx.parsed.y);}}}},
-        scales:{x:{grid:{display:false},ticks:TICK,border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmtHM(v);}},border:{color:'#ffffff08'}}}
+        plugins:{legend:{display:false},tooltip:{backgroundColor:mkTT().backgroundColor,borderColor:mkTT().borderColor,borderWidth:1,titleColor:mkTT().titleColor,bodyColor:mkTT().bodyColor,padding:10,callbacks:{label:function(ctx){return' '+fmtHMMin(ctx.parsed.y);}}}},
+        scales:{x:{grid:{display:false},ticks:TICK,border:{color:mkBorder()}},y:{grid:{color:mkGRID()},ticks:{color:mkTICK().color,font:{size:11},callback:function(v){return fmtHM(v);}},border:{color:mkBorder()}}}
       }
     };
     ovChartT=new Chart(tc,timeCfg);
@@ -469,8 +508,8 @@ function ovSelect(idx){
     ovChartM=new Chart(mcv,{type:'line',
       data:{labels:wh.men.map(function(e){return e.yr;}),datasets:[{data:wh.men.map(function(e){return e.sec/60;}),borderColor:'#9B6FFF',backgroundColor:'#9B6FFF22',tension:0.3,pointRadius:4,pointBackgroundColor:'#9B6FFF',borderWidth:2,fill:true}]},
       options:{responsive:true,maintainAspectRatio:false,
-        plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{label:function(ctx){var i=ctx.dataIndex;return' '+wh.men[i].time;}}}},
-        scales:{x:{grid:{display:false},ticks:TICK,border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmtHM(v);}},border:{color:'#ffffff08'}}}
+        plugins:{legend:{display:false},tooltip:{backgroundColor:mkTT().backgroundColor,borderColor:mkTT().borderColor,borderWidth:1,titleColor:mkTT().titleColor,bodyColor:mkTT().bodyColor,padding:10,callbacks:{label:function(ctx){var i=ctx.dataIndex;return' '+wh.men[i].time;}}}},
+        scales:{x:{grid:{display:false},ticks:TICK,border:{color:mkBorder()}},y:{grid:{color:mkGRID()},ticks:{color:mkTICK().color,font:{size:11},callback:function(v){return fmtHM(v);}},border:{color:mkBorder()}}}
       }
     });
   }
@@ -479,8 +518,8 @@ function ovSelect(idx){
     ovChartW=new Chart(wcv,{type:'line',
       data:{labels:wh.women.map(function(e){return e.yr;}),datasets:[{data:wh.women.map(function(e){return e.sec/60;}),borderColor:'#FF8A50',backgroundColor:'#FF8A5022',tension:0.3,pointRadius:4,pointBackgroundColor:'#FF8A50',borderWidth:2,fill:true}]},
       options:{responsive:true,maintainAspectRatio:false,
-        plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{label:function(ctx){var i=ctx.dataIndex;return' '+wh.women[i].time;}}}},
-        scales:{x:{grid:{display:false},ticks:TICK,border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmtHM(v);}},border:{color:'#ffffff08'}}}
+        plugins:{legend:{display:false},tooltip:{backgroundColor:mkTT().backgroundColor,borderColor:mkTT().borderColor,borderWidth:1,titleColor:mkTT().titleColor,bodyColor:mkTT().bodyColor,padding:10,callbacks:{label:function(ctx){var i=ctx.dataIndex;return' '+wh.women[i].time;}}}},
+        scales:{x:{grid:{display:false},ticks:TICK,border:{color:mkBorder()}},y:{grid:{color:mkGRID()},ticks:{color:mkTICK().color,font:{size:11},callback:function(v){return fmtHM(v);}},border:{color:mkBorder()}}}
       }
     });
   }
@@ -503,7 +542,7 @@ function updateTrends(){
   var datasets=sorted.map(function(r){return{label:r.r,data:allYears.map(function(yr){var v=(r.hist||{})[yr];return v&&v>0?v:null;}),borderColor:colDist(r),backgroundColor:'transparent',tension:0.35,fill:false,pointRadius:3,pointHoverRadius:7,spanGaps:true,borderWidth:2,pointBackgroundColor:colDist(r)};});
   var minYr=allYears.length?allYears[0]:'';var maxYr=allYears.length?allYears[allYears.length-1]:'';
   if(lbl)lbl.textContent='Evolution par evenement '+minYr+'-'+maxYr;
-  var trendCfg={type:'line',data:{labels:allYears.map(String),datasets:datasets},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'nearest',intersect:true},plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{title:function(items){return items.length?items[0].dataset.label:'';},label:function(ctx){return' '+fmtFull(ctx.parsed.y)+' finishers';}}}},scales:{x:{grid:{color:GRID},ticks:TICK,border:{color:'#ffffff08'}},y:{grid:{color:GRID},ticks:{color:'#555',font:{size:11},callback:function(v){return fmt(v);}},border:{color:'#ffffff08'}}}}};
+  var trendCfg={type:'line',data:{labels:allYears.map(String),datasets:datasets},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'nearest',intersect:true},plugins:{legend:{display:false},tooltip:{backgroundColor:mkTT().backgroundColor,borderColor:mkTT().borderColor,borderWidth:1,titleColor:mkTT().titleColor,bodyColor:mkTT().bodyColor,padding:10,callbacks:{title:function(items){return items.length?items[0].dataset.label:'';},label:function(ctx){return' '+fmtFull(ctx.parsed.y)+' finishers';}}}},scales:{x:{grid:{color:mkGRID()},ticks:TICK,border:{color:mkBorder()}},y:{grid:{color:mkGRID()},ticks:{color:mkTICK().color,font:{size:11},callback:function(v){return fmt(v);}},border:{color:mkBorder()}}}}};
   cT=new Chart(document.getElementById('chart-trends'),trendCfg);
 }
 
@@ -644,7 +683,7 @@ function filterTable(){
   f.forEach(function(r){
     var vals=globalYears.map(function(y){return(r.hist||{})[y]||null;}).filter(function(v){return v&&v>0&&!isNaN(v);});
     var t=vals.length>=2?delta(vals[0],vals[vals.length-1]):null;
-    var tc=t===null?'#555':t>=0?'#2DBF7E':'#FF4A6B';
+    var tc=t===null?csVar('--text3'):t>=0?'#2DBF7E':'#FF4A6B';
     var tStr=t===null?'-':(t>=0?'+':'')+t.toFixed(1)+'%';
     var yrKeys=globalYears.filter(function(y){var v=(r.hist||{})[y];return v&&v>0;});
     var firstYr=yrKeys[0],lastYr=yrKeys[yrKeys.length-1];
@@ -977,7 +1016,7 @@ function updateWinners(){
   document.getElementById('win-legend').innerHTML=legH;
   if(cW){cW.destroy();cW=null;}
   var ctx=document.getElementById('chart-winners').getContext('2d');
-  cW=new Chart(ctx,{type:'line',data:{labels:allYears.map(String),datasets:datasets},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'nearest',intersect:true},plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',borderColor:'#ffffff18',borderWidth:1,titleColor:'#888',bodyColor:'#ccc',padding:10,callbacks:{title:function(items){return items.length?items[0].dataset.label:'';},label:function(ctx){var v=ctx.parsed.y;if(v==null)return null;var h=Math.floor(v/60),m=Math.floor(v%60),s=Math.round((v*60)%60);return' '+(h?h+':':'')+String(m).padStart(h?2:1,'0')+':'+String(s).padStart(2,'0');}}}},scales:{x:{ticks:{color:'#555',font:{size:11}},grid:{color:'#ffffff08'}},y:{reverse:true,ticks:{color:'#555',font:{size:11},callback:function(v){var h=Math.floor(v/60),m=Math.round(v%60);return(h?h+'h':'')+(h?String(m).padStart(2,'0'):m)+'min';}},grid:{color:'#ffffff08'}}}}});
+  cW=new Chart(ctx,{type:'line',data:{labels:allYears.map(String),datasets:datasets},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'nearest',intersect:true},plugins:{legend:{display:false},tooltip:{backgroundColor:mkTT().backgroundColor,borderColor:mkTT().borderColor,borderWidth:1,titleColor:mkTT().titleColor,bodyColor:mkTT().bodyColor,padding:10,callbacks:{title:function(items){return items.length?items[0].dataset.label:'';},label:function(ctx){var v=ctx.parsed.y;if(v==null)return null;var h=Math.floor(v/60),m=Math.floor(v%60),s=Math.round((v*60)%60);return' '+(h?h+':':'')+String(m).padStart(h?2:1,'0')+':'+String(s).padStart(2,'0');}}}},scales:{x:{ticks:{color:mkTICK().color,font:{size:11}},grid:{color:'#ffffff08'}},y:{reverse:true,ticks:{color:mkTICK().color,font:{size:11},callback:function(v){var h=Math.floor(v/60),m=Math.round(v%60);return(h?h+'h':'')+(h?String(m).padStart(2,'0'):m)+'min';}},grid:{color:'#ffffff08'}}}}});
   // Populate year filter
   var yrSel=document.getElementById('win-year');
   var prevYr=yrSel.value;
@@ -1010,7 +1049,8 @@ function updateWinnersTable(){
 
 
 CSS = """*{box-sizing:border-box;margin:0;padding:0;}
-:root{--bg:#0a0a0a;--bg2:#111;--bg3:#161616;--border:#ffffff0f;--border2:#ffffff18;--text:#f0f0f0;--text2:#888;--text3:#555;--purple:#5C00D4;--yellow:#FCDB00;}
+:root{--bg:#0d1117;--bg2:#161b22;--bg3:#1c2128;--border:#30363d;--border2:#30363d;--text:#e6edf3;--text2:#8b949e;--text3:#6e7681;--purple:#7B2FFF;--yellow:#FCDB00;}
+[data-theme="light"]{--bg:#ffffff;--bg2:#f6f8fa;--bg3:#eef1f5;--border:#d1d9e0;--border2:#d1d9e0;--text:#1f2328;--text2:#59636e;--text3:#818b98;--purple:#5C00D4;--yellow:#D4A800;}
 body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:1.5rem;}
 .dp-header{padding-bottom:1.25rem;border-bottom:.5px solid var(--border);margin-bottom:1.5rem;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:.5rem;}
 .dp-title{font-size:15px;font-weight:500;letter-spacing:.02em;}
@@ -1117,12 +1157,25 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 #data-table.tbl-frozen td.frozen-cell,#data-table.tbl-frozen th.frozen-cell{background:var(--bg);}
 #data-table.tbl-frozen tr:hover td.frozen-cell{background:var(--bg2);}
 #data-table.tbl-frozen th:not(.frozen-cell),#data-table.tbl-frozen td:not(.frozen-cell){min-width:58px;width:58px;text-align:center;font-size:11px;padding:7px 6px;}
-#data-table.tbl-frozen td:not(.frozen-cell){white-space:nowrap;}"""
+#data-table.tbl-frozen td:not(.frozen-cell){white-space:nowrap;}
+.theme-toggle{background:var(--bg2);border:.5px solid var(--border);border-radius:20px;padding:4px 10px;cursor:pointer;font-size:13px;display:flex;align-items:center;gap:6px;color:var(--text2);transition:all .2s;user-select:none;}
+.theme-toggle:hover{color:var(--text);border-color:var(--purple);}
+[data-theme="light"] .badge-aso{background:#FCDB0025;color:#9E7D00;}
+[data-theme="light"] .badge-world{background:#5C00D415;color:#5C00D4;}
+[data-theme="light"] .badge-wmm{background:#0284C720;color:#0369A1;}
+[data-theme="light"] select{background:var(--bg);border-color:var(--border);}
+[data-theme="light"] .search-wrap input,[data-theme="light"] .ov-search-wrap input,[data-theme="light"] .cmp-input{background:var(--bg);border-color:var(--border);}
+[data-theme="light"] .cmp-dropdown{background:var(--bg);}
+[data-theme="light"] #data-table.tbl-frozen td.frozen-cell,[data-theme="light"] #data-table.tbl-frozen th.frozen-cell{background:var(--bg);}
+[data-theme="light"] #data-table.tbl-frozen tr:hover td.frozen-cell{background:var(--bg2);}"""
 
 HTML_BODY = """
 <div class="dp-header">
   <div><div class="dp-title">Dashboard Running</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
-  <div class="dp-updated">Genere le {now}</div>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <div class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Changer le theme">&#x263E; Dark</div>
+    <div class="dp-updated">Genere le {now}</div>
+  </div>
 </div>
 <div class="tabs">
   <div class="tab active" onclick="switchTab('data')">Tableau</div>
