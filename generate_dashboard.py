@@ -302,10 +302,10 @@ function delta(a,b){if(!a||!b||isNaN(a)||isNaN(b))return null;return((b-a)/a*100
 function fmtHM(mins){var h=Math.floor(mins/60),m=Math.round(mins%60);return h+'h'+String(m).padStart(2,'0');}
 function fmtHMMin(mins){return fmtHM(mins)+'min';}
 function csVar(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim();}
-function mkGRID(){return csVar('--border');}
+function mkGRID(){return isLight()?csVar('--border'):'rgba(255,255,255,0.04)';}
 function mkTICK(){return{color:csVar('--text3'),font:{size:11}};}
 function mkTT(){var isDark=!document.documentElement.hasAttribute('data-theme');return{backgroundColor:isDark?'#161b22':'#ffffff',borderColor:csVar('--border'),borderWidth:1,titleColor:csVar('--text2'),bodyColor:csVar('--text'),padding:10};}
-function mkBorder(){return csVar('--border');}
+function mkBorder(){return isLight()?csVar('--border'):'rgba(255,255,255,0.03)';}
 var GRID=mkGRID();
 var TICK=mkTICK();
 var TT=mkTT();
@@ -1023,7 +1023,7 @@ function updateWinners(){
   document.getElementById('win-legend').innerHTML=legH;
   if(cW){cW.destroy();cW=null;}
   var ctx=document.getElementById('chart-winners').getContext('2d');
-  cW=new Chart(ctx,{type:'line',data:{labels:allYears.map(String),datasets:datasets},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'nearest',intersect:true},plugins:{legend:{display:false},tooltip:{backgroundColor:mkTT().backgroundColor,borderColor:mkTT().borderColor,borderWidth:1,titleColor:mkTT().titleColor,bodyColor:mkTT().bodyColor,padding:10,callbacks:{title:function(items){return items.length?items[0].dataset.label:'';},label:function(ctx){var v=ctx.parsed.y;if(v==null)return null;var h=Math.floor(v/60),m=Math.floor(v%60),s=Math.round((v*60)%60);return' '+(h?h+':':'')+String(m).padStart(h?2:1,'0')+':'+String(s).padStart(2,'0');}}}},scales:{x:{ticks:{color:mkTICK().color,font:{size:11}},grid:{color:'#ffffff08'}},y:{reverse:true,ticks:{color:mkTICK().color,font:{size:11},callback:function(v){var h=Math.floor(v/60),m=Math.round(v%60);return(h?h+'h':'')+(h?String(m).padStart(2,'0'):m)+'min';}},grid:{color:'#ffffff08'}}}}});
+  cW=new Chart(ctx,{type:'line',data:{labels:allYears.map(String),datasets:datasets},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'nearest',intersect:true},plugins:{legend:{display:false},tooltip:{backgroundColor:mkTT().backgroundColor,borderColor:mkTT().borderColor,borderWidth:1,titleColor:mkTT().titleColor,bodyColor:mkTT().bodyColor,padding:10,callbacks:{title:function(items){return items.length?items[0].dataset.label:'';},label:function(ctx){var v=ctx.parsed.y;if(v==null)return null;var h=Math.floor(v/60),m=Math.floor(v%60),s=Math.round((v*60)%60);return' '+(h?h+':':'')+String(m).padStart(h?2:1,'0')+':'+String(s).padStart(2,'0');}}}},scales:{x:{ticks:{color:mkTICK().color,font:{size:11}},grid:{color:mkGRID()}},y:{reverse:true,ticks:{color:mkTICK().color,font:{size:11},callback:function(v){var h=Math.floor(v/60),m=Math.round(v%60);return(h?h+'h':'')+(h?String(m).padStart(2,'0'):m)+'min';}},grid:{color:mkGRID()}}}}});
   // Populate year filter
   var yrSel=document.getElementById('win-year');
   var prevYr=yrSel.value;
