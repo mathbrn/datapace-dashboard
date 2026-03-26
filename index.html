@@ -178,7 +178,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
   <div><div class="dp-title">Dashboard Running</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
   <div style="display:flex;align-items:center;gap:12px;">
     <div class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Changer le theme">&#x263E; Dark</div>
-    <div class="dp-updated">Genere le 26/03/2026 a 19:30</div>
+    <div class="dp-updated">Genere le 26/03/2026 a 19:33</div>
   </div>
 </div>
 <div class="tabs">
@@ -1010,8 +1010,7 @@ function spSetSector(s){
   document.querySelectorAll('.sp-pill').forEach(function(el){
     el.classList.remove('spc-active');
     el.style.removeProperty('background');
-    var pillText=el.textContent.split('
-')[0].trim();
+    var pillText=el.textContent.split(String.fromCharCode(10))[0].trim();
     if(pillText===s||(s==='ALL'&&pillText==='ALL')){
       el.classList.add('spc-active');
       var col=s==='ALL'?null:(_spCols[s]||'#9B6FFF');
