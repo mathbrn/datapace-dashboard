@@ -137,7 +137,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
   <div><div class="dp-title">Dashboard Running</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
   <div style="display:flex;align-items:center;gap:12px;">
     <div class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Changer le theme">&#x263E; Dark</div>
-    <div class="dp-updated">Genere le 26/03/2026 a 17:22</div>
+    <div class="dp-updated">Genere le 26/03/2026 a 17:27</div>
   </div>
 </div>
 <div class="tabs">
@@ -856,7 +856,10 @@ function filterTable(){
   if(periode!=='all'&&periode!=='3')activeFilters++;
   var resetBtn=document.getElementById('reset-filters');
   if(resetBtn)resetBtn.style.display=activeFilters>0?'inline-flex':'none';
-  document.getElementById('table-count').textContent=cnt+' epreuve'+(cnt>1?'s':'')+' affichee'+(cnt>1?'s':'')+(activeFilters>0?' • '+activeFilters+' filtre'+(activeFilters>1?'s':'')+' actif'+(activeFilters>1?'s':''):'');
+  var dataCount=0,totalCells=0;
+  f.forEach(function(r){globalYears.forEach(function(y){totalCells++;var v=(r.hist||{})[y];if(v&&v>0&&!isNaN(v))dataCount++;});});
+  var pct=totalCells>0?Math.round(100*dataCount/totalCells):0;
+  document.getElementById('table-count').textContent=cnt+' epreuve'+(cnt>1?'s':'')+' affichee'+(cnt>1?'s':'')+' • '+dataCount.toLocaleString('fr-FR')+' donnees / '+totalCells.toLocaleString('fr-FR')+' cellules ('+pct+'%)'+(activeFilters>0?' • '+activeFilters+' filtre'+(activeFilters>1?'s':'')+' actif'+(activeFilters>1?'s':''):'');
 }
 function resetFilters(){
   document.getElementById('search-data').value='';
