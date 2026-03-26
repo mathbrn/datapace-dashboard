@@ -178,7 +178,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
   <div><div class="dp-title">Dashboard Running</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
   <div style="display:flex;align-items:center;gap:12px;">
     <div class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Changer le theme">&#x263E; Dark</div>
-    <div class="dp-updated">Genere le 26/03/2026 a 19:26</div>
+    <div class="dp-updated">Genere le 26/03/2026 a 19:30</div>
   </div>
 </div>
 <div class="tabs">
@@ -459,6 +459,7 @@ function getTimeData(rn){
   for(var i=0;i<keys.length;i++){var k=keys[i];if(l.indexOf(k)>=0||k.indexOf(l.substring(0,12))>=0)return TIMES_DB[k];}
   return null;
 }
+var _spCols=_spCols||{'Equipementier sport':'#22C55E','Banque/Finance':'#38BDF8','Assurance/Finance':'#9B6FFF','Finance/Investissement':'#38BDF8','Automobile':'#FF8A50','Tech/IT':'#F472B6','Energie':'#FCDB00','Industrie/Energie':'#FCDB00','Sante/Pharma':'#2DBF7E','Caritatif/Sante':'#2DBF7E','Fondation/Mecenat':'#FF6B9D','Aviation/Transport':'#5CDFA0','Nutrition/Alimentaire':'#FF9F45','Audio/Wearables':'#C084FC','Paiement/Finance':'#34D399','Retail/Mode':'#FB923C','Conglomeral/Tech':'#94A3B8','Transport':'#60A5FA','Boisson/Brasserie':'#FCD34D','Hydratation/Consommation':'#FB923C','Horlogerie/Luxe':'#E2E8F0','Assurance/Mutuelle':'#818CF8','Nutrition/Boisson':'#FF9F45','Tech/Wearables':'#F472B6','Tech/App sport':'#F472B6','Nutrition sport':'#FF9F45','Horlogerie/Chronometrage':'#E2E8F0','Crypto/Fintech':'#34D399','Telecom':'#60A5FA','Eau/Boisson':'#5CDFA0','Sante/Recovery':'#2DBF7E','Sante/Physiotherapie':'#2DBF7E','Energie/Petrole':'#FCDB00','Alimentaire/Livraison':'#FF9F45','Restauration/Boisson':'#FCD34D','Tech/Tourisme':'#F472B6','Fitness/Tech':'#F472B6','Pharma/Nutrition':'#2DBF7E','Mobilite/Location':'#FF8A50','Alimentaire':'#FF9F45','Retail/Distribution sport':'#FB923C','Sante/Supplements':'#2DBF7E','Automobile/EV':'#FF8A50','Industrie/Ressources':'#94A3B8','Retail/Pharmacie':'#FB923C','Assurance/Sante':'#818CF8','Environnement/Recyclage':'#5CDFA0','Marketing sportif':'#94A3B8','Hygiene/Cosmetique':'#F472B6','Cosmetique':'#F472B6','Tech/SaaS':'#F472B6','Immobilier':'#94A3B8','Restauration':'#FCD34D','Fintech/Paiement':'#34D399','Industrie/Batteries':'#94A3B8','Tech/Electronique':'#F472B6','Luxe/Joaillerie':'#E2E8F0','Transport/Croisiere':'#60A5FA','Grande distribution':'#FB923C','Organisateur/Media':'#94A3B8','Immobilier/Tech':'#94A3B8','Sante/Nutrition':'#2DBF7E','Conglomerat/Tech':'#94A3B8'};
 function buildOvSponsoring(eventName,eventColor){
   if(typeof SP_PARTNERSHIPS==='undefined')return '';
   var ec=eventColor||'var(--purple)';
@@ -966,7 +967,6 @@ function getExposure(eventName,years){
   return total;
 }
 var _spBS={},_spActiveSector='ALL',_spActiveBrand=null,_spPillSectors=[];
-var _spCols={'Equipementier sport':'#22C55E','Banque/Finance':'#38BDF8','Assurance/Finance':'#9B6FFF','Finance/Investissement':'#38BDF8','Automobile':'#FF8A50','Tech/IT':'#F472B6','Energie':'#FCDB00','Industrie/Energie':'#FCDB00','Sante/Pharma':'#2DBF7E','Caritatif/Sante':'#2DBF7E','Fondation/Mecenat':'#FF6B9D','Aviation/Transport':'#5CDFA0','Nutrition/Alimentaire':'#FF9F45','Audio/Wearables':'#C084FC','Paiement/Finance':'#34D399','Retail/Mode':'#FB923C','Conglomeral/Tech':'#94A3B8','Transport':'#60A5FA','Boisson/Brasserie':'#FCD34D','Hydratation/Consommation':'#FB923C','Horlogerie/Luxe':'#E2E8F0','Assurance/Mutuelle':'#818CF8'};
 function spBuildData(){
   _spBS={};
   SP_PARTNERSHIPS.forEach(function(p){
