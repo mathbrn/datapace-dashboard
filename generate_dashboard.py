@@ -1622,7 +1622,6 @@ HTML_BODY = """
         <option value="2025">2025</option>
         <option value="3">3 dernieres annees</option>
         <option value="5">5 dernieres annees</option>
-        <option value="all">Toutes les annees</option>
       </select>
     </div>
   </div>
@@ -1635,7 +1634,7 @@ HTML_BODY = """
     </div>
     <div class="sp-right">
       <div class="sp-treemap" id="sp-treemap">
-        <div class="sp-treemap-hint" id="sp-treemap-hint">&#x2190; Cliquer sur une marque pour voir le detail</div>
+        <div class="sp-treemap-hint" id="sp-treemap-hint"></div>
       </div>
       <div class="sp-detail" id="sp-detail"></div>
     </div>
