@@ -1643,6 +1643,7 @@ HTML_BODY = """
     <div class="sp-kpis" id="sp-kpis" style="margin-bottom:0"></div>
     <div class="ctrl-group"><span class="ctrl-label">Periode</span>
       <select id="sp-period" onchange="spChangePeriod(this.value)" style="font-size:11px;padding:4px 8px;">
+        <option value="2026">2026</option>
         <option value="2025">2025</option>
         <option value="3">3 dernieres annees</option>
         <option value="5">5 dernieres annees</option>
