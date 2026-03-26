@@ -2,29 +2,27 @@
 """
 DataPace Dashboard Generator
 =============================
-Lit les fichiers Excel et génère datapace_dashboard.html.
+Genere datapace_dashboard.html.
+
+Source de donnees (par priorite) :
+    1. Base SQLite (datapace.db) — si presente
+    2. Fichiers Excel (fallback)
 
 Usage :
     python generate_dashboard.py
-
-Fichiers Excel requis (même dossier que ce script) :
-    - Suivi_Finishers_Monde_10k_-_21k_-_42k.xlsx
-    - Temps_moyen_par_marathon_2024.xlsx
-    - Temps_moyen_par_marathon_2025.xlsx
-    - Temps_moyen_par_marathon_2026.xlsx
-    - Temps_moyen_semi-marathon.xlsx
-
-Sortie :
-    - datapace_dashboard.html  (ouvrir dans le navigateur)
 """
 
+import os
 import pandas as pd
 import json
 import datetime
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent))
+
 SCRIPT_DIR = Path(__file__).parent
+_DB_PATH = Path(os.environ.get("DATAPACE_DB", str(SCRIPT_DIR / "datapace.db")))
 
 FILES = {
     "finishers":     SCRIPT_DIR / "Suivi_Finishers_Monde_10k_-_21k_-_42k_HISTORIQUE.xlsx",
@@ -401,7 +399,7 @@ function toggleTheme(){
 (function(){var saved=localStorage.getItem('dp-theme');if(saved==='light'){document.documentElement.setAttribute('data-theme','light');var b=document.getElementById('theme-btn');if(b)b.innerHTML='&#x2600; Light';}})();
 
 function switchTab(name){
-  var names=['data','overview','compare','trends','biggest','temps','winners'];
+  var names=['data','overview','compare','trends','biggest','temps','winners','sponsoring'];
   document.querySelectorAll('.tab').forEach(function(t,i){t.classList.toggle('active',names[i]===name);});
   document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active');});
   document.getElementById('panel-'+name).classList.add('active');
@@ -410,6 +408,7 @@ function switchTab(name){
   if(name==='temps')updateTemps();
   if(name==='winners')updateWinners();
   if(name==='data')filterTable();
+  if(name==='sponsoring'&&!window._spInit){window._spInit=true;initSponsoring();}
 }
 
 function ovSearch(){
@@ -656,6 +655,8 @@ function filterTable(){
   var q=(document.getElementById('search-data').value||'').toLowerCase();
   var dist=document.getElementById('dist-data').value;
   var month=document.getElementById('month-data').value;
+  var badge=document.getElementById('badge-data').value;
+  var sizeFilter=document.getElementById('size-data').value;
   var periode=document.getElementById('afficher-data').value;
   var thead=document.getElementById('table-head-row');
   var tbl=document.getElementById('data-table');
@@ -671,6 +672,23 @@ function filterTable(){
     if(dist!=='ALL'&&r.d!==dist)return false;
     if(month!=='ALL'&&r.p!==month)return false;
     if(q&&r.r.toLowerCase().indexOf(q)<0&&r.c.toLowerCase().indexOf(q)<0)return false;
+    // Badge filter
+    if(badge!=='ALL'){
+      var w=isWmm(r.r),a=isAso(r.r);
+      if(badge==='WMM'&&!w)return false;
+      if(badge==='ASO'&&!a)return false;
+      if(badge==='OTHER'&&(w||a))return false;
+    }
+    // Size filter (based on peak finishers across visible years)
+    if(sizeFilter!=='ALL'){
+      var peak=0;
+      globalYears.forEach(function(y){var v=(r.hist||{})[y];if(v&&v>0&&v>peak)peak=v;});
+      var sz=parseInt(sizeFilter);
+      if(sz===20000&&peak<20000)return false;
+      if(sz===10000&&(peak<10000||peak>=20000))return false;
+      if(sz===5000&&(peak<5000||peak>=10000))return false;
+      if(sz===0&&peak>=5000)return false;
+    }
     return globalYears.some(function(y){return(r.hist||{})[y];});
   });
   // Sort
@@ -708,7 +726,138 @@ function filterTable(){
   document.getElementById('table-body').innerHTML=html;
   if(frozen)applyFrozen(tbl);
   var cnt=f.length;
-  document.getElementById('table-count').textContent=cnt+' epreuve'+(cnt>1?'s':'')+' affichee'+(cnt>1?'s':'');
+  // Count active filters
+  var activeFilters=0;
+  if(q)activeFilters++;
+  if(dist!=='ALL')activeFilters++;
+  if(month!=='ALL')activeFilters++;
+  if(badge!=='ALL')activeFilters++;
+  if(sizeFilter!=='ALL')activeFilters++;
+  if(periode!=='all'&&periode!=='3')activeFilters++;
+  var resetBtn=document.getElementById('reset-filters');
+  if(resetBtn)resetBtn.style.display=activeFilters>0?'inline-flex':'none';
+  document.getElementById('table-count').textContent=cnt+' epreuve'+(cnt>1?'s':'')+' affichee'+(cnt>1?'s':'')+(activeFilters>0?' \u2022 '+activeFilters+' filtre'+(activeFilters>1?'s':'')+' actif'+(activeFilters>1?'s':''):'');
+}
+function resetFilters(){
+  document.getElementById('search-data').value='';
+  document.getElementById('dist-data').value='ALL';
+  document.getElementById('month-data').value='ALL';
+  document.getElementById('badge-data').value='ALL';
+  document.getElementById('size-data').value='ALL';
+  document.getElementById('sort-data').value='default';
+  document.getElementById('afficher-data').value='3';
+  filterTable();
+}
+// Keyboard shortcut Ctrl+K / Cmd+K to focus search
+document.addEventListener('keydown',function(e){
+  if((e.ctrlKey||e.metaKey)&&e.key==='k'){e.preventDefault();var s=document.getElementById('search-data');if(s){s.focus();s.select();var dataTab=document.getElementById('panel-data');if(dataTab&&!dataTab.classList.contains('active'))switchTab('data');}}
+  if(e.key==='Escape'){var s=document.getElementById('search-data');if(s&&document.activeElement===s){s.value='';s.blur();filterTable();}}
+});
+
+// ── SPONSORING ──────────────────────────────────────────────────────────────
+var spChartBrands=null,spChartSectors=null,spChartEquip=null,spChartTypes=null;
+function getExposure(eventName){
+  var ev=RAW.find(function(r){return r.r===eventName;});
+  if(!ev||!ev.hist)return 0;
+  var vals=Object.values(ev.hist).filter(function(v){return v&&v>0;});
+  return vals.length?Math.max.apply(null,vals):0;
+}
+function initSponsoring(){
+  // Build brand stats
+  var brandStats={};
+  SP_PARTNERSHIPS.forEach(function(p){
+    if(!brandStats[p.brand])brandStats[p.brand]={events:[],exposure:0,types:{},sector:SP_BRANDS[p.brand]?SP_BRANDS[p.brand].sector:'Autre'};
+    var exp=getExposure(p.event);
+    if(brandStats[p.brand].events.indexOf(p.event)<0){brandStats[p.brand].events.push(p.event);brandStats[p.brand].exposure+=exp;}
+    brandStats[p.brand].types[p.type]=(brandStats[p.brand].types[p.type]||0)+1;
+  });
+  // Metrics
+  var totalBrands=Object.keys(brandStats).length;
+  var evSet={};SP_PARTNERSHIPS.forEach(function(p){evSet[p.event]=1;});
+  var totalEvents=Object.keys(evSet).length;
+  var totalExp=0;Object.values(brandStats).forEach(function(b){totalExp+=b.exposure;});
+  // Top sector
+  var sectorExp={};
+  Object.values(brandStats).forEach(function(b){sectorExp[b.sector]=(sectorExp[b.sector]||0)+b.exposure;});
+  var topSector=Object.entries(sectorExp).sort(function(a,b){return b[1]-a[1];})[0];
+  document.querySelector('#sp-total-brands .metric-value').textContent=totalBrands;
+  document.querySelector('#sp-total-events .metric-value').textContent=totalEvents;
+  document.querySelector('#sp-total-exposure .metric-value').textContent=(totalExp/1e6).toFixed(1)+'M';
+  document.querySelector('#sp-total-exposure .metric-label').textContent='Finishers exposes (cumul)';
+  document.querySelector('#sp-top-sector .metric-value').textContent=topSector?topSector[0]:'-';
+  // Chart 1: Top brands by exposure (horizontal bar)
+  var sorted=Object.entries(brandStats).sort(function(a,b){return b[1].exposure-a[1].exposure;}).slice(0,15);
+  var spColors={'Equipementier sport':'#22C55E','Banque/Finance':'#38BDF8','Assurance/Finance':'#9B6FFF','Automobile':'#FF8A50','Tech/IT':'#F472B6','Industrie/Energie':'#FCDB00','Energie':'#FCDB00','Sante/Pharma':'#2DBF7E','Caritatif/Sante':'#2DBF7E','Fondation/Mecenat':'#FF6B9D','Organisateur/Media':'#5CDFA0'};
+  var barColors=sorted.map(function(s){return spColors[s[1].sector]||'#9B6FFF';});
+  if(spChartBrands)spChartBrands.destroy();
+  spChartBrands=new Chart(document.getElementById('chart-sp-brands'),{type:'bar',data:{labels:sorted.map(function(s){return s[0];}),datasets:[{data:sorted.map(function(s){return s[1].exposure;}),backgroundColor:barColors.map(function(c){return c+'99';}),borderColor:barColors,borderWidth:1}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(ctx){return ctx.raw.toLocaleString('fr-FR')+' finishers';}}}},scales:{x:{grid:{color:mkGRID()},ticks:mkTICK()},y:{grid:{display:false},ticks:mkTICK()}}}});
+  // Chart 2: Sector distribution (doughnut)
+  var sectorSorted=Object.entries(sectorExp).sort(function(a,b){return b[1]-a[1];});
+  var secColors=sectorSorted.map(function(s){return spColors[s[0]]||'#9B6FFF';});
+  if(spChartSectors)spChartSectors.destroy();
+  spChartSectors=new Chart(document.getElementById('chart-sp-sectors'),{type:'doughnut',data:{labels:sectorSorted.map(function(s){return s[0];}),datasets:[{data:sectorSorted.map(function(s){return s[1];}),backgroundColor:secColors.map(function(c){return c+'BB';}),borderColor:'transparent',borderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,cutout:'55%',plugins:{legend:{position:'right',labels:{color:csVar('--text2'),font:{size:11},padding:8}},tooltip:{callbacks:{label:function(ctx){return ctx.label+': '+ctx.raw.toLocaleString('fr-FR')+' finishers';}}}}}});
+  // Chart 3: Sport equipment brands market share (polar area)
+  var equipBrands=Object.entries(brandStats).filter(function(e){return e[1].sector==='Equipementier sport';}).sort(function(a,b){return b[1].exposure-a[1].exposure;});
+  var eqColors=['#22C55E','#38BDF8','#FF8A50','#9B6FFF','#F472B6','#FCDB00','#5CDFA0','#FF6B9D'];
+  if(spChartEquip)spChartEquip.destroy();
+  spChartEquip=new Chart(document.getElementById('chart-sp-equip'),{type:'polarArea',data:{labels:equipBrands.map(function(e){return e[0]+' ('+e[1].events.length+' evt)';}),datasets:[{data:equipBrands.map(function(e){return e[1].exposure;}),backgroundColor:eqColors.slice(0,equipBrands.length).map(function(c){return c+'99';}),borderColor:eqColors.slice(0,equipBrands.length)}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:csVar('--text2'),font:{size:11}}},tooltip:{callbacks:{label:function(ctx){return ctx.raw.toLocaleString('fr-FR')+' finishers';}}}},scales:{r:{grid:{color:mkGRID()},ticks:{display:false}}}}});
+  // Chart 4: Partnership types (bar)
+  var typeCounts={title:0,official:0,partner:0};
+  SP_PARTNERSHIPS.forEach(function(p){typeCounts[p.type]=(typeCounts[p.type]||0)+1;});
+  var typeLabels={'title':'Title Sponsor','official':'Partenaire Officiel','partner':'Partenaire'};
+  var typeColors=['#FF4A6B','#38BDF8','#9B6FFF'];
+  if(spChartTypes)spChartTypes.destroy();
+  spChartTypes=new Chart(document.getElementById('chart-sp-types'),{type:'bar',data:{labels:Object.keys(typeCounts).map(function(k){return typeLabels[k]||k;}),datasets:[{data:Object.values(typeCounts),backgroundColor:typeColors.map(function(c){return c+'99';}),borderColor:typeColors,borderWidth:1}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(ctx){return ctx.raw+' partenariats';}}}},scales:{x:{grid:{display:false},ticks:mkTICK()},y:{grid:{color:mkGRID()},ticks:mkTICK()}}}});
+  // Populate sector filter
+  var secSelect=document.getElementById('sp-sector-filter');
+  sectorSorted.forEach(function(s){var o=document.createElement('option');o.value=s[0];o.text=s[0];secSelect.add(o);});
+  renderSponsorTable();
+}
+function renderSponsorTable(){
+  var secFilter=document.getElementById('sp-sector-filter').value;
+  var typeFilter=document.getElementById('sp-type-filter').value;
+  // Build brand->events matrix
+  var filtered=SP_PARTNERSHIPS.filter(function(p){
+    if(typeFilter!=='ALL'&&p.type!==typeFilter)return false;
+    if(secFilter!=='ALL'){var b=SP_BRANDS[p.brand];if(!b||b.sector!==secFilter)return false;}
+    return true;
+  });
+  // Get unique brands and events
+  var brands={},events={};
+  filtered.forEach(function(p){brands[p.brand]=1;events[p.event]=1;});
+  var brandList=Object.keys(brands).sort();
+  var eventList=Object.keys(events).sort(function(a,b){return getExposure(b)-getExposure(a);});
+  // Build matrix
+  var matrix={};
+  filtered.forEach(function(p){
+    var key=p.brand+'|||'+p.event;
+    matrix[key]=p.type;
+  });
+  var typeSymbol={title:'\u2605',official:'\u25CF',partner:'\u25CB'};
+  var typeColor={title:'#FF4A6B',official:'#38BDF8',partner:'#9B6FFF'};
+  // Render
+  var thead=document.getElementById('sp-thead');
+  thead.innerHTML='<th style="position:sticky;left:0;z-index:3;background:var(--bg)">Marque</th><th>Secteur</th>'+eventList.map(function(e){
+    var short=e.replace(/Marathon/g,'M.').replace(/Half Marathon/g,'HM').replace(/presented by.*$/,'');
+    if(short.length>20)short=short.substring(0,18)+'...';
+    return '<th style="writing-mode:vertical-lr;transform:rotate(180deg);font-size:10px;max-width:30px;padding:4px 2px;white-space:nowrap" title="'+e+'">'+short+'</th>';
+  }).join('');
+  var tbody=document.getElementById('sp-tbody');
+  var html='';
+  brandList.forEach(function(brand){
+    var info=SP_BRANDS[brand]||{};
+    html+='<tr><td style="position:sticky;left:0;z-index:2;background:var(--bg);font-weight:500;white-space:nowrap">'+brand+'</td>';
+    html+='<td style="font-size:10px;color:var(--text3);white-space:nowrap">'+(info.sector||'')+'</td>';
+    eventList.forEach(function(ev){
+      var key=brand+'|||'+ev;
+      var t=matrix[key];
+      if(t){html+='<td style="text-align:center;color:'+typeColor[t]+';font-size:14px" title="'+brand+' \u2192 '+ev+' ('+t+')">'+typeSymbol[t]+'</td>';}
+      else{html+='<td></td>';}
+    });
+    html+='</tr>';
+  });
+  tbody.innerHTML=html;
+  document.getElementById('sp-count').textContent=brandList.length+' marques \u00d7 '+eventList.length+' evenements \u2022 Legende : \u2605 Title  \u25CF Officiel  \u25CB Partenaire';
 }
 
 initBiggestYears();
@@ -1198,6 +1347,7 @@ HTML_BODY = """
   <div class="tab" onclick="switchTab('biggest')">Top evenements</div>
   <div class="tab" onclick="switchTab('temps')">Temps moyen</div>
   <div class="tab" onclick="switchTab('winners')">Winners Times</div>
+  <div class="tab" onclick="switchTab('sponsoring')">Sponsoring</div>
 </div>
 <div id="panel-overview" class="panel">
   <div class="ov-search-wrap"><span class="ov-search-icon">&#x2315;</span>
@@ -1341,10 +1491,55 @@ HTML_BODY = """
   </div>
   <div class="count" id="win-count"></div>
 </div>
+<div id="panel-sponsoring" class="panel">
+  <div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:1.5rem">
+    <div class="metric" id="sp-total-brands"><div class="metric-label">Marques</div><div class="metric-value">-</div></div>
+    <div class="metric" id="sp-total-events"><div class="metric-label">Evenements sponsorises</div><div class="metric-value">-</div></div>
+    <div class="metric" id="sp-total-exposure"><div class="metric-label">Finishers exposes</div><div class="metric-value">-</div></div>
+    <div class="metric" id="sp-top-sector"><div class="metric-label">Secteur dominant</div><div class="metric-value">-</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:1.5rem">
+    <div>
+      <div class="section-title">Top marques par exposition (finishers)</div>
+      <div class="chart-wrap" style="height:360px"><canvas id="chart-sp-brands"></canvas></div>
+    </div>
+    <div>
+      <div class="section-title">Repartition par secteur</div>
+      <div class="chart-wrap" style="height:360px"><canvas id="chart-sp-sectors"></canvas></div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:1.5rem">
+    <div>
+      <div class="section-title">Equipementiers sport : parts de marche</div>
+      <div class="chart-wrap" style="height:300px"><canvas id="chart-sp-equip"></canvas></div>
+    </div>
+    <div>
+      <div class="section-title">Types de partenariats</div>
+      <div class="chart-wrap" style="height:300px"><canvas id="chart-sp-types"></canvas></div>
+    </div>
+  </div>
+  <div class="section-title" style="margin-bottom:12px">Matrice Marques x Evenements</div>
+  <div class="controls" style="margin-bottom:12px">
+    <div class="ctrl-group"><span class="ctrl-label">Secteur</span>
+      <select id="sp-sector-filter" onchange="renderSponsorTable()">
+        <option value="ALL">Tous</option>
+      </select>
+    </div>
+    <div class="ctrl-group"><span class="ctrl-label">Type</span>
+      <select id="sp-type-filter" onchange="renderSponsorTable()">
+        <option value="ALL">Tous</option><option value="title">Title sponsor</option><option value="official">Officiel</option><option value="partner">Partenaire</option>
+      </select>
+    </div>
+  </div>
+  <div class="table-wrap" style="max-height:500px;overflow:auto">
+    <table><thead><tr id="sp-thead"></tr></thead><tbody id="sp-tbody"></tbody></table>
+  </div>
+  <div class="count" id="sp-count"></div>
+</div>
 <div id="panel-data" class="panel active">
   <div class="controls">
     <div class="search-wrap"><span class="search-icon">&#x2315;</span>
-      <input type="text" id="search-data" placeholder="Rechercher course, ville..." oninput="filterTable()">
+      <input type="text" id="search-data" placeholder="Rechercher... (Ctrl+K)" oninput="filterTable()">
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Distance</span>
       <select id="dist-data" onchange="filterTable()">
@@ -1357,6 +1552,16 @@ HTML_BODY = """
         <option>Janvier</option><option>Fevrier</option><option>Mars</option><option>Avril</option>
         <option>Mai</option><option>Juin</option><option>Juillet</option><option>Aout</option>
         <option>Septembre</option><option>Octobre</option><option>Novembre</option><option>Decembre</option>
+      </select>
+    </div>
+    <div class="ctrl-group"><span class="ctrl-label">Badge</span>
+      <select id="badge-data" onchange="filterTable()">
+        <option value="ALL">Tous</option><option value="WMM">WMM</option><option value="ASO">ASO</option><option value="OTHER">Autre</option>
+      </select>
+    </div>
+    <div class="ctrl-group"><span class="ctrl-label">Taille</span>
+      <select id="size-data" onchange="filterTable()">
+        <option value="ALL">Toutes</option><option value="20000">20 000+</option><option value="10000">10-20k</option><option value="5000">5-10k</option><option value="0">&lt; 5 000</option>
       </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Tri</span>
@@ -1383,8 +1588,18 @@ HTML_BODY = """
       <tbody id="table-body"></tbody>
     </table>
   </div>
-  <div class="count" id="table-count"></div>
+  <div class="count" style="display:flex;align-items:center;gap:10px"><span id="table-count"></span><a id="reset-filters" href="javascript:void(0)" onclick="resetFilters()" style="display:none;align-items:center;gap:4px;font-size:11px;color:var(--accent);text-decoration:none;cursor:pointer">\u21BA Reinitialiser les filtres</a></div>
 </div>"""
+
+
+def load_sponsoring():
+    """Load sponsoring data from JSON file."""
+    path = SCRIPT_DIR / "sponsoring_data.json"
+    if not path.exists():
+        return {"brands": {}, "partnerships": []}
+    import json as jlib
+    with open(path, "r", encoding="utf-8") as f:
+        return jlib.load(f)
 
 
 def generate_html(finishers, biggest, md, sd, tdb, winners):
@@ -1397,12 +1612,16 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
     # Load Sporthive average times
     sp_avg = load_sporthive_avg()
     sp_avg_js = [{"race": r["race"], "yr": r["year"], "avg": r["avg"]} for r in sp_avg]
+    # Load sponsoring data
+    spdata = load_sponsoring()
     js_data = ("const RAW=" + j(finishers) + ";\nconst BIGGEST=" + j(biggest) + ";\n"
                "const TEMPS_MARATHON=" + j(tmjs) + ";\nconst TEMPS_SEMI=" + j(tsjs) + ";\n"
                "const TEMPS_AVG=" + j(sp_avg_js) + ";\n"
                "const TIMES_DB=" + j(tdbjs) + ";\nconst ASO_KEYWORDS=" + j(ASO_KEYWORDS) + ";\n"
                "const WMM_KEYWORDS=" + j(WMM_KEYWORDS) + ";\n"
-               "const WINNERS=" + j(winners) + ";\n")
+               "const WINNERS=" + j(winners) + ";\n"
+               "const SP_BRANDS=" + j(spdata.get("brands", {})) + ";\n"
+               "const SP_PARTNERSHIPS=" + j(spdata.get("partnerships", [])) + ";\n")
     body = HTML_BODY.format(now=now)
     return f"""<!DOCTYPE html>
 <html lang="fr">
@@ -1426,14 +1645,25 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
 def main():
     print("\nDataPace Dashboard Generator")
     print("-" * 40)
-    check_files()
-    print("\nLecture des donnees...")
-    finishers = load_finishers()
-    biggest = load_biggest()
-    md = {yr: load_marathon(yr) for yr in [2024, 2025, 2026]}
-    sd = load_semi()
-    tdb = build_times_db(md, sd)
-    winners = load_winners()
+
+    use_db = _DB_PATH.exists() and _DB_PATH.stat().st_size > 0
+
+    if use_db:
+        print(f"Source : SQLite ({_DB_PATH.name})")
+        from datapace.data_loader import load_all
+        print("\nLecture des donnees (SQLite)...")
+        finishers, biggest, md, sd, tdb, winners, sp_avg = load_all(_DB_PATH)
+    else:
+        print("Source : fichiers Excel (pas de BDD trouvee)")
+        check_files()
+        print("\nLecture des donnees (Excel)...")
+        finishers = load_finishers()
+        biggest = load_biggest()
+        md = {yr: load_marathon(yr) for yr in [2024, 2025, 2026]}
+        sd = load_semi()
+        tdb = build_times_db(md, sd)
+        winners = load_winners()
+
     print("\nGeneration du HTML...")
     html = generate_html(finishers, biggest, md, sd, tdb, winners)
     OUTPUT_FILE.write_text(html, encoding="utf-8")
