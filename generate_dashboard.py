@@ -1409,7 +1409,7 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DataPace - Finishers Monde</title>
+<title>Dashboard Running</title>
 <style>{CSS}</style>
 </head>
 <body>
