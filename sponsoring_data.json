@@ -1,138 +1,1519 @@
 {
   "brands": {
-    "TCS": {"full_name": "Tata Consultancy Services", "sector": "Tech/IT", "country": "IN"},
-    "BMW": {"full_name": "BMW Group", "sector": "Automobile", "country": "DE"},
-    "Adidas": {"full_name": "Adidas AG", "sector": "Equipementier sport", "country": "DE"},
-    "ASICS": {"full_name": "ASICS Corporation", "sector": "Equipementier sport", "country": "JP"},
-    "Hoka": {"full_name": "Hoka (Deckers Brands)", "sector": "Equipementier sport", "country": "US"},
-    "Bank of America": {"full_name": "Bank of America", "sector": "Banque/Finance", "country": "US"},
-    "Schneider Electric": {"full_name": "Schneider Electric SE", "sector": "Industrie/Energie", "country": "FR"},
-    "NN": {"full_name": "NN Group", "sector": "Assurance/Finance", "country": "NL"},
-    "EDP": {"full_name": "Energias de Portugal", "sector": "Energie", "country": "PT"},
-    "Abbott": {"full_name": "Abbott Laboratories", "sector": "Sante/Pharma", "country": "US"},
-    "Nike": {"full_name": "Nike Inc.", "sector": "Equipementier sport", "country": "US"},
-    "New Balance": {"full_name": "New Balance Athletics", "sector": "Equipementier sport", "country": "US"},
-    "Mizuno": {"full_name": "Mizuno Corporation", "sector": "Equipementier sport", "country": "JP"},
-    "Saucony": {"full_name": "Saucony (Wolverine)", "sector": "Equipementier sport", "country": "US"},
-    "Puma": {"full_name": "Puma SE", "sector": "Equipementier sport", "country": "DE"},
-    "Standard Chartered": {"full_name": "Standard Chartered Bank", "sector": "Banque/Finance", "country": "GB"},
-    "Zurich": {"full_name": "Zurich Insurance Group", "sector": "Assurance/Finance", "country": "CH"},
-    "Generali": {"full_name": "Generali Group", "sector": "Assurance/Finance", "country": "IT"},
-    "Cancer Research UK": {"full_name": "Cancer Research UK", "sector": "Caritatif/Sante", "country": "GB"},
-    "Mainova": {"full_name": "Mainova AG", "sector": "Energie", "country": "DE"},
-    "AG2R": {"full_name": "AG2R La Mondiale", "sector": "Assurance/Finance", "country": "FR"},
-    "Blackmores": {"full_name": "Blackmores Limited", "sector": "Sante/Nutrition", "country": "AU"},
-    "Sanlam": {"full_name": "Sanlam Limited", "sector": "Assurance/Finance", "country": "ZA"},
-    "TAG Heuer": {"full_name": "TAG Heuer (LVMH)", "sector": "Horlogerie/Luxe", "country": "CH"},
-    "Mastercard": {"full_name": "Mastercard Inc.", "sector": "Paiement/Finance", "country": "US"},
-    "Zalando": {"full_name": "Zalando SE", "sector": "Retail/Mode", "country": "DE"},
-    "Turkish Airlines": {"full_name": "Turkish Airlines", "sector": "Aviation/Transport", "country": "TR"},
-    "United Airlines": {"full_name": "United Airlines", "sector": "Aviation/Transport", "country": "US"},
-    "Harmonie Mutuelle": {"full_name": "Harmonie Mutuelle (VYV)", "sector": "Assurance/Mutuelle", "country": "FR"},
-    "Tokyo Metro": {"full_name": "Tokyo Metro Co.", "sector": "Transport", "country": "JP"},
-    "Honda": {"full_name": "Honda Motor Co.", "sector": "Automobile", "country": "JP"},
-    "AJ Bell": {"full_name": "AJ Bell plc", "sector": "Finance/Investissement", "country": "GB"},
-    "Virgin Money": {"full_name": "Virgin Money UK", "sector": "Banque/Finance", "country": "GB"},
-    "Valencia Trinidad Alfonso": {"full_name": "Fundacion Trinidad Alfonso", "sector": "Fondation/Mecenat", "country": "ES"},
-    "Lidl": {"full_name": "Lidl Stiftung", "sector": "Grande distribution", "country": "DE"},
-    "Rock 'n' Roll": {"full_name": "Rock 'n' Roll Running Series", "sector": "Organisateur/Media", "country": "US"},
-    "FNB": {"full_name": "First National Bank", "sector": "Banque/Finance", "country": "ZA"},
-    "Tata": {"full_name": "Tata Group", "sector": "Conglomerat/Tech", "country": "IN"},
-    "BEIKE": {"full_name": "Beike (KE Holdings)", "sector": "Immobilier/Tech", "country": "CN"},
-    "Ooredoo": {"full_name": "Ooredoo Group", "sector": "Telecom", "country": "QA"},
-    "BRITA": {"full_name": "BRITA GmbH", "sector": "Hydratation/Consommation", "country": "DE"},
-    "ERDINGER": {"full_name": "Erdinger Weissbräu", "sector": "Boisson/Brasserie", "country": "DE"},
-    "GetPRO": {"full_name": "GetPRO (Danone)", "sector": "Nutrition/Alimentaire", "country": "FR"},
-    "Shokz": {"full_name": "Shokz (formerly AfterShokz)", "sector": "Audio/Wearables", "country": "CN"},
-    "John Hancock": {"full_name": "John Hancock Financial", "sector": "Assurance/Finance", "country": "US"}
+    "TCS": {
+      "full_name": "Tata Consultancy Services",
+      "sector": "Tech/IT",
+      "country": "IN"
+    },
+    "BMW": {
+      "full_name": "BMW Group",
+      "sector": "Automobile",
+      "country": "DE"
+    },
+    "Adidas": {
+      "full_name": "Adidas AG",
+      "sector": "Equipementier sport",
+      "country": "DE"
+    },
+    "ASICS": {
+      "full_name": "ASICS Corporation",
+      "sector": "Equipementier sport",
+      "country": "JP"
+    },
+    "Hoka": {
+      "full_name": "Hoka (Deckers Brands)",
+      "sector": "Equipementier sport",
+      "country": "US"
+    },
+    "Bank of America": {
+      "full_name": "Bank of America",
+      "sector": "Banque/Finance",
+      "country": "US"
+    },
+    "Schneider Electric": {
+      "full_name": "Schneider Electric SE",
+      "sector": "Industrie/Energie",
+      "country": "FR"
+    },
+    "NN": {
+      "full_name": "NN Group",
+      "sector": "Assurance/Finance",
+      "country": "NL"
+    },
+    "EDP": {
+      "full_name": "Energias de Portugal",
+      "sector": "Energie",
+      "country": "PT"
+    },
+    "Abbott": {
+      "full_name": "Abbott Laboratories",
+      "sector": "Sante/Pharma",
+      "country": "US"
+    },
+    "Nike": {
+      "full_name": "Nike Inc.",
+      "sector": "Equipementier sport",
+      "country": "US"
+    },
+    "New Balance": {
+      "full_name": "New Balance Athletics",
+      "sector": "Equipementier sport",
+      "country": "US"
+    },
+    "Mizuno": {
+      "full_name": "Mizuno Corporation",
+      "sector": "Equipementier sport",
+      "country": "JP"
+    },
+    "Saucony": {
+      "full_name": "Saucony (Wolverine)",
+      "sector": "Equipementier sport",
+      "country": "US"
+    },
+    "Puma": {
+      "full_name": "Puma SE",
+      "sector": "Equipementier sport",
+      "country": "DE"
+    },
+    "Standard Chartered": {
+      "full_name": "Standard Chartered Bank",
+      "sector": "Banque/Finance",
+      "country": "GB"
+    },
+    "Zurich": {
+      "full_name": "Zurich Insurance Group",
+      "sector": "Assurance/Finance",
+      "country": "CH"
+    },
+    "Generali": {
+      "full_name": "Generali Group",
+      "sector": "Assurance/Finance",
+      "country": "IT"
+    },
+    "Cancer Research UK": {
+      "full_name": "Cancer Research UK",
+      "sector": "Caritatif/Sante",
+      "country": "GB"
+    },
+    "Mainova": {
+      "full_name": "Mainova AG",
+      "sector": "Energie",
+      "country": "DE"
+    },
+    "AG2R": {
+      "full_name": "AG2R La Mondiale",
+      "sector": "Assurance/Finance",
+      "country": "FR"
+    },
+    "Blackmores": {
+      "full_name": "Blackmores Limited",
+      "sector": "Sante/Nutrition",
+      "country": "AU"
+    },
+    "Sanlam": {
+      "full_name": "Sanlam Limited",
+      "sector": "Assurance/Finance",
+      "country": "ZA"
+    },
+    "TAG Heuer": {
+      "full_name": "TAG Heuer (LVMH)",
+      "sector": "Horlogerie/Luxe",
+      "country": "CH"
+    },
+    "Mastercard": {
+      "full_name": "Mastercard Inc.",
+      "sector": "Paiement/Finance",
+      "country": "US"
+    },
+    "Zalando": {
+      "full_name": "Zalando SE",
+      "sector": "Retail/Mode",
+      "country": "DE"
+    },
+    "Turkish Airlines": {
+      "full_name": "Turkish Airlines",
+      "sector": "Aviation/Transport",
+      "country": "TR"
+    },
+    "United Airlines": {
+      "full_name": "United Airlines",
+      "sector": "Aviation/Transport",
+      "country": "US"
+    },
+    "Harmonie Mutuelle": {
+      "full_name": "Harmonie Mutuelle (VYV)",
+      "sector": "Assurance/Mutuelle",
+      "country": "FR"
+    },
+    "Tokyo Metro": {
+      "full_name": "Tokyo Metro Co.",
+      "sector": "Transport",
+      "country": "JP"
+    },
+    "Honda": {
+      "full_name": "Honda Motor Co.",
+      "sector": "Automobile",
+      "country": "JP"
+    },
+    "AJ Bell": {
+      "full_name": "AJ Bell plc",
+      "sector": "Finance/Investissement",
+      "country": "GB"
+    },
+    "Virgin Money": {
+      "full_name": "Virgin Money UK",
+      "sector": "Banque/Finance",
+      "country": "GB"
+    },
+    "Valencia Trinidad Alfonso": {
+      "full_name": "Fundacion Trinidad Alfonso",
+      "sector": "Fondation/Mecenat",
+      "country": "ES"
+    },
+    "Lidl": {
+      "full_name": "Lidl Stiftung",
+      "sector": "Grande distribution",
+      "country": "DE"
+    },
+    "Rock 'n' Roll": {
+      "full_name": "Rock 'n' Roll Running Series",
+      "sector": "Organisateur/Media",
+      "country": "US"
+    },
+    "FNB": {
+      "full_name": "First National Bank",
+      "sector": "Banque/Finance",
+      "country": "ZA"
+    },
+    "Tata": {
+      "full_name": "Tata Group",
+      "sector": "Conglomerat/Tech",
+      "country": "IN"
+    },
+    "BEIKE": {
+      "full_name": "Beike (KE Holdings)",
+      "sector": "Immobilier/Tech",
+      "country": "CN"
+    },
+    "Ooredoo": {
+      "full_name": "Ooredoo Group",
+      "sector": "Telecom",
+      "country": "QA"
+    },
+    "BRITA": {
+      "full_name": "BRITA GmbH",
+      "sector": "Hydratation/Consommation",
+      "country": "DE"
+    },
+    "ERDINGER": {
+      "full_name": "Erdinger Weissbräu",
+      "sector": "Boisson/Brasserie",
+      "country": "DE"
+    },
+    "GetPRO": {
+      "full_name": "GetPRO (Danone)",
+      "sector": "Nutrition/Alimentaire",
+      "country": "FR"
+    },
+    "Shokz": {
+      "full_name": "Shokz (formerly AfterShokz)",
+      "sector": "Audio/Wearables",
+      "country": "CN"
+    },
+    "John Hancock": {
+      "full_name": "John Hancock Financial",
+      "sector": "Assurance/Finance",
+      "country": "US"
+    },
+    "Gatorade": {
+      "full_name": "Gatorade (PepsiCo)",
+      "sector": "Nutrition/Boisson",
+      "country": "US"
+    },
+    "Maurten": {
+      "full_name": "Maurten AB",
+      "sector": "Nutrition sport",
+      "country": "SE"
+    },
+    "Garmin": {
+      "full_name": "Garmin Ltd.",
+      "sector": "Tech/Wearables",
+      "country": "US"
+    },
+    "Porsche": {
+      "full_name": "Porsche AG",
+      "sector": "Automobile",
+      "country": "DE"
+    },
+    "Samsung": {
+      "full_name": "Samsung Electronics",
+      "sector": "Tech/Electronique",
+      "country": "KR"
+    },
+    "Strava": {
+      "full_name": "Strava Inc.",
+      "sector": "Tech/App sport",
+      "country": "US"
+    },
+    "Tiffany & Co.": {
+      "full_name": "Tiffany & Co. (LVMH)",
+      "sector": "Luxe/Joaillerie",
+      "country": "US"
+    },
+    "Lucozade": {
+      "full_name": "Lucozade (Suntory)",
+      "sector": "Nutrition/Boisson",
+      "country": "GB"
+    },
+    "Brooks": {
+      "full_name": "Brooks Running",
+      "sector": "Equipementier sport",
+      "country": "US"
+    },
+    "NORQAIN": {
+      "full_name": "NORQAIN AG",
+      "sector": "Horlogerie/Luxe",
+      "country": "CH"
+    },
+    "Seiko": {
+      "full_name": "Seiko Holdings",
+      "sector": "Horlogerie/Chronometrage",
+      "country": "JP"
+    },
+    "Volvo": {
+      "full_name": "Volvo Cars",
+      "sector": "Automobile",
+      "country": "SE"
+    },
+    "Apple": {
+      "full_name": "Apple Inc.",
+      "sector": "Tech/Wearables",
+      "country": "US"
+    },
+    "Intersport": {
+      "full_name": "Intersport International",
+      "sector": "Retail/Distribution sport",
+      "country": "FR"
+    },
+    "RATP": {
+      "full_name": "RATP Group",
+      "sector": "Transport",
+      "country": "FR"
+    },
+    "Michelob Ultra": {
+      "full_name": "Michelob Ultra (AB InBev)",
+      "sector": "Boisson/Brasserie",
+      "country": "US"
+    },
+    "Runna": {
+      "full_name": "Runna Ltd.",
+      "sector": "Tech/App sport",
+      "country": "GB"
+    },
+    "Vitamin Well": {
+      "full_name": "Vitamin Well AB",
+      "sector": "Nutrition/Boisson",
+      "country": "SE"
+    },
+    "Hyundai": {
+      "full_name": "Hyundai Motor",
+      "sector": "Automobile",
+      "country": "KR"
+    }
   },
   "partnerships": [
-    {"event": "TCS London Marathon", "brand": "TCS", "type": "title", "years": [2022, 2023, 2024, 2025]},
-    {"event": "TCS London Marathon", "brand": "New Balance", "type": "official", "years": [2023, 2024, 2025]},
-    {"event": "TCS London Marathon", "brand": "TAG Heuer", "type": "official", "years": [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "TCS London Marathon", "brand": "GetPRO", "type": "official", "years": [2024, 2025]},
-    {"event": "TCS London Marathon", "brand": "Abbott", "type": "partner", "years": [2023, 2024, 2025]},
-
-    {"event": "BMW Berlin Marathon", "brand": "BMW", "type": "title", "years": [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "BMW Berlin Marathon", "brand": "Adidas", "type": "official", "years": [2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "BMW Berlin Marathon", "brand": "Zalando", "type": "official", "years": [2024, 2025]},
-    {"event": "BMW Berlin Marathon", "brand": "Generali", "type": "official", "years": [2023, 2024, 2025]},
-    {"event": "BMW Berlin Marathon", "brand": "BRITA", "type": "partner", "years": [2024, 2025]},
-    {"event": "BMW Berlin Marathon", "brand": "ERDINGER", "type": "partner", "years": [2023, 2024, 2025]},
-    {"event": "BMW Berlin Marathon", "brand": "Abbott", "type": "partner", "years": [2023, 2024, 2025]},
-
-    {"event": "Bank of America Chicago Marathon", "brand": "Bank of America", "type": "title", "years": [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "Bank of America Chicago Marathon", "brand": "Nike", "type": "official", "years": [2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "Bank of America Chicago Marathon", "brand": "Abbott", "type": "partner", "years": [2023, 2024, 2025]},
-
-    {"event": "Boston Marathon", "brand": "John Hancock", "type": "title", "years": [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]},
-    {"event": "Boston Marathon", "brand": "Bank of America", "type": "title", "years": [2024, 2025]},
-    {"event": "Boston Marathon", "brand": "Adidas", "type": "official", "years": [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "Boston Marathon", "brand": "TCS", "type": "official", "years": [2024, 2025]},
-    {"event": "Boston Marathon", "brand": "Honda", "type": "official", "years": [2024, 2025]},
-    {"event": "Boston Marathon", "brand": "Abbott", "type": "partner", "years": [2023, 2024, 2025]},
-
-    {"event": "Tokyo Marathon", "brand": "Tokyo Metro", "type": "title", "years": [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "Tokyo Marathon", "brand": "ASICS", "type": "official", "years": [2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "Tokyo Marathon", "brand": "Mastercard", "type": "official", "years": [2024, 2025]},
-    {"event": "Tokyo Marathon", "brand": "Abbott", "type": "partner", "years": [2023, 2024, 2025]},
-
-    {"event": "TCS New York City Marathon", "brand": "TCS", "type": "title", "years": [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "TCS New York City Marathon", "brand": "New Balance", "type": "official", "years": [2023, 2024, 2025]},
-    {"event": "TCS New York City Marathon", "brand": "United Airlines", "type": "official", "years": [2024, 2025]},
-    {"event": "TCS New York City Marathon", "brand": "Mastercard", "type": "official", "years": [2024, 2025]},
-    {"event": "TCS New York City Marathon", "brand": "Shokz", "type": "partner", "years": [2024, 2025]},
-    {"event": "TCS New York City Marathon", "brand": "Abbott", "type": "partner", "years": [2023, 2024, 2025]},
-
-    {"event": "TCS Sydney Marathon presented by ASICS", "brand": "TCS", "type": "title", "years": [2023, 2024, 2025]},
-    {"event": "TCS Sydney Marathon presented by ASICS", "brand": "ASICS", "type": "official", "years": [2023, 2024, 2025]},
-
-    {"event": "Schneider Electric Marathon de Paris", "brand": "Schneider Electric", "type": "title", "years": [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "Schneider Electric Marathon de Paris", "brand": "ASICS", "type": "official", "years": [2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "Schneider Electric Marathon de Paris", "brand": "TCS", "type": "official", "years": [2024, 2025]},
-    {"event": "Schneider Electric Marathon de Paris", "brand": "Turkish Airlines", "type": "official", "years": [2024, 2025]},
-
-    {"event": "HOKA Semi de Paris", "brand": "Hoka", "type": "title", "years": [2025]},
-    {"event": "HOKA Semi de Paris", "brand": "Harmonie Mutuelle", "type": "title", "years": [2023, 2024]},
-
-    {"event": "Adidas 10K Paris", "brand": "Adidas", "type": "title", "years": [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "Adidas Manchester Marathon", "brand": "Adidas", "type": "title", "years": [2021, 2022, 2023, 2024, 2025]},
-
-    {"event": "Generali Berlin Half Marathon", "brand": "Generali", "type": "title", "years": [2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-
-    {"event": "NN Marathon Rotterdam", "brand": "NN", "type": "title", "years": [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "NN San Silvestre Vallecana", "brand": "NN", "type": "title", "years": [2022, 2023, 2024, 2025]},
-    {"event": "NN CPC Loop Den Haag - Half Marathon", "brand": "NN", "type": "title", "years": [2022, 2023, 2024, 2025]},
-
-    {"event": "Standard Chartered Hong Kong Marathon", "brand": "Standard Chartered", "type": "title", "years": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "Standard Chartered Hong Kong Half Marathon", "brand": "Standard Chartered", "type": "title", "years": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "Standard Chartered Singapore Marathon", "brand": "Standard Chartered", "type": "title", "years": [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "Standard Chartered Dubai Marathon", "brand": "Standard Chartered", "type": "title", "years": [2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-
-    {"event": "Valencia Marathon Trinidad Alfonso Zurich", "brand": "Valencia Trinidad Alfonso", "type": "title", "years": [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "Valencia Marathon Trinidad Alfonso Zurich", "brand": "Zurich", "type": "title", "years": [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "Valencia Half Marathon Trinidad Alfonso Zurich", "brand": "Valencia Trinidad Alfonso", "type": "title", "years": [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "Valencia Half Marathon Trinidad Alfonso Zurich", "brand": "Zurich", "type": "title", "years": [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-
-    {"event": "Zurich Marató de Barcelona", "brand": "Zurich", "type": "title", "years": [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-
-    {"event": "EDP Lisboa Meia Maratona", "brand": "EDP", "type": "title", "years": [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "EDP Maratona de Lisboa", "brand": "EDP", "type": "title", "years": [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-
-    {"event": "Mainova Frankfurt Marathon", "brand": "Mainova", "type": "title", "years": [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-
-    {"event": "Cancer Research UK London Winter Run", "brand": "Cancer Research UK", "type": "title", "years": [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "ASICS LDNX", "brand": "ASICS", "type": "title", "years": [2025]},
-    {"event": "ASICS Los Angeles Marathon", "brand": "ASICS", "type": "title", "years": [2023, 2024, 2025]},
-    {"event": "Saucony London 10K", "brand": "Saucony", "type": "title", "years": [2024, 2025]},
-    {"event": "Nike Melbourne Marathon Festival", "brand": "Nike", "type": "title", "years": [2023, 2024, 2025]},
-    {"event": "Sanlam Cape Town Marathon", "brand": "Sanlam", "type": "title", "years": [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "Tata Mumbai Marathon", "brand": "Tata", "type": "title", "years": [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
-    {"event": "10K Montmartre", "brand": "AG2R", "type": "title", "years": [2026]},
-
-    {"event": "AJ Bell Great North Run", "brand": "AJ Bell", "type": "title", "years": [2023, 2024, 2025]},
-    {"event": "AJ Bell Great South Run", "brand": "AJ Bell", "type": "title", "years": [2023, 2024, 2025]},
-    {"event": "AJ Bell Great North 10K", "brand": "AJ Bell", "type": "title", "years": [2023, 2024, 2025]},
-    {"event": "AJ Bell Great Manchester Run", "brand": "AJ Bell", "type": "title", "years": [2023, 2024, 2025]}
+    {
+      "event": "TCS London Marathon",
+      "brand": "TCS",
+      "type": "title",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "TCS London Marathon",
+      "brand": "New Balance",
+      "type": "official",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "TCS London Marathon",
+      "brand": "TAG Heuer",
+      "type": "official",
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "TCS London Marathon",
+      "brand": "GetPRO",
+      "type": "official",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "TCS London Marathon",
+      "brand": "Abbott",
+      "type": "partner",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "BMW Berlin Marathon",
+      "brand": "BMW",
+      "type": "title",
+      "years": [
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "BMW Berlin Marathon",
+      "brand": "Adidas",
+      "type": "official",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "BMW Berlin Marathon",
+      "brand": "Zalando",
+      "type": "official",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "BMW Berlin Marathon",
+      "brand": "Generali",
+      "type": "official",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "BMW Berlin Marathon",
+      "brand": "BRITA",
+      "type": "partner",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "BMW Berlin Marathon",
+      "brand": "ERDINGER",
+      "type": "partner",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "BMW Berlin Marathon",
+      "brand": "Abbott",
+      "type": "partner",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Bank of America Chicago Marathon",
+      "brand": "Bank of America",
+      "type": "title",
+      "years": [
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Bank of America Chicago Marathon",
+      "brand": "Nike",
+      "type": "official",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Bank of America Chicago Marathon",
+      "brand": "Abbott",
+      "type": "partner",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Boston Marathon",
+      "brand": "John Hancock",
+      "type": "title",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "event": "Boston Marathon",
+      "brand": "Bank of America",
+      "type": "title",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Boston Marathon",
+      "brand": "Adidas",
+      "type": "official",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Boston Marathon",
+      "brand": "TCS",
+      "type": "official",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Boston Marathon",
+      "brand": "Honda",
+      "type": "official",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Boston Marathon",
+      "brand": "Abbott",
+      "type": "partner",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Tokyo Marathon",
+      "brand": "Tokyo Metro",
+      "type": "title",
+      "years": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Tokyo Marathon",
+      "brand": "ASICS",
+      "type": "official",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Tokyo Marathon",
+      "brand": "Mastercard",
+      "type": "official",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Tokyo Marathon",
+      "brand": "Abbott",
+      "type": "partner",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "TCS New York City Marathon",
+      "brand": "TCS",
+      "type": "title",
+      "years": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "TCS New York City Marathon",
+      "brand": "New Balance",
+      "type": "official",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "TCS New York City Marathon",
+      "brand": "United Airlines",
+      "type": "official",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "TCS New York City Marathon",
+      "brand": "Mastercard",
+      "type": "official",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "TCS New York City Marathon",
+      "brand": "Shokz",
+      "type": "partner",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "TCS New York City Marathon",
+      "brand": "Abbott",
+      "type": "partner",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "TCS Sydney Marathon presented by ASICS",
+      "brand": "TCS",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "TCS Sydney Marathon presented by ASICS",
+      "brand": "ASICS",
+      "type": "official",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Schneider Electric Marathon de Paris",
+      "brand": "Schneider Electric",
+      "type": "title",
+      "years": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Schneider Electric Marathon de Paris",
+      "brand": "ASICS",
+      "type": "official",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Schneider Electric Marathon de Paris",
+      "brand": "TCS",
+      "type": "official",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Schneider Electric Marathon de Paris",
+      "brand": "Turkish Airlines",
+      "type": "official",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "HOKA Semi de Paris",
+      "brand": "Hoka",
+      "type": "title",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "event": "HOKA Semi de Paris",
+      "brand": "Harmonie Mutuelle",
+      "type": "title",
+      "years": [
+        2023,
+        2024
+      ]
+    },
+    {
+      "event": "Adidas 10K Paris",
+      "brand": "Adidas",
+      "type": "title",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Adidas Manchester Marathon",
+      "brand": "Adidas",
+      "type": "title",
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Generali Berlin Half Marathon",
+      "brand": "Generali",
+      "type": "title",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "NN Marathon Rotterdam",
+      "brand": "NN",
+      "type": "title",
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "NN San Silvestre Vallecana",
+      "brand": "NN",
+      "type": "title",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "NN CPC Loop Den Haag - Half Marathon",
+      "brand": "NN",
+      "type": "title",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Standard Chartered Hong Kong Marathon",
+      "brand": "Standard Chartered",
+      "type": "title",
+      "years": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Standard Chartered Hong Kong Half Marathon",
+      "brand": "Standard Chartered",
+      "type": "title",
+      "years": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Standard Chartered Singapore Marathon",
+      "brand": "Standard Chartered",
+      "type": "title",
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Standard Chartered Dubai Marathon",
+      "brand": "Standard Chartered",
+      "type": "title",
+      "years": [
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Valencia Marathon Trinidad Alfonso Zurich",
+      "brand": "Valencia Trinidad Alfonso",
+      "type": "title",
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Valencia Marathon Trinidad Alfonso Zurich",
+      "brand": "Zurich",
+      "type": "title",
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Valencia Half Marathon Trinidad Alfonso Zurich",
+      "brand": "Valencia Trinidad Alfonso",
+      "type": "title",
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Valencia Half Marathon Trinidad Alfonso Zurich",
+      "brand": "Zurich",
+      "type": "title",
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Zurich Marató de Barcelona",
+      "brand": "Zurich",
+      "type": "title",
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "EDP Lisboa Meia Maratona",
+      "brand": "EDP",
+      "type": "title",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "EDP Maratona de Lisboa",
+      "brand": "EDP",
+      "type": "title",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Mainova Frankfurt Marathon",
+      "brand": "Mainova",
+      "type": "title",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Cancer Research UK London Winter Run",
+      "brand": "Cancer Research UK",
+      "type": "title",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "ASICS LDNX",
+      "brand": "ASICS",
+      "type": "title",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "event": "ASICS Los Angeles Marathon",
+      "brand": "ASICS",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Saucony London 10K",
+      "brand": "Saucony",
+      "type": "title",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Nike Melbourne Marathon Festival",
+      "brand": "Nike",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Sanlam Cape Town Marathon",
+      "brand": "Sanlam",
+      "type": "title",
+      "years": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Tata Mumbai Marathon",
+      "brand": "Tata",
+      "type": "title",
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "10K Montmartre",
+      "brand": "AG2R",
+      "type": "title",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "AJ Bell Great North Run",
+      "brand": "AJ Bell",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "AJ Bell Great South Run",
+      "brand": "AJ Bell",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "AJ Bell Great North 10K",
+      "brand": "AJ Bell",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "AJ Bell Great Manchester Run",
+      "brand": "AJ Bell",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Bank of America Chicago Marathon",
+      "brand": "Gatorade",
+      "type": "official",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Boston Marathon",
+      "brand": "Gatorade",
+      "type": "official",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "TCS New York City Marathon",
+      "brand": "Gatorade",
+      "type": "official",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Bank of America Chicago Marathon",
+      "brand": "Maurten",
+      "type": "official",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "BMW Berlin Marathon",
+      "brand": "Maurten",
+      "type": "official",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "event": "BMW Berlin Marathon",
+      "brand": "NORQAIN",
+      "type": "official",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "TCS New York City Marathon",
+      "brand": "NORQAIN",
+      "type": "partner",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "TCS London Marathon",
+      "brand": "Lucozade",
+      "type": "official",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "TCS New York City Marathon",
+      "brand": "Strava",
+      "type": "partner",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "TCS New York City Marathon",
+      "brand": "Tiffany & Co.",
+      "type": "partner",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "TCS New York City Marathon",
+      "brand": "Volvo",
+      "type": "partner",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "TCS New York City Marathon",
+      "brand": "Michelob Ultra",
+      "type": "partner",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "TCS London Marathon",
+      "brand": "Apple",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "TCS Sydney Marathon presented by ASICS",
+      "brand": "Porsche",
+      "type": "official",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "TCS Sydney Marathon presented by ASICS",
+      "brand": "Samsung",
+      "type": "partner",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "event": "Tokyo Marathon",
+      "brand": "Porsche",
+      "type": "partner",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "event": "Standard Chartered Singapore Marathon",
+      "brand": "Samsung",
+      "type": "partner",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "event": "Standard Chartered Singapore Marathon",
+      "brand": "Seiko",
+      "type": "official",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "event": "Schneider Electric Marathon de Paris",
+      "brand": "Intersport",
+      "type": "official",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Schneider Electric Marathon de Paris",
+      "brand": "RATP",
+      "type": "official",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Boston Marathon",
+      "brand": "Schneider Electric",
+      "type": "official",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "AJ Bell Great North Run",
+      "brand": "Brooks",
+      "type": "partner",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "event": "AJ Bell Great North Run",
+      "brand": "Runna",
+      "type": "partner",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "event": "Adidas Manchester Marathon",
+      "brand": "Runna",
+      "type": "partner",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "event": "ASICS Los Angeles Marathon",
+      "brand": "Runna",
+      "type": "partner",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "event": "HOKA Semi de Paris",
+      "brand": "Garmin",
+      "type": "official",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "event": "Zurich Marató de Barcelona",
+      "brand": "Garmin",
+      "type": "official",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "event": "Zurich Marató de Barcelona",
+      "brand": "Vitamin Well",
+      "type": "partner",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "event": "Zurich Marató de Barcelona",
+      "brand": "Hyundai",
+      "type": "partner",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "event": "TCS London Marathon",
+      "brand": "Shokz",
+      "type": "partner",
+      "years": [
+        2025
+      ]
+    }
   ]
 }
