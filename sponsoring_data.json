@@ -43,14 +43,14 @@
     "BRITA": {"full_name": "BRITA GmbH", "sector": "Hydratation/Consommation", "country": "DE"},
     "ERDINGER": {"full_name": "Erdinger Weissbräu", "sector": "Boisson/Brasserie", "country": "DE"},
     "GetPRO": {"full_name": "GetPRO (Danone)", "sector": "Nutrition/Alimentaire", "country": "FR"},
-    "Shokz": {"full_name": "Shokz (formerly AfterShokz)", "sector": "Audio/Wearables", "country": "CN"}
+    "Shokz": {"full_name": "Shokz (formerly AfterShokz)", "sector": "Audio/Wearables", "country": "CN"},
+    "John Hancock": {"full_name": "John Hancock Financial", "sector": "Assurance/Finance", "country": "US"}
   },
   "partnerships": [
     {"event": "TCS London Marathon", "brand": "TCS", "type": "title", "years": [2022, 2023, 2024, 2025]},
     {"event": "TCS London Marathon", "brand": "New Balance", "type": "official", "years": [2023, 2024, 2025]},
-    {"event": "TCS London Marathon", "brand": "TAG Heuer", "type": "official", "years": [2024, 2025]},
+    {"event": "TCS London Marathon", "brand": "TAG Heuer", "type": "official", "years": [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
     {"event": "TCS London Marathon", "brand": "GetPRO", "type": "official", "years": [2024, 2025]},
-    {"event": "TCS London Marathon", "brand": "Nike", "type": "partner", "years": [2024, 2025]},
     {"event": "TCS London Marathon", "brand": "Abbott", "type": "partner", "years": [2023, 2024, 2025]},
 
     {"event": "BMW Berlin Marathon", "brand": "BMW", "type": "title", "years": [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
@@ -65,13 +65,14 @@
     {"event": "Bank of America Chicago Marathon", "brand": "Nike", "type": "official", "years": [2019, 2020, 2021, 2022, 2023, 2024, 2025]},
     {"event": "Bank of America Chicago Marathon", "brand": "Abbott", "type": "partner", "years": [2023, 2024, 2025]},
 
+    {"event": "Boston Marathon", "brand": "John Hancock", "type": "title", "years": [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]},
     {"event": "Boston Marathon", "brand": "Bank of America", "type": "title", "years": [2024, 2025]},
     {"event": "Boston Marathon", "brand": "Adidas", "type": "official", "years": [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
     {"event": "Boston Marathon", "brand": "TCS", "type": "official", "years": [2024, 2025]},
     {"event": "Boston Marathon", "brand": "Honda", "type": "official", "years": [2024, 2025]},
     {"event": "Boston Marathon", "brand": "Abbott", "type": "partner", "years": [2023, 2024, 2025]},
 
-    {"event": "Tokyo Marathon", "brand": "Tokyo Metro", "type": "title", "years": [2019, 2020, 2021, 2022, 2023, 2024, 2025]},
+    {"event": "Tokyo Marathon", "brand": "Tokyo Metro", "type": "title", "years": [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]},
     {"event": "Tokyo Marathon", "brand": "ASICS", "type": "official", "years": [2020, 2021, 2022, 2023, 2024, 2025]},
     {"event": "Tokyo Marathon", "brand": "Mastercard", "type": "official", "years": [2024, 2025]},
     {"event": "Tokyo Marathon", "brand": "Abbott", "type": "partner", "years": [2023, 2024, 2025]},
