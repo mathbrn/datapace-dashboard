@@ -934,9 +934,9 @@ function spSelect(brandId){
   var bs=_spBS[brandId];var info=SP_BRANDS[brandId]||{};
   var col=_spCols[bs.sector]||'#9B6FFF';
   var tConf={
-    title:{label:'Partenaire Titre',icon:'\u2605',bg:col,text:'#fff'},
-    official:{label:'Partenaire Officiel',icon:'\u25c6',bg:col+'30',text:col},
-    partner:{label:'Partenaire',icon:'',bg:'var(--bg3)',text:'var(--text2)'}
+    title:{label:'Partenaire Titre',bg:col,text:'#fff'},
+    official:{label:'Partenaire Officiel',bg:col+'30',text:col},
+    partner:{label:'Partenaire',bg:'var(--bg3)',text:'var(--text2)'}
   };
   // Group partnerships by type
   var byType={title:[],official:[],partner:[]};
@@ -946,7 +946,7 @@ function spSelect(brandId){
     var items=byType[t];if(!items.length)return;
     var tc=tConf[t];
     evHtml+='<div style="margin-bottom:8px">'
-      +'<span style="display:inline-block;font-size:10px;padding:2px 8px;border-radius:3px;background:'+tc.bg+';color:'+tc.text+';font-weight:600;margin-bottom:4px">'+(tc.icon?tc.icon+' ':'')+tc.label+'</span>'
+      +'<span style="display:inline-block;font-size:10px;padding:2px 8px;border-radius:3px;background:'+tc.bg+';color:'+tc.text+';font-weight:600;margin-bottom:4px">'+tc.label+'</span>'
       +'<div style="display:flex;flex-wrap:wrap;gap:3px;margin-top:3px">';
     items.sort(function(a,b){return b.exposure-a.exposure;}).forEach(function(pp){
       var shortName=pp.event.replace(/Marathon/g,'M.').replace(/Half Marathon/g,'HM').replace(/presented by.*/i,'').trim();
