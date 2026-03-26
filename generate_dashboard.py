@@ -739,7 +739,7 @@ function filterTable(){
   var dataCount=0,totalCells=0;
   f.forEach(function(r){globalYears.forEach(function(y){totalCells++;var v=(r.hist||{})[y];if(v&&v>0&&!isNaN(v))dataCount++;});});
   var pct=totalCells>0?Math.round(100*dataCount/totalCells):0;
-  document.getElementById('table-count').textContent=cnt+' epreuve'+(cnt>1?'s':'')+' affichee'+(cnt>1?'s':'')+' \u2022 '+dataCount.toLocaleString('fr-FR')+' donnees / '+totalCells.toLocaleString('fr-FR')+' cellules ('+pct+'%)'+(activeFilters>0?' \u2022 '+activeFilters+' filtre'+(activeFilters>1?'s':'')+' actif'+(activeFilters>1?'s':''):'');
+  document.getElementById('table-count').textContent=cnt+' epreuve'+(cnt>1?'s':'')+' affichee'+(cnt>1?'s':'')+' \u2022 '+dataCount.toLocaleString('fr-FR')+' donnees'+(activeFilters>0?' \u2022 '+activeFilters+' filtre'+(activeFilters>1?'s':'')+' actif'+(activeFilters>1?'s':''):'');
 }
 function resetFilters(){
   document.getElementById('search-data').value='';
