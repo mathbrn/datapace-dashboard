@@ -846,6 +846,7 @@ function initSponsoring(){
   document.getElementById('sp-kpis').innerHTML=kpis.map(function(k){return '<div class="sp-kpi"><div class="sp-kpi-num" style="color:'+k[2]+'">'+k[0]+'</div><div class="sp-kpi-lbl">'+k[1]+'</div></div>';}).join('');
   var secSorted=Object.entries(secExp).sort(function(a,b){return b[1]-a[1];});
   _spPillSectors=['ALL'].concat(secSorted.map(function(s){return s[0];}));
+  _spSecExp=secExp;_spSecExp['ALL']=totalExp;
   document.getElementById('sp-pills').innerHTML=_spPillSectors.map(function(s,i){
     var col=i===0?null:(_spCols[s]||'#9B6FFF');
     var st=col?(' style="border-color:'+col+'55;color:'+col+'"'):'';
@@ -865,12 +866,23 @@ function spSetSector(s){
   document.querySelectorAll('.sp-pill').forEach(function(el){
     el.classList.remove('spc-active');
     el.style.removeProperty('background');
-    if(el.textContent===s||(s==='ALL'&&el.textContent==='ALL')){
+    var pillText=el.textContent.split('\n')[0].trim();
+    if(pillText===s||(s==='ALL'&&pillText==='ALL')){
       el.classList.add('spc-active');
       var col=s==='ALL'?null:(_spCols[s]||'#9B6FFF');
       if(col)el.style.background=col;
     }
   });
+  // Show sector exposure info
+  var infoEl=document.getElementById('sp-sector-info');
+  if(infoEl){
+    if(s==='ALL'){infoEl.textContent='';}
+    else{
+      var sExp=_spSecExp[s]||0;
+      var sBrands=Object.values(_spBS).filter(function(b){return b.sector===s;}).length;
+      infoEl.textContent=s+' : '+spFmt(sExp)+' finishers exposes \u2022 '+sBrands+' marque'+(sBrands>1?'s':'');
+    }
+  }
   spRenderList();spRenderTreemap();
 }
 function spFiltered(){
@@ -967,11 +979,14 @@ function spChangePeriod(val){
   var totalExp=Object.values(_spBS).reduce(function(s,b){return s+b.exposure;},0);
   var evSet={};SP_PARTNERSHIPS.forEach(function(p){evSet[p.event]=1;});
   var secExp={};Object.values(_spBS).forEach(function(b){secExp[b.sector]=(secExp[b.sector]||0)+b.exposure;});
+  _spSecExp=secExp;_spSecExp['ALL']=totalExp;
   var topS=Object.entries(secExp).sort(function(a,b){return b[1]-a[1];})[0];
   var kpis=[[Object.keys(_spBS).length,'Marques','#22C55E'],[Object.keys(evSet).length,'\u00c9v\u00e9nements','#38BDF8'],[(totalExp/1e6).toFixed(1)+'M','Finishers expos\u00e9s','#F472B6'],];
   document.getElementById('sp-kpis').innerHTML=kpis.map(function(k){return '<div class="sp-kpi"><div class="sp-kpi-num" style="color:'+k[2]+'">'+k[0]+'</div><div class="sp-kpi-lbl">'+k[1]+'</div></div>';}).join('');
   _spActiveBrand=null;
   document.getElementById('sp-detail').style.display='none';
+  var infoEl=document.getElementById('sp-sector-info');
+  if(infoEl)infoEl.textContent='';
   spRenderList();spRenderTreemap();
 }
 function spSelect(brandId){
@@ -1703,6 +1718,7 @@ HTML_BODY = """
     <div class="sp-sidebar">
       <input class="sp-search-inp" id="sp-search-inp" type="text" placeholder="&#x2315; Rechercher une marque...">
       <div class="sp-pills" id="sp-pills"></div>
+      <div id="sp-sector-info" style="font-size:10px;color:var(--text2);min-height:14px;flex-shrink:0"></div>
       <div class="sp-list-title" style="margin-top:4px;margin-bottom:2px">Marques</div>
       <div class="sp-blist" id="sp-blist"></div>
     </div>
