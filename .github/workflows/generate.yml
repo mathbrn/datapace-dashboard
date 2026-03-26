@@ -1,37 +1,40 @@
-name: Générer le dashboard DataPace
+name: Deploy Dashboard
 
 on:
   push:
     branches:
-      - main             # Se déclenche sur tout push vers main
-  workflow_dispatch:     # Permet aussi de lancer manuellement depuis GitHub
+      - main
+  workflow_dispatch:
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
-      - name: Récupérer les fichiers
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Installer Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.13'
 
-      - name: Installer les dépendances
+      - name: Install dependencies
         run: pip install pandas openpyxl
 
-      - name: Générer le dashboard
+      - name: Generate dashboard
         run: python generate_dashboard.py
 
-      - name: Renommer en index.html pour GitHub Pages
-        run: mv datapace_dashboard.html index.html
+      - name: Prepare deploy directory
+        run: |
+          mkdir -p deploy
+          cp datapace_dashboard.html deploy/index.html
 
-      - name: Publier sur GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
+          publish_dir: ./deploy
           publish_branch: gh-pages
-          exclude_assets: '**.xlsx,**.py,**.yml,**.bat'
