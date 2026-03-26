@@ -1452,7 +1452,11 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 .sp-pill:hover{color:var(--text);}
 .sp-pill.spc-active{color:#fff!important;border-color:transparent!important;}
 .sp-list-title{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;}
-.sp-blist{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:1px;}
+.sp-blist{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:1px;scrollbar-width:thin;scrollbar-color:var(--border) transparent;}
+.sp-blist::-webkit-scrollbar{width:4px;}
+.sp-blist::-webkit-scrollbar-track{background:transparent;}
+.sp-blist::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
+.sp-blist::-webkit-scrollbar-thumb:hover{background:var(--text3);}
 .sp-bitem{display:flex;align-items:center;gap:7px;padding:6px 8px;border-radius:7px;cursor:pointer;transition:.12s;}
 .sp-bitem:hover,.sp-bitem.spc-active{background:var(--bg);}
 .sp-bdot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
