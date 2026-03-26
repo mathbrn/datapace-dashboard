@@ -315,6 +315,42 @@ function getTimeData(rn){
   for(var i=0;i<keys.length;i++){var k=keys[i];if(l.indexOf(k)>=0||k.indexOf(l.substring(0,12))>=0)return TIMES_DB[k];}
   return null;
 }
+function buildOvSponsoring(eventName){
+  if(typeof SP_PARTNERSHIPS==='undefined')return '';
+  var now=new Date().getFullYear();
+  var parts=SP_PARTNERSHIPS.filter(function(p){return p.event===eventName&&p.years&&p.years.indexOf(now)>=0;});
+  if(!parts.length){
+    // Try matching partial name
+    var ln=eventName.toLowerCase();
+    parts=SP_PARTNERSHIPS.filter(function(p){return p.years&&p.years.indexOf(now)>=0&&(p.event.toLowerCase().indexOf(ln.substring(0,15))>=0||ln.indexOf(p.event.toLowerCase().substring(0,15))>=0);});
+  }
+  if(!parts.length)return '';
+  var byType={title:[],official:[],partner:[]};
+  parts.forEach(function(p){(byType[p.type]||byType.partner).push(p);});
+  var tConf={
+    title:{label:'Partenaire Titre',bg:'var(--purple)',text:'#fff'},
+    official:{label:'Partenaire Officiel',bg:'var(--purple)'+'30',text:'var(--purple)'},
+    partner:{label:'Partenaire',bg:'var(--bg3)',text:'var(--text2)'}
+  };
+  var h='<div style="margin-top:1rem;padding-top:1rem;border-top:.5px solid var(--border)">'
+    +'<div class="ov-chart-label" style="margin-bottom:8px">Partenaires '+now+'</div>';
+  ['title','official','partner'].forEach(function(t){
+    var items=byType[t];if(!items.length)return;
+    var tc=tConf[t];
+    h+='<div style="margin-bottom:6px">'
+      +'<span style="display:inline-block;font-size:9px;padding:2px 7px;border-radius:3px;background:'+tc.bg+';color:'+tc.text+';font-weight:600;margin-bottom:3px">'+tc.label+'</span>'
+      +'<div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:2px">';
+    items.forEach(function(p){
+      var info=SP_BRANDS[p.brand]||{};
+      var sec=info.sector||'';
+      var col=_spCols[sec]||'var(--text2)';
+      h+='<span style="font-size:11px;padding:3px 8px;border-radius:4px;background:var(--bg3);border:.5px solid var(--border);color:'+col+';cursor:default" title="'+p.brand+(sec?' - '+sec:'')+' ('+p.years[0]+'-'+p.years[p.years.length-1]+')">'+p.brand+'</span>';
+    });
+    h+='</div></div>';
+  });
+  h+='</div>';
+  return h;
+}
 function getWinnersRecords(rn){
   var entries=WINNERS.filter(function(w){return w.r===rn;});
   if(!entries.length){
@@ -475,6 +511,7 @@ function ovSelect(idx){
     +'<div class="ov-chart-box"><div class="ov-chart-label">Record Homme par edition</div><div style="position:relative;height:150px"><canvas id="ov-chart-men"></canvas></div></div>'
     +'<div class="ov-chart-box"><div class="ov-chart-label">Record Femme par edition</div><div style="position:relative;height:150px"><canvas id="ov-chart-women"></canvas></div></div>'
     +'</div>'
+    +buildOvSponsoring(ev.r)
     +'</div>';
   document.getElementById('ov-card-wrap').innerHTML=html;
 
