@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-03-26 18:09:06",
+  "total": 5,
+  "results": [
+    {
+      "excel_name": "Ukrop's Monument Avenue 10K",
+      "excel_dist": "10KM",
+      "year": 2017,
+      "finishers": 21954,
+      "event_id": 224199,
+      "event_name": "Ukrop's Monument Avenue 10k Only (Non-Seeded Runners & Walkers)",
+      "source": "runsignup"
+    },
+    {
+      "excel_name": "Ukrop's Monument Avenue 10K",
+      "excel_dist": "10KM",
+      "year": 2018,
+      "finishers": 21295,
+      "event_id": 202398,
+      "event_name": "Ukrop's Monument Avenue 10k Only (Non-Seeded Runners & Walkers)",
+      "source": "runsignup"
+    },
+    {
+      "excel_name": "Ukrop's Monument Avenue 10K",
+      "excel_dist": "10KM",
+      "year": 2019,
+      "finishers": 20167,
+      "event_id": 274461,
+      "event_name": "Ukrop's Monument Avenue 10k Only (Non-Seeded Runners & Walkers)",
+      "source": "runsignup"
+    },
+    {
+      "excel_name": "Ukrop's Monument Avenue 10K",
+      "excel_dist": "10KM",
+      "year": 2021,
+      "finishers": 2736,
+      "event_id": 464690,
+      "event_name": "2021 Ukrop's Monument Avenue 10k",
+      "source": "runsignup"
+    },
+    {
+      "excel_name": "Ukrop's Monument Avenue 10K",
+      "excel_dist": "10KM",
+      "year": 2022,
+      "finishers": 12129,
+      "event_id": 544158,
+      "event_name": "2022 10k Challenge",
+      "source": "runsignup"
+    }
+  ]
+}
