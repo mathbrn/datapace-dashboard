@@ -866,7 +866,7 @@ function spSetSector(s){
   document.querySelectorAll('.sp-pill').forEach(function(el){
     el.classList.remove('spc-active');
     el.style.removeProperty('background');
-    var pillText=el.textContent.split('\n')[0].trim();
+    var pillText=el.textContent.split(String.fromCharCode(10))[0].trim();
     if(pillText===s||(s==='ALL'&&pillText==='ALL')){
       el.classList.add('spc-active');
       var col=s==='ALL'?null:(_spCols[s]||'#9B6FFF');
