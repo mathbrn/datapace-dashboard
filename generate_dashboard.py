@@ -759,22 +759,38 @@ document.addEventListener('keydown',function(e){
 
 // ── SPONSORING ──────────────────────────────────────────────────────────────
 var spChartBrands=null,spChartSectors=null,spChartEquip=null,spChartTypes=null;
-function getExposure(eventName){
+var _spPeriod='2025';
+function getExposure(eventName,years){
   var ev=RAW.find(function(r){return r.r===eventName;});
   if(!ev||!ev.hist)return 0;
-  var vals=Object.values(ev.hist).filter(function(v){return v&&v>0;});
-  return vals.length?Math.max.apply(null,vals):0;
+  var now=new Date().getFullYear();
+  var minYr=_spPeriod==='all'?0:_spPeriod==='5'?now-4:_spPeriod==='3'?now-2:parseInt(_spPeriod)||now;
+  var maxYr=_spPeriod==='all'||_spPeriod==='5'||_spPeriod==='3'?now:minYr;
+  var total=0;
+  (years||[]).forEach(function(y){
+    if(y>=minYr&&y<=maxYr){
+      var v=ev.hist[y];
+      if(v&&v>0)total+=v;
+    }
+  });
+  return total;
 }
 var _spBS={},_spActiveSector='ALL',_spActiveBrand=null,_spPillSectors=[];
 var _spCols={'Equipementier sport':'#22C55E','Banque/Finance':'#38BDF8','Assurance/Finance':'#9B6FFF','Finance/Investissement':'#38BDF8','Automobile':'#FF8A50','Tech/IT':'#F472B6','Energie':'#FCDB00','Industrie/Energie':'#FCDB00','Sante/Pharma':'#2DBF7E','Caritatif/Sante':'#2DBF7E','Fondation/Mecenat':'#FF6B9D','Aviation/Transport':'#5CDFA0','Nutrition/Alimentaire':'#FF9F45','Audio/Wearables':'#C084FC','Paiement/Finance':'#34D399','Retail/Mode':'#FB923C','Conglomeral/Tech':'#94A3B8','Transport':'#60A5FA','Boisson/Brasserie':'#FCD34D','Hydratation/Consommation':'#FB923C','Horlogerie/Luxe':'#E2E8F0','Assurance/Mutuelle':'#818CF8'};
-function initSponsoring(){
+function spBuildData(){
   _spBS={};
   SP_PARTNERSHIPS.forEach(function(p){
-    if(!_spBS[p.brand])_spBS[p.brand]={events:[],exposure:0,types:[],sector:(SP_BRANDS[p.brand]||{}).sector||'Autre'};
-    var exp=getExposure(p.event);
-    if(_spBS[p.brand].events.indexOf(p.event)<0){_spBS[p.brand].events.push(p.event);_spBS[p.brand].exposure+=exp;}
+    if(!_spBS[p.brand])_spBS[p.brand]={events:[],exposure:0,types:[],sector:(SP_BRANDS[p.brand]||{}).sector||'Autre',partnerships:[]};
+    var exp=getExposure(p.event,p.years||[]);
+    var evKey=p.event;
+    if(_spBS[p.brand].events.indexOf(evKey)<0)_spBS[p.brand].events.push(evKey);
+    _spBS[p.brand].exposure+=exp;
+    _spBS[p.brand].partnerships.push({event:p.event,years:p.years||[],type:p.type,exposure:exp});
     if(_spBS[p.brand].types.indexOf(p.type)<0)_spBS[p.brand].types.push(p.type);
   });
+}
+function initSponsoring(){
+  spBuildData();
   _spActiveSector='ALL';_spActiveBrand=null;
   var totalExp=Object.values(_spBS).reduce(function(s,b){return s+b.exposure;},0);
   var evSet={};SP_PARTNERSHIPS.forEach(function(p){evSet[p.event]=1;});
@@ -887,6 +903,20 @@ function spRenderTreemap(){
   layout(nodes,0,0,W,H,totalV);
   if(hint)hint.style.opacity=_spActiveBrand?'0':'1';
 }
+function spChangePeriod(val){
+  _spPeriod=val;
+  spBuildData();
+  // Refresh KPIs
+  var totalExp=Object.values(_spBS).reduce(function(s,b){return s+b.exposure;},0);
+  var evSet={};SP_PARTNERSHIPS.forEach(function(p){evSet[p.event]=1;});
+  var secExp={};Object.values(_spBS).forEach(function(b){secExp[b.sector]=(secExp[b.sector]||0)+b.exposure;});
+  var topS=Object.entries(secExp).sort(function(a,b){return b[1]-a[1];})[0];
+  var kpis=[[Object.keys(_spBS).length,'Marques','#22C55E'],[Object.keys(evSet).length,'\u00c9v\u00e9nements','#38BDF8'],[(totalExp/1e6).toFixed(1)+'M','Finishers expos\u00e9s','#F472B6'],[topS?topS[0].split('/')[0].trim():'-','Secteur #1','#FCDB00']];
+  document.getElementById('sp-kpis').innerHTML=kpis.map(function(k){return '<div class="sp-kpi"><div class="sp-kpi-num" style="color:'+k[2]+'">'+k[0]+'</div><div class="sp-kpi-lbl">'+k[1]+'</div></div>';}).join('');
+  _spActiveBrand=null;
+  document.getElementById('sp-detail').style.display='none';
+  spRenderList();spRenderTreemap();
+}
 function spSelect(brandId){
   _spActiveBrand=brandId;
   spRenderList();spRenderTreemap();
@@ -894,8 +924,14 @@ function spSelect(brandId){
   var col=_spCols[bs.sector]||'#9B6FFF';
   var tL={title:'\u2605 Title Sponsor',official:'\u25cf Officiel',partner:'\u25cb Partenaire'};
   var typeStr=bs.types.map(function(t){return tL[t]||t;}).join(' \u00b7 ');
-  var evTags=bs.events.slice(0,14).map(function(ev){return '<span class="sp-evtag">'+ev.replace(/Marathon/g,'M.').replace(/Half Marathon/g,'HM').replace(/presented by.*/i,'').trim()+'</span>';}).join('');
-  if(bs.events.length>14)evTags+='<span class="sp-evtag" style="color:var(--text3)">+'+(bs.events.length-14)+'</span>';
+  var evTags=bs.partnerships.filter(function(pp){return pp.exposure>0;}).sort(function(a,b){return b.exposure-a.exposure;}).slice(0,12).map(function(pp){
+    var shortName=pp.event.replace(/Marathon/g,'M.').replace(/Half Marathon/g,'HM').replace(/presented by.*/i,'').trim();
+    var yrRange=pp.years.length?pp.years[0]+(pp.years.length>1?'-'+pp.years[pp.years.length-1]:''):'';
+    return '<span class="sp-evtag" title="'+pp.event+' ('+yrRange+') : '+spFmt(pp.exposure)+' finishers">'+shortName+' <span style="color:var(--text3);font-size:9px">'+spFmt(pp.exposure)+'</span></span>';
+  }).join('');
+  var zeroCount=bs.partnerships.filter(function(pp){return pp.exposure===0;}).length;
+  if(bs.partnerships.length>12)evTags+='<span class="sp-evtag" style="color:var(--text3)">+'+(bs.partnerships.length-12)+'</span>';
+  if(zeroCount>0)evTags+='<span style="font-size:10px;color:var(--text3);margin-left:4px">('+zeroCount+' sans donnees)</span>';
   var det=document.getElementById('sp-detail');
   det.innerHTML='<div style="min-width:130px">'
     +'<div class="sp-detail-name">'+brandId+'</div>'
@@ -1579,7 +1615,17 @@ HTML_BODY = """
   <div class="count" id="win-count"></div>
 </div>
 <div id="panel-sponsoring" class="panel">
-  <div class="sp-kpis" id="sp-kpis"></div>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+    <div class="sp-kpis" id="sp-kpis" style="margin-bottom:0"></div>
+    <div class="ctrl-group"><span class="ctrl-label">Periode</span>
+      <select id="sp-period" onchange="spChangePeriod(this.value)" style="font-size:11px;padding:4px 8px;">
+        <option value="2025">2025</option>
+        <option value="3">3 dernieres annees</option>
+        <option value="5">5 dernieres annees</option>
+        <option value="all">Toutes les annees</option>
+      </select>
+    </div>
+  </div>
   <div class="sp-layout">
     <div class="sp-sidebar">
       <input class="sp-search-inp" id="sp-search-inp" type="text" placeholder="&#x2315; Rechercher une marque...">
