@@ -315,12 +315,12 @@ function getTimeData(rn){
   for(var i=0;i<keys.length;i++){var k=keys[i];if(l.indexOf(k)>=0||k.indexOf(l.substring(0,12))>=0)return TIMES_DB[k];}
   return null;
 }
-function buildOvSponsoring(eventName){
+function buildOvSponsoring(eventName,eventColor){
   if(typeof SP_PARTNERSHIPS==='undefined')return '';
+  var ec=eventColor||'var(--purple)';
   var now=new Date().getFullYear();
   var parts=SP_PARTNERSHIPS.filter(function(p){return p.event===eventName&&p.years&&p.years.indexOf(now)>=0;});
   if(!parts.length){
-    // Try matching partial name
     var ln=eventName.toLowerCase();
     parts=SP_PARTNERSHIPS.filter(function(p){return p.years&&p.years.indexOf(now)>=0&&(p.event.toLowerCase().indexOf(ln.substring(0,15))>=0||ln.indexOf(p.event.toLowerCase().substring(0,15))>=0);});
   }
@@ -328,8 +328,8 @@ function buildOvSponsoring(eventName){
   var byType={title:[],official:[],partner:[]};
   parts.forEach(function(p){(byType[p.type]||byType.partner).push(p);});
   var tConf={
-    title:{label:'Partenaire Titre',bg:'var(--purple)',text:'#fff'},
-    official:{label:'Partenaire Officiel',bg:'var(--purple)'+'30',text:'var(--purple)'},
+    title:{label:'Partenaire Titre',bg:ec,text:'#fff'},
+    official:{label:'Partenaire Officiel',bg:ec+'30',text:ec},
     partner:{label:'Partenaire',bg:'var(--bg3)',text:'var(--text2)'}
   };
   var h='<div style="margin-top:1rem;padding-top:1rem;border-top:.5px solid var(--border)">'
@@ -511,7 +511,7 @@ function ovSelect(idx){
     +'<div class="ov-chart-box"><div class="ov-chart-label">Record Homme par edition</div><div style="position:relative;height:150px"><canvas id="ov-chart-men"></canvas></div></div>'
     +'<div class="ov-chart-box"><div class="ov-chart-label">Record Femme par edition</div><div style="position:relative;height:150px"><canvas id="ov-chart-women"></canvas></div></div>'
     +'</div>'
-    +buildOvSponsoring(ev.r)
+    +buildOvSponsoring(ev.r,ac)
     +'</div>';
   document.getElementById('ov-card-wrap').innerHTML=html;
 
