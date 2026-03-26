@@ -796,7 +796,7 @@ function initSponsoring(){
   var evSet={};SP_PARTNERSHIPS.forEach(function(p){evSet[p.event]=1;});
   var secExp={};Object.values(_spBS).forEach(function(b){secExp[b.sector]=(secExp[b.sector]||0)+b.exposure;});
   var topS=Object.entries(secExp).sort(function(a,b){return b[1]-a[1];})[0];
-  var kpis=[[Object.keys(_spBS).length,'Marques','#22C55E'],[Object.keys(evSet).length,'\u00c9v\u00e9nements','#38BDF8'],[(totalExp/1e6).toFixed(1)+'M','Finishers expos\u00e9s','#F472B6'],[topS?topS[0].split('/')[0].trim():'-','Secteur #1','#FCDB00']];
+  var kpis=[[Object.keys(_spBS).length,'Marques','#22C55E'],[Object.keys(evSet).length,'\u00c9v\u00e9nements','#38BDF8'],[(totalExp/1e6).toFixed(1)+'M','Finishers expos\u00e9s','#F472B6'],];
   document.getElementById('sp-kpis').innerHTML=kpis.map(function(k){return '<div class="sp-kpi"><div class="sp-kpi-num" style="color:'+k[2]+'">'+k[0]+'</div><div class="sp-kpi-lbl">'+k[1]+'</div></div>';}).join('');
   var secSorted=Object.entries(secExp).sort(function(a,b){return b[1]-a[1];});
   _spPillSectors=['ALL'].concat(secSorted.map(function(s){return s[0];}));
@@ -911,7 +911,7 @@ function spChangePeriod(val){
   var evSet={};SP_PARTNERSHIPS.forEach(function(p){evSet[p.event]=1;});
   var secExp={};Object.values(_spBS).forEach(function(b){secExp[b.sector]=(secExp[b.sector]||0)+b.exposure;});
   var topS=Object.entries(secExp).sort(function(a,b){return b[1]-a[1];})[0];
-  var kpis=[[Object.keys(_spBS).length,'Marques','#22C55E'],[Object.keys(evSet).length,'\u00c9v\u00e9nements','#38BDF8'],[(totalExp/1e6).toFixed(1)+'M','Finishers expos\u00e9s','#F472B6'],[topS?topS[0].split('/')[0].trim():'-','Secteur #1','#FCDB00']];
+  var kpis=[[Object.keys(_spBS).length,'Marques','#22C55E'],[Object.keys(evSet).length,'\u00c9v\u00e9nements','#38BDF8'],[(totalExp/1e6).toFixed(1)+'M','Finishers expos\u00e9s','#F472B6'],];
   document.getElementById('sp-kpis').innerHTML=kpis.map(function(k){return '<div class="sp-kpi"><div class="sp-kpi-num" style="color:'+k[2]+'">'+k[0]+'</div><div class="sp-kpi-lbl">'+k[1]+'</div></div>';}).join('');
   _spActiveBrand=null;
   document.getElementById('sp-detail').style.display='none';
