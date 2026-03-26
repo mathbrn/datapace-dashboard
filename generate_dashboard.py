@@ -933,16 +933,28 @@ function spSelect(brandId){
   spRenderList();spRenderTreemap();
   var bs=_spBS[brandId];var info=SP_BRANDS[brandId]||{};
   var col=_spCols[bs.sector]||'#9B6FFF';
-  var tL={title:'\u2605 Title Sponsor',official:'\u25cf Officiel',partner:'\u25cb Partenaire'};
-  var typeStr=bs.types.map(function(t){return tL[t]||t;}).join(' \u00b7 ');
-  var evTags=bs.partnerships.filter(function(pp){return pp.exposure>0;}).sort(function(a,b){return b.exposure-a.exposure;}).slice(0,12).map(function(pp){
-    var shortName=pp.event.replace(/Marathon/g,'M.').replace(/Half Marathon/g,'HM').replace(/presented by.*/i,'').trim();
-    var yrRange=pp.years.length?pp.years[0]+(pp.years.length>1?'-'+pp.years[pp.years.length-1]:''):'';
-    return '<span class="sp-evtag" title="'+pp.event+' ('+yrRange+') : '+spFmt(pp.exposure)+' finishers">'+shortName+' <span style="color:var(--text3);font-size:9px">'+spFmt(pp.exposure)+'</span></span>';
-  }).join('');
-  var zeroCount=bs.partnerships.filter(function(pp){return pp.exposure===0;}).length;
-  if(bs.partnerships.length>12)evTags+='<span class="sp-evtag" style="color:var(--text3)">+'+(bs.partnerships.length-12)+'</span>';
-  if(zeroCount>0)evTags+='<span style="font-size:10px;color:var(--text3);margin-left:4px">('+zeroCount+' sans donnees)</span>';
+  var tConf={
+    title:{label:'Partenaire Titre',icon:'\u2605',bg:col,text:'#fff'},
+    official:{label:'Partenaire Officiel',icon:'\u25c6',bg:col+'30',text:col},
+    partner:{label:'Partenaire',icon:'',bg:'var(--bg3)',text:'var(--text2)'}
+  };
+  // Group partnerships by type
+  var byType={title:[],official:[],partner:[]};
+  bs.partnerships.forEach(function(pp){(byType[pp.type]||byType.partner).push(pp);});
+  var evHtml='';
+  ['title','official','partner'].forEach(function(t){
+    var items=byType[t];if(!items.length)return;
+    var tc=tConf[t];
+    evHtml+='<div style="margin-bottom:8px">'
+      +'<span style="display:inline-block;font-size:10px;padding:2px 8px;border-radius:3px;background:'+tc.bg+';color:'+tc.text+';font-weight:600;margin-bottom:4px">'+(tc.icon?tc.icon+' ':'')+tc.label+'</span>'
+      +'<div style="display:flex;flex-wrap:wrap;gap:3px;margin-top:3px">';
+    items.sort(function(a,b){return b.exposure-a.exposure;}).forEach(function(pp){
+      var shortName=pp.event.replace(/Marathon/g,'M.').replace(/Half Marathon/g,'HM').replace(/presented by.*/i,'').trim();
+      var yrRange=pp.years.length?pp.years[0]+(pp.years.length>1?'-'+pp.years[pp.years.length-1]:''):'';
+      evHtml+='<span class="sp-evtag" title="'+pp.event+' ('+yrRange+') : '+spFmt(pp.exposure)+' finishers">'+shortName+(pp.exposure>0?' <span style="color:var(--text3);font-size:9px">'+spFmt(pp.exposure)+'</span>':'')+'</span>';
+    });
+    evHtml+='</div></div>';
+  });
   var det=document.getElementById('sp-detail');
   det.innerHTML='<div style="min-width:130px">'
     +'<div class="sp-detail-name">'+brandId+'</div>'
@@ -953,10 +965,7 @@ function spSelect(brandId){
     +'<div class="sp-detail-stat"><div class="sp-detail-stat-num" style="color:'+col+'">'+spFmt(bs.exposure)+'</div><div class="sp-detail-stat-lbl">Finishers expos\u00e9s</div></div>'
     +'<div class="sp-detail-stat"><div class="sp-detail-stat-num" style="color:'+col+'">'+bs.events.length+'</div><div class="sp-detail-stat-lbl">\u00c9v\u00e9nements</div></div>'
     +'</div>'
-    +'<div style="flex:1;min-width:180px">'
-    +'<div style="font-size:10px;color:var(--text3);text-transform:uppercase;margin-bottom:6px">'+typeStr+'</div>'
-    +'<div style="display:flex;flex-wrap:wrap;gap:3px">'+evTags+'</div>'
-    +'</div>';
+    +'<div style="flex:1;min-width:180px">'+evHtml+'</div>';
   det.style.display='flex';
 }
 
