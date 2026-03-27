@@ -326,17 +326,18 @@ function buildOvSponsoring(eventName,eventColor){
     parts=SP_PARTNERSHIPS.filter(function(p){return p.years&&p.years.indexOf(now)>=0&&(p.event.toLowerCase().indexOf(ln.substring(0,15))>=0||ln.indexOf(p.event.toLowerCase().substring(0,15))>=0);});
   }
   if(!parts.length)return '';
-  var byType={title:[],major:[],official:[],partner:[]};
+  var byType={title:[],premium:[],major:[],official:[],partner:[]};
   parts.forEach(function(p){(byType[p.type]||byType.partner).push(p);});
   var tConf={
     title:{label:'Partenaire Titre',bg:ec,text:'#fff'},
+    premium:{label:'Partenaire Premium',bg:ec+'80',text:'#fff'},
     major:{label:'Partenaire Majeur',bg:ec+'60',text:'#fff'},
     official:{label:'Partenaire Officiel',bg:ec+'30',text:ec},
     partner:{label:'Fournisseur Officiel',bg:'var(--bg3)',text:'var(--text2)'}
   };
   var h='<div style="margin-top:1rem;padding-top:1rem;border-top:.5px solid var(--border)">'
     +'<div class="ov-chart-label" style="margin-bottom:8px">Partenaires '+now+'</div>';
-  ['title','major','official','partner'].forEach(function(t){
+  ['title','premium','major','official','partner'].forEach(function(t){
     var items=byType[t];if(!items.length)return;
     var tc=tConf[t];
     h+='<div style="margin-bottom:6px">'
@@ -1023,7 +1024,7 @@ function spSelect(brandId){
     if(active)(byType[pp.type]||byType.partner).push(pp);
   });
   var evHtml='';
-  ['title','major','official','partner'].forEach(function(t){
+  ['title','premium','major','official','partner'].forEach(function(t){
     var items=byType[t];if(!items.length)return;
     var tc=tConf[t];
     evHtml+='<div style="margin-bottom:8px">'
