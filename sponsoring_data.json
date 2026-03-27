@@ -884,6 +884,21 @@
       "full_name": "Northside Hospital",
       "sector": "Sante/Hopital",
       "country": "US"
+    },
+    "eDreams": {
+      "full_name": "eDreams ODIGEO",
+      "sector": "Tech/Tourisme",
+      "country": "ES"
+    },
+    "Ibercaja": {
+      "full_name": "Ibercaja Banco",
+      "sector": "Banque/Finance",
+      "country": "ES"
+    },
+    "Kiprun": {
+      "full_name": "Kiprun (Decathlon)",
+      "sector": "Equipementier sport",
+      "country": "FR"
     }
   },
   "partnerships": [
@@ -4567,6 +4582,108 @@
       "brand": "Wiener Stadtische",
       "type": "official",
       "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "TCS Mizuno Half Marathon",
+      "brand": "Mizuno",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "TCS Mizuno Half Marathon",
+      "brand": "TCS",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Mitja Marato Barcelona by Brooks",
+      "brand": "eDreams",
+      "type": "title",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Mitja Marato Barcelona by Brooks",
+      "brand": "Brooks",
+      "type": "official",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Mitja Marato Barcelona by Brooks",
+      "brand": "Hyundai",
+      "type": "title",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "10K Valencia Ibercaja by Kiprun",
+      "brand": "Ibercaja",
+      "type": "title",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "10K Valencia Ibercaja by Kiprun",
+      "brand": "Kiprun",
+      "type": "official",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Taipei Half Marathon",
+      "brand": "Fubon",
+      "type": "title",
+      "years": [
+        2014,
         2015,
         2016,
         2017,
