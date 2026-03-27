@@ -899,6 +899,11 @@
       "full_name": "Kiprun (Decathlon)",
       "sector": "Equipementier sport",
       "country": "FR"
+    },
+    "Life Time": {
+      "full_name": "Life Time Group",
+      "sector": "Fitness/Tech",
+      "country": "US"
     }
   },
   "partnerships": [
@@ -4684,6 +4689,238 @@
         2020,
         2021,
         2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "AJ Bell Great Bristol Run",
+      "brand": "AJ Bell",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "AJ Bell Great Bristol Run 10K",
+      "brand": "AJ Bell",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "AJ Bell Great Birmingham Run",
+      "brand": "AJ Bell",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "AJ Bell Great Birmingham Run 10K",
+      "brand": "AJ Bell",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Great Scottish Run",
+      "brand": "AJ Bell",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Great Scottish Run 10K",
+      "brand": "AJ Bell",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Coelmo Napoli City Half Marathon",
+      "brand": "Generali",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Vitality London 10,000",
+      "brand": "Vitality",
+      "type": "title",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Half Marathon Munchen by Brooks",
+      "brand": "Brooks",
+      "type": "title",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Hoka Runaway Sydney Half Marathon",
+      "brand": "Hoka",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Hyundai Meia Maratona",
+      "brand": "Hyundai",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "United Airlines NYC Half",
+      "brand": "United Airlines",
+      "type": "title",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "United Airlines NYC Half",
+      "brand": "New Balance",
+      "type": "official",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "GetPro Bath Half",
+      "brand": "GetPRO",
+      "type": "title",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "EDP Meia Maratona de Lisboa - Vodafone 10K",
+      "brand": "Vodafone",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "EDP Meia Maratona de Lisboa - Vodafone 10K",
+      "brand": "EDP",
+      "type": "official",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Life Time Chicago Half Marathon & 5K",
+      "brand": "Life Time",
+      "type": "title",
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "TCS Toronto Waterfront Marathon",
+      "brand": "TCS",
+      "type": "title",
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "City2Surf",
+      "brand": "Adidas",
+      "type": "official",
+      "years": [
         2023,
         2024,
         2025,
