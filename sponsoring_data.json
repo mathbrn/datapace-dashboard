@@ -1074,6 +1074,41 @@
       "full_name": "Baylor Scott & White Health",
       "sector": "Sante",
       "country": "US"
+    },
+    "Orange": {
+      "full_name": "Orange S.A.",
+      "sector": "Telecom",
+      "country": "FR"
+    },
+    "HiPro": {
+      "full_name": "HiPro (Danone)",
+      "sector": "Nutrition/Alimentaire",
+      "country": "FR"
+    },
+    "Compex": {
+      "full_name": "Compex (DJO Global)",
+      "sector": "Equipement sport/Recovery",
+      "country": "CH"
+    },
+    "Ta Energy": {
+      "full_name": "Ta Energy",
+      "sector": "Nutrition sport",
+      "country": "FR"
+    },
+    "Baume du Tigre": {
+      "full_name": "Baume du Tigre (Haw Par)",
+      "sector": "Sante",
+      "country": "SG"
+    },
+    "Campus": {
+      "full_name": "Campus",
+      "sector": "Retail/Distribution sport",
+      "country": "FR"
+    },
+    "Banane Guadeloupe": {
+      "full_name": "Banane de Guadeloupe & Martinique",
+      "sector": "Alimentaire",
+      "country": "FR"
     }
   },
   "partnerships": [
@@ -1562,6 +1597,7 @@
       "brand": "Schneider Electric",
       "type": "title",
       "years": [
+        2013,
         2014,
         2015,
         2016,
@@ -1580,7 +1616,7 @@
     {
       "event": "Schneider Electric Marathon de Paris",
       "brand": "ASICS",
-      "type": "official",
+      "type": "major",
       "years": [
         2009,
         2010,
@@ -5808,6 +5844,104 @@
       "type": "title",
       "years": [
         2025,
+        2026
+      ]
+    },
+    {
+      "event": "Schneider Electric Marathon de Paris",
+      "brand": "BMW",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Schneider Electric Marathon de Paris",
+      "brand": "Garmin",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Schneider Electric Marathon de Paris",
+      "brand": "Orange",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Schneider Electric Marathon de Paris",
+      "brand": "HiPro",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Schneider Electric Marathon de Paris",
+      "brand": "Banane Guadeloupe",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Schneider Electric Marathon de Paris",
+      "brand": "Shokz",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Schneider Electric Marathon de Paris",
+      "brand": "Compex",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Schneider Electric Marathon de Paris",
+      "brand": "Ta Energy",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Schneider Electric Marathon de Paris",
+      "brand": "Baume du Tigre",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Schneider Electric Marathon de Paris",
+      "brand": "Campus",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Schneider Electric Marathon de Paris",
+      "brand": "Hyundai",
+      "type": "official",
+      "years": [
         2026
       ]
     }
