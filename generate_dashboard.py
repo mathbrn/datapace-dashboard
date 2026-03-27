@@ -996,11 +996,9 @@ function spChangePeriod(val){
   _spSecExp=secExp;_spSecExp['ALL']=totalExp;
   var topS=Object.entries(secExp).sort(function(a,b){return b[1]-a[1];})[0];
   var kpis=[[Object.keys(_spBS).length,'Marques','#22C55E'],[Object.keys(evSet).length,'\u00c9v\u00e9nements','#38BDF8'],[(totalExp/1e6).toFixed(1)+'M','Finishers expos\u00e9s','#F472B6'],];
-  document.getElementById('sp-kpis').innerHTML=kpis.map(function(k){return '<div class="sp-kpi"><div class="sp-kpi-num" style="color:'+k[2]+'">'+k[0]+'</div><div class="sp-kpi-lbl">'+k[1]+'</div></div>';}).join('');
+  document.getElementById('sp-kpis').innerHTML=kpis.map(function(k){return '<div class="sp-kpi"><div class="sp-kpi-num" style="color:'+k[2]+'">'+k[0]+'</div><div class="sp-kpi-lbl">'+k[1]+'</div></div>';}).join('')+'<div class="sp-kpi" id="sp-kpi-sector" style="display:none;transition:all .2s"><div class="sp-kpi-num" id="sp-kpi-sector-num"></div><div class="sp-kpi-lbl" id="sp-kpi-sector-lbl"></div></div>';
   _spActiveBrand=null;
   document.getElementById('sp-detail').style.display='none';
-  var kpiSec=document.getElementById('sp-kpi-sector');
-  if(kpiSec)kpiSec.style.display='none';
   spRenderList();spRenderTreemap();
 }
 function spSelect(brandId){
