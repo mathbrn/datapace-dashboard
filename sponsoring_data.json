@@ -4189,6 +4189,43 @@
       "years": [
         2026
       ]
+    },
+    {
+      "event": "Harmonie Mutuelle Toulouse Metropole Run Experience",
+      "brand": "Harmonie Mutuelle",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Marathon de Tours",
+      "brand": "Harmonie Mutuelle",
+      "type": "title",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "20km de Tours",
+      "brand": "Harmonie Mutuelle",
+      "type": "title",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
     }
   ]
 }
