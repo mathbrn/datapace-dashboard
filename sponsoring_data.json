@@ -904,6 +904,176 @@
       "full_name": "Life Time Group",
       "sector": "Fitness/Tech",
       "country": "US"
+    },
+    "Beneva": {
+      "full_name": "Beneva (La Capitale + SSQ)",
+      "sector": "Assurance",
+      "country": "CA"
+    },
+    "AUSA": {
+      "full_name": "Association of the U.S. Army",
+      "sector": "Institutionnel",
+      "country": "US"
+    },
+    "Ascension Seton": {
+      "full_name": "Ascension Seton",
+      "sector": "Sante",
+      "country": "US"
+    },
+    "Under Armour": {
+      "full_name": "Under Armour Inc.",
+      "sector": "Equipementier sport",
+      "country": "US"
+    },
+    "Excellus BCBS": {
+      "full_name": "Excellus BlueCross BlueShield",
+      "sector": "Assurance",
+      "country": "US"
+    },
+    "Emirates NBD": {
+      "full_name": "Emirates NBD Bank",
+      "sector": "Banque/Finance",
+      "country": "AE"
+    },
+    "Sutter Health": {
+      "full_name": "Sutter Health",
+      "sector": "Sante",
+      "country": "US"
+    },
+    "Nationwide": {
+      "full_name": "Nationwide Insurance",
+      "sector": "Assurance",
+      "country": "US"
+    },
+    "Independence Blue Cross": {
+      "full_name": "Independence Blue Cross",
+      "sector": "Assurance",
+      "country": "US"
+    },
+    "LCMC Health": {
+      "full_name": "LCMC Health",
+      "sector": "Sante",
+      "country": "US"
+    },
+    "Detroit Free Press": {
+      "full_name": "Detroit Free Press (Gannett)",
+      "sector": "Media/Presse",
+      "country": "US"
+    },
+    "OCCU": {
+      "full_name": "Oregon Community Credit Union",
+      "sector": "Banque/Finance",
+      "country": "US"
+    },
+    "Essentia Health": {
+      "full_name": "Essentia Health",
+      "sector": "Sante",
+      "country": "US"
+    },
+    "Prysmian": {
+      "full_name": "Prysmian Group",
+      "sector": "Industrie/Energie",
+      "country": "IT"
+    },
+    "Publix": {
+      "full_name": "Publix Super Markets",
+      "sector": "Grande distribution",
+      "country": "US"
+    },
+    "Gate Petroleum": {
+      "full_name": "Gate Petroleum",
+      "sector": "Energie/Petrole",
+      "country": "US"
+    },
+    "Coca-Cola": {
+      "full_name": "The Coca-Cola Company",
+      "sector": "Nutrition/Boisson",
+      "country": "US"
+    },
+    "Hoag": {
+      "full_name": "Hoag Memorial Hospital",
+      "sector": "Sante",
+      "country": "US"
+    },
+    "CNO Financial": {
+      "full_name": "CNO Financial Group",
+      "sector": "Assurance",
+      "country": "US"
+    },
+    "2XU": {
+      "full_name": "2XU Pty Ltd",
+      "sector": "Equipementier sport",
+      "country": "AU"
+    },
+    "Devon Energy": {
+      "full_name": "Devon Energy",
+      "sector": "Energie/Petrole",
+      "country": "US"
+    },
+    "Paycom": {
+      "full_name": "Paycom Software",
+      "sector": "Tech/SaaS",
+      "country": "US"
+    },
+    "OHSU Health": {
+      "full_name": "OHSU Health",
+      "sector": "Sante",
+      "country": "US"
+    },
+    "Allianz": {
+      "full_name": "Allianz SE",
+      "sector": "Assurance",
+      "country": "DE"
+    },
+    "Nordea Foundation": {
+      "full_name": "Nordea Foundation",
+      "sector": "Fondation/Mecenat",
+      "country": "DK"
+    },
+    "Yuengling": {
+      "full_name": "Yuengling Brewery",
+      "sector": "Boisson/Brasserie",
+      "country": "US"
+    },
+    "Toyota": {
+      "full_name": "Toyota Motor",
+      "sector": "Automobile",
+      "country": "JP"
+    },
+    "Applied Materials": {
+      "full_name": "Applied Materials",
+      "sector": "Tech/Electronique",
+      "country": "US"
+    },
+    "Juice Plus+": {
+      "full_name": "Juice Plus+ (NSA)",
+      "sector": "Nutrition sport",
+      "country": "US"
+    },
+    "Transurban": {
+      "full_name": "Transurban Group",
+      "sector": "Transport",
+      "country": "AU"
+    },
+    "Ukrop's": {
+      "full_name": "Ukrop's Homestyle Foods",
+      "sector": "Alimentaire",
+      "country": "US"
+    },
+    "Kroger": {
+      "full_name": "The Kroger Co.",
+      "sector": "Grande distribution",
+      "country": "US"
+    },
+    "Herbaland": {
+      "full_name": "Herbaland Naturals",
+      "sector": "Nutrition sport",
+      "country": "CA"
+    },
+    "Baylor Scott & White": {
+      "full_name": "Baylor Scott & White Health",
+      "sector": "Sante",
+      "country": "US"
     }
   },
   "partnerships": [
@@ -4914,6 +5084,646 @@
       "years": [
         2023,
         2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "21K de Montréal",
+      "brand": "Beneva",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Army Ten Miler",
+      "brand": "AUSA",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Austin Marathon",
+      "brand": "Ascension Seton",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Baltimore Running Festival",
+      "brand": "Under Armour",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Boilermaker Road Race",
+      "brand": "Excellus BCBS",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Broad Street Run",
+      "brand": "Independence Blue Cross",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Broløbet - The Bridge Run",
+      "brand": "Boozt",
+      "type": "title",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "event": "Burj2Burj Half Marathon",
+      "brand": "Emirates NBD",
+      "type": "title",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "California International Marathon",
+      "brand": "Sutter Health",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "California International Marathon",
+      "brand": "ASICS",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Columbus Marathon",
+      "brand": "Nationwide",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Cooper River Bridge Run",
+      "brand": "Publix",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Cowtown Marathon",
+      "brand": "Baylor Scott & White",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Crescent City Classic",
+      "brand": "LCMC Health",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Crescent City Classic",
+      "brand": "Michelob Ultra",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Detroit Marathon",
+      "brand": "Detroit Free Press",
+      "type": "title",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Eugene Marathon",
+      "brand": "OCCU",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Eugene Marathon",
+      "brand": "Nike",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Falmouth Road Race",
+      "brand": "ASICS",
+      "type": "title",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Fargo Marathon",
+      "brand": "Essentia Health",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Flying Pig Marathon",
+      "brand": "Prysmian",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "brand": "Publix",
+      "type": "title",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Gate River Run",
+      "brand": "Gate Petroleum",
+      "type": "title",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Gate River Run",
+      "brand": "Brooks",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Grandma's Marathon",
+      "brand": "Coca-Cola",
+      "type": "title",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Grandma's Marathon",
+      "brand": "ASICS",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Grandma's Marathon",
+      "brand": "Toyota",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Hoag OC Marathon",
+      "brand": "Hoag",
+      "type": "title",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Indianapolis Monumental Marathon",
+      "brand": "CNO Financial",
+      "type": "title",
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Indianapolis Monumental Marathon",
+      "brand": "Brooks",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Long Beach Marathon",
+      "brand": "2XU",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Manchester Half Marathon",
+      "brand": "Puma",
+      "type": "title",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Manchester Half Marathon",
+      "brand": "Runna",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Manchester Half Marathon",
+      "brand": "ERDINGER",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Miami Marathon",
+      "brand": "Life Time",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Miami Marathon",
+      "brand": "Garmin",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Oklahoma City Memorial Marathon",
+      "brand": "Devon Energy",
+      "type": "title",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Oklahoma City Memorial Marathon",
+      "brand": "Paycom",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Portland Marathon",
+      "brand": "OHSU Health",
+      "type": "title",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Portland Marathon",
+      "brand": "Nike",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Richmond Marathon",
+      "brand": "Allianz",
+      "type": "title",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Royal Parks Half Marathon",
+      "brand": "RBC",
+      "type": "title",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Royal Run",
+      "brand": "Nordea Foundation",
+      "type": "title",
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Shamrock Marathon",
+      "brand": "Yuengling",
+      "type": "title",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Shamrock Run Portland",
+      "brand": "Toyota",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Silicon Valley Turkey Trot",
+      "brand": "Applied Materials",
+      "type": "title",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "St. Jude Memphis Marathon",
+      "brand": "St. Jude",
+      "type": "title",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "St. Jude Memphis Marathon",
+      "brand": "Juice Plus+",
+      "type": "official",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Statesman Capitol 10K",
+      "brand": "Baylor Scott & White",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Transurban Bridge to Brisbane",
+      "brand": "Transurban",
+      "type": "title",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Ukrop's Monument Avenue 10K",
+      "brand": "Ukrop's",
+      "type": "title",
+      "years": [
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Ukrop's Monument Avenue 10K",
+      "brand": "Kroger",
+      "type": "official",
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Vancouver Sun Run",
+      "brand": "Herbaland",
+      "type": "title",
+      "years": [
         2025,
         2026
       ]
