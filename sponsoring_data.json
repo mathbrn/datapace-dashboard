@@ -1164,6 +1164,51 @@
       "full_name": "Banque Populaire",
       "sector": "Banque/Finance",
       "country": "FR"
+    },
+    "Cosmote": {
+      "full_name": "Cosmote (OTE Group)",
+      "sector": "Telecom",
+      "country": "GR"
+    },
+    "Piraeus Bank": {
+      "full_name": "Piraeus Bank S.A.",
+      "sector": "Banque/Finance",
+      "country": "GR"
+    },
+    "ERGO": {
+      "full_name": "ERGO Insurance (Munich Re)",
+      "sector": "Assurance",
+      "country": "DE"
+    },
+    "FAGE": {
+      "full_name": "FAGE International",
+      "sector": "Nutrition/Alimentaire",
+      "country": "GR"
+    },
+    "Aegean": {
+      "full_name": "Aegean Airlines",
+      "sector": "Aviation/Transport",
+      "country": "GR"
+    },
+    "Dacia": {
+      "full_name": "Dacia (Renault Group)",
+      "sector": "Automobile",
+      "country": "RO"
+    },
+    "Andros": {
+      "full_name": "Andros (Groupe Andros)",
+      "sector": "Nutrition/Alimentaire",
+      "country": "FR"
+    },
+    "Thule": {
+      "full_name": "Thule Group",
+      "sector": "Equipement sport/Recovery",
+      "country": "SE"
+    },
+    "Fleet Feet": {
+      "full_name": "Fleet Feet Inc.",
+      "sector": "Retail/Distribution sport",
+      "country": "US"
     }
   },
   "partnerships": [
@@ -6359,6 +6404,297 @@
       "event": "Marathon de Tours",
       "brand": "Ta Energy",
       "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Adidas 10K Paris",
+      "brand": "Biotherm",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Adidas 10K Paris",
+      "brand": "Compeed",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Adidas 10K Paris",
+      "brand": "Hyundai",
+      "type": "official",
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Adidas 10K Paris",
+      "brand": "Powerade",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Adidas 10K Paris",
+      "brand": "Andros",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Adidas 10K Paris",
+      "brand": "Thule",
+      "type": "partner",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Adidas 10K Paris",
+      "brand": "Baume du Tigre",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Adidas 10K Paris",
+      "brand": "Campus",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Adidas 10K Paris",
+      "brand": "Banane Guadeloupe",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Athens Marathon",
+      "brand": "Adidas",
+      "type": "official",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Athens Marathon",
+      "brand": "Garmin",
+      "type": "official",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Athens Marathon",
+      "brand": "Maurten",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Athens Marathon",
+      "brand": "Aegean",
+      "type": "official",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Athens Marathon",
+      "brand": "Dacia",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Athens Marathon",
+      "brand": "Cosmote",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Athens Marathon",
+      "brand": "Piraeus Bank",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Athens Marathon",
+      "brand": "ERGO",
+      "type": "official",
+      "years": [
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Athens Marathon",
+      "brand": "FAGE",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Athens Marathon",
+      "brand": "Powerade",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "BMW Dallas Marathon",
+      "brand": "ASICS",
+      "type": "official",
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "BMW Dallas Marathon",
+      "brand": "Gatorade",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "BMW Dallas Marathon",
+      "brand": "Fleet Feet",
+      "type": "partner",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Boilermaker Road Race",
+      "brand": "Chobani",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Boilermaker Road Race",
+      "brand": "Dick's Sporting Goods",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Broad Street Run",
+      "brand": "Ford",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Broad Street Run",
+      "brand": "Dunkin'",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Broad Street Run",
+      "brand": "Gatorade",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Broad Street Run",
+      "brand": "Dick's Sporting Goods",
+      "type": "partner",
       "years": [
         2025,
         2026
