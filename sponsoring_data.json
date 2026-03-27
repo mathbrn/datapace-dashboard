@@ -6032,15 +6032,6 @@
     },
     {
       "event": "10K Valencia Ibercaja by Kiprun",
-      "brand": "Coros",
-      "type": "official",
-      "years": [
-        2025,
-        2026
-      ]
-    },
-    {
-      "event": "10K Valencia Ibercaja by Kiprun",
       "brand": "226ERS",
       "type": "partner",
       "years": [
@@ -6131,15 +6122,6 @@
     },
     {
       "event": "Copenhagen Half Marathon",
-      "brand": "BMW",
-      "type": "official",
-      "years": [
-        2025,
-        2026
-      ]
-    },
-    {
-      "event": "Copenhagen Half Marathon",
       "brand": "High5",
       "type": "partner",
       "years": [
@@ -6186,7 +6168,7 @@
     {
       "event": "Detroit Marathon",
       "brand": "Kia",
-      "type": "official",
+      "type": "partner",
       "years": [
         2025,
         2026
@@ -6206,6 +6188,28 @@
       "brand": "Gatorade",
       "type": "partner",
       "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Valencia Marathon Trinidad Alfonso Zurich",
+      "brand": "Coros",
+      "type": "official",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Valencia Half Marathon Trinidad Alfonso Zurich",
+      "brand": "Coros",
+      "type": "official",
+      "years": [
+        2023,
+        2024,
         2025,
         2026
       ]
