@@ -375,5 +375,339 @@
     "categories": {},
     "error": null,
     "scraped_at": "2026-03-27 15:27:27"
+  },
+  {
+    "event": "Copenhagen Half Marathon",
+    "url": "https://cphhalf.dk/en/sponsors-partners/",
+    "partners": [
+      "åbner i et nyt vindue",
+      "High 5",
+      "BMW"
+    ],
+    "categories": {
+      "Meet our partners": [
+        "Løberen logo sort",
+        "Faxe Kondi Pro_logo",
+        "High 5",
+        "BMW",
+        "Meyer_logo",
+        "oliolilogo",
+        "Sport Event Denmark_logo"
+      ],
+      "Main partners": [
+        "Løberen logo sort",
+        "Faxe Kondi Pro_logo",
+        "High 5",
+        "BMW",
+        "Meyer_logo",
+        "oliolilogo",
+        "Sport Event Denmark_logo"
+      ],
+      "Co-partners": [
+        "Løberen logo sort",
+        "Faxe Kondi Pro_logo",
+        "High 5",
+        "BMW",
+        "Meyer_logo",
+        "oliolilogo",
+        "Sport Event Denmark_logo"
+      ],
+      "Event partners": [
+        "Løberen logo sort",
+        "Faxe Kondi Pro_logo",
+        "High 5",
+        "BMW",
+        "Meyer_logo",
+        "oliolilogo",
+        "Sport Event Denmark_logo"
+      ],
+      "Strategic partners": [
+        "Løberen logo sort",
+        "Faxe Kondi Pro_logo",
+        "High 5",
+        "BMW",
+        "Meyer_logo",
+        "oliolilogo",
+        "Sport Event Denmark_logo"
+      ]
+    },
+    "error": null,
+    "scraped_at": "2026-03-27 15:31:46"
+  },
+  {
+    "event": "Copenhagen Marathon",
+    "url": "https://copenhagenmarathon.dk/en/sponsors-partners/",
+    "partners": [
+      "åbner i et nyt vindue"
+    ],
+    "categories": {},
+    "error": null,
+    "scraped_at": "2026-03-27 15:31:52"
+  },
+  {
+    "event": "Credit Union Cherry Blossom",
+    "url": "https://www.cherryblossom.org/about/partners/sponsors/",
+    "partners": [
+      "Credit Union Cherry Blossom 10 Mile Run & 5K Walk/Run",
+      "cumd_24_bl",
+      "asics_bl",
+      "wegmans_bl",
+      "gatorade_b",
+      "Outside+ bl",
+      "prr_bl",
+      "shokz_bl",
+      "sub_sol_b",
+      "trustage_bl.",
+      "united_lifestyle",
+      "velera_bl",
+      "visa_bl",
+      "Credit Union Cherry Blossom"
+    ],
+    "categories": {},
+    "error": null,
+    "scraped_at": "2026-03-27 15:31:59"
+  },
+  {
+    "event": "Crescent City Classic",
+    "url": "https://ccc10k.com/sponsors/",
+    "partners": [
+      "CCC10K",
+      "LCMC Health",
+      "Michelob Ultra - Superior Light Beer",
+      "Egenberg Trial Lawyers",
+      "Hancock Whitney",
+      "Communit Coffee",
+      "Entergy",
+      "Hyundai",
+      "Brooks",
+      "Raising Cane's - Chick Fingers",
+      "Fit Fête New Orleans",
+      "Gatorade",
+      "Kentwood Springs",
+      "Hyatt Regency - New Orleans",
+      "Fox 8 - Local First",
+      "Brand Society",
+      "Outfront Media",
+      "B97 FM - All the hits.",
+      "magic 101.9 - Better Music for a Better Workday",
+      "BAYOU 95.7 - The Rock of New Orleans",
+      "WWL AM 870 FM 105.3 - NEWS•TALK•SPORTS",
+      "THE BET 92.9 FM / 1350 AM",
+      "Time Times-Picayune | nola.com",
+      "PELPRINT.com - Local printing for less",
+      "MarathonFoto.com",
+      "Jimmy John's - Gourmet Sandwiches Since 1983",
+      "Grayson Data Services",
+      "Moreau Physical Therapy",
+      "bSHARP - EVENTS#PRODUCTION#ENTERTAINMENT",
+      "Frito Lay - Good fun!"
+    ],
+    "categories": {
+      "Title Sponsor": [
+        "LCMC Health"
+      ],
+      "Presenting Sponsor": [
+        "Michelob Ultra - Superior Light Beer"
+      ],
+      "Classic Sponsors": [
+        "Egenberg Trial Lawyers",
+        "Hancock Whitney",
+        "Communit Coffee",
+        "Entergy",
+        "Hyundai",
+        "Brooks",
+        "Raising Cane's - Chick Fingers",
+        "Fit Fête New Orleans",
+        "Gatorade",
+        "Blue Runner",
+        "Kentwood Springs",
+        "Hyatt Regency - New Orleans"
+      ],
+      "Media Partners": [
+        "Fox 8 - Local First",
+        "Brand Society",
+        "Outfront Media",
+        "B97 FM - All the hits.",
+        "magic 101.9 - Better Music for a Better Workday",
+        "BAYOU 95.7 - The Rock of New Orleans",
+        "WWL AM 870 FM 105.3 - NEWS•TALK•SPORTS",
+        "THE BET 92.9 FM / 1350 AM",
+        "Time Times-Picayune | nola.com"
+      ],
+      "Classic Contributors and Partners": [
+        "PELPRINT.com - Local printing for less",
+        "MarathonFoto.com",
+        "Jimmy John's - Gourmet Sandwiches Since 1983",
+        "Grayson Data Services",
+        "Moreau Physical Therapy",
+        "bSHARP - EVENTS#PRODUCTION#ENTERTAINMENT",
+        "Frito Lay - Good fun!"
+      ]
+    },
+    "error": null,
+    "scraped_at": "2026-03-27 15:32:06"
+  },
+  {
+    "event": "Dam tot Damloop",
+    "url": "https://www.nndamloop.nl/sponsors",
+    "partners": [
+      "English",
+      "Le Champion"
+    ],
+    "categories": {},
+    "error": null,
+    "scraped_at": "2026-03-27 15:32:13"
+  },
+  {
+    "event": "Denver Colfax Marathon",
+    "url": "https://www.runcolfax.org/companies/our-sponsors-2/",
+    "partners": [
+      "Revisit consent button"
+    ],
+    "categories": {},
+    "error": null,
+    "scraped_at": "2026-03-27 15:32:19"
+  },
+  {
+    "event": "Detroit Marathon",
+    "url": "https://www.freepmarathon.com/sponsors/",
+    "partners": [
+      "Revisit consent button",
+      "Detroit Free Press",
+      "MSUFCU",
+      "Kia",
+      "Brooks Running",
+      "Gatorade Endurance",
+      "Running Lab",
+      "Priority Health",
+      "Meijer",
+      "Impossible",
+      "What Is POP",
+      "Milk Means More",
+      "Absopure",
+      "Downtown Detroit Partnership",
+      "Coopah",
+      "Athletico",
+      "Detroit Sports Commission",
+      "Sneakers 4 Good",
+      "Detroit Windsor Tunnel",
+      "Subscribe to the Detroit Free Press",
+      "Best of the US 2025 badge_MI_RR",
+      "10Best2025_DetroitFPMarathon",
+      "WANDA-World-Qualifier-Black",
+      "Verified by MonsterInsights"
+    ],
+    "categories": {
+      "We value your privacy\n\nWe use cookies to enhance your browsing experience, serve personalised ads or content, and analyse our traffic. By clicking \"Accept All\", you consent to our use of cookies.\n\nCustomise\nReject All\nAccept All\nSkip to content\nSearch for:\n\nOCT. 16-18, 2026\n\nWEEKEND EVENTS\nMUST-KNOW INFO\nTRAINING\nEXPO\nSponsors\nHome » Sponsors\n\nRace Preparation\n\nHotel Registration\nCourse Maps\nOfficial Gear\nTraining\nBorder Admissibility Information\nSafety First\nAnti-Doping Policy\n\nMore Events\n\nHealth & Fitness Expo\nKia Conquered Afterparty\nSaturday Family Fun Day\n\nGet Involved\n\nVolunteer\nCharity Fundraising\nSponsors\n\nMore Info\n\nAbout Us\nMedia\nContact Us\nOfficial Photos\nRace Results\nElite Athletes Info\nAwards\nStaff\n\n© Copyright 2021 - 2026 | Detroit Free Press Marathon\n\nTerms of Service\n\nGo to Top": [
+        "Revisit consent button",
+        "Close",
+        "Detroit Free Press",
+        "MSUFCU",
+        "Kia",
+        "Brooks Running",
+        "Gatorade Endurance",
+        "Running Lab",
+        "Priority Health",
+        "Meijer",
+        "Impossible",
+        "What Is POP",
+        "Milk Means More",
+        "Absopure",
+        "Absopure",
+        "Absopure",
+        "Absopure",
+        "Downtown Detroit Partnership",
+        "Coopah",
+        "Coopah",
+        "Coopah",
+        "Race Maps",
+        "Athletico",
+        "Race Maps",
+        "Detroit Sports Commission",
+        "Sneakers 4 Good",
+        "Detroit Windsor Tunnel",
+        "Detroit Free Press",
+        "MSUFCU",
+        "Kia",
+        "Brooks Running",
+        "Gatorade Endurance",
+        "Running Lab",
+        "Priority Health",
+        "Meijer",
+        "Impossible",
+        "What Is POP",
+        "Milk Means More",
+        "Absopure",
+        "Absopure",
+        "Absopure",
+        "Absopure",
+        "Downtown Detroit Partnership",
+        "Coopah",
+        "Coopah",
+        "Coopah",
+        "Race Maps",
+        "Athletico",
+        "Race Maps",
+        "Detroit Sports Commission",
+        "Sneakers 4 Good",
+        "Detroit Windsor Tunnel",
+        "Detroit Free Press",
+        "MSUFCU",
+        "Kia",
+        "Brooks Running",
+        "Gatorade Endurance",
+        "Running Lab",
+        "Priority Health",
+        "Meijer",
+        "Impossible",
+        "What Is POP",
+        "Milk Means More",
+        "Absopure",
+        "Absopure",
+        "Absopure",
+        "Absopure",
+        "Downtown Detroit Partnership",
+        "Coopah",
+        "Coopah",
+        "Coopah",
+        "Race Maps",
+        "Athletico",
+        "Race Maps",
+        "Detroit Sports Commission",
+        "Sneakers 4 Good",
+        "Detroit Windsor Tunnel",
+        "Subscribe to the Detroit Free Press",
+        "Subscribe to the Detroit Free Press",
+        "Verified by MonsterInsights"
+      ]
+    },
+    "error": null,
+    "scraped_at": "2026-03-27 15:32:26"
+  },
+  {
+    "event": "Dick's Pittsburgh Marathon",
+    "url": "https://www.thepittsburghmarathon.com/sponsors",
+    "partners": [
+      "banana peel"
+    ],
+    "categories": {},
+    "error": null,
+    "scraped_at": "2026-03-27 15:32:34"
+  },
+  {
+    "event": "EDP Lisboa Meia Maratona",
+    "url": "https://maratonaclubedeportugal.com/en/partners-edp-meia-maratona-de-lisboa/",
+    "partners": [],
+    "categories": {},
+    "error": null,
+    "scraped_at": "2026-03-27 15:32:40"
+  },
+  {
+    "event": "EDP Maratona de Lisboa",
+    "url": "https://maratonaclubedeportugal.com/en/partners-edp-maratona-de-lisboa/",
+    "partners": [],
+    "categories": {},
+    "error": null,
+    "scraped_at": "2026-03-27 15:32:47"
   }
 ]

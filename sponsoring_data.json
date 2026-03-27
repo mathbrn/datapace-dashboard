@@ -1139,6 +1139,16 @@
       "full_name": "Mitchum (Revlon)",
       "sector": "Hygiene/Cosmetique",
       "country": "US"
+    },
+    "High5": {
+      "full_name": "High5 Sports Nutrition",
+      "sector": "Nutrition sport",
+      "country": "GB"
+    },
+    "Wegmans": {
+      "full_name": "Wegmans Food Markets",
+      "sector": "Grande distribution",
+      "country": "US"
     }
   },
   "partnerships": [
@@ -6114,6 +6124,87 @@
       "event": "Marathon de Tours",
       "brand": "Hyundai",
       "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Copenhagen Half Marathon",
+      "brand": "BMW",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Copenhagen Half Marathon",
+      "brand": "High5",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Credit Union Cherry Blossom",
+      "brand": "Shokz",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Credit Union Cherry Blossom",
+      "brand": "Gatorade",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Crescent City Classic",
+      "brand": "Hyundai",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Crescent City Classic",
+      "brand": "Brooks",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Detroit Marathon",
+      "brand": "Kia",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Detroit Marathon",
+      "brand": "Brooks",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Detroit Marathon",
+      "brand": "Gatorade",
+      "type": "partner",
       "years": [
         2025,
         2026
