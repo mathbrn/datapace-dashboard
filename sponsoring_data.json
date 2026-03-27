@@ -37,7 +37,7 @@
     },
     "NN": {
       "full_name": "NN Group",
-      "sector": "Assurance/Finance",
+      "sector": "Assurance",
       "country": "NL"
     },
     "EDP": {
@@ -82,12 +82,12 @@
     },
     "Zurich": {
       "full_name": "Zurich Insurance Group",
-      "sector": "Assurance/Finance",
+      "sector": "Assurance",
       "country": "CH"
     },
     "Generali": {
       "full_name": "Generali Group",
-      "sector": "Assurance/Finance",
+      "sector": "Assurance",
       "country": "IT"
     },
     "Cancer Research UK": {
@@ -102,7 +102,7 @@
     },
     "AG2R": {
       "full_name": "AG2R La Mondiale",
-      "sector": "Assurance/Finance",
+      "sector": "Assurance",
       "country": "FR"
     },
     "Blackmores": {
@@ -112,7 +112,7 @@
     },
     "Sanlam": {
       "full_name": "Sanlam Limited",
-      "sector": "Assurance/Finance",
+      "sector": "Assurance",
       "country": "ZA"
     },
     "TAG Heuer": {
@@ -142,7 +142,7 @@
     },
     "Harmonie Mutuelle": {
       "full_name": "Harmonie Mutuelle (VYV)",
-      "sector": "Assurance/Mutuelle",
+      "sector": "Assurance",
       "country": "FR"
     },
     "Tokyo Metro": {
@@ -222,7 +222,7 @@
     },
     "John Hancock": {
       "full_name": "John Hancock Financial",
-      "sector": "Assurance/Finance",
+      "sector": "Assurance",
       "country": "US"
     },
     "Gatorade": {
@@ -552,7 +552,7 @@
     },
     "Bupa": {
       "full_name": "Bupa Group",
-      "sector": "Assurance/Sante",
+      "sector": "Assurance",
       "country": "GB"
     },
     "ECOTIC": {
@@ -607,7 +607,7 @@
     },
     "Dai-ichi Life": {
       "full_name": "Dai-ichi Life Holdings",
-      "sector": "Assurance/Finance",
+      "sector": "Assurance",
       "country": "JP"
     },
     "Kao": {
@@ -697,7 +697,7 @@
     },
     "Tawuniya": {
       "full_name": "Tawuniya Insurance",
-      "sector": "Assurance/Finance",
+      "sector": "Assurance",
       "country": "SA"
     },
     "Porvenir": {
@@ -762,7 +762,7 @@
     },
     "Wiener Stadtische": {
       "full_name": "Wiener Stadtische Versicherung",
-      "sector": "Assurance/Finance",
+      "sector": "Assurance",
       "country": "AT"
     },
     "N Kolay": {
@@ -777,12 +777,12 @@
     },
     "Irish Life": {
       "full_name": "Irish Life Group",
-      "sector": "Assurance/Finance",
+      "sector": "Assurance",
       "country": "IE"
     },
     "Vitality": {
       "full_name": "Vitality Group",
-      "sector": "Assurance/Sante",
+      "sector": "Assurance",
       "country": "GB"
     },
     "Oysho": {
@@ -832,7 +832,7 @@
     },
     "Delta Dental": {
       "full_name": "Delta Dental",
-      "sector": "Assurance/Sante",
+      "sector": "Assurance",
       "country": "US"
     },
     "JAL": {
@@ -852,12 +852,12 @@
     },
     "GEICO": {
       "full_name": "GEICO (Berkshire Hathaway)",
-      "sector": "Assurance/Finance",
+      "sector": "Assurance",
       "country": "US"
     },
     "State Farm": {
       "full_name": "State Farm Insurance",
-      "sector": "Assurance/Finance",
+      "sector": "Assurance",
       "country": "US"
     },
     "CORKCICLE": {
@@ -867,7 +867,7 @@
     },
     "Cigna": {
       "full_name": "Cigna Healthcare",
-      "sector": "Assurance/Sante",
+      "sector": "Assurance",
       "country": "US"
     },
     "Skechers": {
