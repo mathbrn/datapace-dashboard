@@ -1857,8 +1857,7 @@ def main():
     print("\nDataPace Dashboard Generator")
     print("-" * 40)
 
-    # Force Excel source — SQLite migration has multi-distance bugs
-    use_db = False
+    use_db = _DB_PATH.exists() and _DB_PATH.stat().st_size > 0
 
     if use_db:
         print(f"Source : SQLite ({_DB_PATH.name})")
