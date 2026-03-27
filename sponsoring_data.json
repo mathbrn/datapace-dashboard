@@ -4132,6 +4132,63 @@
         2025,
         2026
       ]
+    },
+    {
+      "event": "Marseille-Cassis AG2R La Mondiale",
+      "brand": "AG2R",
+      "type": "title",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "10K Montmartre",
+      "brand": "AG2R",
+      "type": "title",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "HOKA Semi de Paris",
+      "brand": "AG2R",
+      "type": "official",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Harmonie Mutuelle 20km de Paris",
+      "brand": "Harmonie Mutuelle",
+      "type": "title",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Harmonie Mutuelle Marathon 10-20K Tours",
+      "brand": "Harmonie Mutuelle",
+      "type": "title",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Abalone Marathon de Nantes",
+      "brand": "Harmonie Mutuelle",
+      "type": "official",
+      "years": [
+        2026
+      ]
     }
   ]
 }
