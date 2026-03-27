@@ -799,25 +799,30 @@ document.addEventListener('keydown',function(e){
 var spChartBrands=null,spChartSectors=null,spChartEquip=null,spChartTypes=null;
 var _spPeriod='2026';
 function getExposure(eventName,years){
-  var ev=RAW.find(function(r){return r.r===eventName;});
-  if(!ev||!ev.hist)return 0;
+  // Find ALL distances for this event (same name, different dist)
+  var evs=RAW.filter(function(r){return r.r===eventName;});
+  if(!evs.length)return 0;
   var now=new Date().getFullYear();
   var minYr=_spPeriod==='5'?now-4:_spPeriod==='3'?now-2:parseInt(_spPeriod)||now;
   var maxYr=_spPeriod==='5'||_spPeriod==='3'?now:minYr;
   var total=0;
   (years||[]).forEach(function(y){
     if(y>=minYr&&y<=maxYr){
-      var v=ev.hist[y];
-      if(v&&v>0){total+=v;}
-      else{
-        // Fallback: use the most recent known finisher count
-        var fallback=0;
-        for(var fy=y-1;fy>=y-5;fy--){
-          var fv=ev.hist[fy];
-          if(fv&&fv>0){fallback=fv;break;}
+      var yearTotal=0,hasFallback=false;
+      evs.forEach(function(ev){
+        if(!ev.hist)return;
+        var v=ev.hist[y];
+        if(v&&v>0){yearTotal+=v;}
+        else{
+          var fallback=0;
+          for(var fy=y-1;fy>=y-5;fy--){
+            var fv=ev.hist[fy];
+            if(fv&&fv>0){fallback=fv;break;}
+          }
+          if(fallback>0){yearTotal+=fallback;hasFallback=true;}
         }
-        if(fallback>0)total+=fallback;
-      }
+      });
+      total+=yearTotal;
     }
   });
   return total;
