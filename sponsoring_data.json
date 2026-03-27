@@ -1124,6 +1124,21 @@
       "full_name": "Garnier (L'Oreal)",
       "sector": "Hygiene/Cosmetique",
       "country": "FR"
+    },
+    "Coros": {
+      "full_name": "COROS Wearables",
+      "sector": "Tech/Wearables",
+      "country": "US"
+    },
+    "226ERS": {
+      "full_name": "226ERS Nutrition",
+      "sector": "Nutrition sport",
+      "country": "ES"
+    },
+    "Mitchum": {
+      "full_name": "Mitchum (Revlon)",
+      "sector": "Hygiene/Cosmetique",
+      "country": "US"
     }
   },
   "partnerships": [
@@ -5982,6 +5997,123 @@
       "event": "Schneider Electric Marathon de Paris",
       "brand": "Garnier",
       "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "10K Valencia Ibercaja by Kiprun",
+      "brand": "Coca-Cola",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "10K Valencia Ibercaja by Kiprun",
+      "brand": "Hyundai",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "10K Valencia Ibercaja by Kiprun",
+      "brand": "Coros",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "10K Valencia Ibercaja by Kiprun",
+      "brand": "226ERS",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "AJ Bell Great North Run",
+      "brand": "Mitchum",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "AJ Bell Great Manchester Run",
+      "brand": "Mitchum",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "AJ Bell Great South Run",
+      "brand": "Mitchum",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "AJ Bell Great Birmingham Run",
+      "brand": "Mitchum",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "AJ Bell Great Bristol Run",
+      "brand": "Mitchum",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Great Scottish Run",
+      "brand": "Mitchum",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "20km de Tours",
+      "brand": "Hyundai",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Harmonie Mutuelle Marathon 10-20K Tours",
+      "brand": "Hyundai",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Marathon de Tours",
+      "brand": "Hyundai",
+      "type": "official",
       "years": [
         2025,
         2026
