@@ -1149,6 +1149,21 @@
       "full_name": "Wegmans Food Markets",
       "sector": "Grande distribution",
       "country": "US"
+    },
+    "Kiloutou": {
+      "full_name": "Kiloutou SAS",
+      "sector": "Location/Services",
+      "country": "FR"
+    },
+    "Decathlon": {
+      "full_name": "Decathlon S.A.",
+      "sector": "Retail/Distribution sport",
+      "country": "FR"
+    },
+    "Banque Populaire": {
+      "full_name": "Banque Populaire",
+      "sector": "Banque/Finance",
+      "country": "FR"
     }
   },
   "partnerships": [
@@ -6210,6 +6225,141 @@
       "years": [
         2023,
         2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "20km de Tours",
+      "brand": "Decathlon",
+      "type": "major",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "20km de Tours",
+      "brand": "Banque Populaire",
+      "type": "major",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "20km de Tours",
+      "brand": "Kiloutou",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "20km de Tours",
+      "brand": "Campus",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "20km de Tours",
+      "brand": "Ta Energy",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Harmonie Mutuelle Marathon 10-20K Tours",
+      "brand": "Decathlon",
+      "type": "major",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Harmonie Mutuelle Marathon 10-20K Tours",
+      "brand": "Banque Populaire",
+      "type": "major",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Harmonie Mutuelle Marathon 10-20K Tours",
+      "brand": "Kiloutou",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Harmonie Mutuelle Marathon 10-20K Tours",
+      "brand": "Campus",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Harmonie Mutuelle Marathon 10-20K Tours",
+      "brand": "Ta Energy",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Marathon de Tours",
+      "brand": "Decathlon",
+      "type": "major",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Marathon de Tours",
+      "brand": "Banque Populaire",
+      "type": "major",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Marathon de Tours",
+      "brand": "Kiloutou",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Marathon de Tours",
+      "brand": "Campus",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Marathon de Tours",
+      "brand": "Ta Energy",
+      "type": "official",
+      "years": [
         2025,
         2026
       ]
