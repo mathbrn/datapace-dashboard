@@ -830,7 +830,13 @@ function getExposure(eventName,years){
 var _spBS={},_spActiveSector='ALL',_spActiveBrand=null,_spPillSectors=[];
 function spBuildData(){
   _spBS={};
+  var now=new Date().getFullYear();
+  var pMinYr=_spPeriod==='5'?now-4:_spPeriod==='3'?now-2:parseInt(_spPeriod)||now;
+  var pMaxYr=_spPeriod==='5'||_spPeriod==='3'?now:pMinYr;
   SP_PARTNERSHIPS.forEach(function(p){
+    // Only include partnerships active in the selected period
+    var active=(p.years||[]).some(function(y){return y>=pMinYr&&y<=pMaxYr;});
+    if(!active)return;
     if(!_spBS[p.brand])_spBS[p.brand]={events:[],exposure:0,types:[],sector:(SP_BRANDS[p.brand]||{}).sector||'Autre',partnerships:[]};
     var exp=getExposure(p.event,p.years||[]);
     var evKey=p.event;
