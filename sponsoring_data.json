@@ -47,7 +47,7 @@
     },
     "Abbott": {
       "full_name": "Abbott Laboratories",
-      "sector": "Sante/Pharma",
+      "sector": "Sante",
       "country": "US"
     },
     "Nike": {
@@ -92,7 +92,7 @@
     },
     "Cancer Research UK": {
       "full_name": "Cancer Research UK",
-      "sector": "Caritatif/Sante",
+      "sector": "Sante",
       "country": "GB"
     },
     "Mainova": {
@@ -107,7 +107,7 @@
     },
     "Blackmores": {
       "full_name": "Blackmores Limited",
-      "sector": "Sante/Nutrition",
+      "sector": "Sante",
       "country": "AU"
     },
     "Sanlam": {
@@ -332,7 +332,7 @@
     },
     "Voltarol": {
       "full_name": "Voltarol/Voltaren (GSK)",
-      "sector": "Sante/Pharma",
+      "sector": "Sante",
       "country": "GB"
     },
     "HubSpot": {
@@ -357,12 +357,12 @@
     },
     "Biofreeze": {
       "full_name": "Biofreeze (Reckitt)",
-      "sector": "Sante/Recovery",
+      "sector": "Sante",
       "country": "US"
     },
     "Athletico": {
       "full_name": "Athletico Physical Therapy",
-      "sector": "Sante/Physiotherapie",
+      "sector": "Sante",
       "country": "US"
     },
     "CITGO": {
@@ -407,7 +407,7 @@
     },
     "Otsuka Pharmaceutical": {
       "full_name": "Otsuka Pharmaceutical",
-      "sector": "Pharma/Nutrition",
+      "sector": "Sante",
       "country": "JP"
     },
     "Mizuho Bank": {
@@ -417,7 +417,7 @@
     },
     "Hisamitsu": {
       "full_name": "Hisamitsu Pharmaceutical",
-      "sector": "Sante/Pharma",
+      "sector": "Sante",
       "country": "JP"
     },
     "Luanvi": {
@@ -487,7 +487,7 @@
     },
     "Solgar": {
       "full_name": "Solgar (Nestle Health)",
-      "sector": "Sante/Supplements",
+      "sector": "Sante",
       "country": "US"
     },
     "Aqua Pura": {
@@ -642,7 +642,7 @@
     },
     "COMPEED": {
       "full_name": "COMPEED (HRA Pharma)",
-      "sector": "Sante/Pharma",
+      "sector": "Sante",
       "country": "FR"
     },
     "Ekosport": {
@@ -827,7 +827,7 @@
     },
     "IU Health": {
       "full_name": "Indiana University Health",
-      "sector": "Sante/Hopital",
+      "sector": "Sante",
       "country": "US"
     },
     "Delta Dental": {
@@ -842,7 +842,7 @@
     },
     "St. Jude": {
       "full_name": "St. Jude Children's Research Hospital",
-      "sector": "Sante/Hopital",
+      "sector": "Sante",
       "country": "US"
     },
     "CELSIUS": {
@@ -882,7 +882,7 @@
     },
     "Northside Hospital": {
       "full_name": "Northside Hospital",
-      "sector": "Sante/Hopital",
+      "sector": "Sante",
       "country": "US"
     },
     "eDreams": {
