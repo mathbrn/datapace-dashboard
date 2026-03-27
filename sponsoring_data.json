@@ -1209,6 +1209,61 @@
       "full_name": "Fleet Feet Inc.",
       "sector": "Retail/Distribution sport",
       "country": "US"
+    },
+    "Principality Building Society": {
+      "full_name": "Principality Building Society",
+      "sector": "Banque/Finance",
+      "country": "GB"
+    },
+    "Voltaren": {
+      "full_name": "Voltaren (Haleon)",
+      "sector": "Santé",
+      "country": "CH"
+    },
+    "Rebel": {
+      "full_name": "Rebel Sport",
+      "sector": "Distribution sport",
+      "country": "AU"
+    },
+    "Coelmo": {
+      "full_name": "Coelmo S.p.A.",
+      "sector": "Industrie/Energie",
+      "country": "IT"
+    },
+    "Harris Teeter": {
+      "full_name": "Harris Teeter (Kroger)",
+      "sector": "Distribution",
+      "country": "US"
+    },
+    "Gildan": {
+      "full_name": "Gildan Activewear",
+      "sector": "Textile",
+      "country": "CA"
+    },
+    "Bett1.de": {
+      "full_name": "bett1.de GmbH",
+      "sector": "Distribution",
+      "country": "DE"
+    },
+    "Erdinger Alkoholfrei": {
+      "full_name": "Erdinger Weißbräu",
+      "sector": "Boisson",
+      "country": "DE"
+    },
+    "Höffner": {
+      "full_name": "Höffner Möbelgesellschaft",
+      "sector": "Distribution",
+      "country": "DE"
+    },
+    "Renault": {
+      "full_name": "Renault Group",
+      "sector": "Automobile",
+      "country": "FR"
+    },
+    "GWM": {
+      "full_name": "Great Wall Motors",
+      "sector": "Automobile",
+      "country": "CN"
     }
   },
   "partnerships": [
@@ -5068,15 +5123,6 @@
       ]
     },
     {
-      "event": "Coelmo Napoli City Half Marathon",
-      "brand": "Generali",
-      "type": "official",
-      "years": [
-        2025,
-        2026
-      ]
-    },
-    {
       "event": "Vitality London 10,000",
       "brand": "Vitality",
       "type": "title",
@@ -5326,15 +5372,6 @@
       ]
     },
     {
-      "event": "Cooper River Bridge Run",
-      "brand": "Publix",
-      "type": "title",
-      "years": [
-        2025,
-        2026
-      ]
-    },
-    {
       "event": "Cowtown Marathon",
       "brand": "Baylor Scott & White",
       "type": "title",
@@ -5387,15 +5424,9 @@
       "brand": "OCCU",
       "type": "title",
       "years": [
-        2025,
-        2026
-      ]
-    },
-    {
-      "event": "Eugene Marathon",
-      "brand": "Nike",
-      "type": "official",
-      "years": [
+        2022,
+        2023,
+        2024,
         2025,
         2026
       ]
@@ -5418,6 +5449,9 @@
       "brand": "Essentia Health",
       "type": "title",
       "years": [
+        2022,
+        2023,
+        2024,
         2025,
         2026
       ]
@@ -5438,6 +5472,11 @@
       "brand": "Publix",
       "type": "title",
       "years": [
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
         2005,
         2006,
         2007,
@@ -6694,6 +6733,191 @@
     {
       "event": "Broad Street Run",
       "brand": "Dick's Sporting Goods",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Cardiff Half Marathon",
+      "brand": "Principality Building Society",
+      "type": "title",
+      "years": [
+        2023,
+        2024
+      ]
+    },
+    {
+      "event": "City2Surf",
+      "brand": "Voltaren",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "City2Surf",
+      "brand": "Rebel",
+      "type": "major",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "City2Surf",
+      "brand": "GWM",
+      "type": "major",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Coelmo Napoli City Half Marathon",
+      "brand": "Coelmo",
+      "type": "title",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Cooper River Bridge Run",
+      "brand": "Harris Teeter",
+      "type": "title",
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Cooper River Bridge Run",
+      "brand": "Gildan",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Cooper River Bridge Run",
+      "brand": "Michelob Ultra",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Cooper River Bridge Run",
+      "brand": "Gatorade",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Cooper River Bridge Run",
+      "brand": "Coca-Cola",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Generali Berlin Half Marathon",
+      "brand": "Adidas",
+      "type": "premium",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Generali Berlin Half Marathon",
+      "brand": "Bett1.de",
+      "type": "premium",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Generali Berlin Half Marathon",
+      "brand": "Erdinger Alkoholfrei",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Generali Berlin Half Marathon",
+      "brand": "YoPRO",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Generali Berlin Half Marathon",
+      "brand": "Garmin",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Generali Berlin Half Marathon",
+      "brand": "Höffner",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Generali Berlin Half Marathon",
+      "brand": "Maurten",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Generali Berlin Half Marathon",
+      "brand": "Renault",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Generali Berlin Half Marathon",
+      "brand": "Peloton",
       "type": "partner",
       "years": [
         2025,
