@@ -912,7 +912,7 @@ function spFiltered(){
 function spFmt(n){return n>=1e6?(n/1e6).toFixed(1)+'M':n>=1e3?Math.round(n/1e3)+'k':String(n);}
 var _spBrandKeys=[];
 function spRenderList(){
-  var items=spFiltered();
+  var items=spFiltered().slice(0,50);
   _spBrandKeys=items.map(function(e){return e[0];});
   document.getElementById('sp-blist').innerHTML=items.map(function(e,i){
     var col=_spCols[e[1].sector]||'#9B6FFF';

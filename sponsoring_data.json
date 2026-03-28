@@ -1264,6 +1264,76 @@
       "full_name": "Great Wall Motors",
       "sector": "Automobile",
       "country": "CN"
+    },
+    "BAUHAUS": {
+      "full_name": "BAUHAUS Group",
+      "sector": "Distribution",
+      "country": "DE"
+    },
+    "Stadium": {
+      "full_name": "Stadium AB",
+      "sector": "Distribution sport",
+      "country": "SE"
+    },
+    "Polestar": {
+      "full_name": "Polestar Automotive",
+      "sector": "Automobile",
+      "country": "SE"
+    },
+    "Colgate": {
+      "full_name": "Colgate-Palmolive",
+      "sector": "Hygiène/Santé",
+      "country": "US"
+    },
+    "Hipro": {
+      "full_name": "HiPRO (Danone)",
+      "sector": "Alimentation",
+      "country": "FR"
+    },
+    "Ker Cadelac": {
+      "full_name": "Ker Cadélac",
+      "sector": "Alimentation",
+      "country": "FR"
+    },
+    "Lenor": {
+      "full_name": "Lenor (P&G)",
+      "sector": "Hygiène/Santé",
+      "country": "US"
+    },
+    "Barilla": {
+      "full_name": "Barilla Group",
+      "sector": "Alimentation",
+      "country": "IT"
+    },
+    "Alltricks": {
+      "full_name": "Alltricks (Decathlon Group)",
+      "sector": "Distribution sport",
+      "country": "FR"
+    },
+    "REWE": {
+      "full_name": "REWE Group",
+      "sector": "Distribution",
+      "country": "DE"
+    },
+    "Celsius": {
+      "full_name": "Celsius Holdings",
+      "sector": "Boisson",
+      "country": "US"
+    },
+    "Joyfuel": {
+      "full_name": "Joyfuel",
+      "sector": "Alimentation",
+      "country": "FR"
+    },
+    "RunMotion Coach": {
+      "full_name": "RunMotion Coach",
+      "sector": "Tech/IT",
+      "country": "FR"
+    },
+    "TA Energy": {
+      "full_name": "TA Energy",
+      "sector": "Alimentation",
+      "country": "FR"
     }
   },
   "partnerships": [
@@ -5154,6 +5224,7 @@
       "brand": "Hoka",
       "type": "title",
       "years": [
+        2024,
         2025,
         2026
       ]
@@ -6773,7 +6844,6 @@
       "brand": "GWM",
       "type": "major",
       "years": [
-        2025,
         2026
       ]
     },
@@ -6806,7 +6876,6 @@
       "brand": "Gildan",
       "type": "official",
       "years": [
-        2025,
         2026
       ]
     },
@@ -6815,7 +6884,6 @@
       "brand": "Michelob Ultra",
       "type": "official",
       "years": [
-        2025,
         2026
       ]
     },
@@ -6824,7 +6892,6 @@
       "brand": "Gatorade",
       "type": "official",
       "years": [
-        2025,
         2026
       ]
     },
@@ -6833,7 +6900,6 @@
       "brand": "Coca-Cola",
       "type": "official",
       "years": [
-        2025,
         2026
       ]
     },
@@ -6857,7 +6923,6 @@
       "brand": "Bett1.de",
       "type": "premium",
       "years": [
-        2025,
         2026
       ]
     },
@@ -6866,7 +6931,6 @@
       "brand": "Erdinger Alkoholfrei",
       "type": "official",
       "years": [
-        2025,
         2026
       ]
     },
@@ -6875,7 +6939,6 @@
       "brand": "YoPRO",
       "type": "official",
       "years": [
-        2025,
         2026
       ]
     },
@@ -6884,7 +6947,6 @@
       "brand": "Garmin",
       "type": "official",
       "years": [
-        2025,
         2026
       ]
     },
@@ -6893,7 +6955,6 @@
       "brand": "Höffner",
       "type": "official",
       "years": [
-        2025,
         2026
       ]
     },
@@ -6902,7 +6963,6 @@
       "brand": "Maurten",
       "type": "partner",
       "years": [
-        2025,
         2026
       ]
     },
@@ -6911,7 +6971,6 @@
       "brand": "Renault",
       "type": "partner",
       "years": [
-        2025,
         2026
       ]
     },
@@ -6920,7 +6979,195 @@
       "brand": "Peloton",
       "type": "partner",
       "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Göteborgsvarvet",
+      "brand": "BAUHAUS",
+      "type": "premium",
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024,
         2025,
+        2026
+      ]
+    },
+    {
+      "event": "Göteborgsvarvet",
+      "brand": "Stadium",
+      "type": "premium",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Göteborgsvarvet",
+      "brand": "ASICS",
+      "type": "premium",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Göteborgsvarvet",
+      "brand": "Polestar",
+      "type": "official",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "HOKA Semi de Paris",
+      "brand": "Colgate",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "HOKA Semi de Paris",
+      "brand": "Hipro",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "HOKA Semi de Paris",
+      "brand": "Hyundai",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "HOKA Semi de Paris",
+      "brand": "Ker Cadelac",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "HOKA Semi de Paris",
+      "brand": "Lenor",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "HOKA Semi de Paris",
+      "brand": "Orange",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "HOKA Semi de Paris",
+      "brand": "Barilla",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "HOKA Semi de Paris",
+      "brand": "Joyfuel",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "HOKA Semi de Paris",
+      "brand": "RunMotion Coach",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "HOKA Semi de Paris",
+      "brand": "TA Energy",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Harmonie Mutuelle 20km de Paris",
+      "brand": "Joma",
+      "type": "official",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Harmonie Mutuelle Toulouse Metropole Run Experience",
+      "brand": "Joma",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Harmonie Mutuelle Toulouse Metropole Run Experience",
+      "brand": "Alltricks",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Harmonie Mutuelle Toulouse Metropole Run Experience",
+      "brand": "Campus",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Haspa Marathon Hamburg",
+      "brand": "Erdinger Alkoholfrei",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Haspa Marathon Hamburg",
+      "brand": "REWE",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Hoka Runaway Sydney Half Marathon",
+      "brand": "Celsius",
+      "type": "official",
+      "years": [
         2026
       ]
     }
