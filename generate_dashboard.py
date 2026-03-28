@@ -1547,8 +1547,8 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 .sp-bdot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
 .sp-bname{flex:1;font-size:12px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .sp-bexp{font-size:11px;color:var(--text3);flex-shrink:0;}
-.sp-right{display:flex;flex-direction:column;gap:10px;overflow:hidden;}
-.sp-treemap{flex:1;position:relative;border-radius:10px;overflow:hidden;background:var(--bg2);border:.5px solid var(--border);min-height:200px;}
+.sp-right{display:flex;flex-direction:column;gap:10px;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:var(--border) transparent;}
+.sp-treemap{position:relative;border-radius:10px;overflow:hidden;background:var(--bg2);border:.5px solid var(--border);min-height:280px;height:calc(100vh - 420px);flex-shrink:0;}
 .sp-treemap-hint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text3);pointer-events:none;transition:opacity .3s;}
 .sp-detail{background:var(--bg2);border-radius:10px;padding:16px 20px;display:none;gap:20px;align-items:flex-start;flex-wrap:wrap;border:.5px solid var(--border);min-height:110px;flex-shrink:0;}
 .sp-detail-name{font-size:1.3rem;font-weight:700;margin-bottom:4px;}
