@@ -1010,6 +1010,7 @@ function spSelect(brandId){
   var col=_spCols[bs.sector]||'#9B6FFF';
   var tConf={
     title:{label:'Partenaire Titre',bg:col,text:'#fff'},
+    premium:{label:'Partenaire Premium',bg:col+'90',text:'#fff'},
     major:{label:'Partenaire Majeur',bg:col+'60',text:'#fff'},
     official:{label:'Partenaire Officiel',bg:col+'30',text:col},
     partner:{label:'Fournisseur Officiel',bg:'var(--bg3)',text:'var(--text2)'}
@@ -1018,14 +1019,14 @@ function spSelect(brandId){
   var now=new Date().getFullYear();
   var pMinYr=_spPeriod==='5'?now-4:_spPeriod==='3'?now-2:parseInt(_spPeriod)||now;
   var pMaxYr=_spPeriod==='5'||_spPeriod==='3'?now:pMinYr;
-  var byType={title:[],major:[],official:[],partner:[]};
+  var byType={title:[],premium:[],major:[],official:[],partner:[]};
   bs.partnerships.forEach(function(pp){
     var active=pp.years.some(function(y){return y>=pMinYr&&y<=pMaxYr;});
     if(active)(byType[pp.type]||byType.partner).push(pp);
   });
   var evHtml='';
   ['title','premium','major','official','partner'].forEach(function(t){
-    var items=byType[t];if(!items.length)return;
+    var items=byType[t]||[];if(!items.length)return;
     var tc=tConf[t];
     evHtml+='<div style="margin-bottom:8px">'
       +'<span style="display:inline-block;font-size:10px;padding:2px 8px;border-radius:3px;background:'+tc.bg+';color:'+tc.text+';font-weight:600;margin-bottom:4px">'+tc.label+'</span>'
