@@ -1609,6 +1609,51 @@
       "full_name": "100Plus (F&N)",
       "sector": "Boisson",
       "country": "SG"
+    },
+    "Subaru": {
+      "full_name": "Subaru Corporation",
+      "sector": "Automobile",
+      "country": "JP"
+    },
+    "Oasis": {
+      "full_name": "Oasis (Lassonde)",
+      "sector": "Boisson",
+      "country": "CA"
+    },
+    "Suunto": {
+      "full_name": "Suunto Oy (Amer Sports)",
+      "sector": "Tech/IT",
+      "country": "FI"
+    },
+    "Therabody": {
+      "full_name": "Therabody Inc.",
+      "sector": "Santé",
+      "country": "US"
+    },
+    "CaixaBank": {
+      "full_name": "CaixaBank S.A.",
+      "sector": "Banque/Finance",
+      "country": "ES"
+    },
+    "Midea": {
+      "full_name": "Midea Group",
+      "sector": "Tech/IT",
+      "country": "CN"
+    },
+    "Erste Bank": {
+      "full_name": "Erste Group Bank AG",
+      "sector": "Banque/Finance",
+      "country": "AT"
+    },
+    "Hervis": {
+      "full_name": "Hervis Sports (SPAR)",
+      "sector": "Distribution sport",
+      "country": "AT"
+    },
+    "Tchibo": {
+      "full_name": "Tchibo GmbH",
+      "sector": "Distribution",
+      "country": "DE"
     }
   },
   "partnerships": [
@@ -8367,6 +8412,391 @@
     {
       "event": "TCS Amsterdam Marathon",
       "brand": "Chiquita",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "TCS Toronto Waterfront Marathon",
+      "brand": "ASICS",
+      "type": "official",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "TCS Toronto Waterfront Marathon",
+      "brand": "Voltaren",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "TCS Toronto Waterfront Marathon",
+      "brand": "Subaru",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "TCS Toronto Waterfront Marathon",
+      "brand": "Shokz",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "TCS Toronto Waterfront Marathon",
+      "brand": "Athletic Brewing",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "TCS Toronto Waterfront Marathon",
+      "brand": "Oasis",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "The Big Half",
+      "brand": "New Balance",
+      "type": "official",
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "The Big Half",
+      "brand": "Lucozade",
+      "type": "official",
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "The Big Half",
+      "brand": "Buxton",
+      "type": "official",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "The Big Half",
+      "brand": "GetPRO",
+      "type": "partner",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "The Big Half",
+      "brand": "Suunto",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "The Big Half",
+      "brand": "Therabody",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "The Big Half",
+      "brand": "Coopah",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Tokyo Legacy Half Marathon",
+      "brand": "New Balance",
+      "type": "title",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Tokyo Legacy Half Marathon",
+      "brand": "Hisamitsu",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Tokyo Legacy Half Marathon",
+      "brand": "Otsuka Pharmaceutical",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Valencia Half Marathon Trinidad Alfonso Zurich",
+      "brand": "CaixaBank",
+      "type": "premium",
+      "years": [
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Valencia Half Marathon Trinidad Alfonso Zurich",
+      "brand": "Coca-Cola",
+      "type": "official",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Valencia Half Marathon Trinidad Alfonso Zurich",
+      "brand": "Enervit",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Valencia Half Marathon Trinidad Alfonso Zurich",
+      "brand": "Hyundai",
+      "type": "official",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Valencia Marathon Trinidad Alfonso Zurich",
+      "brand": "New Balance",
+      "type": "premium",
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Valencia Marathon Trinidad Alfonso Zurich",
+      "brand": "CaixaBank",
+      "type": "premium",
+      "years": [
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Valencia Marathon Trinidad Alfonso Zurich",
+      "brand": "Powerade",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Valencia Marathon Trinidad Alfonso Zurich",
+      "brand": "Movistar",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Valencia Marathon Trinidad Alfonso Zurich",
+      "brand": "Hyundai",
+      "type": "official",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Valencia Marathon Trinidad Alfonso Zurich",
+      "brand": "Enervit",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Valencia Marathon Trinidad Alfonso Zurich",
+      "brand": "Midea",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Vienna City Half Marathon",
+      "brand": "BMW",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Vienna City Half Marathon",
+      "brand": "Adidas",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Vienna City Half Marathon",
+      "brand": "Coca-Cola",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Vienna City Half Marathon",
+      "brand": "Powerade",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Vienna City Half Marathon",
+      "brand": "Erste Bank",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Vienna City Half Marathon",
+      "brand": "Hervis",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Vienna City Half Marathon",
+      "brand": "Tchibo",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Zurich Marató de Barcelona",
+      "brand": "Finisher",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Zurich Marató de Barcelona",
+      "brand": "i-run",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "United Airlines NYC Half",
+      "brand": "Maurten",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "United Airlines NYC Half",
+      "brand": "Shokz",
       "type": "partner",
       "years": [
         2026
