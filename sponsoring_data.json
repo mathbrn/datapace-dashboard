@@ -1404,6 +1404,91 @@
       "full_name": "Dexcom Inc.",
       "sector": "Santé",
       "country": "US"
+    },
+    "ISDIN": {
+      "full_name": "ISDIN S.A.",
+      "sector": "Santé",
+      "country": "ES"
+    },
+    "Petrobras": {
+      "full_name": "Petróleo Brasileiro S.A.",
+      "sector": "Energie",
+      "country": "BR"
+    },
+    "Plátano de Canarias": {
+      "full_name": "Plátano de Canarias (ASPROCAN)",
+      "sector": "Alimentation",
+      "country": "ES"
+    },
+    "Quirónsalud": {
+      "full_name": "Quirónsalud (Fresenius Helios)",
+      "sector": "Santé",
+      "country": "ES"
+    },
+    "Hyperice": {
+      "full_name": "Hyperice Inc.",
+      "sector": "Equipementier sport",
+      "country": "US"
+    },
+    "Delta": {
+      "full_name": "Delta Air Lines",
+      "sector": "Transport",
+      "country": "US"
+    },
+    "UniCredit": {
+      "full_name": "UniCredit S.p.A.",
+      "sector": "Banque/Finance",
+      "country": "IT"
+    },
+    "Fiat": {
+      "full_name": "Fiat (Stellantis)",
+      "sector": "Automobile",
+      "country": "IT"
+    },
+    "Festina": {
+      "full_name": "Festina Group",
+      "sector": "Horlogerie",
+      "country": "ES"
+    },
+    "JBL": {
+      "full_name": "JBL (Harman/Samsung)",
+      "sector": "Tech/IT",
+      "country": "US"
+    },
+    "Dole": {
+      "full_name": "Dole plc",
+      "sector": "Alimentation",
+      "country": "IE"
+    },
+    "Deloitte": {
+      "full_name": "Deloitte Touche Tohmatsu",
+      "sector": "Services",
+      "country": "GB"
+    },
+    "Yamaha Motor": {
+      "full_name": "Yamaha Motor Co.",
+      "sector": "Automobile",
+      "country": "JP"
+    },
+    "i-run": {
+      "full_name": "i-Run.fr",
+      "sector": "Distribution sport",
+      "country": "FR"
+    },
+    "Avis": {
+      "full_name": "Avis Budget Group",
+      "sector": "Services",
+      "country": "US"
+    },
+    "Snap Fitness": {
+      "full_name": "Snap Fitness (Lift Brands)",
+      "sector": "Services",
+      "country": "US"
+    },
+    "Dairy Farmers": {
+      "full_name": "Dairy Farmers (Saputo)",
+      "sector": "Alimentation",
+      "country": "AU"
     }
   },
   "partnerships": [
@@ -4278,6 +4363,8 @@
       "brand": "N Kolay",
       "type": "title",
       "years": [
+        2020,
+        2021,
         2022,
         2023,
         2024,
@@ -5126,14 +5213,13 @@
         2022,
         2023,
         2024,
-        2025,
-        2026
+        2025
       ]
     },
     {
       "event": "Mitja Marato Barcelona by Brooks",
       "brand": "Brooks",
-      "type": "official",
+      "type": "premium",
       "years": [
         2024,
         2025,
@@ -7446,6 +7532,271 @@
       "event": "Life Time Chicago Half Marathon & 5K",
       "brand": "Dexcom",
       "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Media Maraton de Bogota",
+      "brand": "Adidas",
+      "type": "premium",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Media Maraton de Bogota",
+      "brand": "Gatorade",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Media Maraton de Bogota",
+      "brand": "ISDIN",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Media Maraton de Bogota",
+      "brand": "Petrobras",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Medio Maraton de Sevilla",
+      "brand": "Plátano de Canarias",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Medio Maraton de Sevilla",
+      "brand": "Quirónsalud",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Miami Marathon",
+      "brand": "Hoka",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Miami Marathon",
+      "brand": "Gatorade",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Miami Marathon",
+      "brand": "Barilla",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Miami Marathon",
+      "brand": "Chiquita",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Miami Marathon",
+      "brand": "Shokz",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Miami Marathon",
+      "brand": "Athletic Brewing",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Miami Marathon",
+      "brand": "Biofreeze",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Miami Marathon",
+      "brand": "Hyperice",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Miami Marathon",
+      "brand": "Delta",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Milano Marathon",
+      "brand": "UniCredit",
+      "type": "premium",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Milano Marathon",
+      "brand": "Fiat",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Milano Marathon",
+      "brand": "Decathlon",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Milano Marathon",
+      "brand": "Festina",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Milano Marathon",
+      "brand": "JBL",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Milano Marathon",
+      "brand": "Dole",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Milano Marathon",
+      "brand": "Honda",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Mitja Marato Barcelona by Brooks",
+      "brand": "Deloitte",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Mitja Marato Barcelona by Brooks",
+      "brand": "Yamaha Motor",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Mitja Marato Barcelona by Brooks",
+      "brand": "Vitamin Well",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Mitja Marato Barcelona by Brooks",
+      "brand": "i-run",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "NN CPC Loop Den Haag - Half Marathon",
+      "brand": "Brooks",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "NN CPC Loop Den Haag - Half Marathon",
+      "brand": "AA Drink",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "NN Marathon Rotterdam",
+      "brand": "ASICS",
+      "type": "premium",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "NN Marathon Rotterdam",
+      "brand": "Avis",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "NN Maraton Warszawski",
+      "brand": "New Balance",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Nike Melbourne Marathon Festival",
+      "brand": "Snap Fitness",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Nike Melbourne Marathon Festival",
+      "brand": "Dairy Farmers",
+      "type": "partner",
       "years": [
         2026
       ]
