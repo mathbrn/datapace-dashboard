@@ -1334,6 +1334,76 @@
       "full_name": "TA Energy",
       "sector": "Alimentation",
       "country": "FR"
+    },
+    "Grenade": {
+      "full_name": "Grenade (Mondelez)",
+      "sector": "Alimentation",
+      "country": "GB"
+    },
+    "Altra": {
+      "full_name": "Altra Running (VF Corp)",
+      "sector": "Equipementier sport",
+      "country": "US"
+    },
+    "Navy Federal Credit Union": {
+      "full_name": "Navy Federal Credit Union",
+      "sector": "Banque/Finance",
+      "country": "US"
+    },
+    "Crystal Geyser": {
+      "full_name": "Crystal Geyser Water Company",
+      "sector": "Boisson",
+      "country": "US"
+    },
+    "Enedis": {
+      "full_name": "Enedis (EDF Group)",
+      "sector": "Energie",
+      "country": "FR"
+    },
+    "Haribo": {
+      "full_name": "Haribo GmbH",
+      "sector": "Alimentation",
+      "country": "DE"
+    },
+    "Thales": {
+      "full_name": "Thales Group",
+      "sector": "Tech/IT",
+      "country": "FR"
+    },
+    "SNEF": {
+      "full_name": "SNEF Group",
+      "sector": "Industrie/Energie",
+      "country": "FR"
+    },
+    "ONET": {
+      "full_name": "Onet Group",
+      "sector": "Services",
+      "country": "FR"
+    },
+    "UPS": {
+      "full_name": "United Parcel Service",
+      "sector": "Services",
+      "country": "US"
+    },
+    "KPMG": {
+      "full_name": "KPMG International",
+      "sector": "Services",
+      "country": "NL"
+    },
+    "Sodexo": {
+      "full_name": "Sodexo Group",
+      "sector": "Services",
+      "country": "FR"
+    },
+    "Athletic Brewing": {
+      "full_name": "Athletic Brewing Company",
+      "sector": "Boisson",
+      "country": "US"
+    },
+    "Dexcom": {
+      "full_name": "Dexcom Inc.",
+      "sector": "Santé",
+      "country": "US"
     }
   },
   "partnerships": [
@@ -7166,6 +7236,215 @@
     {
       "event": "Hoka Runaway Sydney Half Marathon",
       "brand": "Celsius",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Irish Life Dublin Marathon",
+      "brand": "Grenade",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Irish Life Dublin Marathon",
+      "brand": "Decathlon",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Mainova Frankfurt Marathon",
+      "brand": "Hoka",
+      "type": "premium",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Marine Corps Marathon",
+      "brand": "Altra",
+      "type": "official",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Marine Corps Marathon",
+      "brand": "Navy Federal Credit Union",
+      "type": "official",
+      "years": [
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Marine Corps Marathon",
+      "brand": "UPS",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Marine Corps Marathon",
+      "brand": "KPMG",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Marine Corps Marathon",
+      "brand": "Sodexo",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Marine Corps Marathon",
+      "brand": "Nuun",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Long Beach Marathon",
+      "brand": "Crystal Geyser",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Marseille-Cassis AG2R La Mondiale",
+      "brand": "Enedis",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Marseille-Cassis AG2R La Mondiale",
+      "brand": "Haribo",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Marseille-Cassis AG2R La Mondiale",
+      "brand": "Orange",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Marseille-Cassis AG2R La Mondiale",
+      "brand": "Thales",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Marseille-Cassis AG2R La Mondiale",
+      "brand": "SNEF",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Marseille-Cassis AG2R La Mondiale",
+      "brand": "ONET",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Life Time Chicago Half Marathon & 5K",
+      "brand": "Celsius",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Life Time Chicago Half Marathon & 5K",
+      "brand": "Garmin",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Life Time Chicago Half Marathon & 5K",
+      "brand": "Gatorade",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Life Time Chicago Half Marathon & 5K",
+      "brand": "Chiquita",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Life Time Chicago Half Marathon & 5K",
+      "brand": "Athletic Brewing",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Life Time Chicago Half Marathon & 5K",
+      "brand": "Dexcom",
       "type": "official",
       "years": [
         2026
