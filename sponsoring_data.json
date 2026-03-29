@@ -1489,6 +1489,11 @@
       "full_name": "Dairy Farmers (Saputo)",
       "sector": "Alimentation",
       "country": "AU"
+    },
+    "Finisher": {
+      "full_name": "Finisher.es",
+      "sector": "Tech/IT",
+      "country": "ES"
     }
   },
   "partnerships": [
@@ -7797,6 +7802,14 @@
       "event": "Nike Melbourne Marathon Festival",
       "brand": "Dairy Farmers",
       "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Mitja Marato Barcelona by Brooks",
+      "brand": "Finisher",
+      "type": "official",
       "years": [
         2026
       ]
