@@ -1544,6 +1544,71 @@
       "full_name": "Corona (Constellation Brands)",
       "sector": "Boisson",
       "country": "MX"
+    },
+    "Amazon": {
+      "full_name": "Amazon.com Inc.",
+      "sector": "Tech/IT",
+      "country": "US"
+    },
+    "TDK": {
+      "full_name": "TDK Corporation",
+      "sector": "Tech/IT",
+      "country": "JP"
+    },
+    "MG": {
+      "full_name": "MG Motor (SAIC)",
+      "sector": "Automobile",
+      "country": "CN"
+    },
+    "Pocari Sweat": {
+      "full_name": "Pocari Sweat (Otsuka)",
+      "sector": "Boisson",
+      "country": "JP"
+    },
+    "Counterpain": {
+      "full_name": "Counterpain (Taisho)",
+      "sector": "Santé",
+      "country": "JP"
+    },
+    "HIGH5": {
+      "full_name": "HIGH5 Sports Nutrition",
+      "sector": "Alimentation",
+      "country": "GB"
+    },
+    "Grab": {
+      "full_name": "Grab Holdings",
+      "sector": "Tech/IT",
+      "country": "SG"
+    },
+    "Fitness First": {
+      "full_name": "Fitness First Group",
+      "sector": "Services",
+      "country": "GB"
+    },
+    "Smartwater": {
+      "full_name": "Smartwater (Coca-Cola)",
+      "sector": "Boisson",
+      "country": "US"
+    },
+    "Enervit": {
+      "full_name": "Enervit S.p.A.",
+      "sector": "Alimentation",
+      "country": "IT"
+    },
+    "KLM": {
+      "full_name": "KLM Royal Dutch Airlines",
+      "sector": "Transport",
+      "country": "NL"
+    },
+    "Action": {
+      "full_name": "Action (3i Group)",
+      "sector": "Distribution",
+      "country": "NL"
+    },
+    "100 PLUS": {
+      "full_name": "100Plus (F&N)",
+      "sector": "Boisson",
+      "country": "SG"
     }
   },
   "partnerships": [
@@ -3824,6 +3889,7 @@
       "brand": "Adidas",
       "type": "official",
       "years": [
+        2025,
         2026
       ]
     },
@@ -8019,6 +8085,289 @@
       "event": "San Francisco Marathon",
       "brand": "China Airlines",
       "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Silicon Valley Turkey Trot",
+      "brand": "Amazon",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Silicon Valley Turkey Trot",
+      "brand": "KPMG",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Silicon Valley Turkey Trot",
+      "brand": "TDK",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Standard Chartered Dubai Marathon",
+      "brand": "ASICS",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Standard Chartered Dubai Marathon",
+      "brand": "MG",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Standard Chartered Hong Kong Marathon",
+      "brand": "Adidas",
+      "type": "official",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Standard Chartered Hong Kong Marathon",
+      "brand": "Garmin",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Standard Chartered Hong Kong Marathon",
+      "brand": "Seiko",
+      "type": "official",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Standard Chartered Hong Kong Marathon",
+      "brand": "Toyota",
+      "type": "official",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Standard Chartered Hong Kong Marathon",
+      "brand": "Panasonic",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Standard Chartered Hong Kong Marathon",
+      "brand": "Pocari Sweat",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Standard Chartered Hong Kong Marathon",
+      "brand": "Hisamitsu",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Standard Chartered KL Marathon",
+      "brand": "Standard Chartered",
+      "type": "title",
+      "years": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Standard Chartered KL Marathon",
+      "brand": "Counterpain",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Standard Chartered KL Marathon",
+      "brand": "100 PLUS",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Standard Chartered KL Marathon",
+      "brand": "Seiko",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Standard Chartered KL Marathon",
+      "brand": "HIGH5",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Standard Chartered Singapore Marathon",
+      "brand": "TCS",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Standard Chartered Singapore Marathon",
+      "brand": "Grab",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Standard Chartered Singapore Marathon",
+      "brand": "Fitness First",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Statesman Capitol 10K",
+      "brand": "H-E-B",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Statesman Capitol 10K",
+      "brand": "Smartwater",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Stockholm Marathon",
+      "brand": "Voltaren",
+      "type": "premium",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Stockholm Marathon",
+      "brand": "Toyota",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Stockholm Marathon",
+      "brand": "Enervit",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "TCS Amsterdam Marathon",
+      "brand": "KLM",
+      "type": "official",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "TCS Amsterdam Marathon",
+      "brand": "Samsung",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "TCS Amsterdam Marathon",
+      "brand": "Action",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "TCS Amsterdam Marathon",
+      "brand": "Maurten",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "TCS Amsterdam Marathon",
+      "brand": "Runna",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "TCS Amsterdam Marathon",
+      "brand": "Chiquita",
+      "type": "partner",
       "years": [
         2026
       ]
