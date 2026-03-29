@@ -1494,6 +1494,56 @@
       "full_name": "Finisher.es",
       "sector": "Tech/IT",
       "country": "ES"
+    },
+    "Google": {
+      "full_name": "Google LLC (Alphabet)",
+      "sector": "Tech/IT",
+      "country": "US"
+    },
+    "Express Employment Professionals": {
+      "full_name": "Express Employment Professionals",
+      "sector": "Services",
+      "country": "US"
+    },
+    "CarMax": {
+      "full_name": "CarMax Inc.",
+      "sector": "Automobile",
+      "country": "US"
+    },
+    "Salomon": {
+      "full_name": "Salomon (Amer Sports)",
+      "sector": "Equipementier sport",
+      "country": "FR"
+    },
+    "Craft": {
+      "full_name": "Craft Sportswear",
+      "sector": "Equipementier sport",
+      "country": "SE"
+    },
+    "Salling Group": {
+      "full_name": "Salling Group A/S",
+      "sector": "Distribution",
+      "country": "DK"
+    },
+    "Terre de Running": {
+      "full_name": "Terre de Running",
+      "sector": "Distribution sport",
+      "country": "FR"
+    },
+    "Panzani": {
+      "full_name": "Panzani (Ebro Foods)",
+      "sector": "Alimentation",
+      "country": "FR"
+    },
+    "H-E-B": {
+      "full_name": "H-E-B Grocery Company",
+      "sector": "Distribution",
+      "country": "US"
+    },
+    "Corona": {
+      "full_name": "Corona (Constellation Brands)",
+      "sector": "Boisson",
+      "country": "MX"
     }
   },
   "partnerships": [
@@ -4622,8 +4672,7 @@
       "brand": "ASICS",
       "type": "official",
       "years": [
-        2025,
-        2026
+        2025
       ]
     },
     {
@@ -7809,6 +7858,166 @@
     {
       "event": "Mitja Marato Barcelona by Brooks",
       "brand": "Finisher",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Oklahoma City Memorial Marathon",
+      "brand": "Google",
+      "type": "premium",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Oklahoma City Memorial Marathon",
+      "brand": "Express Employment Professionals",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Richmond Marathon",
+      "brand": "CarMax",
+      "type": "premium",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Rock 'n' Roll Arizona Marathon",
+      "brand": "Celsius",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Royal Parks Half Marathon",
+      "brand": "Salomon",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Royal Run",
+      "brand": "Boozt",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Royal Run",
+      "brand": "Craft",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Royal Run",
+      "brand": "Salling Group",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Run in Lyon",
+      "brand": "Hoka",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Run in Lyon",
+      "brand": "Terre de Running",
+      "type": "premium",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Run in Lyon",
+      "brand": "Campus",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Run in Lyon",
+      "brand": "Powerade",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Run in Lyon",
+      "brand": "Hipro",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Run in Lyon",
+      "brand": "Panzani",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Run in Lyon",
+      "brand": "Joyfuel",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "San Antonio Marathon",
+      "brand": "H-E-B",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "San Antonio Marathon",
+      "brand": "Corona",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "San Antonio Marathon",
+      "brand": "Fleet Feet",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "San Francisco Marathon",
+      "brand": "Garmin",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "San Francisco Marathon",
+      "brand": "China Airlines",
       "type": "official",
       "years": [
         2026
