@@ -1869,6 +1869,12 @@
       "brand": "New Balance",
       "type": "official",
       "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
         2023,
         2024,
         2025,
@@ -3090,6 +3096,11 @@
       "brand": "Volvo",
       "type": "partner",
       "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
         2024,
         2025,
         2026
@@ -4877,6 +4888,31 @@
       "brand": "Mizuno",
       "type": "official",
       "years": [
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
         2025,
         2026
       ]
@@ -6658,8 +6694,14 @@
       "brand": "BMW",
       "type": "official",
       "years": [
-        2025,
-        2026
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
       ]
     },
     {
@@ -10789,6 +10831,120 @@
         2019,
         2020,
         2021
+      ]
+    },
+    {
+      "event": "Cardiff Half Marathon",
+      "brand": "Wizz Air",
+      "type": "title",
+      "years": [
+        2022
+      ]
+    },
+    {
+      "event": "BMW Berlin Marathon",
+      "brand": "Samsung",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "TCS New York City Marathon",
+      "brand": "TAG Heuer",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "BMW Berlin Marathon",
+      "brand": "Erdinger Alkoholfrei",
+      "type": "official",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Vienna City Half Marathon",
+      "brand": "Erdinger Alkoholfrei",
+      "type": "official",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Dam tot Damloop",
+      "brand": "ASICS",
+      "type": "title",
+      "years": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "event": "Mainova Frankfurt Marathon",
+      "brand": "ASICS",
+      "type": "official",
+      "years": [
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "event": "Nike Melbourne Marathon Festival",
+      "brand": "BMW",
+      "type": "official",
+      "years": [
+        2024,
+        2025,
+        2026
       ]
     }
   ]
