@@ -6193,7 +6193,7 @@
     {
       "event": "Grandma's Marathon",
       "brand": "ASICS",
-      "type": "official",
+      "type": "premium",
       "years": [
         2025,
         2026
@@ -6202,7 +6202,7 @@
     {
       "event": "Grandma's Marathon",
       "brand": "Toyota",
-      "type": "official",
+      "type": "premium",
       "years": [
         2025,
         2026
@@ -10401,6 +10401,30 @@
       "event": "EDP Lisboa Meia Maratona",
       "brand": "226ers",
       "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Grandma's Marathon",
+      "brand": "Powerade",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Grandma's Marathon",
+      "brand": "Michelob Ultra",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Grandma's Marathon",
+      "brand": "Essentia Health",
+      "type": "official",
       "years": [
         2026
       ]
