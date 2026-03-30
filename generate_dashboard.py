@@ -80,6 +80,62 @@ def check_files():
     print("Tous les fichiers Excel trouves.")
 
 
+CITY_REGION = {
+    # Europe
+    "Amsterdam": "Europe", "Athènes": "Europe", "Barcelone": "Europe", "Bath": "Europe",
+    "Berlin": "Europe", "Birmingham": "Europe", "Boulogne-Billancourt": "Europe",
+    "Brighton": "Europe", "Bristol": "Europe", "Cardiff": "Europe", "Copenhague": "Europe",
+    "Dublin": "Europe", "Frankfurt": "Europe", "Gateshead": "Europe", "Glasgow": "Europe",
+    "Göteborg (Suède)": "Europe", "Hamburg": "Europe", "Istanbul": "Europe", "Lisbonne": "Europe",
+    "Londres": "Europe", "Lyon": "Europe", "Madrid": "Europe", "Manchester": "Europe",
+    "Marseille": "Europe", "Milan": "Europe", "Munich": "Europe", "Nantes": "Europe",
+    "Naples": "Europe", "Newcastle": "Europe", "Paris": "Europe", "Portsmouth": "Europe",
+    "Prague": "Europe", "Rome": "Europe", "Rotterdam": "Europe", "Seville": "Europe",
+    "Stockholm": "Europe", "Toulouse": "Europe", "Tours": "Europe", "Valence": "Europe",
+    "Varsovie": "Europe", "Vienne": "Europe",
+    # North America
+    "Atlanta": "Amérique du Nord", "Austin": "Amérique du Nord", "Austin, TX": "Amérique du Nord",
+    "Baltimore": "Amérique du Nord", "Boston": "Amérique du Nord", "Boulder": "Amérique du Nord",
+    "Charleston": "Amérique du Nord", "Chicago": "Amérique du Nord", "Cincinnati": "Amérique du Nord",
+    "Columbus": "Amérique du Nord", "Dallas": "Amérique du Nord", "Denver": "Amérique du Nord",
+    "Detroit": "Amérique du Nord", "Duluth": "Amérique du Nord", "Eugene": "Amérique du Nord",
+    "Falmouth": "Amérique du Nord", "Fargo": "Amérique du Nord", "Fort Worth": "Amérique du Nord",
+    "Honolulu": "Amérique du Nord", "Houston": "Amérique du Nord",
+    "Indianapolis": "Amérique du Nord", "Jacksonville": "Amérique du Nord",
+    "Las Vegas": "Amérique du Nord", "Long Beach": "Amérique du Nord",
+    "Los Angeles": "Amérique du Nord", "Memphis": "Amérique du Nord",
+    "Miami": "Amérique du Nord", "Minneapolis": "Amérique du Nord",
+    "Montréal": "Amérique du Nord", "Nashville": "Amérique du Nord",
+    "New Orleans": "Amérique du Nord", "New York": "Amérique du Nord",
+    "Newport Beach": "Amérique du Nord", "Oklahoma City": "Amérique du Nord",
+    "Orlando": "Amérique du Nord", "Philadelphia": "Amérique du Nord",
+    "Phoenix": "Amérique du Nord", "Pittsburgh": "Amérique du Nord",
+    "Portland": "Amérique du Nord", "Richmond": "Amérique du Nord",
+    "Sacramento": "Amérique du Nord", "San Antonio": "Amérique du Nord",
+    "San Diego": "Amérique du Nord", "San Francisco": "Amérique du Nord",
+    "San Jose": "Amérique du Nord", "Spokane": "Amérique du Nord",
+    "Tampa": "Amérique du Nord", "Toronto": "Amérique du Nord",
+    "Utica": "Amérique du Nord", "Vancouver": "Amérique du Nord",
+    "Virginia Beach": "Amérique du Nord", "Washington DC": "Amérique du Nord",
+    "Mexico City": "Amérique du Nord",
+    # Asia
+    "Beijing": "Asie", "Chon Buri": "Asie", "Hong Kong": "Asie",
+    "Kuala Lumpur": "Asie", "Marugame": "Asie", "Mumbai": "Asie",
+    "New Delhi": "Asie", "Osaka": "Asie", "Seoul": "Asie",
+    "Shanghai": "Asie", "Singapour": "Asie", "Taipei": "Asie", "Tokyo": "Asie",
+    # Oceania
+    "Brisbane": "Océanie", "Gold Coast": "Océanie", "Melbourne": "Océanie", "Sydney": "Océanie",
+    # Middle East
+    "Dubai": "Moyen-Orient", "Riyadh": "Moyen-Orient",
+    # South America
+    "Bogota": "Amérique du Sud",
+    # Africa
+    "Cape Town": "Afrique",
+}
+
+def get_region(city):
+    return CITY_REGION.get(city, "Autre")
+
 def load_finishers():
     df = pd.read_excel(FILES["finishers"], sheet_name="ALL")
     year_cols = sorted([c for c in df.columns if isinstance(c, int) and 2000 <= c <= 2030])
@@ -106,8 +162,10 @@ def load_finishers():
                 if yr >= 2000:
                     first_yr = yr
                 break  # stop at first non-x year regardless
-        rows.append({"p": str(r.get("Période", "")).strip(), "c": str(r.get("City", "")).strip(),
+        city = str(r.get("City", "")).strip()
+        rows.append({"p": str(r.get("Période", "")).strip(), "c": city,
                      "d": str(r.get("Distance", "")).strip(), "r": race,
+                     "rg": get_region(city),
                      "y3": gv(2023), "y4": gv(2024), "y5": gv(2025), "y6": gv(2026),
                      "hist": hist, "fy": first_yr})
     print(f"  Finishers  : {len(rows)} courses")
@@ -130,7 +188,8 @@ def load_biggest():
             try: iv = int(float(v)); return iv if iv > 0 else None
             except: return None
         hist = {yr: v for yr in year_cols if (v := gv(yr)) is not None}
-        rows.append({"c": str(r.get("City", "")).strip(), "r": race,
+        city = str(r.get("City", "")).strip()
+        rows.append({"c": city, "r": race, "rg": get_region(city),
                      "y3": gv(2023), "y4": gv(2024), "y5": gv(2025), "y6": gv(2026),
                      "hist": hist})
     print(f"  Biggest    : {len(rows)} courses")
@@ -574,7 +633,8 @@ function ovSelect(idx){
 function updateTrends(){
   var dist=document.getElementById('dist-trends').value;
   var topn=parseInt(document.getElementById('topn-trends').value);
-  var src=dist==='ALL'?RAW:RAW.filter(function(r){return r.d===dist;});
+  var region=document.getElementById('region-trends').value;
+  var src=RAW.filter(function(r){if(dist!=='ALL'&&r.d!==dist)return false;if(region!=='ALL'&&r.rg!==region)return false;return true;});
   if(cT)cT.destroy();
   var lbl=document.getElementById('trends-section-lbl');
   var sorted=src.slice().sort(function(a,b){
@@ -594,7 +654,8 @@ function updateTrends(){
 
 function getBiggestSrc(){
   var dist=document.getElementById('dist-biggest').value;
-  return dist==='ALL'?RAW:RAW.filter(function(r){return r.d===dist;});
+  var region=document.getElementById('region-biggest').value;
+  return RAW.filter(function(r){if(dist!=='ALL'&&r.d!==dist)return false;if(region!=='ALL'&&r.rg!==region)return false;return true;});
 }
 
 function initBiggestYears(){
@@ -636,13 +697,15 @@ function updateTempsYears(){
   if(yrs.indexOf(prev)>=0)sel.value=prev;
 }
 
+function raceRegion(name){var m=RAW.find(function(r){return r.r===name;});return m?m.rg:'Autre';}
 function updateTemps(){
   var dist=document.getElementById('dist-temps').value;
   var yr=parseInt(document.getElementById('year-temps').value);
   var sortMode=document.getElementById('sort-temps').value;
   var topn=parseInt(document.getElementById('topn-temps').value);
+  var region=document.getElementById('region-temps').value;
   var src=dist==='SEMI'?(TEMPS_SEMI[String(yr)]||[]):(TEMPS_MARATHON[String(yr)]||[]);
-  var data=src.slice();
+  var data=region==='ALL'?src.slice():src.filter(function(d){return raceRegion(d.race||d.r||'')===region;});
   if(sortMode==='avg'){data.sort(function(a,b){var ma=toMin(a.avg),mb=toMin(b.avg);if(!ma)return 1;if(!mb)return -1;return ma-mb;});}
   else{data.sort(function(a,b){return b.finishers-a.finishers;});}
   var withAvg=data.filter(function(d){return toMin(d.avg);});
@@ -698,6 +761,7 @@ function filterTable(){
   var badge=document.getElementById('badge-data').value;
   var sizeFilter=document.getElementById('size-data').value;
   var periode=document.getElementById('afficher-data').value;
+  var region=document.getElementById('region-data').value;
   var thead=document.getElementById('table-head-row');
   var tbl=document.getElementById('data-table');
   // Determine year range
@@ -711,6 +775,7 @@ function filterTable(){
   var f=RAW.filter(function(r){
     if(dist!=='ALL'&&r.d!==dist)return false;
     if(month!=='ALL'&&r.p!==month)return false;
+    if(region!=='ALL'&&r.rg!==region)return false;
     if(q&&r.r.toLowerCase().indexOf(q)<0&&r.c.toLowerCase().indexOf(q)<0)return false;
     // Badge filter
     if(badge!=='ALL'){
@@ -829,13 +894,16 @@ function getExposure(eventName,years){
   });
   return total;
 }
-var _spBS={},_spActiveSector='ALL',_spActiveBrand=null,_spPillSectors=[];
+var _spBS={},_spActiveSector='ALL',_spActiveBrand=null,_spPillSectors=[],_spRegion='ALL';
 function spBuildData(){
   _spBS={};
   var now=new Date().getFullYear();
   var pMinYr=_spPeriod==='5'?now-4:_spPeriod==='3'?now-2:parseInt(_spPeriod)||now;
   var pMaxYr=_spPeriod==='5'||_spPeriod==='3'?now:pMinYr;
+  _spRegion=document.getElementById('sp-region')?document.getElementById('sp-region').value:'ALL';
   SP_PARTNERSHIPS.forEach(function(p){
+    // Region filter on event
+    if(_spRegion!=='ALL'&&raceRegion(p.event)!==_spRegion)return;
     // Only include partnerships active in the selected period
     var active=(p.years||[]).some(function(y){return y>=pMinYr&&y<=pMaxYr;});
     if(!active)return;
@@ -1328,7 +1396,8 @@ function updateWinners(){
   var gender=document.getElementById('win-gender').value;
   var sortMode=document.getElementById('win-sort').value;
   var topN=+document.getElementById('win-topn').value;
-  var filtered=WINNERS.filter(function(w){return w.d===dist;});
+  var region=document.getElementById('region-winners').value;
+  var filtered=WINNERS.filter(function(w){if(w.d!==dist)return false;if(region!=='ALL'&&raceRegion(w.r)!==region)return false;return true;});
   var races={};
   filtered.forEach(function(w){if(!races[w.r])races[w.r]={name:w.r,years:[]};races[w.r].years.push({y:w.y,m:winToSec(w.m),w:winToSec(w.w),ms:w.m,ws:w.w});});
   var raceList=Object.values(races).filter(function(r){return r.years.length>0;});
@@ -1613,6 +1682,11 @@ HTML_BODY = """
         <option value="MARATHON">Marathon</option><option value="SEMI">Semi-marathon</option><option value="10KM">10 km</option><option value="AUTRE">Autre</option>
       </select>
     </div>
+    <div class="ctrl-group"><span class="ctrl-label">R&eacute;gion</span>
+      <select id="region-trends" onchange="updateTrends()">
+        <option value="ALL">Toutes</option><option>Europe</option><option>Am&eacute;rique du Nord</option><option>Asie</option><option>Oc&eacute;anie</option><option>Moyen-Orient</option><option>Am&eacute;rique du Sud</option><option>Afrique</option>
+      </select>
+    </div>
     <div class="ctrl-group"><span class="ctrl-label">Top evenements</span>
       <select id="topn-trends" onchange="updateTrends()">
         <option value="8">Top 8</option><option value="12">Top 12</option><option value="16">Top 16</option><option value="20">Top 20</option>
@@ -1638,6 +1712,11 @@ HTML_BODY = """
         <option value="MARATHON">Marathon</option><option value="SEMI">Semi-marathon</option><option value="10KM">10 km</option><option value="AUTRE">Autre</option>
       </select>
     </div>
+    <div class="ctrl-group"><span class="ctrl-label">R&eacute;gion</span>
+      <select id="region-biggest" onchange="initBiggestYears();updateBiggest()">
+        <option value="ALL">Toutes</option><option>Europe</option><option>Am&eacute;rique du Nord</option><option>Asie</option><option>Oc&eacute;anie</option><option>Moyen-Orient</option><option>Am&eacute;rique du Sud</option><option>Afrique</option>
+      </select>
+    </div>
     <div class="ctrl-group"><span class="ctrl-label">Top N</span>
       <select id="topn-biggest" onchange="updateBiggest()">
         <option value="10">Top 10</option><option value="15">Top 15</option><option value="20">Top 20</option><option value="999">Tous</option>
@@ -1660,6 +1739,11 @@ HTML_BODY = """
     <div class="ctrl-group"><span class="ctrl-label">Distance</span>
       <select id="dist-temps" onchange="updateTempsYears();updateTemps()">
         <option value="MARATHON">Marathon</option><option value="SEMI">Semi-marathon</option>
+      </select>
+    </div>
+    <div class="ctrl-group"><span class="ctrl-label">R&eacute;gion</span>
+      <select id="region-temps" onchange="updateTemps()">
+        <option value="ALL">Toutes</option><option>Europe</option><option>Am&eacute;rique du Nord</option><option>Asie</option><option>Oc&eacute;anie</option><option>Moyen-Orient</option><option>Am&eacute;rique du Sud</option><option>Afrique</option>
       </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Annee</span>
@@ -1692,6 +1776,11 @@ HTML_BODY = """
     <div class="ctrl-group"><span class="ctrl-label">Distance</span>
       <select id="win-dist" onchange="updateWinners()">
         <option value="42K">Marathon (42K)</option><option value="21K">Semi-marathon (21K)</option><option value="10K">10 km</option><option value="AUTRE">Autre</option>
+      </select>
+    </div>
+    <div class="ctrl-group"><span class="ctrl-label">R&eacute;gion</span>
+      <select id="region-winners" onchange="updateWinners()">
+        <option value="ALL">Toutes</option><option>Europe</option><option>Am&eacute;rique du Nord</option><option>Asie</option><option>Oc&eacute;anie</option><option>Moyen-Orient</option><option>Am&eacute;rique du Sud</option><option>Afrique</option>
       </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Genre</span>
@@ -1735,6 +1824,11 @@ HTML_BODY = """
         <option value="5">5 dernieres annees</option>
       </select>
     </div>
+    <div class="ctrl-group"><span class="ctrl-label">R&eacute;gion</span>
+      <select id="sp-region" onchange="spChangePeriod(document.getElementById('sp-period').value)" style="font-size:11px;padding:4px 8px;">
+        <option value="ALL">Toutes</option><option>Europe</option><option>Am&eacute;rique du Nord</option><option>Asie</option><option>Oc&eacute;anie</option><option>Moyen-Orient</option><option>Am&eacute;rique du Sud</option><option>Afrique</option>
+      </select>
+    </div>
   </div>
   <div class="sp-layout">
     <div class="sp-sidebar">
@@ -1767,6 +1861,11 @@ HTML_BODY = """
         <option>Janvier</option><option>Fevrier</option><option>Mars</option><option>Avril</option>
         <option>Mai</option><option>Juin</option><option>Juillet</option><option>Aout</option>
         <option>Septembre</option><option>Octobre</option><option>Novembre</option><option>Decembre</option>
+      </select>
+    </div>
+    <div class="ctrl-group"><span class="ctrl-label">R&eacute;gion</span>
+      <select id="region-data" onchange="filterTable()">
+        <option value="ALL">Toutes</option><option>Europe</option><option>Am&eacute;rique du Nord</option><option>Asie</option><option>Oc&eacute;anie</option><option>Moyen-Orient</option><option>Am&eacute;rique du Sud</option><option>Afrique</option>
       </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Badge</span>
@@ -1868,6 +1967,11 @@ def main():
         from datapace.data_loader import load_all
         print("\nLecture des donnees (SQLite)...")
         finishers, biggest, md, sd, tdb, winners, sp_avg = load_all(_DB_PATH)
+        # Add region field to finishers and biggest
+        for row in finishers:
+            row["rg"] = get_region(row.get("c", ""))
+        for row in biggest:
+            row["rg"] = get_region(row.get("c", ""))
     else:
         print("Source : fichiers Excel (pas de BDD trouvee)")
         check_files()
