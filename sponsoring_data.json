@@ -1814,6 +1814,41 @@
       "full_name": "MB WAY (SIBS)",
       "sector": "Banque/Finance",
       "country": "PT"
+    },
+    "Simplyhealth": {
+      "full_name": "Simplyhealth (BUPA)",
+      "sector": "Santé",
+      "country": "GB"
+    },
+    "KBC Bank": {
+      "full_name": "KBC Bank Ireland",
+      "sector": "Banque/Finance",
+      "country": "BE"
+    },
+    "Sun-Herald": {
+      "full_name": "The Sun-Herald (Nine)",
+      "sector": "Services",
+      "country": "AU"
+    },
+    "Medibank": {
+      "full_name": "Medibank Private",
+      "sector": "Santé",
+      "country": "AU"
+    },
+    "VCU Health": {
+      "full_name": "VCU Health System",
+      "sector": "Santé",
+      "country": "US"
+    },
+    "PUMA": {
+      "full_name": "PUMA SE",
+      "sector": "Equipementier sport",
+      "country": "DE"
+    },
+    "P&G": {
+      "full_name": "Procter & Gamble",
+      "sector": "Hygiène/Santé",
+      "country": "US"
     }
   },
   "partnerships": [
@@ -2004,11 +2039,7 @@
         2019,
         2020,
         2021,
-        2022,
-        2023,
-        2024,
-        2025,
-        2026
+        2022
       ]
     },
     {
@@ -2403,8 +2434,6 @@
       "brand": "Adidas",
       "type": "title",
       "years": [
-        2021,
-        2022,
         2023,
         2024,
         2025,
@@ -4857,10 +4886,6 @@
       "brand": "Irish Life",
       "type": "title",
       "years": [
-        2018,
-        2019,
-        2020,
-        2021,
         2022,
         2023,
         2024,
@@ -4873,8 +4898,12 @@
       "brand": "Vitality",
       "type": "title",
       "years": [
-        2025,
-        2026
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
       ]
     },
     {
@@ -5079,10 +5108,13 @@
       "brand": "Mizuno",
       "type": "official",
       "years": [
-        2023,
-        2024,
-        2025,
-        2026
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
       ]
     },
     {
@@ -10515,6 +10547,248 @@
       "type": "partner",
       "years": [
         2026
+      ]
+    },
+    {
+      "event": "TCS London Marathon",
+      "brand": "Virgin Money",
+      "type": "title",
+      "years": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "event": "Bank of America Chicago Marathon",
+      "brand": "Under Armour",
+      "type": "official",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "TCS Sydney Marathon presented by ASICS",
+      "brand": "Blackmores",
+      "type": "title",
+      "years": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "event": "Adidas Manchester Marathon",
+      "brand": "ASICS",
+      "type": "title",
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "event": "AJ Bell Great North Run",
+      "brand": "Simplyhealth",
+      "type": "title",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "event": "Milano Marathon",
+      "brand": "Generali",
+      "type": "title",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "event": "Göteborgsvarvet",
+      "brand": "New Balance",
+      "type": "official",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "event": "Stockholm Marathon",
+      "brand": "ASICS",
+      "type": "title",
+      "years": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "event": "Marine Corps Marathon",
+      "brand": "Brooks",
+      "type": "official",
+      "years": [
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "event": "Irish Life Dublin Marathon",
+      "brand": "KBC Bank",
+      "type": "title",
+      "years": [
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "event": "City2Surf",
+      "brand": "Sun-Herald",
+      "type": "title",
+      "years": [
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "event": "Flying Pig Marathon",
+      "brand": "P&G",
+      "type": "title",
+      "years": [
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "San Francisco Marathon",
+      "brand": "PUMA",
+      "type": "official",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Richmond Marathon",
+      "brand": "VCU Health",
+      "type": "title",
+      "years": [
+        2019,
+        2020,
+        2021
       ]
     }
   ]
