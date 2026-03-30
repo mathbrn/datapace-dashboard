@@ -1719,6 +1719,101 @@
       "full_name": "Koninklijke KPN N.V.",
       "sector": "Tech/IT",
       "country": "NL"
+    },
+    "Enthuse": {
+      "full_name": "Enthuse (JustGiving)",
+      "sector": "Tech/IT",
+      "country": "GB"
+    },
+    "Nirvana": {
+      "full_name": "Nirvana Brewery",
+      "sector": "Boisson",
+      "country": "GB"
+    },
+    "Houston Methodist": {
+      "full_name": "Houston Methodist Hospital",
+      "sector": "Santé",
+      "country": "US"
+    },
+    "LTIMindtree": {
+      "full_name": "LTIMindtree Limited",
+      "sector": "Tech/IT",
+      "country": "IN"
+    },
+    "UPMC": {
+      "full_name": "UPMC Health Plan",
+      "sector": "Santé",
+      "country": "US"
+    },
+    "FedEx": {
+      "full_name": "FedEx Corporation",
+      "sector": "Services",
+      "country": "US"
+    },
+    "Wesco": {
+      "full_name": "Wesco International",
+      "sector": "Distribution",
+      "country": "US"
+    },
+    "CAT": {
+      "full_name": "Caterpillar Inc.",
+      "sector": "Industrie/Energie",
+      "country": "US"
+    },
+    "Oofos": {
+      "full_name": "OOFOS Inc.",
+      "sector": "Equipementier sport",
+      "country": "US"
+    },
+    "Vancouver Sun": {
+      "full_name": "Vancouver Sun (Postmedia)",
+      "sector": "Services",
+      "country": "CA"
+    },
+    "Kintec": {
+      "full_name": "Kintec Footwear + Orthotics",
+      "sector": "Distribution sport",
+      "country": "CA"
+    },
+    "Kal Tire": {
+      "full_name": "Kal Tire",
+      "sector": "Services",
+      "country": "CA"
+    },
+    "Vancity": {
+      "full_name": "Vancouver City Savings Credit Union",
+      "sector": "Banque/Finance",
+      "country": "CA"
+    },
+    "VEGA": {
+      "full_name": "Vega (Danone)",
+      "sector": "Alimentation",
+      "country": "CA"
+    },
+    "Eva Air": {
+      "full_name": "EVA Air",
+      "sector": "Transport",
+      "country": "TW"
+    },
+    "Delta Cafes": {
+      "full_name": "Delta Cafés (Novadelta)",
+      "sector": "Alimentation",
+      "country": "PT"
+    },
+    "Goldcar": {
+      "full_name": "Goldcar (Europcar)",
+      "sector": "Services",
+      "country": "ES"
+    },
+    "226ers": {
+      "full_name": "226ERS",
+      "sector": "Alimentation",
+      "country": "ES"
+    },
+    "MB Way": {
+      "full_name": "MB WAY (SIBS)",
+      "sector": "Banque/Finance",
+      "country": "PT"
     }
   },
   "partnerships": [
@@ -9805,6 +9900,366 @@
       "event": "Eugene Marathon",
       "brand": "Runna",
       "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "AJ Bell Great North Run",
+      "brand": "Enthuse",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "AJ Bell Great North Run",
+      "brand": "Nirvana",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Chevron Houston Marathon",
+      "brand": "Brooks",
+      "type": "premium",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Chevron Houston Marathon",
+      "brand": "Fleet Feet",
+      "type": "premium",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Chevron Houston Marathon",
+      "brand": "Houston Methodist",
+      "type": "premium",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Chevron Houston Marathon",
+      "brand": "Garmin",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Chevron Houston Marathon",
+      "brand": "Gatorade",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Chevron Houston Marathon",
+      "brand": "H-E-B",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Chevron Houston Marathon",
+      "brand": "LTIMindtree",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Aramco Houston Half Marathon",
+      "brand": "Brooks",
+      "type": "premium",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Aramco Houston Half Marathon",
+      "brand": "Fleet Feet",
+      "type": "premium",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Aramco Houston Half Marathon",
+      "brand": "Houston Methodist",
+      "type": "premium",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Aramco Houston Half Marathon",
+      "brand": "Garmin",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Aramco Houston Half Marathon",
+      "brand": "Gatorade",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Aramco Houston Half Marathon",
+      "brand": "H-E-B",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Aramco Houston Half Marathon",
+      "brand": "LTIMindtree",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "brand": "UPMC",
+      "type": "title",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "brand": "Brooks",
+      "type": "premium",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "brand": "FedEx",
+      "type": "premium",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "brand": "Wesco",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "brand": "CAT",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "brand": "Garmin",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "brand": "Runna",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "brand": "Oofos",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Vancouver Sun Run",
+      "brand": "Vancouver Sun",
+      "type": "title",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Vancouver Sun Run",
+      "brand": "2XU",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Vancouver Sun Run",
+      "brand": "Eva Air",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Vancouver Sun Run",
+      "brand": "Kintec",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Vancouver Sun Run",
+      "brand": "Kal Tire",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Vancouver Sun Run",
+      "brand": "Subaru",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Vancouver Sun Run",
+      "brand": "Vancity",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Vancouver Sun Run",
+      "brand": "Runna",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Vancouver Sun Run",
+      "brand": "Red Bull",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Vancouver Sun Run",
+      "brand": "VEGA",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Vancouver Sun Run",
+      "brand": "On",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Vancouver Sun Run",
+      "brand": "Shokz",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "EDP Lisboa Meia Maratona",
+      "brand": "Hyundai",
+      "type": "title",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "event": "EDP Lisboa Meia Maratona",
+      "brand": "Adidas",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "EDP Lisboa Meia Maratona",
+      "brand": "Delta Cafes",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "EDP Lisboa Meia Maratona",
+      "brand": "Coca-Cola",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "EDP Lisboa Meia Maratona",
+      "brand": "Powerade",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "EDP Lisboa Meia Maratona",
+      "brand": "Garmin",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "EDP Lisboa Meia Maratona",
+      "brand": "MB Way",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "EDP Lisboa Meia Maratona",
+      "brand": "Goldcar",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "EDP Lisboa Meia Maratona",
+      "brand": "226ers",
+      "type": "partner",
       "years": [
         2026
       ]
