@@ -8222,7 +8222,7 @@
     {
       "event": "NN Marathon Rotterdam",
       "brand": "ASICS",
-      "type": "premium",
+      "type": "official",
       "years": [
         2025,
         2026
@@ -8390,7 +8390,7 @@
     {
       "event": "Run in Lyon",
       "brand": "Terre de Running",
-      "type": "premium",
+      "type": "major",
       "years": [
         2026
       ]
