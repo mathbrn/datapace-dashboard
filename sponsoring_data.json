@@ -1654,6 +1654,21 @@
       "full_name": "Tchibo GmbH",
       "sector": "Distribution",
       "country": "DE"
+    },
+    "FDJ": {
+      "full_name": "Française des Jeux",
+      "sector": "Services",
+      "country": "FR"
+    },
+    "Dalkia": {
+      "full_name": "Dalkia (EDF Group)",
+      "sector": "Energie",
+      "country": "FR"
+    },
+    "SKF": {
+      "full_name": "SKF AB",
+      "sector": "Industrie/Energie",
+      "country": "SE"
     }
   },
   "partnerships": [
@@ -6664,7 +6679,7 @@
     {
       "event": "20km de Tours",
       "brand": "Hyundai",
-      "type": "official",
+      "type": "major",
       "years": [
         2025,
         2026
@@ -6673,7 +6688,7 @@
     {
       "event": "Harmonie Mutuelle Marathon 10-20K Tours",
       "brand": "Hyundai",
-      "type": "official",
+      "type": "major",
       "years": [
         2025,
         2026
@@ -6682,7 +6697,7 @@
     {
       "event": "Marathon de Tours",
       "brand": "Hyundai",
-      "type": "official",
+      "type": "major",
       "years": [
         2025,
         2026
@@ -6812,7 +6827,7 @@
     {
       "event": "20km de Tours",
       "brand": "Campus",
-      "type": "partner",
+      "type": "official",
       "years": [
         2025,
         2026
@@ -6857,7 +6872,7 @@
     {
       "event": "Harmonie Mutuelle Marathon 10-20K Tours",
       "brand": "Campus",
-      "type": "partner",
+      "type": "official",
       "years": [
         2025,
         2026
@@ -6902,7 +6917,7 @@
     {
       "event": "Marathon de Tours",
       "brand": "Campus",
-      "type": "partner",
+      "type": "official",
       "years": [
         2025,
         2026
@@ -9398,6 +9413,78 @@
       "event": "Run in Lyon",
       "brand": "Joyfuel",
       "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "20km de Tours",
+      "brand": "FDJ",
+      "type": "major",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "20km de Tours",
+      "brand": "Dalkia",
+      "type": "major",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "20km de Tours",
+      "brand": "SKF",
+      "type": "major",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Harmonie Mutuelle Marathon 10-20K Tours",
+      "brand": "FDJ",
+      "type": "major",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Harmonie Mutuelle Marathon 10-20K Tours",
+      "brand": "Dalkia",
+      "type": "major",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Harmonie Mutuelle Marathon 10-20K Tours",
+      "brand": "SKF",
+      "type": "major",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Marathon de Tours",
+      "brand": "FDJ",
+      "type": "major",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Marathon de Tours",
+      "brand": "Dalkia",
+      "type": "major",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Marathon de Tours",
+      "brand": "SKF",
+      "type": "major",
       "years": [
         2026
       ]
