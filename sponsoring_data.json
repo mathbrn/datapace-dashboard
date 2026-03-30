@@ -10982,6 +10982,46 @@
         2025,
         2026
       ]
+    },
+    {
+      "event": "TCS New York City Marathon",
+      "brand": "Chiquita",
+      "type": "official",
+      "years": [
+        2018,
+        2019
+      ]
+    },
+    {
+      "event": "TCS New York City Marathon",
+      "brand": "Biofreeze",
+      "type": "official",
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "event": "Milano Marathon",
+      "brand": "Enervit",
+      "type": "official",
+      "years": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
     }
   ]
 }
