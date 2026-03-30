@@ -1669,6 +1669,56 @@
       "full_name": "SKF AB",
       "sector": "Industrie/Energie",
       "country": "SE"
+    },
+    "Jet2": {
+      "full_name": "Jet2.com (Dart Group)",
+      "sector": "Transport",
+      "country": "GB"
+    },
+    "Vita Coco": {
+      "full_name": "Vita Coco (All Market Inc.)",
+      "sector": "Boisson",
+      "country": "US"
+    },
+    "Faxe Kondi": {
+      "full_name": "Faxe Kondi (Royal Unibrew)",
+      "sector": "Boisson",
+      "country": "DK"
+    },
+    "LØBEREN": {
+      "full_name": "Løberen",
+      "sector": "Distribution sport",
+      "country": "DK"
+    },
+    "On": {
+      "full_name": "On AG",
+      "sector": "Equipementier sport",
+      "country": "CH"
+    },
+    "Albert Heijn": {
+      "full_name": "Albert Heijn (Ahold Delhaize)",
+      "sector": "Distribution",
+      "country": "NL"
+    },
+    "Basic-Fit": {
+      "full_name": "Basic-Fit N.V.",
+      "sector": "Services",
+      "country": "NL"
+    },
+    "Body & Fit": {
+      "full_name": "Body & Fit (Herbalife)",
+      "sector": "Alimentation",
+      "country": "NL"
+    },
+    "PostNL": {
+      "full_name": "PostNL N.V.",
+      "sector": "Services",
+      "country": "NL"
+    },
+    "KPN": {
+      "full_name": "Koninklijke KPN N.V.",
+      "sector": "Tech/IT",
+      "country": "NL"
     }
   },
   "partnerships": [
@@ -9430,6 +9480,10 @@
       "brand": "Dalkia",
       "type": "major",
       "years": [
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -9438,6 +9492,10 @@
       "brand": "SKF",
       "type": "major",
       "years": [
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -9454,6 +9512,10 @@
       "brand": "Dalkia",
       "type": "major",
       "years": [
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -9462,6 +9524,10 @@
       "brand": "SKF",
       "type": "major",
       "years": [
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -9478,6 +9544,10 @@
       "brand": "Dalkia",
       "type": "major",
       "years": [
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -9485,6 +9555,256 @@
       "event": "Marathon de Tours",
       "brand": "SKF",
       "type": "major",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Copenhagen Marathon",
+      "brand": "Nike",
+      "type": "premium",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Copenhagen Marathon",
+      "brand": "BMW",
+      "type": "official",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Copenhagen Marathon",
+      "brand": "Faxe Kondi",
+      "type": "premium",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Copenhagen Marathon",
+      "brand": "LØBEREN",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Copenhagen Marathon",
+      "brand": "High5",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Copenhagen Half Marathon",
+      "brand": "Nike",
+      "type": "premium",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Copenhagen Half Marathon",
+      "brand": "BMW",
+      "type": "official",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Copenhagen Half Marathon",
+      "brand": "Faxe Kondi",
+      "type": "premium",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Copenhagen Half Marathon",
+      "brand": "LØBEREN",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Adidas Manchester Marathon",
+      "brand": "Erdinger Alkoholfrei",
+      "type": "official",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Adidas Manchester Marathon",
+      "brand": "Haribo",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Adidas Manchester Marathon",
+      "brand": "Jet2",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Adidas Manchester Marathon",
+      "brand": "HIGH5",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Adidas Manchester Marathon",
+      "brand": "Vita Coco",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Dam tot Damloop",
+      "brand": "On",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Dam tot Damloop",
+      "brand": "Albert Heijn",
+      "type": "official",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Dam tot Damloop",
+      "brand": "KLM",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Dam tot Damloop",
+      "brand": "Body & Fit",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Dam tot Damloop",
+      "brand": "AA Drink",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Dam tot Damloop",
+      "brand": "Basic-Fit",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Dam tot Damloop",
+      "brand": "Chiquita",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Dam tot Damloop",
+      "brand": "Avis",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Dam tot Damloop",
+      "brand": "Runna",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Dam tot Damloop",
+      "brand": "PostNL",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Dam tot Damloop",
+      "brand": "KPN",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Eugene Marathon",
+      "brand": "Athletic Brewing",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Eugene Marathon",
+      "brand": "Runna",
+      "type": "official",
       "years": [
         2026
       ]
