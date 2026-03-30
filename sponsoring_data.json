@@ -3742,6 +3742,8 @@
       "brand": "Kia",
       "type": "official",
       "years": [
+        2024,
+        2025,
         2026
       ]
     },
@@ -3750,6 +3752,8 @@
       "brand": "McDonald's",
       "type": "partner",
       "years": [
+        2024,
+        2025,
         2026
       ]
     },
@@ -3942,18 +3946,11 @@
       ]
     },
     {
-      "event": "Zurich Marató de Barcelona",
-      "brand": "Compressport",
-      "type": "partner",
-      "years": [
-        2026
-      ]
-    },
-    {
       "event": "HOKA Semi de Paris",
       "brand": "Ekosport",
       "type": "partner",
       "years": [
+        2025,
         2026
       ]
     },
@@ -3970,14 +3967,7 @@
       "brand": "Zalando",
       "type": "partner",
       "years": [
-        2026
-      ]
-    },
-    {
-      "event": "NN Marathon Rotterdam",
-      "brand": "Chiquita",
-      "type": "partner",
-      "years": [
+        2025,
         2026
       ]
     },
@@ -3986,6 +3976,17 @@
       "brand": "AA Drink",
       "type": "partner",
       "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -3994,6 +3995,7 @@
       "brand": "COMPEED",
       "type": "partner",
       "years": [
+        2025,
         2026
       ]
     },
@@ -4020,6 +4022,10 @@
       "brand": "Adidas",
       "type": "official",
       "years": [
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -4028,6 +4034,7 @@
       "brand": "Powerade",
       "type": "official",
       "years": [
+        2025,
         2026
       ]
     },
@@ -4070,14 +4077,6 @@
       "type": "official",
       "years": [
         2025,
-        2026
-      ]
-    },
-    {
-      "event": "AJ Bell Great North Run",
-      "brand": "Maurten",
-      "type": "partner",
-      "years": [
         2026
       ]
     },
@@ -7243,6 +7242,9 @@
       "brand": "GWM",
       "type": "major",
       "years": [
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -7308,6 +7310,12 @@
       "brand": "Gatorade",
       "type": "official",
       "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -7316,6 +7324,7 @@
       "brand": "Coca-Cola",
       "type": "official",
       "years": [
+        2025,
         2026
       ]
     },
@@ -7534,6 +7543,7 @@
       "brand": "Joyfuel",
       "type": "partner",
       "years": [
+        2025,
         2026
       ]
     },
@@ -7542,6 +7552,9 @@
       "brand": "RunMotion Coach",
       "type": "partner",
       "years": [
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -7550,6 +7563,7 @@
       "brand": "TA Energy",
       "type": "partner",
       "years": [
+        2025,
         2026
       ]
     },
@@ -7582,6 +7596,8 @@
       "brand": "Alltricks",
       "type": "official",
       "years": [
+        2024,
+        2025,
         2026
       ]
     },
@@ -7626,6 +7642,7 @@
       "brand": "Celsius",
       "type": "official",
       "years": [
+        2025,
         2026
       ]
     },
@@ -7734,6 +7751,10 @@
       "brand": "KPMG",
       "type": "partner",
       "years": [
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -7773,6 +7794,15 @@
       "brand": "Nuun",
       "type": "partner",
       "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -7781,6 +7811,7 @@
       "brand": "Crystal Geyser",
       "type": "official",
       "years": [
+        2025,
         2026
       ]
     },
@@ -7813,6 +7844,7 @@
       "brand": "Thales",
       "type": "official",
       "years": [
+        2025,
         2026
       ]
     },
@@ -7829,6 +7861,9 @@
       "brand": "ONET",
       "type": "partner",
       "years": [
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -7877,6 +7912,7 @@
       "brand": "Dexcom",
       "type": "official",
       "years": [
+        2025,
         2026
       ]
     },
@@ -7885,6 +7921,18 @@
       "brand": "Adidas",
       "type": "premium",
       "years": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -7909,6 +7957,7 @@
       "brand": "Petrobras",
       "type": "official",
       "years": [
+        2025,
         2026
       ]
     },
@@ -7917,6 +7966,12 @@
       "brand": "Plátano de Canarias",
       "type": "official",
       "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -7925,6 +7980,9 @@
       "brand": "Quirónsalud",
       "type": "official",
       "years": [
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -7994,6 +8052,8 @@
       "brand": "Biofreeze",
       "type": "official",
       "years": [
+        2024,
+        2025,
         2026
       ]
     },
@@ -8036,6 +8096,9 @@
       "brand": "Decathlon",
       "type": "official",
       "years": [
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -8117,6 +8180,7 @@
       "brand": "Vitamin Well",
       "type": "official",
       "years": [
+        2025,
         2026
       ]
     },
@@ -8141,6 +8205,17 @@
       "brand": "AA Drink",
       "type": "official",
       "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -8158,6 +8233,12 @@
       "brand": "Avis",
       "type": "partner",
       "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -8166,6 +8247,13 @@
       "brand": "New Balance",
       "type": "official",
       "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -8174,6 +8262,7 @@
       "brand": "Snap Fitness",
       "type": "partner",
       "years": [
+        2025,
         2026
       ]
     },
@@ -8182,6 +8271,7 @@
       "brand": "Dairy Farmers",
       "type": "partner",
       "years": [
+        2025,
         2026
       ]
     },
@@ -8190,6 +8280,11 @@
       "brand": "Finisher",
       "type": "official",
       "years": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -8198,6 +8293,13 @@
       "brand": "Google",
       "type": "premium",
       "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -8206,6 +8308,13 @@
       "brand": "Express Employment Professionals",
       "type": "official",
       "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -8309,6 +8418,8 @@
       "brand": "Hipro",
       "type": "partner",
       "years": [
+        2024,
+        2025,
         2026
       ]
     },
@@ -8323,18 +8434,11 @@
       ]
     },
     {
-      "event": "Run in Lyon",
-      "brand": "Joyfuel",
-      "type": "partner",
-      "years": [
-        2026
-      ]
-    },
-    {
       "event": "San Antonio Marathon",
       "brand": "H-E-B",
       "type": "official",
       "years": [
+        2025,
         2026
       ]
     },
@@ -8343,6 +8447,7 @@
       "brand": "Corona",
       "type": "official",
       "years": [
+        2025,
         2026
       ]
     },
@@ -8351,6 +8456,7 @@
       "brand": "Fleet Feet",
       "type": "partner",
       "years": [
+        2025,
         2026
       ]
     },
@@ -8359,6 +8465,8 @@
       "brand": "Garmin",
       "type": "official",
       "years": [
+        2024,
+        2025,
         2026
       ]
     },
@@ -8377,6 +8485,7 @@
       "brand": "Amazon",
       "type": "official",
       "years": [
+        2025,
         2026
       ]
     },
@@ -8385,6 +8494,7 @@
       "brand": "KPMG",
       "type": "official",
       "years": [
+        2025,
         2026
       ]
     },
@@ -8393,6 +8503,15 @@
       "brand": "TDK",
       "type": "official",
       "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -8578,6 +8697,16 @@
       "brand": "TCS",
       "type": "official",
       "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -8586,6 +8715,7 @@
       "brand": "Grab",
       "type": "official",
       "years": [
+        2025,
         2026
       ]
     },
@@ -8594,6 +8724,7 @@
       "brand": "Fitness First",
       "type": "partner",
       "years": [
+        2025,
         2026
       ]
     },
@@ -8602,14 +8733,18 @@
       "brand": "H-E-B",
       "type": "official",
       "years": [
-        2026
-      ]
-    },
-    {
-      "event": "Statesman Capitol 10K",
-      "brand": "Smartwater",
-      "type": "official",
-      "years": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -8677,6 +8812,7 @@
       "brand": "Action",
       "type": "official",
       "years": [
+        2025,
         2026
       ]
     },
@@ -8760,6 +8896,26 @@
       "brand": "Oasis",
       "type": "partner",
       "years": [
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -8828,6 +8984,8 @@
       "brand": "Therabody",
       "type": "partner",
       "years": [
+        2024,
+        2025,
         2026
       ]
     },
@@ -8836,6 +8994,8 @@
       "brand": "Coopah",
       "type": "partner",
       "years": [
+        2024,
+        2025,
         2026
       ]
     },
@@ -9200,6 +9360,11 @@
       "brand": "Finisher",
       "type": "official",
       "years": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     },
@@ -9216,6 +9381,7 @@
       "brand": "Maurten",
       "type": "partner",
       "years": [
+        2025,
         2026
       ]
     },
@@ -9225,6 +9391,14 @@
       "type": "partner",
       "years": [
         2025,
+        2026
+      ]
+    },
+    {
+      "event": "Run in Lyon",
+      "brand": "Joyfuel",
+      "type": "partner",
+      "years": [
         2026
       ]
     }
