@@ -5913,8 +5913,7 @@
       "years": [
         2023,
         2024,
-        2025,
-        2026
+        2025
       ]
     },
     {
@@ -10425,6 +10424,95 @@
       "event": "Grandma's Marathon",
       "brand": "Essentia Health",
       "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Istanbul Marathon",
+      "brand": "Türkiye İş Bankası",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Istanbul Marathon",
+      "brand": "Sportive",
+      "type": "premium",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Istanbul Marathon",
+      "brand": "Züber",
+      "type": "premium",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Istanbul Marathon",
+      "brand": "MG",
+      "type": "premium",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "21K de Montréal",
+      "brand": "Nespresso",
+      "type": "title",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "21K de Montréal",
+      "brand": "On",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "21K de Montréal",
+      "brand": "Sports Experts",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "21K de Montréal",
+      "brand": "Xact",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "21K de Montréal",
+      "brand": "Campus",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "21K de Montréal",
+      "brand": "Spek",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "21K de Montréal",
+      "brand": "Ciele Athletics",
+      "type": "partner",
       "years": [
         2026
       ]
