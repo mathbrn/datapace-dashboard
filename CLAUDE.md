@@ -1,9 +1,43 @@
 # Dashboard Running - Consignes de projet
 
-## Fichiers principaux
+## Architecture des donnees
 
-- `generate_dashboard.py` : Generateur du dashboard HTML (lit tous les Excel + JSON)
-- `Suivi_Finishers_Monde_10k_-_21k_-_42k_HISTORIQUE.xlsx` : Donnees finishers (onglet ALL)
+### Source de verite pour le dashboard
+`generate_dashboard.py` utilise **SQLite en priorite** si `datapace.db` existe, sinon les fichiers Excel.
+- Si `datapace.db` existe → lit depuis SQLite (tables `events`, `finishers`, `winners`, `avg_times`)
+- Sinon → lit depuis les fichiers Excel
+
+### Ou sont stockes les noms d'evenements (TOUS a modifier lors d'un renommage)
+1. **`datapace.db`** (SQLite) : table `events` colonne `name` — **SOURCE PRIMAIRE du dashboard**. Les tables `finishers`, `winners`, `avg_times` referencent par `event_id` (FK).
+2. **`Suivi_Finishers_Monde_10k_-_21k_-_42k_HISTORIQUE.xlsx`** : onglet ALL, colonne D (Race)
+3. **`Chronos_Vainqueurs.xlsx`** : colonne Race (genere par `create_chronos.py`, verifier aussi le .py)
+4. **`_event_list.json`** : liste plate des noms d'evenements
+5. **`event_websites.json`** : cles = noms d'evenements
+6. **`sponsoring_data.json`** : champ `event` dans chaque entree
+7. **`scraped_partners.json`** : champ `event`
+8. **`compile_websites.py`** : appels `add("NomEvenement", ...)`
+9. **`_scrape_queue.json`** : champ `event`
+
+### Ou sont stockees les donnees de finishers
+1. **`datapace.db`** : table `finishers` (event_id, year, count, source)
+2. **`Suivi_Finishers_Monde_10k_-_21k_-_42k_HISTORIQUE.xlsx`** : onglet ALL (colonnes annees 2000-2026), onglet BIGGEST EVENTS
+3. **`avg_times_sporthive.json`** : temps moyens calcules depuis APIs
+
+### Ou sont stockes les temps vainqueurs
+1. **`datapace.db`** : table `winners` (event_id, year, men_time, women_time)
+2. **`Chronos_Vainqueurs.xlsx`** : genere par `create_chronos.py` (donnees en dur dans le script)
+
+### Ou sont stockes les temps moyens
+1. **`datapace.db`** : table `avg_times`
+2. **`Temps_moyen_semi-marathon.xlsx`** : multi-feuilles par annee
+3. **`Temps_moyen_par_marathon_{2024,2025,2026}.xlsx`** : une feuille par annee
+4. **`avg_times_sporthive.json`** : temps moyens calcules depuis APIs (Sporthive + Tracx)
+
+### Fichiers principaux
+
+- `generate_dashboard.py` : Generateur du dashboard HTML (lit SQLite ou Excel + JSON)
+- `datapace.db` : Base SQLite (source primaire si presente)
+- `Suivi_Finishers_Monde_10k_-_21k_-_42k_HISTORIQUE.xlsx` : Donnees finishers (onglet ALL + BIGGEST EVENTS)
 - `Chronos_Vainqueurs.xlsx` : Temps vainqueurs H/F (genere par `create_chronos.py`)
 - `Temps_moyen_semi-marathon.xlsx` : Temps moyens semi (multi-feuilles par annee)
 - `Temps_moyen_par_marathon_{2024,2025,2026}.xlsx` : Temps moyens marathon
@@ -126,7 +160,12 @@
 1. Rechercher les donnees (APIs, web search, scraping)
 2. Appliquer via `update_finishers.py` (ne modifie que les cellules vides)
 3. Executer `python generate_dashboard.py`
-4. `git add -A && git commit && git push`
+4. **Toujours commit + push automatiquement** apres chaque modification (ne pas attendre que l'utilisateur le demande)
+   `git add -A && git commit && git push`
+   Le dashboard est heberge sur GitHub Pages : https://mathbrn.github.io/datapace-dashboard/
+
+### Renommer un evenement
+Modifier le nom dans TOUS les emplacements listes dans "Ou sont stockes les noms d'evenements" ci-dessus (9 fichiers). **Ne pas oublier `datapace.db`** (table `events`), c'est la source primaire du dashboard.
 
 ## Structure du dashboard (onglets)
 

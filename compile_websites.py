@@ -11,7 +11,7 @@ def add(name, website, partners=None):
 # === BATCH 1 ===
 add("10K Montmartre", "https://www.10kmontmartreag2rlamondiale.fr/en")
 add("10K Valencia Ibercaja by Kiprun", "https://10kvalencia.com/", "https://10kvalencia.com/category/sponsors/")
-add("20km de Tours", "https://harmonie-mutuelle.marathon1020ktours.com/", "https://harmonie-mutuelle.marathon1020ktours.com/partenaires")
+add("Harmonie Mutuelle 20k de Tours", "https://harmonie-mutuelle.marathon1020ktours.com/", "https://harmonie-mutuelle.marathon1020ktours.com/partenaires")
 add("21K de Montréal", "https://couronsmtl.com/en/21k/home/", "https://couronsmtl.com/en/marathon-beneva/partners/")
 add("AJ Bell Great Birmingham Run", "https://www.greatrun.org/events/great-birmingham-run/", "https://www.greatrun.org/partners/")
 add("AJ Bell Great Birmingham Run 10K", "https://www.greatrun.org/events/great-birmingham-run/", "https://www.greatrun.org/partners/")
@@ -91,7 +91,7 @@ add("Göteborgsvarvet", "https://www.goteborgsvarvet.se/en", "https://www.gotebo
 add("HOKA Semi de Paris", "https://www.hokasemideparis.fr/en", "https://www.hokasemideparis.fr/en/races/partners")
 add("Half Marathon Munchen by Brooks", "https://marathonmuenchen.org/en/", "https://marathonmuenchen.org/en/sponsors-partners/")
 add("Harmonie Mutuelle 20km de Paris", "https://harmonie-mutuelle.20kmparis.com/en/", "https://harmonie-mutuelle.20kmparis.com/en/partenaires/")
-add("Harmonie Mutuelle Marathon 10-20K Tours", "https://harmonie-mutuelle.marathon1020ktours.com/", "https://harmonie-mutuelle.marathon1020ktours.com/partenaires")
+add("Harmonie Mutuelle 10km de Tours", "https://harmonie-mutuelle.marathon1020ktours.com/", "https://harmonie-mutuelle.marathon1020ktours.com/partenaires")
 add("Harmonie Mutuelle Toulouse Metropole Run Experience", "https://harmonie-mutuelle.toulouserunexperience.fr/", "https://harmonie-mutuelle.toulouserunexperience.fr/nos-partenaires/")
 add("Haspa Marathon Hamburg", "https://haspa-marathon-hamburg.de/en/", "https://www.haspa-marathon-hamburg.de/en/sponsors-and-partners")
 add("Hoag OC Marathon", "https://ocmarathon.com/", "https://ocmarathon.com/partnerships/")
@@ -112,7 +112,7 @@ add("Manchester Half Marathon", "https://www.manchesterhalfmarathon.com/")
 
 # === BATCH 3 ===
 add("Manchester Road Race", "https://manchesterroadrace.com/")
-add("Marathon de Tours", "https://runningloirevalley.com/", "https://harmonie-mutuelle.marathon1020ktours.com/partenaires")
+add("Harmonie Mutuelle Marathon de Tours", "https://runningloirevalley.com/", "https://harmonie-mutuelle.marathon1020ktours.com/partenaires")
 add("Maratón de la Ciudad de México Telcel", "https://maraton.cdmx.gob.mx/", "https://maraton.cdmx.gob.mx/socios")
 add("Marine Corps Marathon", "https://www.marinemarathon.com/", "https://www.marinemarathon.com/sponsors/")
 add("Marseille-Cassis AG2R La Mondiale", "https://www.marseille-cassis.com/en/", "https://www.marseille-cassis.com/en/partenaires/nos-partenaires")
