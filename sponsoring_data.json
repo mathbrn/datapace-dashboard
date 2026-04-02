@@ -1899,6 +1899,16 @@
       "full_name": "Engie Solutions",
       "sector": "Industrie/Energie",
       "country": "FR"
+    },
+    "Opel": {
+      "full_name": "Opel (Stellantis)",
+      "sector": "Automobile",
+      "country": "DE"
+    },
+    "Brit Hotel": {
+      "full_name": "Brit Hotel",
+      "sector": "Hotellerie",
+      "country": "FR"
     }
   },
   "partnerships": [
@@ -5748,8 +5758,7 @@
       "years": [
         2023,
         2024,
-        2025,
-        2026
+        2025
       ]
     },
     {
@@ -11411,6 +11420,80 @@
       "brand": "Ker Cadelac",
       "type": "official",
       "years": [
+        2026
+      ]
+    },
+    {
+      "event": "5km Harmonie Mutuelle",
+      "brand": "Decathlon",
+      "type": "title",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "S'MI Ouest-France Semi",
+      "brand": "Opel",
+      "type": "official",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "S'MI Ouest-France Semi",
+      "brand": "Brit Hotel",
+      "type": "official",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "10km CMB",
+      "brand": "Opel",
+      "type": "official",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "10km CMB",
+      "brand": "Brit Hotel",
+      "type": "official",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "5km Harmonie Mutuelle",
+      "brand": "Opel",
+      "type": "official",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "5km Harmonie Mutuelle",
+      "brand": "Brit Hotel",
+      "type": "official",
+      "years": [
+        2023,
+        2024,
+        2025,
         2026
       ]
     }
