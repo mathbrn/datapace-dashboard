@@ -819,6 +819,15 @@
     "avg_speed_kmh": 9.63
   },
   {
+    "label": "Madrid 2026",
+    "race": "Media Maratón",
+    "dist_m": 21097,
+    "year": 2026,
+    "count": 23392,
+    "avg_time": "2:00:06",
+    "avg_speed_kmh": 10.54
+  },
+  {
     "label": "Brighton HM 2017",
     "race": "Half Marathon",
     "dist_m": 21082,
