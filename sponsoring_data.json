@@ -145,6 +145,16 @@
       "sector": "Assurance",
       "country": "FR"
     },
+    "Ouest-France": {
+      "full_name": "Ouest-France (Groupe SIPA)",
+      "sector": "Media/Presse",
+      "country": "FR"
+    },
+    "CMB": {
+      "full_name": "Credit Mutuel de Bretagne",
+      "sector": "Banque/Finance",
+      "country": "FR"
+    },
     "Tokyo Metro": {
       "full_name": "Tokyo Metro Co.",
       "sector": "Transport",
@@ -5602,21 +5612,62 @@
       ]
     },
     {
-      "event": "Tout Rennes Court",
-      "brand": "Harmonie Mutuelle",
-      "type": "official",
+      "event": "S'MI Ouest-France Semi",
+      "brand": "Ouest-France",
+      "type": "title",
       "years": [
-        2023,
-        2024,
-        2025
+        2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019,
+        2020, 2021, 2022, 2023, 2024, 2025, 2026
       ]
     },
     {
-      "event": "Tout Rennes Court",
+      "event": "S'MI Ouest-France Semi",
+      "brand": "Harmonie Mutuelle",
+      "type": "official",
+      "years": [
+        2023, 2024, 2025
+      ]
+    },
+    {
+      "event": "S'MI Ouest-France Semi",
       "brand": "Harmonie Mutuelle",
       "type": "title",
       "years": [
         2026
+      ]
+    },
+    {
+      "event": "10km CMB",
+      "brand": "CMB",
+      "type": "title",
+      "years": [
+        2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009,
+        2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019,
+        2020, 2021, 2022, 2023, 2024, 2025, 2026
+      ]
+    },
+    {
+      "event": "10km CMB",
+      "brand": "Harmonie Mutuelle",
+      "type": "official",
+      "years": [
+        2023, 2024, 2025
+      ]
+    },
+    {
+      "event": "10km CMB",
+      "brand": "Harmonie Mutuelle",
+      "type": "title",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "5km Harmonie Mutuelle",
+      "brand": "Harmonie Mutuelle",
+      "type": "title",
+      "years": [
+        2023, 2024, 2025, 2026
       ]
     },
     {

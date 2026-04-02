@@ -91,7 +91,7 @@ CITY_REGION = {
     "Marseille": "Europe", "Milan": "Europe", "Munich": "Europe", "Nantes": "Europe",
     "Naples": "Europe", "Newcastle": "Europe", "Paris": "Europe", "Portsmouth": "Europe",
     "Prague": "Europe", "Rome": "Europe", "Rotterdam": "Europe", "Seville": "Europe",
-    "Stockholm": "Europe", "Toulouse": "Europe", "Tours": "Europe", "Valence": "Europe",
+    "Rennes": "Europe", "Stockholm": "Europe", "Toulouse": "Europe", "Tours": "Europe", "Valence": "Europe",
     "Varsovie": "Europe", "Vienne": "Europe",
     # North America
     "Atlanta": "Amérique du Nord", "Austin": "Amérique du Nord", "Austin, TX": "Amérique du Nord",
