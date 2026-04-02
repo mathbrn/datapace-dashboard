@@ -1859,6 +1859,46 @@
       "full_name": "Procter & Gamble",
       "sector": "Hygiène/Santé",
       "country": "US"
+    },
+    "Colombia": {
+      "full_name": "Colombia (centre commercial)",
+      "sector": "Distribution/Commerce",
+      "country": "FR"
+    },
+    "Lindahls": {
+      "full_name": "Lindahls Pro+ (Lactalis)",
+      "sector": "Agroalimentaire",
+      "country": "FR"
+    },
+    "Hellowork": {
+      "full_name": "Hellowork Group",
+      "sector": "Tech/Emploi",
+      "country": "FR"
+    },
+    "Sobhi Sport": {
+      "full_name": "Sobhi Sport",
+      "sector": "Equipementier sport",
+      "country": "FR"
+    },
+    "Hit West": {
+      "full_name": "Hit West (radio)",
+      "sector": "Media/Radio",
+      "country": "FR"
+    },
+    "Petits-Fils": {
+      "full_name": "Petits-Fils",
+      "sector": "Services a la personne",
+      "country": "FR"
+    },
+    "Intermarche": {
+      "full_name": "Intermarche (Les Mousquetaires)",
+      "sector": "Distribution/Commerce",
+      "country": "FR"
+    },
+    "Engie Solutions": {
+      "full_name": "Engie Solutions",
+      "sector": "Industrie/Energie",
+      "country": "FR"
     }
   },
   "partnerships": [
@@ -5616,8 +5656,21 @@
       "brand": "Ouest-France",
       "type": "title",
       "years": [
-        2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019,
-        2020, 2021, 2022, 2023, 2024, 2025, 2026
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
       ]
     },
     {
@@ -5625,7 +5678,9 @@
       "brand": "Harmonie Mutuelle",
       "type": "official",
       "years": [
-        2023, 2024, 2025
+        2023,
+        2024,
+        2025
       ]
     },
     {
@@ -5641,9 +5696,31 @@
       "brand": "CMB",
       "type": "title",
       "years": [
-        2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009,
-        2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019,
-        2020, 2021, 2022, 2023, 2024, 2025, 2026
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
       ]
     },
     {
@@ -5651,7 +5728,9 @@
       "brand": "Harmonie Mutuelle",
       "type": "official",
       "years": [
-        2023, 2024, 2025
+        2023,
+        2024,
+        2025
       ]
     },
     {
@@ -5667,7 +5746,10 @@
       "brand": "Harmonie Mutuelle",
       "type": "title",
       "years": [
-        2023, 2024, 2025, 2026
+        2023,
+        2024,
+        2025,
+        2026
       ]
     },
     {
@@ -11090,6 +11172,246 @@
         2021,
         2022,
         2023
+      ]
+    },
+    {
+      "event": "S'MI Ouest-France Semi",
+      "brand": "Colombia",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "10km CMB",
+      "brand": "Colombia",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "5km Harmonie Mutuelle",
+      "brand": "Colombia",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "S'MI Ouest-France Semi",
+      "brand": "Lindahls",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "10km CMB",
+      "brand": "Lindahls",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "5km Harmonie Mutuelle",
+      "brand": "Lindahls",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "S'MI Ouest-France Semi",
+      "brand": "Hellowork",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "10km CMB",
+      "brand": "Hellowork",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "5km Harmonie Mutuelle",
+      "brand": "Hellowork",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "S'MI Ouest-France Semi",
+      "brand": "Decathlon",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "10km CMB",
+      "brand": "Decathlon",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "5km Harmonie Mutuelle",
+      "brand": "Decathlon",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "S'MI Ouest-France Semi",
+      "brand": "Sobhi Sport",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "10km CMB",
+      "brand": "Sobhi Sport",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "5km Harmonie Mutuelle",
+      "brand": "Sobhi Sport",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "S'MI Ouest-France Semi",
+      "brand": "Hit West",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "10km CMB",
+      "brand": "Hit West",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "5km Harmonie Mutuelle",
+      "brand": "Hit West",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "S'MI Ouest-France Semi",
+      "brand": "Petits-Fils",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "10km CMB",
+      "brand": "Petits-Fils",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "5km Harmonie Mutuelle",
+      "brand": "Petits-Fils",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "S'MI Ouest-France Semi",
+      "brand": "Intermarche",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "10km CMB",
+      "brand": "Intermarche",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "5km Harmonie Mutuelle",
+      "brand": "Intermarche",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "S'MI Ouest-France Semi",
+      "brand": "Engie Solutions",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "10km CMB",
+      "brand": "Engie Solutions",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "5km Harmonie Mutuelle",
+      "brand": "Engie Solutions",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "S'MI Ouest-France Semi",
+      "brand": "Ker Cadelac",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "10km CMB",
+      "brand": "Ker Cadelac",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "5km Harmonie Mutuelle",
+      "brand": "Ker Cadelac",
+      "type": "official",
+      "years": [
+        2026
       ]
     }
   ]
