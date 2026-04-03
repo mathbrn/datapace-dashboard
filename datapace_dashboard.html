@@ -49,10 +49,12 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 .metric-value{font-size:20px;font-weight:500;color:var(--text);margin-top:4px;}
 .metric-sub{font-size:11px;color:var(--text3);margin-top:2px;}
 .time-bar-wrap{margin-bottom:1.5rem;max-height:360px;overflow-y:auto;}
-.time-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:5px;}
-.time-bar-label{font-size:11px;color:var(--text2);width:210px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.time-bar-track{flex:1;background:var(--bg2);border-radius:2px;height:5px;}
-.time-bar-fill{height:100%;border-radius:2px;}
+.time-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:5px;cursor:pointer;transition:background .1s;border-radius:4px;padding:2px 4px;}
+.time-bar-row:hover{background:var(--bg2);}
+.time-bar-rank{font-size:11px;color:#555;font-family:'Courier New',monospace;}
+.time-bar-label{font-size:11px;color:var(--text2);width:280px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.time-bar-track{flex:1;background:var(--bg2);border-radius:4px;height:18px;}
+.time-bar-fill{height:100%;border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:6px;font-size:10px;color:#fff;font-weight:500;white-space:nowrap;}
 .time-bar-val{font-size:11px;color:var(--text3);width:56px;flex-shrink:0;text-align:right;}
 .ov-search-wrap{position:relative;margin-bottom:1rem;}
 .ov-search-wrap input{width:100%;font-size:13px;padding:8px 12px 8px 32px;border:.5px solid var(--border2);border-radius:4px;background:var(--bg2);color:var(--text);outline:none;}
@@ -178,7 +180,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
   <div><div class="dp-title">Dashboard Running</div><div class="dp-sub">Grands evenements running mondiaux &middot; 2007-2026</div></div>
   <div style="display:flex;align-items:center;gap:12px;">
     <div class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Changer le theme">&#x263E; Dark</div>
-    <div class="dp-updated">Genere le 02/04/2026 a 15:23</div>
+    <div class="dp-updated">Genere le 03/04/2026 a 17:16</div>
   </div>
 </div>
 <div class="tabs">
@@ -268,11 +270,11 @@ tr:hover td{background:var(--bg2);color:var(--text);}
   </div>
   <div class="section-title">Top evenements par nombre de finishers</div>
   <div class="legend">
-    <span class="leg-item"><span class="leg-dot" style="background:#5C00D4"></span>Autre</span>
-    <span class="leg-item"><span class="leg-dot" style="background:#FCDB00"></span>Evenements ASO</span>
-    <span class="leg-item"><span class="leg-dot" style="background:#38BDF8"></span>World Marathon Majors</span>
+    <span class="leg-item"><span class="leg-dot" style="background:#5C00D4"></span>Marathon</span>
+    <span class="leg-item"><span class="leg-dot" style="background:#FF8A50"></span>Semi-marathon</span>
+    <span class="leg-item"><span class="leg-dot" style="background:#5CDFA0"></span>10 km</span>
   </div>
-  <div class="time-bar-wrap" id="biggest-bars" style="max-height:520px"></div>
+  <div class="time-bar-wrap" id="biggest-bars" style="max-height:none"></div>
 </div>
 <div id="panel-temps" class="panel">
   <div class="controls">
@@ -784,21 +786,41 @@ function initBiggestYears(){
   if(prev&&allYears.indexOf(+prev)>=0)sel.value=prev;
 }
 
+function colDistOnly(r){return lc(r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':'#5C00D4');}
 function updateBiggest(){
   var n=parseInt(document.getElementById('topn-biggest').value);
   var yr=parseInt(document.getElementById('year-biggest').value);
   var src=getBiggestSrc();
-  var sorted=src.filter(function(r){var v=(r.hist||{})[yr];return v&&!isNaN(v);}).sort(function(a,b){return((b.hist||{})[yr]||0)-((a.hist||{})[yr]||0);}).slice(0,n);
+  var sorted=src.filter(function(r){var v=(r.hist||{})[yr];return v&&!isNaN(v)&&v>0;}).sort(function(a,b){return((b.hist||{})[yr]||0)-((a.hist||{})[yr]||0);}).slice(0,n);
   var maxVal=sorted.length?((sorted[0].hist||{})[yr]||1):1;
   var html='';
-  sorted.forEach(function(r){
+  sorted.forEach(function(r,i){
     var v=(r.hist||{})[yr];
     var pct=(v/maxVal*80+5).toFixed(1);
-    var barCol=colDist(r);
-    html+='<div class="time-bar-row bt-row" data-name="'+r.r.replace(/"/g,'&quot;')+'" data-val="'+fmtFull(v)+' finishers"><div class="time-bar-label" title="'+r.r+'">'+r.r+'</div><div class="time-bar-track"><div class="time-bar-fill" style="width:'+pct+'%;background:'+barCol+'88"></div></div><div class="time-bar-val">'+fmt(v)+'</div></div>';
+    var barCol=colDistOnly(r);
+    var rank=String(i+1).padStart(2,'0');
+    var valInside=pct>25;
+    var valLabel=fmtFull(v);
+    var idx=RAW.indexOf(r);
+    html+='<div class="time-bar-row bt-row" data-name="'+r.r.replace(/"/g,'&quot;')+'" data-city="'+(r.c||'').replace(/"/g,'&quot;')+'" data-val="'+valLabel+' finishers" data-idx="'+idx+'" onclick="biggestClick('+idx+')">'
+      +'<div class="time-bar-label" title="'+r.r+'"><span class="time-bar-rank">'+rank+'</span> · '+r.r+'</div>'
+      +'<div class="time-bar-track"><div class="time-bar-fill" style="width:'+pct+'%;background:'+barCol+'cc">'+(valInside?valLabel:'')+'</div></div>'
+      +'<div class="time-bar-val">'+(valInside?'':valLabel)+'</div></div>';
   });
-  document.getElementById('biggest-bars').innerHTML=html;
+  var wrap=document.getElementById('biggest-bars');
+  wrap.style.maxHeight='none';
+  wrap.style.height=Math.max(sorted.length*36,100)+'px';
+  wrap.innerHTML=html;
   initBarTips();
+}
+function biggestClick(idx){
+  if(idx<0)return;
+  switchTab('overview');
+  var ev=RAW[idx];
+  if(!ev)return;
+  document.getElementById('ov-search').value=ev.r;
+  ovSearch();
+  setTimeout(function(){ovSelect(idx);},100);
 }
 
 function updateTempsYears(){
@@ -1476,14 +1498,15 @@ function fixCmpBarEvo(winA){
 // Bar tooltip
 var barTipEl=null;
 function initBarTips(){
-  if(!barTipEl){barTipEl=document.createElement('div');barTipEl.style.cssText='position:fixed;background:#111;border:1px solid #333;border-radius:4px;padding:8px 12px;pointer-events:none;z-index:100;font-size:12px;display:none;';document.body.appendChild(barTipEl);}
+  if(!barTipEl){barTipEl=document.createElement('div');barTipEl.style.cssText='position:fixed;background:#111;border:1px solid #333;border-radius:6px;padding:10px 14px;pointer-events:none;z-index:100;font-size:12px;display:none;max-width:320px;';document.body.appendChild(barTipEl);}
   document.querySelectorAll('.bt-row').forEach(function(el){
     el.addEventListener('mouseenter',function(){
-      barTipEl.innerHTML='<div style="color:#888;font-size:11px;margin-bottom:3px">'+el.dataset.name+'</div><div style="color:#ccc">'+el.dataset.val+'</div>';
+      var city=el.dataset.city||'';
+      barTipEl.innerHTML='<div style="color:#fff;font-size:12px;font-weight:500;margin-bottom:2px">'+el.dataset.name+'</div>'+(city?'<div style="color:#888;font-size:11px;margin-bottom:4px">'+city+'</div>':'')+'<div style="color:#ccc;font-size:13px;font-weight:600">'+el.dataset.val+'</div>';
       barTipEl.style.display='block';
       var rect=el.getBoundingClientRect();
-      barTipEl.style.left=(rect.left+rect.width/2-60)+'px';
-      barTipEl.style.top=(rect.top-50)+'px';
+      barTipEl.style.left=(rect.left+rect.width/2-80)+'px';
+      barTipEl.style.top=(rect.top-70)+'px';
     });
     el.addEventListener('mouseleave',function(){barTipEl.style.display='none';});
   });
