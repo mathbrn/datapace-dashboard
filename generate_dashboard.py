@@ -1010,7 +1010,7 @@ function filterTable(){
   var lastYr=globalYears.length?globalYears[globalYears.length-1]:0;
   if(sortMode==='month'){f.sort(function(a,b){return(monthOrder[a.p]||99)-(monthOrder[b.p]||99);});}
   else if(sortMode==='distance'){f.sort(function(a,b){return(distOrder[a.d]||9)-(distOrder[b.d]||9);});}
-  else if(sortMode==='finishers'){f.sort(function(a,b){var va=(a.hist||{})[lastYr]||0,vb=(b.hist||{})[lastYr]||0;return vb-va;});}
+  else if(sortMode==='finishers'){f.sort(function(a,b){var va=(a.hist||{})[2025]||0,vb=(b.hist||{})[2025]||0;if(va===0&&vb===0)return 0;if(va===0)return 1;if(vb===0)return-1;return vb-va;});}
   else if(sortMode==='trend'){f.sort(function(a,b){function getTrend(r){var vals=globalYears.map(function(y){return(r.hist||{})[y]||null;}).filter(function(v){return v&&!isNaN(v);});return vals.length>=2?delta(vals[0],vals[vals.length-1]):null;}var ta=getTrend(a),tb=getTrend(b);if(ta===null&&tb===null)return 0;if(ta===null)return 1;if(tb===null)return-1;return tb-ta;});}
   var frozen=globalYears.length>4;
   if(tbl){tbl.classList.toggle('tbl-frozen',frozen);if(!frozen)tbl.style.tableLayout='';tbl.querySelectorAll('.frozen-cell').forEach(function(c){c.classList.remove('frozen-cell');c.style.position='';c.style.left='';c.style.zIndex='';c.style.minWidth='';c.style.width='';c.style.boxShadow='';});}
@@ -1058,7 +1058,7 @@ function resetFilters(){
   document.getElementById('month-data').value='ALL';
   document.getElementById('badge-data').value='ALL';
   document.getElementById('size-data').value='ALL';
-  document.getElementById('sort-data').value='default';
+  document.getElementById('sort-data').value='finishers';
   document.getElementById('afficher-data').value='3';
   filterTable();
 }
@@ -2267,10 +2267,10 @@ HTML_BODY = """
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Tri</span>
       <select id="sort-data" onchange="filterTable()">
+        <option value="finishers" selected>Finishers (decroissant)</option>
         <option value="default">Par defaut</option>
         <option value="month">Par mois</option>
         <option value="distance">Par distance</option>
-        <option value="finishers">Finishers (decroissant)</option>
         <option value="trend">Meilleure tendance</option>
       </select>
     </div>
