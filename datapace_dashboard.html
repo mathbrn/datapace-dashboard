@@ -307,7 +307,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
   </div>
   <div class="section-title" id="trends-section-lbl">EVOLUTION</div>
   <div class="legend" id="trends-legend">
-    <span class="leg-item"><span class="leg-dot" style="background:#EF4444"></span>Marathon</span>
+    <span class="leg-item"><span class="leg-dot" style="background:#60A5FA"></span>Marathon</span>
     <span class="leg-item"><span class="leg-dot" style="background:#FF8A50"></span>Semi-marathon</span>
     <span class="leg-item"><span class="leg-dot" style="background:#5CDFA0"></span>10 km</span>
     <span class="leg-item"><span class="leg-dot" style="background:#F472B6"></span>Autre</span>
@@ -338,7 +338,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
   </div>
   <div class="section-title">Top evenements par nombre de finishers</div>
   <div class="legend">
-    <span class="leg-item"><span class="leg-dot" style="background:#DC2626"></span>Marathon</span>
+    <span class="leg-item"><span class="leg-dot" style="background:#2563EB"></span>Marathon</span>
     <span class="leg-item"><span class="leg-dot" style="background:#FF8A50"></span>Semi-marathon</span>
     <span class="leg-item"><span class="leg-dot" style="background:#5CDFA0"></span>10 km</span>
     <span class="leg-item"><span class="leg-dot" style="background:#F472B6"></span>Autre</span>
@@ -538,16 +538,16 @@ const SP_PARTNERSHIPS=[{"event": "TCS London Marathon", "brand": "TCS", "type": 
 
 function isWmm(r){var l=r.toLowerCase();return WMM_KEYWORDS.some(function(k){return l.indexOf(k)>=0;});}
 function isLight(){return document.documentElement.hasAttribute('data-theme');}
-var LIGHT_MAP={'#38BDF8':'#0B7BC0','#FCDB00':'#A88F00','#DC2626':'#991B1B','#EF4444':'#B91C1C','#FF8A50':'#CC5A20','#5CDFA0':'#2BA368','#F472B6':'#C04080','#FF4A6B':'#CC2040','#22C55E':'#1A8A42','#2DBF7E':'#1F8A5A','#FF6B9D':'#CC3870','#F87171':'#B91C1C','#DC2626':'#991B1B'};
+var LIGHT_MAP={'#38BDF8':'#0B7BC0','#FCDB00':'#A88F00','#DC2626':'#991B1B','#EF4444':'#B91C1C','#FF8A50':'#CC5A20','#5CDFA0':'#2BA368','#F472B6':'#C04080','#FF4A6B':'#CC2040','#22C55E':'#1A8A42','#2DBF7E':'#1F8A5A','#FF6B9D':'#CC3870','#F87171':'#B91C1C','#2563EB':'#1D4ED8','#60A5FA':'#2563EB','#3B82F6':'#1D4ED8','#BFDBFE':'#93C5FD','#1E3A8A':'#172554','#1D4ED8':'#1E3A8A','#1E40AF':'#1E3A8A','#93C5FD':'#60A5FA'};
 function lc(c){return isLight()?(LIGHT_MAP[c]||c):c;}
 function col(r){return lc('#DC2626');}
-function colDist(r){return lc(r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':r.d==='AUTRE'?'#F472B6':'#DC2626');}
+function colDist(r){return lc(r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':r.d==='AUTRE'?'#F472B6':'#2563EB');}
 var CIRC_COLORS={WMM:'#38BDF8',EMC:'#F87171',L5G:'#DC2626'};
 var CIRC_DIST_SEC={MARATHON:'#F87171',SEMI:'#FFB088','10KM':'#88EEBB',AUTRE:'#FF99CC'};
 function circColor(code,dist){if(code==='RNR')return lc(CIRC_DIST_SEC[dist]||'#F87171');return lc(CIRC_COLORS[code]||'#F87171');}
 function circBadges(r){var ci=r.ci||[];if(!ci.length)return'';return ci.map(function(c){var col=circColor(c,r.d);return'<span class="circ-badge" style="border:1px solid '+col+'40;color:'+col+';background:transparent;font-size:9px;padding:1px 6px;border-radius:100px;text-transform:uppercase;margin-left:4px;white-space:nowrap">'+c+'</span>';}).join('');}
 function hasCircuit(r,code){return(r.ci||[]).indexOf(code)>=0;}
-function colByName(name){var r=RAW.find(function(x){return x.r===name;});return r?colDist(r):lc('#EF4444');}
+function colByName(name){var r=RAW.find(function(x){return x.r===name;});return r?colDist(r):lc('#60A5FA');}
 function toMin(t){if(!t)return null;var p=String(t).split(':');if(p.length===3)return parseInt(p[0])*60+parseInt(p[1])+parseInt(p[2])/60;return null;}
 function fmt(n){if(n===-1)return'Annulé';if(n===-2)return'Elite';if(n===-3)return'';if(!n||isNaN(n))return'—';return n>=1000?(n/1000).toFixed(1)+'k':n.toString();}
 function fmtFull(n){if(n===-1)return'Annulé';if(n===-2)return'Elite Only';if(n===-3)return'';if(!n||isNaN(n))return'—';return Math.round(n).toLocaleString('fr-FR');}
@@ -714,8 +714,8 @@ function ovSearch(){
   if(q.length<2){box.innerHTML='<div class="ov-placeholder">Tapez au moins 2 caracteres</div>';return;}
   var matches=RAW.filter(function(r){return r.r.toLowerCase().indexOf(q)>=0||r.c.toLowerCase().indexOf(q)>=0;});
   if(!matches.length){box.innerHTML='<div class="ov-placeholder">Aucun resultat</div>';return;}
-  var dc={MARATHON:'#EF444418',SEMI:'#FF8A5018','10KM':'#5CDFA018'};
-  var dt={MARATHON:'#EF4444',SEMI:'#FF8A50','10KM':'#5CDFA0'};
+  var dc={MARATHON:'#60A5FA18',SEMI:'#FF8A5018','10KM':'#5CDFA018'};
+  var dt={MARATHON:'#60A5FA',SEMI:'#FF8A50','10KM':'#5CDFA0'};
   var html='';
   matches.forEach(function(r){
     var idx=RAW.indexOf(r);
@@ -876,12 +876,12 @@ function trendShades(base,n){
   }
   return out;
 }
-var TREND_PALETTES={MARATHON:['#DC2626','#EF4444','#EF4444','#FCA5A5','#7F1D1D','#450A0A','#FECACA','#B91C1C','#DC2626','#EF4444','#991B1B','#FCA5A5','#B91C1C','#991B1B','#EF4444','#FCA5A5','#7F1D1D','#FECACA','#991B1B','#B91C1C'],SEMI:['#FF8A50','#FFB088','#E06020','#CC4400','#FFCC99','#FF6B2B','#D45500','#FFA070','#B84000','#FFD4B0','#FF9060','#E87040','#C05020','#FFBB90','#FF7744','#D46030','#AA3500','#FFDDBB','#FF8040','#EE6622'],'10KM':['#5CDFA0','#88EEBB','#2BA368','#1A8050','#AAFFDD','#44CC88','#339966','#77DDAA','#228855','#BBFFCC','#66DDAA','#55CC99','#44BB88','#99EEBB','#33AA77','#22BB88','#11AA66','#CCFFDD','#55BB99','#44AA88'],AUTRE:['#F472B6','#FF99CC','#D44D90','#BB3377','#FFBBDD','#E85DA3','#CC4488','#FF88BB','#AA2266','#FFCCDD','#F08AC0','#DD66AA','#CC5599','#FFAACC','#E070B0','#BB4488','#FF77BB','#D05595','#AA3377','#FFDDEE']};
+var TREND_PALETTES={MARATHON:['#2563EB','#60A5FA','#3B82F6','#BFDBFE','#1E3A8A','#172554','#DBEAFE','#1D4ED8','#2563EB','#60A5FA','#1E40AF','#BFDBFE','#1D4ED8','#1E40AF','#3B82F6','#93C5FD','#1E3A8A','#DBEAFE','#1E40AF','#1D4ED8'],SEMI:['#FF8A50','#FFB088','#E06020','#CC4400','#FFCC99','#FF6B2B','#D45500','#FFA070','#B84000','#FFD4B0','#FF9060','#E87040','#C05020','#FFBB90','#FF7744','#D46030','#AA3500','#FFDDBB','#FF8040','#EE6622'],'10KM':['#5CDFA0','#88EEBB','#2BA368','#1A8050','#AAFFDD','#44CC88','#339966','#77DDAA','#228855','#BBFFCC','#66DDAA','#55CC99','#44BB88','#99EEBB','#33AA77','#22BB88','#11AA66','#CCFFDD','#55BB99','#44AA88'],AUTRE:['#F472B6','#FF99CC','#D44D90','#BB3377','#FFBBDD','#E85DA3','#CC4488','#FF88BB','#AA2266','#FFCCDD','#F08AC0','#DD66AA','#CC5599','#FFAACC','#E070B0','#BB4488','#FF77BB','#D05595','#AA3377','#FFDDEE']};
 function trendColor(r,i,dist,total){
-  if(dist==='ALL'){return lc(r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':r.d==='AUTRE'?'#F472B6':'#EF4444');}
+  if(dist==='ALL'){return lc(r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':r.d==='AUTRE'?'#F472B6':'#60A5FA');}
   var pal=TREND_PALETTES[dist];
   if(pal)return lc(pal[i%pal.length]);
-  return lc('#EF4444');
+  return lc('#60A5FA');
 }
 function trendShortName(r){
   var c=r.c||'';
@@ -921,7 +921,7 @@ function updateTrends(){
   if(legEl){
     var legHtml='';
     if(dist==='ALL'){
-      legHtml+='<span class="leg-item"><span class="leg-dot" style="background:#EF4444"></span>Marathon</span>';
+      legHtml+='<span class="leg-item"><span class="leg-dot" style="background:#60A5FA"></span>Marathon</span>';
       legHtml+='<span class="leg-item"><span class="leg-dot" style="background:#FF8A50"></span>Semi-marathon</span>';
       legHtml+='<span class="leg-item"><span class="leg-dot" style="background:#5CDFA0"></span>10 km</span>';
       legHtml+='<span class="leg-item"><span class="leg-dot" style="background:#F472B6"></span>Autre</span>';
@@ -992,7 +992,7 @@ function initBiggestYears(){
   if(prev&&allYears.indexOf(+prev)>=0)sel.value=prev;
 }
 
-function colDistOnly(r){return lc(r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':r.d==='AUTRE'?'#F472B6':'#DC2626');}
+function colDistOnly(r){return lc(r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':r.d==='AUTRE'?'#F472B6':'#2563EB');}
 function updateBiggest(){
   var n=parseInt(document.getElementById('topn-biggest').value);
   var yr=parseInt(document.getElementById('year-biggest').value);
@@ -1068,7 +1068,7 @@ function updateTemps(){
   var slowest=withAvg.length?withAvg.reduce(function(a,b){return toMin(a.avg)>toMin(b.avg)?a:b;}):null;
   var avgAll=withAvg.length?withAvg.reduce(function(s,d){return s+toMin(d.avg);},0)/withAvg.length:0;
   var distLabel=dist==='SEMI'?'Semi-marathon':'Marathon';
-  var barCol=dist==='SEMI'?lc('#FF8A50'):lc('#DC2626');
+  var barCol=dist==='SEMI'?lc('#FF8A50'):lc('#2563EB');
   document.getElementById('metrics-temps').innerHTML=
     '<div class="metric" style="grid-column:span 2"><div class="metric-label">Temps moyen global</div><div class="metric-value" style="font-size:28px;color:'+barCol+'">'+minToTime(avgAll)+'</div><div class="metric-sub">'+distLabel+' '+yr+' · '+src.length+' courses</div></div>'
     +'<div class="metric"><div class="metric-label" style="color:'+barCol+'">Plus rapide</div><div class="metric-value" style="font-size:18px;color:'+barCol+'">'+(fastest?fastest.avg:'-')+'</div><div class="metric-sub" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+(fastest?fastest.race:'')+'</div></div>'
@@ -1605,8 +1605,8 @@ function cmpSearch(side){
   if(q.length<2){drop.style.display='none';return;}
   var matches=RAW.filter(function(r){return r.r.toLowerCase().indexOf(q)>=0||r.c.toLowerCase().indexOf(q)>=0;});
   if(!matches.length){drop.style.display='none';return;}
-  var dc={MARATHON:'#EF444418',SEMI:'#FF8A5018','10KM':'#5CDFA018'};
-  var dt={MARATHON:'#EF4444',SEMI:'#FF8A50','10KM':'#5CDFA0'};
+  var dc={MARATHON:'#60A5FA18',SEMI:'#FF8A5018','10KM':'#5CDFA018'};
+  var dt={MARATHON:'#60A5FA',SEMI:'#FF8A50','10KM':'#5CDFA0'};
   drop.innerHTML='';
   drop.style.display='block';
   matches.slice(0,10).forEach(function(r){
@@ -1906,7 +1906,7 @@ function updateWinners(){
   filtered.forEach(function(w){var ms=winToSec(w.m),ws=winToSec(w.w);if(ms)allM.push(ms);if(ws)allW.push(ws);});
   allM.sort(function(a,b){return a-b;});allW.sort(function(a,b){return a-b;});
   var mH='';
-  if(allM.length){mH+='<div class="metric"><div class="metric-label">Record Homme</div><div class="metric-value" style="color:#EF4444">'+secToTime(allM[0])+'</div><div class="metric-sub">sur '+allM.length+' courses</div></div>';}
+  if(allM.length){mH+='<div class="metric"><div class="metric-label">Record Homme</div><div class="metric-value" style="color:#60A5FA">'+secToTime(allM[0])+'</div><div class="metric-sub">sur '+allM.length+' courses</div></div>';}
   if(allW.length){mH+='<div class="metric"><div class="metric-label">Record Femme</div><div class="metric-value" style="color:#FF8A50">'+secToTime(allW[0])+'</div><div class="metric-sub">sur '+allW.length+' courses</div></div>';}
   if(allM.length){var avg=allM.reduce(function(a,b){return a+b;},0)/allM.length;mH+='<div class="metric"><div class="metric-label">Moy. Homme</div><div class="metric-value">'+secToTime(avg)+'</div></div>';}
   if(allW.length){var avg=allW.reduce(function(a,b){return a+b;},0)/allW.length;mH+='<div class="metric"><div class="metric-label">Moy. Femme</div><div class="metric-value">'+secToTime(avg)+'</div></div>';}
@@ -1945,7 +1945,7 @@ function updateWinnersTable(){
   tbody.innerHTML=filtered.map(function(w){
     var ms=winToSec(w.m),ws=winToSec(w.w);
     var gap=(ms&&ws)?secToTime(ws-ms):'\u2014';
-    return'<tr><td>'+w.r+'</td><td style="text-align:center;color:#EF4444">'+(w.m||'\u2014')+'</td><td style="text-align:center;color:#FF8A50">'+(w.w||'\u2014')+'</td><td style="text-align:center;color:var(--text3)">'+gap+'</td></tr>';
+    return'<tr><td>'+w.r+'</td><td style="text-align:center;color:#60A5FA">'+(w.m||'\u2014')+'</td><td style="text-align:center;color:#FF8A50">'+(w.w||'\u2014')+'</td><td style="text-align:center;color:var(--text3)">'+gap+'</td></tr>';
   }).join('');
   document.getElementById('win-count').textContent=filtered.length+' courses - '+yr;
 }
