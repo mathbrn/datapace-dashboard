@@ -1621,26 +1621,24 @@ function spRenderTreemap(){
     var bg=act?'var(--bg3)':'var(--bg2)';
     var brd=act?'1px solid '+col:'1px solid var(--border)';
     var d=document.createElement('div');
-    d.style.cssText='position:absolute;left:'+(x+1.5)+'px;top:'+(y+1.5)+'px;width:'+(w-3)+'px;height:'+(h-3)+'px;border-radius:6px;background:'+bg+';border:'+brd+';cursor:pointer;transition:all .15s;overflow:hidden;box-sizing:border-box;';
+    var tw=Math.max(0,w-3),th=Math.max(0,h-3);
+    d.style.cssText='position:absolute;left:'+(x+1.5)+'px;top:'+(y+1.5)+'px;width:'+tw+'px;height:'+th+'px;border-radius:6px;background:'+bg+';border:'+brd+';cursor:pointer;transition:all .15s;overflow:hidden;box-sizing:border-box;';
     var inner='<div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:'+col+';border-radius:0 0 5px 5px"></div>';
-    // Smart label sizing
     var label=n.id;
-    if(w>=200){
-      // Large: full name + number
-      var fs=Math.max(10,Math.min(13,Math.min(w,h)/6));
-      inner+='<span style="position:absolute;bottom:'+(h>44?'18':'8')+'px;left:7px;right:5px;font-size:'+fs+'px;font-weight:600;color:'+(act?col:'var(--text)')+';white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none">'+label+'</span>';
-      if(w>100&&h>44)inner+='<span style="position:absolute;bottom:6px;left:7px;font-size:10px;color:var(--text3);pointer-events:none">'+spFmt(n.v)+'</span>';
-    }else if(w>=100){
-      // Medium: full name, number if tall enough
-      var fs=Math.max(9,Math.min(12,Math.min(w,h)/6));
-      inner+='<span style="position:absolute;bottom:'+(h>44?'18':'8')+'px;left:7px;right:5px;font-size:'+fs+'px;font-weight:600;color:'+(act?col:'var(--text)')+';white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none">'+label+'</span>';
-      if(h>44)inner+='<span style="position:absolute;bottom:6px;left:7px;font-size:10px;color:var(--text3);pointer-events:none">'+spFmt(n.v)+'</span>';
-    }else if(w>=60&&h>28){
-      // Small: truncated name
-      var short=label.length>8?label.substring(0,8)+'.':label;
-      inner+='<span style="position:absolute;bottom:8px;left:5px;right:3px;font-size:9px;font-weight:600;color:'+(act?col:'var(--text)')+';white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none">'+short+'</span>';
+    var labelColor=act?col:'var(--text)';
+    // Three tiers:
+    //  - big  : w>=80 et h>=42  -> label + nombre
+    //  - small: w>=55 et h>=26  -> label seul (tronque si besoin)
+    //  - tiny : plus petit      -> aucun texte
+    if(tw>=80&&th>=42){
+      var fs=Math.max(10,Math.min(13,Math.min(tw,th)/7));
+      inner+='<span style="position:absolute;bottom:22px;left:8px;right:6px;font-size:'+fs+'px;font-weight:600;color:'+labelColor+';white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none">'+label+'</span>';
+      inner+='<span style="position:absolute;bottom:7px;left:8px;font-size:10px;font-weight:500;color:var(--text3);pointer-events:none">'+spFmt(n.v)+'</span>';
+    }else if(tw>=55&&th>=26){
+      var short=(label.length>8&&tw<85)?label.substring(0,8)+'.':label;
+      var fs=Math.max(9,Math.min(11,Math.min(tw,th)/6));
+      inner+='<span style="position:absolute;bottom:8px;left:6px;right:4px;font-size:'+fs+'px;font-weight:600;color:'+labelColor+';white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none">'+short+'</span>';
     }
-    // Very small (<60px): no label
     d.innerHTML=inner;
     d.setAttribute('data-sp-id',n.id);
     d.setAttribute('data-sp-col',col);
