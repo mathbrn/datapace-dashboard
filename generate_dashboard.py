@@ -2110,6 +2110,7 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 .sp-pill{padding:3px 8px;border-radius:20px;font-size:10px;cursor:pointer;background:var(--bg);color:var(--text3);border:1px solid var(--border);transition:.15s;white-space:nowrap;}
 .sp-pill:hover{color:var(--text);}
 .sp-pill.spc-active{color:#fff!important;border-color:transparent!important;}
+[data-theme="light"] .sp-pill[data-si="0"].spc-active{background:#000!important;}
 .sp-list-title{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;}
 .sp-blist{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:1px;scrollbar-width:thin;scrollbar-color:var(--border) transparent;}
 .sp-blist::-webkit-scrollbar{width:4px;}
