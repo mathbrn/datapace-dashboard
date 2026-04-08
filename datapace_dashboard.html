@@ -789,19 +789,29 @@ function exportPanel(format){
   setTimeout(function(){
     html2canvas(panel,{backgroundColor:bg,scale:2,logging:false,useCORS:true,windowWidth:panel.scrollWidth,windowHeight:panel.scrollHeight}).then(function(canvas){
       restores.forEach(function(r){r.el.style.overflow=r.overflow;r.el.style.overflowY=r.overflowY;r.el.style.maxHeight=r.maxHeight;r.el.style.height=r.height;});
+      // Add padding around the captured content by drawing it into a larger canvas
+      var padding=60*2; // 60px visual padding, scale=2
+      var padded=document.createElement('canvas');
+      padded.width=canvas.width+padding*2;
+      padded.height=canvas.height+padding*2;
+      var pctx=padded.getContext('2d');
+      pctx.fillStyle=bg;
+      pctx.fillRect(0,0,padded.width,padded.height);
+      pctx.drawImage(canvas,padding,padding);
+      var finalCanvas=padded;
       var filename=buildExportFilename(format);
       if(format==='png'){
         var link=document.createElement('a');
         link.download=filename;
-        link.href=canvas.toDataURL('image/png');
+        link.href=finalCanvas.toDataURL('image/png');
         document.body.appendChild(link);link.click();document.body.removeChild(link);
       }else if(format==='pdf'){
         if(typeof jspdf==='undefined'||!jspdf.jsPDF){alert('Librairie PDF non chargee.');}
         else{
-          var imgData=canvas.toDataURL('image/png');
-          var orientation=canvas.width>=canvas.height?'landscape':'portrait';
-          var pdf=new jspdf.jsPDF({orientation:orientation,unit:'px',format:[canvas.width,canvas.height],hotfixes:['px_scaling']});
-          pdf.addImage(imgData,'PNG',0,0,canvas.width,canvas.height,undefined,'FAST');
+          var imgData=finalCanvas.toDataURL('image/png');
+          var orientation=finalCanvas.width>=finalCanvas.height?'landscape':'portrait';
+          var pdf=new jspdf.jsPDF({orientation:orientation,unit:'px',format:[finalCanvas.width,finalCanvas.height],hotfixes:['px_scaling']});
+          pdf.addImage(imgData,'PNG',0,0,finalCanvas.width,finalCanvas.height,undefined,'FAST');
           pdf.save(filename);
         }
       }
