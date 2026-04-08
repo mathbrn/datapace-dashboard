@@ -162,7 +162,7 @@
 3. Executer `python generate_dashboard.py`
 4. **Toujours commit + push automatiquement** apres chaque modification (ne pas attendre que l'utilisateur le demande)
    `git add -A && git commit && git push`
-   Le dashboard est heberge sur GitHub Pages : https://mathbrn.github.io/datapace-dashboard/
+   **Pousser directement sur `main`** (meme depuis une branche de feature : merge fast-forward vers main puis push). Le dashboard est heberge sur GitHub Pages : https://mathbrn.github.io/datapace-dashboard/ et sert depuis `main`.
 
 ### Renommer un evenement
 Modifier le nom dans TOUS les emplacements listes dans "Ou sont stockes les noms d'evenements" ci-dessus (9 fichiers). **Ne pas oublier `datapace.db`** (table `events`), c'est la source primaire du dashboard.
