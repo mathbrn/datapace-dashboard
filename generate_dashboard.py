@@ -1926,11 +1926,13 @@ CSS = """*{box-sizing:border-box;margin:0;padding:0;scrollbar-width:thin;scrollb
 [data-theme="light"] ::-webkit-scrollbar-thumb:hover{background:#DC2626;}
 body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,sans-serif;padding:0;-webkit-font-smoothing:antialiased;}
 .dash-nav{position:fixed;top:0;left:0;right:0;z-index:200;height:56px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,8,8,.75);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
-.dash-nav-left{display:flex;align-items:center;gap:12px;}
+.dash-nav-left{display:flex;align-items:center;gap:14px;}
 .dash-nav-logo{height:28px;border-radius:50%;}
+.dash-nav-logo-svg{height:40px;width:auto;display:block;color:var(--text);flex-shrink:0;}
+[data-theme="light"] .dash-nav-logo-svg{color:#111;}
 
-.dash-nav-sep{width:1px;height:20px;background:var(--border2);}
-.dash-nav-title{font-size:13px;font-weight:500;color:var(--text2);}
+.dash-nav-sep{width:1px;height:22px;background:var(--border2);}
+.dash-nav-title{font-size:15px;font-weight:600;color:var(--text);letter-spacing:0.2px;}
 .dash-nav-right{display:flex;align-items:center;gap:12px;}
 .dash-body{padding:72px 24px 24px;}
 .dp-footer{padding:32px 24px;border-top:1px solid var(--border);text-align:center;margin-top:2rem;}
@@ -2148,7 +2150,12 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 HTML_BODY = """
 <nav class="dash-nav">
   <div class="dash-nav-left">
-    <span class="dash-nav-title">Dashboard</span>
+    <svg class="dash-nav-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 88" role="img" aria-label="A.S.O. Amaury Sport Organisation">
+      <text x="4" y="60" font-family="'Arial Black', Impact, Arial, sans-serif" font-weight="900" font-style="italic" font-size="64" letter-spacing="-2" fill="#E30613">A.S.O.</text>
+      <text x="4" y="80" font-family="'Arial Black', Arial, sans-serif" font-weight="900" font-size="11" letter-spacing="0.5" fill="currentColor"><tspan fill="#E30613">A</tspan>MAURY <tspan fill="#E30613">S</tspan>PORT <tspan fill="#E30613">O</tspan>RGANISATION</text>
+    </svg>
+    <span class="dash-nav-sep"></span>
+    <span class="dash-nav-title">Dashboard Running</span>
   </div>
   <div class="dash-nav-right">
     <div class="export-btn-wrap">

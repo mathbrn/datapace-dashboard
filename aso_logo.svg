@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 88" role="img" aria-label="A.S.O. Amaury Sport Organisation">
+  <style>
+    .aso-main { font: italic 900 64px 'Arial Black', Impact, Arial, sans-serif; fill: #E30613; letter-spacing: -2px; }
+    .aso-sub  { font: 900 11px 'Arial Black', Arial, sans-serif; fill: currentColor; letter-spacing: 0.5px; }
+    .aso-red  { fill: #E30613; }
+  </style>
+  <text x="4" y="60" class="aso-main">A.S.O.</text>
+  <text x="4" y="80" class="aso-sub">
+    <tspan class="aso-red">A</tspan><tspan>MAURY </tspan><tspan class="aso-red">S</tspan><tspan>PORT </tspan><tspan class="aso-red">O</tspan><tspan>RGANISATION</tspan>
+  </text>
+</svg>
