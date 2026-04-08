@@ -1224,16 +1224,19 @@ function getExposure(eventName,years){
   });
   return total;
 }
-var _spBS={},_spActiveSector='ALL',_spActiveBrand=null,_spPillSectors=[],_spRegion='ALL',_spListMode='brands';
+var _spBS={},_spActiveSector='ALL',_spActiveBrand=null,_spPillSectors=[],_spRegion='ALL',_spRank='ALL',_spListMode='brands';
 function spBuildData(){
   _spBS={};
   var now=new Date().getFullYear();
   var pMinYr=_spPeriod==='5'?now-4:_spPeriod==='3'?now-2:parseInt(_spPeriod)||now;
   var pMaxYr=_spPeriod==='5'||_spPeriod==='3'?now:pMinYr;
   _spRegion=document.getElementById('sp-region')?document.getElementById('sp-region').value:'ALL';
+  _spRank=document.getElementById('sp-rank')?document.getElementById('sp-rank').value:'ALL';
   SP_PARTNERSHIPS.forEach(function(p){
     // Region filter on event
     if(_spRegion!=='ALL'&&raceRegion(p.event)!==_spRegion)return;
+    // Rank (partnership type) filter
+    if(_spRank!=='ALL'&&p.type!==_spRank)return;
     // Only include partnerships active in the selected period
     var active=(p.years||[]).some(function(y){return y>=pMinYr&&y<=pMaxYr;});
     if(!active)return;
@@ -2351,6 +2354,16 @@ HTML_BODY = """
     <div class="ctrl-group"><span class="ctrl-label">R&eacute;gion</span>
       <select id="sp-region" onchange="spChangePeriod(document.getElementById('sp-period').value)" style="font-size:11px;padding:4px 8px;">
         <option value="ALL">Toutes</option><option>Europe</option><option>Am&eacute;rique du Nord</option><option>Asie</option><option>Oc&eacute;anie</option><option>Moyen-Orient</option><option>Am&eacute;rique du Sud</option><option>Afrique</option>
+      </select>
+    </div>
+    <div class="ctrl-group"><span class="ctrl-label">Rang</span>
+      <select id="sp-rank" onchange="spChangePeriod(document.getElementById('sp-period').value)" style="font-size:11px;padding:4px 8px;">
+        <option value="ALL">Tous rangs</option>
+        <option value="title">Partenaire Titre</option>
+        <option value="premium">Partenaire Premium</option>
+        <option value="major">Partenaire Majeur</option>
+        <option value="partner">Partenaire Officiel</option>
+        <option value="official">Fournisseur Officiel</option>
       </select>
     </div>
   </div>
