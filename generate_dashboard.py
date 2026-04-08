@@ -532,6 +532,116 @@ function toggleTheme(){
 }
 (function(){var saved=localStorage.getItem('dp-theme');if(saved==='light'){document.documentElement.setAttribute('data-theme','light');var b=document.getElementById('theme-btn');if(b)b.innerHTML='&#x2600; Light';}})();
 
+// ===== EXPORT PANEL (PNG / PDF) =====
+function toggleExportMenu(e){
+  if(e)e.stopPropagation();
+  var m=document.getElementById('export-menu');
+  m.style.display=m.style.display==='none'?'block':'none';
+}
+document.addEventListener('click',function(e){
+  var btn=document.getElementById('export-btn');
+  var menu=document.getElementById('export-menu');
+  if(menu&&menu.style.display!=='none'&&!btn.contains(e.target)&&!menu.contains(e.target)){
+    menu.style.display='none';
+  }
+});
+function getActiveTabInfo(){
+  var tabs=document.querySelectorAll('.tab');
+  var names=['data','overview','compare','trends','biggest','temps','winners','sponsoring'];
+  var labels=['Tableau','Vue_d_ensemble','Comparer','Evolution','Top_evenements','Temps_moyen','Winners_Times','Sponsoring'];
+  for(var i=0;i<tabs.length;i++){
+    if(tabs[i].classList.contains('active'))return{id:names[i],label:labels[i]};
+  }
+  return{id:'data',label:'Tableau'};
+}
+function safeFn(s){return String(s||'').replace(/[^a-zA-Z0-9-]/g,'_').replace(/_+/g,'_').replace(/^_|_$/g,'');}
+function getFilterParts(tabId){
+  var parts=[];
+  function add(id){var el=document.getElementById(id);if(el&&el.value&&el.value!=='ALL')parts.push(safeFn(el.value));}
+  if(tabId==='data'){
+    add('dist-data');add('region-data');add('size-data');
+    var s=document.getElementById('search-data');if(s&&s.value)parts.push(safeFn(s.value));
+  }else if(tabId==='trends'){
+    add('dist-trends');add('region-trends');
+    var n=document.getElementById('topn-trends');if(n)parts.push('top'+n.value);
+  }else if(tabId==='biggest'){
+    add('dist-biggest');add('region-biggest');
+    var nb=document.getElementById('topn-biggest');if(nb)parts.push('top'+nb.value);
+    add('year-biggest');
+  }else if(tabId==='temps'){
+    add('dist-temps');add('region-temps');
+    var nt=document.getElementById('topn-temps');if(nt)parts.push('top'+nt.value);
+    add('year-temps');
+  }else if(tabId==='winners'){
+    add('win-dist');add('region-winners');add('win-gender');
+    var wn=document.getElementById('win-topn');if(wn&&wn.value)parts.push('top'+wn.value);
+    add('win-year');
+  }else if(tabId==='overview'){
+    var ov=document.getElementById('ov-search');if(ov&&ov.value)parts.push(safeFn(ov.value));
+  }else if(tabId==='compare'){
+    var a=document.getElementById('cmp-input-a');var b=document.getElementById('cmp-input-b');
+    if(a&&a.value)parts.push(safeFn(a.value));
+    if(b&&b.value)parts.push('vs_'+safeFn(b.value));
+  }
+  return parts;
+}
+function buildExportFilename(ext){
+  var info=getActiveTabInfo();
+  var parts=['datapace',info.label].concat(getFilterParts(info.id));
+  var d=new Date();var ts=d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0');
+  parts.push(ts);
+  return parts.filter(Boolean).join('_')+'.'+ext;
+}
+function exportPanel(format){
+  document.getElementById('export-menu').style.display='none';
+  var panel=document.querySelector('.panel.active');
+  if(!panel){alert('Aucun onglet actif.');return;}
+  if(typeof html2canvas==='undefined'){alert('Librairie export non chargee (verifiez votre connexion).');return;}
+  // Resolve background color from theme variables
+  var rootStyle=getComputedStyle(document.documentElement);
+  var bg=(rootStyle.getPropertyValue('--bg')||'').trim()||'#ffffff';
+  var btn=document.getElementById('export-btn');
+  var origHtml=btn.innerHTML;
+  btn.innerHTML='Export en cours...';
+  btn.style.pointerEvents='none';
+  // Temporarily remove max-height constraints so full content is captured
+  var restores=[];
+  panel.querySelectorAll('*').forEach(function(el){
+    var cs=getComputedStyle(el);
+    if(cs.overflow==='auto'||cs.overflow==='scroll'||cs.overflowY==='auto'||cs.overflowY==='scroll'){
+      restores.push({el:el,overflow:el.style.overflow,overflowY:el.style.overflowY,maxHeight:el.style.maxHeight,height:el.style.height});
+      el.style.overflow='visible';el.style.overflowY='visible';el.style.maxHeight='none';
+    }
+  });
+  setTimeout(function(){
+    html2canvas(panel,{backgroundColor:bg,scale:2,logging:false,useCORS:true,windowWidth:panel.scrollWidth,windowHeight:panel.scrollHeight}).then(function(canvas){
+      restores.forEach(function(r){r.el.style.overflow=r.overflow;r.el.style.overflowY=r.overflowY;r.el.style.maxHeight=r.maxHeight;r.el.style.height=r.height;});
+      var filename=buildExportFilename(format);
+      if(format==='png'){
+        var link=document.createElement('a');
+        link.download=filename;
+        link.href=canvas.toDataURL('image/png');
+        document.body.appendChild(link);link.click();document.body.removeChild(link);
+      }else if(format==='pdf'){
+        if(typeof jspdf==='undefined'||!jspdf.jsPDF){alert('Librairie PDF non chargee.');}
+        else{
+          var imgData=canvas.toDataURL('image/png');
+          var orientation=canvas.width>=canvas.height?'landscape':'portrait';
+          var pdf=new jspdf.jsPDF({orientation:orientation,unit:'px',format:[canvas.width,canvas.height],hotfixes:['px_scaling']});
+          pdf.addImage(imgData,'PNG',0,0,canvas.width,canvas.height,undefined,'FAST');
+          pdf.save(filename);
+        }
+      }
+      btn.innerHTML=origHtml;btn.style.pointerEvents='';
+    }).catch(function(err){
+      restores.forEach(function(r){r.el.style.overflow=r.overflow;r.el.style.overflowY=r.overflowY;r.el.style.maxHeight=r.maxHeight;r.el.style.height=r.height;});
+      console.error('Export error:',err);
+      alert('Erreur export: '+(err&&err.message?err.message:'inconnue'));
+      btn.innerHTML=origHtml;btn.style.pointerEvents='';
+    });
+  },50);
+}
+
 function switchTab(name){
   var names=['data','overview','compare','trends','biggest','temps','winners','sponsoring'];
   document.querySelectorAll('.tab').forEach(function(t,i){t.classList.toggle('active',names[i]===name);});
@@ -1937,6 +2047,11 @@ tr:hover td{background:var(--bg2);color:var(--text);}
 #data-table.tbl-frozen td:not(.frozen-cell){white-space:nowrap;}
 .theme-toggle{background:var(--bg2);border:.5px solid var(--border);border-radius:20px;padding:4px 10px;cursor:pointer;font-size:13px;display:flex;align-items:center;gap:6px;color:var(--text2);transition:all .2s;user-select:none;}
 .theme-toggle:hover{color:var(--text);border-color:var(--purple);}
+.export-btn-wrap{position:relative;}
+.export-menu{position:absolute;top:34px;right:0;background:var(--bg2);border:.5px solid var(--border);border-radius:8px;padding:4px 0;min-width:140px;box-shadow:0 4px 16px rgba(0,0,0,0.25);z-index:1000;}
+.export-menu-item{padding:8px 14px;cursor:pointer;font-size:13px;color:var(--text2);transition:all .15s;user-select:none;}
+.export-menu-item:hover{background:var(--bg3);color:var(--text);}
+[data-theme="light"] .export-menu{box-shadow:0 4px 16px rgba(0,0,0,0.1);}
 /* ── Light mode: global ── */
 [data-theme="light"] body{background:var(--bg);}
 [data-theme="light"] .dash-nav{background:rgba(248,248,248,0.85);border-bottom-color:var(--border);}
@@ -2026,6 +2141,13 @@ HTML_BODY = """
     <span class="dash-nav-title">Dashboard</span>
   </div>
   <div class="dash-nav-right">
+    <div class="export-btn-wrap">
+      <div class="theme-toggle" onclick="toggleExportMenu(event)" id="export-btn" title="Exporter la vue actuelle en PNG ou PDF">&#x2913; Exporter</div>
+      <div id="export-menu" class="export-menu" style="display:none">
+        <div class="export-menu-item" onclick="exportPanel('png')">Image PNG</div>
+        <div class="export-menu-item" onclick="exportPanel('pdf')">Document PDF</div>
+      </div>
+    </div>
     <div class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Changer le theme">&#x263E; Dark</div>
   </div>
 </nav>
@@ -2354,6 +2476,8 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
 </head>
 <body>
 {body}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js" integrity="sha384-dug+JxfBvklEQdJ4AYuBBAIScUz0bVN73xpy273gcAwHjb3qI0fXmuYNaNfdyYJG" crossorigin="anonymous"></script>
 <script>
 {js_data}
