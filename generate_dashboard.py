@@ -40,6 +40,12 @@ WMM_KEYWORDS = [
     "bank of america chicago marathon", "tokyo marathon",
 ]
 
+ASO_KEYWORDS = [
+    "marathon de paris", "semi de paris", "run in lyon",
+    "10k paris", "london winter run", "manchester marathon",
+    "manchester half", "ldnx",
+]
+
 # --- Circuit definitions ---
 # EMC: European Marathon Classics — matched by city (marathon distance only)
 EMC_CITIES = {"rome", "vienna", "vienne", "madrid", "london", "londres",
@@ -51,6 +57,7 @@ L5G_CITIES = {"sevilla", "seville", "séville", "madrid",
 
 CIRCUIT_COLORS = {
     "WMM": "#38BDF8",
+    "ASO": "#E30613",
     "EMC": "#F87171",
     "RNR": None,  # secondary color of the event's distance
     "L5G": "#DC2626",
@@ -64,6 +71,9 @@ def compute_circuits(race_name, distance, city):
     # WMM
     if any(k in rl for k in WMM_KEYWORDS):
         circuits.append("WMM")
+    # ASO
+    if any(k in rl for k in ASO_KEYWORDS):
+        circuits.append("ASO")
     # EMC — marathon distance, European cities
     if distance == "MARATHON" and cl in EMC_CITIES:
         circuits.append("EMC")
@@ -379,11 +389,11 @@ def build_times_db(md, sd):
 
 JS_LOGIC = '''function isWmm(r){var l=r.toLowerCase();return WMM_KEYWORDS.some(function(k){return l.indexOf(k)>=0;});}
 function isLight(){return document.documentElement.hasAttribute('data-theme');}
-var LIGHT_MAP={'#38BDF8':'#0B7BC0','#FCDB00':'#A88F00','#DC2626':'#991B1B','#EF4444':'#B91C1C','#FF8A50':'#CC5A20','#5CDFA0':'#2BA368','#F472B6':'#C04080','#FF4A6B':'#CC2040','#22C55E':'#1A8A42','#2DBF7E':'#1F8A5A','#FF6B9D':'#CC3870','#F87171':'#B91C1C','#2563EB':'#1D4ED8','#60A5FA':'#2563EB','#3B82F6':'#1D4ED8','#BFDBFE':'#93C5FD','#1E3A8A':'#172554','#1D4ED8':'#1E3A8A','#1E40AF':'#1E3A8A','#93C5FD':'#60A5FA'};
+var LIGHT_MAP={'#38BDF8':'#0B7BC0','#FCDB00':'#A88F00','#DC2626':'#991B1B','#E30613':'#B80510','#EF4444':'#B91C1C','#FF8A50':'#CC5A20','#5CDFA0':'#2BA368','#F472B6':'#C04080','#FF4A6B':'#CC2040','#22C55E':'#1A8A42','#2DBF7E':'#1F8A5A','#FF6B9D':'#CC3870','#F87171':'#B91C1C','#2563EB':'#1D4ED8','#60A5FA':'#2563EB','#3B82F6':'#1D4ED8','#BFDBFE':'#93C5FD','#1E3A8A':'#172554','#1D4ED8':'#1E3A8A','#1E40AF':'#1E3A8A','#93C5FD':'#60A5FA'};
 function lc(c){return isLight()?(LIGHT_MAP[c]||c):c;}
 function col(r){return lc('#DC2626');}
 function colDist(r){return lc(r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':r.d==='AUTRE'?'#F472B6':'#2563EB');}
-var CIRC_COLORS={WMM:'#38BDF8',EMC:'#F87171',L5G:'#DC2626'};
+var CIRC_COLORS={WMM:'#38BDF8',ASO:'#E30613',EMC:'#F87171',L5G:'#DC2626'};
 var CIRC_DIST_SEC={MARATHON:'#F87171',SEMI:'#FFB088','10KM':'#88EEBB',AUTRE:'#FF99CC'};
 function circColor(code,dist){if(code==='RNR')return lc(CIRC_DIST_SEC[dist]||'#F87171');return lc(CIRC_COLORS[code]||'#F87171');}
 function circBadges(r){var ci=r.ci||[];if(!ci.length)return'';return ci.map(function(c){var col=circColor(c,r.d);return'<span class="circ-badge" style="border:1px solid '+col+'40;color:'+col+';background:transparent;font-size:9px;padding:1px 6px;border-radius:100px;text-transform:uppercase;margin-left:4px;white-space:nowrap">'+c+'</span>';}).join('');}
@@ -2413,7 +2423,7 @@ HTML_BODY = """
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Circuit</span>
       <select id="badge-data" onchange="filterTable()">
-        <option value="ALL">Tous</option><option value="WMM">WMM</option><option value="EMC">EMC</option><option value="RNR">RNR</option><option value="L5G">L5G</option><option value="NONE">Sans circuit</option>
+        <option value="ALL">Tous</option><option value="WMM">WMM</option><option value="ASO">ASO</option><option value="EMC">EMC</option><option value="RNR">RNR</option><option value="L5G">L5G</option><option value="NONE">Sans circuit</option>
       </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Taille</span>
@@ -2482,6 +2492,7 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
                "const TEMPS_AVG=" + j(sp_avg_js) + ";\n"
                "const TIMES_DB=" + j(tdbjs) + ";\n"
                "const WMM_KEYWORDS=" + j(WMM_KEYWORDS) + ";\n"
+               "const ASO_KEYWORDS=" + j(ASO_KEYWORDS) + ";\n"
                "const WINNERS=" + j(winners) + ";\n"
                "const SP_BRANDS=" + j(spdata.get("brands", {})) + ";\n"
                "const SP_PARTNERSHIPS=" + j(spdata.get("partnerships", [])) + ";\n")
