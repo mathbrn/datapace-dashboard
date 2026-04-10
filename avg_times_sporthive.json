@@ -1282,5 +1282,50 @@
     "avg_time": "0:42:00",
     "avg_speed_kmh": 7.14,
     "source": "sporthive_crawl"
+  },
+  {
+    "label": "Marathon de Paris 2021",
+    "race": "Schneider Electric Marathon de Paris",
+    "dist_m": 42195,
+    "year": 2021,
+    "count": 27114,
+    "avg_time": "4:07:44",
+    "avg_speed_kmh": 10.22
+  },
+  {
+    "label": "Marathon de Paris 2022",
+    "race": "Schneider Electric Marathon de Paris",
+    "dist_m": 42195,
+    "year": 2022,
+    "count": 34365,
+    "avg_time": "4:05:43",
+    "avg_speed_kmh": 10.3
+  },
+  {
+    "label": "Marathon de Paris 2023",
+    "race": "Schneider Electric Marathon de Paris",
+    "dist_m": 42195,
+    "year": 2023,
+    "count": 50780,
+    "avg_time": "4:04:55",
+    "avg_speed_kmh": 10.34
+  },
+  {
+    "label": "Marathon de Paris 2024",
+    "race": "Schneider Electric Marathon de Paris",
+    "dist_m": 42195,
+    "year": 2024,
+    "count": 54207,
+    "avg_time": "4:11:23",
+    "avg_speed_kmh": 10.07
+  },
+  {
+    "label": "Marathon de Paris 2025",
+    "race": "Schneider Electric Marathon de Paris",
+    "dist_m": 42195,
+    "year": 2025,
+    "count": 55499,
+    "avg_time": "4:12:16",
+    "avg_speed_kmh": 10.04
   }
 ]
