@@ -2485,6 +2485,38 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
     # Load Sporthive average times
     sp_avg = load_sporthive_avg()
     sp_avg_js = [{"race": r["race"], "yr": r["year"], "avg": r["avg"]} for r in sp_avg]
+    # Merge Sporthive avg into TEMPS_MARATHON / TEMPS_SEMI when not already in Excel
+    sp_raw_path = SCRIPT_DIR / "avg_times_sporthive.json"
+    if sp_raw_path.exists():
+        import json as jlib2
+        with open(sp_raw_path, "r") as f:
+            sp_raw = jlib2.load(f)
+        for item in sp_raw:
+            yr_str = str(item["year"])
+            dist = item.get("dist_m", 0)
+            if dist and 42000 <= dist <= 42300:
+                target = tmjs
+            elif dist and 20000 <= dist <= 22000:
+                target = tsjs
+            else:
+                continue
+            if yr_str not in target:
+                target[yr_str] = []
+            existing_races = {e["race"].lower() for e in target[yr_str]}
+            mapped_name = item["race"]
+            # Apply same race_map as load_sporthive_avg
+            label = item["label"].rsplit(" ", 1)[0]
+            for sp_row in sp_avg:
+                if sp_row["year"] == item["year"] and sp_row["avg"] == item["avg_time"]:
+                    mapped_name = sp_row["race"]
+                    break
+            if mapped_name.lower() not in existing_races:
+                target[yr_str].append({
+                    "race": mapped_name,
+                    "city": "",
+                    "finishers": item.get("count", 0),
+                    "avg": item["avg_time"]
+                })
     # Load sponsoring data
     spdata = load_sponsoring()
     js_data = ("const RAW=" + j(finishers) + ";\nconst BIGGEST=" + j(biggest) + ";\n"

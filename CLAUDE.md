@@ -160,7 +160,10 @@
 1. Rechercher les donnees (APIs, web search, scraping)
 2. Appliquer via `update_finishers.py` (ne modifie que les cellules vides)
 3. Executer `python generate_dashboard.py`
-4. **Verifier que les nouvelles donnees apparaissent dans le dashboard** : extraire le JSON `RAW` du HTML genere et confirmer que les valeurs ajoutees/modifiees sont presentes. Ne pas considerer la tache comme terminee tant que cette verification n'est pas faite.
+4. **Verifier que les nouvelles donnees apparaissent dans TOUS les onglets du dashboard** : extraire les JSON `RAW`, `TEMPS_MARATHON`, `TEMPS_SEMI`, `TEMPS_AVG`, `TIMES_DB`, `WINNERS` du HTML genere et confirmer que les valeurs ajoutees/modifiees sont presentes dans chaque onglet concerne (Tableau, Vue d'ensemble, Temps moyen, Winners Times...). Ne pas considerer la tache comme terminee tant que cette verification n'est pas faite.
+   - **Temps moyens** : doivent apparaitre dans Vue d'ensemble ET dans l'onglet Temps moyen. `generate_dashboard.py` fusionne automatiquement les donnees `avg_times_sporthive.json` dans `TEMPS_MARATHON`/`TEMPS_SEMI` pour les courses absentes des Excel.
+   - **Chronos vainqueurs** : doivent apparaitre dans Vue d'ensemble ET dans l'onglet Winners Times. Mettre a jour `create_chronos.py` (donnees en dur) ET `temp_chronos_1.json` (donnees recentes).
+   - **Finishers** : doivent apparaitre dans Tableau ET Vue d'ensemble ET Top Evenements.
 5. **Toujours commit + push automatiquement** apres chaque modification (ne pas attendre que l'utilisateur le demande)
    `git add -A && git commit && git push`
 6. **OBLIGATOIRE : Pousser sur `main`** (meme depuis une branche de feature : merge fast-forward vers main puis push). Le dashboard est heberge sur GitHub Pages : https://mathbrn.github.io/datapace-dashboard/ et sert depuis `main`. Si on travaille sur une branche de feature, faire : `git checkout main && git merge <branche> --ff-only && git push origin main && git checkout <branche>`.
