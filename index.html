@@ -1234,25 +1234,10 @@ function updateTemps(){
     var m=toMin(d.avg);
     // Invert: fastest gets longest bar
     var pct=m?((maxM-m)/(maxM-minM+0.001)*75+10).toFixed(1):'0';
-    // Delta vs previous year
-    var prevAvg=tempsPrevAvg(d.race,dist,yr);
-    var deltaHtml='';
-    if(prevAvg){
-      var pm=toMin(prevAvg);
-      if(pm){
-        var diffMin=m-pm;
-        var absDiff=Math.abs(diffMin);
-        var diffH=Math.floor(absDiff/60);var diffMn=Math.floor(absDiff%60);var diffS=Math.round((absDiff-Math.floor(absDiff))*60);
-        var diffStr=diffH>0?diffH+'h'+String(diffMn).padStart(2,'0')+'m':(diffMn>0?diffMn+'m'+String(diffS).padStart(2,'0')+'s':diffS+'s');
-        if(diffMin>0.08){deltaHtml='<span style="color:'+lc('#FF4A6B')+';font-size:9px;margin-left:6px">▲ +'+diffStr+'</span>';}
-        else if(diffMin<-0.08){deltaHtml='<span style="color:'+lc('#22C55E')+';font-size:9px;margin-left:6px">▼ -'+diffStr+'</span>';}
-      }
-    }
     // Tooltip data
     var tipParts=d.race+'\n'+d.avg+' (temps moyen)\n'+fmtFull(d.finishers)+' finishers';
-    if(prevAvg)tipParts+='\nvs '+(yr-1)+' : '+prevAvg;
     var safeRace=d.race.replace(/&/g,'&amp;').replace(/"/g,'&quot;');
-    barsHtml+='<div class="time-bar-row" title="'+tipParts.replace(/"/g,'&quot;')+'" data-race="'+safeRace+'" onclick="tempsNav(this.dataset.race)" style="cursor:pointer"><div class="time-bar-label">'+d.race+'</div><div class="time-bar-track"><div class="time-bar-fill" style="width:'+(m?pct:0)+'%;background:'+barCol+'cc"></div></div><div class="time-bar-val">'+(d.avg||'-')+deltaHtml+'</div></div>';
+    barsHtml+='<div class="time-bar-row" title="'+tipParts.replace(/"/g,'&quot;')+'" data-race="'+safeRace+'" onclick="tempsNav(this.dataset.race)" style="cursor:pointer"><div class="time-bar-label">'+d.race+'</div><div class="time-bar-track"><div class="time-bar-fill" style="width:'+(m?pct:0)+'%;background:'+barCol+'cc"></div></div><div class="time-bar-val">'+(d.avg||'-')+'</div></div>';
   });
   document.getElementById('time-bars').innerHTML=barsHtml;
 }
