@@ -1,5 +1,6 @@
 import openpyxl
 from openpyxl.styles import Font, Alignment, PatternFill, Border, Side
+from pathlib import Path
 
 # All collected data: (Course, Distance, Année, Temps Homme, Temps Femme)
 data = []
@@ -166,6 +167,7 @@ marathon_data = [
     ("Schneider Electric Marathon de Paris", "42K", 2023, "2:07:15", "2:23:19"),
     ("Schneider Electric Marathon de Paris", "42K", 2024, "2:05:33", "2:20:45"),
     ("Schneider Electric Marathon de Paris", "42K", 2025, "2:05:25", "2:20:45"),
+    ("Schneider Electric Marathon de Paris", "42K", 2026, "2:05:16", "2:18:34"),
     # NN Marathon Rotterdam
     ("NN Marathon Rotterdam", "42K", 2023, "2:03:47", "2:20:31"),
     ("NN Marathon Rotterdam", "42K", 2024, "2:04:45", "2:19:30"),
@@ -1196,7 +1198,7 @@ ws.freeze_panes = "A2"
 ws.auto_filter.ref = f"A1:E{len(data) + 1}"
 
 # Save
-output_path = r"C:\Users\mathi\Documents\6. DATA PACE\0. Dashboard\Fichiers sources\Chronos_Vainqueurs.xlsx"
+output_path = str(Path(__file__).parent / "Chronos_Vainqueurs.xlsx")
 wb.save(output_path)
 
 # Stats
