@@ -121,7 +121,7 @@ def normalize_race_name(name):
     mapped = TEMPS_NAME_MAP.get(base.lower())
     if mapped:
         return mapped
-    return name
+    return base
 
 
 def compute_circuits(race_name, distance, city):
@@ -148,6 +148,7 @@ def compute_circuits(race_name, distance, city):
 
 
 def fmt_time(val):
+    import re as _re
     if val is None or (isinstance(val, float) and pd.isna(val)): return None
     if isinstance(val, datetime.time): return val.strftime("%H:%M:%S")
     if isinstance(val, float) and 0 < val < 1:
@@ -158,7 +159,11 @@ def fmt_time(val):
         s = total_seconds % 60
         return f"{h:02d}:{m:02d}:{s:02d}"
     s = str(val).strip()
-    return None if s in ("", "nan", "NaT", "None") else s
+    if s in ("", "nan", "NaT", "None"): return None
+    # Zero-pad hours: "4:00:48" → "04:00:48"
+    if _re.match(r'^\d:\d{2}:\d{2}$', s):
+        s = '0' + s
+    return s
 
 
 def safe_int(val):
