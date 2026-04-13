@@ -1072,11 +1072,12 @@ function biggestClick(idx){
   setTimeout(function(){ovSelect(idx);},100);
 }
 
+function tempsSource(dist){return dist==='SEMI'?TEMPS_SEMI:dist==='10KM'?TEMPS_10K:dist==='AUTRE'?TEMPS_AUTRE:TEMPS_MARATHON;}
 function updateTempsYears(){
   var dist=document.getElementById('dist-temps').value;
   var sel=document.getElementById('year-temps');
   var prev=sel.value;
-  var srcObj=dist==='SEMI'?TEMPS_SEMI:TEMPS_MARATHON;
+  var srcObj=tempsSource(dist);
   var yrs=Object.keys(srcObj).sort(function(a,b){return parseInt(b)-parseInt(a);});
   sel.innerHTML=yrs.map(function(y){return'<option value="'+y+'">'+y+'</option>';}).join('');
   if(yrs.indexOf(prev)>=0)sel.value=prev;
@@ -1087,7 +1088,7 @@ function tempsFindRaw(name){return RAW.find(function(r){return r.r===name||r.r.t
 function tempsNav(name){var r=tempsFindRaw(name);if(!r)return;var idx=RAW.indexOf(r);if(idx>=0)biggestClick(idx);}
 function tempsPrevAvg(race,dist,yr){
   var prevYr=yr-1;
-  var srcObj=dist==='SEMI'?TEMPS_SEMI:TEMPS_MARATHON;
+  var srcObj=tempsSource(dist);
   var prev=srcObj[String(prevYr)];
   if(!prev)return null;
   var m=prev.find(function(d){return d.race===race;});
@@ -1100,7 +1101,7 @@ function updateTemps(){
   var sortMode=document.getElementById('sort-temps').value;
   var topn=parseInt(document.getElementById('topn-temps').value);
   var region=document.getElementById('region-temps').value;
-  var src=dist==='SEMI'?(TEMPS_SEMI[String(yr)]||[]):(TEMPS_MARATHON[String(yr)]||[]);
+  var src=tempsSource(dist)[String(yr)]||[];
   var data=region==='ALL'?src.slice():src.filter(function(d){return raceRegion(d.race||d.r||'')===region;});
   if(sortMode==='avg'){data.sort(function(a,b){var ma=toMin(a.avg),mb=toMin(b.avg);if(!ma)return 1;if(!mb)return -1;return ma-mb;});}
   else{data.sort(function(a,b){return b.finishers-a.finishers;});}
@@ -2335,7 +2336,7 @@ HTML_BODY = """
   <div class="controls">
     <div class="ctrl-group"><span class="ctrl-label">Distance</span>
       <select id="dist-temps" onchange="updateTempsYears();updateTemps()">
-        <option value="MARATHON">Marathon</option><option value="SEMI">Semi-marathon</option>
+        <option value="MARATHON">Marathon</option><option value="SEMI">Semi-marathon</option><option value="10KM">10 km</option><option value="AUTRE">Autre</option>
       </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">R&eacute;gion</span>
@@ -2536,6 +2537,8 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
                        for r in rows if r.get("avg")] for yr, rows in md.items()}
     tsjs = {str(yr): [{"race": r["race"], "city": r["city"], "finishers": r["finishers"] or 0, "avg": r["avg"] or ""}
                        for r in rows if r.get("avg")] for yr, rows in sd.items()}
+    t10js = {}  # 10K avg times
+    tajs = {}   # Autre (non-standard distances) avg times
     tdbjs = {k: {"men": v["men"], "women": v["women"], "avg": v["avg"], "yr": v["yr"]} for k, v in tdb.items()}
     # Load Sporthive average times
     sp_avg = load_sporthive_avg()
@@ -2554,6 +2557,10 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
                 target = tmjs
             elif dist and 20000 <= dist <= 22000:
                 target = tsjs
+            elif dist and 9000 <= dist <= 11000:
+                target = t10js
+            elif dist and dist > 0:
+                target = tajs
             elif dist == 0 or not dist:
                 # Infer from race name (handle accented chars like Maratón)
                 import unicodedata
@@ -2562,8 +2569,10 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
                     target = tmjs
                 elif "half" in name_l or "semi" in name_l or "meia" in name_l:
                     target = tsjs
+                elif "10k" in name_l or "10 k" in name_l:
+                    target = t10js
                 else:
-                    continue
+                    target = tajs
             else:
                 continue
             if yr_str not in target:
@@ -2604,6 +2613,7 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
     spdata = load_sponsoring()
     js_data = ("const RAW=" + j(finishers) + ";\nconst BIGGEST=" + j(biggest) + ";\n"
                "const TEMPS_MARATHON=" + j(tmjs) + ";\nconst TEMPS_SEMI=" + j(tsjs) + ";\n"
+               "const TEMPS_10K=" + j(t10js) + ";\nconst TEMPS_AUTRE=" + j(tajs) + ";\n"
                "const TEMPS_AVG=" + j(sp_avg_js) + ";\n"
                "const TIMES_DB=" + j(tdbjs) + ";\n"
                "const WMM_KEYWORDS=" + j(WMM_KEYWORDS) + ";\n"
