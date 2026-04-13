@@ -1453,5 +1453,518 @@
     "count": 10970,
     "avg_time": "00:55:48",
     "avg_speed_kmh": 10.75
+  },
+  {
+    "label": "EDP Meia Maratona de Lisboa 2021",
+    "race": "EDP Meia Maratona de Lisboa",
+    "dist_m": 21097,
+    "year": 2021,
+    "count": 5402,
+    "avg_time": "1:57:43",
+    "avg_speed_kmh": 10.75
+  },
+  {
+    "label": "Vodafone 10K 2021",
+    "race": "Vodafone 10K",
+    "dist_m": 10000,
+    "year": 2021,
+    "count": 5747,
+    "avg_time": "1:22:16",
+    "avg_speed_kmh": 7.29
+  },
+  {
+    "label": "10 K 2021",
+    "race": "10 K",
+    "dist_m": 10000,
+    "year": 2021,
+    "count": 2903,
+    "avg_time": "0:59:49",
+    "avg_speed_kmh": 10.03
+  },
+  {
+    "label": "TCS Marathon 2021",
+    "race": "TCS Marathon",
+    "dist_m": 42195,
+    "year": 2021,
+    "count": 6612,
+    "avg_time": "3:54:10",
+    "avg_speed_kmh": 10.81
+  },
+  {
+    "label": "Mizuno Half Marathon 2021",
+    "race": "Mizuno Half Marathon",
+    "dist_m": 21097,
+    "year": 2021,
+    "count": 10310,
+    "avg_time": "1:58:18",
+    "avg_speed_kmh": 10.7
+  },
+  {
+    "label": "LUSO Meia Maratona 2021",
+    "race": "LUSO Meia Maratona",
+    "dist_m": 21097,
+    "year": 2021,
+    "count": 2387,
+    "avg_time": "2:02:01",
+    "avg_speed_kmh": 10.37
+  },
+  {
+    "label": "NN Marathon Rotterdam 2021 2021",
+    "race": "NN Marathon Rotterdam 2021",
+    "dist_m": 42195,
+    "year": 2021,
+    "count": 10866,
+    "avg_time": "4:01:09",
+    "avg_speed_kmh": 10.5
+  },
+  {
+    "label": "AA Drink ¼ Marathon Rotterdam 2021 2021",
+    "race": "AA Drink ¼ Marathon Rotterdam 2021",
+    "dist_m": 10350,
+    "year": 2021,
+    "count": 7935,
+    "avg_time": "1:00:57",
+    "avg_speed_kmh": 10.19
+  },
+  {
+    "label": "EDP Meia Maratona de Lisboa 2022",
+    "race": "EDP Meia Maratona de Lisboa",
+    "dist_m": 21097,
+    "year": 2022,
+    "count": 8378,
+    "avg_time": "2:05:50",
+    "avg_speed_kmh": 10.06
+  },
+  {
+    "label": "Vodafone 10K 2022",
+    "race": "Vodafone 10K",
+    "dist_m": 10000,
+    "year": 2022,
+    "count": 9926,
+    "avg_time": "1:25:48",
+    "avg_speed_kmh": 6.99
+  },
+  {
+    "label": "NN Marathon Rotterdam 2022 2022",
+    "race": "NN Marathon Rotterdam 2022",
+    "dist_m": 42195,
+    "year": 2022,
+    "count": 11722,
+    "avg_time": "3:59:43",
+    "avg_speed_kmh": 10.56
+  },
+  {
+    "label": "NN Halve Marathon 2022",
+    "race": "NN Halve Marathon",
+    "dist_m": 21097,
+    "year": 2022,
+    "count": 6510,
+    "avg_time": "1:53:50",
+    "avg_speed_kmh": 11.12
+  },
+  {
+    "label": "10 KM Loop 2022",
+    "race": "10 KM Loop",
+    "dist_m": 10000,
+    "year": 2022,
+    "count": 4850,
+    "avg_time": "0:56:18",
+    "avg_speed_kmh": 10.66
+  },
+  {
+    "label": "TCS Marathon 2022",
+    "race": "TCS Marathon",
+    "dist_m": 42195,
+    "year": 2022,
+    "count": 12669,
+    "avg_time": "3:58:49",
+    "avg_speed_kmh": 10.6
+  },
+  {
+    "label": "Mizuno Half Marathon 2022",
+    "race": "Mizuno Half Marathon",
+    "dist_m": 21097,
+    "year": 2022,
+    "count": 14627,
+    "avg_time": "2:01:07",
+    "avg_speed_kmh": 10.45
+  },
+  {
+    "label": "LUSO Meia Maratona 2022",
+    "race": "LUSO Meia Maratona",
+    "dist_m": 21097,
+    "year": 2022,
+    "count": 5660,
+    "avg_time": "2:04:20",
+    "avg_speed_kmh": 10.18
+  },
+  {
+    "label": "10K 2022",
+    "race": "10K",
+    "dist_m": 10000,
+    "year": 2022,
+    "count": 1206,
+    "avg_time": "0:51:27",
+    "avg_speed_kmh": 11.66
+  },
+  {
+    "label": "NN Halve Marathon 2023",
+    "race": "NN Halve Marathon",
+    "dist_m": 21097,
+    "year": 2023,
+    "count": 8567,
+    "avg_time": "1:52:43",
+    "avg_speed_kmh": 11.23
+  },
+  {
+    "label": "10 KM Loop 2023",
+    "race": "10 KM Loop",
+    "dist_m": 10000,
+    "year": 2023,
+    "count": 5777,
+    "avg_time": "0:56:58",
+    "avg_speed_kmh": 10.53
+  },
+  {
+    "label": "EDP Meia Maratona de Lisboa 2023",
+    "race": "EDP Meia Maratona de Lisboa",
+    "dist_m": 21097,
+    "year": 2023,
+    "count": 11093,
+    "avg_time": "2:00:29",
+    "avg_speed_kmh": 10.51
+  },
+  {
+    "label": "Vodafone 10K 2023",
+    "race": "Vodafone 10K",
+    "dist_m": 10000,
+    "year": 2023,
+    "count": 11275,
+    "avg_time": "1:22:27",
+    "avg_speed_kmh": 7.28
+  },
+  {
+    "label": "NN Marathon Rotterdam 2023 2023",
+    "race": "NN Marathon Rotterdam 2023",
+    "dist_m": 42195,
+    "year": 2023,
+    "count": 16848,
+    "avg_time": "3:53:55",
+    "avg_speed_kmh": 10.82
+  },
+  {
+    "label": "10K 2023",
+    "race": "10K",
+    "dist_m": 10000,
+    "year": 2023,
+    "count": 6513,
+    "avg_time": "1:01:46",
+    "avg_speed_kmh": 9.71
+  },
+  {
+    "label": "LUSO Meia Maratona 2023",
+    "race": "LUSO Meia Maratona",
+    "dist_m": 21097,
+    "year": 2023,
+    "count": 6539,
+    "avg_time": "2:04:27",
+    "avg_speed_kmh": 10.17
+  },
+  {
+    "label": "EDP Meia Maratona de Lisboa 2024",
+    "race": "EDP Meia Maratona de Lisboa",
+    "dist_m": 21097,
+    "year": 2024,
+    "count": 13245,
+    "avg_time": "2:04:22",
+    "avg_speed_kmh": 10.18
+  },
+  {
+    "label": "Vodafone 10K 2024",
+    "race": "Vodafone 10K",
+    "dist_m": 10000,
+    "year": 2024,
+    "count": 9800,
+    "avg_time": "1:22:31",
+    "avg_speed_kmh": 7.27
+  },
+  {
+    "label": "NN Halve Marathon 2024",
+    "race": "NN Halve Marathon",
+    "dist_m": 21097,
+    "year": 2024,
+    "count": 13569,
+    "avg_time": "1:53:41",
+    "avg_speed_kmh": 11.13
+  },
+  {
+    "label": "10 KM Loop 2024",
+    "race": "10 KM Loop",
+    "dist_m": 10000,
+    "year": 2024,
+    "count": 7501,
+    "avg_time": "0:58:21",
+    "avg_speed_kmh": 10.28
+  },
+  {
+    "label": "10K 2024",
+    "race": "10K",
+    "dist_m": 10000,
+    "year": 2024,
+    "count": 7207,
+    "avg_time": "1:01:17",
+    "avg_speed_kmh": 9.79
+  },
+  {
+    "label": "NN Marathon Rotterdam 2024 2024",
+    "race": "NN Marathon Rotterdam 2024",
+    "dist_m": 42195,
+    "year": 2024,
+    "count": 17088,
+    "avg_time": "4:00:48",
+    "avg_speed_kmh": 10.51
+  },
+  {
+    "label": "TCS Marathon 2024",
+    "race": "TCS Marathon",
+    "dist_m": 42195,
+    "year": 2024,
+    "count": 16815,
+    "avg_time": "4:01:52",
+    "avg_speed_kmh": 10.47
+  },
+  {
+    "label": "Mizuno Half Marathon 2024",
+    "race": "Mizuno Half Marathon",
+    "dist_m": 21097,
+    "year": 2024,
+    "count": 13333,
+    "avg_time": "2:03:05",
+    "avg_speed_kmh": 10.28
+  },
+  {
+    "label": "EDP Meia Maratona de Lisboa 2025",
+    "race": "EDP Meia Maratona de Lisboa",
+    "dist_m": 21097,
+    "year": 2025,
+    "count": 17850,
+    "avg_time": "2:00:08",
+    "avg_speed_kmh": 10.54
+  },
+  {
+    "label": "Vodafone 10K 2025",
+    "race": "Vodafone 10K",
+    "dist_m": 10000,
+    "year": 2025,
+    "count": 7256,
+    "avg_time": "1:13:19",
+    "avg_speed_kmh": 8.18
+  },
+  {
+    "label": "Hyundai Meia Maratona  2025",
+    "race": "Hyundai Meia Maratona ",
+    "dist_m": 21097,
+    "year": 2025,
+    "count": 7594,
+    "avg_time": "2:06:08",
+    "avg_speed_kmh": 10.03
+  },
+  {
+    "label": "adidas Individual 2025",
+    "race": "adidas Individual",
+    "dist_m": 42165,
+    "year": 2025,
+    "count": 172,
+    "avg_time": "4:02:00",
+    "avg_speed_kmh": 10.45
+  },
+  {
+    "label": "10K 2025",
+    "race": "10K",
+    "dist_m": 10000,
+    "year": 2025,
+    "count": 7194,
+    "avg_time": "1:02:19",
+    "avg_speed_kmh": 9.63
+  },
+  {
+    "label": "TCS Marathon 2025",
+    "race": "TCS Marathon",
+    "dist_m": 42195,
+    "year": 2025,
+    "count": 23328,
+    "avg_time": "3:58:00",
+    "avg_speed_kmh": 10.64
+  },
+  {
+    "label": "Mizuno Half Marathon 2025",
+    "race": "Mizuno Half Marathon",
+    "dist_m": 21097,
+    "year": 2025,
+    "count": 13341,
+    "avg_time": "2:01:50",
+    "avg_speed_kmh": 10.39
+  },
+  {
+    "label": "Folkestone Half Marathon 2024 2024",
+    "race": "Folkestone Half Marathon 2024",
+    "dist_m": 21082,
+    "year": 2024,
+    "count": 595,
+    "avg_time": "2:00:42",
+    "avg_speed_kmh": 10.48
+  },
+  {
+    "label": "21KM 2024",
+    "race": "21KM",
+    "dist_m": 21000,
+    "year": 2024,
+    "count": 1171,
+    "avg_time": "2:46:17",
+    "avg_speed_kmh": 7.58
+  },
+  {
+    "label": "10KM 2024",
+    "race": "10KM",
+    "dist_m": 10000,
+    "year": 2024,
+    "count": 738,
+    "avg_time": "1:20:17",
+    "avg_speed_kmh": 7.47
+  },
+  {
+    "label": "The Bay Ridge Half Marathon 2023",
+    "race": "The Bay Ridge Half Marathon",
+    "dist_m": 21082,
+    "year": 2023,
+    "count": 146,
+    "avg_time": "2:05:39",
+    "avg_speed_kmh": 10.07
+  },
+  {
+    "label": "21KM 2023",
+    "race": "21KM",
+    "dist_m": 21000,
+    "year": 2023,
+    "count": 1700,
+    "avg_time": "2:46:20",
+    "avg_speed_kmh": 7.57
+  },
+  {
+    "label": "10KM 2023",
+    "race": "10KM",
+    "dist_m": 10000,
+    "year": 2023,
+    "count": 915,
+    "avg_time": "1:22:08",
+    "avg_speed_kmh": 7.31
+  },
+  {
+    "label": "Half DRAM 2023",
+    "race": "Half DRAM",
+    "dist_m": 21082,
+    "year": 2023,
+    "count": 426,
+    "avg_time": "2:03:22",
+    "avg_speed_kmh": 10.25
+  },
+  {
+    "label": "Clacton 10k 2024 2024",
+    "race": "Clacton 10k 2024",
+    "dist_m": 10000,
+    "year": 2024,
+    "count": 325,
+    "avg_time": "1:01:00",
+    "avg_speed_kmh": 9.83
+  },
+  {
+    "label": "Clacton Half 2024 2024",
+    "race": "Clacton Half 2024",
+    "dist_m": 21082,
+    "year": 2024,
+    "count": 333,
+    "avg_time": "2:01:33",
+    "avg_speed_kmh": 10.41
+  },
+  {
+    "label": "10K Men 2024",
+    "race": "10K Men",
+    "dist_m": 10430,
+    "year": 2024,
+    "count": 101,
+    "avg_time": "1:22:31",
+    "avg_speed_kmh": 7.58
+  },
+  {
+    "label": "Team Marathon Mixed 2024",
+    "race": "Team Marathon Mixed",
+    "dist_m": 10430,
+    "year": 2024,
+    "count": 176,
+    "avg_time": "1:40:13",
+    "avg_speed_kmh": 6.24
+  },
+  {
+    "label": "42.2 KM 2024",
+    "race": "42.2 KM",
+    "dist_m": 42195,
+    "year": 2024,
+    "count": 350,
+    "avg_time": "3:54:58",
+    "avg_speed_kmh": 10.77
+  },
+  {
+    "label": "21.1 KM 2024",
+    "race": "21.1 KM",
+    "dist_m": 21096,
+    "year": 2024,
+    "count": 824,
+    "avg_time": "1:57:19",
+    "avg_speed_kmh": 10.79
+  },
+  {
+    "label": "10 KM 2024",
+    "race": "10 KM",
+    "dist_m": 10000,
+    "year": 2024,
+    "count": 279,
+    "avg_time": "1:02:20",
+    "avg_speed_kmh": 9.62
+  },
+  {
+    "label": "10K OPEN 2024",
+    "race": "10K OPEN",
+    "dist_m": 10000,
+    "year": 2024,
+    "count": 616,
+    "avg_time": "1:16:25",
+    "avg_speed_kmh": 7.85
+  },
+  {
+    "label": "Colchester 10k 2024 2024",
+    "race": "Colchester 10k 2024",
+    "dist_m": 10000,
+    "year": 2024,
+    "count": 867,
+    "avg_time": "0:58:36",
+    "avg_speed_kmh": 10.24
+  },
+  {
+    "label": "Jurassic Coast 10k 2025",
+    "race": "Jurassic Coast 10k",
+    "dist_m": 10000,
+    "year": 2025,
+    "count": 243,
+    "avg_time": "1:02:33",
+    "avg_speed_kmh": 9.59
+  },
+  {
+    "label": "10KM 2025",
+    "race": "10KM",
+    "dist_m": 10000,
+    "year": 2025,
+    "count": 1706,
+    "avg_time": "0:52:25",
+    "avg_speed_kmh": 11.45
   }
 ]

@@ -1,0 +1,163 @@
+[
+  {
+    "event": "Haspa Marathon Hamburg",
+    "year": 2021,
+    "m": "02:10:14",
+    "w": "02:26:19",
+    "count": null
+  },
+  {
+    "event": "Haspa Marathon Hamburg",
+    "year": 2022,
+    "m": "02:04:47",
+    "w": "02:17:23",
+    "count": null
+  },
+  {
+    "event": "Haspa Marathon Hamburg",
+    "year": 2023,
+    "m": "02:04:09",
+    "w": "02:20:09",
+    "count": null
+  },
+  {
+    "event": "Haspa Marathon Hamburg",
+    "year": 2024,
+    "m": "02:04:24",
+    "w": "02:18:22",
+    "count": null
+  },
+  {
+    "event": "Haspa Marathon Hamburg",
+    "year": 2025,
+    "m": "02:03:46",
+    "w": "02:17:55",
+    "count": null
+  },
+  {
+    "event": "Stockholm Marathon",
+    "year": 2021,
+    "m": "02:12:24",
+    "w": "02:29:03",
+    "count": 5000
+  },
+  {
+    "event": "Stockholm Marathon",
+    "year": 2022,
+    "m": "02:11:08",
+    "w": "02:31:48",
+    "count": 5000
+  },
+  {
+    "event": "Stockholm Marathon",
+    "year": 2023,
+    "m": "02:10:32",
+    "w": "02:30:44",
+    "count": 10000
+  },
+  {
+    "event": "Stockholm Marathon",
+    "year": 2024,
+    "m": "02:14:17",
+    "w": "02:31:46",
+    "count": 15000
+  },
+  {
+    "event": "Stockholm Marathon",
+    "year": 2025,
+    "m": "02:11:34",
+    "w": "02:30:38",
+    "count": 15000
+  },
+  {
+    "event": "Athens Marathon",
+    "year": 2021,
+    "m": "00:30:03",
+    "w": "00:33:03",
+    "count": 30000
+  },
+  {
+    "event": "Athens Marathon",
+    "year": 2022,
+    "m": "00:30:03",
+    "w": "00:33:03",
+    "count": 30000
+  },
+  {
+    "event": "Athens Marathon",
+    "year": 2023,
+    "m": "00:30:03",
+    "w": "00:33:03",
+    "count": 30000
+  },
+  {
+    "event": "Athens Marathon",
+    "year": 2024,
+    "m": "00:30:03",
+    "w": "00:33:03",
+    "count": 30000
+  },
+  {
+    "event": "Athens Marathon",
+    "year": 2025,
+    "m": "00:30:03",
+    "w": "00:33:03",
+    "count": 30000
+  },
+  {
+    "event": "Vienna City Marathon",
+    "year": 2021,
+    "m": "02:09:25",
+    "w": "02:24:29",
+    "count": 3000
+  },
+  {
+    "event": "Vienna City Marathon",
+    "year": 2022,
+    "m": "02:06:53",
+    "w": "02:20:59",
+    "count": 4000
+  },
+  {
+    "event": "Vienna City Marathon",
+    "year": 2023,
+    "m": "02:05:08",
+    "w": "02:24:12",
+    "count": 5000
+  },
+  {
+    "event": "Brighton Marathon",
+    "year": 2021,
+    "m": "02:25:04",
+    "w": "02:49:38",
+    "count": 10000
+  },
+  {
+    "event": "Brighton Marathon",
+    "year": 2022,
+    "m": "02:25:04",
+    "w": "02:49:38",
+    "count": 10000
+  },
+  {
+    "event": "Brighton Marathon",
+    "year": 2023,
+    "m": "02:25:04",
+    "w": "02:49:38",
+    "count": 10000
+  },
+  {
+    "event": "Brighton Marathon",
+    "year": 2024,
+    "m": "02:32:27",
+    "w": "02:54:43",
+    "count": 10000
+  },
+  {
+    "event": "Brighton Marathon",
+    "year": 2025,
+    "m": "02:26:47",
+    "w": "02:52:58",
+    "count": 10000
+  }
+]
