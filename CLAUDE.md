@@ -160,9 +160,10 @@
 1. Rechercher les donnees (APIs, web search, scraping)
 2. Appliquer via `update_finishers.py` (ne modifie que les cellules vides)
 3. Executer `python generate_dashboard.py`
-4. **Toujours commit + push automatiquement** apres chaque modification (ne pas attendre que l'utilisateur le demande)
+4. **Verifier que les nouvelles donnees apparaissent dans le dashboard** : extraire le JSON `RAW` du HTML genere et confirmer que les valeurs ajoutees/modifiees sont presentes. Ne pas considerer la tache comme terminee tant que cette verification n'est pas faite.
+5. **Toujours commit + push automatiquement** apres chaque modification (ne pas attendre que l'utilisateur le demande)
    `git add -A && git commit && git push`
-   **Pousser directement sur `main`** (meme depuis une branche de feature : merge fast-forward vers main puis push). Le dashboard est heberge sur GitHub Pages : https://mathbrn.github.io/datapace-dashboard/ et sert depuis `main`.
+6. **OBLIGATOIRE : Pousser sur `main`** (meme depuis une branche de feature : merge fast-forward vers main puis push). Le dashboard est heberge sur GitHub Pages : https://mathbrn.github.io/datapace-dashboard/ et sert depuis `main`. Si on travaille sur une branche de feature, faire : `git checkout main && git merge <branche> --ff-only && git push origin main && git checkout <branche>`.
 
 ### Renommer un evenement
 Modifier le nom dans TOUS les emplacements listes dans "Ou sont stockes les noms d'evenements" ci-dessus (9 fichiers). **Ne pas oublier `datapace.db`** (table `events`), c'est la source primaire du dashboard.
