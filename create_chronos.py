@@ -807,6 +807,8 @@ half_marathon_data = [
     ("Göteborgsvarvet", "21K", 2024, "N/A", "N/A"),
     ("Göteborgsvarvet", "21K", 2025, "N/A", "N/A"),
     # Run in Lyon (Marathon)
+    ("Run in Lyon", "42K", 2023, "2:25:16", "2:49:26"),
+    ("Run in Lyon", "42K", 2024, "2:24:24", "2:54:22"),
     ("Run in Lyon", "42K", 2025, "2:23:24", "2:43:34"),
     # Run in Lyon (Semi)
     ("Run in Lyon (Semi)", "21K", 2023, "N/A", "N/A"),
@@ -984,6 +986,7 @@ tenk_data = [
     ("10K Valencia Ibercaja by Kiprun", "10K", 2025, "N/A", "N/A"),
     ("10K Valencia Ibercaja by Kiprun", "10K", 2026, "0:26:45", "0:29:25"),
     # 10K Montmartre
+    ("10K Montmartre", "10K", 2025, "0:31:14", "0:35:46"),
     ("10K Montmartre", "10K", 2026, "N/A", "N/A"),
     # Cancer Research UK London Winter Run
     ("Cancer Research UK London Winter Run", "10K", 2023, "0:28:52", "0:31:59"),
