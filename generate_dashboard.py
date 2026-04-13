@@ -63,6 +63,67 @@ CIRCUIT_COLORS = {
     "L5G": "#DC2626",
 }
 
+# --- Name normalization for Temps_moyen Excel files ---
+# Maps informal/short names from Temps_moyen_par_marathon_*.xlsx
+# to official names used in Suivi_Finishers (RAW).
+# Keys are lowercase, without trailing year (e.g. "2024").
+TEMPS_NAME_MAP = {
+    # 2024 Excel informal names
+    "milan marathon": "Milano Marathon",
+    # "cologne marathon" — not in RAW, no mapping needed
+    "twin cities marathon": "Medtronic Twin Cities Marathon",
+    "houston marathon": "Chevron Houston Marathon",
+    "grandma's marathon": "Grandma's Marathon",
+    # "melbourne marathon" — not in RAW, no mapping needed
+    "california international marathon": "California International Marathon",
+    "seville marathon": "Zurich Maratón de Sevilla",
+    "brighton marathon": "Brighton Marathon",
+    # "philadelphia marathon" — not in RAW, no mapping needed
+    "marine corps marathon": "Marine Corps Marathon",
+    "dublin marathon": "Irish Life Dublin Marathon",
+    "valence marathon": "Valencia Marathon Trinidad Alfonso Zurich",
+    "berlin marathon": "BMW Berlin Marathon",
+    "boston marathon": "Boston Marathon",
+    "tokyo marathon": "Tokyo Marathon",
+    "marathon de paris": "Schneider Electric Marathon de Paris",
+    "manchester marathon": "Adidas Manchester Marathon",
+    "sydney marathon": "TCS Sydney Marathon presented by ASICS",
+    "chicago marathon": "Bank of America Chicago Marathon",
+    "london marathon": "TCS London Marathon",
+    "new york city marathon": "TCS New York City Marathon",
+    "mexico city marathon": "Maratón de la Ciudad de México Telcel",
+    "los angeles marathon": "ASICS Los Angeles Marathon",
+    "rotterdam marathon": "NN Marathon Rotterdam",
+    "amsterdam marathon": "TCS Amsterdam Marathon",
+    # Semi-marathon mappings
+    "semi de paris": "HOKA Semi de Paris",
+}
+
+
+def normalize_race_name(name):
+    """Clean and normalize a race name from Temps_moyen Excel files."""
+    import re as _re
+    # Strip whitespace and tabs
+    name = name.strip().strip("\t")
+    # Fix double-encoded UTF-8 (e.g. MaratÃ³n → Maratón)
+    try:
+        fixed = name.encode("latin-1").decode("utf-8")
+        if fixed != name:
+            name = fixed
+    except (UnicodeDecodeError, UnicodeEncodeError):
+        pass
+    # Normalize smart quotes → straight quotes
+    name = name.replace("\u2019", "'").replace("\u2018", "'")
+    name = name.replace("\u201c", '"').replace("\u201d", '"')
+    # Strip trailing year (e.g. "Berlin Marathon 2024" → "Berlin Marathon")
+    base = _re.sub(r"\s+20\d{2}$", "", name).strip()
+    # Lookup in name map (case-insensitive)
+    mapped = TEMPS_NAME_MAP.get(base.lower())
+    if mapped:
+        return mapped
+    return name
+
+
 def compute_circuits(race_name, distance, city):
     """Return list of circuit codes for a given event."""
     circuits = []
@@ -249,8 +310,10 @@ def load_marathon(year):
                 if isinstance(v, str) and len(v) > 4 and v not in ("nan", "RACE", "Race"): race = v.strip()
                 elif isinstance(v, (int, float)) and not (isinstance(v, float) and pd.isna(v)) and float(v) > 100: finishers = int(float(v))
                 elif isinstance(v, datetime.time): avg = v.strftime("%H:%M:%S")
-            if race: rows.append({"race": race, "city": "", "finishers": finishers,
-                                  "avg": avg, "men": None, "women": None, "year": year})
+            if race:
+                race = normalize_race_name(race)
+                rows.append({"race": race, "city": "", "finishers": finishers,
+                             "avg": avg, "men": None, "women": None, "year": year})
     else:
         df = pd.read_excel(path, sheet_name="Finishers", header=None)
         df.columns = ["_", "city", "race", "finishers", "avg_time", "best",
@@ -259,6 +322,7 @@ def load_marathon(year):
         for _, r in df.iloc[3:].iterrows():
             race = str(r["race"]).strip() if pd.notna(r["race"]) else ""
             if not race or race in ("nan", "Race"): continue
+            race = normalize_race_name(race)
             rows.append({"race": race,
                          "city": str(r["city"]).strip() if pd.notna(r["city"]) else "",
                          "finishers": safe_int(r["finishers"]),
@@ -291,6 +355,7 @@ def load_semi():
         for _, r in df.iloc[start:].iterrows():
             race = str(r["race"]).strip() if pd.notna(r["race"]) else ""
             if not race or race in ("nan", "Race"): continue
+            race = normalize_race_name(race)
             rows.append({"race": race,
                          "city": str(r["city"]).strip() if pd.notna(r["city"]) else "",
                          "finishers": safe_int(r["finishers"]),
@@ -365,6 +430,7 @@ def load_sporthive_avg():
             mapped = label_map.get(label, rname)
         elif mapped:
             pass  # use mapped name
+        mapped = normalize_race_name(mapped)
         rows.append({"race": mapped, "year": item["year"],
                      "avg": item["avg_time"], "men": "", "women": ""})
     print(f"  Sporthive avg: {len(rows)} temps moyens")
