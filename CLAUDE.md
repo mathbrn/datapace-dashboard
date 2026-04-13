@@ -46,6 +46,13 @@
 
 ## Regles strictes
 
+### Validation permanente (onglet Temps moyen)
+- `generate_dashboard.py` execute `validate_data()` apres chaque `load_marathon()`, `load_semi()` et `load_sporthive_avg()`
+- La validation detecte : encodage casse (Ã), noms generiques (Marathon, 42.2 KM...), annees residuelles dans les noms, chronos sans zero initial
+- **Regle** : apres chaque ajout de donnees dans les fichiers Excel Temps_moyen_*, relancer `python generate_dashboard.py` et verifier qu'aucun avertissement VALIDATION n'apparait avant de pusher
+- Les noms invalides sont filtres par `is_invalid_race_name()` et `INVALID_RACE_NAMES`
+- L'encodage est corrige iterativement par `fix_encoding()` (cp1252→UTF-8, latin-1→UTF-8, jusqu'a 5 passes)
+
 ### Donnees finishers
 - **JAMAIS ecraser une cellule deja remplie** dans le fichier Excel finishers. Le script `update_finishers.py` a une protection [SKIP].
 - **ZERO tolerance pour les chiffres ronds** (10000, 20000, 30000...). Ce sont des estimations ou des caps d'inscription, pas des finishers exacts.

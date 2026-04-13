@@ -100,18 +100,62 @@ TEMPS_NAME_MAP = {
 }
 
 
+# Names that are NOT real event names — filter them out everywhere
+INVALID_RACE_NAMES = {
+    "42.2 km", "42.2km", "42.195 km", "21.1 km", "21.1km", "10 km", "10km",
+    "adidas individual", "individual", "n/a", "na", "none", "-", "--",
+    "marathon", "semi-marathon", "half marathon", "half", "semi",
+    "maraton", "maratón", "media maratón", "media maraton", "meia maratona",
+    "42k", "21k", "10k",
+}
+
+
+def fix_encoding(s):
+    """Fix multi-level UTF-8 double/triple/quadruple encoding iteratively."""
+    if not isinstance(s, str):
+        return s
+    # Try cp1252→UTF-8 first (handles Windows quadruple-encoding), then latin-1→UTF-8
+    for encoding in ("cp1252", "latin-1"):
+        for _ in range(5):
+            try:
+                fixed = s.encode(encoding).decode("utf-8")
+                if fixed != s:
+                    s = fixed
+                else:
+                    break
+            except (UnicodeDecodeError, UnicodeEncodeError):
+                break
+    return s
+
+
+def is_invalid_race_name(name):
+    """Return True if name is generic/invalid and should be filtered out."""
+    import re as _re
+    import unicodedata as _ud
+    n = name.lower().strip()
+    if n in INVALID_RACE_NAMES:
+        return True
+    # Numeric distance patterns like "42.2 KM", "21.1 KM 2024"
+    if _re.match(r'^[\d.,]+\s*k?m?\s*(\d{4})?$', n):
+        return True
+    # Normalize accents and re-check (e.g. "maratón" → "maraton")
+    stripped = _ud.normalize("NFKD", n).encode("ascii", "ignore").decode()
+    if stripped in INVALID_RACE_NAMES:
+        return True
+    # Also check with common accent variants explicitly
+    for invalid in INVALID_RACE_NAMES:
+        if stripped == _ud.normalize("NFKD", invalid).encode("ascii", "ignore").decode() and stripped:
+            return True
+    return False
+
+
 def normalize_race_name(name):
     """Clean and normalize a race name from Temps_moyen Excel files."""
     import re as _re
     # Strip whitespace and tabs
     name = name.strip().strip("\t")
-    # Fix double-encoded UTF-8 (e.g. MaratÃ³n → Maratón)
-    try:
-        fixed = name.encode("latin-1").decode("utf-8")
-        if fixed != name:
-            name = fixed
-    except (UnicodeDecodeError, UnicodeEncodeError):
-        pass
+    # Fix encoding (iterative)
+    name = fix_encoding(name)
     # Normalize smart quotes → straight quotes
     name = name.replace("\u2019", "'").replace("\u2018", "'")
     name = name.replace("\u201c", '"').replace("\u201d", '"')
@@ -122,6 +166,37 @@ def normalize_race_name(name):
     if mapped:
         return mapped
     return base
+
+
+def validate_data(rows, source_name):
+    """Validate loaded data rows and report issues."""
+    import re as _re
+    issues = []
+    for r in rows:
+        name = r.get("race", "")
+        # Broken encoding
+        if "Ã" in name or "â€" in name or "Æ'" in name:
+            issues.append(f"ENCODAGE: {name}")
+        # Generic name
+        if is_invalid_race_name(name):
+            issues.append(f"NOM GENERIQUE: {name}")
+        # Year in name
+        if _re.search(r"\s+20\d{2}$", name):
+            issues.append(f"ANNEE DANS NOM: {name}")
+        # Time without leading zero
+        for key in ("avg", "men", "women"):
+            val = r.get(key, "")
+            if val and _re.match(r"^\d:\d{2}:\d{2}$", str(val)):
+                issues.append(f"CHRONO SANS ZERO: {val} dans {name}")
+    if issues:
+        print(f"\n  VALIDATION {source_name} — {len(issues)} probleme(s) :")
+        for i in issues[:10]:
+            print(f"    -> {i}")
+        if len(issues) > 10:
+            print(f"    ... et {len(issues) - 10} autre(s)")
+    else:
+        print(f"  VALIDATION {source_name} : OK")
+    return issues
 
 
 def compute_circuits(race_name, distance, city):
@@ -317,6 +392,8 @@ def load_marathon(year):
                 elif isinstance(v, datetime.time): avg = v.strftime("%H:%M:%S")
             if race:
                 race = normalize_race_name(race)
+                if is_invalid_race_name(race):
+                    continue
                 rows.append({"race": race, "city": "", "finishers": finishers,
                              "avg": avg, "men": None, "women": None, "year": year})
     else:
@@ -328,11 +405,14 @@ def load_marathon(year):
             race = str(r["race"]).strip() if pd.notna(r["race"]) else ""
             if not race or race in ("nan", "Race"): continue
             race = normalize_race_name(race)
+            if is_invalid_race_name(race):
+                continue
             rows.append({"race": race,
                          "city": str(r["city"]).strip() if pd.notna(r["city"]) else "",
                          "finishers": safe_int(r["finishers"]),
                          "avg": fmt_time(r["avg_time"]), "men": fmt_time(r["men_time"]),
                          "women": fmt_time(r["women_time"]), "year": year})
+    validate_data(rows, f"Marathon {year}")
     print(f"  Marathon {year}: {len(rows)} courses")
     return rows
 
@@ -361,11 +441,14 @@ def load_semi():
             race = str(r["race"]).strip() if pd.notna(r["race"]) else ""
             if not race or race in ("nan", "Race"): continue
             race = normalize_race_name(race)
+            if is_invalid_race_name(race):
+                continue
             rows.append({"race": race,
                          "city": str(r["city"]).strip() if pd.notna(r["city"]) else "",
                          "finishers": safe_int(r["finishers"]),
                          "avg": fmt_time(r["avg_time"]), "men": fmt_time(r["men_time"]),
                          "women": fmt_time(r["women_time"]), "year": yr})
+        validate_data(rows, f"Semi {yr}")
         if rows:
             all_data[yr] = rows
             print(f"  Semi {yr}   : {len(rows)} courses")
@@ -436,8 +519,16 @@ def load_sporthive_avg():
         elif mapped:
             pass  # use mapped name
         mapped = normalize_race_name(mapped)
+        if is_invalid_race_name(mapped):
+            continue
+        # Zero-pad avg_time
+        avg = item["avg_time"]
+        import re as _re2
+        if avg and _re2.match(r"^\d:\d{2}:\d{2}$", str(avg)):
+            avg = "0" + avg
         rows.append({"race": mapped, "year": item["year"],
-                     "avg": item["avg_time"], "men": "", "women": ""})
+                     "avg": avg, "men": "", "women": ""})
+    validate_data(rows, "Sporthive avg")
     print(f"  Sporthive avg: {len(rows)} temps moyens")
     return rows
 
@@ -2578,36 +2669,32 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
             if yr_str not in target:
                 target[yr_str] = []
             existing_races = {e["race"].lower() for e in target[yr_str]}
-            mapped_name = item["race"]
+            mapped_name = fix_encoding(item["race"])
             # Apply same race_map as load_sporthive_avg
             label = item["label"].rsplit(" ", 1)[0]
             for sp_row in sp_avg:
                 if sp_row["year"] == item["year"] and sp_row["avg"] == item["avg_time"]:
-                    mapped_name = sp_row["race"]
+                    mapped_name = fix_encoding(sp_row["race"])
                     break
+            mapped_name = normalize_race_name(mapped_name)
             # Skip if a similar race already exists (fuzzy match on first 15 chars)
             mn_l = mapped_name.lower()
             already = any(mn_l[:15] in ex or ex[:15] in mn_l for ex in existing_races if len(ex) > 10)
             if already:
                 continue
-            # Skip generic/truncated race names (check both mapped and raw names)
-            import unicodedata as _ud
-            generic = {"marathon", "maraton", "half marathon", "semi-marathon",
-                       "media maraton", "meia maratona", "half", "semi"}
-            _is_generic = False
-            for _check in (mapped_name, item.get("race", "")):
-                _stripped = _ud.normalize("NFKD", _check.lower().strip()).encode("ascii", "ignore").decode()
-                if _stripped in generic:
-                    _is_generic = True
-                    break
-            if _is_generic:
+            # Skip generic/truncated race names
+            if is_invalid_race_name(mapped_name) or is_invalid_race_name(item.get("race", "")):
                 continue
             if mapped_name.lower() not in existing_races:
+                _avg = item["avg_time"]
+                import re as _re3
+                if _avg and _re3.match(r"^\d:\d{2}:\d{2}$", str(_avg)):
+                    _avg = "0" + _avg
                 target[yr_str].append({
                     "race": mapped_name,
                     "city": "",
                     "finishers": item.get("count", 0),
-                    "avg": item["avg_time"]
+                    "avg": _avg
                 })
     # Load sponsoring data
     spdata = load_sponsoring()
