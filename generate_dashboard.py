@@ -2494,10 +2494,21 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
         for item in sp_raw:
             yr_str = str(item["year"])
             dist = item.get("dist_m", 0)
-            if dist and 42000 <= dist <= 42300:
+            name_l = item.get("race", "").lower()
+            if dist and 40000 <= dist <= 43000:
                 target = tmjs
             elif dist and 20000 <= dist <= 22000:
                 target = tsjs
+            elif dist == 0 or not dist:
+                # Infer from race name (handle accented chars like Maratón)
+                import unicodedata
+                name_ascii = unicodedata.normalize("NFKD", name_l).encode("ascii", "ignore").decode()
+                if ("marathon" in name_ascii or "maraton" in name_l) and "half" not in name_l and "semi" not in name_l and "meia" not in name_l:
+                    target = tmjs
+                elif "half" in name_l or "semi" in name_l or "meia" in name_l:
+                    target = tsjs
+                else:
+                    continue
             else:
                 continue
             if yr_str not in target:
@@ -2510,6 +2521,23 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
                 if sp_row["year"] == item["year"] and sp_row["avg"] == item["avg_time"]:
                     mapped_name = sp_row["race"]
                     break
+            # Skip if a similar race already exists (fuzzy match on first 15 chars)
+            mn_l = mapped_name.lower()
+            already = any(mn_l[:15] in ex or ex[:15] in mn_l for ex in existing_races if len(ex) > 10)
+            if already:
+                continue
+            # Skip generic/truncated race names (check both mapped and raw names)
+            import unicodedata as _ud
+            generic = {"marathon", "maraton", "half marathon", "semi-marathon",
+                       "media maraton", "meia maratona", "half", "semi"}
+            _is_generic = False
+            for _check in (mapped_name, item.get("race", "")):
+                _stripped = _ud.normalize("NFKD", _check.lower().strip()).encode("ascii", "ignore").decode()
+                if _stripped in generic:
+                    _is_generic = True
+                    break
+            if _is_generic:
+                continue
             if mapped_name.lower() not in existing_races:
                 target[yr_str].append({
                     "race": mapped_name,
