@@ -1,0 +1,50 @@
+[
+  {
+    "event": "Adidas Manchester Marathon",
+    "distance": "MARATHON",
+    "year": 2021,
+    "finishers": 13844,
+    "avg_time": "04:19:22",
+    "avg_speed_kmh": 9.76,
+    "men_winner_time": "02:07:45",
+    "men_winner_name": "Callum Gaunt",
+    "women_winner_time": "02:44:49",
+    "women_winner_name": "Heather Townsend"
+  },
+  {
+    "event": "AJ Bell Great North Run",
+    "distance": "SEMI",
+    "year": 2021,
+    "finishers": 49623,
+    "avg_time": "02:15:56",
+    "avg_speed_kmh": 9.31,
+    "men_winner_time": "01:01:20",
+    "men_winner_name": "Marc Scott",
+    "women_winner_time": "01:07:41",
+    "women_winner_name": "Hellen Obiri"
+  },
+  {
+    "event": "AJ Bell Great Manchester Run",
+    "distance": "SEMI",
+    "year": 2021,
+    "finishers": 2495,
+    "avg_time": "02:04:51",
+    "avg_speed_kmh": 10.14,
+    "men_winner_time": "01:00:36",
+    "men_winner_name": "Kai Barlow",
+    "women_winner_time": "01:21:52",
+    "women_winner_name": "Nicola Jackson"
+  },
+  {
+    "event": "AJ Bell Great Bristol Run",
+    "distance": "SEMI",
+    "year": 2021,
+    "finishers": 5947,
+    "avg_time": "02:01:23",
+    "avg_speed_kmh": 10.43,
+    "men_winner_time": "01:07:50",
+    "men_winner_name": "Chris Thompson",
+    "women_winner_time": "01:18:16",
+    "women_winner_name": "Chloe Richardson"
+  }
+]

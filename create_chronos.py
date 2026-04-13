@@ -161,6 +161,7 @@ marathon_data = [
     ("Zurich Rock 'n' Roll Running Series Madrid", "42K", 2024, "2:08:05", "2:26:19"),
     ("Zurich Rock 'n' Roll Running Series Madrid", "42K", 2025, "2:09:11", "2:25:55"),
     # Adidas Manchester Marathon
+    ("Adidas Manchester Marathon", "42K", 2021, "2:07:45", "2:44:49"),
     ("Adidas Manchester Marathon", "42K", 2023, "2:16:27", "2:31:26"),
     ("Adidas Manchester Marathon", "42K", 2024, "2:16:29", "2:37:14"),
     ("Adidas Manchester Marathon", "42K", 2025, "2:16:56", "2:34:53"),
