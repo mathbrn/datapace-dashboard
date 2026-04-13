@@ -669,7 +669,7 @@ function switchTab(name){
   document.getElementById('panel-'+name).classList.add('active');
   if(name==='trends')updateTrends();
   if(name==='biggest')updateBiggest();
-  if(name==='temps')updateTemps();
+  if(name==='temps'){updateTempsYears();updateTemps();}
   if(name==='winners')updateWinners();
   if(name==='data')filterTable();
   if(name==='sponsoring'){
@@ -2289,7 +2289,6 @@ HTML_BODY = """
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Annee</span>
       <select id="year-temps" onchange="updateTemps()">
-        <option value="2025">2025</option><option value="2024">2024</option><option value="2026">2026</option>
       </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Tri</span>
