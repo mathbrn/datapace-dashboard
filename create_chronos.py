@@ -806,6 +806,8 @@ half_marathon_data = [
     # Göteborgsvarvet
     ("Göteborgsvarvet", "21K", 2024, "N/A", "N/A"),
     ("Göteborgsvarvet", "21K", 2025, "N/A", "N/A"),
+    # Run in Lyon (Marathon)
+    ("Run in Lyon", "42K", 2025, "2:23:24", "2:43:34"),
     # Run in Lyon (Semi)
     ("Run in Lyon (Semi)", "21K", 2023, "N/A", "N/A"),
     ("Run in Lyon (Semi)", "21K", 2024, "1:05:44", "1:18:34"),
