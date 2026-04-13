@@ -187,10 +187,19 @@
    `git add -A && git commit && git push`
 6. **OBLIGATOIRE : Pousser sur `main`** (meme depuis une branche de feature : merge fast-forward vers main puis push). Le dashboard est heberge sur GitHub Pages : https://mathbrn.github.io/datapace-dashboard/ et sert depuis `main`. Si on travaille sur une branche de feature, faire : `git checkout main && git merge <branche> --ff-only && git push origin main && git checkout <branche>`.
 
-### Ajouter les resultats d'un evenement (competence standard)
-Quand l'utilisateur fournit une URL de resultats pour un evenement :
+### Update 4D (competence standard pour chaque evenement)
+Pour chaque evenement, recuperer les **4 donnees** et les repercuter dans **tous les onglets** :
+
+| Donnee               | Onglets concernes                              |
+|----------------------|------------------------------------------------|
+| 1. Finishers         | Tableau, Vue d'ensemble, Top Evenements        |
+| 2. Temps moyen       | Vue d'ensemble, Temps moyen                    |
+| 3. Chrono vainqueur H| Vue d'ensemble, Winners Times                  |
+| 4. Chrono vainqueur F| Vue d'ensemble, Winners Times                  |
+
+**Procedure :**
 1. **Decouvrir l'API** : identifier la plateforme (TimeTo, ACN/ChronoRace, Sporthive, Tracx, Athlinks...) et ses endpoints
-2. **Recuperer** : finishers, temps moyen, chrono vainqueur H/F
+2. **Recuperer les 4D** : finishers, temps moyen, chrono vainqueur H, chrono vainqueur F
 3. **Mettre a jour TOUS les fichiers** :
    - `update_finishers.py "NomCourse" DISTANCE ANNEE COUNT` → finishers dans Excel
    - `create_chronos.py` → ajouter la ligne de chronos vainqueurs (donnees en dur)
