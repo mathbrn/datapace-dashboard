@@ -1327,5 +1327,14 @@
     "count": 55499,
     "avg_time": "4:12:16",
     "avg_speed_kmh": 10.04
+  },
+  {
+    "label": "Marathon de Paris 2026",
+    "race": "Schneider Electric Marathon de Paris",
+    "dist_m": 42195,
+    "year": 2026,
+    "count": 57396,
+    "avg_time": "4:13:24",
+    "avg_speed_kmh": 9.99
   }
 ]

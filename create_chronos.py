@@ -167,7 +167,7 @@ marathon_data = [
     ("Schneider Electric Marathon de Paris", "42K", 2023, "2:07:15", "2:23:19"),
     ("Schneider Electric Marathon de Paris", "42K", 2024, "2:05:33", "2:20:45"),
     ("Schneider Electric Marathon de Paris", "42K", 2025, "2:05:25", "2:20:45"),
-    ("Schneider Electric Marathon de Paris", "42K", 2026, "2:05:16", "2:18:34"),
+    ("Schneider Electric Marathon de Paris", "42K", 2026, "2:05:18", "2:18:35"),
     # NN Marathon Rotterdam
     ("NN Marathon Rotterdam", "42K", 2023, "2:03:47", "2:20:31"),
     ("NN Marathon Rotterdam", "42K", 2024, "2:04:45", "2:19:30"),

@@ -1,0 +1,19 @@
+{
+  "men_winner": {
+    "name": "Yemaneberhan CRIPPA",
+    "time": "02:05:18",
+    "nat": "IT"
+  },
+  "women_winner": {
+    "name": "Shure DEMISE",
+    "time": "02:18:35",
+    "nat": "ET"
+  },
+  "avg_all": "04:13:24",
+  "avg_speed_kmh": 9.99,
+  "avg_men": "04:04:41",
+  "avg_women": "04:32:09",
+  "count": 57396,
+  "count_men": 39201,
+  "count_women": 18195
+}
