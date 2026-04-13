@@ -101,7 +101,26 @@
 - **Codes** : `GR-NORTH-{YYYY}`, `GR-SCOTTISH-{YYYY}`, `GR-MANCHESTER-{YYYY}`, `GR-BRISTOL-{YYYY}`, `GR-BIRMINGHAM-{YYYY}`, `GR-SOUTH-{YYYY}`
 - **Couverture** : 2022-2025 uniquement
 
-### 5. TimeTo / SportInnovation (ASO France)
+### 5. TimeTo / SportInnovation (ASO France + resultats individuels)
+- **Events** : `https://sportinnovation.fr/api/events`
+- **Races** : `https://sportinnovation.fr/api/events/{id}/races`
+- **Resultats individuels** : `GET https://sportinnovation.fr/api/races/{raceId}/results` → tableau complet (jusqu'a 57000+ resultats en une requete)
+- **Champs** : `sex`, `nationality`, `firstName`, `realTime`, `officialTime`, `generalRanking`, `sexRanking`
+- **Finishers** : `totals.maxGeneralRanking` (ou compter les resultats)
+- **Auth** : Aucune
+- **Couverture** : Marathon de Paris, Semi de Paris, 10K Paris, Run in Lyon, Run in Marseille
+
+### 5b. ACN Timing / ChronoRace (Rotterdam, etc.)
+- **Event view** : `GET https://prod.chronorace.be/api/Event/view/{eventId}`
+- **Resultats** : `GET https://results.chronorace.be/api/results/table/search/{db}/{tableName}?fromRecord={offset}&pageSize={limit}`
+- **Parametres** : `db` = contexte (ex: `20260411_rotterdam`), `tableName` = `LIVE{n}` (scanner LIVE1..LIVE60 pour trouver la bonne table)
+- **Structure** : reponse paginee, `Groups[].SlaveRows[]` = tableau de tableaux, colonnes definies dans `TableDefinition.Columns`
+- **Colonnes marathon** : Col2=Gender, Col3=Name(HTML), Col14=Location(Finish-), Col15=NetTime(HTML), Col16=GrossTime
+- **Astuce** : la table avec le plus de resultats est generalement la table complete (ex: LIVE9=16542 pour Rotterdam vs LIVE31=941 elites)
+- **Auth** : Aucune
+- **Couverture** : NN Marathon Rotterdam, et potentiellement d'autres evenements ChronoRace
+
+### 6. Active.com (ASO events anciens)
 - **Events** : `https://sportinnovation.fr/api/events`
 - **Races** : `https://sportinnovation.fr/api/events/{id}/races`
 - **Finishers** : `totals.maxGeneralRanking`
@@ -167,6 +186,19 @@
 5. **Toujours commit + push automatiquement** apres chaque modification (ne pas attendre que l'utilisateur le demande)
    `git add -A && git commit && git push`
 6. **OBLIGATOIRE : Pousser sur `main`** (meme depuis une branche de feature : merge fast-forward vers main puis push). Le dashboard est heberge sur GitHub Pages : https://mathbrn.github.io/datapace-dashboard/ et sert depuis `main`. Si on travaille sur une branche de feature, faire : `git checkout main && git merge <branche> --ff-only && git push origin main && git checkout <branche>`.
+
+### Ajouter les resultats d'un evenement (competence standard)
+Quand l'utilisateur fournit une URL de resultats pour un evenement :
+1. **Decouvrir l'API** : identifier la plateforme (TimeTo, ACN/ChronoRace, Sporthive, Tracx, Athlinks...) et ses endpoints
+2. **Recuperer** : finishers, temps moyen, chrono vainqueur H/F
+3. **Mettre a jour TOUS les fichiers** :
+   - `update_finishers.py "NomCourse" DISTANCE ANNEE COUNT` → finishers dans Excel
+   - `create_chronos.py` → ajouter la ligne de chronos vainqueurs (donnees en dur)
+   - `avg_times_sporthive.json` → ajouter le temps moyen
+   - `Temps_moyen_par_marathon_{ANNEE}.xlsx` ou `Temps_moyen_semi-marathon.xlsx` → remplir la ligne
+4. **Regenerer** : `python create_chronos.py && python generate_dashboard.py`
+5. **Verifier** : confirmer la presence dans RAW, WINNERS, TEMPS_MARATHON/SEMI, TIMES_DB, TEMPS_AVG
+6. **Commit + push**
 
 ### Renommer un evenement
 Modifier le nom dans TOUS les emplacements listes dans "Ou sont stockes les noms d'evenements" ci-dessus (9 fichiers). **Ne pas oublier `datapace.db`** (table `events`), c'est la source primaire du dashboard.
