@@ -689,7 +689,10 @@ function buildWinnerHistory(rn){
   return{men:men,women:women};
 }
 
+var _themeToggling=false;
 function toggleTheme(){
+  if(_themeToggling)return;
+  _themeToggling=true;
   var html=document.documentElement;
   var btn=document.getElementById('theme-btn');
   if(html.getAttribute('data-theme')==='light'){
@@ -707,23 +710,29 @@ function toggleTheme(){
     var textColor=getComputedStyle(html).getPropertyValue('--text3').trim();
     Object.keys(Chart.instances||{}).forEach(function(k){
       var c=Chart.instances[k];
-      if(c.options.scales){
-        ['x','y','y1'].forEach(function(ax){
-          if(c.options.scales[ax]){
-            c.options.scales[ax].ticks=c.options.scales[ax].ticks||{};
-            c.options.scales[ax].ticks.color=textColor;
-            c.options.scales[ax].grid=c.options.scales[ax].grid||{};
-            c.options.scales[ax].grid.color=gridColor;
-          }
-        });
-      }
-      c.update('none');
+      try{
+        if(c.options.scales){
+          ['x','y','y1'].forEach(function(ax){
+            if(c.options.scales[ax]){
+              c.options.scales[ax].ticks=c.options.scales[ax].ticks||{};
+              c.options.scales[ax].ticks.color=textColor;
+              c.options.scales[ax].grid=c.options.scales[ax].grid||{};
+              c.options.scales[ax].grid.color=gridColor;
+            }
+          });
+        }
+        c.update('none');
+      }catch(e){console.warn('Chart update error:',e);}
     });
   }
-  // Re-render tabs to update colors
-  if(typeof filterTable==='function')filterTable();
-  if(typeof initBiggestYears==='function')initBiggestYears();
-  if(typeof updateWinnersTable==='function')updateWinnersTable();
+  // Re-render active tab to update colors
+  try{
+    var active=document.querySelector('.tab.active');
+    var name=active?active.getAttribute('onclick'):'';
+    if(name&&name.indexOf('data')>=0&&typeof filterTable==='function')filterTable();
+    if(name&&name.indexOf('winners')>=0&&typeof updateWinnersTable==='function')updateWinnersTable();
+  }catch(e){console.warn('Theme re-render error:',e);}
+  setTimeout(function(){_themeToggling=false;},100);
 }
 (function(){var saved=localStorage.getItem('dp-theme');if(saved==='light'){document.documentElement.setAttribute('data-theme','light');var b=document.getElementById('theme-btn');if(b)b.innerHTML='&#x2600; Light';}})();
 
