@@ -1733,9 +1733,8 @@ function spSelect(brandId){
   det.style.display='flex';
 }
 
-try{initBiggestYears();}catch(e){console.error('initBiggestYears error:',e);document.title='ERR:initBiggest '+e.message;}
-try{filterTable();}catch(e){console.error('filterTable error:',e);document.title='ERR:filterTable '+e.message;}
-document.title='OK:'+RAW.length+' events loaded';
+try{initBiggestYears();}catch(e){console.error('initBiggestYears error:',e);}
+try{filterTable();}catch(e){console.error('filterTable error:',e);}
 
 // ── COMPARE ──────────────────────────────────────────────────────────────────
 var cmpSelectedA = null;
