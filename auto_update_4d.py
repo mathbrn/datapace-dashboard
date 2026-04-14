@@ -24,6 +24,13 @@ import sys
 import unicodedata
 from pathlib import Path
 
+# Force UTF-8 output on Windows
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except AttributeError:
+    pass
+
 import requests
 
 SCRIPT_DIR = Path(__file__).parent
@@ -39,7 +46,7 @@ WA_API_KEY = "da2-5eqvkoavsnhjxfqd47jvjteray"
 WA_QUERY = """
 query getCalendarEvents($startDate: String, $endDate: String, $regionType: String, $limit: Int, $offset: Int) {
   getCalendarEvents(startDate: $startDate, endDate: $endDate, regionType: $regionType, limit: $limit, offset: $offset) {
-    hits { id name startDate endDate venue country discipline }
+    results { id name dateRange venue area disciplines hasResults }
   }
 }
 """
@@ -61,7 +68,7 @@ def fetch_worldathletics_races(date_str):
             print(f"  WA error: HTTP {resp.status_code}")
             break
         data = resp.json()
-        hits = ((data.get("data") or {}).get("getCalendarEvents") or {}).get("hits", [])
+        hits = ((data.get("data") or {}).get("getCalendarEvents") or {}).get("results", [])
         if not hits:
             break
         races.extend(hits)
@@ -108,21 +115,46 @@ def load_our_events():
 
 
 def match_wa_to_ours(wa_races, our_events):
-    """Match WA races to our dashboard events by fuzzy name/city."""
+    """Match WA races to our dashboard events by best name+city score."""
     matches = []
+    # Stopwords ignored when counting common words
+    STOPWORDS = {"the", "de", "la", "le", "les", "du", "of", "a", "and", "et",
+                 "marathon", "semi", "half", "run", "race", "runs", "races",
+                 "10k", "21k", "42k", "10km", "city", "international"}
     for wa in wa_races:
         wa_name = normalize_name(wa.get("name", ""))
         wa_venue = normalize_name(wa.get("venue", ""))
+        wa_words = set(wa_name.split()) - STOPWORDS
+        best = None
+        best_score = 0
         for ev in our_events:
             our_name = normalize_name(ev["name"])
             our_city = normalize_name(ev["city"])
-            # Match if city overlaps AND name has common keyword
-            if our_city and wa_venue and (our_city in wa_venue or wa_venue in our_city):
-                # Also check name similarity
-                common_words = set(wa_name.split()) & set(our_name.split())
-                if len(common_words) >= 2 or len(wa_name) < 30:
-                    matches.append({"wa": wa, "our": ev})
-                    break
+            our_words = set(our_name.split()) - STOPWORDS
+            # Score = common non-stopword words
+            common = wa_words & our_words
+            score = len(common) * 10
+            # City match bonus (must overlap)
+            if our_city and wa_venue:
+                if our_city == wa_venue or our_city in wa_venue or wa_venue in our_city:
+                    score += 5
+                elif not common:
+                    continue  # no name match, no city → skip
+            # Distance type match bonus
+            wa_lower = wa_name
+            if "half" in wa_lower and ev.get("distance") == "SEMI":
+                score += 3
+            elif "half" not in wa_lower and "marathon" in wa_lower and ev.get("distance") == "MARATHON":
+                score += 3
+            elif "10k" in wa_lower and ev.get("distance") == "10KM":
+                score += 3
+            if score > best_score:
+                best_score = score
+                best = ev
+        # Require minimum score 15 to avoid spurious matches
+        # (15 = 1 common word + city match, or 1 distinctive word + distance bonus)
+        if best and best_score >= 15:
+            matches.append({"wa": wa, "our": best, "score": best_score})
     print(f"  Matched: {len(matches)} events")
     return matches
 
@@ -135,23 +167,35 @@ def fetch_timeto_4d(event_name, year):
     try:
         sess = requests.Session()
         sess.headers.update({"Accept": "application/json", "User-Agent": "Mozilla/5.0"})
-        # Find event
         resp = sess.get("https://sportinnovation.fr/api/events", timeout=15)
         events = resp.json()
         target = None
         norm_name = normalize_name(event_name)
         for ev in events:
-            if normalize_name(ev.get("name", "")).find(norm_name[:15]) >= 0 and str(year) in ev.get("name", ""):
-                target = ev
-                break
+            # TimeTo uses 'title' (not 'name')
+            ev_title = ev.get("title", "") or ev.get("name", "")
+            ev_norm = normalize_name(ev_title)
+            # Match first 15 chars OR last word (distinguishes Marathon/Semi/10K)
+            key_words = norm_name.split()
+            name_match = norm_name[:15] in ev_norm or ev_norm[:15] in norm_name
+            # Need distinguishing keyword if multiple Paris events
+            if name_match and str(year) in ev_title:
+                # Prefer exact name match over substring
+                if ev_norm == norm_name or (key_words and key_words[0] in ev_norm and key_words[-1] in ev_norm):
+                    target = ev
+                    break
+                if not target:
+                    target = ev
         if not target:
             return None
+        print(f"    TimeTo: matched event id={target['id']} title={target.get('title','')[:50]}")
         resp2 = sess.get(f"https://sportinnovation.fr/api/events/{target['id']}/races", timeout=15)
         races = resp2.json()
-        # Pick the marathon/semi/10K race
+        # Filter races matching the event distance
         main_race = max(races, key=lambda r: r.get("totals", {}).get("maxGeneralRanking", 0))
         race_id = main_race["id"]
-        resp3 = sess.get(f"https://sportinnovation.fr/api/races/{race_id}/results", timeout=120)
+        print(f"    TimeTo: fetching race {race_id} ({main_race.get('title','')})")
+        resp3 = sess.get(f"https://sportinnovation.fr/api/races/{race_id}/results", timeout=180)
         results = resp3.json()
         return compute_4d_from_results(results, source="timeto")
     except Exception as e:
@@ -316,23 +360,28 @@ PLATFORM_MAP = {
 }
 
 
-def discover_platform(event_name, year):
-    """Try known platforms in priority order."""
-    # Load platform map if exists
+def discover_platform(event_name, year, date_str=None):
+    """Try known platforms. date_str (YYYY-MM-DD) used for dynamic platform_id patterns."""
     map_path = SCRIPT_DIR / "event_platform_map.json"
     if map_path.exists():
         with open(map_path, "r", encoding="utf-8") as f:
             pmap = json.load(f)
         key = normalize_name(event_name)
         for ev_key, info in pmap.items():
-            if normalize_name(info.get("name", ev_key))[:15] in key:
-                return info.get("platform"), info.get("platform_id")
-    # Fallback: try by event name characteristics
+            ref_name = normalize_name(info.get("name", ev_key))
+            if ref_name and (ref_name[:15] in key or key[:15] in ref_name):
+                pid = info.get("platform_id")
+                # Apply date pattern substitution
+                if not pid and "platform_id_pattern" in info and date_str:
+                    yyyy, mm, dd = date_str.split("-")
+                    pid = info["platform_id_pattern"].format(yyyy=yyyy, mm=mm, dd=dd)
+                return info.get("platform"), pid
     lname = event_name.lower()
-    if any(k in lname for k in ["paris", "lyon", "10k montmartre", "semi de paris"]):
+    if any(k in lname for k in ["paris", "lyon", "montmartre"]) and "rotterdam" not in lname:
         return "timeto", None
-    if "rotterdam" in lname:
-        return "chronorace", "20260411_rotterdam"  # TODO: dynamic date
+    if "rotterdam" in lname and date_str:
+        yyyy, mm, dd = date_str.split("-")
+        return "chronorace", f"{yyyy}{mm}{dd}_rotterdam"
     return None, None
 
 
@@ -395,23 +444,32 @@ def main():
 
     # 1. Fetch calendar
     wa_races = fetch_worldathletics_races(date_str)
-    log["wa_races"] = [{"name": r["name"], "venue": r.get("venue"),
-                        "country": r.get("country")} for r in wa_races]
+    log["wa_races"] = [{"name": r.get("name"), "venue": r.get("venue"),
+                        "area": r.get("area"), "dateRange": r.get("dateRange"),
+                        "hasResults": r.get("hasResults")} for r in wa_races]
 
     # 2. Load our events
     our_events = load_our_events()
     print(f"  Our events: {len(our_events)}")
 
-    # 3. Match
-    matches = match_wa_to_ours(wa_races, our_events)
-    log["matched"] = [{"wa_name": m["wa"]["name"], "our_name": m["our"]["name"]} for m in matches]
+    # 3. Match (deduplicate: keep only best score per our event)
+    raw_matches = match_wa_to_ours(wa_races, our_events)
+    best_per_event = {}
+    for m in raw_matches:
+        k = m["our"]["name"]
+        if k not in best_per_event or m.get("score", 0) > best_per_event[k].get("score", 0):
+            best_per_event[k] = m
+    matches = list(best_per_event.values())
+    print(f"  After dedup: {len(matches)} unique events")
+    log["matched"] = [{"wa_name": m["wa"]["name"], "our_name": m["our"]["name"],
+                       "score": m.get("score")} for m in matches]
 
     # 4. For each match, try to fetch 4D data
     year = target_date.year
     for match in matches:
         our_name = match["our"]["name"]
         print(f"\n  → {our_name}")
-        platform, platform_id = discover_platform(our_name, year)
+        platform, platform_id = discover_platform(our_name, year, date_str)
         if not platform:
             print(f"    No platform found")
             continue
