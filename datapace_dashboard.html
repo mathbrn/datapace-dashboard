@@ -1800,9 +1800,10 @@ function cmpSelect(idx, side){
 }
 
 function cmpTimeToMin(t){
-  if(!t)return null;
-  var p=String(t).split(':');
+  if(!t||t==='—')return null;
+  var p=String(t).trim().split(':');
   if(p.length===3)return parseInt(p[0])*60+parseInt(p[1])+parseInt(p[2])/60;
+  if(p.length===2)return parseInt(p[0])+parseInt(p[1])/60;
   return null;
 }
 
