@@ -1854,10 +1854,11 @@ function renderCompare(){
   var wmA=wrA&&wrA.women?wrA.women:(tdA?tdA.women:null);
   var wmB=wrB&&wrB.women?wrB.women:(tdB?tdB.women:null);
 
+  var sameDistance=a.d===b.d;
   var winFin=fA&&fB?(fA>fB?true:fA<fB?false:null):null;
-  var winAvg=avgA&&avgB?(cmpTimeToMin(avgA)<cmpTimeToMin(avgB)?true:cmpTimeToMin(avgA)>cmpTimeToMin(avgB)?false:null):null;
-  var winMen=menA&&menB?(cmpTimeToMin(menA)<cmpTimeToMin(menB)?true:cmpTimeToMin(menA)>cmpTimeToMin(menB)?false:null):null;
-  var winWm=wmA&&wmB?(cmpTimeToMin(wmA)<cmpTimeToMin(wmB)?true:cmpTimeToMin(wmA)>cmpTimeToMin(wmB)?false:null):null;
+  var winAvg=sameDistance&&avgA&&avgB?(cmpTimeToMin(avgA)<cmpTimeToMin(avgB)?true:cmpTimeToMin(avgA)>cmpTimeToMin(avgB)?false:null):null;
+  var winMen=sameDistance&&menA&&menB?(cmpTimeToMin(menA)<cmpTimeToMin(menB)?true:cmpTimeToMin(menA)>cmpTimeToMin(menB)?false:null):null;
+  var winWm=sameDistance&&wmA&&wmB?(cmpTimeToMin(wmA)<cmpTimeToMin(wmB)?true:cmpTimeToMin(wmA)>cmpTimeToMin(wmB)?false:null):null;
   var winEvo=eA.pct!==null&&eB.pct!==null?(eA.pct>eB.pct?true:eA.pct<eB.pct?false:null):null;
 
   function winCol(winA){return winA===true?colA:winA===false?colB:'var(--text3)';}
