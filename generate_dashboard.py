@@ -42,7 +42,7 @@ WMM_KEYWORDS = [
 
 ASO_KEYWORDS = [
     "marathon de paris", "semi de paris", "run in lyon",
-    "10k paris", "london winter run", "manchester marathon",
+    "10k paris", "montmartre", "london winter run", "manchester marathon",
     "manchester half", "ldnx",
 ]
 
