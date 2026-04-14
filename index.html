@@ -1917,7 +1917,6 @@ function renderCmpChart(){
   if(window._cmpChart)window._cmpChart.destroy();
   var cc=document.getElementById('cmp-chart');
   if(cc){
-    var win=window._cmpEvoWindow;
     var aHist=Object.keys(a.hist||{}).map(Number).filter(function(y){var v=(a.hist||{})[y];return v&&v>0;});
     var bHist=Object.keys(b.hist||{}).map(Number).filter(function(y){var v=(b.hist||{})[y];return v&&v>0;});
     var allYrs=[].concat(aHist,bHist);allYrs=allYrs.filter(function(v,i,s){return s.indexOf(v)===i;}).sort(function(x,y){return x-y;});
