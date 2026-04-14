@@ -1,0 +1,52 @@
+name: Auto Update 4D
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Daily at 06:00 UTC (J+1 = yesterday's races)
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Target date (YYYY-MM-DD, default: yesterday)'
+        required: false
+        default: ''
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests pandas openpyxl
+
+      - name: Configure Git
+        run: |
+          git config user.name "DataPace Bot"
+          git config user.email "bot@datapace.fr"
+
+      - name: Run Auto Update 4D
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            python auto_update_4d.py --date ${{ github.event.inputs.date }}
+          else
+            python auto_update_4d.py
+          fi
+
+      - name: Upload log artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: update-4d-log
+          path: logs/*.json
+          retention-days: 30

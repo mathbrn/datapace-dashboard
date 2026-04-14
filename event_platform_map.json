@@ -1,0 +1,82 @@
+{
+  "schneider electric marathon de paris": {
+    "platform": "timeto",
+    "distance": "MARATHON",
+    "name": "Schneider Electric Marathon de Paris"
+  },
+  "hoka semi de paris": {
+    "platform": "timeto",
+    "distance": "SEMI",
+    "name": "HOKA Semi de Paris"
+  },
+  "run in lyon": {
+    "platform": "timeto",
+    "distance": "MARATHON",
+    "name": "Run in Lyon"
+  },
+  "adidas 10k paris": {
+    "platform": "timeto",
+    "distance": "10KM",
+    "name": "Adidas 10K Paris"
+  },
+  "10k montmartre": {
+    "platform": "timeto",
+    "distance": "10KM",
+    "name": "10K Montmartre"
+  },
+  "nn marathon rotterdam": {
+    "platform": "chronorace",
+    "platform_id_pattern": "{yyyy}{mm}{dd}_rotterdam",
+    "distance": "MARATHON",
+    "name": "NN Marathon Rotterdam"
+  },
+  "aj bell great north run": {
+    "platform": "tracx",
+    "platform_id": "great-north-run",
+    "distance": "SEMI",
+    "name": "AJ Bell Great North Run"
+  },
+  "aj bell great manchester run": {
+    "platform": "tracx",
+    "platform_id": "great-manchester-run",
+    "distance": "SEMI",
+    "name": "AJ Bell Great Manchester Run"
+  },
+  "aj bell great bristol run": {
+    "platform": "tracx",
+    "platform_id": "great-bristol-run",
+    "distance": "SEMI",
+    "name": "AJ Bell Great Bristol Run"
+  },
+  "adidas manchester marathon": {
+    "platform": "tracx",
+    "platform_id": "manchester-marathon",
+    "distance": "MARATHON",
+    "name": "Adidas Manchester Marathon"
+  },
+  "tcs amsterdam marathon": {
+    "platform": "sporthive",
+    "distance": "MARATHON",
+    "name": "TCS Amsterdam Marathon"
+  },
+  "edp maratona de lisboa": {
+    "platform": "sporthive",
+    "distance": "MARATHON",
+    "name": "EDP Maratona de Lisboa"
+  },
+  "edp lisboa meia maratona": {
+    "platform": "sporthive",
+    "distance": "SEMI",
+    "name": "EDP Lisboa Meia Maratona"
+  },
+  "tcs mizuno half marathon": {
+    "platform": "sporthive",
+    "distance": "SEMI",
+    "name": "TCS Mizuno Half Marathon"
+  },
+  "nn cpc loop den haag - half marathon": {
+    "platform": "sporthive",
+    "distance": "SEMI",
+    "name": "NN CPC Loop Den Haag - Half Marathon"
+  }
+}
