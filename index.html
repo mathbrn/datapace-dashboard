@@ -1898,7 +1898,7 @@ function renderCompare(){
   html+='<div style="display:flex;justify-content:center;gap:6px;margin:-8px 0 8px 0">';
   [['3','3 ans'],['5','5 ans'],['10','10 ans'],['max','Max']].forEach(function(b){
     var active=String(window._cmpEvoWindow)===b[0];
-    html+='<button onclick="cmpSetEvoWindow(''+b[0]+'')" style="font-size:10px;padding:2px 10px;border-radius:100px;cursor:pointer;border:1px solid '+(active?'#DC2626':'var(--border)')+';background:'+(active?'#DC2626':'transparent')+';color:'+(active?'#fff':'var(--text3)')+';font-weight:'+(active?'600':'400')+'">'+b[1]+'</button>';
+    html+='<button data-win="'+b[0]+'" onclick="cmpSetEvoWindow(this.dataset.win)" style="font-size:10px;padding:2px 10px;border-radius:100px;cursor:pointer;border:1px solid '+(active?'#DC2626':'var(--border)')+';background:'+(active?'#DC2626':'transparent')+';color:'+(active?'#fff':'var(--text3)')+';font-weight:'+(active?'600':'400')+'">'+b[1]+'</button>';
   });
   html+='</div>';
   html+=cmpR(statA,statB,'Statut',null,'','');
@@ -1953,8 +1953,8 @@ function cmpSetEvoWindow(win){
     }
   });
   // Update toggle button styles
-  document.querySelectorAll('[onclick^="cmpSetEvoWindow"]').forEach(function(btn){
-    var bw=btn.getAttribute('onclick').match(/'([^']+)'/)[1];
+  document.querySelectorAll('[data-win]').forEach(function(btn){
+    var bw=btn.dataset.win;
     var active=String(win)===bw;
     btn.style.border='1px solid '+(active?'#DC2626':'var(--border)');
     btn.style.background=active?'#DC2626':'transparent';
