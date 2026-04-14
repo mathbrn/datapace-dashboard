@@ -188,7 +188,9 @@
 - **Logs** : `logs/update_4d_{date}.json` (artifact GitHub Actions, retention 30j)
 - **Couverture** : 88 evenements mappes sur 202 (via `event_platform_map.json`)
 - **Plateformes supportees** : TimeTo, Sporthive, Tracx, ChronoRace, Mikatiming, Sportmaniacs, Endu, RTRT, Athlinks, RunSignup, Ultimate, STS-Timing, RunCzech, MyRunResults, PSE, Splittime, Smartchip, Mararun
-- **Sans couverture API** : Chicago, NYC, Boston, Tokyo, Valencia, Mexico, Taipei, Singapore (plateformes custom fermees) → **Update 4D manuel requis**
+- **Sans couverture API** : Tokyo, Valencia, Mexico, Taipei, Singapore (plateformes custom fermees) → **Update 4D manuel requis**
+- **WMM avec API identifiee mais non-implementee** : Chicago (mikatiming `results.chicagomarathon.com`), NYC (API POST `rmsprodapi.nyrr.org/api/v2`), Boston (HTML `results.baa.org/{yyyy}/`) → necessite scraper/fetcher dedie dans `auto_update_4d.py`
+- **MarathonView.net** : IDs documentes pour les 7 WMM (54=NYC, 55=Berlin, 56=Boston, 57=London, 59=Chicago, 108=Tokyo, 113=Sydney) — API `/api/series` retourne 401, necessite auth ou browser-rendering
 - **Protection stricte** : aucune donnee existante ne peut etre ecrasee
   - `[SKIP]` automatique sur `update_finishers.py` (Excel finishers)
   - `[SKIP]` automatique sur `avg_times_sporthive.json` si avg_time deja rempli

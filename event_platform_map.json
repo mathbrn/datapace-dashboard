@@ -154,37 +154,41 @@
     "marathonview_id": "55"
   },
   "bank of america chicago marathon": {
-    "platform": "marathonview",
+    "platform": "mikatiming",
     "country": "USA",
     "distance": "MARATHON",
     "notes": "Custom platform chicagomarathon.com",
     "name": "Bank of America Chicago Marathon",
     "marathonview_id": "59",
-    "platform_id": "59"
+    "platform_id": "59",
+    "subdomain": "results.chicagomarathon.com",
+    "event_code_pattern": "{yyyy}_"
   },
   "tcs new york city marathon": {
-    "platform": "marathonview",
+    "platform": "nyrr",
     "country": "USA",
     "distance": "MARATHON",
-    "notes": "NYRR custom platform",
+    "notes": "POST /runners/finishers-filter - requires event ID discovery",
     "name": "TCS New York City Marathon",
     "marathonview_id": "54",
-    "platform_id": "54"
+    "platform_id": "54",
+    "api_base": "https://rmsprodapi.nyrr.org/api/v2"
   },
   "boston marathon": {
-    "platform": "marathonview",
+    "platform": "baa",
     "country": "USA",
     "distance": "MARATHON",
-    "notes": "BAA custom platform",
+    "notes": "HTML scraping required, no public API",
     "name": "Boston Marathon",
     "marathonview_id": "56",
-    "platform_id": "56"
+    "platform_id": "56",
+    "url": "https://results.baa.org/{yyyy}/"
   },
   "tokyo marathon": {
-    "platform": "marathonview",
+    "platform": null,
     "country": "JPN",
     "distance": "MARATHON",
-    "notes": "Tokyo Marathon Foundation",
+    "notes": "marathon.tokyo results page not accessible (404), manual update required",
     "name": "Tokyo Marathon",
     "marathonview_id": "108",
     "platform_id": "108"
