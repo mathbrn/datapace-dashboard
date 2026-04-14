@@ -1899,12 +1899,6 @@ function renderCmpChart(){
     var aHist=Object.keys(a.hist||{}).map(Number).filter(function(y){var v=(a.hist||{})[y];return v&&v>0;});
     var bHist=Object.keys(b.hist||{}).map(Number).filter(function(y){var v=(b.hist||{})[y];return v&&v>0;});
     var allYrs=[].concat(aHist,bHist);allYrs=allYrs.filter(function(v,i,s){return s.indexOf(v)===i;}).sort(function(x,y){return x-y;});
-    // Filter years by window
-    if(win&&win!=='max'){
-      var maxYr=allYrs[allYrs.length-1]||2026;
-      var minYr=maxYr-parseInt(win);
-      allYrs=allYrs.filter(function(y){return y>=minYr;});
-    }
     window._cmpChart=new Chart(cc,{type:'line',
       data:{labels:allYrs.map(String),datasets:[
         {label:a.r,data:allYrs.map(function(yr){var v=(a.hist||{})[yr];return v&&v>0?v:null;}),borderColor:colA,backgroundColor:'transparent',tension:0.3,pointRadius:4,pointBackgroundColor:colA,borderWidth:2,spanGaps:true},
@@ -1944,8 +1938,6 @@ function cmpSetEvoWindow(win){
     btn.style.color=active?'#fff':'var(--text3)';
     btn.style.fontWeight=active?'600':'400';
   });
-  // Update chart
-  renderCmpChart();
 }
 
 function buildCmpRow(valA, valB, label, winA, subA, subB){
