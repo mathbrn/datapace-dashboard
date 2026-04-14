@@ -787,6 +787,23 @@ function buildExportFilename(ext){
   parts.push(ts);
   return parts.filter(Boolean).join('_')+'.'+ext;
 }
+function prepareSelectsForExport(panel){
+  panel.querySelectorAll('select').forEach(function(sel){
+    var txt=sel.options[sel.selectedIndex]?sel.options[sel.selectedIndex].text:'';
+    var div=document.createElement('div');
+    div.className='export-select-replacement';
+    div.textContent=txt;
+    var cs=getComputedStyle(sel);
+    div.style.cssText='font-size:'+cs.fontSize+';color:'+cs.color+';background:'+cs.backgroundColor+';border:'+cs.border+';border-radius:'+cs.borderRadius+';padding:'+cs.padding+';white-space:nowrap;width:auto;min-width:auto;display:inline-block;';
+    sel.parentNode.insertBefore(div,sel);
+    sel.style.display='none';
+    sel.dataset.exportHidden='1';
+  });
+}
+function restoreSelectsAfterExport(){
+  document.querySelectorAll('.export-select-replacement').forEach(function(d){d.remove();});
+  document.querySelectorAll('select[data-export-hidden]').forEach(function(sel){sel.style.display='';delete sel.dataset.exportHidden;});
+}
 function exportPanel(format){
   document.getElementById('export-menu').style.display='none';
   var panel=document.querySelector('.panel.active');
@@ -799,6 +816,8 @@ function exportPanel(format){
   var origHtml=btn.innerHTML;
   btn.innerHTML='Export en cours...';
   btn.style.pointerEvents='none';
+  // Replace selects with static text for clean export
+  prepareSelectsForExport(panel);
   // Temporarily remove max-height constraints so full content is captured
   var restores=[];
   panel.querySelectorAll('*').forEach(function(el){
@@ -810,6 +829,7 @@ function exportPanel(format){
   });
   setTimeout(function(){
     html2canvas(panel,{backgroundColor:bg,scale:2,logging:false,useCORS:true,windowWidth:panel.scrollWidth,windowHeight:panel.scrollHeight}).then(function(canvas){
+      restoreSelectsAfterExport();
       restores.forEach(function(r){r.el.style.overflow=r.overflow;r.el.style.overflowY=r.overflowY;r.el.style.maxHeight=r.maxHeight;r.el.style.height=r.height;});
       // Add padding around the captured content by drawing it into a larger canvas
       var padding=60*2; // 60px visual padding, scale=2
@@ -839,6 +859,7 @@ function exportPanel(format){
       }
       btn.innerHTML=origHtml;btn.style.pointerEvents='';
     }).catch(function(err){
+      restoreSelectsAfterExport();
       restores.forEach(function(r){r.el.style.overflow=r.overflow;r.el.style.overflowY=r.overflowY;r.el.style.maxHeight=r.maxHeight;r.el.style.height=r.height;});
       console.error('Export error:',err);
       alert('Erreur export: '+(err&&err.message?err.message:'inconnue'));
