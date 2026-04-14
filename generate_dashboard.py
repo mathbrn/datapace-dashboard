@@ -1292,7 +1292,7 @@ function filterTable(){
   var lastYr=globalYears.length?globalYears[globalYears.length-1]:0;
   if(sortMode==='month'){f.sort(function(a,b){return(monthOrder[a.p]||99)-(monthOrder[b.p]||99);});}
   else if(sortMode==='distance'){f.sort(function(a,b){return(distOrder[a.d]||9)-(distOrder[b.d]||9);});}
-  else if(sortMode==='finishers'){f.sort(function(a,b){var va=(a.hist||{})[2025]||0,vb=(b.hist||{})[2025]||0;if(va===0&&vb===0)return 0;if(va===0)return 1;if(vb===0)return-1;return vb-va;});}
+  else if(sortMode==='finishers'){f.sort(function(a,b){var h=a.hist||{},hb=b.hist||{};var va=h[lastYr]||h[lastYr-1]||h[lastYr+1]||0,vb=hb[lastYr]||hb[lastYr-1]||hb[lastYr+1]||0;if(va<0)va=0;if(vb<0)vb=0;if(va===0&&vb===0)return 0;if(va===0)return 1;if(vb===0)return-1;return vb-va;});}
   else if(sortMode==='trend'){f.sort(function(a,b){function getTrend(r){var vals=globalYears.map(function(y){return(r.hist||{})[y]||null;}).filter(function(v){return v&&!isNaN(v);});return vals.length>=2?delta(vals[0],vals[vals.length-1]):null;}var ta=getTrend(a),tb=getTrend(b);if(ta===null&&tb===null)return 0;if(ta===null)return 1;if(tb===null)return-1;return tb-ta;});}
   var frozen=globalYears.length>4;
   if(tbl){tbl.classList.toggle('tbl-frozen',frozen);if(!frozen)tbl.style.tableLayout='';tbl.querySelectorAll('.frozen-cell').forEach(function(c){c.classList.remove('frozen-cell');c.style.position='';c.style.left='';c.style.zIndex='';c.style.minWidth='';c.style.width='';c.style.boxShadow='';});}
@@ -1711,7 +1711,7 @@ function spSelect(brandId){
 }
 
 initBiggestYears();
-filterTable();
+try{filterTable();}catch(e){console.error('filterTable init error:',e);}
 
 // ── COMPARE ──────────────────────────────────────────────────────────────────
 var cmpSelectedA = null;
@@ -2782,6 +2782,7 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js" integrity="sha384-dug+JxfBvklEQdJ4AYuBBAIScUz0bVN73xpy273gcAwHjb3qI0fXmuYNaNfdyYJG" crossorigin="anonymous"></script>
 <script>
+window.onerror=function(msg,url,line,col,err){{document.body.insertAdjacentHTML('afterbegin','<div style="background:#fee;color:#c00;padding:12px;font-family:monospace;font-size:12px;position:fixed;top:0;left:0;right:0;z-index:99999">JS Error: '+msg+' (line '+line+':'+col+')</div>');console.error('Dashboard error:',msg,line,col,err);}};
 {js_data}
 {JS_LOGIC}
 </script>
