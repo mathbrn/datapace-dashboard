@@ -2619,8 +2619,8 @@ HTML_BODY = """
         <option value="title">Partenaire Titre</option>
         <option value="premium">Partenaire Premium</option>
         <option value="major">Partenaire Majeur</option>
-        <option value="partner">Partenaire Officiel</option>
-        <option value="official">Fournisseur Officiel</option>
+        <option value="official">Partenaire Officiel</option>
+        <option value="partner">Fournisseur Officiel</option>
       </select>
     </div>
   </div>
@@ -2712,6 +2712,21 @@ HTML_BODY = """
 </footer>"""
 
 
+def audit_sponsor_duplicates(partnerships):
+    """Detect case-sensitive brand duplicates in sponsoring data."""
+    from collections import defaultdict
+    variants = defaultdict(set)
+    for p in partnerships:
+        variants[p["brand"].strip().lower()].add(p["brand"])
+    dupes = {k: v for k, v in variants.items() if len(v) > 1}
+    if dupes:
+        print(f"  VALIDATION Sponsors: {len(dupes)} doublon(s) de marque:")
+        for k, v in dupes.items():
+            print(f"    -> {sorted(v)}")
+    else:
+        print("  VALIDATION Sponsors: OK")
+
+
 def load_sponsoring():
     """Load sponsoring data from JSON file."""
     path = SCRIPT_DIR / "sponsoring_data.json"
@@ -2719,7 +2734,9 @@ def load_sponsoring():
         return {"brands": {}, "partnerships": []}
     import json as jlib
     with open(path, "r", encoding="utf-8") as f:
-        return jlib.load(f)
+        data = jlib.load(f)
+    audit_sponsor_duplicates(data.get("partnerships", []))
+    return data
 
 
 def generate_html(finishers, biggest, md, sd, tdb, winners):

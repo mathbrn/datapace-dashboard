@@ -650,7 +650,7 @@
       "sector": "Nutrition/Boisson",
       "country": "NL"
     },
-    "COMPEED": {
+    "Compeed": {
       "full_name": "COMPEED (HRA Pharma)",
       "sector": "Sante",
       "country": "FR"
@@ -855,7 +855,7 @@
       "sector": "Sante",
       "country": "US"
     },
-    "CELSIUS": {
+    "Celsius": {
       "full_name": "Celsius Holdings",
       "sector": "Nutrition/Boisson",
       "country": "US"
@@ -1100,7 +1100,7 @@
       "sector": "Equipement sport/Recovery",
       "country": "CH"
     },
-    "Ta Energy": {
+    "TA Energy": {
       "full_name": "Ta Energy",
       "sector": "Nutrition sport",
       "country": "FR"
@@ -1150,7 +1150,7 @@
       "sector": "Hygiene/Cosmetique",
       "country": "US"
     },
-    "High5": {
+    "HIGH5": {
       "full_name": "High5 Sports Nutrition",
       "sector": "Nutrition sport",
       "country": "GB"
@@ -1295,11 +1295,6 @@
       "sector": "Hygiène/Santé",
       "country": "US"
     },
-    "Hipro": {
-      "full_name": "HiPRO (Danone)",
-      "sector": "Alimentation",
-      "country": "FR"
-    },
     "Ker Cadelac": {
       "full_name": "Ker Cadélac",
       "sector": "Alimentation",
@@ -1325,11 +1320,6 @@
       "sector": "Distribution",
       "country": "DE"
     },
-    "Celsius": {
-      "full_name": "Celsius Holdings",
-      "sector": "Boisson",
-      "country": "US"
-    },
     "Joyfuel": {
       "full_name": "Joyfuel",
       "sector": "Alimentation",
@@ -1338,11 +1328,6 @@
     "RunMotion Coach": {
       "full_name": "RunMotion Coach",
       "sector": "Tech/IT",
-      "country": "FR"
-    },
-    "TA Energy": {
-      "full_name": "TA Energy",
-      "sector": "Alimentation",
       "country": "FR"
     },
     "Grenade": {
@@ -1480,11 +1465,6 @@
       "sector": "Automobile",
       "country": "JP"
     },
-    "i-run": {
-      "full_name": "i-Run.fr",
-      "sector": "Distribution sport",
-      "country": "FR"
-    },
     "Avis": {
       "full_name": "Avis Budget Group",
       "sector": "Services",
@@ -1579,11 +1559,6 @@
       "full_name": "Counterpain (Taisho)",
       "sector": "Santé",
       "country": "JP"
-    },
-    "HIGH5": {
-      "full_name": "HIGH5 Sports Nutrition",
-      "sector": "Alimentation",
-      "country": "GB"
     },
     "Grab": {
       "full_name": "Grab Holdings",
@@ -1815,11 +1790,6 @@
       "sector": "Services",
       "country": "ES"
     },
-    "226ers": {
-      "full_name": "226ERS",
-      "sector": "Alimentation",
-      "country": "ES"
-    },
     "MB Way": {
       "full_name": "MB WAY (SIBS)",
       "sector": "Banque/Finance",
@@ -1849,11 +1819,6 @@
       "full_name": "VCU Health System",
       "sector": "Santé",
       "country": "US"
-    },
-    "PUMA": {
-      "full_name": "PUMA SE",
-      "sector": "Equipementier sport",
-      "country": "DE"
     },
     "P&G": {
       "full_name": "Procter & Gamble",
@@ -4280,7 +4245,7 @@
     },
     {
       "event": "NN Marathon Rotterdam",
-      "brand": "COMPEED",
+      "brand": "Compeed",
       "type": "partner",
       "years": [
         2025,
@@ -5301,7 +5266,7 @@
     },
     {
       "event": "Rock 'n' Roll Running Series Las Vegas",
-      "brand": "CELSIUS",
+      "brand": "Celsius",
       "type": "official",
       "years": [
         2025,
@@ -6946,7 +6911,7 @@
     },
     {
       "event": "Schneider Electric Marathon de Paris",
-      "brand": "Ta Energy",
+      "brand": "TA Energy",
       "type": "official",
       "years": [
         2025,
@@ -7116,7 +7081,7 @@
     },
     {
       "event": "Copenhagen Half Marathon",
-      "brand": "High5",
+      "brand": "HIGH5",
       "type": "partner",
       "years": [
         2025,
@@ -7246,7 +7211,7 @@
     },
     {
       "event": "Harmonie Mutuelle 20k de Tours",
-      "brand": "Ta Energy",
+      "brand": "TA Energy",
       "type": "official",
       "years": [
         2025,
@@ -7291,7 +7256,7 @@
     },
     {
       "event": "Harmonie Mutuelle 10km de Tours",
-      "brand": "Ta Energy",
+      "brand": "TA Energy",
       "type": "official",
       "years": [
         2025,
@@ -7336,7 +7301,7 @@
     },
     {
       "event": "Harmonie Mutuelle Marathon de Tours",
-      "brand": "Ta Energy",
+      "brand": "TA Energy",
       "type": "official",
       "years": [
         2025,
@@ -7909,7 +7874,7 @@
     },
     {
       "event": "HOKA Semi de Paris",
-      "brand": "Hipro",
+      "brand": "HiPro",
       "type": "official",
       "years": [
         2024,
@@ -8612,7 +8577,7 @@
     },
     {
       "event": "Mitja Marato Barcelona by Brooks",
-      "brand": "i-run",
+      "brand": "i-Run",
       "type": "partner",
       "years": [
         2026
@@ -8841,7 +8806,7 @@
     },
     {
       "event": "Run in Lyon",
-      "brand": "Hipro",
+      "brand": "HiPro",
       "type": "partner",
       "years": [
         2024,
@@ -9796,7 +9761,7 @@
     },
     {
       "event": "Zurich Marató de Barcelona",
-      "brand": "i-run",
+      "brand": "i-Run",
       "type": "partner",
       "years": [
         2026
@@ -9966,7 +9931,7 @@
     },
     {
       "event": "Copenhagen Marathon",
-      "brand": "High5",
+      "brand": "HIGH5",
       "type": "official",
       "years": [
         2026
@@ -10658,7 +10623,7 @@
     },
     {
       "event": "EDP Lisboa Meia Maratona",
-      "brand": "226ers",
+      "brand": "226ERS",
       "type": "partner",
       "years": [
         2026
@@ -11000,7 +10965,7 @@
     },
     {
       "event": "San Francisco Marathon",
-      "brand": "PUMA",
+      "brand": "Puma",
       "type": "official",
       "years": [
         2023,
@@ -11507,7 +11472,7 @@
     },
     {
       "event": "10K Montmartre",
-      "brand": "Ta Energy",
+      "brand": "TA Energy",
       "type": "partner",
       "years": [
         2026
