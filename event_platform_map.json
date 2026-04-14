@@ -2,81 +2,328 @@
   "schneider electric marathon de paris": {
     "platform": "timeto",
     "distance": "MARATHON",
-    "name": "Schneider Electric Marathon de Paris"
+    "name": "Schneider Electric Marathon de Paris",
+    "country": "FRA"
   },
   "hoka semi de paris": {
     "platform": "timeto",
     "distance": "SEMI",
-    "name": "HOKA Semi de Paris"
+    "name": "HOKA Semi de Paris",
+    "country": "FRA"
   },
   "run in lyon": {
     "platform": "timeto",
     "distance": "MARATHON",
-    "name": "Run in Lyon"
+    "name": "Run in Lyon",
+    "country": "FRA"
   },
   "adidas 10k paris": {
     "platform": "timeto",
     "distance": "10KM",
-    "name": "Adidas 10K Paris"
+    "name": "Adidas 10K Paris",
+    "country": "FRA"
   },
   "10k montmartre": {
     "platform": "timeto",
     "distance": "10KM",
-    "name": "10K Montmartre"
+    "name": "10K Montmartre",
+    "country": "FRA"
   },
   "nn marathon rotterdam": {
+    "name": "NN Marathon Rotterdam",
     "platform": "chronorace",
-    "platform_id_pattern": "{yyyy}{mm}{dd}_rotterdam",
+    "sporthive_ids_by_year": {
+      "2024": "7183110323454187008",
+      "2023": "7049372004225601280",
+      "2022": "6914931831426482176",
+      "2021": "6855879561074155264",
+      "2019": "6509035005995656960"
+    },
     "distance": "MARATHON",
-    "name": "NN Marathon Rotterdam"
+    "country": "NED",
+    "platform_id_pattern": "{yyyy}{mm}{dd}_rotterdam"
   },
   "aj bell great north run": {
     "platform": "tracx",
     "platform_id": "great-north-run",
     "distance": "SEMI",
-    "name": "AJ Bell Great North Run"
+    "name": "AJ Bell Great North Run",
+    "country": "GBR"
   },
   "aj bell great manchester run": {
     "platform": "tracx",
     "platform_id": "great-manchester-run",
     "distance": "SEMI",
-    "name": "AJ Bell Great Manchester Run"
+    "name": "AJ Bell Great Manchester Run",
+    "country": "GBR"
   },
   "aj bell great bristol run": {
     "platform": "tracx",
     "platform_id": "great-bristol-run",
     "distance": "SEMI",
-    "name": "AJ Bell Great Bristol Run"
+    "name": "AJ Bell Great Bristol Run",
+    "country": "GBR"
   },
   "adidas manchester marathon": {
     "platform": "tracx",
     "platform_id": "manchester-marathon",
     "distance": "MARATHON",
-    "name": "Adidas Manchester Marathon"
+    "name": "Adidas Manchester Marathon",
+    "country": "GBR"
   },
   "tcs amsterdam marathon": {
+    "name": "TCS Amsterdam Marathon",
     "platform": "sporthive",
+    "sporthive_ids_by_year": {
+      "2025": "7383449171605338624",
+      "2024": "7250456063290378496",
+      "2022": "6981282006063051264",
+      "2021": "6853741552290238720",
+      "2019": "6589788263981649920"
+    },
     "distance": "MARATHON",
-    "name": "TCS Amsterdam Marathon"
+    "country": "NED"
   },
   "edp maratona de lisboa": {
+    "name": "EDP Maratona de Lisboa",
     "platform": "sporthive",
-    "distance": "MARATHON",
-    "name": "EDP Maratona de Lisboa"
+    "sporthive_ids_by_year": {
+      "2025": "7250558163252939008",
+      "2024": "7142910812398577664",
+      "2023": "7113512886511920128",
+      "2022": "6983192910261964288",
+      "2021": "6854892113662505728"
+    },
+    "distance": "SEMI",
+    "country": "POR"
   },
   "edp lisboa meia maratona": {
+    "name": "EDP Lisboa Meia Maratona",
     "platform": "sporthive",
+    "sporthive_ids_by_year": {
+      "2025": "7250556144618307584",
+      "2024": "7142907578304137472",
+      "2023": "7034597458377179392",
+      "2022": "6907012645799442176",
+      "2021": "6641699407497361920"
+    },
     "distance": "SEMI",
-    "name": "EDP Lisboa Meia Maratona"
+    "country": "POR"
   },
   "tcs mizuno half marathon": {
+    "name": "TCS Mizuno Half Marathon",
     "platform": "sporthive",
+    "sporthive_ids_by_year": {
+      "2025": "7383449171605338624",
+      "2024": "7250456063290378496",
+      "2022": "6981282006063051264",
+      "2021": "6853741552290238720",
+      "2019": "6589788263981649920"
+    },
     "distance": "SEMI",
-    "name": "TCS Mizuno Half Marathon"
+    "country": "NED"
   },
   "nn cpc loop den haag - half marathon": {
+    "name": "NN CPC Loop Den Haag - Half Marathon",
     "platform": "sporthive",
+    "sporthive_ids_by_year": {
+      "2024": "7168235550385003776",
+      "2023": "7034488838654257408",
+      "2022": "6976159278361190656",
+      "2018": "6376355623617494016"
+    },
     "distance": "SEMI",
-    "name": "NN CPC Loop Den Haag - Half Marathon"
+    "country": "NED"
+  },
+  "tcs london marathon": {
+    "platform": "mikatiming",
+    "subdomain": "tcslondonmarathon",
+    "event_code": "MAL",
+    "country": "GBR",
+    "distance": "MARATHON",
+    "name": "TCS London Marathon"
+  },
+  "bmw berlin marathon": {
+    "platform": "mikatiming",
+    "subdomain": "berlin-marathon",
+    "event_code": "MAL",
+    "country": "GER",
+    "distance": "MARATHON",
+    "name": "BMW Berlin Marathon"
+  },
+  "bank of america chicago marathon": {
+    "platform": null,
+    "country": "USA",
+    "distance": "MARATHON",
+    "notes": "Custom platform chicagomarathon.com",
+    "name": "Bank of America Chicago Marathon"
+  },
+  "tcs new york city marathon": {
+    "platform": null,
+    "country": "USA",
+    "distance": "MARATHON",
+    "notes": "NYRR custom platform",
+    "name": "TCS New York City Marathon"
+  },
+  "boston marathon": {
+    "platform": null,
+    "country": "USA",
+    "distance": "MARATHON",
+    "notes": "BAA custom platform",
+    "name": "Boston Marathon"
+  },
+  "tokyo marathon": {
+    "platform": null,
+    "country": "JPN",
+    "distance": "MARATHON",
+    "notes": "Tokyo Marathon Foundation",
+    "name": "Tokyo Marathon"
+  },
+  "tcs sydney marathon presented by asics": {
+    "platform": "tracx",
+    "country": "AUS",
+    "distance": "MARATHON",
+    "name": "TCS Sydney Marathon presented by ASICS"
+  },
+  "valencia marathon trinidad alfonso zurich": {
+    "platform": null,
+    "country": "ESP",
+    "distance": "MARATHON",
+    "notes": "Custom valenciaciudaddelrunning.com",
+    "name": "Valencia Marathon Trinidad Alfonso Zurich"
+  },
+  "zurich maratón de sevilla": {
+    "platform": "sportmaniacs",
+    "country": "ESP",
+    "distance": "MARATHON",
+    "notes": "UUID varies yearly",
+    "name": "Zurich Maratón de Sevilla"
+  },
+  "zurich marató de barcelona": {
+    "platform": "sportmaniacs",
+    "country": "ESP",
+    "distance": "MARATHON",
+    "notes": "UUID varies yearly",
+    "name": "Zurich Marató de Barcelona"
+  },
+  "acea run rome the marathon": {
+    "platform": "endu",
+    "country": "ITA",
+    "distance": "MARATHON",
+    "name": "Acea Run Rome The Marathon"
+  },
+  "milano marathon": {
+    "platform": "endu",
+    "country": "ITA",
+    "distance": "MARATHON",
+    "name": "Milano Marathon"
+  },
+  "haspa marathon hamburg": {
+    "platform": "mikatiming",
+    "subdomain": "hamburg",
+    "event_code": "MAL",
+    "country": "GER",
+    "distance": "MARATHON",
+    "name": "Haspa Marathon Hamburg"
+  },
+  "stockholm marathon": {
+    "platform": "mikatiming",
+    "subdomain": "stockholm",
+    "event_code": "MAL",
+    "country": "SWE",
+    "distance": "MARATHON",
+    "name": "Stockholm Marathon"
+  },
+  "athens marathon": {
+    "platform": "mikatiming",
+    "subdomain": "athens",
+    "event_code": "MAL",
+    "country": "GRE",
+    "distance": "MARATHON",
+    "name": "Athens Marathon"
+  },
+  "vienna city marathon": {
+    "platform": "mikatiming",
+    "subdomain": "vienna",
+    "event_code": "MAL",
+    "country": "AUT",
+    "distance": "MARATHON",
+    "name": "Vienna City Marathon"
+  },
+  "brighton marathon": {
+    "platform": "mikatiming",
+    "subdomain": "brighton",
+    "event_code": "MAL",
+    "country": "GBR",
+    "distance": "MARATHON",
+    "name": "Brighton Marathon"
+  },
+  "mainova frankfurt marathon": {
+    "platform": "mikatiming",
+    "subdomain": "live.frankfurt-marathon.com",
+    "event_code": "L_HCH3BKLB3B8",
+    "country": "GER",
+    "distance": "MARATHON",
+    "name": "Mainova Frankfurt Marathon"
+  },
+  "nn maraton warszawski": {
+    "platform": "sts-timing",
+    "country": "POL",
+    "distance": "MARATHON",
+    "name": "NN Maraton Warszawski"
+  },
+  "prague international marathon": {
+    "platform": "runczech",
+    "country": "CZE",
+    "distance": "MARATHON",
+    "name": "Prague International Marathon"
+  },
+  "copenhagen marathon": {
+    "platform": "ultimate",
+    "country": "DEN",
+    "distance": "MARATHON",
+    "name": "Copenhagen Marathon"
+  },
+  "irish life dublin marathon": {
+    "platform": "myrunresults",
+    "country": "IRL",
+    "distance": "MARATHON",
+    "name": "Irish Life Dublin Marathon"
+  },
+  "honolulu marathon": {
+    "platform": "pse",
+    "country": "USA",
+    "distance": "MARATHON",
+    "name": "Honolulu Marathon"
+  },
+  "maratón de la ciudad de méxico telcel": {
+    "platform": null,
+    "country": "MEX",
+    "distance": "MARATHON",
+    "name": "Maratón de la Ciudad de México Telcel"
+  },
+  "istanbul marathon": {
+    "platform": "splittime",
+    "country": "TUR",
+    "distance": "MARATHON",
+    "name": "Istanbul Marathon"
+  },
+  "seoul marathon": {
+    "platform": "smartchip",
+    "country": "KOR",
+    "distance": "MARATHON",
+    "name": "Seoul Marathon"
+  },
+  "taipei marathon": {
+    "platform": null,
+    "country": "TPE",
+    "distance": "MARATHON",
+    "name": "Taipei Marathon"
+  },
+  "standard chartered singapore marathon": {
+    "platform": null,
+    "country": "SGP",
+    "distance": "MARATHON",
+    "name": "Standard Chartered Singapore Marathon"
   }
 }

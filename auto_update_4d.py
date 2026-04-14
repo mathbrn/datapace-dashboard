@@ -52,16 +52,19 @@ query getCalendarEvents($startDate: String, $endDate: String, $regionType: Strin
 """
 
 
-def fetch_worldathletics_races(date_str):
-    """Fetch road races on a given date from World Athletics."""
+def fetch_worldathletics_races(date_str, window_days=1):
+    """Fetch road races with ±window_days around the given date."""
     sess = requests.Session()
     sess.headers.update({"x-api-key": WA_API_KEY, "Content-Type": "application/json"})
+    target = datetime.date.fromisoformat(date_str)
+    start = (target - datetime.timedelta(days=window_days)).isoformat()
+    end = (target + datetime.timedelta(days=window_days)).isoformat()
     races = []
     offset = 0
     while True:
         resp = sess.post(WA_ENDPOINT, json={
             "query": WA_QUERY,
-            "variables": {"startDate": date_str, "endDate": date_str,
+            "variables": {"startDate": start, "endDate": end,
                           "regionType": "world", "limit": 100, "offset": offset}
         }, timeout=30)
         if not resp.ok:
@@ -75,7 +78,7 @@ def fetch_worldathletics_races(date_str):
         if len(hits) < 100:
             break
         offset += 100
-    print(f"  World Athletics: {len(races)} races on {date_str}")
+    print(f"  World Athletics: {len(races)} races in [{start}..{end}]")
     return races
 
 
@@ -90,11 +93,21 @@ def normalize_name(s):
 
 
 def load_our_events():
-    """Load events from dashboard data (Excel finishers file)."""
+    """Load events from dashboard data (Excel finishers file). Also attaches
+    country code from event_platform_map.json when available."""
     import openpyxl
     path = SCRIPT_DIR / "Suivi_Finishers_Monde_10k_-_21k_-_42k_HISTORIQUE.xlsx"
     wb = openpyxl.load_workbook(path, read_only=True)
     ws = wb["ALL"]
+    # Load country map
+    pmap_path = SCRIPT_DIR / "event_platform_map.json"
+    country_map = {}
+    if pmap_path.exists():
+        with open(pmap_path, "r", encoding="utf-8") as f:
+            pmap = json.load(f)
+        for k, info in pmap.items():
+            if info.get("country"):
+                country_map[info.get("name", k).lower()] = info["country"]
     rows = []
     headers = None
     for row in ws.iter_rows(values_only=True):
@@ -109,50 +122,63 @@ def load_our_events():
                 "city": str(d.get("City", "") or "").strip(),
                 "distance": str(d.get("Distance", "") or "").strip(),
                 "period": str(d.get("Période", "") or "").strip(),
+                "country": country_map.get(race.lower()),
             })
     wb.close()
     return rows
 
 
+def extract_country_code(venue):
+    """Extract ISO country code from WA venue like 'Paris (FRA)'."""
+    if not venue:
+        return None
+    m = re.search(r"\(([A-Z]{2,3})\)\s*$", venue)
+    return m.group(1) if m else None
+
+
 def match_wa_to_ours(wa_races, our_events):
-    """Match WA races to our dashboard events by best name+city score."""
+    """Match WA races to our dashboard events by best name+city+country score."""
     matches = []
-    # Stopwords ignored when counting common words
     STOPWORDS = {"the", "de", "la", "le", "les", "du", "of", "a", "and", "et",
                  "marathon", "semi", "half", "run", "race", "runs", "races",
                  "10k", "21k", "42k", "10km", "city", "international"}
     for wa in wa_races:
         wa_name = normalize_name(wa.get("name", ""))
-        wa_venue = normalize_name(wa.get("venue", ""))
+        wa_venue_raw = wa.get("venue", "") or ""
+        wa_venue = normalize_name(wa_venue_raw)
+        wa_country = extract_country_code(wa_venue_raw)
         wa_words = set(wa_name.split()) - STOPWORDS
         best = None
         best_score = 0
         for ev in our_events:
             our_name = normalize_name(ev["name"])
             our_city = normalize_name(ev["city"])
+            our_country = ev.get("country")
             our_words = set(our_name.split()) - STOPWORDS
-            # Score = common non-stopword words
             common = wa_words & our_words
             score = len(common) * 10
-            # City match bonus (must overlap)
+            # City match bonus
             if our_city and wa_venue:
                 if our_city == wa_venue or our_city in wa_venue or wa_venue in our_city:
                     score += 5
                 elif not common:
-                    continue  # no name match, no city → skip
-            # Distance type match bonus
-            wa_lower = wa_name
-            if "half" in wa_lower and ev.get("distance") == "SEMI":
+                    continue
+            # Country match (bonus/penalty)
+            if our_country and wa_country:
+                if our_country == wa_country:
+                    score += 5
+                else:
+                    score -= 10  # strong penalty for country mismatch
+            # Distance type match
+            if "half" in wa_name and ev.get("distance") == "SEMI":
                 score += 3
-            elif "half" not in wa_lower and "marathon" in wa_lower and ev.get("distance") == "MARATHON":
+            elif "half" not in wa_name and "marathon" in wa_name and ev.get("distance") == "MARATHON":
                 score += 3
-            elif "10k" in wa_lower and ev.get("distance") == "10KM":
+            elif "10k" in wa_name and ev.get("distance") == "10KM":
                 score += 3
             if score > best_score:
                 best_score = score
                 best = ev
-        # Require minimum score 15 to avoid spurious matches
-        # (15 = 1 common word + city match, or 1 distinctive word + distance bonus)
         if best and best_score >= 15:
             matches.append({"wa": wa, "our": best, "score": best_score})
     print(f"  Matched: {len(matches)} events")
@@ -371,7 +397,10 @@ def discover_platform(event_name, year, date_str=None):
             ref_name = normalize_name(info.get("name", ev_key))
             if ref_name and (ref_name[:15] in key or key[:15] in ref_name):
                 pid = info.get("platform_id")
-                # Apply date pattern substitution
+                # Sporthive: year-specific IDs
+                if not pid and "sporthive_ids_by_year" in info:
+                    pid = info["sporthive_ids_by_year"].get(str(year))
+                # Date-pattern substitution (ChronoRace)
                 if not pid and "platform_id_pattern" in info and date_str:
                     yyyy, mm, dd = date_str.split("-")
                     pid = info["platform_id_pattern"].format(yyyy=yyyy, mm=mm, dd=dd)
@@ -401,13 +430,15 @@ def update_finishers(race_name, distance, year, count, dry_run=False):
 
 
 def update_avg_time(race_name, year, distance_m, count, avg_time, speed, dry_run=False):
-    """Add/update avg_times_sporthive.json entry."""
+    """Add avg_times_sporthive.json entry. NEVER overwrite existing data."""
     path = SCRIPT_DIR / "avg_times_sporthive.json"
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
-    # Remove existing entry if any
-    data = [e for e in data if not (e.get("race") == race_name and e.get("year") == year
-                                     and e.get("dist_m") == distance_m)]
+    existing = next((e for e in data if e.get("race") == race_name
+                     and e.get("year") == year and e.get("dist_m") == distance_m), None)
+    if existing and existing.get("avg_time"):
+        print(f"  [SKIP] avg_times: {race_name} {year} deja rempli ({existing['avg_time']})")
+        return
     data.append({
         "label": f"{race_name} {year}",
         "race": race_name,
@@ -420,7 +451,33 @@ def update_avg_time(race_name, year, distance_m, count, avg_time, speed, dry_run
     if not dry_run:
         with open(path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
-    print(f"  avg_times updated: {race_name} {year} = {avg_time}")
+    print(f"  avg_times added: {race_name} {year} = {avg_time}")
+
+
+def update_winners(race_name, year, distance, men_time, women_time, dry_run=False):
+    """Add chronos to temp_chronos_1.json. NEVER overwrite existing data."""
+    path = SCRIPT_DIR / "temp_chronos_1.json"
+    if not path.exists():
+        print(f"  [SKIP] temp_chronos_1.json not found")
+        return
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    existing = next((e for e in data if e.get("course") == race_name
+                     and e.get("annee") == year and e.get("distance") == distance), None)
+    if existing and (existing.get("temps_homme") or existing.get("temps_femme")):
+        print(f"  [SKIP] chronos: {race_name} {year} deja rempli")
+        return
+    if existing:
+        existing["temps_homme"] = men_time
+        existing["temps_femme"] = women_time
+    else:
+        data.append({"course": race_name, "distance": distance, "annee": year,
+                     "temps_homme": men_time, "nom_homme": None,
+                     "temps_femme": women_time, "nom_femme": None})
+    if not dry_run:
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+    print(f"  chronos added: {race_name} {year} H={men_time} F={women_time}")
 
 
 # ============================================================================
@@ -492,6 +549,10 @@ def main():
         if result.get("avg_time"):
             update_avg_time(our_name, year, dist_m, result.get("finishers", 0),
                             result["avg_time"], result.get("avg_speed_kmh"), args.dry_run)
+        if result.get("winner_men") or result.get("winner_women"):
+            dist_label = {"MARATHON": "MARATHON", "SEMI": "SEMI", "10KM": "10KM"}.get(dist_code, dist_code)
+            update_winners(our_name, year, dist_label,
+                           result.get("winner_men"), result.get("winner_women"), args.dry_run)
 
         log["updates"].append({
             "event": our_name, "year": year,
