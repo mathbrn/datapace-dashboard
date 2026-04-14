@@ -1869,15 +1869,30 @@ function renderCompare(){
   html+=cmpR(avgA||'-',avgB||'-','Temps moyen',winAvg,'','');
   html+=cmpR(menA||'-',menB||'-','Record homme',winMen,'','');
   html+=cmpR(wmA||'-',wmB||'-','Record femme',winWm,'','');
-  html+=cmpR(eA.str,eB.str,'Evolution',winEvo,eA.sub,eB.sub);
-  // Evo window toggle buttons
-  html+='<div style="display:flex;justify-content:center;gap:6px;margin:-8px 0 8px 0">';
+  // Evolution row with inline toggle buttons in the center cell
+  var evoBtns='<div style="display:flex;gap:4px;margin-top:4px">';
   [['3','3 ans'],['5','5 ans'],['10','10 ans']].forEach(function(b){
     var active=String(window._cmpEvoWindow)===b[0];
-    html+='<button data-win="'+b[0]+'" onclick="cmpSetEvoWindow(this.dataset.win)" style="font-size:10px;padding:2px 10px;border-radius:100px;cursor:pointer;border:1px solid '+(active?'#DC2626':'var(--border)')+';background:'+(active?'#DC2626':'transparent')+';color:'+(active?'#fff':'var(--text3)')+';font-weight:'+(active?'600':'400')+'">'+b[1]+'</button>';
+    evoBtns+='<button data-win="'+b[0]+'" onclick="cmpSetEvoWindow(this.dataset.win)" style="font-size:9px;padding:1px 8px;border-radius:100px;cursor:pointer;border:1px solid '+(active?'#DC2626':'var(--border)')+';background:'+(active?'#DC2626':'transparent')+';color:'+(active?'#fff':'var(--text3)')+';font-weight:'+(active?'600':'400')+'">'+b[1]+'</button>';
   });
-  html+='</div>';
-  html+=cmpR(statA,statB,'Statut',null,'','');
+  evoBtns+='</div>';
+  // Build evolution row with buttons inside center cell
+  var evoWinA=winEvo;
+  var ewc=winEvo===true?colA:winEvo===false?colB:'var(--text3)';
+  var eclsA=evoWinA===true?'cmp-val-win':'cmp-val-lose';
+  var eclsB=evoWinA===false?'cmp-val-win':'cmp-val-lose';
+  var estA=evoWinA===true?'style="color:'+colA+'"':'';
+  var estB=evoWinA===false?'style="color:'+colB+'"':'';
+  var edotA=evoWinA===true?'<div class="cmp-dot" style="background:'+colA+'"></div>':'';
+  var edotB=evoWinA===false?'<div class="cmp-dot" style="background:'+colB+'"></div>':'';
+  var eblA=evoWinA===true?'border-left:2px solid '+colA:'';
+  var ebrB=evoWinA===false?'border-right:2px solid '+colB:'';
+  html+='<div class="cmp-row" id="cmp-evo-row">'
+    +'<div class="cmp-cell" style="'+eblA+'" id="cmp-evo-a"><div><div class="'+eclsA+'" '+estA+'>'+eA.str+'</div>'+(eA.sub?'<div class="cmp-sub">'+eA.sub+'</div>':'')+'</div>'+edotA+'</div>'
+    +'<div class="cmp-mid"><div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div class="cmp-mid-label">Evolution</div>'+evoBtns+'</div></div>'
+    +'<div class="cmp-cell r" style="'+ebrB+'" id="cmp-evo-b">'+edotB+'<div style="text-align:right"><div class="'+eclsB+'" '+estB+'>'+eB.str+'</div>'+(eB.sub?'<div class="cmp-sub">'+eB.sub+'</div>':'')+'</div></div>'
+    +'</div>';
+  html+=cmpR(statA,statB,'Circuit',null,'','');
 
   html+='</div>';
   // Chart
@@ -1914,20 +1929,24 @@ function renderCmpChart(){
 }
 function cmpSetEvoWindow(win){
   window._cmpEvoWindow=win;
-  var a=window._cmpA,b=window._cmpB;
+  var a=window._cmpA,b=window._cmpB,colA=window._cmpColA,colB=window._cmpColB;
   if(!a||!b)return;
-  // Recalculate evolution
+  // Recalculate evolution + winner
   var eA=calcEvo(a,win),eB=calcEvo(b,win);
-  // Update evo values in DOM
-  var rows=document.querySelectorAll('.cmp-row');
-  rows.forEach(function(row){
-    var mid=row.querySelector('.cmp-mid-label');
-    if(mid&&mid.textContent==='Evolution'){
-      var cells=row.querySelectorAll('.cmp-cell');
-      if(cells[0]){var v=cells[0].querySelector('.cmp-val-win,.cmp-val-lose');if(v)v.textContent=eA.str;var s=cells[0].querySelector('.cmp-sub');if(s)s.textContent=eA.sub;}
-      if(cells[1]){var v=cells[1].querySelector('.cmp-val-win,.cmp-val-lose');if(v)v.textContent=eB.str;var s=cells[1].querySelector('.cmp-sub');if(s)s.textContent=eB.sub;}
-    }
-  });
+  var winEvo=eA.pct!==null&&eB.pct!==null?(eA.pct>eB.pct?true:eA.pct<eB.pct?false:null):null;
+  // Rebuild the two side cells with correct winner styling
+  var cellA=document.getElementById('cmp-evo-a');
+  var cellB=document.getElementById('cmp-evo-b');
+  if(cellA){
+    cellA.className='cmp-cell';
+    cellA.style.cssText=winEvo===true?'border-left:2px solid '+colA:'';
+    cellA.innerHTML='<div><div class="'+(winEvo===true?'cmp-val-win':'cmp-val-lose')+'" '+(winEvo===true?'style="color:'+colA+'"':'')+'>'+eA.str+'</div>'+(eA.sub?'<div class="cmp-sub">'+eA.sub+'</div>':'')+'</div>'+(winEvo===true?'<div class="cmp-dot" style="background:'+colA+'"></div>':'');
+  }
+  if(cellB){
+    cellB.className='cmp-cell r';
+    cellB.style.cssText=winEvo===false?'border-right:2px solid '+colB:'';
+    cellB.innerHTML=(winEvo===false?'<div class="cmp-dot" style="background:'+colB+'"></div>':'')+'<div style="text-align:right"><div class="'+(winEvo===false?'cmp-val-win':'cmp-val-lose')+'" '+(winEvo===false?'style="color:'+colB+'"':'')+'>'+eB.str+'</div>'+(eB.sub?'<div class="cmp-sub">'+eB.sub+'</div>':'')+'</div>';
+  }
   // Update toggle button styles
   document.querySelectorAll('[data-win]').forEach(function(btn){
     var bw=btn.dataset.win;
