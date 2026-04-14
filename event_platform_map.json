@@ -325,5 +325,279 @@
     "country": "SGP",
     "distance": "MARATHON",
     "name": "Standard Chartered Singapore Marathon"
+  },
+  "atlanta journal-constitution peachtree road race": {
+    "platform": "athlinks",
+    "country": "USA",
+    "distance": "10KM",
+    "name": "Atlanta Journal-Constitution Peachtree Road Race"
+  },
+  "bolderboulder 10k": {
+    "platform": "athlinks",
+    "country": "USA",
+    "distance": "10KM",
+    "name": "BOLDERBoulder 10K"
+  },
+  "bay to breakers": {
+    "platform": "athlinks",
+    "country": "USA",
+    "distance": "AUTRE",
+    "name": "Bay to Breakers"
+  },
+  "broad street run": {
+    "platform": "athlinks",
+    "country": "USA",
+    "distance": "AUTRE",
+    "name": "Broad Street Run"
+  },
+  "cooper river bridge run": {
+    "platform": "athlinks",
+    "country": "USA",
+    "distance": "10KM",
+    "name": "Cooper River Bridge Run"
+  },
+  "ukrop's monument avenue 10k": {
+    "platform": "athlinks",
+    "country": "USA",
+    "distance": "10KM",
+    "name": "Ukrop's Monument Avenue 10K"
+  },
+  "united airlines nyc half": {
+    "platform": null,
+    "country": "USA",
+    "distance": "SEMI",
+    "notes": "NYRR custom",
+    "name": "United Airlines NYC Half"
+  },
+  "nyrr rbc brooklyn half": {
+    "platform": null,
+    "country": "USA",
+    "distance": "SEMI",
+    "notes": "NYRR custom",
+    "name": "NYRR RBC Brooklyn Half"
+  },
+  "nycruns brooklyn experience half marathon": {
+    "platform": "runsignup",
+    "country": "USA",
+    "distance": "SEMI",
+    "name": "NYCRUNS Brooklyn Experience Half Marathon"
+  },
+  "marine corps marathon": {
+    "platform": "athlinks",
+    "country": "USA",
+    "distance": "MARATHON",
+    "name": "Marine Corps Marathon"
+  },
+  "dick's pittsburgh marathon": {
+    "platform": "athlinks",
+    "country": "USA",
+    "distance": "MARATHON",
+    "name": "Dick's Pittsburgh Marathon"
+  },
+  "flying pig marathon": {
+    "platform": "athlinks",
+    "country": "USA",
+    "distance": "MARATHON",
+    "name": "Flying Pig Marathon"
+  },
+  "osaka marathon": {
+    "platform": null,
+    "country": "JPN",
+    "distance": "MARATHON",
+    "name": "Osaka Marathon"
+  },
+  "beijing marathon": {
+    "platform": "mararun",
+    "country": "CHN",
+    "distance": "MARATHON",
+    "name": "Beijing Marathon"
+  },
+  "rock 'n' roll running series las vegas": {
+    "platform": null,
+    "country": "USA",
+    "distance": "SEMI",
+    "name": "Rock 'n' Roll Running Series Las Vegas"
+  },
+  "credit union cherry blossom": {
+    "platform": null,
+    "country": "USA",
+    "distance": "AUTRE",
+    "name": "Credit Union Cherry Blossom"
+  },
+  "gasparilla distance classic": {
+    "platform": "athlinks",
+    "country": "USA",
+    "distance": "AUTRE",
+    "name": "Gasparilla Distance Classic"
+  },
+  "lilac bloomsday run": {
+    "platform": "athlinks",
+    "country": "USA",
+    "distance": "AUTRE",
+    "name": "Lilac Bloomsday Run"
+  },
+  "vancouver sun run": {
+    "platform": null,
+    "country": "CAN",
+    "distance": "10KM",
+    "name": "Vancouver Sun Run"
+  },
+  "army ten miler": {
+    "platform": null,
+    "country": "USA",
+    "distance": "AUTRE",
+    "name": "Army Ten Miler"
+  },
+  "bank of america shamrock shuffle": {
+    "platform": null,
+    "country": "USA",
+    "distance": "10KM",
+    "name": "Bank of America Shamrock Shuffle"
+  },
+  "statesman capitol 10k": {
+    "platform": "athlinks",
+    "country": "USA",
+    "distance": "10KM",
+    "name": "Statesman Capitol 10K"
+  },
+  "dam tot damloop": {
+    "platform": "tracx",
+    "country": "NED",
+    "distance": "AUTRE",
+    "name": "Dam tot Damloop"
+  },
+  "goteborgsvarvet": {
+    "platform": null,
+    "country": "SWE",
+    "distance": "SEMI",
+    "name": "Goteborgsvarvet"
+  },
+  "generali berlin half marathon": {
+    "platform": "mikatiming",
+    "subdomain": "berlin-halbmarathon",
+    "event_code": "HML",
+    "country": "GER",
+    "distance": "SEMI",
+    "name": "Generali Berlin Half Marathon"
+  },
+  "nn san silvestre vallecana": {
+    "platform": null,
+    "country": "ESP",
+    "distance": "10KM",
+    "name": "NN San Silvestre Vallecana"
+  },
+  "copenhagen half marathon": {
+    "platform": "ultimate",
+    "country": "DEN",
+    "distance": "SEMI",
+    "name": "Copenhagen Half Marathon"
+  },
+  "brolobet - the bridge run": {
+    "platform": null,
+    "country": "DEN",
+    "distance": "SEMI",
+    "name": "Brolobet - The Bridge Run"
+  },
+  "mitja marato barcelona by brooks": {
+    "platform": "sportmaniacs",
+    "country": "ESP",
+    "distance": "SEMI",
+    "name": "Mitja Marato Barcelona by Brooks"
+  },
+  "movistar madrid medio maraton": {
+    "platform": "sportmaniacs",
+    "country": "ESP",
+    "distance": "SEMI",
+    "name": "Movistar Madrid Medio Maraton"
+  },
+  "valencia half marathon trinidad alfonso zurich": {
+    "platform": null,
+    "country": "ESP",
+    "distance": "SEMI",
+    "name": "Valencia Half Marathon Trinidad Alfonso Zurich"
+  },
+  "warsaw half marathon": {
+    "platform": "sts-timing",
+    "country": "POL",
+    "distance": "SEMI",
+    "name": "Warsaw Half Marathon"
+  },
+  "cardiff half marathon": {
+    "platform": "rtrt",
+    "country": "GBR",
+    "distance": "SEMI",
+    "name": "Cardiff Half Marathon"
+  },
+  "london landmarks half marathon": {
+    "platform": "tracx",
+    "country": "GBR",
+    "distance": "SEMI",
+    "name": "London Landmarks Half Marathon"
+  },
+  "standard chartered hong kong half marathon": {
+    "platform": "tracx",
+    "country": "HKG",
+    "distance": "SEMI",
+    "name": "Standard Chartered Hong Kong Half Marathon"
+  },
+  "harmonie mutuelle 20km de paris": {
+    "platform": "timeto",
+    "country": "FRA",
+    "distance": "AUTRE",
+    "name": "Harmonie Mutuelle 20km de Paris"
+  },
+  "iu health 500 festival mini-marathon": {
+    "platform": null,
+    "country": "USA",
+    "distance": "SEMI",
+    "name": "IU Health 500 Festival Mini-Marathon"
+  },
+  "transurban bridge to brisbane": {
+    "platform": null,
+    "country": "AUS",
+    "distance": "10KM",
+    "name": "Transurban Bridge to Brisbane"
+  },
+  "city2surf": {
+    "platform": null,
+    "country": "AUS",
+    "distance": "AUTRE",
+    "name": "City2Surf"
+  },
+  "st. jude rock 'n' roll series nashville": {
+    "platform": null,
+    "country": "USA",
+    "distance": "SEMI",
+    "name": "St. Jude Rock 'n' Roll Series Nashville"
+  },
+  "aramco houston half marathon": {
+    "platform": null,
+    "country": "USA",
+    "distance": "SEMI",
+    "name": "Aramco Houston Half Marathon"
+  },
+  "aj bell great birmingham run": {
+    "platform": "rtrt",
+    "country": "GBR",
+    "distance": "SEMI",
+    "name": "AJ Bell Great Birmingham Run"
+  },
+  "aj bell great south run": {
+    "platform": "rtrt",
+    "country": "GBR",
+    "distance": "AUTRE",
+    "name": "AJ Bell Great South Run"
+  },
+  "royal parks half marathon": {
+    "platform": null,
+    "country": "GBR",
+    "distance": "SEMI",
+    "name": "Royal Parks Half Marathon"
+  },
+  "the big half": {
+    "platform": null,
+    "country": "GBR",
+    "distance": "SEMI",
+    "name": "The Big Half"
   }
 }

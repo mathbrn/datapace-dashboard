@@ -181,6 +181,22 @@
 - `crawl_athlinks.py` : Scanner Athlinks par range d'IDs
 - `aggregate_all.py` : Fusionneur de toutes les sources → `unified_race_database.json`
 
+## Auto Update 4D — Systeme automatique
+
+- **Script** : `auto_update_4d.py`
+- **Declencheur** : GitHub Actions cron 06h00 UTC quotidien (`.github/workflows/auto_update_4d.yml`)
+- **Logs** : `logs/update_4d_{date}.json` (artifact GitHub Actions, retention 30j)
+- **Couverture** : 88 evenements mappes sur 202 (via `event_platform_map.json`)
+- **Plateformes supportees** : TimeTo, Sporthive, Tracx, ChronoRace, Mikatiming, Sportmaniacs, Endu, RTRT, Athlinks, RunSignup, Ultimate, STS-Timing, RunCzech, MyRunResults, PSE, Splittime, Smartchip, Mararun
+- **Sans couverture API** : Chicago, NYC, Boston, Tokyo, Valencia, Mexico, Taipei, Singapore (plateformes custom fermees) → **Update 4D manuel requis**
+- **Protection stricte** : aucune donnee existante ne peut etre ecrasee
+  - `[SKIP]` automatique sur `update_finishers.py` (Excel finishers)
+  - `[SKIP]` automatique sur `avg_times_sporthive.json` si avg_time deja rempli
+  - `[SKIP]` automatique sur `temp_chronos_1.json` si chronos deja remplis
+- **Fenetre de date** : ±1 jour autour de la cible (capture les courses dont les resultats sont publies le lendemain)
+- **Matching pays** : extraction ISO code depuis WA venue "Paris (FRA)", bonus +5 si match, **malus -10 si mismatch** (evite les faux positifs geographiques)
+- **Test manuel** : `python auto_update_4d.py --date YYYY-MM-DD --dry-run`
+
 ## Workflow de mise a jour
 
 1. Rechercher les donnees (APIs, web search, scraping)

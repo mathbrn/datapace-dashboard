@@ -1312,14 +1312,19 @@
       "score": 43
     },
     {
+      "wa_name": "BIG on TOUR",
+      "our_name": "The Big Half",
+      "score": 15
+    },
+    {
       "wa_name": "Beijing Half Marathon",
       "our_name": "Beijing Marathon",
-      "score": 15
+      "score": 20
     },
     {
       "wa_name": "Credit Union Cherry Blossom 10 Mile",
       "our_name": "Credit Union Cherry Blossom",
-      "score": 40
+      "score": 45
     },
     {
       "wa_name": "Wizz Air Milano Marathon",
@@ -1332,14 +1337,29 @@
       "score": 15
     },
     {
+      "wa_name": "Utah Spring Classic",
+      "our_name": "Gasparilla Distance Classic",
+      "score": 15
+    },
+    {
       "wa_name": "Danish 10 km Road Running Championships",
       "our_name": "NN CPC Loop Den Haag - 10 KM Loop",
       "score": 20
     },
     {
+      "wa_name": "Star Meet - Army Navy Dual",
+      "our_name": "Army Ten Miler",
+      "score": 15
+    },
+    {
       "wa_name": "Hong Kong Athletics Series - Series 4 Cum Decathlon",
       "our_name": "Standard Chartered Hong Kong Half Marathon",
-      "score": 25
+      "score": 30
+    },
+    {
+      "wa_name": "Oklahoma Throws Series World Invitational",
+      "our_name": "Rock 'n' Roll Running Series Las Vegas",
+      "score": 15
     }
   ],
   "updates": [
