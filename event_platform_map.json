@@ -5,6 +5,18 @@
     "name": "10K Montmartre",
     "platform": "timeto"
   },
+  "10k night race prague": {
+    "country": "CZE",
+    "distance": "10KM",
+    "name": "10K Night Race Prague",
+    "platform": "runczech"
+  },
+  "10km du bois de boulogne": {
+    "country": "FRA",
+    "distance": "10KM",
+    "name": "10km du bois de Boulogne",
+    "platform": "protiming"
+  },
   "10km du panthéon": {
     "country": "FRA",
     "distance": "10KM",
@@ -120,6 +132,20 @@
       "2023",
       "2025"
     ]
+  },
+  "alliance bank borneo international marathon": {
+    "country": "MYS",
+    "distance": "SEMI",
+    "name": "Alliance Bank Borneo International Marathon",
+    "platform": "custom",
+    "url": "borneomarathon.com"
+  },
+  "amgen singelloop breda 10km": {
+    "country": "NLD",
+    "distance": "10KM",
+    "name": "AMGEN Singelloop Breda 10km",
+    "platform": "custom",
+    "url": "bredasesingelloop.nl"
   },
   "antwerp marathon": {
     "country": "BEL",
@@ -354,6 +380,13 @@
     "platform": "custom",
     "url": "escalade.ch"
   },
+  "course eiffage du viaduc de millau": {
+    "country": "FRA",
+    "distance": "AUTRE",
+    "name": "Course Eiffage du Viaduc de Millau",
+    "platform": "custom",
+    "url": "course-eiffage-viaducdemillau.fr"
+  },
   "credit union cherry blossom": {
     "country": "USA",
     "distance": "AUTRE",
@@ -490,6 +523,13 @@
     "name": "Guadalajara Half Marathon",
     "platform": "custom",
     "url": "guadalajara-half-marathon.com"
+  },
+  "guadalajara marathon": {
+    "country": "MEX",
+    "distance": "MARATHON",
+    "name": "Guadalajara Marathon",
+    "platform": "custom",
+    "url": "maratonguadalajara.org"
   },
   "guangzhou marathon": {
     "country": "CHN",
@@ -652,6 +692,20 @@
     "name": "Marathon de Lille",
     "platform": "chronorace"
   },
+  "marathon des chateaux du médoc": {
+    "country": "FRA",
+    "distance": "MARATHON",
+    "name": "Marathon des Chateaux du Médoc",
+    "platform": "custom",
+    "url": "marathondumedoc.com"
+  },
+  "marathon des grands crus": {
+    "country": "FRA",
+    "distance": "SEMI",
+    "name": "Marathon des Grands Crus",
+    "platform": "raceresult",
+    "raceresult_id": "365121"
+  },
   "marathon münchen by brooks": {
     "country": "DEU",
     "distance": "SEMI",
@@ -663,6 +717,12 @@
     "country": "CHL",
     "distance": "SEMI",
     "name": "Maraton de Santiago",
+    "platform": "sportmaniacs"
+  },
+  "maraton de zaragoza": {
+    "country": "ESP",
+    "distance": "10KM",
+    "name": "Maraton de Zaragoza",
     "platform": "sportmaniacs"
   },
   "maraton medellin": {
@@ -702,6 +762,13 @@
     "name": "Meia Maratona Internacional do Rio de Janeiro",
     "platform": "yescom"
   },
+  "mg vadodara international marathon": {
+    "country": "IND",
+    "distance": "10KM",
+    "name": "MG Vadodara International Marathon",
+    "platform": "sportstimingsolutions",
+    "sts_event_id": "84728"
+  },
   "milano marathon": {
     "country": "ITA",
     "distance": "MARATHON",
@@ -726,6 +793,13 @@
     "name": "Nagoya Women's Marathon",
     "platform": "custom",
     "url": "womens-marathon.nagoya"
+  },
+  "nlb ljubljana marathon 10k": {
+    "country": "SVN",
+    "distance": "10KM",
+    "name": "NLB Ljubljana Marathon 10K",
+    "platform": "custom",
+    "url": "ljubljanskimaraton.si"
   },
   "nn cpc loop den haag - half marathon": {
     "country": "NED",
@@ -881,6 +955,13 @@
     "name": "Saucony 10km de le Tour Eiffel",
     "platform": "klikego"
   },
+  "saucony run shoreditch 10k": {
+    "country": "GBR",
+    "distance": "10KM",
+    "name": "Saucony Run Shoreditch 10K",
+    "platform": "custom",
+    "url": "runshoreditch.com"
+  },
   "schneider electric marathon de paris": {
     "country": "FRA",
     "distance": "MARATHON",
@@ -893,6 +974,12 @@
     "name": "Semi marathon de Lisbonne",
     "platform": "custom",
     "url": "running-portugal.com"
+  },
+  "semi marathon du bois de vincennes": {
+    "country": "FRA",
+    "distance": "SEMI",
+    "name": "Semi marathon du Bois de Vincennes",
+    "platform": "protiming"
   },
   "seoul marathon": {
     "country": "KOR",
@@ -1048,12 +1135,32 @@
     "name": "The Big Half",
     "platform": null
   },
+  "the hapalua - hawaii's hlaf marathon": {
+    "country": "USA",
+    "distance": "SEMI",
+    "name": "The Hapalua - Hawaii's Hlaf marathon",
+    "platform": "raceresult",
+    "raceresult_id": "334584"
+  },
   "the music run": {
     "country": "SGP",
     "distance": "5KM",
     "name": "The Music Run",
     "platform": "custom",
     "url": "themusicrun.com.sg"
+  },
+  "thien phong marathon": {
+    "country": "VNM",
+    "distance": "SEMI",
+    "name": "Thien Phong Marathon",
+    "platform": "sportstats"
+  },
+  "tokushima marathon": {
+    "country": "JPN",
+    "distance": "MARATHON",
+    "name": "Tokushima Marathon",
+    "platform": "custom",
+    "url": "tokushima-marathon.jp"
   },
   "tokyo marathon": {
     "country": "JPN",
@@ -1089,6 +1196,13 @@
     "distance": "10KM",
     "name": "Ukrop's Monument Avenue 10K",
     "platform": "athlinks"
+  },
+  "under armour toronto 10k": {
+    "country": "CAN",
+    "distance": "10KM",
+    "name": "Under Armour Toronto 10K",
+    "platform": "raceroster",
+    "raceroster_id": "q4nvu6z7qbu3e4bk"
   },
   "united airlines nyc half": {
     "country": "USA",
@@ -1156,6 +1270,13 @@
     "platform": "custom",
     "url": "halfmarathon.runinbudapest.com"
   },
+  "wizz air venicemarathon": {
+    "country": "ITA",
+    "distance": "10KM",
+    "name": "Wizz Air Venicemarathon",
+    "platform": "custom",
+    "url": "venicemarathon.it"
+  },
   "world 10k bengaluru": {
     "country": "IND",
     "distance": "AUTRE",
@@ -1167,6 +1288,12 @@
     "distance": "AUTRE",
     "name": "World 25K Kolkata",
     "platform": "procam"
+  },
+  "yorkshire marathon": {
+    "country": "GBR",
+    "distance": "MARATHON",
+    "name": "Yorkshire Marathon",
+    "platform": "chiptiming"
   },
   "zandvoort circuit run": {
     "country": "NLD",
@@ -1202,5 +1329,13 @@
     "name": "Zurich Maratón de Sevilla",
     "notes": "UUID varies yearly",
     "platform": "sportmaniacs"
+  },
+  "zürcher silvesterlauf": {
+    "country": "CHE",
+    "datasport_racenr": "27192",
+    "distance": "AUTRE",
+    "name": "Zürcher Silvesterlauf",
+    "platform": "raceresult",
+    "raceresult_id": "329887"
   }
 }
