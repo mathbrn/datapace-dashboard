@@ -1,0 +1,43 @@
+{
+  "filled": [],
+  "rejected": [],
+  "no_data": [
+    {
+      "event": "Standard Chartered Hong Kong Half Marathon",
+      "year": 2022,
+      "platform": "tracx",
+      "reason": "no data"
+    },
+    {
+      "event": "Standard Chartered Hong Kong Half Marathon",
+      "year": 2023,
+      "platform": "tracx",
+      "reason": "no data"
+    },
+    {
+      "event": "Standard Chartered Hong Kong Half Marathon",
+      "year": 2024,
+      "platform": "tracx",
+      "reason": "no data"
+    },
+    {
+      "event": "London Landmarks Half Marathon",
+      "year": 2022,
+      "platform": "tracx",
+      "reason": "no data"
+    },
+    {
+      "event": "Run in Lyon",
+      "year": 2022,
+      "platform": "timeto",
+      "reason": "no data"
+    },
+    {
+      "event": "AJ Bell Great South Run",
+      "year": 2024,
+      "platform": "rtrt",
+      "reason": "no data"
+    }
+  ],
+  "errors": []
+}
