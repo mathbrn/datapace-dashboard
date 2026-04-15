@@ -313,6 +313,147 @@ def fetch_chronorace_4d(db_name, year):
     return None
 
 
+def fetch_mikatiming_4d(platform_info_or_year, year):
+    """Fetch 4D from Mikatiming (Berlin, London, Hamburg, Chicago, etc.).
+
+    `platform_info_or_year` may be a dict {subdomain, event_code} or just a year string.
+    Reads the platform map entry for the event to get subdomain + event code pattern.
+    """
+    try:
+        # Caller passes the platform_info dict or we use a default
+        info = platform_info_or_year if isinstance(platform_info_or_year, dict) else {}
+        subdomain = info.get("subdomain", "")
+        event_code = info.get("event_code") or info.get("event_code_pattern", "MAL").format(yyyy=year)
+        if not subdomain:
+            return None
+
+        # Build URL prefix - some subdomains include full host
+        if subdomain.startswith("http") or "." in subdomain.split("/")[0]:
+            base = subdomain.rstrip("/")
+            if not base.startswith("http"):
+                base = f"https://{base}"
+        else:
+            tld = "de" if subdomain in ("hamburg", "berlin-marathon", "vienna", "berlin-halbmarathon") else "com"
+            base = f"https://{subdomain}.r.mikatiming.{tld}"
+
+        sess = requests.Session()
+        sess.headers.update({"User-Agent": "Mozilla/5.0"})
+
+        # Winners
+        def get_first_time(sex):
+            url = f"{base}/{year}/?pid=list&event={event_code}&num_results=3&search%5Bsex%5D={sex}"
+            r = sess.get(url, timeout=15)
+            if not r.ok:
+                return None
+            times = re.findall(r"type-time[^>]*>(?:<div[^>]*>[^<]*(?:Finish|Netto|Net)[^<]*</div>)?(\d{2}:\d{2}:\d{2})", r.text)
+            if not times:
+                times = re.findall(r"(\d{2}:\d{2}:\d{2})", r.text)
+            return times[0] if times else None
+
+        men_winner = get_first_time("M")
+        women_winner = get_first_time("W")
+
+        # Total finishers (best-effort: count times on big results page)
+        url_all = f"{base}/{year}/?pid=list&event={event_code}&num_results=99999"
+        r_all = sess.get(url_all, timeout=60)
+        all_times = re.findall(r"type-time[^>]*>(?:<div[^>]*>[^<]*(?:Finish|Netto|Net)[^<]*</div>)?(\d{2}:\d{2}:\d{2})", r_all.text)
+        finishers = len(all_times)
+
+        if not men_winner and not women_winner and not finishers:
+            return None
+
+        return {"finishers": finishers if finishers >= 100 else None,
+                "avg_time": None, "avg_speed_kmh": None,
+                "winner_men": men_winner, "winner_women": women_winner,
+                "source": "mikatiming", "confidence": "medium"}
+    except Exception as e:
+        print(f"  Mikatiming error: {e}")
+        return None
+
+
+def fetch_nyrr_4d(event_code, year):
+    """Fetch 4D from NYRR API (TCS NYC Marathon).
+
+    `event_code` example: 'M2026'. Default to 'M{yyyy}' if not provided.
+    """
+    try:
+        if not event_code:
+            event_code = f"M{year}"
+        sess = requests.Session()
+        sess.headers.update({"User-Agent": "Mozilla/5.0", "Content-Type": "application/json"})
+        # Try several filter shapes (NYRR API is opaque)
+        for body in [
+            {"pageIndex": 1, "pageSize": 1, "raceIds": [event_code]},
+            {"pageIndex": 1, "pageSize": 1, "eventId": event_code},
+            {"pageIndex": 1, "pageSize": 1, "eventCode": event_code},
+        ]:
+            r = sess.post("https://rmsprodapi.nyrr.org/api/v2/runners/finishers-filter",
+                          json=body, timeout=30)
+            if not r.ok:
+                continue
+            data = r.json()
+            total = data.get("totalItems", 0)
+            # Reject sentinel values (full-DB count)
+            if 100 < total < 100000 and data.get("items"):
+                # Get winner: first item ordered by overallPlace
+                first = data["items"][0]
+                # Need to fetch sorted to get actual winner
+                r2 = sess.post("https://rmsprodapi.nyrr.org/api/v2/runners/finishers-filter",
+                               json=dict(body, pageSize=5, sortBy="overallPlace"), timeout=30)
+                items = r2.json().get("items", []) if r2.ok else [first]
+                men = next((i for i in items if i.get("gender") == "M"), None)
+                women = next((i for i in items if i.get("gender") == "W"), None)
+                return {"finishers": total,
+                        "avg_time": None, "avg_speed_kmh": None,
+                        "winner_men": men.get("overallTime") if men else None,
+                        "winner_women": women.get("overallTime") if women else None,
+                        "source": "nyrr", "confidence": "low"}  # low until filter validated
+        return None
+    except Exception as e:
+        print(f"  NYRR error: {e}")
+        return None
+
+
+def fetch_baa_4d(event_id_or_year, year):
+    """Fetch 4D from BAA Boston Marathon results page."""
+    try:
+        sess = requests.Session()
+        sess.headers.update({"User-Agent": "Mozilla/5.0"})
+        url = f"https://results.baa.org/{year}/"
+        r = sess.get(url, timeout=15, allow_redirects=False)
+        # If redirected, year not available yet
+        if r.status_code in (301, 302, 303):
+            print(f"  BAA: year {year} not yet available (redirect to {r.headers.get('Location','?')})")
+            return None
+        r = sess.get(url, timeout=15, allow_redirects=True)
+        if not r.ok:
+            return None
+        # Try to find total finishers in HTML
+        finishers = None
+        for pat in [r"([\d,]+)\s*(?:Finishers|Total)", r"Total[^\d]*([\d,]+)"]:
+            m = re.search(pat, r.text, re.IGNORECASE)
+            if m:
+                try:
+                    finishers = int(m.group(1).replace(",", ""))
+                    break
+                except ValueError:
+                    pass
+        # Try to find first male/female winner in the page
+        # BAA pages typically show top finishers in the "Top Finishers" section
+        times = re.findall(r"(\d:\d{2}:\d{2})", r.text)
+        men_winner = times[0] if times else None
+        women_winner = times[1] if len(times) > 1 else None
+        if not finishers and not men_winner:
+            return None
+        return {"finishers": finishers,
+                "avg_time": None, "avg_speed_kmh": None,
+                "winner_men": men_winner, "winner_women": women_winner,
+                "source": "baa", "confidence": "low"}
+    except Exception as e:
+        print(f"  BAA error: {e}")
+        return None
+
+
 def fetch_tracx_4d(event_id, year):
     """Fetch 4D from Tracx Events API."""
     try:
@@ -383,11 +524,15 @@ PLATFORM_MAP = {
     "sporthive": fetch_sporthive_4d,
     "chronorace": fetch_chronorace_4d,
     "tracx": fetch_tracx_4d,
+    "mikatiming": fetch_mikatiming_4d,
+    "nyrr": fetch_nyrr_4d,
+    "baa": fetch_baa_4d,
 }
 
 
 def discover_platform(event_name, year, date_str=None):
-    """Try known platforms. date_str (YYYY-MM-DD) used for dynamic platform_id patterns."""
+    """Try known platforms. Returns (platform, platform_id_or_info_dict).
+    For Mikatiming, the second value is a dict with subdomain+event_code."""
     map_path = SCRIPT_DIR / "event_platform_map.json"
     if map_path.exists():
         with open(map_path, "r", encoding="utf-8") as f:
@@ -396,6 +541,17 @@ def discover_platform(event_name, year, date_str=None):
         for ev_key, info in pmap.items():
             ref_name = normalize_name(info.get("name", ev_key))
             if ref_name and (ref_name[:15] in key or key[:15] in ref_name):
+                platform = info.get("platform")
+                # Mikatiming: pass the whole info dict (subdomain, event_code, event_code_pattern)
+                if platform == "mikatiming":
+                    pid_info = {
+                        "subdomain": info.get("subdomain", ""),
+                        "event_code": info.get("event_code"),
+                        "event_code_pattern": info.get("event_code_pattern", "MAL"),
+                    }
+                    if not pid_info["event_code"] and "event_code_pattern" in info:
+                        pid_info["event_code"] = info["event_code_pattern"].format(yyyy=year)
+                    return platform, pid_info
                 pid = info.get("platform_id")
                 # Sporthive: year-specific IDs
                 if not pid and "sporthive_ids_by_year" in info:
@@ -404,7 +560,7 @@ def discover_platform(event_name, year, date_str=None):
                 if not pid and "platform_id_pattern" in info and date_str:
                     yyyy, mm, dd = date_str.split("-")
                     pid = info["platform_id_pattern"].format(yyyy=yyyy, mm=mm, dd=dd)
-                return info.get("platform"), pid
+                return platform, pid
     lname = event_name.lower()
     if any(k in lname for k in ["paris", "lyon", "montmartre"]) and "rotterdam" not in lname:
         return "timeto", None
