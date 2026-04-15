@@ -128,23 +128,19 @@
 - **Couverture** : NN Marathon Rotterdam, et potentiellement d'autres evenements ChronoRace
 
 ### 6. Active.com (ASO events anciens)
-- **Events** : `https://sportinnovation.fr/api/events`
-- **Races** : `https://sportinnovation.fr/api/events/{id}/races`
-- **Finishers** : `totals.maxGeneralRanking`
-- **Auth** : Aucune
-- **Couverture** : Marathon de Paris, Semi de Paris, 10K Paris, Run in Lyon, Run in Marseille
-
-### 6. Active.com (ASO events anciens)
 - **Events** : `https://resultscui.active.com/api/results/events/{appName}`
 - **Count** : `GET /events/{appName}/participants?groupId={overallId}&routeId={id}&offset=0&limit=1` → `meta.totalCount`
 - **Auth** : Aucune
 - **Noms d'app** : `{Sponsor}{EventName}{Year}` (ex: `SchneiderElectricMarathondeParis2019`, `RunInLyon2018`, `Adidas10KParis2022`)
 
 ### 7. Mikatiming (scraping)
-- **URL** : `https://{event}.r.mikatiming.com/{year}/?pid=list&event={code}`
-- **Codes** : HML=Half Marathon, MAL=Marathon
-- **Extraction** : regex `(\d[\d.]*)\s*(?:Ergebnisse|Results)` dans le texte de la page
-- **Couverture** : Berlin HM, Frankfurt Marathon, Stockholm
+- **URL pattern** : `https://{subdomain}.r.mikatiming.{de|com}/{year}/?pid=list&event={code}`
+- **Subdomains** : `berlin-marathon`, `tcslondonmarathon`, `hamburg`, `stockholm`, `athens`, `vienna`, `brighton`, `live.frankfurt-marathon.com`, `results.chicagomarathon.com`
+- **Codes evenement** : `MAL`=Marathon, `HML`=Half Marathon, ou code annuel `{yyyy}_` (Vienna, Chicago)
+- **Extraction winners** : `pid=list&search%5Bsex%5D=M` (ou `W`), regex `type-time[^>]*>(?:<div[^>]*>[^<]*(?:Finish|Netto|Net)[^<]*</div>)?(\d{2}:\d{2}:\d{2})`
+- **Extraction finishers** : `pid=list&num_results=999999` puis compter les temps (limite 25 par defaut, plusieurs requetes peuvent etre necessaires)
+- **Auth** : Aucune
+- **Couverture** : Berlin Marathon + Half, London Marathon, Hamburg, Stockholm, Athens, Vienna, Brighton, Frankfurt, Chicago Marathon
 
 ### 8. MarathonView.net (scraping)
 - **URL** : `https://marathonview.net/series/{id}`
@@ -168,6 +164,122 @@
 - **API** : `https://front-api.njuko.com/`
 - **Donnees** : Details evenement, competitions, places restantes
 - **PAS de resultats** — renvoie vers les plateformes de chronometrage
+
+### 12. Sportmaniacs (Sevilla, Barcelona, Madrid Medio Maraton)
+- **URL** : `https://sportmaniacs.com/en/races/{slug}/{UUID}/results`
+- **Donnees** : compressees en base64 dans `window.config_data`, IDs dans `window.SMRequest`
+- **Auth** : Aucune (mais necessite Playwright pour decoder/rendre la page)
+- **UUID** : varie chaque annee (ex: 2024 Sevilla = `65d2100e-724c-4d5c-9a49-9237ac1f19ee`)
+- **Couverture** : Zurich Maraton de Sevilla, Zurich Marato de Barcelona, Mitja Marato Barcelona, Movistar Madrid Medio Maraton
+
+### 13. ENDU.net (Rome, Milano)
+- **URL** : `https://endu.net/en/events/{slug}/`
+- **API cachee** : `https://apiah.endu.net` (endpoints non documentes publiquement)
+- **Auth** : Inconnu
+- **Couverture** : Acea Run Rome The Marathon, Wizz Air Milano Marathon
+- **Note** : reverse-engineering via devtools recommande
+
+### 14. NYRR (TCS New York City Marathon)
+- **API** : `POST https://rmsprodapi.nyrr.org/api/v2/runners/finishers-filter`
+- **Body** : `{"pageIndex": 1, "pageSize": N, "raceIds": ["M2026"]}`
+- **Reponse** : `{"totalItems": N, "items": [{runnerId, firstName, lastName, bib, age, gender, overallPlace, overallTime, ...}]}`
+- **Auth** : Aucune en lecture, mais filtre `eventId`/`raceIds` necessite decouverte du bon code event
+- **Couverture** : TCS New York City Marathon, NYRR RBC Brooklyn Half, et autres courses NYRR
+
+### 15. BAA (Boston Marathon)
+- **URL** : `https://results.baa.org/{yyyy}/`
+- **Format** : HTML statique, pas d'API publique
+- **Auth** : Aucune
+- **Couverture** : Boston Marathon uniquement (redirige vers la derniere annee si l'annee n'existe pas encore)
+- **Note** : scraping HTML dedie requis
+
+### 16. RunCzech (Prague)
+- **URL** : `https://runczech.com/en/results/orlen-prague-marathon-{year}`
+- **Pagination** : `?current_page=N`, filtres group/gender/age/nationality
+- **Auth** : Aucune
+- **Couverture** : Prague International Marathon
+
+### 17. STS-Timing (Warsaw)
+- **URL** : `https://live.sts-timing.pl/mw{year}/`
+- **Endpoints PHP** : `tabela.php`, `dsq.php`, `dnf.php`, params `?dystans=1&punkt=1-9`
+- **Pagination** : 200 par page, export PDF disponible
+- **Auth** : Aucune
+- **Couverture** : NN Maraton Warszawski, Warsaw Half Marathon
+
+### 18. Ultimate Sport Service (Copenhagen)
+- **URL** : `https://live.ultimate.dk/desktop/front/?eventid={id}`
+- **Format** : HTML + PDF via `results.ultimate.dk`
+- **Auth** : Aucune
+- **Couverture** : Copenhagen Marathon, Copenhagen Half Marathon
+- **Note** : 2025 Copenhagen Marathon = `eventid=5715`
+
+### 19. MyRunResults (Dublin)
+- **URL** : `https://myrunresults.com/events/{slug}/{id}/results`
+- **Alternatives** : `raceresults.dublinmarathon.ie`, `tdleventservices.co.uk` (TDL = officiel ChronoTrack/RaceResult)
+- **Auth** : Aucune
+- **Couverture** : Irish Life Dublin Marathon
+
+### 20. PSE (Honolulu)
+- **URL** : `https://live.pseresults.com/e/{id}` (ex: `e/291`=marathon)
+- **Lookup bib** : `pseresults.live`
+- **Auth** : Aucune
+- **Couverture** : Honolulu Marathon
+
+### 21. Splittime.nl (Istanbul)
+- **URL** : `https://splittime.nl/...` (sourcing depuis maraton.istanbul)
+- **Auth** : Inconnu, pas d'API documentee
+- **Couverture** : Istanbul Marathon
+- **Alternative** : MarathonView (4097 finishers 2024) ou MYLAPS Sporthive
+
+### 22. Smartchip (Seoul)
+- **URL** : `https://smartchip.co.kr/dongma.html`
+- **Format** : HTML coreen, pas d'API anglaise
+- **Auth** : Aucune
+- **Couverture** : Seoul Marathon
+- **Alternative** : World Athletics pour les elites
+
+### 23. Mararun (Beijing)
+- **API** : `https://saas-user-gw.mararun.com/v1`
+- **Auth** : Inconnu (plateforme officielle Beijing Marathon + autres marathons chinois)
+- **Couverture** : Beijing Marathon, potentiellement d'autres marathons chinois
+- **Reference** : `chinese_apis_discovered.json` dans le repo
+
+### 24. RunSignup (US events)
+- **URL** : `https://runsignup.com/`
+- **Auth** : Inconnu pour API publique
+- **Couverture** : NYCRUNS Brooklyn Experience Half Marathon, et autres petits events US
+- **Reference** : `runsignup_crawl_results.json` dans le repo
+
+## Etat d'implementation des fetchers (auto_update_4d.py)
+
+| Plateforme | Implemente | Events couverts | Notes |
+|------------|------------|-----------------|-------|
+| TimeTo | OK | 6 (Paris Marathon, Semi, 10K, Lyon, Montmartre, 20km Paris) | API publique propre |
+| Sporthive | OK | 5 (Lisboa, Amsterdam, Den Haag, Mizuno, Rotterdam-fallback) | IDs par annee dans le map |
+| ChronoRace | OK | 1 (Rotterdam) | db_name dynamique depuis date |
+| Tracx | OK partiel | 8 (Great Run, Manchester, Sydney, London Landmarks...) | Pagination 15 items/page, chip time = finish - ranking_start |
+| Mikatiming | NON | 10 events en attente (Berlin, London, Hamburg, Chicago...) | Scraper teste mais pas integre dans PLATFORM_MAP |
+| Athlinks | NON | 12 events US en attente | Crawl existant dans `athlinks_crawl_results.json` |
+| Sportmaniacs | NON | 4 events ESP | Necessite Playwright |
+| RTRT | NON | 3 events Great Run | Documente section 4 |
+| Endu | NON | 2 events ITA | API cachee |
+| STS-Timing | NON | 2 events POL | PHP scraper a faire |
+| Ultimate | NON | 2 events DEN | HTML/PDF |
+| BAA | NON | 1 event (Boston) | HTML scraper |
+| Mararun | NON | 1 event (Beijing) | Plateforme chinoise |
+| MyRunResults | NON | 1 event (Dublin) | |
+| NYRR | NON | 1 event (NYC) | API POST identifiee |
+| PSE | NON | 1 event (Honolulu) | |
+| RunCzech | NON | 1 event (Prague) | |
+| RunSignup | NON | 1 event US | |
+| Smartchip | NON | 1 event (Seoul) | |
+| Splittime | NON | 1 event (Istanbul) | |
+| MarathonView | NON | 7 WMM IDs documentes | API `/api/series` retourne 401 |
+| (None) | — | 5 events sans API publique (Tokyo, Valencia, Mexico, Taipei, Singapore) | Update manuel |
+
+**Implementes** : 4 fetchers (timeto, sporthive, chronorace, tracx) couvrant ~20 events
+**A implementer** : 16 plateformes pour ~50 events supplementaires
+**Manuel obligatoire** : 5 events (plateformes custom fermees)
 
 ## Scripts utilitaires
 
