@@ -556,6 +556,7 @@ function lc(c){return isLight()?(LIGHT_MAP[c]||c):c;}
 function col(r){return lc('#DC2626');}
 function colDist(r){return lc(r.d==='5KM'?'#AC14D7':r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':r.d==='AUTRE'?'#F472B6':'#2563EB');}
 function eventFlag(name){if(typeof EVENT_COUNTRIES==='undefined')return '';var info=EVENT_COUNTRIES[name];return info&&info.flag?info.flag:'';}
+function twemojify(el){try{if(typeof twemoji!=='undefined'){twemoji.parse(el||document.body,{folder:'svg',ext:'.svg'});}}catch(e){}}
 var CIRC_COLORS={WMM:'#38BDF8',ASO:'#E30613',EMC:'#F87171',L5G:'#DC2626'};
 var CIRC_DIST_SEC={MARATHON:'#F87171',SEMI:'#FFB088','10KM':'#88EEBB','5KM':'#C966E8',AUTRE:'#FF99CC'};
 function circColor(code,dist){if(code==='RNR')return lc(CIRC_DIST_SEC[dist]||'#F87171');return lc(CIRC_COLORS[code]||'#F87171');}
@@ -987,7 +988,7 @@ function ovSearch(){
       +'<span style="font-size:11px;color:var(--text3)">'+r.c+' - '+r.p+'</span>'
       +'</div>';
   });
-  box.innerHTML=html;
+  box.innerHTML=html;twemojify(box);
 }
 
 function ovSelect(idx){
@@ -1062,8 +1063,8 @@ function ovSelect(idx){
   var circHtml=circBadges(ev);
   var html='<div class="ov-card">'
     +'<div class="ov-card-header"><div>'
-    +'<div class="ov-card-title">'+(eventFlag(ev.r)?eventFlag(ev.r)+' ':'')+ev.r+'</div>'
-    +'<div class="ov-card-meta"><span>'+ev.c+' &middot; '+ev.p+'</span></div>'
+    +'<div class="ov-card-title">'+ev.r+'</div>'
+    +'<div class="ov-card-meta"><span>'+(eventFlag(ev.r)?eventFlag(ev.r)+' ':'')+ev.c+' &middot; '+ev.p+'</span></div>'
     +'</div>'
     +'<div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap"><span class="ov-badge" style="border:1px solid '+badgeCol+'40;color:'+badgeCol+';background:transparent;font-size:10px;padding:3px 10px;border-radius:100px;">'+dl+'</span>'+circHtml+'</div>'
     +'</div>'
@@ -1073,7 +1074,7 @@ function ovSelect(idx){
     +(charts2Html?'<div class="ov-charts">'+charts2Html+'</div>':'')
     +buildOvSponsoring(ev.r,ac)
     +'</div>';
-  document.getElementById('ov-card-wrap').innerHTML=html;
+  document.getElementById('ov-card-wrap').innerHTML=html;twemojify(document.getElementById('ov-card-wrap'));
 
   // --- Render charts ---
   if(ovChartF)ovChartF.destroy();ovChartF=null;
@@ -1438,13 +1439,13 @@ function filterTable(){
     var bl=r.d==='MARATHON'?'Marathon':r.d==='SEMI'?'Semi':r.d==='AUTRE'?'Autre':'10 km';
     var raceColor=colDist(r);
     var cBadges=circBadges(r);
-    html+='<tr><td>'+r.p+'</td><td>'+r.c+'</td>'
+    html+='<tr><td>'+r.p+'</td><td>'+(eventFlag(r.r)?eventFlag(r.r)+' ':'')+r.c+'</td>'
       +'<td><span class="badge" style="background:'+raceColor+'18;color:'+raceColor+'">'+bl+'</span>'+cBadges+'</td>'
-      +'<td style="color:'+raceColor+'" title="'+r.r+'">'+(eventFlag(r.r)?eventFlag(r.r)+' ':'')+r.r+'</td>'
+      +'<td style="color:'+raceColor+'" title="'+r.r+'">'+r.r+'</td>'
       +globalYears.map(function(y){var v=(r.hist||{})[y];var isFirst=r.fy&&y===r.fy;var starHtml=isFirst?'<span style="position:absolute;top:1px;left:2px;font-size:7px;color:'+raceColor+';opacity:0.7">\u2605</span>':'';if(v===-3)return'<td style="color:var(--text3);opacity:0.2">\u00b7</td>';if(v===-1)return'<td style="color:#FF4A6B;font-size:10px;font-style:italic;position:relative">'+starHtml+'Annul\u00e9</td>';if(v===-2)return'<td style="color:'+raceColor+';font-size:10px;font-style:italic;position:relative">'+starHtml+'Elite Only</td>';return'<td style="'+(v?'color:var(--text)':'')+';position:relative">'+starHtml+(v?fmtFull(v):'\u2014')+'</td>';}).join('')
       +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
   });
-  document.getElementById('table-body').innerHTML=html;
+  document.getElementById('table-body').innerHTML=html;twemojify(document.getElementById('table-body'));
   if(frozen)applyFrozen(tbl);
   var cnt=f.length;
   // Count active filters
@@ -1990,9 +1991,9 @@ function renderCompare(){
 
   var html='<div class="cmp-wrap" style="--cmp-col-a:'+colA+';--cmp-col-b:'+colB+';">'
     +'<div class="cmp-header">'
-    +'<div class="cmp-header-cell"><div class="cmp-race-name" style="color:'+colA+'">'+(eventFlag(a.r)?eventFlag(a.r)+' ':'')+a.r+'</div><div class="cmp-race-meta">'+a.c+' &middot; '+a.p+' &middot; '+distA+circBadges(a)+'</div></div>'
+    +'<div class="cmp-header-cell"><div class="cmp-race-name" style="color:'+colA+'">'+a.r+'</div><div class="cmp-race-meta">'+(eventFlag(a.r)?eventFlag(a.r)+' ':'')+a.c+' &middot; '+a.p+' &middot; '+distA+circBadges(a)+'</div></div>'
     +'<div class="cmp-header-cell ctr"><div class="cmp-mid-label">Course</div></div>'
-    +'<div class="cmp-header-cell" style="text-align:right"><div class="cmp-race-name" style="color:'+colB+'">'+(eventFlag(b.r)?eventFlag(b.r)+' ':'')+b.r+'</div><div class="cmp-race-meta">'+b.c+' &middot; '+b.p+' &middot; '+distB+circBadges(b)+'</div></div>'
+    +'<div class="cmp-header-cell" style="text-align:right"><div class="cmp-race-name" style="color:'+colB+'">'+b.r+'</div><div class="cmp-race-meta">'+(eventFlag(b.r)?eventFlag(b.r)+' ':'')+b.c+' &middot; '+b.p+' &middot; '+distB+circBadges(b)+'</div></div>'
     +'</div>';
 
   html+=cmpR(finLblA,finLblB,'Finishers',winFin,'','');
@@ -2028,7 +2029,7 @@ function renderCompare(){
   // Chart
   html+='<div style="margin-top:1.5rem;"><div class="ov-chart-label" style="margin-bottom:8px">Evolution comparee des finishers</div><div style="position:relative;height:200px;"><canvas id="cmp-chart"></canvas></div></div>';
 
-  document.getElementById('cmp-result').innerHTML=html;
+  document.getElementById('cmp-result').innerHTML=html;twemojify(document.getElementById('cmp-result'));
 
   // Store refs for evo window updates
   window._cmpA=a;window._cmpB=b;window._cmpColA=colA;window._cmpColB=colB;
@@ -2963,6 +2964,8 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js" integrity="sha384-dug+JxfBvklEQdJ4AYuBBAIScUz0bVN73xpy273gcAwHjb3qI0fXmuYNaNfdyYJG" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+<style>img.emoji{{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-0.1em;display:inline-block}}</style>
 <script>
 window.onerror=function(msg,url,line,col,err){{document.body.insertAdjacentHTML('afterbegin','<div style="background:#fee;color:#c00;padding:12px;font-family:monospace;font-size:12px;position:fixed;top:0;left:0;right:0;z-index:99999">JS Error: '+msg+' (line '+line+':'+col+')</div>');console.error('Dashboard error:',msg,line,col,err);}};
 {js_data}
