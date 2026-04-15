@@ -1,0 +1,97 @@
+{
+  "deleted": [
+    {
+      "row": 307,
+      "event": "Toronto Marathon",
+      "dist": "MARATHON",
+      "city": "Toronto "
+    },
+    {
+      "row": 308,
+      "event": "Toronto Marathon",
+      "dist": "SEMI",
+      "city": "Toronto "
+    },
+    {
+      "row": 309,
+      "event": "Toronto Marathon",
+      "dist": "10KM",
+      "city": "Toronto "
+    },
+    {
+      "row": 310,
+      "event": "Toronto Marathon",
+      "dist": "5KM",
+      "city": "Toronto "
+    },
+    {
+      "row": 1040,
+      "event": "Waterfront Half Marathon",
+      "dist": "SEMI",
+      "city": "Auckland"
+    },
+    {
+      "row": 1041,
+      "event": "Waterfront Half Marathon",
+      "dist": "10KM",
+      "city": "Auckland"
+    },
+    {
+      "row": 1042,
+      "event": "Waterfront Half Marathon",
+      "dist": "5KM",
+      "city": "Auckland"
+    }
+  ],
+  "renamed": [
+    {
+      "old": "Singapore Compression Run",
+      "new": "2XU Compression Run",
+      "rows": 3
+    },
+    {
+      "old": "Plus500 City Half Marathon Dubai 2026",
+      "new": "Plus500 City Half Marathon",
+      "rows": 1
+    },
+    {
+      "old": "Swachh Navy Mumbai Half Marathon",
+      "new": "Swachh Navi Mumbai Half Marathon",
+      "rows": 4
+    },
+    {
+      "old": "New Delhi Marathon",
+      "new": "Cognizant New Delhi Marathon",
+      "rows": 4
+    },
+    {
+      "old": "Global 10K New Delhi",
+      "new": "Tuffman Global 10K New Delhi",
+      "rows": 2
+    },
+    {
+      "old": "Rewe Women's Run",
+      "new": "REWE Women's Run Hamburg",
+      "rows": 2
+    }
+  ],
+  "skipped_clash": [],
+  "unchanged": [
+    "Rome 15K",
+    "Winter Run Istanbul",
+    "Bank of China Beijing Half Marathon",
+    "15KM de Rotterdam",
+    "Women's day Run",
+    "Mumbai Half Marathon",
+    "Mumbai Fast Marathon",
+    "Mumbai Monsoon Marathon",
+    "Aamchi Mumbai Half Marathon",
+    "Mumbai Midnight 10K",
+    "Zydus Pinkathon Mumbai",
+    "Delhi Heroes Half Marathon",
+    "Delhi Stride Half Marathon",
+    "Delhi Legends Half Marathon"
+  ],
+  "final_rows": 1927,
+  "final_events": 859
+}
