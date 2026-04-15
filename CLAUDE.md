@@ -1,5 +1,72 @@
 # Dashboard Running - Consignes de projet
 
+## Méthode primordiale — Scraping pages de résultats
+
+### RÈGLE ABSOLUE pour toute recherche de données :
+Quand une URL de page de résultats est disponible (API ou page web), TOUJOURS scraper directement pour calculer les 4D :
+
+1. **FINISHERS** : compter le nombre total de lignes dans le classement général (hors virtual, hors distances > 42.195km)
+2. **TEMPS MOYEN** : calculer la moyenne des temps officiels de TOUS les finishers
+3. **CHRONO VAINQUEUR HOMME** : premier temps homme dans le classement
+4. **CHRONO VAINQUEUR FEMME** : premier temps femme dans le classement
+
+### Priorité des sources (dans l'ordre) :
+1. API JSON directe (Sporthive, Tracx, TimeTo...) → extraire classificationsCount + résultats
+2. URL page de résultats fournie par l'utilisateur → scraper avec requests + BeautifulSoup/regex
+3. web_search "{nom événement} résultats {année}" → premier lien = page officielle → scraper
+4. Wikipedia / presse → en dernier recours seulement
+
+### Pattern de scraping standard :
+```python
+import requests, re
+from bs4 import BeautifulSoup
+
+def scrape_results(url):
+    resp = requests.get(url, headers={
+        "User-Agent": "Mozilla/5.0",
+        "Accept-Language": "fr-FR,fr;q=0.9,en;q=0.8"
+    }, timeout=30)
+
+    # Chercher le total dans la page
+    patterns = [
+        r'(\d[\d\s,\.]+)\s*(finishers|participants|classés|arrivants|coureurs)',
+        r'total[^\d]*(\d[\d\s,\.]+)',
+        r'"total"\s*:\s*(\d+)',
+        r'"count"\s*:\s*(\d+)',
+        r'(\d+)\s*résultats',
+        r'classificationsCount["\s:]+(\d+)',
+    ]
+    for p in patterns:
+        m = re.search(p, resp.text, re.IGNORECASE)
+        if m:
+            val = int(re.sub(r'[\s,\.]', '', m.group(1)))
+            if val > 100:
+                return val
+
+    # Si pas de total → compter les lignes résultats
+    soup = BeautifulSoup(resp.text, 'html.parser')
+    rows = soup.select('table tbody tr, .result-row, .runner-row')
+    if len(rows) > 100:
+        return len(rows)
+    return None
+```
+
+### Pour les APIs JSON (pattern standard) :
+```python
+# Chercher l'API sous-jacente dans le HTML
+api_patterns = [
+    r'"apiUrl"\s*:\s*"([^"]+)"',
+    r'fetch\(["\']([^"\']+/results[^"\']*)["\']',
+    r'axios\.get\(["\']([^"\']+)["\']',
+]
+# Puis appeler l'API directement
+```
+
+### Règle anti-estimation :
+- Jamais utiliser un chiffre mentionné dans un article de presse sans vérifier la source officielle
+- Toujours préférer le compte exact des lignes du classement officiel
+- Rejeter tout chiffre rond (% 500 == 0)
+
 ## Architecture des donnees
 
 ### Source de verite pour le dashboard
