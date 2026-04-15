@@ -1412,7 +1412,7 @@ function filterTable(){
       if(sz===5000&&(peak<5000||peak>=10000))return false;
       if(sz===0&&peak>=5000)return false;
     }
-    return globalYears.some(function(y){return(r.hist||{})[y];});
+    return true;
   });
   // Sort
   var sortMode=document.getElementById('sort-data').value;

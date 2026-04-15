@@ -1,0 +1,51 @@
+{
+  "c1_deleted": [
+    {
+      "row": 303,
+      "event": "Semi marathon de Lisbonne",
+      "dist": "SEMI"
+    }
+  ],
+  "c2_cleared": [
+    {
+      "row": 3,
+      "event": "Walt Disney World Marathon Weekend",
+      "dist": "SEMI",
+      "year1": 2015,
+      "year2": 2016,
+      "value": 21495
+    },
+    {
+      "row": 83,
+      "event": "Bank of America Chicago Marathon",
+      "dist": "MARATHON",
+      "year1": 2004,
+      "year2": 2005,
+      "value": 33125
+    },
+    {
+      "row": 98,
+      "event": "EDP Maratona de Lisboa",
+      "dist": "MARATHON",
+      "year1": 2024,
+      "year2": 2025,
+      "value": 9600
+    },
+    {
+      "row": 99,
+      "event": "Hyundai Meia Maratona ",
+      "dist": "SEMI",
+      "year1": 2024,
+      "year2": 2025,
+      "value": 7635
+    },
+    {
+      "row": 192,
+      "event": "5km Harmonie Mutuelle",
+      "dist": "AUTRE",
+      "year1": 2018,
+      "year2": 2019,
+      "value": 846
+    }
+  ]
+}
