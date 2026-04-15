@@ -1,0 +1,382 @@
+{
+  "flags_added": [
+    {
+      "event": "Walt Disney World Marathon Weekend",
+      "city": "Orlando",
+      "pays": "Etats-Unis",
+      "flag": "🇺🇸"
+    },
+    {
+      "event": "Disney Princess Half Marathon",
+      "city": "Orlando",
+      "pays": "Etats-Unis",
+      "flag": "🇺🇸"
+    },
+    {
+      "event": "GetPro Bath Half",
+      "city": "Bath",
+      "pays": "Royaume-Uni",
+      "flag": "🇬🇧"
+    },
+    {
+      "event": "Göteborgsvarvet ",
+      "city": "Göteborg (Suède)",
+      "pays": "Suède",
+      "flag": "🇸🇪"
+    },
+    {
+      "event": "Bangsaen10",
+      "city": "Chon Buri",
+      "pays": "Thailande",
+      "flag": "🇹🇭"
+    },
+    {
+      "event": "Maratón de la Ciudad de México Telcel",
+      "city": "Mexico City",
+      "pays": "Mexique",
+      "flag": "🇲🇽"
+    },
+    {
+      "event": "Vedanta Delhi Half Marathon",
+      "city": "New Delhi",
+      "pays": "Inde",
+      "flag": "🇮🇳"
+    },
+    {
+      "event": "Hyundai Meia Maratona ",
+      "city": "Lisbonne",
+      "pays": "Portugal",
+      "flag": "🇵🇹"
+    },
+    {
+      "event": "Bangsaen42 Chonburi Marathon",
+      "city": "Chon Buri",
+      "pays": "Thailande",
+      "flag": "🇹🇭"
+    },
+    {
+      "event": "Bangsaen21",
+      "city": "Chon Buri",
+      "pays": "Thailande",
+      "flag": "🇹🇭"
+    },
+    {
+      "event": "Rock 'n' Roll Running Series Mexico City",
+      "city": "Mexico City",
+      "pays": "Mexique",
+      "flag": "🇲🇽"
+    },
+    {
+      "event": "Cowtown Marathon",
+      "city": "Fort Worth",
+      "pays": "Etats-Unis",
+      "flag": "🇺🇸"
+    },
+    {
+      "event": "Silicon Valley Turkey Trot",
+      "city": "San Jose",
+      "pays": "Etats-Unis",
+      "flag": "🇺🇸"
+    },
+    {
+      "event": "Grandma's Marathon",
+      "city": "Duluth",
+      "pays": "Etats-Unis",
+      "flag": "🇺🇸"
+    },
+    {
+      "event": "Detroit Marathon",
+      "city": "Detroit",
+      "pays": "Etats-Unis",
+      "flag": "🇺🇸"
+    },
+    {
+      "event": "Crescent City Classic",
+      "city": "New Orleans",
+      "pays": "Etats-Unis",
+      "flag": "🇺🇸"
+    },
+    {
+      "event": "Hoag OC Marathon",
+      "city": "Newport Beach",
+      "pays": "Etats-Unis",
+      "flag": "🇺🇸"
+    },
+    {
+      "event": "Shamrock Marathon",
+      "city": "Virginia Beach",
+      "pays": "Etats-Unis",
+      "flag": "🇺🇸"
+    },
+    {
+      "event": "Boilermaker Road Race",
+      "city": "Utica",
+      "pays": "Etats-Unis",
+      "flag": "🇺🇸"
+    },
+    {
+      "event": "Falmouth Road Race",
+      "city": "Falmouth",
+      "pays": "Etats-Unis",
+      "flag": "🇺🇸"
+    },
+    {
+      "event": "California International Marathon",
+      "city": "Sacramento",
+      "pays": "Etats-Unis",
+      "flag": "🇺🇸"
+    },
+    {
+      "event": "AJ Bell Great North 10K",
+      "city": "Gateshead",
+      "pays": "Royaume-Uni",
+      "flag": "🇬🇧"
+    },
+    {
+      "event": "AMGEN Singelloop Breda 10km",
+      "city": "Breda",
+      "pays": "Pays-Bas",
+      "flag": "🇳🇱"
+    },
+    {
+      "event": "Paris-Versailles La Grande Classique",
+      "city": "Versailles",
+      "pays": "France",
+      "flag": "🇫🇷"
+    },
+    {
+      "event": "Meia Maratona Internacional do Rio de Janeiro",
+      "city": "Rio de Janeiro",
+      "pays": "Brésil",
+      "flag": "🇧🇷"
+    },
+    {
+      "event": "Marathon München by Brooks",
+      "city": "Munich",
+      "pays": "Allemagne",
+      "flag": "🇩🇪"
+    },
+    {
+      "event": "City-Bay Fun Run",
+      "city": "Adelaide",
+      "pays": "Australie",
+      "flag": "🇦🇺"
+    },
+    {
+      "event": "Doha Marathon by Ooredoo",
+      "city": "Doha",
+      "pays": "Qatar",
+      "flag": "🇶🇦"
+    },
+    {
+      "event": "10km HOKA Paris Centre",
+      "city": "Paris",
+      "pays": "France",
+      "flag": "🇫🇷"
+    },
+    {
+      "event": "Wizz Air Venicemarathon",
+      "city": "Venise",
+      "pays": "Italie",
+      "flag": "🇮🇹"
+    },
+    {
+      "event": "2XU Compression Run",
+      "city": "Singapour",
+      "pays": "Singapour",
+      "flag": "🇸🇬"
+    },
+    {
+      "event": "Maratona di Ravenna Città d'Arte",
+      "city": "Ravenna",
+      "pays": "Italie",
+      "flag": "🇮🇹"
+    },
+    {
+      "event": "Cognizant New Delhi Marathon",
+      "city": "New Delhi",
+      "pays": "Inde",
+      "flag": "🇮🇳"
+    },
+    {
+      "event": "Athora Bruges Marathon",
+      "city": "Bruges",
+      "pays": "Belgique",
+      "flag": "🇧🇪"
+    },
+    {
+      "event": "Tranquilidade Meia Maratona dos Descobrimentos",
+      "city": "Lisbonne",
+      "pays": "Portugal",
+      "flag": "🇵🇹"
+    },
+    {
+      "event": "Tuffman Global 10K New Delhi",
+      "city": "New Delhi",
+      "pays": "Inde",
+      "flag": "🇮🇳"
+    },
+    {
+      "event": "EVA Air Brisbane Marathon Festival",
+      "city": "Brisbane",
+      "pays": "Australie",
+      "flag": "🇦🇺"
+    },
+    {
+      "event": "Montepio Meia Maratona de Cascais",
+      "city": "Cascais",
+      "pays": "Portugal",
+      "flag": "🇵🇹"
+    },
+    {
+      "event": "EDP Maratona do Porto",
+      "city": "Porto",
+      "pays": "Portugal",
+      "flag": "🇵🇹"
+    },
+    {
+      "event": "Hyundai Meia Maratona do Porto",
+      "city": "Porto",
+      "pays": "Portugal",
+      "flag": "🇵🇹"
+    },
+    {
+      "event": "Real Insurance Sydney Harbour 10K",
+      "city": "Sydney",
+      "pays": "Australie",
+      "flag": "🇦🇺"
+    },
+    {
+      "event": "Maratona Monumental de Brasília",
+      "city": "Brasilia",
+      "pays": "Brésil",
+      "flag": "🇧🇷"
+    },
+    {
+      "event": "REWE Women's Run Hamburg",
+      "city": "Hambourg",
+      "pays": "Allemagne",
+      "flag": "🇩🇪"
+    },
+    {
+      "event": "Swachh Navi Mumbai Half Marathon",
+      "city": "Mumbai",
+      "pays": "Inde",
+      "flag": "🇮🇳"
+    },
+    {
+      "event": "The Cardiff MoRun",
+      "city": "Cardiff",
+      "pays": "Royaume-Uni",
+      "flag": "🇬🇧"
+    },
+    {
+      "event": "Miyun Eco Marathon",
+      "city": "Pekin",
+      "pays": "Chine",
+      "flag": "🇨🇳"
+    },
+    {
+      "event": "Les 10 km de Marseille by ASPTT",
+      "city": "Marseille",
+      "pays": "France",
+      "flag": "🇫🇷"
+    },
+    {
+      "event": "Alegro Meia Maratona de Setúbal",
+      "city": "Setubal",
+      "pays": "Portugal",
+      "flag": "🇵🇹"
+    },
+    {
+      "event": "Marina Home Dubai Creek Striders Half Marathon",
+      "city": "Dubai",
+      "pays": "Emirats Arabes Unis",
+      "flag": "🇦🇪"
+    },
+    {
+      "event": "Plus500 City Half Marathon",
+      "city": "Dubai",
+      "pays": "Emirats Arabes Unis",
+      "flag": "🇦🇪"
+    },
+    {
+      "event": "Expo City Dubai Half Marathon",
+      "city": "Dubai",
+      "pays": "Emirats Arabes Unis",
+      "flag": "🇦🇪"
+    }
+  ],
+  "flags_still_missing": [
+    {
+      "event": "\tIrish Life Dublin Marathon",
+      "city": "Dublin",
+      "reason": "unknown"
+    },
+    {
+      "event": "Vhi Women's Mini Marathon",
+      "city": "Dublin",
+      "reason": "unknown"
+    },
+    {
+      "event": "Maratona Internacional de São Paulo",
+      "city": "Sao Paulo",
+      "reason": "unknown"
+    },
+    {
+      "event": "Meia Maratona de Braga",
+      "city": "Braga",
+      "reason": "unknown"
+    },
+    {
+      "event": "Meia Maratona de Almada",
+      "city": "Almada",
+      "reason": "unknown"
+    },
+    {
+      "event": "Padova Marathon",
+      "city": "Aveira",
+      "reason": "unknown"
+    }
+  ],
+  "multicity_deleted": [
+    {
+      "row": 1447,
+      "race": "Sekhon Indian Air Force Marathon",
+      "city": "New Delhi (+ 60 locations)",
+      "dist": "SEMI"
+    },
+    {
+      "row": 1448,
+      "race": "Sekhon Indian Air Force Marathon",
+      "city": "New Delhi (+ 60 locations)",
+      "dist": "10KM"
+    },
+    {
+      "row": 1449,
+      "race": "Sekhon Indian Air Force Marathon",
+      "city": "New Delhi (+ 60 locations)",
+      "dist": "5KM"
+    },
+    {
+      "row": 1463,
+      "race": "Zydus Pinkathon Mumbai",
+      "city": "6 cities (Mumbai, Bengaluru, Hyderabad, Delhi, Pune and Chennai)",
+      "dist": "SEMI"
+    },
+    {
+      "row": 1464,
+      "race": "Zydus Pinkathon Mumbai",
+      "city": "6 cities (Mumbai, Bengaluru, Hyderabad, Delhi, Pune and Chennai)",
+      "dist": "10KM"
+    },
+    {
+      "row": 1465,
+      "race": "Zydus Pinkathon Mumbai",
+      "city": "6 cities (Mumbai, Bengaluru, Hyderabad, Delhi, Pune and Chennai)",
+      "dist": "AUTRE"
+    }
+  ],
+  "final_rows": 1920,
+  "final_events": 856
+}
