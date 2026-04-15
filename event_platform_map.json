@@ -48,21 +48,39 @@
     "platform_id": "GR-NORTH",
     "distance": "SEMI",
     "name": "AJ Bell Great North Run",
-    "country": "GBR"
+    "country": "GBR",
+    "rtrt_years_available": [
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ]
   },
   "aj bell great manchester run": {
     "platform": "rtrt",
     "platform_id": "GR-MANCHESTER",
     "distance": "SEMI",
     "name": "AJ Bell Great Manchester Run",
-    "country": "GBR"
+    "country": "GBR",
+    "rtrt_years_available": [
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ]
   },
   "aj bell great bristol run": {
     "platform": "rtrt",
     "platform_id": "GR-BRISTOL",
     "distance": "SEMI",
     "name": "AJ Bell Great Bristol Run",
-    "country": "GBR"
+    "country": "GBR",
+    "rtrt_years_available": [
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ]
   },
   "adidas manchester marathon": {
     "platform": "tracx",
@@ -142,7 +160,8 @@
     "country": "GBR",
     "distance": "MARATHON",
     "name": "TCS London Marathon",
-    "marathonview_id": "57"
+    "marathonview_id": "57",
+    "event_codes_by_year": {}
   },
   "bmw berlin marathon": {
     "platform": "mikatiming",
@@ -151,7 +170,8 @@
     "country": "GER",
     "distance": "MARATHON",
     "name": "BMW Berlin Marathon",
-    "marathonview_id": "55"
+    "marathonview_id": "55",
+    "event_codes_by_year": {}
   },
   "bank of america chicago marathon": {
     "platform": "mikatiming",
@@ -239,7 +259,13 @@
     "event_code": "MAL",
     "country": "GER",
     "distance": "MARATHON",
-    "name": "Haspa Marathon Hamburg"
+    "name": "Haspa Marathon Hamburg",
+    "event_codes_by_year": {
+      "2022": "MAL",
+      "2023": "MAL",
+      "2024": "MAL",
+      "2025": "MAL"
+    }
   },
   "stockholm marathon": {
     "platform": "mikatiming",
@@ -247,7 +273,13 @@
     "event_code": "MAL",
     "country": "SWE",
     "distance": "MARATHON",
-    "name": "Stockholm Marathon"
+    "name": "Stockholm Marathon",
+    "event_codes_by_year": {
+      "2022": "MAL",
+      "2023": "MAL",
+      "2024": "MAL",
+      "2025": "MAL"
+    }
   },
   "athens marathon": {
     "platform": "mikatiming",
@@ -255,7 +287,13 @@
     "event_code": "MAL",
     "country": "GRE",
     "distance": "MARATHON",
-    "name": "Athens Marathon"
+    "name": "Athens Marathon",
+    "event_codes_by_year": {
+      "2022": "MAL",
+      "2023": "MAL",
+      "2024": "MAL",
+      "2025": "MAL"
+    }
   },
   "vienna city marathon": {
     "platform": "mikatiming",
@@ -263,7 +301,13 @@
     "event_code": "MAL",
     "country": "AUT",
     "distance": "MARATHON",
-    "name": "Vienna City Marathon"
+    "name": "Vienna City Marathon",
+    "event_codes_by_year": {
+      "2022": "MAL",
+      "2023": "MAL",
+      "2024": "MAL",
+      "2025": "MAL"
+    }
   },
   "brighton marathon": {
     "platform": "mikatiming",
@@ -271,7 +315,13 @@
     "event_code": "MAL",
     "country": "GBR",
     "distance": "MARATHON",
-    "name": "Brighton Marathon"
+    "name": "Brighton Marathon",
+    "event_codes_by_year": {
+      "2022": "MAL",
+      "2023": "MAL",
+      "2024": "MAL",
+      "2025": "MAL"
+    }
   },
   "mainova frankfurt marathon": {
     "platform": "mikatiming",
@@ -496,7 +546,8 @@
     "event_code": "HML",
     "country": "GER",
     "distance": "SEMI",
-    "name": "Generali Berlin Half Marathon"
+    "name": "Generali Berlin Half Marathon",
+    "event_codes_by_year": {}
   },
   "nn san silvestre vallecana": {
     "platform": null,
@@ -599,14 +650,25 @@
     "country": "GBR",
     "distance": "SEMI",
     "name": "AJ Bell Great Birmingham Run",
-    "platform_id": "GR-BIRMINGHAM"
+    "platform_id": "GR-BIRMINGHAM",
+    "rtrt_years_available": [
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ]
   },
   "aj bell great south run": {
     "platform": "rtrt",
     "country": "GBR",
     "distance": "AUTRE",
     "name": "AJ Bell Great South Run",
-    "platform_id": "GR-SOUTH"
+    "platform_id": "GR-SOUTH",
+    "rtrt_years_available": [
+      "2022",
+      "2023",
+      "2025"
+    ]
   },
   "royal parks half marathon": {
     "platform": null,

@@ -4,12 +4,6 @@
   "no_data": [
     {
       "event": "Standard Chartered Hong Kong Half Marathon",
-      "year": 2021,
-      "platform": "tracx",
-      "reason": "no data"
-    },
-    {
-      "event": "Standard Chartered Hong Kong Half Marathon",
       "year": 2022,
       "platform": "tracx",
       "reason": "no data"
@@ -27,123 +21,15 @@
       "reason": "no data"
     },
     {
-      "event": "NN CPC Loop Den Haag - Half Marathon",
-      "year": 2021,
-      "platform": "sporthive",
-      "reason": "sporthive: platform_id manquant pour 2021"
-    },
-    {
-      "event": "London Landmarks Half Marathon",
-      "year": 2021,
-      "platform": "tracx",
-      "reason": "no data"
-    },
-    {
       "event": "London Landmarks Half Marathon",
       "year": 2022,
       "platform": "tracx",
-      "reason": "no data"
-    },
-    {
-      "event": "Statesman Capitol 10K",
-      "year": 2021,
-      "platform": "athlinks",
-      "reason": "no data"
-    },
-    {
-      "event": "Ukrop's Monument Avenue 10K",
-      "year": 2021,
-      "platform": "athlinks",
-      "reason": "no data"
-    },
-    {
-      "event": "BOLDERBoulder 10K",
-      "year": 2021,
-      "platform": "athlinks",
-      "reason": "no data"
-    },
-    {
-      "event": "AJ Bell Great Manchester Run",
-      "year": 2021,
-      "platform": "rtrt",
-      "reason": "no data"
-    },
-    {
-      "event": "Adidas 10K Paris",
-      "year": 2021,
-      "platform": "timeto",
-      "reason": "no data"
-    },
-    {
-      "event": "TCS Sydney Marathon presented by ASICS",
-      "year": 2021,
-      "platform": "tracx",
-      "reason": "no data"
-    },
-    {
-      "event": "Marine Corps Marathon",
-      "year": 2021,
-      "platform": "athlinks",
-      "reason": "no data"
-    },
-    {
-      "event": "Cardiff Half Marathon",
-      "year": 2021,
-      "platform": "rtrt",
       "reason": "no data"
     },
     {
       "event": "Run in Lyon",
       "year": 2022,
       "platform": "timeto",
-      "reason": "no data"
-    },
-    {
-      "event": "Broad Street Run",
-      "year": 2021,
-      "platform": "athlinks",
-      "reason": "no data"
-    },
-    {
-      "event": "Lilac Bloomsday Run",
-      "year": 2021,
-      "platform": "athlinks",
-      "reason": "no data"
-    },
-    {
-      "event": "Dick's Pittsburgh Marathon",
-      "year": 2021,
-      "platform": "athlinks",
-      "reason": "no data"
-    },
-    {
-      "event": "Bay to Breakers",
-      "year": 2021,
-      "platform": "athlinks",
-      "reason": "no data"
-    },
-    {
-      "event": "Gasparilla Distance Classic",
-      "year": 2021,
-      "platform": "athlinks",
-      "reason": "no data"
-    },
-    {
-      "event": "Mainova Frankfurt Marathon",
-      "year": 2021,
-      "platform": "mikatiming",
-      "reason": "no finishers in response"
-    },
-    {
-      "event": "Dam tot Damloop",
-      "year": 2021,
-      "platform": "tracx",
-      "reason": "no data"
-    },
-    {
-      "event": "AJ Bell Great Birmingham Run",
-      "year": 2021,
-      "platform": "rtrt",
       "reason": "no data"
     },
     {
