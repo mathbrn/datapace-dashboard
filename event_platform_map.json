@@ -97,6 +97,13 @@
     "name": "ACSE - La Strasbourgeoise",
     "platform": "chronocompetition"
   },
+  "acse - les courses de strasbourg eurométropole": {
+    "country": "FRA",
+    "distance": "SEMI",
+    "name": "ACSE - Les courses de Strasbourg Eurométropole",
+    "platform": "custom",
+    "url": "classements.acse-strasbourg.eu"
+  },
   "adac marathon de hannover": {
     "country": "DEU",
     "distance": "MARATHON",
@@ -116,6 +123,13 @@
     "name": "Adidas Manchester Marathon",
     "platform": "tracx",
     "platform_id": "manchester-marathon"
+  },
+  "adidas runners city night": {
+    "country": "DEU",
+    "distance": "10KM",
+    "name": "Adidas Runners city night",
+    "platform": "custom",
+    "url": "berlin-citynight.de"
   },
   "agra taj half marathon": {
     "country": "IND",
@@ -438,6 +452,12 @@
     "racetec_cid": "90",
     "racetec_rid": "593"
   },
+  "brooks marathon du lac d’annecy": {
+    "country": "FRA",
+    "distance": "MARATHON",
+    "name": "Brooks Marathon du Lac d’Annecy",
+    "platform": "yaka-chrono"
+  },
   "calgary marathon": {
     "country": "CAN",
     "distance": "SEMI",
@@ -522,6 +542,13 @@
     "name": "Credit Union Cherry Blossom",
     "platform": null
   },
+  "cursa dels nassos": {
+    "country": "ESP",
+    "distance": "10KM",
+    "name": "Cursa dels Nassos",
+    "platform": "custom",
+    "url": "cursadenassos.barcelona"
+  },
   "cursa el corte ingles": {
     "country": "ESP",
     "distance": "10KM",
@@ -533,6 +560,13 @@
     "distance": "AUTRE",
     "name": "Dam tot Damloop",
     "platform": "tracx"
+  },
+  "deutsche post marathon bonn": {
+    "country": "DEU",
+    "distance": "MARATHON",
+    "name": "Deutsche Post Marathon Bonn",
+    "platform": "raceresult",
+    "raceresult_id": "304710"
   },
   "dick's pittsburgh marathon": {
     "country": "USA",
@@ -605,6 +639,12 @@
     "name": "Ekiden du Stade Français",
     "platform": "raceresult",
     "raceresult_id": "344594"
+  },
+  "enschede marathon": {
+    "country": "NLD",
+    "distance": "MARATHON",
+    "name": "Enschede Marathon",
+    "platform": "uitslagen"
   },
   "euro marathon metz": {
     "country": "FRA",
@@ -698,6 +738,12 @@
     "name": "Great Ethiopan Run",
     "platform": "custom",
     "url": "ethiopianrun.org"
+  },
+  "greifenseelauf": {
+    "country": "CHE",
+    "distance": "SEMI",
+    "name": "Greifenseelauf",
+    "platform": "trackmaxx"
   },
   "guadalajara half marathon": {
     "country": "MEX",
@@ -885,6 +931,13 @@
     "platform": "sportstimingsolutions",
     "sts_event_id": "84736"
   },
+  "la corrida crédit agricole toulouse": {
+    "country": "FRA",
+    "distance": "10KM",
+    "name": "La Corrida Crédit Agricole Toulouse",
+    "platform": "custom",
+    "url": "corridapedestredetoulouse.com"
+  },
   "la course du château de vincennes": {
     "country": "FRA",
     "distance": "10KM",
@@ -896,6 +949,13 @@
     "distance": "AUTRE",
     "name": "La liégeoise Women Only",
     "platform": "ultratiming"
+  },
+  "la parisienne": {
+    "country": "FRA",
+    "distance": "10KM",
+    "name": "La Parisienne",
+    "platform": "custom",
+    "url": "la-parisienne.net"
   },
   "la trenta trentina": {
     "country": "ITA",
@@ -930,6 +990,13 @@
     "name": "Lilac Bloomsday Run",
     "platform": "athlinks"
   },
+  "liverpool half marathon": {
+    "country": "GBR",
+    "distance": "SEMI",
+    "name": "Liverpool Half Marathon",
+    "platform": "raceresult",
+    "raceresult_id": "325061"
+  },
   "ljubljana marathon": {
     "country": "SVN",
     "distance": "SEMI",
@@ -958,6 +1025,12 @@
     "platform": "mikatiming",
     "subdomain": "live.frankfurt-marathon.com"
   },
+  "marathon de biarritz": {
+    "country": "FRA",
+    "distance": "MARATHON",
+    "name": "Marathon de Biarritz",
+    "platform": "pyreneeschrono"
+  },
   "marathon de la liberté - normandy running festival": {
     "country": "FRA",
     "distance": "MARATHON",
@@ -970,6 +1043,12 @@
     "name": "Marathon de la mer",
     "platform": "custom",
     "url": "marathondelamer.com"
+  },
+  "marathon de la rochelle serge vigot": {
+    "country": "FRA",
+    "distance": "MARATHON",
+    "name": "Marathon de La Rochelle Serge Vigot",
+    "platform": "timeto"
   },
   "marathon de lille": {
     "chronorace_event_id": "1188009429016080",
@@ -997,6 +1076,13 @@
     "name": "Marathon des Grands Crus",
     "platform": "raceresult",
     "raceresult_id": "365121"
+  },
+  "marathon international de la côte d’amour amarris": {
+    "country": "FRA",
+    "distance": "MARATHON",
+    "name": "Marathon International de la Côte d’Amour Amarris",
+    "platform": "custom",
+    "url": "marathondelacotedamour.com"
   },
   "marathon international du beaujolais": {
     "country": "FRA",
@@ -1095,6 +1181,12 @@
     "runthrough_cid": "16487",
     "runthrough_rid": "5349"
   },
+  "midwintern marathon": {
+    "country": "NLD",
+    "distance": "MARATHON",
+    "name": "Midwintern Marathon",
+    "platform": "uitslagen"
+  },
   "milano marathon": {
     "country": "ITA",
     "distance": "MARATHON",
@@ -1106,6 +1198,12 @@
     "distance": "SEMI",
     "name": "Mitja Marato Barcelona by Brooks",
     "platform": "sportmaniacs"
+  },
+  "montpellier run festival": {
+    "country": "FRA",
+    "distance": "MARATHON",
+    "name": "Montpellier Run Festival",
+    "platform": "timing4you"
   },
   "movistar madrid medio maraton": {
     "country": "ESP",
@@ -1392,6 +1490,13 @@
     "platform": "custom",
     "url": "saosilvestredelisboa.com"
   },
+  "sao silvestre do porto": {
+    "country": "PRT",
+    "distance": "10KM",
+    "name": "Sao Silvestre do Porto",
+    "platform": "custom",
+    "url": "runporto.com"
+  },
   "saucony 10km de le tour eiffel": {
     "country": "FRA",
     "distance": "10KM",
@@ -1410,6 +1515,12 @@
     "country": "FRA",
     "distance": "MARATHON",
     "name": "Schneider Electric Marathon de Paris",
+    "platform": "timeto"
+  },
+  "seine-marathon 76": {
+    "country": "FRA",
+    "distance": "MARATHON",
+    "name": "Seine-Marathon 76",
     "platform": "timeto"
   },
   "semi & 10km de bordeaux": {
