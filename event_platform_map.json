@@ -44,22 +44,22 @@
     "platform_id_pattern": "{yyyy}{mm}{dd}_rotterdam"
   },
   "aj bell great north run": {
-    "platform": "tracx",
-    "platform_id": "great-north-run",
+    "platform": "rtrt",
+    "platform_id": "GR-NORTH",
     "distance": "SEMI",
     "name": "AJ Bell Great North Run",
     "country": "GBR"
   },
   "aj bell great manchester run": {
-    "platform": "tracx",
-    "platform_id": "great-manchester-run",
+    "platform": "rtrt",
+    "platform_id": "GR-MANCHESTER",
     "distance": "SEMI",
     "name": "AJ Bell Great Manchester Run",
     "country": "GBR"
   },
   "aj bell great bristol run": {
-    "platform": "tracx",
-    "platform_id": "great-bristol-run",
+    "platform": "rtrt",
+    "platform_id": "GR-BRISTOL",
     "distance": "SEMI",
     "name": "AJ Bell Great Bristol Run",
     "country": "GBR"
@@ -345,7 +345,8 @@
     "platform": "athlinks",
     "country": "USA",
     "distance": "10KM",
-    "name": "Atlanta Journal-Constitution Peachtree Road Race"
+    "name": "Atlanta Journal-Constitution Peachtree Road Race",
+    "platform_id": 115192
   },
   "bolderboulder 10k": {
     "platform": "athlinks",
@@ -357,7 +358,8 @@
     "platform": "athlinks",
     "country": "USA",
     "distance": "AUTRE",
-    "name": "Bay to Breakers"
+    "name": "Bay to Breakers",
+    "platform_id": 18246
   },
   "broad street run": {
     "platform": "athlinks",
@@ -369,7 +371,8 @@
     "platform": "athlinks",
     "country": "USA",
     "distance": "10KM",
-    "name": "Cooper River Bridge Run"
+    "name": "Cooper River Bridge Run",
+    "platform_id": 9036
   },
   "ukrop's monument avenue 10k": {
     "platform": "athlinks",
@@ -595,13 +598,15 @@
     "platform": "rtrt",
     "country": "GBR",
     "distance": "SEMI",
-    "name": "AJ Bell Great Birmingham Run"
+    "name": "AJ Bell Great Birmingham Run",
+    "platform_id": "GR-BIRMINGHAM"
   },
   "aj bell great south run": {
     "platform": "rtrt",
     "country": "GBR",
     "distance": "AUTRE",
-    "name": "AJ Bell Great South Run"
+    "name": "AJ Bell Great South Run",
+    "platform_id": "GR-SOUTH"
   },
   "royal parks half marathon": {
     "platform": null,

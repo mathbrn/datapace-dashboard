@@ -313,6 +313,96 @@ def fetch_chronorace_4d(db_name, year):
     return None
 
 
+def fetch_rtrt_4d(event_code, year):
+    """Fetch 4D from RTRT.me API (Great Run events).
+
+    event_code: GR-NORTH, GR-MANCHESTER, GR-SCOTTISH, GR-BRISTOL, GR-BIRMINGHAM, GR-SOUTH
+    """
+    try:
+        sess = requests.Session()
+        params = {"appid": "623f2dd5e7847810bb1f0a07", "token": "9FA560A93CFC014488AB"}
+        # Code pattern: {CODE}-{YYYY}
+        code = event_code if event_code else "GR-NORTH"
+        if "-" + str(year) not in code:
+            code = f"{code}-{year}"
+        r = sess.get(f"https://api.rtrt.me/events/{code}", params=params, timeout=15)
+        if not r.ok:
+            return None
+        data = r.json()
+        finishers = data.get("finishers")
+        if not finishers or int(finishers) < 100:
+            return None
+        return {"finishers": int(finishers),
+                "avg_time": None, "avg_speed_kmh": None,
+                "winner_men": None, "winner_women": None,
+                "source": "rtrt", "confidence": "high"}
+    except Exception as e:
+        print(f"  RTRT error: {e}")
+        return None
+
+
+def fetch_athlinks_4d(master_id_or_info, year):
+    """Fetch 4D from Athlinks API.
+
+    master_id_or_info: master_id (int) or dict with master_id/event_id
+    """
+    try:
+        master_id = master_id_or_info
+        if isinstance(master_id_or_info, dict):
+            master_id = master_id_or_info.get("master_id") or master_id_or_info.get("platform_id")
+        if not master_id:
+            return None
+        sess = requests.Session()
+        sess.headers.update({
+            "User-Agent": "Mozilla/5.0", "Accept": "application/json",
+            "Origin": "https://www.athlinks.com", "Referer": "https://www.athlinks.com/",
+        })
+        r = sess.get(f"https://reignite-api.athlinks.com/master/{master_id}/metadata", timeout=15)
+        if not r.ok:
+            return None
+        data = r.json()
+        # New Athlinks schema: data['events'] list with race_id + description
+        events = data.get("events", [])
+        if not events:
+            return None
+        # Find event matching target year (by epoch timestamp)
+        import datetime as _dt
+        target_event = None
+        for ev in events:
+            end_ep = (ev.get("end") or {}).get("epoch", 0)
+            if not end_ep:
+                continue
+            ev_year = _dt.datetime.fromtimestamp(end_ep / 1000, _dt.timezone.utc).year
+            if ev_year == year:
+                target_event = ev
+                break
+        if not target_event and events:
+            target_event = events[0]  # most recent
+        if not target_event:
+            return None
+        # Parse finishers from description (format "10Km Run -43337\r\n...")
+        desc = target_event.get("description", "") or ""
+        import re as _re
+        # Look for main race line (biggest count, excluding small wheelchair/push categories)
+        counts = _re.findall(r"-(\d{3,})", desc)
+        finishers = max(int(c) for c in counts) if counts else None
+        # Fallback: try races array
+        if not finishers:
+            for race in target_event.get("races", []):
+                fc = race.get("finisherCount") or race.get("participantCount")
+                if fc and fc > (finishers or 0):
+                    finishers = fc
+        if not finishers:
+            return None
+        return {"finishers": finishers,
+                "avg_time": None, "avg_speed_kmh": None,
+                "winner_men": None, "winner_women": None,
+                "source": "athlinks", "confidence": "high"}
+    except Exception as e:
+        print(f"  Athlinks error: {e}")
+        return None
+
+
 def fetch_mikatiming_4d(platform_info_or_year, year):
     """Fetch 4D from Mikatiming (Berlin, London, Hamburg, Chicago, etc.).
 
@@ -527,6 +617,8 @@ PLATFORM_MAP = {
     "mikatiming": fetch_mikatiming_4d,
     "nyrr": fetch_nyrr_4d,
     "baa": fetch_baa_4d,
+    "rtrt": fetch_rtrt_4d,
+    "athlinks": fetch_athlinks_4d,
 }
 
 
