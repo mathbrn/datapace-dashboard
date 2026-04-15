@@ -206,8 +206,55 @@ def build_fetch_param(info, year):
     return info.get("platform_id")
 
 
-def try_backfill(event_name, year, info, dry_run=True):
-    """Try to fetch 4D data for an event+year via its platform."""
+def load_existing_data():
+    """REGLE ABSOLUE: charger toute la matrice Excel en memoire pour
+    verifier en O(1) qu'une cellule est vide avant d'appeler une API.
+
+    Retourne dict {(event_name, year): value} ou value est:
+      - int: cellule remplie (un nombre)
+      - str: '-' annule, 'x' pre-1ere, 'Elite', etc.
+      - None: cellule vraiment vide
+    """
+    path = SCRIPT_DIR / "Suivi_Finishers_Monde_10k_-_21k_-_42k_HISTORIQUE.xlsx"
+    wb = openpyxl.load_workbook(path, read_only=True)
+    ws = wb["ALL"]
+    headers = None
+    year_cols = []
+    existing = {}
+    for row in ws.iter_rows(values_only=True):
+        if headers is None:
+            headers = list(row)
+            year_cols = [c for c in headers if isinstance(c, int) and 2000 <= c <= 2030]
+            continue
+        d = dict(zip(headers, row))
+        race = str(d.get("Race", "") or "").strip()
+        if not race:
+            continue
+        for yr in year_cols:
+            v = d.get(yr)
+            existing[(race, yr)] = v
+    wb.close()
+    return existing
+
+
+def is_empty(event_name, year, existing):
+    """True ssi cellule strictement vide (None ou string vide).
+    Tout autre contenu (chiffre, '-', 'x', 'Elite', 'Annule') = NON vide."""
+    v = existing.get((event_name, year))
+    if v is None:
+        return True
+    if isinstance(v, str) and v.strip() == "":
+        return True
+    return False
+
+
+def try_backfill(event_name, year, info, dry_run=True, existing=None):
+    """Try to fetch 4D data for an event+year via its platform.
+
+    REGLE: si existing est fourni et la cellule n'est PAS vide, SKIP immediat
+    (aucune requete reseau)."""
+    if existing is not None and not is_empty(event_name, year, existing):
+        return None, "[SKIP] cellule deja remplie"
     plat = info.get("platform")
     fetcher = PLATFORM_FETCHERS.get(plat)
     if not fetcher:
@@ -259,6 +306,8 @@ def main():
     args = parser.parse_args()
 
     rows, year_cols = load_finishers_data()
+    # REGLE ABSOLUE: charger la matrice complete pour verif rapide
+    existing = load_existing_data()
 
     # ETAPE 1 — diagnostic
     print_diagnostic(rows, year_cols)
@@ -304,7 +353,11 @@ def main():
         plat = t["info"]["platform"]
         calls += 1
         print(f"\n[{calls}/{min(len(tasks), args.max_calls)}] {r['name']} {yr} via {plat}")
-        result, msg = try_backfill(r["name"], yr, t["info"], args.dry_run)
+        # REGLE ABSOLUE: pre-check Excel avant tout appel reseau
+        if not is_empty(r["name"], yr, existing):
+            print(f"    [SKIP] cellule deja remplie")
+            continue
+        result, msg = try_backfill(r["name"], yr, t["info"], args.dry_run, existing=existing)
         if not result:
             report["no_data"].append({"event": r["name"], "year": yr,
                                        "platform": plat, "reason": msg})
