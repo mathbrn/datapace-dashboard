@@ -1,0 +1,26 @@
+{
+  "updates": [
+    {
+      "event": "Schneider Electric Marathon de Paris",
+      "date": "2026-04-12",
+      "data": {
+        "finishers": 57464,
+        "avg_time": "04:13:23",
+        "winner_men": "02:05:18",
+        "winner_women": "02:18:35"
+      },
+      "timestamp": "2026-04-13T06:12:34Z"
+    },
+    {
+      "event": "NN Marathon Rotterdam",
+      "date": "2026-04-11",
+      "data": {
+        "finishers": 15814,
+        "avg_time": "04:25:29",
+        "winner_men": "02:03:54",
+        "winner_women": "02:18:56"
+      },
+      "timestamp": "2026-04-12T06:05:00Z"
+    }
+  ]
+}

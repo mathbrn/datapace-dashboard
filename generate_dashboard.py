@@ -713,6 +713,103 @@ function toggleTheme(){
 }
 (function(){var saved=localStorage.getItem('dp-theme');if(saved==='light'){document.documentElement.setAttribute('data-theme','light');var b=document.getElementById('theme-btn');if(b)b.innerHTML='&#x2600; Light';}})();
 
+// ===== UPDATE 4D NOTIFICATIONS =====
+function renderUpdateNotifications(){
+  if(typeof UPDATE_LOG==='undefined'||!UPDATE_LOG.length)return;
+  // Filter to last 7 days
+  var now=new Date();
+  var cutoff=new Date(now.getTime()-7*24*3600*1000);
+  var recent=UPDATE_LOG.filter(function(u){
+    try{var t=new Date(u.timestamp);return t>=cutoff;}catch(e){return false;}
+  });
+  if(!recent.length)return;
+  // Filter out already-seen
+  var seenKey='seen_updates_v1';
+  var seen={};
+  try{seen=JSON.parse(localStorage.getItem(seenKey)||'{}');}catch(e){}
+  var toShow=recent.filter(function(u){return !seen[u.event+'|'+u.date];});
+  if(!toShow.length)return;
+  // Build container
+  var container=document.getElementById('update-notifs');
+  if(!container){
+    container=document.createElement('div');
+    container.id='update-notifs';
+    container.style.cssText='position:fixed;top:80px;right:16px;z-index:9998;max-width:320px;display:flex;flex-direction:column;gap:8px;';
+    document.body.appendChild(container);
+  }
+  var idx=0;
+  function fmtDate(s){
+    try{
+      var t=new Date(s);
+      return t.toLocaleDateString('fr-FR',{day:'numeric',month:'short',year:'numeric'});
+    }catch(e){return s;}
+  }
+  function render(){
+    container.innerHTML='';
+    if(idx>=toShow.length){
+      // Mark all as read
+      toShow.forEach(function(u){seen[u.event+'|'+u.date]=1;});
+      localStorage.setItem(seenKey,JSON.stringify(seen));
+      return;
+    }
+    var u=toShow[idx];
+    var d=u.data||{};
+    var items=[];
+    if(d.finishers)items.push('<div style="display:flex;align-items:center;gap:8px;margin-top:2px"><span style="color:var(--text3);font-size:10px;width:16px">#</span><span><b>'+d.finishers.toLocaleString('fr-FR')+'</b> finishers</span></div>');
+    if(d.avg_time)items.push('<div style="display:flex;align-items:center;gap:8px;margin-top:2px"><span style="color:var(--text3);font-size:10px;width:16px">\u2300</span><span>Moyen <b>'+d.avg_time+'</b></span></div>');
+    if(d.winner_men)items.push('<div style="display:flex;align-items:center;gap:8px;margin-top:2px"><span style="color:#60A5FA;font-size:11px;width:16px">H</span><span><b>'+d.winner_men+'</b></span></div>');
+    if(d.winner_women)items.push('<div style="display:flex;align-items:center;gap:8px;margin-top:2px"><span style="color:#FF8A50;font-size:11px;width:16px">F</span><span><b>'+d.winner_women+'</b></span></div>');
+    var lt=document.documentElement.getAttribute('data-theme')==='light';
+    var bg=lt?'#ffffff':'#1a1a2e';
+    var navH='';
+    if(toShow.length>1){
+      navH='<div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding-top:8px;border-top:1px solid var(--border);font-size:10px;color:var(--text3)">'
+        +'<button onclick="window._notifPrev()" style="background:none;border:1px solid var(--border);color:var(--text3);cursor:pointer;padding:2px 8px;border-radius:4px;font-size:10px">\u25C0</button>'
+        +'<span>'+(idx+1)+' / '+toShow.length+'</span>'
+        +'<button onclick="window._notifNext()" style="background:none;border:1px solid var(--border);color:var(--text3);cursor:pointer;padding:2px 8px;border-radius:4px;font-size:10px">\u25B6</button>'
+        +'</div>';
+    }
+    var allBtn='<button onclick="window._notifMarkAll()" style="margin-top:6px;background:none;border:none;color:var(--text3);cursor:pointer;font-size:10px;text-decoration:underline;padding:0;align-self:flex-start">Tout marquer comme lu</button>';
+    var html='<div style="position:relative;background:'+bg+';border-left:3px solid #DC2626;border-radius:6px;padding:12px 14px;box-shadow:0 4px 12px rgba(0,0,0,0.15);font-size:12px;color:var(--text);animation:notif-slide 0.3s ease-out">'
+      +'<button onclick="window._notifClose()" style="position:absolute;top:6px;right:8px;background:none;border:none;color:var(--text3);cursor:pointer;font-size:14px;padding:0;line-height:1" title="Fermer">\u2715</button>'
+      +'<div style="display:flex;align-items:center;gap:6px;margin-bottom:6px"><span style="background:#DC2626;color:#fff;font-size:9px;font-weight:700;padding:2px 6px;border-radius:100px;letter-spacing:0.05em">UPDATE 4D</span><span style="color:var(--text3);font-size:10px">\u00B7 '+fmtDate(u.timestamp)+'</span></div>'
+      +'<div style="font-weight:600;line-height:1.3;margin-bottom:8px">'+u.event+'</div>'
+      +items.join('')
+      +navH
+      +allBtn
+      +'</div>';
+    container.innerHTML=html;
+    // Auto-dismiss after 8s
+    clearTimeout(window._notifTimer);
+    window._notifTimer=setTimeout(function(){window._notifNext();},8000);
+  }
+  window._notifClose=function(){
+    if(toShow[idx])seen[toShow[idx].event+'|'+toShow[idx].date]=1;
+    localStorage.setItem(seenKey,JSON.stringify(seen));
+    idx++;
+    render();
+  };
+  window._notifNext=function(){idx=Math.min(idx+1,toShow.length);render();};
+  window._notifPrev=function(){idx=Math.max(idx-1,0);render();};
+  window._notifMarkAll=function(){
+    toShow.forEach(function(u){seen[u.event+'|'+u.date]=1;});
+    localStorage.setItem(seenKey,JSON.stringify(seen));
+    container.innerHTML='';
+    clearTimeout(window._notifTimer);
+  };
+  // Inject animation CSS once
+  if(!document.getElementById('notif-anim-css')){
+    var st=document.createElement('style');
+    st.id='notif-anim-css';
+    st.textContent='@keyframes notif-slide{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}';
+    document.head.appendChild(st);
+  }
+  render();
+}
+// Fire on load
+if(document.readyState==='complete')renderUpdateNotifications();
+else window.addEventListener('load',renderUpdateNotifications);
+
 // ===== EXPORT PANEL (PNG / PDF) =====
 function toggleExportMenu(e){
   if(e)e.stopPropagation();
@@ -2815,6 +2912,13 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
                 })
     # Load sponsoring data
     spdata = load_sponsoring()
+    # Load update log for notifications
+    update_log_path = SCRIPT_DIR / "update_log.json"
+    update_log = []
+    if update_log_path.exists():
+        import json as jlib3
+        with open(update_log_path, "r", encoding="utf-8") as f:
+            update_log = jlib3.load(f).get("updates", [])
     js_data = ("const RAW=" + j(finishers) + ";\nconst BIGGEST=" + j(biggest) + ";\n"
                "const TEMPS_MARATHON=" + j(tmjs) + ";\nconst TEMPS_SEMI=" + j(tsjs) + ";\n"
                "const TEMPS_10K=" + j(t10js) + ";\nconst TEMPS_AUTRE=" + j(tajs) + ";\n"
@@ -2823,6 +2927,7 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
                "const WMM_KEYWORDS=" + j(WMM_KEYWORDS) + ";\n"
                "const ASO_KEYWORDS=" + j(ASO_KEYWORDS) + ";\n"
                "const WINNERS=" + j(winners) + ";\n"
+               "const UPDATE_LOG=" + j(update_log) + ";\n"
                "const SP_BRANDS=" + j(spdata.get("brands", {})) + ";\n"
                "const SP_PARTNERSHIPS=" + j(spdata.get("partnerships", [])) + ";\n")
     body = HTML_BODY.format(now=now)
