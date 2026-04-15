@@ -910,7 +910,7 @@
     "region": "Europe",
     "ville": "Dublin",
     "name": "VHI Women's Mini Marathon",
-    "date_month": null,
+    "date_month": 5,
     "year_creation": 1983,
     "distances": [
       [
@@ -1401,7 +1401,7 @@
     "region": "Europe",
     "ville": "Séville",
     "name": "Carrera Nocturna del Guadalquivir KH7",
-    "date_month": null,
+    "date_month": 9,
     "year_creation": 2015,
     "distances": [
       [
@@ -2059,7 +2059,7 @@
     "region": "Europe",
     "ville": "Zurich ",
     "name": "SOLA-Stafette Zürich",
-    "date_month": null,
+    "date_month": 5,
     "year_creation": null,
     "distances": [
       [
@@ -2830,7 +2830,7 @@
     "region": "Europe",
     "ville": "Apeldoorn",
     "name": "Midwintern Marathon",
-    "date_month": null,
+    "date_month": 1,
     "year_creation": null,
     "distances": [
       [
@@ -4060,7 +4060,7 @@
     "region": "Asie",
     "ville": "Bang Saen",
     "name": "Bangsaen 42 Marathon",
-    "date_month": null,
+    "date_month": 11,
     "year_creation": null,
     "distances": [
       [
@@ -4075,7 +4075,7 @@
     "region": "Asie",
     "ville": "Marugame",
     "name": "Kagawa Marugama Half Marathon",
-    "date_month": null,
+    "date_month": 2,
     "year_creation": null,
     "distances": [
       [
@@ -5401,7 +5401,7 @@
     "region": "Europe",
     "ville": "Porto ",
     "name": "Meia Maratona do Porto",
-    "date_month": null,
+    "date_month": 9,
     "year_creation": null,
     "distances": [
       [
@@ -5860,7 +5860,7 @@
     "region": "Europe",
     "ville": "Alicante",
     "name": "Media Maraton internacional aguas de alicante",
-    "date_month": null,
+    "date_month": 2,
     "year_creation": null,
     "distances": [
       [
@@ -6076,7 +6076,7 @@
     "region": "Europe",
     "ville": "Amstelveen",
     "name": "KPMG Lentermarathon",
-    "date_month": null,
+    "date_month": 3,
     "year_creation": null,
     "distances": [
       [
@@ -6461,7 +6461,7 @@
     "region": "Amérique du Sud",
     "ville": "Brasilia",
     "name": "Maratona Monumental Brasilia",
-    "date_month": null,
+    "date_month": 11,
     "year_creation": null,
     "distances": [
       [
@@ -6694,7 +6694,7 @@
     "region": "Europe",
     "ville": "Oslo",
     "name": "Holmenkollstafetten",
-    "date_month": null,
+    "date_month": 5,
     "year_creation": null,
     "distances": [],
     "finishers_2025": 4945
@@ -8312,7 +8312,7 @@
     "region": "Europe",
     "ville": "Ostende",
     "name": "Besox Halve Van Oostende",
-    "date_month": null,
+    "date_month": 2,
     "year_creation": null,
     "distances": [
       [
@@ -8411,7 +8411,7 @@
     "region": "Moyen-Orient",
     "ville": "Beyrouth",
     "name": "Run the City",
-    "date_month": null,
+    "date_month": 9,
     "year_creation": null,
     "distances": [
       [
@@ -9023,7 +9023,7 @@
     "region": "Europe",
     "ville": "Francorchamps",
     "name": "Spa-Francorchamps Run",
-    "date_month": null,
+    "date_month": 3,
     "year_creation": 2014,
     "distances": [
       [
@@ -9850,7 +9850,7 @@
     "region": "Europe",
     "ville": "Zagreb",
     "name": "Zagreb21 Spring Half Marathon",
-    "date_month": null,
+    "date_month": 3,
     "year_creation": null,
     "distances": [
       [
@@ -10277,7 +10277,7 @@
     "region": "Europe",
     "ville": "Dolo",
     "name": "Dogi's Half Marathon",
-    "date_month": null,
+    "date_month": 3,
     "year_creation": 1998,
     "distances": [
       [
@@ -10422,7 +10422,7 @@
     "region": "Europe",
     "ville": "Latina",
     "name": "Mezza maratona di Latina",
-    "date_month": null,
+    "date_month": 3,
     "year_creation": 2021,
     "distances": [
       [
@@ -10470,7 +10470,7 @@
     "region": "Asie",
     "ville": "Trivandrum",
     "name": "UST Trivandrum Marathon",
-    "date_month": null,
+    "date_month": 11,
     "year_creation": null,
     "distances": [
       [
@@ -10600,7 +10600,7 @@
     "region": "Moyen-Orient",
     "ville": "Beyrouth",
     "name": "Rolling Half",
-    "date_month": null,
+    "date_month": 2,
     "year_creation": null,
     "distances": [
       [
@@ -10684,7 +10684,7 @@
     "region": "Europe",
     "ville": "Dour",
     "name": "21KM.BE - Semi marathon de Dour",
-    "date_month": null,
+    "date_month": 4,
     "year_creation": 2021,
     "distances": [
       [
@@ -10972,7 +10972,7 @@
     "region": "Moyen-Orient",
     "ville": "Bahreïn",
     "name": "Bahrain Night Half Marathon",
-    "date_month": null,
+    "date_month": 12,
     "year_creation": null,
     "distances": [
       [
@@ -11016,7 +11016,7 @@
     "region": "Europe",
     "ville": "Sienne",
     "name": "Terre di Siena Ultramarathon",
-    "date_month": null,
+    "date_month": 3,
     "year_creation": null,
     "distances": [
       [
@@ -11181,7 +11181,7 @@
     "region": "Europe",
     "ville": "Simmern",
     "name": "Hunsrück Marathon",
-    "date_month": null,
+    "date_month": 8,
     "year_creation": null,
     "distances": [
       [
@@ -11261,7 +11261,7 @@
     "region": "Moyen-Orient",
     "ville": "Zallaq",
     "name": "Beyon Full Marathon",
-    "date_month": null,
+    "date_month": 2,
     "year_creation": null,
     "distances": [
       [
@@ -12018,7 +12018,7 @@
     "region": "Europe",
     "ville": "Groningen",
     "name": "Halve Marathon",
-    "date_month": null,
+    "date_month": 5,
     "year_creation": null,
     "distances": [
       [
@@ -12564,7 +12564,7 @@
     "region": "Europe",
     "ville": "Nottingham",
     "name": "Nottingham 10K",
-    "date_month": null,
+    "date_month": 3,
     "year_creation": null,
     "distances": [],
     "finishers_2025": null
@@ -13293,7 +13293,7 @@
     "region": "Asie",
     "ville": "Dalian",
     "name": "Dalian Marathon",
-    "date_month": null,
+    "date_month": 4,
     "year_creation": null,
     "distances": [
       [
@@ -13385,7 +13385,7 @@
     "region": "Asie",
     "ville": "Quang Tri",
     "name": "QuangTri Amazing Marathon",
-    "date_month": null,
+    "date_month": 8,
     "year_creation": null,
     "distances": [
       [
@@ -13422,7 +13422,7 @@
     "region": "Asie",
     "ville": "Guiyang",
     "name": "Guiyang Marathon",
-    "date_month": null,
+    "date_month": 6,
     "year_creation": null,
     "distances": [
       [
@@ -13468,7 +13468,7 @@
     "region": "Europe",
     "ville": "Terrassa",
     "name": "Mitja Marato Terrassa",
-    "date_month": null,
+    "date_month": 2,
     "year_creation": null,
     "distances": [],
     "finishers_2025": null
@@ -13478,7 +13478,7 @@
     "region": "Moyen-Orient",
     "ville": "Yerevan",
     "name": "Yerevan Marathon",
-    "date_month": null,
+    "date_month": 10,
     "year_creation": null,
     "distances": [
       [
@@ -14798,7 +14798,7 @@
     "region": "Europe",
     "ville": "Setubal ",
     "name": "Meia Maratona Setubal",
-    "date_month": null,
+    "date_month": 4,
     "year_creation": null,
     "distances": [
       [
@@ -15125,7 +15125,7 @@
     "region": "Europe",
     "ville": "Cardiff",
     "name": "Cardiff Bay 10K",
-    "date_month": null,
+    "date_month": 4,
     "year_creation": null,
     "distances": [],
     "finishers_2025": null
@@ -15150,7 +15150,7 @@
     "region": "Europe",
     "ville": "Cardiff",
     "name": "CDF 10k",
-    "date_month": null,
+    "date_month": 9,
     "year_creation": null,
     "distances": [],
     "finishers_2025": null
@@ -15251,7 +15251,7 @@
     "region": "Europe",
     "ville": "Göltzschtal ",
     "name": "Marathon de Göltzschal",
-    "date_month": null,
+    "date_month": 4,
     "year_creation": null,
     "distances": [
       [
@@ -15478,7 +15478,7 @@
     "region": "Afrique",
     "ville": "Pretoria",
     "name": "Skosana Legend Race",
-    "date_month": null,
+    "date_month": 5,
     "year_creation": null,
     "distances": [
       [
@@ -15501,7 +15501,7 @@
     "region": "Amérique du Nord",
     "ville": "Toronto ",
     "name": "Puma Toronto Spring 10K",
-    "date_month": null,
+    "date_month": 5,
     "year_creation": null,
     "distances": [
       [
@@ -15732,7 +15732,7 @@
     "region": "Europe",
     "ville": "Turin",
     "name": "24 ore di Torino",
-    "date_month": null,
+    "date_month": 5,
     "year_creation": null,
     "distances": [],
     "finishers_2025": null
@@ -15811,7 +15811,7 @@
     "region": "Europe",
     "ville": "Lubin",
     "name": "Schlossinsenlauf",
-    "date_month": null,
+    "date_month": 6,
     "year_creation": null,
     "distances": [],
     "finishers_2025": null
@@ -15821,7 +15821,7 @@
     "region": "Europe",
     "ville": "Stockholm ",
     "name": "Midnattsloppet Stockholm",
-    "date_month": null,
+    "date_month": 8,
     "year_creation": null,
     "distances": [
       [
