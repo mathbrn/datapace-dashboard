@@ -352,6 +352,13 @@
     "platform": "sportstimingsolutions",
     "sts_event_id": "84106"
   },
+  "bergen city marathon": {
+    "country": "NOR",
+    "distance": "MARATHON",
+    "eqtiming_id": "74002",
+    "name": "Bergen City Marathon",
+    "platform": "eqtiming"
+  },
   "beyon full marathon": {
     "country": "BHR",
     "distance": "MARATHON",
@@ -732,6 +739,12 @@
     "name": "Grand Prix Von Bern",
     "platform": "trackmaxx"
   },
+  "graz marathon": {
+    "country": "AUT",
+    "distance": "MARATHON",
+    "name": "Graz Marathon",
+    "platform": "maxfunsports"
+  },
   "great ethiopan run": {
     "country": "ETH",
     "distance": "10KM",
@@ -765,6 +778,13 @@
     "name": "Guangzhou Marathon",
     "platform": "custom",
     "url": "worldathletics.org"
+  },
+  "gutenberg halbmarathon mainz": {
+    "country": "DEU",
+    "distance": "SEMI",
+    "name": "Gutenberg Halbmarathon Mainz",
+    "platform": "raceresult",
+    "raceresult_id": "298131"
   },
   "hackney half marathon": {
     "country": "GBR",
@@ -1010,6 +1030,13 @@
     "name": "London Landmarks Half Marathon",
     "platform": "tracx"
   },
+  "love run": {
+    "country": "USA",
+    "distance": "SEMI",
+    "name": "Love Run",
+    "platform": "raceroster",
+    "raceroster_id": "9c5m6b6dvta2d4c4"
+  },
   "maasmarathon": {
     "chronorace_event_id": "1188404565917984",
     "country": "BEL",
@@ -1129,6 +1156,12 @@
     "name": "Maraton Medellin",
     "platform": "sporthive"
   },
+  "maraton murcia costa calida": {
+    "country": "ESP",
+    "distance": "MARATHON",
+    "name": "Maraton Murcia Costa Calida",
+    "platform": "chiplevante"
+  },
   "maratona do rio": {
     "country": "BRA",
     "distance": "SEMI",
@@ -1180,6 +1213,13 @@
     "platform": "runthrough",
     "runthrough_cid": "16487",
     "runthrough_rid": "5349"
+  },
+  "midnight sun marathon": {
+    "country": "NOR",
+    "distance": "MARATHON",
+    "eqtiming_id": "73191",
+    "name": "Midnight sun Marathon",
+    "platform": "eqtiming"
   },
   "midwintern marathon": {
     "country": "NLD",
@@ -1483,6 +1523,12 @@
     "name": "Salomon New shapers run",
     "platform": "endu"
   },
+  "san sebastian marathon": {
+    "country": "ESP",
+    "distance": "MARATHON",
+    "name": "San Sebastian Marathon",
+    "platform": "sportmaniacs"
+  },
   "sao silvestre de lisboa": {
     "country": "PRT",
     "distance": "10KM",
@@ -1776,6 +1822,13 @@
     "name": "Thien Phong Marathon",
     "platform": "sportstats"
   },
+  "tjejmilen": {
+    "country": "SWE",
+    "distance": "10KM",
+    "marathongruppen_raceid": "50",
+    "name": "Tjejmilen",
+    "platform": "marathongruppen"
+  },
   "tokushima marathon": {
     "country": "JPN",
     "distance": "MARATHON",
@@ -1825,6 +1878,13 @@
     "name": "TREK Singelloop Utrecht",
     "platform": "custom",
     "url": "singellooputrecht.nl"
+  },
+  "trondheim marathon": {
+    "country": "NOR",
+    "distance": "MARATHON",
+    "eqtiming_id": "74197",
+    "name": "Trondheim Marathon",
+    "platform": "eqtiming"
   },
   "ukrop's monument avenue 10k": {
     "country": "USA",
@@ -1891,6 +1951,13 @@
     "name": "Vienna City Marathon",
     "platform": "mikatiming",
     "subdomain": "vienna"
+  },
+  "vilniaus maratonas": {
+    "country": "LTU",
+    "distance": "MARATHON",
+    "name": "Vilniaus Maratonas",
+    "platform": "custom",
+    "url": "manobegimas.lt"
   },
   "warsaw half marathon": {
     "country": "POL",
