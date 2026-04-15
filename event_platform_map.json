@@ -71,6 +71,13 @@
     "name": "20KM de Bruxelles",
     "platform": "chronorace"
   },
+  "20km de lausanne": {
+    "country": "CHE",
+    "distance": "10KM",
+    "name": "20Km de Lausanne",
+    "platform": "raceresult",
+    "raceresult_id": "308854"
+  },
   "20km de maroilles": {
     "country": "FRA",
     "distance": "AUTRE",
@@ -89,6 +96,13 @@
     "distance": "AUTRE",
     "name": "ACSE - La Strasbourgeoise",
     "platform": "chronocompetition"
+  },
+  "adac marathon de hannover": {
+    "country": "DEU",
+    "distance": "MARATHON",
+    "mika_code": "hannover",
+    "name": "ADAC Marathon de Hannover",
+    "platform": "mikatiming"
   },
   "adidas 10k paris": {
     "country": "FRA",
@@ -180,6 +194,13 @@
     "name": "Alliance Bank Borneo International Marathon",
     "platform": "custom",
     "url": "borneomarathon.com"
+  },
+  "allianz jean bouin": {
+    "country": "ESP",
+    "distance": "10KM",
+    "name": "Allianz Jean Bouin",
+    "platform": "custom",
+    "url": "allianzjeanbouin.com"
   },
   "amgen singelloop breda 10km": {
     "country": "NLD",
@@ -283,6 +304,13 @@
     "name": "Bay to Breakers",
     "platform": "athlinks",
     "platform_id": 18246
+  },
+  "behobia san sebastian": {
+    "country": "ESP",
+    "distance": "10KM",
+    "name": "Behobia San Sebastian",
+    "platform": "custom",
+    "url": "behobia-sansebastian.com"
   },
   "beijing marathon": {
     "country": "CHN",
@@ -740,6 +768,13 @@
     "platform": "mikatiming",
     "subdomain": "hamburg"
   },
+  "helsinki city run": {
+    "country": "FIN",
+    "distance": "MARATHON",
+    "name": "Helsinki City run",
+    "platform": "ultimate",
+    "ultimate_eventid": "6557"
+  },
   "hoka semi de paris": {
     "country": "FRA",
     "distance": "SEMI",
@@ -758,6 +793,12 @@
     "distance": "MARATHON",
     "name": "Honolulu Marathon",
     "platform": "pse"
+  },
+  "hot chocolate run": {
+    "country": "USA",
+    "distance": "10KM",
+    "name": "Hot Chocolate Run",
+    "platform": "runsignup"
   },
   "hull 10k": {
     "country": "GBR",
@@ -917,6 +958,12 @@
     "platform": "mikatiming",
     "subdomain": "live.frankfurt-marathon.com"
   },
+  "marathon de la liberté - normandy running festival": {
+    "country": "FRA",
+    "distance": "MARATHON",
+    "name": "Marathon de la Liberté - Normandy Running Festival",
+    "platform": "timeto"
+  },
   "marathon de la mer": {
     "country": "FRA",
     "distance": "SEMI",
@@ -930,6 +977,12 @@
     "distance": "SEMI",
     "name": "Marathon de Lille",
     "platform": "chronorace"
+  },
+  "marathon des alpes-maritimes nice-cannes by kiprun": {
+    "country": "FRA",
+    "distance": "MARATHON",
+    "name": "Marathon des Alpes-Maritimes Nice-Cannes by Kiprun",
+    "platform": "timing4you"
   },
   "marathon des chateaux du médoc": {
     "country": "FRA",
@@ -945,12 +998,32 @@
     "platform": "raceresult",
     "raceresult_id": "365121"
   },
+  "marathon international du beaujolais": {
+    "country": "FRA",
+    "distance": "MARATHON",
+    "name": "Marathon International du Beaujolais",
+    "platform": "yaka-chrono"
+  },
+  "marathon international indeauville": {
+    "country": "FRA",
+    "distance": "MARATHON",
+    "klikego_id": "1544740583497-9",
+    "name": "Marathon International inDeauville",
+    "platform": "klikego"
+  },
   "marathon münchen by brooks": {
     "country": "DEU",
     "distance": "SEMI",
     "mika_code": "muenchen",
     "name": "Marathon München by Brooks",
     "platform": "mikatiming"
+  },
+  "marathon vert": {
+    "country": "FRA",
+    "distance": "MARATHON",
+    "klikego_id": "1284761384288-43",
+    "name": "Marathon Vert",
+    "platform": "klikego"
   },
   "maraton de santiago": {
     "country": "CHL",
@@ -1060,6 +1133,12 @@
     "name": "NBK Bahrain Marathon Relays",
     "platform": "sporthive"
   },
+  "nice semi-marathon international": {
+    "country": "FRA",
+    "distance": "SEMI",
+    "name": "Nice Semi-Marathon International",
+    "platform": "timing4you"
+  },
   "nikolaslauf tübigen": {
     "country": "DEU",
     "distance": "SEMI",
@@ -1137,6 +1216,12 @@
     "name": "Osaka Marathon",
     "platform": null
   },
+  "osterreichischer frauenlauf": {
+    "country": "AUT",
+    "distance": "10KM",
+    "name": "Osterreichischer Frauenlauf",
+    "platform": "pentek-timing"
+  },
   "oxford half": {
     "country": "GBR",
     "distance": "SEMI",
@@ -1209,6 +1294,12 @@
     "platform": "custom",
     "url": "quijotemaraton.com"
   },
+  "reims champagne run": {
+    "country": "FRA",
+    "distance": "SEMI",
+    "name": "Reims Champagne Run",
+    "platform": "timing4you"
+  },
   "rimi riga marathon": {
     "country": "LVA",
     "distance": "AUTRE",
@@ -1221,6 +1312,13 @@
     "distance": "SEMI",
     "name": "Rock 'n' Roll Running Series Las Vegas",
     "platform": null
+  },
+  "rocky run": {
+    "country": "USA",
+    "distance": "SEMI",
+    "name": "Rocky Run",
+    "platform": "raceroster",
+    "raceroster_id": "vnpkx4ghvbmebjce"
   },
   "rolling half": {
     "country": "LBN",
@@ -1267,6 +1365,13 @@
     "name": "Runaway Auckland Marathon",
     "platform": "sporthive"
   },
+  "running loire valley": {
+    "country": "FRA",
+    "distance": "MARATHON",
+    "name": "Running Loire Valley",
+    "platform": "custom",
+    "url": "runningloirevalley.com"
+  },
   "saitama marathon": {
     "country": "JPN",
     "distance": "AUTRE",
@@ -1306,6 +1411,13 @@
     "distance": "MARATHON",
     "name": "Schneider Electric Marathon de Paris",
     "platform": "timeto"
+  },
+  "semi & 10km de bordeaux": {
+    "country": "FRA",
+    "distance": "SEMI",
+    "name": "Semi & 10km de Bordeaux",
+    "platform": "custom",
+    "url": "semidebordeaux.fr"
   },
   "semi marathon de lisbonne": {
     "country": "PRT",
@@ -1429,6 +1541,13 @@
     "name": "Stuttgart-Lauf",
     "platform": "raceresult",
     "raceresult_id": "319172"
+  },
+  "surf city marathon": {
+    "athlinks_event_id": "1224",
+    "country": "USA",
+    "distance": "SEMI",
+    "name": "Surf City Marathon",
+    "platform": "athlinks"
   },
   "swedbank tallinna maraton": {
     "country": "EST",
@@ -1561,6 +1680,13 @@
     "notes": "marathon.tokyo results page not accessible (404), manual update required",
     "platform": null,
     "platform_id": "108"
+  },
+  "tout rennes court": {
+    "country": "FRA",
+    "distance": "SEMI",
+    "klikego_id": "1732219498024-1",
+    "name": "Tout Rennes Court",
+    "platform": "klikego"
   },
   "toyota amazing thailand bangkok marathon": {
     "country": "THA",
