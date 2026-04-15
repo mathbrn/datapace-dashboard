@@ -1,0 +1,18 @@
+{
+  "date": "2026-04-15",
+  "total_events": 859,
+  "originals": 225,
+  "imported_benchmark": 634,
+  "imported_rows": 1630,
+  "platform_map_entries": 88,
+  "imported_mapped": 0,
+  "originals_mapped": 0,
+  "imported_with_url": 2,
+  "imported_platform_inferable": 0,
+  "empty_2025_cells_imported": 1352,
+  "filled_2025_cells_imported": 277,
+  "benchmark_nonround_exploitable": 311,
+  "benchmark_2026_past": 272,
+  "benchmark_2026_future": 600,
+  "benchmark_2026_nodate": 57
+}
