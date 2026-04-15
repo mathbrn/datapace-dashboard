@@ -554,9 +554,10 @@ function isLight(){return document.documentElement.hasAttribute('data-theme');}
 var LIGHT_MAP={'#38BDF8':'#0B7BC0','#FCDB00':'#A88F00','#DC2626':'#991B1B','#E30613':'#B80510','#EF4444':'#B91C1C','#FF8A50':'#CC5A20','#5CDFA0':'#2BA368','#F472B6':'#C04080','#FF4A6B':'#CC2040','#22C55E':'#1A8A42','#2DBF7E':'#1F8A5A','#FF6B9D':'#CC3870','#F87171':'#B91C1C','#2563EB':'#1D4ED8','#60A5FA':'#2563EB','#3B82F6':'#1D4ED8','#BFDBFE':'#93C5FD','#1E3A8A':'#172554','#1D4ED8':'#1E3A8A','#1E40AF':'#1E3A8A','#93C5FD':'#60A5FA'};
 function lc(c){return isLight()?(LIGHT_MAP[c]||c):c;}
 function col(r){return lc('#DC2626');}
-function colDist(r){return lc(r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':r.d==='AUTRE'?'#F472B6':'#2563EB');}
+function colDist(r){return lc(r.d==='5KM'?'#AC14D7':r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':r.d==='AUTRE'?'#F472B6':'#2563EB');}
+function eventFlag(name){if(typeof EVENT_COUNTRIES==='undefined')return '';var info=EVENT_COUNTRIES[name];return info&&info.flag?info.flag:'';}
 var CIRC_COLORS={WMM:'#38BDF8',ASO:'#E30613',EMC:'#F87171',L5G:'#DC2626'};
-var CIRC_DIST_SEC={MARATHON:'#F87171',SEMI:'#FFB088','10KM':'#88EEBB',AUTRE:'#FF99CC'};
+var CIRC_DIST_SEC={MARATHON:'#F87171',SEMI:'#FFB088','10KM':'#88EEBB','5KM':'#C966E8',AUTRE:'#FF99CC'};
 function circColor(code,dist){if(code==='RNR')return lc(CIRC_DIST_SEC[dist]||'#F87171');return lc(CIRC_COLORS[code]||'#F87171');}
 function circBadges(r){var ci=r.ci||[];if(!ci.length)return'';return ci.map(function(c){var col=circColor(c,r.d);return'<span class="circ-badge" style="border:1px solid '+col+'40;color:'+col+';background:transparent;font-size:9px;padding:1px 6px;border-radius:100px;text-transform:uppercase;margin-left:4px;white-space:nowrap">'+c+'</span>';}).join('');}
 function hasCircuit(r,code){return(r.ci||[]).indexOf(code)>=0;}
@@ -1061,7 +1062,7 @@ function ovSelect(idx){
   var circHtml=circBadges(ev);
   var html='<div class="ov-card">'
     +'<div class="ov-card-header"><div>'
-    +'<div class="ov-card-title">'+ev.r+'</div>'
+    +'<div class="ov-card-title">'+(eventFlag(ev.r)?eventFlag(ev.r)+' ':'')+ev.r+'</div>'
     +'<div class="ov-card-meta"><span>'+ev.c+' &middot; '+ev.p+'</span></div>'
     +'</div>'
     +'<div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap"><span class="ov-badge" style="border:1px solid '+badgeCol+'40;color:'+badgeCol+';background:transparent;font-size:10px;padding:3px 10px;border-radius:100px;">'+dl+'</span>'+circHtml+'</div>'
@@ -1170,7 +1171,7 @@ function updateTrends(){
     return{label:r.r,data:allYears.map(function(yr){var v=(r.hist||{})[yr];return v&&v>0?v:null;}),borderColor:c,backgroundColor:'transparent',tension:0.35,fill:false,pointRadius:3,pointHoverRadius:7,spanGaps:true,borderWidth:2,pointBackgroundColor:c,_rawIdx:RAW.indexOf(r),_dist:r.d};
   });
   var minYr=allYears.length?allYears[0]:'';var maxYr=allYears.length?allYears[allYears.length-1]:'';
-  var distNames={MARATHON:'MARATHON',SEMI:'SEMI-MARATHON','10KM':'10 KM',AUTRE:'AUTRE'};
+  var distNames={MARATHON:'MARATHON',SEMI:'SEMI-MARATHON','10KM':'10 KM','5KM':'5 KM',AUTRE:'AUTRE'};
   var titleParts=['EVOLUTION'];
   if(dist!=='ALL')titleParts.push(distNames[dist]||dist);
   if(region!=='ALL')titleParts.push(region.toUpperCase());
@@ -1252,7 +1253,7 @@ function initBiggestYears(){
   if(prev&&allYears.indexOf(+prev)>=0)sel.value=prev;
 }
 
-function colDistOnly(r){return lc(r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':r.d==='AUTRE'?'#F472B6':'#2563EB');}
+function colDistOnly(r){return lc(r.d==='5KM'?'#AC14D7':r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':r.d==='AUTRE'?'#F472B6':'#2563EB');}
 function updateBiggest(){
   var n=parseInt(document.getElementById('topn-biggest').value);
   var yr=parseInt(document.getElementById('year-biggest').value);
@@ -1415,7 +1416,7 @@ function filterTable(){
   // Sort
   var sortMode=document.getElementById('sort-data').value;
   var monthOrder={Janvier:1,Fevrier:2,Février:2,Mars:3,Avril:4,Mai:5,Juin:6,Juillet:7,Aout:8,Août:8,Septembre:9,Octobre:10,Novembre:11,Decembre:12,Décembre:12};
-  var distOrder={MARATHON:1,SEMI:2,'10KM':3,AUTRE:4};
+  var distOrder={MARATHON:1,SEMI:2,'10KM':3,'5KM':4,AUTRE:5};
   var lastYr=globalYears.length?globalYears[globalYears.length-1]:0;
   if(sortMode==='month'){f.sort(function(a,b){return(monthOrder[a.p]||99)-(monthOrder[b.p]||99);});}
   else if(sortMode==='distance'){f.sort(function(a,b){return(distOrder[a.d]||9)-(distOrder[b.d]||9);});}
@@ -1439,7 +1440,7 @@ function filterTable(){
     var cBadges=circBadges(r);
     html+='<tr><td>'+r.p+'</td><td>'+r.c+'</td>'
       +'<td><span class="badge" style="background:'+raceColor+'18;color:'+raceColor+'">'+bl+'</span>'+cBadges+'</td>'
-      +'<td style="color:'+raceColor+'" title="'+r.r+'">'+r.r+'</td>'
+      +'<td style="color:'+raceColor+'" title="'+r.r+'">'+(eventFlag(r.r)?eventFlag(r.r)+' ':'')+r.r+'</td>'
       +globalYears.map(function(y){var v=(r.hist||{})[y];var isFirst=r.fy&&y===r.fy;var starHtml=isFirst?'<span style="position:absolute;top:1px;left:2px;font-size:7px;color:'+raceColor+';opacity:0.7">\u2605</span>':'';if(v===-3)return'<td style="color:var(--text3);opacity:0.2">\u00b7</td>';if(v===-1)return'<td style="color:#FF4A6B;font-size:10px;font-style:italic;position:relative">'+starHtml+'Annul\u00e9</td>';if(v===-2)return'<td style="color:'+raceColor+';font-size:10px;font-style:italic;position:relative">'+starHtml+'Elite Only</td>';return'<td style="'+(v?'color:var(--text)':'')+';position:relative">'+starHtml+(v?fmtFull(v):'\u2014')+'</td>';}).join('')
       +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
   });
@@ -1989,9 +1990,9 @@ function renderCompare(){
 
   var html='<div class="cmp-wrap" style="--cmp-col-a:'+colA+';--cmp-col-b:'+colB+';">'
     +'<div class="cmp-header">'
-    +'<div class="cmp-header-cell"><div class="cmp-race-name" style="color:'+colA+'">'+a.r+'</div><div class="cmp-race-meta">'+a.c+' &middot; '+a.p+' &middot; '+distA+circBadges(a)+'</div></div>'
+    +'<div class="cmp-header-cell"><div class="cmp-race-name" style="color:'+colA+'">'+(eventFlag(a.r)?eventFlag(a.r)+' ':'')+a.r+'</div><div class="cmp-race-meta">'+a.c+' &middot; '+a.p+' &middot; '+distA+circBadges(a)+'</div></div>'
     +'<div class="cmp-header-cell ctr"><div class="cmp-mid-label">Course</div></div>'
-    +'<div class="cmp-header-cell" style="text-align:right"><div class="cmp-race-name" style="color:'+colB+'">'+b.r+'</div><div class="cmp-race-meta">'+b.c+' &middot; '+b.p+' &middot; '+distB+circBadges(b)+'</div></div>'
+    +'<div class="cmp-header-cell" style="text-align:right"><div class="cmp-race-name" style="color:'+colB+'">'+(eventFlag(b.r)?eventFlag(b.r)+' ':'')+b.r+'</div><div class="cmp-race-meta">'+b.c+' &middot; '+b.p+' &middot; '+distB+circBadges(b)+'</div></div>'
     +'</div>';
 
   html+=cmpR(finLblA,finLblB,'Finishers',winFin,'','');
@@ -2566,7 +2567,7 @@ HTML_BODY = """
     <div class="ctrl-group"><span class="ctrl-label">Distance</span>
       <select id="dist-trends" onchange="updateTrends()">
         <option value="ALL">Toutes distances</option>
-        <option value="MARATHON">Marathon</option><option value="SEMI">Semi-marathon</option><option value="10KM">10 km</option><option value="AUTRE">Autre</option>
+        <option value="MARATHON">Marathon</option><option value="SEMI">Semi-marathon</option><option value="10KM">10 km</option><option value="5KM">5 km</option><option value="AUTRE">Autre</option>
       </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">R&eacute;gion</span>
@@ -2594,7 +2595,7 @@ HTML_BODY = """
     <div class="ctrl-group"><span class="ctrl-label">Distance</span>
       <select id="dist-biggest" onchange="initBiggestYears();updateBiggest()">
         <option value="ALL">Toutes distances</option>
-        <option value="MARATHON">Marathon</option><option value="SEMI">Semi-marathon</option><option value="10KM">10 km</option><option value="AUTRE">Autre</option>
+        <option value="MARATHON">Marathon</option><option value="SEMI">Semi-marathon</option><option value="10KM">10 km</option><option value="5KM">5 km</option><option value="AUTRE">Autre</option>
       </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">R&eacute;gion</span>
@@ -2624,7 +2625,7 @@ HTML_BODY = """
   <div class="controls">
     <div class="ctrl-group"><span class="ctrl-label">Distance</span>
       <select id="dist-temps" onchange="updateTempsYears();updateTemps()">
-        <option value="MARATHON">Marathon</option><option value="SEMI">Semi-marathon</option><option value="10KM">10 km</option><option value="AUTRE">Autre</option>
+        <option value="MARATHON">Marathon</option><option value="SEMI">Semi-marathon</option><option value="10KM">10 km</option><option value="5KM">5 km</option><option value="AUTRE">Autre</option>
       </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">R&eacute;gion</span>
@@ -2749,7 +2750,7 @@ HTML_BODY = """
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Distance</span>
       <select id="dist-data" onchange="filterTable()">
-        <option value="ALL">Toutes</option><option value="MARATHON">Marathon</option><option value="SEMI">Semi</option><option value="10KM">10 km</option><option value="AUTRE">Autre</option>
+        <option value="ALL">Toutes</option><option value="MARATHON">Marathon</option><option value="SEMI">Semi</option><option value="10KM">10 km</option><option value="5KM">5 km</option><option value="AUTRE">Autre</option>
       </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Mois</span>
@@ -2919,6 +2920,13 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
         import json as jlib3
         with open(update_log_path, "r", encoding="utf-8") as f:
             update_log = jlib3.load(f).get("updates", [])
+    # Load event countries / flags
+    countries_path = SCRIPT_DIR / "event_countries.json"
+    event_countries = {}
+    if countries_path.exists():
+        import json as jlib4
+        with open(countries_path, "r", encoding="utf-8") as f:
+            event_countries = jlib4.load(f)
     js_data = ("const RAW=" + j(finishers) + ";\nconst BIGGEST=" + j(biggest) + ";\n"
                "const TEMPS_MARATHON=" + j(tmjs) + ";\nconst TEMPS_SEMI=" + j(tsjs) + ";\n"
                "const TEMPS_10K=" + j(t10js) + ";\nconst TEMPS_AUTRE=" + j(tajs) + ";\n"
@@ -2928,6 +2936,7 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
                "const ASO_KEYWORDS=" + j(ASO_KEYWORDS) + ";\n"
                "const WINNERS=" + j(winners) + ";\n"
                "const UPDATE_LOG=" + j(update_log) + ";\n"
+               "const EVENT_COUNTRIES=" + j(event_countries) + ";\n"
                "const SP_BRANDS=" + j(spdata.get("brands", {})) + ";\n"
                "const SP_PARTNERSHIPS=" + j(spdata.get("partnerships", [])) + ";\n")
     body = HTML_BODY.format(now=now)

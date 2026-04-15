@@ -1,0 +1,3826 @@
+{
+  "NYC Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Maratona Do Rio": {
+    "pays": "Brésil",
+    "flag": "🇧🇷"
+  },
+  "Chicago Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Sao Silvestre de Sao Paulo": {
+    "pays": "Brésil",
+    "flag": "🇧🇷"
+  },
+  "Allwyn Athens Marathon": {
+    "pays": "Grèce",
+    "flag": "🇬🇷"
+  },
+  "Course de l'escalade": {
+    "pays": "Suisse",
+    "flag": "🇨🇭"
+  },
+  "BMW Marathon de Berlin": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Great North Run": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Great Ethiopan Run": {
+    "pays": "Ethiopie",
+    "flag": "🇪🇹"
+  },
+  "Peachtree Road Race": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "20KM de Bruxelles": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "Singapore Marathon": {
+    "pays": "Singapour",
+    "flag": "🇸🇬"
+  },
+  "Run in Lyon by Harmonie Mutuelle": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Rock'n'roll Running Madrid": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Baloise Antwerp 10 miles": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "ADNOC Abu Dhabi Marathon": {
+    "pays": "Emirats Arabes Unis",
+    "flag": "🇦🇪"
+  },
+  "Kuala Lampur Standard Chartered Marathon": {
+    "pays": "Malaisie",
+    "flag": "🇲🇾"
+  },
+  "World 10K bengaluru": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Hot Chocolate Run": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Sydney Marathon": {
+    "pays": "Australie",
+    "flag": "🇦🇺"
+  },
+  "ASML Marathon Eindhoven": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "Toulouse Metropole Run Experience": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Valencia Trinidad Alfonso": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Bloomsday Run": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Run Rome Marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Tamarack Ottawa Race week end": {
+    "pays": "Canada",
+    "flag": "🇨🇦"
+  },
+  "Carrera de la Mujer Madrid": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Wizz Air Milano Marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Chengdu World heritage Marathon": {
+    "pays": "Chine",
+    "flag": "🇨🇳"
+  },
+  "Two Oceans Marathon": {
+    "pays": "Afrique du Sud",
+    "flag": "🇿🇦"
+  },
+  "NYC Half Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "NN CPC Loop Den Haag": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "Carrera de la Mujer Barcelona": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Wuxi Marathon": {
+    "pays": "Chine",
+    "flag": "🇨🇳"
+  },
+  "Brooklyn Half Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Mitja Marato Barcelona": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Bank of China Beijing Marathon": {
+    "pays": "Chine",
+    "flag": "🇨🇳"
+  },
+  "Walt Disney Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Beneva Montréal Marathon": {
+    "pays": "Canada",
+    "flag": "🇨🇦"
+  },
+  "Maraton de Santiago": {
+    "pays": "Chili",
+    "flag": "🇨🇱"
+  },
+  "Cursa El corte Ingles": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Medio Maraton de Buenos Aires": {
+    "pays": "Argentine",
+    "flag": "🇦🇷"
+  },
+  "Medio Maration Ciudad de Mexico": {
+    "pays": "Mexique",
+    "flag": "🇲🇽"
+  },
+  "Cardiff Half": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Zevenheuvelenloop": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "Generali Köln Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Hackney Half Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "VHI Women's Mini Marathon": {
+    "pays": "Irlande",
+    "flag": "🇮🇪"
+  },
+  "Shamrock Shuffle": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Mexico city marathon": {
+    "pays": "Mexique",
+    "flag": "🇲🇽"
+  },
+  "Freshworks Chennai Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Paris-Versailles - La grande classique": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "World 25K Kolkata": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Grand Prix Von Bern": {
+    "pays": "Suisse",
+    "flag": "🇨🇭"
+  },
+  "Southern Cross Round The Bays": {
+    "pays": "Nouvelle-Zélande",
+    "flag": "🇳🇿"
+  },
+  "Maraton Medellin": {
+    "pays": "Colombie",
+    "flag": "🇨🇴"
+  },
+  "Osterreichischer Frauenlauf": {
+    "pays": "Autriche",
+    "flag": "🇦🇹"
+  },
+  "Behobia San Sebastian": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Marathon International du Beaujolais": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Marato Barcelona": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Guangzhou Marathon": {
+    "pays": "Chine",
+    "flag": "🇨🇳"
+  },
+  "Jakarta Running Festival": {
+    "pays": "Indonésie",
+    "flag": "🇮🇩"
+  },
+  "Rimi Riga Marathon": {
+    "pays": "Lettonie",
+    "flag": "🇱🇻"
+  },
+  "Semi & 10km de Bordeaux": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Madrid Medio Maraton": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Sydney Half Marathon": {
+    "pays": "Australie",
+    "flag": "🇦🇺"
+  },
+  "Winter Run": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Adani Ahmedabad Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Marseille-Cassis": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Loop Den Haag NN halve marathon": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "Meia Maratona internacional Do Rio de Janeiro": {
+    "pays": "Brésil",
+    "flag": "🇧🇷"
+  },
+  "Marathon Munchen": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Carrera Nocturna del Guadalquivir KH7": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "10km Fulfil des Champs Elysées": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "DeeJay Ten Milano": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Rocky Run": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Saucony 10km de le Tour Eiffel": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "20Km de Lausanne": {
+    "pays": "Suisse",
+    "flag": "🇨🇭"
+  },
+  "Vedanta Delhi Half": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Semi marathon de Lisbonne": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "500 Festival Half Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "ADAC Marathon de Hannover": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Toronto Marathon": {
+    "pays": "Canada",
+    "flag": "🇨🇦"
+  },
+  "Rock'n'Roll San Diego Half Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Reims Champagne Run": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Surf City Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Abu Dhabi Marathon": {
+    "pays": "Emirats arabes unis",
+    "flag": "🏳"
+  },
+  "Tout Rennes Court": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "City-Bay": {
+    "pays": "Australie",
+    "flag": "🇦🇺"
+  },
+  "Ljubljana Marathon": {
+    "pays": "Slovénie",
+    "flag": "🇸🇮"
+  },
+  "Bilbao Night Running Fest": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Wizz Air Budapest Half marathon": {
+    "pays": "Hongrie",
+    "flag": "🇭🇺"
+  },
+  "Bredase Singelloop": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "Kobe Marathon": {
+    "pays": "Japon",
+    "flag": "🇯🇵"
+  },
+  "Hokkaido Marathon": {
+    "pays": "Japon",
+    "flag": "🇯🇵"
+  },
+  "Eva Air Marathon": {
+    "pays": "Taiwan",
+    "flag": "🏳"
+  },
+  "Marathon des Alpes-Maritimes Nice-Cannes by Kiprun": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Brighton Marathon Week end": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Pattaya Marathon": {
+    "pays": "Thailande",
+    "flag": "🇹🇭"
+  },
+  "Marathon International inDeauville": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "NordicTrack running château de Versailles": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Carrera Ponle Freno Madrid": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Maraton Lima 42K": {
+    "pays": "Pérou",
+    "flag": "🇵🇪"
+  },
+  "Zurich Marathon": {
+    "pays": "Suisse",
+    "flag": "🇨🇭"
+  },
+  "SOLA-Stafette Zürich": {
+    "pays": "Suisse",
+    "flag": "🇨🇭"
+  },
+  "Antwerp Marathon": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "Nagoya Women's Marathon": {
+    "pays": "Japon",
+    "flag": "🇯🇵"
+  },
+  "Runaway Auckland Marathon": {
+    "pays": "Nouvelle-Zélande",
+    "flag": "🇳🇿"
+  },
+  "Helsinki City run": {
+    "pays": "Finlande",
+    "flag": "🇫🇮"
+  },
+  "Standard Chartered Hanoi Marathon - Heritage Race": {
+    "pays": "Vietnam",
+    "flag": "🇻🇳"
+  },
+  "Doha Running Festival": {
+    "pays": "Qatar",
+    "flag": "🇶🇦"
+  },
+  "Doha Marathon": {
+    "pays": "Qatar",
+    "flag": "🇶🇦"
+  },
+  "Rock'n'Roll Las Vegas": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Hamburg Halbmarathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "10K Valencia Ibercaja": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "10km Hoka Paris centre": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Morat-Fribourg": {
+    "pays": "Suisse",
+    "flag": "🇨🇭"
+  },
+  "Luzerner Stadtlauf": {
+    "pays": "Suisse",
+    "flag": "🇨🇭"
+  },
+  "Zandvoort circuit run": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "The Music Run": {
+    "pays": "Singapour",
+    "flag": "🇸🇬"
+  },
+  "Allianz Jean Bouin": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Marathon de la Liberté - Normandy Running Festival": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Swedbank Tallinna maraton": {
+    "pays": "Estonie",
+    "flag": "🇪🇪"
+  },
+  "Saitama Marathon": {
+    "pays": "Japon",
+    "flag": "🇯🇵"
+  },
+  "Running Loire Valley": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Wizz Air Venice Marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Servus Calgary Marathon": {
+    "pays": "Canada",
+    "flag": "🇨🇦"
+  },
+  "Calgary Marathon": {
+    "pays": "Canada",
+    "flag": "🇨🇦"
+  },
+  "Nice Semi-Marathon International": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Marathon Vert": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "La Parisienne": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Mezza Maratona d'Italia - Memorial Enzo Ferrari": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Media Maraton de Lima": {
+    "pays": "Pérou",
+    "flag": "🇵🇪"
+  },
+  "Enschede Marathon": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "Brusells airport marathon": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "Almaty Marathon": {
+    "pays": "Kazakhstan",
+    "flag": "🇰🇿"
+  },
+  "Marathon International de la Côte d’Amour Amarris": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Marathon de Biarritz": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Rock'n'Roll Nashville": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Midwintern Marathon": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "Vedanta Pink City Half": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "SK Jodhpur Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "JBG Kolkata Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Konya Half Marathon": {
+    "pays": "Turquie",
+    "flag": "🇹🇷"
+  },
+  "Frankfurt marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Marathon de La Rochelle Serge Vigot": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Freiburg Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Royal Victoria Marathon": {
+    "pays": "Canada",
+    "flag": "🇨🇦"
+  },
+  "SportScheck RUN Munchen": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Singapore Compression Run": {
+    "pays": "Singapour",
+    "flag": "🇸🇬"
+  },
+  "Dresden Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Sunshine coast Marathon Festival": {
+    "pays": "Australie",
+    "flag": "🇦🇺"
+  },
+  "Stuttgart-Lauf": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Adidas Runners city night": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Maratona Di Ravenna": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Perth running festival": {
+    "pays": "Australie",
+    "flag": "🇦🇺"
+  },
+  "Egmond Halve marathon": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "Halong Bay Heritage Marathon": {
+    "pays": "Vietnam",
+    "flag": "🇻🇳"
+  },
+  "Deutsche Post Marathon Bonn": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "15KM de Rotterdam": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "Utrecht Marathon": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "Sao Silvestre do Porto": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "Lausanne Marathon": {
+    "pays": "Suisse",
+    "flag": "🇨🇭"
+  },
+  "Indian Army Day Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Marathon international de Marrakech": {
+    "pays": "Maroc",
+    "flag": "🇲🇦"
+  },
+  "Paderborner Osterlauf": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Brooks Marathon du Lac d’Annecy": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Shamrock Run": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Cursa dels Nassos": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Seine-Marathon 76": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Sao Silvestre de Lisboa": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "New Delhi Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Sapporo Half Marathon": {
+    "pays": "Japon",
+    "flag": "🇯🇵"
+  },
+  "Fukuoka Marathon": {
+    "pays": "Japon",
+    "flag": "🇯🇵"
+  },
+  "ING Night Marathon Luxembourg": {
+    "pays": "Luxembourg",
+    "flag": "🇱🇺"
+  },
+  "Great Bristol Run": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Edimburgh Marathon Festival": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Wizz Air Skopje Marathon": {
+    "pays": "Macédoine du Nord",
+    "flag": "🏳"
+  },
+  "Swiss city Marathon": {
+    "pays": "Suisse",
+    "flag": "🇨🇭"
+  },
+  "IndianOil WNC Navy Half": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Liverpool Half Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "La Corrida Crédit Agricole Toulouse": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Montpellier Run Festival": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Denver Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Bix 7": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "La Grande Course RATP du Grand Paris": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "ACSE - Les courses de Strasbourg Eurométropole": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Greifenseelauf": {
+    "pays": "Suisse",
+    "flag": "🇨🇭"
+  },
+  "Bruges marathon": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "Union Bank of India Thane Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Guadalajara Half Marathon": {
+    "pays": "Mexique",
+    "flag": "🇲🇽"
+  },
+  "Tay Ho Half Marathon": {
+    "pays": "Vietnam",
+    "flag": "🇻🇳"
+  },
+  "Bank of China Beijing Half Marathon": {
+    "pays": "Chine",
+    "flag": "🇨🇳"
+  },
+  "Oxford Half": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Prom'Classique": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Midnight sun Marathon": {
+    "pays": "Norvège",
+    "flag": "🇳🇴"
+  },
+  "Bangsaen 42 Marathon": {
+    "pays": "Thailande",
+    "flag": "🇹🇭"
+  },
+  "Kagawa Marugama Half Marathon": {
+    "pays": "Japon",
+    "flag": "🇯🇵"
+  },
+  "Nairobi City Marathon": {
+    "pays": "Kenya",
+    "flag": "🇰🇪"
+  },
+  "Vilniaus Maratonas": {
+    "pays": "Lithuanie",
+    "flag": "🏳"
+  },
+  "LDN X": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Love Run": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Vueling cursa bombers": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Maraton Murcia Costa Calida": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Gutenberg Halbmarathon Mainz": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Tjejmilen": {
+    "pays": "Suède",
+    "flag": "🇸🇪"
+  },
+  "Run set & Match": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Dubai Marathon": {
+    "pays": "Emirats arabes unis",
+    "flag": "🏳"
+  },
+  "Trondheim Marathon": {
+    "pays": "Norvège",
+    "flag": "🇳🇴"
+  },
+  "San Sebastian Marathon": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Graz Marathon": {
+    "pays": "Autriche",
+    "flag": "🇦🇹"
+  },
+  "Rock'n'Roll Arizona": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "15km Liège Metropole": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "Ho Chi Minh city marathon": {
+    "pays": "Vietnam",
+    "flag": "🇻🇳"
+  },
+  "Generali Tranquilidade Meia Maratona Descobrimentos": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "Bergen City Marathon": {
+    "pays": "Norvège",
+    "flag": "🇳🇴"
+  },
+  "Generali Maraton Malaga": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "10km du Panthéon": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Linz Donau Marathon": {
+    "pays": "Autriche",
+    "flag": "🇦🇹"
+  },
+  "Uniper Marathon de Düsseldorf": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Bath Half Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Kitakyushu Marathon": {
+    "pays": "Japon",
+    "flag": "🇯🇵"
+  },
+  "Karnataka State Police Run": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Muscat Marathon": {
+    "pays": "Oman",
+    "flag": "🇴🇲"
+  },
+  "Global 10K New Delhi": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Sharqiyah International Race": {
+    "pays": "Arabie Saoudite",
+    "flag": "🇸🇦"
+  },
+  "Almaty Half Marathon": {
+    "pays": "Kazakhstan",
+    "flag": "🇰🇿"
+  },
+  "Brisbane marathon festival": {
+    "pays": "Australie",
+    "flag": "🇦🇺"
+  },
+  "Marathon des Chateaux du Médoc": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Leipzig Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Rock'n'Roll Washington DC": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Pyramids Half Marathon": {
+    "pays": "Egypte",
+    "flag": "🏳"
+  },
+  "Belfast City Marathon": {
+    "pays": "Irlande",
+    "flag": "🇮🇪"
+  },
+  "The Hapalua - Hawaii's Hlaf marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Auffahrtslauf St.Gallen": {
+    "pays": "Suisse",
+    "flag": "🇨🇭"
+  },
+  "Baloise Namur Marathon": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "Rock'n'Roll San Jose": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Montepio Meia Maratona Cascais": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "Maratona do Porto": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "Wizz Air Sofia Marathon": {
+    "pays": "Bulgarie",
+    "flag": "🇧🇬"
+  },
+  "Route du Louvre": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Course Eiffage du Viaduc de Millau": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Can Tho Marathon Heritage Race": {
+    "pays": "Vietnam",
+    "flag": "🇻🇳"
+  },
+  "Euro Marathon Metz": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Bengaluru Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Under Armour Toronto 10K": {
+    "pays": "Canada",
+    "flag": "🇨🇦"
+  },
+  "Leeds Half Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Bangkok Marathon": {
+    "pays": "Thailande",
+    "flag": "🇹🇭"
+  },
+  "Rock'n'Roll Manila": {
+    "pays": "Philippines",
+    "flag": "🇵🇭"
+  },
+  "Estra Firenze Marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Marathon de la Loire": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Quebec City Marathon": {
+    "pays": "Canada",
+    "flag": "🇨🇦"
+  },
+  "Bratislava Marathon": {
+    "pays": "Slovaquie",
+    "flag": "🇸🇰"
+  },
+  "Les foulées de Vincennes": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Palma Marathon Mallorca": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Marathon Bière Flandre Festival": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Newport Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Zürcher Silvesterlauf": {
+    "pays": "Suisse",
+    "flag": "🇨🇭"
+  },
+  "Louisiana Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Meia Maratona do Porto": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "MG Vadodara International Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Milano21": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Around the Bay Road Race": {
+    "pays": "Canada",
+    "flag": "🇨🇦"
+  },
+  "Maraton de Mendoza": {
+    "pays": "Argentine",
+    "flag": "🇦🇷"
+  },
+  "Chennai Navy Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Tokushima Marathon": {
+    "pays": "Japon",
+    "flag": "🇯🇵"
+  },
+  "10km des Etoiles": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Alliance Bank Borneo International Marathon": {
+    "pays": "Malaisie",
+    "flag": "🇲🇾"
+  },
+  "Southampton Marathon festival": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Dwars Door Bruges": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "10K Night Race Prague": {
+    "pays": "République Tchèque",
+    "flag": "🇨🇿"
+  },
+  "Yorkshire Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Schweizer Frauenlauf Bern": {
+    "pays": "Suisse",
+    "flag": "🇨🇭"
+  },
+  "Sheffield Half Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Maraton de Zaragoza": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Rock'n' Roll Mexico City": {
+    "pays": "Mexique",
+    "flag": "🇲🇽"
+  },
+  "Baxters Marathon du Loch Ness": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Les voies royales de Saint Denis": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Bjorn Borg Helsinki Marathon": {
+    "pays": "Finlande",
+    "flag": "🇫🇮"
+  },
+  "SportScheck Run Nuremberg": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "10km Onatéra Paris 17": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Media Maraton internacional aguas de alicante": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Casablanca Marathon": {
+    "pays": "Maroc",
+    "flag": "🇲🇦"
+  },
+  "Running Festival in Mozart City": {
+    "pays": "Autriche",
+    "flag": "🇦🇹"
+  },
+  "Santa Monica Classic": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Golden Gate": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Les foulées Valenciennoises": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "SportScheck Run Hannovre": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Marathon des vins de la côte chalonnaise": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Chicago Triathlon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Semi marathon du Bois de Vincennes": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Chester 10K": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "KPMG Lentermarathon": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "Thien Phong Marathon": {
+    "pays": "Vietnam",
+    "flag": "🇻🇳"
+  },
+  "Ibiza Marathon": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "20km de Genève": {
+    "pays": "Suisse",
+    "flag": "🇨🇭"
+  },
+  "Noosa Triathlon": {
+    "pays": "Australie",
+    "flag": "🇦🇺"
+  },
+  "Sydney Harbour 10K": {
+    "pays": "Australie",
+    "flag": "🇦🇺"
+  },
+  "Torino city marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Hallwilerseelauf": {
+    "pays": "Suisse",
+    "flag": "🇨🇭"
+  },
+  "Guadalajara Marathon": {
+    "pays": "Mexique",
+    "flag": "🇲🇽"
+  },
+  "Neapolis marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Semi du Grand Nancy": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Marathon des Grands Crus": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Mattoni Running Festival Olomouc": {
+    "pays": "République Tchèque",
+    "flag": "🇨🇿"
+  },
+  "Belgrade Marathon": {
+    "pays": "Serbie",
+    "flag": "🇷🇸"
+  },
+  "Wizz Air Napoca Marathon": {
+    "pays": "Roumanie",
+    "flag": "🇷🇴"
+  },
+  "10km du bois de Boulogne": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Romeo & Giuletta Run Half marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Maraton Lodz": {
+    "pays": "Pologne",
+    "flag": "🇵🇱"
+  },
+  "Maratona Monumental Brasilia": {
+    "pays": "Brésil",
+    "flag": "🇧🇷"
+  },
+  "La course du château de Vincennes": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Little Rock Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Jesolo Moonlight HalfMarathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Heilbronner Trollinger Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Bruells Ekiden": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "Belfast city Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Münster Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Marathon de la mer": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Christchurch marathon": {
+    "pays": "Nouvelle-Zélande",
+    "flag": "🇳🇿"
+  },
+  "SKF Goa River Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "ACSE - La Strasbourgeoise": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Holmenkollstafetten": {
+    "pays": "Norvège",
+    "flag": "🇳🇴"
+  },
+  "Bengaluru half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "OEM Oberelbe Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Chester marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Maraton Leon": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Cracovia Maraton": {
+    "pays": "Pologne",
+    "flag": "🇵🇱"
+  },
+  "Ekiden du Stade Français": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Kerzerslauf": {
+    "pays": "Suisse",
+    "flag": "🇨🇭"
+  },
+  "Maratona Internacional de Sao Paulo": {
+    "pays": "Brésil",
+    "flag": "🇧🇷"
+  },
+  "10km du Trocadéro": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "The Brecon Carreg Porthcawl 10K": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Marathon du vignoble d’Alsace": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Media Elche": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "3-Länder-Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "S25": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "10 km Unicef": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "EVL Halbmarathon Leverkusen": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Bengaluru 10K Challenge": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "15Km de Woluwe": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "Great 10K": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "20km de maroilles": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Semi-marathon de Mons": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "Pro Potsdam Schlösserlauf": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Runtalya": {
+    "pays": "Turquie",
+    "flag": "🇹🇷"
+  },
+  "Semi-Marathon de la Vente des Vins": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Limassol Marathon": {
+    "pays": "Chypre",
+    "flag": "🇨🇾"
+  },
+  "Roma Appia Run": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Sparkassen Metropolmarathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Würzburg marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Padova marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Province de Liège semi marathon": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "Halve Marathon Zwolle": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "Stadsloop Gent": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "3-Sjoerslopet": {
+    "pays": "Norvège",
+    "flag": "🇳🇴"
+  },
+  "Termal Bologna Marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Rotorua Marathon": {
+    "pays": "Nouvelle-Zélande",
+    "flag": "🇳🇿"
+  },
+  "Stramilano": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Brooks Adelaide Marathon festival": {
+    "pays": "Australie",
+    "flag": "🇦🇺"
+  },
+  "ColleMar-athon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Lotus Juhu Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Niveus Mangalore Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Rome 15K": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Hyderabad 10K": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Gran Carrera del Mediterraneo": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Half Marathon Delhi": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Napa To Sonama": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Foulées d’Orléans": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Sparkassen Phoenix Halbmarathn": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Gulf Bank 642 Marathon": {
+    "pays": "Koweït",
+    "flag": "🇰🇼"
+  },
+  "Corrida de Santo Antonio": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "Marcia Longa": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Maratona di Palermo": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Maraton Martin Fix Maratoia": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Half Marathon Garda Trentino": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Nieuwpoort Marathon": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "Bergamo21": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Drammen 10K": {
+    "pays": "Norvège",
+    "flag": "🇳🇴"
+  },
+  "Marathon Comar Tunis-Carthage": {
+    "pays": "Tunisie",
+    "flag": "🏳"
+  },
+  "Poseidon Athens Half Marathon": {
+    "pays": "Grèce",
+    "flag": "🇬🇷"
+  },
+  "Phuket marathon": {
+    "pays": "Thailande",
+    "flag": "🇹🇭"
+  },
+  "Salomon New shapers run": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "les Boucles dunkerquoises": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Monaco Run": {
+    "pays": "Monaco",
+    "flag": "🏳"
+  },
+  "Savannah Southern Half": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Mezza di Genova": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Waterfront Half Marathon": {
+    "pays": "Nouvelle-Zélande",
+    "flag": "🇳🇿"
+  },
+  "Marathon Golfe de Saint-Tropez": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Mysuru Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Monza21": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "SportScheck Run Hamburg": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Mattoni Running Festival Usti Nad Labem": {
+    "pays": "République Tchèque",
+    "flag": "🇨🇿"
+  },
+  "Waterford Viking Marathon": {
+    "pays": "Irlande",
+    "flag": "🇮🇪"
+  },
+  "Mattoni Running Festival Ceské Budejovice": {
+    "pays": "République Tchèque",
+    "flag": "🇨🇿"
+  },
+  "IIT Bombay Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Medio Maraton Albacete": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Nikolaslauf Tübigen": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Brescia art marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Wellington Marathon": {
+    "pays": "Nouvelle-Zélande",
+    "flag": "🇳🇿"
+  },
+  "Half marathon Firenze": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Besox Halve Van Oostende": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "Medio Maraton Almeria": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Premiär Halvan": {
+    "pays": "Suède",
+    "flag": "🇸🇪"
+  },
+  "Wiesbaden Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Salto 15K Donostia San Sebastian": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Run the City": {
+    "pays": "Liban",
+    "flag": "🇱🇧"
+  },
+  "Decathlon Night Run Budapest": {
+    "pays": "Hongrie",
+    "flag": "🇭🇺"
+  },
+  "Zagreb Marathon": {
+    "pays": "Croatie",
+    "flag": "🇭🇷"
+  },
+  "Gurugram Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Maasmarathon": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "La liégeoise Women Only": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "Foulées du Populaire": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Premiär  Milen": {
+    "pays": "Suède",
+    "flag": "🇸🇪"
+  },
+  "Mumbai Midnight 10K": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Cairns Marathon Festival": {
+    "pays": "Australie",
+    "flag": "🇦🇺"
+  },
+  "Winter Run Istanbul": {
+    "pays": "Turquie",
+    "flag": "🇹🇷"
+  },
+  "Hull 10K": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Marathon Poitiers-Futuroscope": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Font Vella Lanzarote International Marathon": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Corrida de Bruxelles": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "Bijlmer run": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "Media Maraton Bucaramanga": {
+    "pays": "Colombie",
+    "flag": "🇨🇴"
+  },
+  "Bengaluru Midnight Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Maratona di Pisa": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Split Marathon": {
+    "pays": "Croatie",
+    "flag": "🇭🇷"
+  },
+  "Media Maraton Zaragoza": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Magdeburg Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Challenge Roth": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Inverness Half Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Great Breweries": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "Salomon Run Barcelona": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Jonkoping Marathon": {
+    "pays": "Suède",
+    "flag": "🇸🇪"
+  },
+  "Demi-Marathon de Mont-Tremblant": {
+    "pays": "Canada",
+    "flag": "🇨🇦"
+  },
+  "Lauf Für Mehir Zeit": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Lucknow Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Run Malibu": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Spa-Francorchamps Run": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "Federal Bank Pune Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Women's 5K Run Prague": {
+    "pays": "République Tchèque",
+    "flag": "🇨🇿"
+  },
+  "La mezza di Torino": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "KLM Curacao Marathon": {
+    "pays": "Curacao",
+    "flag": "🏳"
+  },
+  "Kolkata Full Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Conegliano Valdobbiadene Prosecco Running festival": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Beer Lovers' Marathon": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "Huy Night Run": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "Rock'n'Roll Taipei": {
+    "pays": "Taiwan",
+    "flag": "🏳"
+  },
+  "Middlesbrough half marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "We Run rome": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Runkara International Half Marathon": {
+    "pays": "Turquie",
+    "flag": "🇹🇷"
+  },
+  "Bucharest international half marathon": {
+    "pays": "Roumanie",
+    "flag": "🇷🇴"
+  },
+  "Norwich Half Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Lincoln Half Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "La route du vin": {
+    "pays": "Luxembourg",
+    "flag": "🇱🇺"
+  },
+  "Charleroi marathon": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "CMP Venice Night Trail": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Newcastle-Gateshead Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "SportScheck Run Köln": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Halbmaratho Altötting": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Media Maraton Bidasoa": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Media Maraton Ciudad de Salamanca": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Maratona Maga Circe": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Havana marathon": {
+    "pays": "Cuba",
+    "flag": "🇨🇺"
+  },
+  "Coventry Half marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Marathon di Parma": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Hyderabad Hitec Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Energa Gdansk Marathon": {
+    "pays": "Pologne",
+    "flag": "🇵🇱"
+  },
+  "Westenergie marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Mezza Maratona Citta di Palmanova": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Salzkotten Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Bajaj Pune Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Leiden Marathon": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "Fulda Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Victoria Park Half marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "White marble marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Trento Running Festival": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Maratona di san valentino": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Zagreb21 Spring Half Marathon": {
+    "pays": "Croatie",
+    "flag": "🇭🇷"
+  },
+  "1/2 Maraton de la Mujer": {
+    "pays": "Mexique",
+    "flag": "🇲🇽"
+  },
+  "Sudstroum escher kulturlaf": {
+    "pays": "Luxembourg",
+    "flag": "🇱🇺"
+  },
+  "J.P Morgan City Jogging": {
+    "pays": "Luxembourg",
+    "flag": "🇱🇺"
+  },
+  "Bodhgaya Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Lucknow Half": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "RunForLife": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Santa Barbara Wine Country Half": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "SanRemo Marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Corrida da Liberdade": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "marathon halb marathon rostocker": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Placentia half marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Parma Mezza maratona": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Med marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Hampton Court Palace Half Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Comacchio Half Marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Corri a tor Vergata": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Great Welsh Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "La trenta trentina": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Media Marton Ciudad de Huelva": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "15K Formentera Sunset Run": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Dogi's Half Marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "The Amazing Northampton run": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Binter Night Run Zaragoza": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "La mezza di Treviso": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Agra Taj Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Run Festival Tossa de Mar": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Semi marathon de Binche": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "Mezza maratona di Latina": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Work'n Run": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "Trieste21": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "UST Trivandrum Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Rewe Women's Run": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Media Maraton Pamplona": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Marato Vies Verdes": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Söder Runt 10K": {
+    "pays": "Suède",
+    "flag": "🇸🇪"
+  },
+  "Maratonina del Mare": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Rolling Half": {
+    "pays": "Liban",
+    "flag": "🇱🇧"
+  },
+  "Norske Fjell Marathon": {
+    "pays": "Norvège",
+    "flag": "🇳🇴"
+  },
+  "Hindustan Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Run Bournemouth": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "21KM.BE - Semi marathon de Dour": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "Corrida de Noël": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Marathon de Funchal": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "Leicester 10K": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Dosti Thane Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Palermo international half marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "BrighTEN Marina Run": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Bodensee Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Lëtz Go gold": {
+    "pays": "Luxembourg",
+    "flag": "🇱🇺"
+  },
+  "Meia maratona de Braga": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "Renascenca Fatima Half Marathon": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "Maastricht Marathon": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "Bibione half marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Quijote Maraton": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Bahrain Night Half Marathon": {
+    "pays": "Bahreïn",
+    "flag": "🇧🇭"
+  },
+  "Ekiden de Liège": {
+    "pays": "Belgique",
+    "flag": "🇧🇪"
+  },
+  "DrammenDrammen Halv Maraton": {
+    "pays": "Norvège",
+    "flag": "🇳🇴"
+  },
+  "Terre di Siena Ultramarathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Steel run differdance": {
+    "pays": "Luxembourg",
+    "flag": "🇱🇺"
+  },
+  "Meia Maratona De Almada": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "BWM Brunei International Half Marathon": {
+    "pays": "Brunei",
+    "flag": "🏳"
+  },
+  "MAIF Ekiden de Paris": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "DHL Cross Island": {
+    "pays": "Bahreïn",
+    "flag": "🇧🇭"
+  },
+  "CrediMax Grand Prix": {
+    "pays": "Bahreïn",
+    "flag": "🇧🇭"
+  },
+  "Saaletal Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Stavanger Marathon": {
+    "pays": "Norvège",
+    "flag": "🇳🇴"
+  },
+  "Ekiden de Nantes by Decathlon": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Jahez Alareen Run": {
+    "pays": "Bahreïn",
+    "flag": "🇧🇭"
+  },
+  "Hunsrück Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Indore Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Pre-season Run": {
+    "pays": "Bahreïn",
+    "flag": "🇧🇭"
+  },
+  "Peak Lake Garda 42": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Beyon Full Marathon": {
+    "pays": "Bahreïn",
+    "flag": "🇧🇭"
+  },
+  "Charity Run Alareen": {
+    "pays": "Bahreïn",
+    "flag": "🇧🇭"
+  },
+  "NBK Bahrain Marathon Relays": {
+    "pays": "Bahreïn",
+    "flag": "🇧🇭"
+  },
+  "Drübber Lauf": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Wilson Ultra Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Women's day Run": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "MS 10K": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Mehsana Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Saviorthon 10K": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Sierra Blanca Estates Marbella Media maraton": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Jodphur Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "DDR Dwarka Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "ICT Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Kharghar Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Bhujalvauy Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Bharat Ka Bhavishya Shahoton 2.0": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Dadi Prakashmani Mount Abu International Half": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Baja Indef Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "NMDC Hyderabad Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "JBG Satara Hill Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Hennur Bamboo Ultra": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Kashmir Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Sekhon Indian Air Force Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Swachh Navy Mumbai Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Shah & Sons REVA Marathon 3.0": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Darjeeling Hill Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Rotary Valsad City Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Zydus Pinkathon Mumbai": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "21km Tras storia e natura": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Hervey Bay Half marathon festival": {
+    "pays": "Australie",
+    "flag": "🇦🇺"
+  },
+  "Run for Happiness": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Women's Race": {
+    "pays": "Liban",
+    "flag": "🇱🇧"
+  },
+  "Ciderthon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Mumbai Monsoon Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "MoRunning Cardiff": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Equathon Kolkata": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Halve Marathon": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "GM Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Konqr Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Chengdu Marathon": {
+    "pays": "Chine",
+    "flag": "🇨🇳"
+  },
+  "Kargil Vijay Diwas Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Raja Rao Tularam Rewari Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "JBG Durgapur Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Freedom Bengaluru Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Dombivlikar Friendship Run": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Thane Monsoon 15K": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Palanpur Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Noida Warrior Run": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Lucknow Heritage Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Udupi Full Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Purvankara 10K Run": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Pune Full Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Mumbai Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Kodagu Monsoon Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Dyes Mysuru Dasara 10K": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Bengaluru Ultra": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Aamchi Mumbai Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Running Lab Run": {
+    "pays": "Singapour",
+    "flag": "🇸🇬"
+  },
+  "Desert Warriors BSF Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Group 108 Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "QOC Half Martahon": {
+    "pays": "Qatar",
+    "flag": "🇶🇦"
+  },
+  "Nottingham 10K": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Malsehj Ghat Half": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Jotiba Dakkan Hill Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Jaipur Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Saquib Rizvi Memorial Cancer Awareness Half": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Sarmang Dehradun Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Delhi Heroes Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Delhi Legends Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Lokraja Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Einstein Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Matheran Hillf Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Prayagraj Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Punjab Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Dehradun Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Island Ultra & Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "24H Stadium Run New Delhi": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Chandigarh Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Vasai-Virar Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Vedanta Zinc City Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Bank of Chanhsha Changsha Marathon": {
+    "pays": "Chine",
+    "flag": "🇨🇳"
+  },
+  "Granada Media maraton": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Gijon Half Marathon": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Birla Opus Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Accomplish 10K": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "KEM Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Ironwings Marathon Gurugram": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Delhi Stride Half Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Mumbai Fast Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Farmley Snack Run": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "NMPA Golden Jubilee 10K": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Kisna Diamond Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "Beijing Miyun Eco Marathon": {
+    "pays": "Chine",
+    "flag": "🇨🇳"
+  },
+  "Thimphu Marathon": {
+    "pays": "Bhouthan",
+    "flag": "🏳"
+  },
+  "Dalian Marathon": {
+    "pays": "Chine",
+    "flag": "🇨🇳"
+  },
+  "Xinyu Fairy Lake Marathon": {
+    "pays": "Chine",
+    "flag": "🇨🇳"
+  },
+  "Tengchong Marathon": {
+    "pays": "Chine",
+    "flag": "🇨🇳"
+  },
+  "AirAsia RedRun Danang": {
+    "pays": "Vietnam",
+    "flag": "🇻🇳"
+  },
+  "QuangTri Amazing Marathon": {
+    "pays": "Vietnam",
+    "flag": "🇻🇳"
+  },
+  "Haikou Marathon": {
+    "pays": "Chine",
+    "flag": "🇨🇳"
+  },
+  "Guiyang Marathon": {
+    "pays": "Chine",
+    "flag": "🇨🇳"
+  },
+  "SWB Marathon de Brême": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Mitja Marato Terrassa": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Yerevan Marathon": {
+    "pays": "Arménie",
+    "flag": "🇦🇲"
+  },
+  "Eskisehir Kurtulus Half Marathon": {
+    "pays": "Turquie",
+    "flag": "🇹🇷"
+  },
+  "Eker Run": {
+    "pays": "Turquie",
+    "flag": "🇹🇷"
+  },
+  "10Km de Dakar": {
+    "pays": "Sénégal",
+    "flag": "🏳"
+  },
+  "24H running": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Alexandria Marathon": {
+    "pays": "Egypte",
+    "flag": "🏳"
+  },
+  "Allianz Riviera Run": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Salomon Cesme Yari Maratonu": {
+    "pays": "Turquie",
+    "flag": "🇹🇷"
+  },
+  "Maraton Powerade Monterrey": {
+    "pays": "Mexique",
+    "flag": "🇲🇽"
+  },
+  "Tokyo East Run 30K": {
+    "pays": "Japon",
+    "flag": "🇯🇵"
+  },
+  "Marathon du Finistère - La Transléonarde": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Course de la St Valentin": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "The flames Race": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "La Nocturne de Marseille": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Ekiden Pau- Bearn": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Marseille en rose": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Ekiden de Toulouse": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Semi-marathon des sources du lac d’Annecy": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Marathon des vins de Blaye": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "La Foulée Montreuilloise": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "10km du Neuf": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Courir pour toit": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Semi de Nuits Saint Georges": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Corrida de Houilles": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "La Marseillaise des Femmes": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "20 km de Montpellier": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Foulée Impériale de Fontainebleau": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "10 km du 14e": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "10 km de Marseille": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "La corrida de Noël de Toulouse": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Toulouse Onco Run": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Soli'Run": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Odyssea Dijon": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "La scintillante": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "La courstache": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Montpellier Reine": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Les mulhousiennes": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Clermont en rose": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Odysséa Chambéry": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Odyssea Brest": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Spreewald Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Courir pour elles": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Challenge du Ruban rose": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Ingelheimer Halbe": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Remmers Hasetal Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Hofmul-Volksfest Halbmarathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Regensburg Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Sarajevo Half Marathon": {
+    "pays": "Bosnie-Herzégovine",
+    "flag": "🏳"
+  },
+  "Lisbon Eco Marathon": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "Rodi Media Maraton Zaragoza": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Ironman 70.2 Manama": {
+    "pays": "Bahreïn",
+    "flag": "🇧🇭"
+  },
+  "Aix en foulées": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Marathon d'Arcachon": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Ekiden de Marseille": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Bacala Night": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "La Rennaise": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "ACSE - Ekiden de Strasbourg": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Semi Marathon et 10km de Hyères": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Marathon des deux rives": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "21km de Blagnac": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Semi-marathon du Finistère": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Beneva Vancouver Half Marathon": {
+    "pays": "Canada",
+    "flag": "🇨🇦"
+  },
+  "Gravity Race": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Ventouxman": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Marathon du Vercors": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Full Moon Infinity - Marseille": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Run GP 2025": {
+    "pays": "Qatar",
+    "flag": "🇶🇦"
+  },
+  "Half Marathon Do Douro Vinhateiro": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "Brest Running Tour": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Corrida FPF": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "Meia Maratona Setubal": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "Marathon de Chablis": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Grenoble Ekiden by Giant": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Ironman 70.3": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Course des 2 Stades": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Marathon de Lille": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Philippines Airlines International marathon": {
+    "pays": "Philippines",
+    "flag": "🇵🇭"
+  },
+  "Santa Cruz Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Saucony Shoreditch Half": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Marathon Calais XXL": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Balexert 20km de Genève": {
+    "pays": "Suisse",
+    "flag": "🇨🇭"
+  },
+  "Run24 Suisse": {
+    "pays": "Suisse",
+    "flag": "🇨🇭"
+  },
+  "Marathon médiéval": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Marathon du Cap d'Agde": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Marathon Avignon": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "HSBC Charity Run": {
+    "pays": "Qatar",
+    "flag": "🇶🇦"
+  },
+  "East to West Ultra Run": {
+    "pays": "Qatar",
+    "flag": "🇶🇦"
+  },
+  "The North Challenge": {
+    "pays": "Qatar",
+    "flag": "🇶🇦"
+  },
+  "Cardiff Bay 10K": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Barry Island 10K": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "CDF 10k": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "La course des Lumières": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "RunThrough Australia": {
+    "pays": "Australie",
+    "flag": "🇦🇺"
+  },
+  "Semi Marathon de Cabourg": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Marathon de Göltzschal": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Les Foulées de Bayeux": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Semi de Mulhouse": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Toyota Amazing Thailand Bangkok Marathon": {
+    "pays": "Thailande",
+    "flag": "🇹🇭"
+  },
+  "University of Charleston Marathon by United Bank": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Fukushima City Half Marathon": {
+    "pays": "Japon",
+    "flag": "🇯🇵"
+  },
+  "Semi de Marcq-en-Baroeul": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Ekiden France Environnement": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Semi-marathon de Troyes": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Les Foulées de Villeurbanne": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Run in Dubai": {
+    "pays": "Emirats arabes unis",
+    "flag": "🏳"
+  },
+  "Skosana Legend Race": {
+    "pays": "Afrique du Sud",
+    "flag": "🇿🇦"
+  },
+  "Puma Toronto Spring 10K": {
+    "pays": "Canada",
+    "flag": "🇨🇦"
+  },
+  "East Side 10K": {
+    "pays": "Canada",
+    "flag": "🇨🇦"
+  },
+  "ICA International Half-Marathon": {
+    "pays": "Sri Lanka",
+    "flag": "🇱🇰"
+  },
+  "Shanghai Yangtze River Half Marathon": {
+    "pays": "Chine",
+    "flag": "🇨🇳"
+  },
+  "Bangkok Double bridge Half Marathon for Red Cross": {
+    "pays": "Thailande",
+    "flag": "🇹🇭"
+  },
+  "Bank Bjb Bandoeng 10K": {
+    "pays": "Indonésie",
+    "flag": "🇮🇩"
+  },
+  "Lazada Run": {
+    "pays": "Thailande",
+    "flag": "🇹🇭"
+  },
+  "Nike After Dark Tour": {
+    "pays": "Chine",
+    "flag": "🇨🇳"
+  },
+  "Wuhan Marathon": {
+    "pays": "Chine",
+    "flag": "🇨🇳"
+  },
+  "Mekong Delta Marathon Hau Giang": {
+    "pays": "Vietnam",
+    "flag": "🇻🇳"
+  },
+  "VPBank Hanoi International Marathon": {
+    "pays": "Vietnam",
+    "flag": "🇻🇳"
+  },
+  "Portsmouth Coastal Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "24 ore di Torino": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Maratona Da Europa": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "Darb Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Neubrandenburger Halbmarathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Schlossinsenlauf": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Midnattsloppet Stockholm": {
+    "pays": "Suède",
+    "flag": "🇸🇪"
+  },
+  "Dubai Creek Striders Half Marathon": {
+    "pays": "Emirats arabes unis",
+    "flag": "🏳"
+  },
+  "Decathlon International Prince's Half Marathon": {
+    "pays": "Turquie",
+    "flag": "🇹🇷"
+  },
+  "Plus500 City Half Marathon Dubai 2026": {
+    "pays": "Emirats Arabes Unis",
+    "flag": "🇦🇪"
+  },
+  "Expo City Dubai Half Marathon 2026": {
+    "pays": "Emirats Arabes Unis",
+    "flag": "🇦🇪"
+  },
+  "Canberra Times Marathon Festival": {
+    "pays": "Australie",
+    "flag": "🇦🇺"
+  },
+  "Mornington Running Festival": {
+    "pays": "Australie",
+    "flag": "🇦🇺"
+  },
+  "Medio Maraton de Sevilla": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Aramco Houston Half Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "10K Valencia Ibercaja by Kiprun": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Tata Mumbai Marathon": {
+    "pays": "Inde",
+    "flag": "🇮🇳"
+  },
+  "10K Montmartre": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Chevron Houston Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Riyadh Marathon": {
+    "pays": "Arabie Saoudite",
+    "flag": "🇸🇦"
+  },
+  "Standard Chartered Hong Kong Half Marathon": {
+    "pays": "Hong Kong",
+    "flag": "🇭🇰"
+  },
+  "Mitja Marato Barcelona by Brooks": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Cancer Research UK London Winter Run": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Zurich Maratón de Sevilla": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Rock 'n' Roll Running Series Las Vegas": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Burj2Burj Half Marathon": {
+    "pays": "Emirats Arabes Unis",
+    "flag": "🇦🇪"
+  },
+  "Kagawa Marugame International Half Marathon": {
+    "pays": "Japon",
+    "flag": "🇯🇵"
+  },
+  "Coelmo Napoli City Half Marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "HOKA Semi de Paris": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Tokyo Marathon": {
+    "pays": "Japon",
+    "flag": "🇯🇵"
+  },
+  "ASICS Los Angeles Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "EDP Lisboa Meia Maratona": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "Eurospin RomaOstia Half Marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Generali Berlin Half Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Cooper River Bridge Run": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "United Airlines NYC Half": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Acea Run Rome The Marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Zurich Marató de Barcelona": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Movistar Madrid Medio Maraton": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "NN CPC Loop Den Haag - Half Marathon": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "Seoul Marathon": {
+    "pays": "Corée du Sud",
+    "flag": "🇰🇷"
+  },
+  "Warsaw Half Marathon": {
+    "pays": "Pologne",
+    "flag": "🇵🇱"
+  },
+  "Generali Prague Half Marathon": {
+    "pays": "République Tchèque",
+    "flag": "🇨🇿"
+  },
+  "St. Jude Rock 'n' Roll Running Series Washington DC": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "EDP Meia Maratona de Lisboa - Vodafone 10K": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "TCS London Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Schneider Electric Marathon de Paris": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Vancouver Sun Run": {
+    "pays": "Canada",
+    "flag": "🇨🇦"
+  },
+  "Boston Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "NYCRUNS Brooklyn Experience Half Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Adidas Manchester Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "London Landmarks Half Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Zurich Rock 'n' Roll Running Series Madrid": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Statesman Capitol 10K": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Ukrop's Monument Avenue 10K": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "NN Marathon Rotterdam": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "Vienna City Half Marathon": {
+    "pays": "Autriche",
+    "flag": "🇦🇹"
+  },
+  "21K de Montréal": {
+    "pays": "Canada",
+    "flag": "🇨🇦"
+  },
+  "St. Jude Rock 'n' Roll Series Nashville": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Vienna City Marathon": {
+    "pays": "Autriche",
+    "flag": "🇦🇹"
+  },
+  "Sanlam Cape Town Marathon": {
+    "pays": "Afrique du Sud",
+    "flag": "🇿🇦"
+  },
+  "Göteborgsvarvet": {
+    "pays": "Suède",
+    "flag": "🇸🇪"
+  },
+  "BOLDERBoulder 10K": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "NYRR RBC Brooklyn Half": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Hoka Runaway Sydney Half Marathon": {
+    "pays": "Australie",
+    "flag": "🇦🇺"
+  },
+  "Copenhagen Marathon": {
+    "pays": "Danemark",
+    "flag": "🇩🇰"
+  },
+  "IU Health 500 Festival Mini-Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Rock 'n' Roll Running Series San Diego": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "AJ Bell Great Manchester Run": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "AJ Bell Great Bristol Run": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Prague International Marathon": {
+    "pays": "République Tchèque",
+    "flag": "🇨🇿"
+  },
+  "Broløbet - The Bridge Run": {
+    "pays": "Danemark",
+    "flag": "🇩🇰"
+  },
+  "Adidas 10K Paris": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Royal Run": {
+    "pays": "Danemark",
+    "flag": "🇩🇰"
+  },
+  "Atlanta Journal-Constitution Peachtree Road Race": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Media Maraton de Bogota": {
+    "pays": "Colombie",
+    "flag": "🇨🇴"
+  },
+  "Saucony London 10K": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Asics Run Melbourne": {
+    "pays": "Australie",
+    "flag": "🇦🇺"
+  },
+  "TCS Sydney Marathon presented by ASICS": {
+    "pays": "Australie",
+    "flag": "🇦🇺"
+  },
+  "BMW Berlin Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "AJ Bell Great North Run": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Copenhagen Half Marathon": {
+    "pays": "Danemark",
+    "flag": "🇩🇰"
+  },
+  "Transurban Bridge to Brisbane": {
+    "pays": "Australie",
+    "flag": "🇦🇺"
+  },
+  "The Big Half": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Vitality London 10,000": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "NN Maraton Warszawski": {
+    "pays": "Pologne",
+    "flag": "🇵🇱"
+  },
+  "Life Time Chicago Half Marathon & 5K": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Bank of America Chicago Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Marine Corps Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Valencia Half Marathon Trinidad Alfonso Zurich": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Cardiff Half Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "TCS Amsterdam Marathon": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "Manchester Half Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Wizz Air Rome Half Marathon by Brooks": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Irish Life Dublin Marathon": {
+    "pays": "Irlande",
+    "flag": "🇮🇪"
+  },
+  "Run in Lyon": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Royal Parks Half Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Tokyo Legacy Half Marathon": {
+    "pays": "Japon",
+    "flag": "🇯🇵"
+  },
+  "TCS Mizuno Half Marathon": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "Nike Melbourne Marathon Festival": {
+    "pays": "Australie",
+    "flag": "🇦🇺"
+  },
+  "TCS Toronto Waterfront Marathon": {
+    "pays": "Canada",
+    "flag": "🇨🇦"
+  },
+  "Half Marathon Munchen by Brooks": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "EDP Maratona de Lisboa": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "Hyundai Meia Maratona": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "ASICS LDNX": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "TCS New York City Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Semi-Marathon de Boulogne-Billancourt": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "NN San Silvestre Vallecana": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Valencia Marathon Trinidad Alfonso Zurich": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "Honolulu Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Taipei Half Marathon": {
+    "pays": "Taïwan",
+    "flag": "🇹🇼"
+  },
+  "Standard Chartered Singapore Half Marathon": {
+    "pays": "Singapour",
+    "flag": "🇸🇬"
+  },
+  "Standard Chartered Singapore Marathon": {
+    "pays": "Singapour",
+    "flag": "🇸🇬"
+  },
+  "Taipei Marathon": {
+    "pays": "Taïwan",
+    "flag": "🇹🇼"
+  },
+  "NN CPC Loop Den Haag - 10 KM Loop": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "Broad Street Run": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Flying Pig Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Lilac Bloomsday Run": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Credit Union Cherry Blossom": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "San Francisco Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Bank of America Shamrock Shuffle": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Dick's Pittsburgh Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Medtronic Twin Cities Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Long Beach Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Bay to Breakers": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Austin Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Miami Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Army Ten Miler": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Gasparilla Distance Classic": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "St. Jude Memphis Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Oklahoma City Memorial Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Richmond Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "San Antonio Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Gate River Run": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Denver Colfax Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Indianapolis Monumental Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Columbus Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Baltimore Running Festival": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Manchester Road Race": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Shamrock Run Portland": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Eugene Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "BMW Dallas Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Fargo Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Rock 'n' Roll Arizona Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Portland Marathon": {
+    "pays": "Etats-Unis",
+    "flag": "🇺🇸"
+  },
+  "Haspa Marathon Hamburg": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Mainova Frankfurt Marathon": {
+    "pays": "Allemagne",
+    "flag": "🇩🇪"
+  },
+  "Stockholm Marathon": {
+    "pays": "Suède",
+    "flag": "🇸🇪"
+  },
+  "Milano Marathon": {
+    "pays": "Italie",
+    "flag": "🇮🇹"
+  },
+  "Brighton Marathon": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Shanghai Marathon": {
+    "pays": "Chine",
+    "flag": "🇨🇳"
+  },
+  "Beijing Marathon": {
+    "pays": "Chine",
+    "flag": "🇨🇳"
+  },
+  "Osaka Marathon": {
+    "pays": "Japon",
+    "flag": "🇯🇵"
+  },
+  "Gold Coast Marathon": {
+    "pays": "Australie",
+    "flag": "🇦🇺"
+  },
+  "Dam tot Damloop": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "City2Surf": {
+    "pays": "Australie",
+    "flag": "🇦🇺"
+  },
+  "Great Scottish Run": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Istanbul Marathon": {
+    "pays": "Turquie",
+    "flag": "🇹🇷"
+  },
+  "Athens Marathon": {
+    "pays": "Grèce",
+    "flag": "🇬🇷"
+  },
+  "AJ Bell Great Birmingham Run": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "AJ Bell Great Birmingham Run 10K": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "AJ Bell Great Bristol Run 10K": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Great Scottish Run 10K": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "AJ Bell Great South Run": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Standard Chartered KL Marathon": {
+    "pays": "Malaisie",
+    "flag": "🇲🇾"
+  },
+  "Standard Chartered KL Half Marathon": {
+    "pays": "Malaisie",
+    "flag": "🇲🇾"
+  },
+  "Standard Chartered KL 10K": {
+    "pays": "Malaisie",
+    "flag": "🇲🇾"
+  },
+  "Standard Chartered Hong Kong Marathon": {
+    "pays": "Hong Kong",
+    "flag": "🇭🇰"
+  },
+  "Standard Chartered Dubai Marathon": {
+    "pays": "Emirats Arabes Unis",
+    "flag": "🇦🇪"
+  },
+  "Marseille-Cassis AG2R La Mondiale": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Harmonie Mutuelle 20km de Paris": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Abalone Marathon de Nantes": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Harmonie Mutuelle 10km de Tours": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Harmonie Mutuelle Toulouse Metropole Run Experience": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Harmonie Mutuelle Marathon de Tours": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Harmonie Mutuelle 20k de Tours": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "S'MI Ouest-France Semi": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "10km CMB": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "5km Harmonie Mutuelle": {
+    "pays": "France",
+    "flag": "🇫🇷"
+  },
+  "Lidl S. Silvestre Cidade do Porto": {
+    "pays": "Portugal",
+    "flag": "🇵🇹"
+  },
+  "TREK Singelloop Utrecht": {
+    "pays": "Pays-Bas",
+    "flag": "🇳🇱"
+  },
+  "Vueling Cursa Bombers de Barcelona": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  },
+  "NLB Ljubljana Marathon 10K": {
+    "pays": "Slovénie",
+    "flag": "🇸🇮"
+  },
+  "Saucony Run Shoreditch 10K": {
+    "pays": "Royaume-Uni",
+    "flag": "🇬🇧"
+  },
+  "Generali Geneve Marathon 10km": {
+    "pays": "Suisse",
+    "flag": "🇨🇭"
+  },
+  "Zurich Rock 'n' Roll Running Series Madrid 10K": {
+    "pays": "Espagne",
+    "flag": "🇪🇸"
+  }
+}
