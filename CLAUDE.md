@@ -67,6 +67,41 @@ api_patterns = [
 - Toujours préférer le compte exact des lignes du classement officiel
 - Rejeter tout chiffre rond (% 500 == 0)
 
+### Ordre de fallback OBLIGATOIRE pour scraping :
+
+1. **requests + BeautifulSoup** (HTML statique)
+   → Si échec ou page vide :
+
+2. **Chercher l'API JSON sous-jacente dans le HTML**
+   (Network calls, fetch(), axios, XHR patterns)
+   → appeler l'API directement avec requests
+   → Si échec :
+
+3. **Playwright (OBLIGATOIRE si JS-rendered)**
+   NE JAMAIS demander la permission — lancer directement :
+   ```python
+   from playwright.sync_api import sync_playwright
+   with sync_playwright() as p:
+       browser = p.chromium.launch(headless=True)
+       page = browser.new_page()
+       # Intercepter les appels réseau pour trouver l'API
+       page.on("request", lambda req: print(req.url) if "api" in req.url.lower() else None)
+       page.goto(url, wait_until="networkidle")
+       content = page.content()
+       browser.close()
+   ```
+   Installer si nécessaire :
+   ```bash
+   pip install playwright --break-system-packages
+   playwright install chromium
+   ```
+
+4. **Si Playwright échoue** → web_search + web_fetch sur page officielle alternative
+
+5. **En dernier recours seulement** → presse/articles
+
+**RÈGLE** : Ne jamais s'arrêter sur un échec de scraping sans avoir essayé TOUTES les méthodes dans l'ordre. Ne jamais demander la permission pour utiliser Playwright.
+
 ## Architecture des donnees
 
 ### Source de verite pour le dashboard
