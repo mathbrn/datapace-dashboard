@@ -1008,7 +1008,7 @@ function ovSearch(){
   var html='';
   matches.forEach(function(r){
     var idx=RAW.indexOf(r);
-    var dl=r.d==='10KM'?'10 km':r.d==='SEMI'?'Semi':r.d==='AUTRE'?'Autre':'Marathon';
+    var dl=r.d==='10KM'?'10 km':r.d==='5KM'?'5 km':r.d==='SEMI'?'Semi':r.d==='AUTRE'?'Autre':'Marathon';
     html+='<div class="ov-result-item" data-idx="'+idx+'" onclick="ovSelect('+idx+')">'
       +'<span class="ov-result-dist" style="background:'+dc[r.d]+';color:'+dt[r.d]+'">'+dl+'</span>'
       +'<span style="flex:1">'+r.r+'</span>'
@@ -1023,7 +1023,7 @@ function ovSelect(idx){
   var ev=RAW[idx];
   var ac=colDist(ev);
   var acLight=lightenHex(ac,0.4);
-  var dl=ev.d==='MARATHON'?'Marathon':ev.d==='SEMI'?'Semi-marathon':ev.d==='AUTRE'?'Autre':'10 km';
+  var dl=ev.d==='MARATHON'?'Marathon':ev.d==='SEMI'?'Semi-marathon':ev.d==='AUTRE'?'Autre':ev.d==='5KM'?'5 km':'10 km';
   // Gather data
   var histKeys=Object.keys(ev.hist||{}).map(Number).sort(function(a,b){return a-b;});
   var positiveHistory=histKeys.map(function(yr){return{yr:yr,v:(ev.hist||{})[yr]};}).filter(function(e){return e.v&&e.v>0;});
@@ -1463,7 +1463,7 @@ function filterTable(){
     var yrKeys=globalYears.filter(function(y){var v=(r.hist||{})[y];return v&&v>0;});
     var firstYr=yrKeys[0],lastYr=yrKeys[yrKeys.length-1];
     var tSub=firstYr&&lastYr&&firstYr!==lastYr?'<div style="font-size:9px;color:var(--text3);margin-top:1px">'+firstYr+'→'+lastYr+'</div>':'';
-    var bl=r.d==='MARATHON'?'Marathon':r.d==='SEMI'?'Semi':r.d==='AUTRE'?'Autre':'10 km';
+    var bl=r.d==='MARATHON'?'Marathon':r.d==='SEMI'?'Semi':r.d==='AUTRE'?'Autre':r.d==='5KM'?'5 km':'10 km';
     var raceColor=colDist(r);
     var cBadges=circBadges(r);
     html+='<tr><td>'+r.p+'</td><td>'+(eventFlag(r.r)?eventFlag(r.r)+' ':'')+r.c+'</td>'
@@ -1887,7 +1887,7 @@ function cmpSearch(side){
   drop.style.display='block';
   matches.slice(0,10).forEach(function(r){
     var rawIdx=RAW.indexOf(r);
-    var dl=r.d==='10KM'?'10 km':r.d==='SEMI'?'Semi':r.d==='AUTRE'?'Autre':'Marathon';
+    var dl=r.d==='10KM'?'10 km':r.d==='5KM'?'5 km':r.d==='SEMI'?'Semi':r.d==='AUTRE'?'Autre':'Marathon';
     var item=document.createElement('div');
     item.className='cmp-drop-item';
     item.innerHTML='<span class="cmp-dist-pill" style="background:'+dc[r.d]+';color:'+dt[r.d]+'">'+dl+'</span>'+r.r;
@@ -1977,8 +1977,8 @@ function renderCompare(){
   if(!window._cmpEvoWindow)window._cmpEvoWindow=5;
   var eA=calcEvo(a,window._cmpEvoWindow),eB=calcEvo(b,window._cmpEvoWindow);
 
-  var distA=a.d==='MARATHON'?'Marathon':a.d==='SEMI'?'Semi-marathon':a.d==='AUTRE'?'Autre':'10 km';
-  var distB=b.d==='MARATHON'?'Marathon':b.d==='SEMI'?'Semi-marathon':b.d==='AUTRE'?'Autre':'10 km';
+  var distA=a.d==='MARATHON'?'Marathon':a.d==='SEMI'?'Semi-marathon':a.d==='AUTRE'?'Autre':a.d==='5KM'?'5 km':'10 km';
+  var distB=b.d==='MARATHON'?'Marathon':b.d==='SEMI'?'Semi-marathon':b.d==='AUTRE'?'Autre':b.d==='5KM'?'5 km':'10 km';
   var statA=(a.ci||[]).length?(a.ci||[]).join(' / '):'—';
   var statB=(b.ci||[]).length?(b.ci||[]).join(' / '):'—';
 
