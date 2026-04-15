@@ -1,4 +1,11 @@
 {
+  "10 km du 14e": {
+    "country": "FRA",
+    "distance": "10KM",
+    "klikego_id": "1685736544919-21",
+    "name": "10 km du 14e",
+    "platform": "klikego"
+  },
   "10k montmartre": {
     "country": "FRA",
     "distance": "10KM",
@@ -24,6 +31,13 @@
     "name": "10km du Panthéon",
     "platform": "klikego"
   },
+  "10km du trocadéro": {
+    "country": "FRA",
+    "distance": "10KM",
+    "klikego_id": "1724195398568-1",
+    "name": "10km du Trocadéro",
+    "platform": "klikego"
+  },
   "10km fulfil des champs elysées": {
     "country": "FRA",
     "distance": "10KM",
@@ -44,17 +58,37 @@
     "name": "15KM de Rotterdam",
     "platform": "sporthive"
   },
+  "15km de woluwe": {
+    "chronorace_event_id": "2153088580353759",
+    "country": "BEL",
+    "distance": "AUTRE",
+    "name": "15Km de Woluwe",
+    "platform": "chronorace"
+  },
   "20km de bruxelles": {
     "country": "BEL",
     "distance": "AUTRE",
     "name": "20KM de Bruxelles",
     "platform": "chronorace"
   },
+  "20km de maroilles": {
+    "country": "FRA",
+    "distance": "AUTRE",
+    "name": "20km de maroilles",
+    "platform": "custom",
+    "url": "20km-maroilles.com"
+  },
   "acea run rome the marathon": {
     "country": "ITA",
     "distance": "MARATHON",
     "name": "Acea Run Rome The Marathon",
     "platform": "endu"
+  },
+  "acse - la strasbourgeoise": {
+    "country": "FRA",
+    "distance": "AUTRE",
+    "name": "ACSE - La Strasbourgeoise",
+    "platform": "chronocompetition"
   },
   "adidas 10k paris": {
     "country": "FRA",
@@ -193,6 +227,12 @@
     "platform": "athlinks",
     "platform_id": 115192
   },
+  "bajaj pune marathon": {
+    "country": "IND",
+    "distance": "5KM",
+    "name": "Bajaj Pune Marathon",
+    "platform": "sportstimingsolutions"
+  },
   "baloise antwerp 10 miles": {
     "country": "BEL",
     "distance": "AUTRE",
@@ -223,6 +263,13 @@
     "name": "Bank of America Shamrock Shuffle",
     "platform": null
   },
+  "bank of china beijing half marathon": {
+    "country": "CHN",
+    "distance": "SEMI",
+    "name": "Bank of China Beijing Half Marathon",
+    "platform": "custom",
+    "url": "beijing-halfmarathon.com"
+  },
   "bay to breakers": {
     "country": "USA",
     "distance": "AUTRE",
@@ -241,6 +288,20 @@
     "distance": "SEMI",
     "name": "Beneva Montréal Marathon",
     "platform": "sportstats"
+  },
+  "bengaluru 10k challenge": {
+    "country": "IND",
+    "distance": "10KM",
+    "name": "Bengaluru 10K Challenge",
+    "platform": "sportstimingsolutions",
+    "sts_event_id": "74701"
+  },
+  "bengaluru midnight marathon": {
+    "country": "IND",
+    "distance": "MARATHON",
+    "name": "Bengaluru Midnight Marathon",
+    "platform": "sportstimingsolutions",
+    "sts_event_id": "84106"
   },
   "bilbao night running fest": {
     "country": "ESP",
@@ -321,6 +382,14 @@
     "distance": "SEMI",
     "name": "Broløbet - The Bridge Run",
     "platform": null
+  },
+  "brooks adelaide marathon festival": {
+    "country": "AUS",
+    "distance": "SEMI",
+    "name": "Brooks Adelaide Marathon festival",
+    "platform": "racetecresults",
+    "racetec_cid": "90",
+    "racetec_rid": "593"
   },
   "calgary marathon": {
     "country": "CAN",
@@ -450,6 +519,13 @@
     "name": "Egmond Halve marathon",
     "platform": "sporthive"
   },
+  "ekiden du stade français": {
+    "country": "FRA",
+    "distance": "AUTRE",
+    "name": "Ekiden du Stade Français",
+    "platform": "raceresult",
+    "raceresult_id": "344594"
+  },
   "flying pig marathon": {
     "country": "USA",
     "distance": "MARATHON",
@@ -491,6 +567,12 @@
     "platform": "mikatiming",
     "subdomain": "berlin-halbmarathon"
   },
+  "generali geneve marathon 10km": {
+    "country": "CHE",
+    "distance": "10KM",
+    "name": "Generali Geneve Marathon 10km",
+    "platform": "timing4you"
+  },
   "generali köln marathon": {
     "country": "DEU",
     "distance": "AUTRE",
@@ -503,6 +585,12 @@
     "distance": "SEMI",
     "name": "Göteborgsvarvet",
     "platform": null
+  },
+  "gran carrera del mediterraneo": {
+    "country": "ESP",
+    "distance": "SEMI",
+    "name": "Gran Carrera del Mediterraneo",
+    "platform": "sportmaniacs"
   },
   "grand prix von bern": {
     "country": "CHE",
@@ -544,6 +632,14 @@
     "name": "Hackney Half Marathon",
     "platform": "sporthive",
     "sporthive_id": "7321543703403950848"
+  },
+  "halve marathon zwolle": {
+    "country": "NLD",
+    "distance": "SEMI",
+    "name": "Halve Marathon Zwolle",
+    "note": "2025 cancelled",
+    "platform": "custom",
+    "url": "halvemarathonzwolle.nl"
   },
   "hamburg halbmarathon": {
     "country": "DEU",
@@ -590,6 +686,12 @@
     "distance": "MARATHON",
     "name": "Honolulu Marathon",
     "platform": "pse"
+  },
+  "hull 10k": {
+    "country": "GBR",
+    "distance": "10KM",
+    "name": "Hull 10K",
+    "platform": "chiptiming"
   },
   "indianoil wnc navy half": {
     "country": "IND",
@@ -644,6 +746,18 @@
     "platform": "custom",
     "url": "runjapan.jp"
   },
+  "la course du château de vincennes": {
+    "country": "FRA",
+    "distance": "10KM",
+    "name": "La course du château de Vincennes",
+    "platform": "protiming"
+  },
+  "la liégeoise women only": {
+    "country": "BEL",
+    "distance": "AUTRE",
+    "name": "La liégeoise Women Only",
+    "platform": "ultratiming"
+  },
   "lausanne marathon": {
     "country": "CHE",
     "datasport_racenr": "27110",
@@ -657,6 +771,13 @@
     "name": "LDN X",
     "platform": "custom",
     "url": "ldnx.co.uk"
+  },
+  "les foulées valenciennoises": {
+    "country": "FRA",
+    "distance": "10KM",
+    "name": "Les foulées Valenciennoises",
+    "platform": "raceresult",
+    "raceresult_id": "332739"
   },
   "lilac bloomsday run": {
     "country": "USA",
@@ -677,6 +798,13 @@
     "name": "London Landmarks Half Marathon",
     "platform": "tracx"
   },
+  "maasmarathon": {
+    "chronorace_event_id": "1188404565917984",
+    "country": "BEL",
+    "distance": "MARATHON",
+    "name": "Maasmarathon",
+    "platform": "chronorace"
+  },
   "mainova frankfurt marathon": {
     "country": "GER",
     "distance": "MARATHON",
@@ -684,6 +812,13 @@
     "name": "Mainova Frankfurt Marathon",
     "platform": "mikatiming",
     "subdomain": "live.frankfurt-marathon.com"
+  },
+  "marathon de la mer": {
+    "country": "FRA",
+    "distance": "SEMI",
+    "name": "Marathon de la mer",
+    "platform": "custom",
+    "url": "marathondelamer.com"
   },
   "marathon de lille": {
     "chronorace_event_id": "1188009429016080",
@@ -787,12 +922,26 @@
     "name": "Movistar Madrid Medio Maraton",
     "platform": "sportmaniacs"
   },
+  "mumbai midnight 10k": {
+    "country": "IND",
+    "distance": "10KM",
+    "name": "Mumbai Midnight 10K",
+    "platform": "sportstimingsolutions",
+    "sts_event_id": "86280"
+  },
   "nagoya women's marathon": {
     "country": "JPN",
     "distance": "MARATHON",
     "name": "Nagoya Women's Marathon",
     "platform": "custom",
     "url": "womens-marathon.nagoya"
+  },
+  "nikolaslauf tübigen": {
+    "country": "DEU",
+    "distance": "SEMI",
+    "name": "Nikolaslauf Tübigen",
+    "platform": "raceresult",
+    "raceresult_id": "320493"
   },
   "nlb ljubljana marathon 10k": {
     "country": "SVN",
@@ -891,6 +1040,13 @@
     "name": "Prague International Marathon",
     "platform": "runczech"
   },
+  "premiär halvan": {
+    "country": "SWE",
+    "distance": "SEMI",
+    "marathongruppen_raceid": "144",
+    "name": "Premiär Halvan",
+    "platform": "marathongruppen"
+  },
   "prom'classique": {
     "country": "FRA",
     "distance": "10KM",
@@ -910,6 +1066,13 @@
     "name": "Rock 'n' Roll Running Series Las Vegas",
     "platform": null
   },
+  "route du louvre": {
+    "country": "FRA",
+    "distance": "10KM",
+    "name": "Route du Louvre",
+    "platform": "raceresult",
+    "raceresult_id": "339883"
+  },
   "royal parks half marathon": {
     "country": "GBR",
     "distance": "SEMI",
@@ -928,6 +1091,13 @@
     "name": "Run set & Match",
     "platform": "klikego"
   },
+  "run the city": {
+    "country": "LBN",
+    "distance": "10KM",
+    "name": "Run the City",
+    "platform": "custom",
+    "url": "beirutmarathon.org"
+  },
   "runaway auckland marathon": {
     "country": "NZL",
     "distance": "AUTRE",
@@ -940,6 +1110,12 @@
     "name": "Saitama Marathon",
     "platform": "custom",
     "url": "runjapan.jp"
+  },
+  "salomon new shapers run": {
+    "country": "ITA",
+    "distance": "10KM",
+    "name": "Salomon New shapers run",
+    "platform": "endu"
   },
   "sao silvestre de lisboa": {
     "country": "PRT",
@@ -981,6 +1157,12 @@
     "name": "Semi marathon du Bois de Vincennes",
     "platform": "protiming"
   },
+  "semi-marathon de troyes": {
+    "country": "FRA",
+    "distance": "SEMI",
+    "name": "Semi-marathon de Troyes",
+    "platform": "timepulse"
+  },
   "seoul marathon": {
     "country": "KOR",
     "distance": "MARATHON",
@@ -1005,6 +1187,20 @@
     "distance": "AUTRE",
     "name": "Southern Cross Round The Bays",
     "platform": "sportsplits"
+  },
+  "sparkassen phoenix halbmarathn": {
+    "country": "DEU",
+    "distance": "SEMI",
+    "name": "Sparkassen Phoenix Halbmarathn",
+    "platform": "raceresult",
+    "raceresult_id": "316703"
+  },
+  "sportscheck run hamburg": {
+    "country": "DEU",
+    "distance": "AUTRE",
+    "name": "SportScheck Run Hamburg",
+    "platform": "raceresult",
+    "raceresult_id": "327059"
   },
   "st. jude rock 'n' roll series nashville": {
     "country": "USA",
@@ -1294,6 +1490,13 @@
     "distance": "MARATHON",
     "name": "Yorkshire Marathon",
     "platform": "chiptiming"
+  },
+  "zagreb21 spring half marathon": {
+    "country": "HRV",
+    "distance": "AUTRE",
+    "name": "Zagreb21 Spring Half Marathon",
+    "platform": "custom",
+    "url": "zagreb21.run"
   },
   "zandvoort circuit run": {
     "country": "NLD",
