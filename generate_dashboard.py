@@ -16,6 +16,7 @@ import os
 import pandas as pd
 import json
 import datetime
+import re
 import sys
 from pathlib import Path
 
@@ -346,7 +347,7 @@ def load_finishers():
                 if yr >= 2000:
                     first_yr = yr
                 break  # stop at first non-x year regardless
-        city = str(r.get("City", "")).strip()
+        city = re.sub(r"\s*\([^)]+\)\s*$", "", str(r.get("City", ""))).strip()
         dist = str(r.get("Distance", "")).strip()
         circ = compute_circuits(race, dist, city)
         rows.append({"p": str(r.get("Période", "")).strip(), "c": city,
@@ -373,7 +374,7 @@ def load_biggest():
             try: iv = int(float(v)); return iv if iv > 0 else None
             except: return None
         hist = {yr: v for yr in year_cols if (v := gv(yr)) is not None}
-        city = str(r.get("City", "")).strip()
+        city = re.sub(r"\s*\([^)]+\)\s*$", "", str(r.get("City", ""))).strip()
         rows.append({"c": city, "r": race, "rg": get_region(city),
                      "hist": hist})
     print(f"  Biggest    : {len(rows)} courses")
