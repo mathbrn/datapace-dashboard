@@ -168,6 +168,22 @@ api_patterns = [
 - `10KM` : 10km
 - `AUTRE` : distances non-standard (10 miles, 12K, 15K, etc.)
 
+### Distances non-standard connues (toujours classer en AUTRE)
+- Course de l'escalade (Geneve) : 7.3km -> AUTRE (jamais 10KM)
+- 20KM de Bruxelles : 20km -> AUTRE
+- Baloise Antwerp 10 miles : 10 miles (16.09km) -> AUTRE
+- Dam tot Damloop : 10 miles -> AUTRE
+- AJ Bell Great South Run : 10 miles -> AUTRE
+- Lilac Bloomsday Run : 12km -> AUTRE
+- Bay to Breakers : 12km -> AUTRE
+- Bolder Boulder 10K : 10km -> 10KM
+- Paris-Versailles La Grande Classique : 16.2km -> AUTRE
+- City-Bay Fun Run (Adelaide) : 12km -> AUTRE
+
+Regle : toujours classer ces events dans `AUTRE` meme si le nom
+contient un nombre (ex: "10 miles", "20KM") qui pourrait preter
+a confusion avec 10KM/SEMI. Le critere est la distance reelle en km.
+
 ### Badges evenements
 - `WMM` (bleu #38BDF8) : World Marathon Majors (NYC, London, Boston, Sydney, Berlin, Chicago, Tokyo)
 - `ASO` (jaune #FCDB00) : Evenements ASO (Paris, Lyon, 10K Paris, Montmartre, Manchester, London Winter Run, ASICS LDNX)
