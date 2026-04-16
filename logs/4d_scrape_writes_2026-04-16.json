@@ -1,0 +1,131 @@
+{
+  "applied": [
+    {
+      "event": "Course de l'escalade",
+      "dist": "10KM",
+      "year": 2023,
+      "value": 46765,
+      "row": 205
+    },
+    {
+      "event": "Course de l'escalade",
+      "dist": "10KM",
+      "year": 2024,
+      "value": 46405,
+      "row": 205
+    },
+    {
+      "event": "20KM de Bruxelles",
+      "dist": "AUTRE",
+      "year": 2023,
+      "value": 36692,
+      "row": 207
+    },
+    {
+      "event": "20KM de Bruxelles",
+      "dist": "AUTRE",
+      "year": 2024,
+      "value": 45330,
+      "row": 207
+    },
+    {
+      "event": "Baloise Antwerp 10 miles",
+      "dist": "AUTRE",
+      "year": 2020,
+      "value": "-",
+      "row": 208
+    },
+    {
+      "event": "Baloise Antwerp 10 miles",
+      "dist": "AUTRE",
+      "year": 2022,
+      "value": 28419,
+      "row": 208
+    },
+    {
+      "event": "Baloise Antwerp 10 miles",
+      "dist": "AUTRE",
+      "year": 2023,
+      "value": 35630,
+      "row": 208
+    },
+    {
+      "event": "Baloise Antwerp 10 miles",
+      "dist": "AUTRE",
+      "year": 2024,
+      "value": 34696,
+      "row": 208
+    },
+    {
+      "event": "Baloise Antwerp 10 miles",
+      "dist": "AUTRE",
+      "year": 2019,
+      "value": 22658,
+      "row": 208
+    },
+    {
+      "event": "Baloise Antwerp 10 miles",
+      "dist": "AUTRE",
+      "year": 2018,
+      "value": 23373,
+      "row": 208
+    },
+    {
+      "event": "Baloise Antwerp 10 miles",
+      "dist": "AUTRE",
+      "year": 2016,
+      "value": 21091,
+      "row": 208
+    },
+    {
+      "event": "Baloise Antwerp 10 miles",
+      "dist": "AUTRE",
+      "year": 2015,
+      "value": 24831,
+      "row": 208
+    },
+    {
+      "event": "Baloise Antwerp 10 miles",
+      "dist": "AUTRE",
+      "year": 2013,
+      "value": 22085,
+      "row": 208
+    },
+    {
+      "event": "Baloise Antwerp 10 miles",
+      "dist": "AUTRE",
+      "year": 2012,
+      "value": 18207,
+      "row": 208
+    },
+    {
+      "event": "NYRR RBC Brooklyn Half",
+      "dist": "SEMI",
+      "year": 2022,
+      "value": 18827,
+      "row": 57
+    },
+    {
+      "event": "NYRR RBC Brooklyn Half",
+      "dist": "SEMI",
+      "year": 2023,
+      "value": 25418,
+      "row": 57
+    },
+    {
+      "event": "NYRR RBC Brooklyn Half",
+      "dist": "SEMI",
+      "year": 2024,
+      "value": 28442,
+      "row": 57
+    }
+  ],
+  "skipped": [],
+  "deleted": [
+    {
+      "event": "Brooklyn Half Marathon",
+      "dist": "SEMI",
+      "row": 234
+    }
+  ]
+}

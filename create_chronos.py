@@ -856,6 +856,9 @@ half_marathon_data = [
     ("Vienna City Half Marathon", "21K", 2025, "N/A", "N/A"),
     ("21K de Montréal", "21K", 2025, "N/A", "N/A"),
     ("St. Jude Rock 'n' Roll Series Nashville", "21K", 2025, "N/A", "N/A"),
+    ("NYRR RBC Brooklyn Half", "21K", 2022, "1:03:58", "1:12:54"),
+    ("NYRR RBC Brooklyn Half", "21K", 2023, "1:03:05", "1:11:38"),
+    ("NYRR RBC Brooklyn Half", "21K", 2024, "1:04:08", "1:12:41"),
     ("NYRR RBC Brooklyn Half", "21K", 2025, "N/A", "N/A"),
     ("Hoka Runaway Sydney Half Marathon", "21K", 2025, "N/A", "N/A"),
     ("IU Health 500 Festival Mini-Marathon", "21K", 2025, "N/A", "N/A"),
@@ -1087,6 +1090,13 @@ tenk_data = [
 # ============================================================
 
 autre_data = [
+    # Baloise Antwerp 10 miles (16.09 km)
+    ("Baloise Antwerp 10 miles", "AUTRE", 2022, "0:48:48", "N/A"),
+    ("Baloise Antwerp 10 miles", "AUTRE", 2023, "0:47:50", "N/A"),
+    ("Baloise Antwerp 10 miles", "AUTRE", 2024, "0:47:21", "N/A"),
+    # 20km de Bruxelles
+    ("20KM de Bruxelles", "AUTRE", 2023, "1:00:15", "1:10:44"),
+    ("20KM de Bruxelles", "AUTRE", 2024, "0:59:57", "1:10:56"),
     # Dam tot Damloop (10 miles / 16.1km)
     ("Dam tot Damloop", "AUTRE", 2009, "N/A", "0:50:39"),
     ("Dam tot Damloop", "AUTRE", 2010, "N/A", "0:51:30"),
