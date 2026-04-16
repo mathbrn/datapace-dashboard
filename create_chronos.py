@@ -1095,8 +1095,18 @@ autre_data = [
     ("Baloise Antwerp 10 miles", "AUTRE", 2023, "0:47:50", "N/A"),
     ("Baloise Antwerp 10 miles", "AUTRE", 2024, "0:47:21", "N/A"),
     # 20km de Bruxelles
+    ("20KM de Bruxelles", "AUTRE", 2013, "0:59:21", "N/A"),
+    ("20KM de Bruxelles", "AUTRE", 2014, "0:59:05", "N/A"),
+    ("20KM de Bruxelles", "AUTRE", 2015, "1:01:47", "N/A"),
+    ("20KM de Bruxelles", "AUTRE", 2016, "1:02:07", "1:13:51"),
+    ("20KM de Bruxelles", "AUTRE", 2017, "1:00:37", "1:13:42"),
+    ("20KM de Bruxelles", "AUTRE", 2018, "1:02:56", "1:14:38"),
+    ("20KM de Bruxelles", "AUTRE", 2019, "1:00:34", "1:13:04"),
+    ("20KM de Bruxelles", "AUTRE", 2021, "0:59:31", "1:09:50"),
+    ("20KM de Bruxelles", "AUTRE", 2022, "1:00:01", "1:11:11"),
     ("20KM de Bruxelles", "AUTRE", 2023, "1:00:15", "1:10:44"),
     ("20KM de Bruxelles", "AUTRE", 2024, "0:59:57", "1:10:56"),
+    ("20KM de Bruxelles", "AUTRE", 2025, "0:59:26", "N/A"),
     # Dam tot Damloop (10 miles / 16.1km)
     ("Dam tot Damloop", "AUTRE", 2009, "N/A", "0:50:39"),
     ("Dam tot Damloop", "AUTRE", 2010, "N/A", "0:51:30"),
