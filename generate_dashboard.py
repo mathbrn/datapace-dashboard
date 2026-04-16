@@ -409,7 +409,7 @@ def load_marathon(year):
             if is_invalid_race_name(race):
                 continue
             rows.append({"race": race,
-                         "city": str(r["city"]).strip() if pd.notna(r["city"]) else "",
+                         "city": re.sub(r"\s*\([^)]+\)\s*$", "", str(r["city"])).strip() if pd.notna(r["city"]) else "",
                          "finishers": safe_int(r["finishers"]),
                          "avg": fmt_time(r["avg_time"]), "men": fmt_time(r["men_time"]),
                          "women": fmt_time(r["women_time"]), "year": year})
@@ -445,7 +445,7 @@ def load_semi():
             if is_invalid_race_name(race):
                 continue
             rows.append({"race": race,
-                         "city": str(r["city"]).strip() if pd.notna(r["city"]) else "",
+                         "city": re.sub(r"\s*\([^)]+\)\s*$", "", str(r["city"])).strip() if pd.notna(r["city"]) else "",
                          "finishers": safe_int(r["finishers"]),
                          "avg": fmt_time(r["avg_time"]), "men": fmt_time(r["men_time"]),
                          "women": fmt_time(r["women_time"]), "year": yr})
