@@ -352,6 +352,38 @@ api_patterns = [
 - **Couverture** : NYCRUNS Brooklyn Experience Half Marathon, et autres petits events US
 - **Reference** : `runsignup_crawl_results.json` dans le repo
 
+### 25. NYRR Brooklyn Half + autres events NYRR (payload confirme)
+- **API** : `POST https://rmsprodapi.nyrr.org/api/v2/runners/finishers-filter`
+- **Body** : `{"eventCode": "24BKH", "pageNum": 1, "pageSize": 1}`
+- **Headers** : `Origin: https://results.nyrr.org` + `Referer: https://results.nyrr.org/` requis
+- **Donnees** : `totalItems` = total finishers ; `items[]` avec `gender` ("M"/"W"), `overallPlace`, `overallTime`, `firstName`, `lastName`
+- **Filtre F/M** : ajouter `"gender":"M"` ou `"W"` dans body pour winner par sexe
+- **Sort** : `"sortColumn":"overallPlace","sortDescending":false` pour ordre officiel
+- **Codes events** : `{YY}{CODE}` (ex: `24BKH` pour 2024 Brooklyn Half, `23BKH` pour 2023, `22BKH` pour 2022)
+- **Couverture** : tous les events NYRR (Brooklyn Half, NYC Half United Airlines, etc.)
+
+### 26. ChronoRace moderne (table/search API)
+- **API** : `GET https://results.chronorace.be/api/results/table/search/{ctx}/{report}?srch=&pageSize=1&fromRecord=0`
+- **ctx** : format `{YYYYMMDD}_{eventslug}` (ex: `20240421_10miles` pour Baloise Antwerp 2024)
+- **report** : `LIVE1` (course principale) ou `LIVE2` (short run / course secondaire)
+- **Donnees** : `Count` = total finishers, `Groups[0].SlaveRows` = rangs (premier = vainqueur)
+- **Extraction vainqueur** : `SlaveRows[0]` → `[pos, bib, nom, team, status, time, ...]`
+- **Couverture** : Baloise Antwerp 10 miles + short run, tous les events ChronoRace recents (hors Bruxelles qui a son propre endpoint)
+
+### 27. 20km Bruxelles (ChronoRace custom endpoint)
+- **API** : `GET https://prod.chronorace.be/api/Results/20km/Search?eventId={id}&year={yyyy}&search=&race=1&gender=&yearOfBirth=&category=&nationality=&province=&postalCode=&team=&isInitial=1&maxEntries=25&fromEntry=0`
+- **eventId** : decouvert via page HTML principale (ex: `2159234678608985` pour 2024)
+- **race=1** : course principale ; autres groupes (Handisport, Company) = race=2, 3, ...
+- **gender=M/F** : filtre par sexe pour vainqueur
+- **Donnees** : `Count` = total ; `Matches[]` avec `nom`, `prenom`, `x_time`, `x_sexe`, `x_pos`
+- **Couverture** : 20km de Bruxelles uniquement (pas de cross-over avec autres events ChronoRace)
+
+### 28. Playwright fallback (pages JS-rendered)
+- **Outil** : `playwright` Python + `chromium` headless
+- **Usage** : pour ChronoRace anciennes pages ASP.NET (2010-2019), datasport live, ACN-timing
+- **Technique** : intercepter `page.on("request")` pour capturer les appels API reels, puis utiliser ces URLs directement avec `requests`
+- **Extraction** : `page.inner_text("body")` pour regex sur texte rendu (ex: "22658 Inschrijvingen" pour Antwerp 2019)
+
 ## Etat d'implementation des fetchers (auto_update_4d.py)
 
 | Plateforme | Implemente | Events couverts | Notes |
