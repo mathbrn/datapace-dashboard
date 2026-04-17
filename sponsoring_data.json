@@ -2024,6 +2024,41 @@
       "full_name": "Johan Cruyff Foundation",
       "sector": "ONG/Sport",
       "country": "NL"
+    },
+    "hella": {
+      "full_name": "hella mineralbrunnen GmbH & Co. KG",
+      "sector": "Boisson",
+      "country": "DE"
+    },
+    "Erdinger": {
+      "full_name": "Erdinger Weißbräu",
+      "sector": "Brasserie",
+      "country": "DE"
+    },
+    "INCYLENCE": {
+      "full_name": "INCYLENCE GmbH",
+      "sector": "Textile sport",
+      "country": "DE"
+    },
+    "Picnic": {
+      "full_name": "Picnic",
+      "sector": "E-commerce/Livraison",
+      "country": "NL"
+    },
+    "Björn Borg": {
+      "full_name": "Björn Borg AB",
+      "sector": "Textile sport",
+      "country": "SE"
+    },
+    "STOX Energy Socks": {
+      "full_name": "STOX Energy Socks",
+      "sector": "Textile sport",
+      "country": "NL"
+    },
+    "Spotify": {
+      "full_name": "Spotify AB",
+      "sector": "Musique/Tech",
+      "country": "SE"
     }
   },
   "partnerships": [
@@ -12317,6 +12352,98 @@
         2024,
         2025,
         2026
+      ]
+    },
+    {
+      "event": "Hamburg Halbmarathon",
+      "brand": "hella",
+      "type": "title",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Hamburg Halbmarathon",
+      "brand": "Erdinger",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Hamburg Halbmarathon",
+      "brand": "INCYLENCE",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "10km HOKA Paris Centre",
+      "brand": "HOKA",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "TREK Singelloop Utrecht",
+      "brand": "TREK",
+      "type": "title",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Zandvoort circuit run",
+      "brand": "Picnic",
+      "type": "sponsor",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Zandvoort circuit run",
+      "brand": "AA Drink",
+      "type": "sponsor",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Zandvoort circuit run",
+      "brand": "Björn Borg",
+      "type": "sponsor",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Zandvoort circuit run",
+      "brand": "STOX Energy Socks",
+      "type": "sponsor",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "The Music Run",
+      "brand": "Spotify",
+      "type": "partner",
+      "years": [
+        2025
       ]
     }
   ]
