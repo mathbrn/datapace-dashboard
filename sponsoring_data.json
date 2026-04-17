@@ -1874,6 +1874,46 @@
       "full_name": "Brit Hotel",
       "sector": "Hotellerie",
       "country": "FR"
+    },
+    "Tamarack": {
+      "full_name": "Tamarack Homes",
+      "sector": "Immobilier",
+      "country": "CA"
+    },
+    "Desjardins": {
+      "full_name": "Mouvement Desjardins",
+      "sector": "Banque/Assurance",
+      "country": "CA"
+    },
+    "Amaron": {
+      "full_name": "Amaron (Amara Raja)",
+      "sector": "Batterie/Energie",
+      "country": "IN"
+    },
+    "Philips": {
+      "full_name": "Koninklijke Philips N.V.",
+      "sector": "Technologie/Santé",
+      "country": "NL"
+    },
+    "DAF": {
+      "full_name": "DAF Trucks",
+      "sector": "Automobile",
+      "country": "NL"
+    },
+    "Itaú Uniclass": {
+      "full_name": "Itaú Unibanco",
+      "sector": "Banque",
+      "country": "BR"
+    },
+    "RheinEnergie": {
+      "full_name": "RheinEnergie AG",
+      "sector": "Energie",
+      "country": "DE"
+    },
+    "Reissdorf": {
+      "full_name": "Privat-Brauerei Heinrich Reissdorf",
+      "sector": "Brasserie",
+      "country": "DE"
     }
   },
   "partnerships": [
@@ -11475,6 +11515,262 @@
       "brand": "TA Energy",
       "type": "partner",
       "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Tamarack Ottawa Race week end",
+      "brand": "Tamarack",
+      "type": "title",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Tamarack Ottawa Race week end",
+      "brand": "Desjardins",
+      "type": "presenting",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Tamarack Ottawa Race week end",
+      "brand": "Runna",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "World 10K bengaluru",
+      "brand": "TCS",
+      "type": "title",
+      "years": [
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "World 10K bengaluru",
+      "brand": "Amaron",
+      "type": "powered_by",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "World 10K bengaluru",
+      "brand": "IDFC FIRST Bank",
+      "type": "associate",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "World 10K bengaluru",
+      "brand": "ASICS",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "ASML Marathon Eindhoven",
+      "brand": "ASML",
+      "type": "title",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "ASML Marathon Eindhoven",
+      "brand": "Philips",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "ASML Marathon Eindhoven",
+      "brand": "DHL",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "ASML Marathon Eindhoven",
+      "brand": "DAF",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "ASML Marathon Eindhoven",
+      "brand": "Chiquita",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "ASML Marathon Eindhoven",
+      "brand": "TREK",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "ASML Marathon Eindhoven",
+      "brand": "AA Drink",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Maratona Do Rio",
+      "brand": "Adidas",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Maratona Do Rio",
+      "brand": "Itaú Uniclass",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Maratona Do Rio",
+      "brand": "Gatorade",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Maratona Do Rio",
+      "brand": "Michelob Ultra",
+      "type": "sponsor",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Generali Köln Marathon",
+      "brand": "Generali",
+      "type": "title",
+      "years": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Generali Köln Marathon",
+      "brand": "RheinEnergie",
+      "type": "premium",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Generali Köln Marathon",
+      "brand": "Puma",
+      "type": "premium",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Generali Köln Marathon",
+      "brand": "Reissdorf",
+      "type": "premium",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Generali Köln Marathon",
+      "brand": "REWE Group",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Generali Köln Marathon",
+      "brand": "Dextro Energy",
+      "type": "partner",
+      "years": [
+        2025,
         2026
       ]
     }
