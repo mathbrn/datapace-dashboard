@@ -2189,6 +2189,31 @@
       "full_name": "Zürcher Kantonalbank",
       "sector": "Banque",
       "country": "CH"
+    },
+    "Migros": {
+      "full_name": "Migros-Genossenschafts-Bund",
+      "sector": "Distribution",
+      "country": "CH"
+    },
+    "Niterra": {
+      "full_name": "Niterra Co., Ltd. (ex-NGK Spark Plug)",
+      "sector": "Industrie/Auto",
+      "country": "JP"
+    },
+    "AEON": {
+      "full_name": "AEON Co., Ltd.",
+      "sector": "Distribution",
+      "country": "JP"
+    },
+    "Vantelin Kowa": {
+      "full_name": "Kowa Company Ltd. (Vantelin)",
+      "sector": "Pharma/Santé",
+      "country": "JP"
+    },
+    "Suntory": {
+      "full_name": "Suntory Holdings Limited",
+      "sector": "Boisson",
+      "country": "JP"
     }
   },
   "partnerships": [
@@ -13226,6 +13251,95 @@
       "event": "SOLA-Stafette Zürich",
       "brand": "Zürcher Kantonalbank",
       "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Grand Prix Von Bern",
+      "brand": "Migros",
+      "type": "title",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Grand Prix Von Bern",
+      "brand": "Powerade",
+      "type": "title",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Nagoya Women's Marathon",
+      "brand": "Niterra",
+      "type": "gold",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Nagoya Women's Marathon",
+      "brand": "New Balance",
+      "type": "silver",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Nagoya Women's Marathon",
+      "brand": "AEON",
+      "type": "bronze",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Nagoya Women's Marathon",
+      "brand": "Toyota",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Nagoya Women's Marathon",
+      "brand": "Seiko",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Nagoya Women's Marathon",
+      "brand": "Coca-Cola",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Nagoya Women's Marathon",
+      "brand": "Vantelin Kowa",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Hokkaido Marathon",
+      "brand": "Suntory",
+      "type": "partner",
       "years": [
         2025,
         2026
