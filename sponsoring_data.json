@@ -1964,6 +1964,41 @@
       "full_name": "Tata Steel Limited",
       "sector": "Sidérurgie",
       "country": "IN"
+    },
+    "Central Lechera Asturiana": {
+      "full_name": "Central Lechera Asturiana",
+      "sector": "Alimentation/Lait",
+      "country": "ES"
+    },
+    "Banco Santander": {
+      "full_name": "Banco Santander",
+      "sector": "Banque",
+      "country": "ES"
+    },
+    "TotalEnergies": {
+      "full_name": "TotalEnergies SE",
+      "sector": "Energie",
+      "country": "FR"
+    },
+    "Swedbank": {
+      "full_name": "Swedbank AB",
+      "sector": "Banque",
+      "country": "SE"
+    },
+    "Meiji Yasuda Life": {
+      "full_name": "Meiji Yasuda Life Insurance",
+      "sector": "Assurance",
+      "country": "JP"
+    },
+    "Sports Experts": {
+      "full_name": "Sports Experts (FGL Sports)",
+      "sector": "Distribution sport",
+      "country": "CA"
+    },
+    "Action Sport Physio": {
+      "full_name": "Action Sport Physio",
+      "sector": "Santé/Physiothérapie",
+      "country": "CA"
     }
   },
   "partnerships": [
@@ -12000,6 +12035,137 @@
       "years": [
         2024,
         2025
+      ]
+    },
+    {
+      "event": "Wizz Air Budapest Half marathon",
+      "brand": "Wizz Air",
+      "type": "title",
+      "years": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Carrera de la Mujer Barcelona",
+      "brand": "Central Lechera Asturiana",
+      "type": "title",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Carrera de la Mujer Barcelona",
+      "brand": "Oysho",
+      "type": "official",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Carrera de la Mujer Barcelona",
+      "brand": "Banco Santander",
+      "type": "official",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Carrera de la Mujer Barcelona",
+      "brand": "TotalEnergies",
+      "type": "sponsor",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "event": "Carrera de la Mujer Barcelona",
+      "brand": "Volvo",
+      "type": "official",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "event": "Swedbank Tallinna maraton",
+      "brand": "Swedbank",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Saitama Marathon",
+      "brand": "Mizuno",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Saitama Marathon",
+      "brand": "Meiji Yasuda Life",
+      "type": "sponsor",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Saitama Marathon",
+      "brand": "Coca-Cola",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Beneva Montréal Marathon",
+      "brand": "Beneva",
+      "type": "title",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026,
+        2027
+      ]
+    },
+    {
+      "event": "Beneva Montréal Marathon",
+      "brand": "Sports Experts",
+      "type": "sponsor",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Beneva Montréal Marathon",
+      "brand": "Action Sport Physio",
+      "type": "official",
+      "years": [
+        2026
       ]
     }
   ]
