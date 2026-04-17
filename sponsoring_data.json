@@ -2124,6 +2124,36 @@
       "full_name": "ING Group",
       "sector": "Banque",
       "country": "NL"
+    },
+    "Vhi": {
+      "full_name": "Vhi Healthcare",
+      "sector": "Assurance santé",
+      "country": "IE"
+    },
+    "SPIN": {
+      "full_name": "SPIN Radio (Bauer Media)",
+      "sector": "Médias/Radio",
+      "country": "IE"
+    },
+    "Intersport Elverys": {
+      "full_name": "Intersport Elverys",
+      "sector": "Distribution sport",
+      "country": "IE"
+    },
+    "Sports Akileïne": {
+      "full_name": "Akileïne (Asepta)",
+      "sector": "Soins sport",
+      "country": "FR"
+    },
+    "Sistecrédito": {
+      "full_name": "Sistecrédito",
+      "sector": "Finance/Crédit",
+      "country": "CO"
+    },
+    "EPM": {
+      "full_name": "Empresas Públicas de Medellín",
+      "sector": "Énergie/Services publics",
+      "country": "CO"
     }
   },
   "partnerships": [
@@ -12859,6 +12889,90 @@
       "event": "ING Night Marathon Luxembourg",
       "brand": "HIGH5",
       "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Hackney Half Marathon",
+      "brand": "HOKA",
+      "type": "title",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Hackney Half Marathon",
+      "brand": "Peloton",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Vhi Women's Mini Marathon",
+      "brand": "Vhi",
+      "type": "title",
+      "years": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Vhi Women's Mini Marathon",
+      "brand": "SPIN",
+      "type": "media",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Vhi Women's Mini Marathon",
+      "brand": "Intersport Elverys",
+      "type": "retail",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Paris-Versailles La Grande Classique",
+      "brand": "Sports Akileïne",
+      "type": "official",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Maraton Medellin",
+      "brand": "Sistecrédito",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Maraton Medellin",
+      "brand": "EPM",
+      "type": "sponsor",
       "years": [
         2025,
         2026
