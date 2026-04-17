@@ -2239,6 +2239,36 @@
       "full_name": "Laboratorios Pisa (Electrolit)",
       "sector": "Boisson sport/Pharma",
       "country": "MX"
+    },
+    "Xenofit": {
+      "full_name": "Xenofit GmbH",
+      "sector": "Nutrition sport",
+      "country": "DE"
+    },
+    "Coureur du Dimanche": {
+      "full_name": "Coureur du Dimanche",
+      "sector": "Running/Communauté",
+      "country": "FR"
+    },
+    "Château Beychevelle": {
+      "full_name": "Château Beychevelle",
+      "sector": "Viticulture",
+      "country": "FR"
+    },
+    "Outrigger": {
+      "full_name": "Outrigger Hospitality Group",
+      "sector": "Hôtellerie",
+      "country": "US"
+    },
+    "Sagawa Express": {
+      "full_name": "Sagawa Express Co., Ltd. (SG Holdings)",
+      "sector": "Logistique",
+      "country": "JP"
+    },
+    "Star Flyer": {
+      "full_name": "Star Flyer Inc.",
+      "sector": "Transport aérien",
+      "country": "JP"
     }
   },
   "partnerships": [
@@ -13470,6 +13500,73 @@
         2023,
         2024,
         2025,
+        2026
+      ]
+    },
+    {
+      "event": "Dresden Marathon",
+      "brand": "Xenofit",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "LDN X",
+      "brand": "ASICS",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Run set & Match",
+      "brand": "Coureur du Dimanche",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Marathon des Chateaux du Médoc",
+      "brand": "Château Beychevelle",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "The Hapalua - Hawaii's Hlaf marathon",
+      "brand": "Outrigger",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Kitakyushu Marathon",
+      "brand": "Sagawa Express",
+      "type": "sponsor",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Kitakyushu Marathon",
+      "brand": "Star Flyer",
+      "type": "sponsor",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Kitakyushu Marathon",
+      "brand": "Coca-Cola",
+      "type": "official",
+      "years": [
         2026
       ]
     }
