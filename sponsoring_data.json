@@ -2269,6 +2269,16 @@
       "full_name": "Star Flyer Inc.",
       "sector": "Transport aérien",
       "country": "JP"
+    },
+    "Xiaomi": {
+      "full_name": "Xiaomi Corporation",
+      "sector": "Tech/Automobile",
+      "country": "CN"
+    },
+    "Tranquilidade": {
+      "full_name": "Generali Tranquilidade",
+      "sector": "Assurance",
+      "country": "PT"
     }
   },
   "partnerships": [
@@ -13567,6 +13577,47 @@
       "brand": "Coca-Cola",
       "type": "official",
       "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Bank of China Beijing Half Marathon",
+      "brand": "Bank of China",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Bank of China Beijing Half Marathon",
+      "brand": "Xiaomi",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Oxford Half",
+      "brand": "Saucony",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Tranquilidade Meia Maratona dos Descobrimentos",
+      "brand": "Tranquilidade",
+      "type": "title",
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     }
