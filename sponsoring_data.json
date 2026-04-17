@@ -11747,6 +11747,8 @@
       "brand": "ASICS",
       "type": "official",
       "years": [
+        2024,
+        2025,
         2026
       ]
     },
@@ -11767,6 +11769,8 @@
       "brand": "Philips",
       "type": "sponsor",
       "years": [
+        2023,
+        2024,
         2025,
         2026
       ]
@@ -11776,6 +11780,8 @@
       "brand": "DHL",
       "type": "sponsor",
       "years": [
+        2023,
+        2024,
         2025,
         2026
       ]
@@ -11821,6 +11827,9 @@
       "brand": "Adidas",
       "type": "official",
       "years": [
+        2022,
+        2023,
+        2024,
         2025,
         2026
       ]
@@ -11839,6 +11848,9 @@
       "brand": "Gatorade",
       "type": "official",
       "years": [
+        2022,
+        2023,
+        2024,
         2025,
         2026
       ]
@@ -11949,7 +11961,8 @@
       "type": "presenting",
       "years": [
         2026
-      ]
+      ],
+      "note": "confirmed new 2026"
     },
     {
       "event": "Freshworks Chennai Marathon",
@@ -11967,6 +11980,8 @@
       "brand": "Ashok Leyland",
       "type": "powered_by",
       "years": [
+        2024,
+        2025,
         2026
       ]
     },
@@ -12250,6 +12265,8 @@
       "brand": "ASICS",
       "type": "presenting",
       "years": [
+        2023,
+        2024,
         2025,
         2026
       ]
@@ -12259,6 +12276,8 @@
       "brand": "Barfoot & Thompson",
       "type": "title",
       "years": [
+        2022,
+        2023,
         2024,
         2025,
         2026
@@ -12319,6 +12338,11 @@
       "brand": "Coca-Cola",
       "type": "partner",
       "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
         2025,
         2026
       ]
@@ -12373,6 +12397,9 @@
       "brand": "Erdinger",
       "type": "partner",
       "years": [
+        2022,
+        2023,
+        2024,
         2025,
         2026
       ]
