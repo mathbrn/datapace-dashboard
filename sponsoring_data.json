@@ -1999,6 +1999,31 @@
       "full_name": "Action Sport Physio",
       "sector": "Santé/Physiothérapie",
       "country": "CA"
+    },
+    "Itaú": {
+      "full_name": "Itaú Unibanco",
+      "sector": "Banque",
+      "country": "CL"
+    },
+    "Clínica Alemana": {
+      "full_name": "Clínica Alemana de Santiago",
+      "sector": "Santé",
+      "country": "CL"
+    },
+    "Barfoot & Thompson": {
+      "full_name": "Barfoot & Thompson",
+      "sector": "Immobilier",
+      "country": "NZ"
+    },
+    "El Corte Inglés": {
+      "full_name": "El Corte Inglés S.A.",
+      "sector": "Distribution",
+      "country": "ES"
+    },
+    "Johan Cruyff Foundation": {
+      "full_name": "Johan Cruyff Foundation",
+      "sector": "ONG/Sport",
+      "country": "NL"
     }
   },
   "partnerships": [
@@ -12165,6 +12190,132 @@
       "brand": "Action Sport Physio",
       "type": "official",
       "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Maraton de Santiago",
+      "brand": "Itaú",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Maraton de Santiago",
+      "brand": "Clínica Alemana",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Runaway Auckland Marathon",
+      "brand": "ASICS",
+      "type": "presenting",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Runaway Auckland Marathon",
+      "brand": "Barfoot & Thompson",
+      "type": "title",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Runaway Auckland Marathon",
+      "brand": "Garmin",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Cursa El corte Ingles",
+      "brand": "El Corte Inglés",
+      "type": "title",
+      "years": [
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Cursa El corte Ingles",
+      "brand": "Under Armour",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Cursa El corte Ingles",
+      "brand": "Coca-Cola",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Cursa El corte Ingles",
+      "brand": "Johan Cruyff Foundation",
+      "type": "charity",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Medio Maraton de Buenos Aires",
+      "brand": "Adidas",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Zevenheuvelenloop",
+      "brand": "NN",
+      "type": "title",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
         2026
       ]
     }
