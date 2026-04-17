@@ -83,6 +83,24 @@
       "dist": "AUTRE",
       "year": 2022,
       "value": 52588
+    },
+    {
+      "event": "Vancouver Sun Run",
+      "dist": "10KM",
+      "year": 2019,
+      "value": 43300
+    },
+    {
+      "event": "Mitja Marato Barcelona by Brooks",
+      "dist": "SEMI",
+      "year": 2016,
+      "value": 16511
+    },
+    {
+      "event": "Mitja Marato Barcelona by Brooks",
+      "dist": "SEMI",
+      "year": 2018,
+      "value": 17855
     }
   ],
   "skipped": []
