@@ -2976,6 +2976,94 @@ window.onerror=function(msg,url,line,col,err){{document.body.insertAdjacentHTML(
 </html>"""
 
 
+def export_stats(finishers, biggest, md, sd, tdb):
+    import sqlite3
+    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+    unique_names = set(r["r"] for r in finishers)
+    race_dist_pairs = len(finishers)
+    dp23 = sum(1 for r in finishers if r.get("hist", {}).get(2023))
+    dp24 = sum(1 for r in finishers if r.get("hist", {}).get(2024))
+    dp25 = sum(1 for r in finishers if r.get("hist", {}).get(2025))
+    dp26 = sum(1 for r in finishers if r.get("hist", {}).get(2026))
+    total_dp = dp23 + dp24 + dp25 + dp26
+    cum23 = sum(v for r in finishers for v in [r.get("hist", {}).get(2023)] if isinstance(v, (int, float)) and v > 0)
+    cum24 = sum(v for r in finishers for v in [r.get("hist", {}).get(2024)] if isinstance(v, (int, float)) and v > 0)
+    cum25 = sum(v for r in finishers for v in [r.get("hist", {}).get(2025)] if isinstance(v, (int, float)) and v > 0)
+    cum26 = sum(v for r in finishers for v in [r.get("hist", {}).get(2026)] if isinstance(v, (int, float)) and v > 0)
+    total_cum = cum23 + cum24 + cum25 + cum26
+    n_avg_marathon = sum(len(rows) for rows in md.values())
+    n_avg_semi = sum(len(rows) for yr, rows in sd.items())
+    n_winners_m = sum(1 for v in tdb.values() if v.get("men"))
+    n_winners_f = sum(1 for v in tdb.values() if v.get("women"))
+    lines = [
+        "# DataPace Dashboard — Stats à jour",
+        "",
+        f"**Généré le** : {now}",
+        "",
+        "> **Note pour Claude** : c'est la source de vérité pour tous les chiffres DataPace.",
+        "> Toujours consulter ce fichier avant tout pitch ou communication externe.",
+        "",
+        "## Base Excel (fichiers sources)",
+        "",
+        f"| Métrique | Valeur |",
+        f"|---|---|",
+        f"| Épreuves uniques (noms distincts) | {len(unique_names)} |",
+        f"| Couples Race × Distance | {race_dist_pairs} |",
+        f"| Points de données finishers 2023 | {dp23} |",
+        f"| Points de données finishers 2024 | {dp24} |",
+        f"| Points de données finishers 2025 | {dp25} |",
+        f"| Points de données finishers 2026 | {dp26} |",
+        f"| Total points de données 2023-2026 | {total_dp} |",
+        f"| Finishers cumulés 2023 | {cum23:,} |",
+        f"| Finishers cumulés 2024 | {cum24:,} |",
+        f"| Finishers cumulés 2025 | {cum25:,} |",
+        f"| Finishers cumulés 2026 | {cum26:,} |",
+        f"| Total finishers cumulés 2023-2026 | {total_cum:,} |",
+        f"| Temps moyens marathon | {n_avg_marathon} |",
+        f"| Temps moyens semi-marathon | {n_avg_semi} |",
+        f"| Chronos vainqueurs Homme | {n_winners_m} |",
+        f"| Chronos vainqueurs Femme | {n_winners_f} |",
+        "",
+    ]
+    db_path = SCRIPT_DIR / "datapace.db"
+    if db_path.exists():
+        try:
+            conn = sqlite3.connect(str(db_path))
+            c = conn.cursor()
+            n_events = c.execute("SELECT COUNT(*) FROM events").fetchone()[0]
+            n_finishers_rows = c.execute("SELECT COUNT(*) FROM finishers").fetchone()[0]
+            n_winners_db = c.execute("SELECT COUNT(*) FROM winners").fetchone()[0]
+            n_avg_db = c.execute("SELECT COUNT(*) FROM avg_times").fetchone()[0]
+            total_finishers_db = c.execute("SELECT SUM(count) FROM finishers").fetchone()[0] or 0
+            conn.close()
+            lines += [
+                "## Base SQLite (datapace.db)",
+                "",
+                f"| Métrique | Valeur |",
+                f"|---|---|",
+                f"| Events | {n_events} |",
+                f"| Lignes finishers | {n_finishers_rows} |",
+                f"| Lignes winners | {n_winners_db} |",
+                f"| Lignes avg_times | {n_avg_db} |",
+                f"| Total finishers cumulés (toutes années) | {total_finishers_db:,} |",
+                "",
+            ]
+        except Exception:
+            pass
+    lines += [
+        "## Chiffres à utiliser en communication externe",
+        "",
+        f"- **{len(unique_names)}** épreuves de course à pied trackées dans le monde",
+        f"- **{race_dist_pairs}** couples événement × distance en base",
+        f"- **{total_cum:,}** finishers cumulés sur 2023-2026",
+        f"- Historique depuis **2000** (27 années de données)",
+        "",
+    ]
+    stats_file = SCRIPT_DIR / "dashboard_stats.md"
+    stats_file.write_text("\n".join(lines), encoding="utf-8")
+    print(f"Stats exportees : {stats_file.name}")
+
+
 def main():
     print("\nASO Dashboard Generator (internal)")
     print("-" * 40)
@@ -3009,7 +3097,9 @@ def main():
     html = generate_html(finishers, biggest, md, sd, tdb, winners)
     OUTPUT_FILE.write_text(html, encoding="utf-8")
     print(f"\nDashboard genere : {OUTPUT_FILE.name}  ({OUTPUT_FILE.stat().st_size // 1024} Ko)")
-    print("Ouvre ce fichier dans le navigateur via http://localhost:8000/datapace_dashboard.html\n")
+    print("Ouvre ce fichier dans le navigateur via http://localhost:8000/datapace_dashboard.html")
+
+    export_stats(finishers, biggest, md, sd, tdb)
 
 
 if __name__ == "__main__":
