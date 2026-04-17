@@ -1,6 +1,6 @@
 # DataPace Dashboard — Stats à jour
 
-**Généré le** : 2026-04-17 16:02
+**Généré le** : 2026-04-17 16:30
 **Source historique** : finishers (mémoire)
 
 > **Note pour Claude** : c'est la source de vérité pour tous les chiffres DataPace.
@@ -24,6 +24,35 @@
 | Chronos vainqueurs Homme | 53 |
 | Chronos vainqueurs Femme | 53 |
 
+## Sponsoring
+
+| Métrique | Valeur |
+|---|---|
+| Événements avec données sponsoring | 272 |
+| Sponsors uniques trackés | 491 |
+| Relations sponsor-événement totales | 1010 |
+| Sources | sponsoring_data.json, scraped_partners.json |
+
+**Répartition par type :**
+
+  - official: 428
+  - title: 250
+  - partner: 205
+  - sponsor: 41
+  - premium: 36
+  - major: 21
+  - presenting: 8
+  - media: 4
+  - gold: 4
+  - retail: 3
+  - powered_by: 2
+  - associate: 2
+  - charity: 2
+  - silver: 1
+  - bronze: 1
+  - diamond: 1
+  - platinum: 1
+
 ## Chiffres à utiliser en communication externe
 
 - **855** épreuves de course à pied trackées dans le monde
@@ -31,3 +60,4 @@
 - Plus de **2,418** points de données historiques depuis 2000
 - **34,441,168** finishers cumulés sur la période 2000 - 2026
 - Historique depuis **2000** (27 années de données)
+- **491** sponsors trackés sur **272** événements

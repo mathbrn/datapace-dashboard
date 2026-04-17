@@ -3084,6 +3084,73 @@ def export_stats(finishers, biggest, md, sd, tdb):
         except Exception:
             pass
 
+    sp_events = sp_brands = sp_total = 0
+    sp_by_tier = {}
+    sp_sources = []
+    sp_path = SCRIPT_DIR / "sponsoring_data.json"
+    sp_scraped = SCRIPT_DIR / "scraped_partners.json"
+    seen_pairs = set()
+
+    for src_path, src_label in [(sp_path, "sponsoring_data.json"), (sp_scraped, "scraped_partners.json")]:
+        if not src_path.exists():
+            continue
+        sp_sources.append(src_label)
+        try:
+            raw = json.loads(src_path.read_text(encoding="utf-8"))
+            entries = []
+            if isinstance(raw, list):
+                entries = raw
+            elif isinstance(raw, dict):
+                if "partnerships" in raw and isinstance(raw["partnerships"], list):
+                    entries = raw["partnerships"]
+                else:
+                    for v in raw.values():
+                        if isinstance(v, list):
+                            entries.extend(v)
+            for e in entries:
+                if not isinstance(e, dict):
+                    continue
+                ev = e.get("event", "")
+                br = e.get("brand") or e.get("sponsor") or e.get("partner") or ""
+                if not ev or not br:
+                    continue
+                pair = (ev, br)
+                if pair in seen_pairs:
+                    continue
+                seen_pairs.add(pair)
+                tier = e.get("type") or e.get("tier") or e.get("level") or e.get("category") or "other"
+                sp_by_tier[tier] = sp_by_tier.get(tier, 0) + 1
+        except Exception:
+            pass
+
+    sp_total = len(seen_pairs)
+    sp_events = len({p[0] for p in seen_pairs})
+    sp_brands = len({p[1] for p in seen_pairs})
+
+    if sp_sources:
+        tier_bullets = [f"  - {t}: {n}" for t, n in sorted(sp_by_tier.items(), key=lambda x: -x[1])]
+        lines += [
+            "## Sponsoring",
+            "",
+            "| Métrique | Valeur |",
+            "|---|---|",
+            f"| Événements avec données sponsoring | {sp_events} |",
+            f"| Sponsors uniques trackés | {sp_brands} |",
+            f"| Relations sponsor-événement totales | {sp_total} |",
+            f"| Sources | {', '.join(sp_sources)} |",
+            "",
+            "**Répartition par type :**",
+            "",
+        ] + tier_bullets + [""]
+    else:
+        lines += [
+            "## Sponsoring",
+            "",
+            "Données sponsoring non disponibles dans les sources courantes.",
+            "",
+        ]
+
+    sp_line = f"- **{sp_brands}** sponsors trackés sur **{sp_events}** événements" if sp_brands else ""
     lines += [
         "## Chiffres à utiliser en communication externe",
         "",
@@ -3092,8 +3159,10 @@ def export_stats(finishers, biggest, md, sd, tdb):
         f"- Plus de **{dp_total:,}** points de données historiques depuis {min_yr or 2000}",
         f"- **{cum_total:,}** finishers cumulés sur la période {year_range}",
         f"- Historique depuis **{min_yr or 2000}** ({(max_yr or 2026) - (min_yr or 2000) + 1} années de données)",
-        "",
     ]
+    if sp_line:
+        lines.append(sp_line)
+    lines.append("")
     stats_file = SCRIPT_DIR / "dashboard_stats.md"
     stats_file.write_text("\n".join(lines), encoding="utf-8")
     print(f"Stats exportees : {stats_file.name}")
