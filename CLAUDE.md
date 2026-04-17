@@ -146,6 +146,15 @@ api_patterns = [
 - `avg_times_sporthive.json` : Temps moyens calcules depuis APIs (Sporthive + Tracx)
 - `datapace_dashboard.html` : Dashboard genere (ouvrir dans navigateur)
 
+## Distinction participants vs finishers
+
+### Regle absolue : participants/inscrits ≠ finishers
+- **Rejeter systematiquement** les chiffres issus de sources mentionnant "participants", "inscrits", "registered", "entries", "runners took part" SANS confirmer que ce sont des finishers reels ayant franchi la ligne d'arrivee.
+- **Accepter uniquement** : "finishers", "classés", "arrivants", "completers", "classified", "ranked", count de lignes dans un classement officiel, `classificationsCount` API.
+- **En cas de doute** : ne PAS ecrire la valeur. Laisser la cellule vide est toujours preferable a un chiffre faux.
+- **Sources fiables** : pages de resultats officiels (chronometrage), APIs de timing (Sporthive, ChronoRace, NYRR), `services.datasport.com/{year}/lauf/{event}/` (somme des "classés" par categorie).
+- **Sources NON fiables pour finishers** : articles de presse ("40 000 participants"), communiques d'inscription, Wikipedia (souvent imprecis sur les counts).
+
 ## Regles strictes
 
 ### Validation permanente (onglet Temps moyen)

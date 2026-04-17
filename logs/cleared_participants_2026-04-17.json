@@ -1,0 +1,23 @@
+[
+  {
+    "event": "Vancouver Sun Run",
+    "dist": "10KM",
+    "year": 2019,
+    "was": 43300,
+    "reason": "participants not finishers"
+  },
+  {
+    "event": "Mitja Marato Barcelona by Brooks",
+    "dist": "SEMI",
+    "year": 2016,
+    "was": 16511,
+    "reason": "inscrits not finishers"
+  },
+  {
+    "event": "Mitja Marato Barcelona by Brooks",
+    "dist": "SEMI",
+    "year": 2018,
+    "was": 17855,
+    "reason": "inscrits not finishers"
+  }
+]
