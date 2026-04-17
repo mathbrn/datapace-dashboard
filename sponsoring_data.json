@@ -1914,6 +1914,56 @@
       "full_name": "Privat-Brauerei Heinrich Reissdorf",
       "sector": "Brasserie",
       "country": "DE"
+    },
+    "Freshworks": {
+      "full_name": "Freshworks Inc.",
+      "sector": "Tech/SaaS",
+      "country": "IN"
+    },
+    "Ashok Leyland": {
+      "full_name": "Ashok Leyland Ltd.",
+      "sector": "Automobile",
+      "country": "IN"
+    },
+    "Southern Cross": {
+      "full_name": "Southern Cross Health Society",
+      "sector": "Santé/Assurance",
+      "country": "NZ"
+    },
+    "MediaWorks": {
+      "full_name": "MediaWorks NZ",
+      "sector": "Médias",
+      "country": "NZ"
+    },
+    "Mental Health Foundation": {
+      "full_name": "Mental Health Foundation of NZ",
+      "sector": "ONG/Charité",
+      "country": "NZ"
+    },
+    "Rimi": {
+      "full_name": "Rimi Baltic",
+      "sector": "Distribution",
+      "country": "LV"
+    },
+    "Elektrum": {
+      "full_name": "Latvenergo (Elektrum)",
+      "sector": "Energie",
+      "country": "LV"
+    },
+    "DPD": {
+      "full_name": "DPD Group",
+      "sector": "Logistique",
+      "country": "LV"
+    },
+    "Sportland": {
+      "full_name": "Sportland",
+      "sector": "Distribution sport",
+      "country": "LV"
+    },
+    "Tata Steel": {
+      "full_name": "Tata Steel Limited",
+      "sector": "Sidérurgie",
+      "country": "IN"
     }
   },
   "partnerships": [
@@ -11772,6 +11822,184 @@
       "years": [
         2025,
         2026
+      ]
+    },
+    {
+      "event": "Great Ethiopan Run",
+      "brand": "Ethiopian Airlines",
+      "type": "title",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Great Ethiopan Run",
+      "brand": "Bank of America",
+      "type": "presenting",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Freshworks Chennai Marathon",
+      "brand": "Freshworks",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Freshworks Chennai Marathon",
+      "brand": "Ashok Leyland",
+      "type": "powered_by",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Southern Cross Round The Bays",
+      "brand": "Southern Cross",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Southern Cross Round The Bays",
+      "brand": "MediaWorks",
+      "type": "media",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Southern Cross Round The Bays",
+      "brand": "Mental Health Foundation",
+      "type": "charity",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Rimi Riga Marathon",
+      "brand": "Rimi",
+      "type": "title",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Rimi Riga Marathon",
+      "brand": "Elektrum",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Rimi Riga Marathon",
+      "brand": "DPD",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Rimi Riga Marathon",
+      "brand": "Nike",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Rimi Riga Marathon",
+      "brand": "Sportland",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Rimi Riga Marathon",
+      "brand": "Garmin",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Rimi Riga Marathon",
+      "brand": "Toyota",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "World 25K Kolkata",
+      "brand": "Tata Steel",
+      "type": "title",
+      "years": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "World 25K Kolkata",
+      "brand": "IDFC FIRST Bank",
+      "type": "associate",
+      "years": [
+        2024,
+        2025
       ]
     }
   ]
