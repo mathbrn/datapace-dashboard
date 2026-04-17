@@ -2279,6 +2279,31 @@
       "full_name": "Generali Tranquilidade",
       "sector": "Assurance",
       "country": "PT"
+    },
+    "Eiffage": {
+      "full_name": "Eiffage S.A.",
+      "sector": "BTP/Construction",
+      "country": "FR"
+    },
+    "Chipotle": {
+      "full_name": "Chipotle Mexican Grill",
+      "sector": "Restauration",
+      "country": "US"
+    },
+    "Sport Chek": {
+      "full_name": "Sport Chek (Canadian Tire)",
+      "sector": "Distribution sport",
+      "country": "CA"
+    },
+    "Groupe Mutuel": {
+      "full_name": "Groupe Mutuel",
+      "sector": "Assurance santé",
+      "country": "CH"
+    },
+    "ewz": {
+      "full_name": "Elektrizitätswerk der Stadt Zürich",
+      "sector": "Énergie",
+      "country": "CH"
     }
   },
   "partnerships": [
@@ -13614,6 +13639,96 @@
       "type": "title",
       "years": [
         2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Saucony Run Shoreditch 10K",
+      "brand": "Saucony",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Course Eiffage du Viaduc de Millau",
+      "brand": "Eiffage",
+      "type": "title",
+      "years": [
+        2019,
+        2021,
+        2023,
+        2025
+      ]
+    },
+    {
+      "event": "Under Armour Toronto 10K",
+      "brand": "Under Armour",
+      "type": "title",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Under Armour Toronto 10K",
+      "brand": "Chipotle",
+      "type": "sponsor",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Under Armour Toronto 10K",
+      "brand": "Sport Chek",
+      "type": "retail",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Zürcher Silvesterlauf",
+      "brand": "Migros",
+      "type": "sponsor",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Zürcher Silvesterlauf",
+      "brand": "Groupe Mutuel",
+      "type": "sponsor",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Zürcher Silvesterlauf",
+      "brand": "ewz",
+      "type": "partner",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Hyundai Meia Maratona do Porto",
+      "brand": "Hyundai",
+      "type": "title",
+      "years": [
         2022,
         2023,
         2024,
