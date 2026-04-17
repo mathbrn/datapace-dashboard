@@ -2364,6 +2364,11 @@
       "full_name": "The Sankei Shimbun",
       "sector": "Médias/Presse",
       "country": "JP"
+    },
+    "Diadora": {
+      "full_name": "Diadora S.p.A.",
+      "sector": "Equipementier sport",
+      "country": "IT"
     }
   },
   "partnerships": [
@@ -14040,6 +14045,22 @@
         2023,
         2024,
         2025,
+        2026
+      ]
+    },
+    {
+      "event": "Semi marathon du Bois de Vincennes",
+      "brand": "Diadora",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Bengaluru 10K Challenge",
+      "brand": "Red Bull",
+      "type": "partner",
+      "years": [
         2026
       ]
     }
