@@ -2154,6 +2154,11 @@
       "full_name": "Empresas Públicas de Medellín",
       "sector": "Énergie/Services publics",
       "country": "CO"
+    },
+    "Fulfil": {
+      "full_name": "Fulfil Nutrition",
+      "sector": "Nutrition/Barres protéinées",
+      "country": "IE"
     }
   },
   "partnerships": [
@@ -12974,6 +12979,66 @@
       "brand": "EPM",
       "type": "sponsor",
       "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Guangzhou Marathon",
+      "brand": "Bank of China",
+      "type": "title",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "event": "Jakarta Running Festival",
+      "brand": "Adidas",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Marathon München by Brooks",
+      "brand": "Brooks",
+      "type": "title",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Marathon München by Brooks",
+      "brand": "Generali",
+      "type": "title",
+      "years": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "10km Fulfil des Champs Elysées",
+      "brand": "Fulfil",
+      "type": "title",
+      "years": [
+        2024,
         2025,
         2026
       ]
