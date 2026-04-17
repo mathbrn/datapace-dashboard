@@ -2304,6 +2304,56 @@
       "full_name": "Elektrizitätswerk der Stadt Zürich",
       "sector": "Énergie",
       "country": "CH"
+    },
+    "MG Motor": {
+      "full_name": "MG Motor India",
+      "sector": "Automobile",
+      "country": "IN"
+    },
+    "Alliance Bank": {
+      "full_name": "Alliance Bank Malaysia Berhad",
+      "sector": "Banque",
+      "country": "MY"
+    },
+    "Birell": {
+      "full_name": "Birell (Plzeňský Prazdroj)",
+      "sector": "Bière sans alcool",
+      "country": "CZ"
+    },
+    "MANN-FILTER": {
+      "full_name": "MANN+HUMMEL GmbH",
+      "sector": "Industrie/Filtration",
+      "country": "DE"
+    },
+    "SABECO": {
+      "full_name": "Saigon Beer - Alcohol - Beverage Corp.",
+      "sector": "Brasserie",
+      "country": "VN"
+    },
+    "Nestlé MILO": {
+      "full_name": "Nestlé (MILO)",
+      "sector": "Alimentation/Boisson",
+      "country": "CH"
+    },
+    "Vikoda": {
+      "full_name": "Vikoda Mineral Water",
+      "sector": "Eau minérale",
+      "country": "VN"
+    },
+    "Skarch": {
+      "full_name": "Skarch",
+      "sector": "Mode/Sport",
+      "country": "MX"
+    },
+    "BWT": {
+      "full_name": "BWT AG",
+      "sector": "Traitement eau",
+      "country": "AT"
+    },
+    "Rukka": {
+      "full_name": "Rukka",
+      "sector": "Textile sport",
+      "country": "FI"
     }
   },
   "partnerships": [
@@ -13733,6 +13783,207 @@
         2023,
         2024,
         2025,
+        2026
+      ]
+    },
+    {
+      "event": "MG Vadodara International Marathon",
+      "brand": "MG Motor",
+      "type": "title",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Alliance Bank Borneo International Marathon",
+      "brand": "Alliance Bank",
+      "type": "title",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "10K Night Race Prague",
+      "brand": "Birell",
+      "type": "title",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Yorkshire Marathon",
+      "brand": "Altra",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Yorkshire Marathon",
+      "brand": "Shokz",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Yorkshire Marathon",
+      "brand": "Applied Nutrition",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Maraton de Zaragoza",
+      "brand": "MANN-FILTER",
+      "type": "title",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Maraton de Zaragoza",
+      "brand": "CaixaBank",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Maraton de Zaragoza",
+      "brand": "HOKA",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Maraton de Zaragoza",
+      "brand": "226ERS",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Thien Phong Marathon",
+      "brand": "SABECO",
+      "type": "diamond",
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Thien Phong Marathon",
+      "brand": "Nestlé MILO",
+      "type": "gold",
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Thien Phong Marathon",
+      "brand": "Herbalife",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Thien Phong Marathon",
+      "brand": "Vikoda",
+      "type": "gold",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Guadalajara Marathon",
+      "brand": "Skarch",
+      "type": "presenting",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Guadalajara Marathon",
+      "brand": "Electrolit",
+      "type": "title",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Guadalajara Marathon",
+      "brand": "Adidas",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Ekiden du Stade Français",
+      "brand": "BWT",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Ekiden du Stade Français",
+      "brand": "Rukka",
+      "type": "official",
+      "years": [
         2026
       ]
     }
