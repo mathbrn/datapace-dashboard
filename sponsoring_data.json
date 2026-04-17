@@ -2419,6 +2419,46 @@
       "full_name": "Essentia Water",
       "sector": "Eau/Boisson",
       "country": "US"
+    },
+    "KH7": {
+      "full_name": "KH-7",
+      "sector": "Nettoyant/Ménage",
+      "country": "ES"
+    },
+    "Cruzcampo": {
+      "full_name": "Cruzcampo (Heineken España)",
+      "sector": "Brasserie",
+      "country": "ES"
+    },
+    "Lotus Bakeries": {
+      "full_name": "Lotus Bakeries NV",
+      "sector": "Alimentation",
+      "country": "BE"
+    },
+    "Hartford HealthCare": {
+      "full_name": "Hartford HealthCare",
+      "sector": "Santé",
+      "country": "US"
+    },
+    "Brussels Airport": {
+      "full_name": "Brussels Airport Company",
+      "sector": "Transport aérien",
+      "country": "BE"
+    },
+    "Vueling": {
+      "full_name": "Vueling Airlines",
+      "sector": "Transport aérien",
+      "country": "ES"
+    },
+    "IHH Healthcare": {
+      "full_name": "IHH Healthcare Berhad",
+      "sector": "Santé",
+      "country": "MY"
+    },
+    "WHOOP": {
+      "full_name": "WHOOP Inc.",
+      "sector": "Wearable/Tech",
+      "country": "US"
     }
   },
   "partnerships": [
@@ -5330,7 +5370,7 @@
       ]
     },
     {
-      "event": "Göteborgsvarvet",
+      "event": "Göteborgsvarvet ",
       "brand": "Boozt",
       "type": "title",
       "years": [
@@ -5341,7 +5381,7 @@
       ]
     },
     {
-      "event": "Göteborgsvarvet",
+      "event": "Göteborgsvarvet ",
       "brand": "Maurten",
       "type": "official",
       "years": [
@@ -5514,7 +5554,7 @@
       ]
     },
     {
-      "event": "Irish Life Dublin Marathon",
+      "event": "\tIrish Life Dublin Marathon",
       "brand": "Irish Life",
       "type": "title",
       "years": [
@@ -6559,7 +6599,7 @@
       ]
     },
     {
-      "event": "Hyundai Meia Maratona",
+      "event": "Hyundai Meia Maratona ",
       "brand": "Hyundai",
       "type": "title",
       "years": [
@@ -8363,7 +8403,7 @@
       ]
     },
     {
-      "event": "Göteborgsvarvet",
+      "event": "Göteborgsvarvet ",
       "brand": "BAUHAUS",
       "type": "premium",
       "years": [
@@ -8376,7 +8416,7 @@
       ]
     },
     {
-      "event": "Göteborgsvarvet",
+      "event": "Göteborgsvarvet ",
       "brand": "Stadium",
       "type": "premium",
       "years": [
@@ -8385,7 +8425,7 @@
       ]
     },
     {
-      "event": "Göteborgsvarvet",
+      "event": "Göteborgsvarvet ",
       "brand": "ASICS",
       "type": "premium",
       "years": [
@@ -8395,7 +8435,7 @@
       ]
     },
     {
-      "event": "Göteborgsvarvet",
+      "event": "Göteborgsvarvet ",
       "brand": "Polestar",
       "type": "official",
       "years": [
@@ -8583,7 +8623,7 @@
       ]
     },
     {
-      "event": "Irish Life Dublin Marathon",
+      "event": "\tIrish Life Dublin Marathon",
       "brand": "Grenade",
       "type": "official",
       "years": [
@@ -8591,7 +8631,7 @@
       ]
     },
     {
-      "event": "Irish Life Dublin Marathon",
+      "event": "\tIrish Life Dublin Marathon",
       "brand": "Decathlon",
       "type": "official",
       "years": [
@@ -11376,7 +11416,7 @@
       ]
     },
     {
-      "event": "Göteborgsvarvet",
+      "event": "Göteborgsvarvet ",
       "brand": "New Balance",
       "type": "official",
       "years": [
@@ -11433,7 +11473,7 @@
       ]
     },
     {
-      "event": "Irish Life Dublin Marathon",
+      "event": "\tIrish Life Dublin Marathon",
       "brand": "KBC Bank",
       "type": "title",
       "years": [
@@ -14410,6 +14450,228 @@
       "type": "presenting",
       "years": [
         2026
+      ]
+    },
+    {
+      "event": "Carrera Nocturna del Guadalquivir KH7",
+      "brand": "KH7",
+      "type": "title",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Carrera Nocturna del Guadalquivir KH7",
+      "brand": "Coca-Cola",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Carrera Nocturna del Guadalquivir KH7",
+      "brand": "Cruzcampo",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Carrera Nocturna del Guadalquivir KH7",
+      "brand": "El Corte Inglés",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Antwerp Marathon",
+      "brand": "TREK",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Antwerp Marathon",
+      "brand": "Lotus Bakeries",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Manchester Road Race",
+      "brand": "Hartford HealthCare",
+      "type": "presenting",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Lidl S. Silvestre Cidade do Porto",
+      "brand": "Lidl",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Brusells airport marathon",
+      "brand": "Brussels Airport",
+      "type": "title",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Vueling Cursa Bombers de Barcelona",
+      "brand": "Vueling",
+      "type": "title",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Vueling Cursa Bombers de Barcelona",
+      "brand": "Decathlon",
+      "type": "official",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Standard Chartered KL 10K",
+      "brand": "Standard Chartered",
+      "type": "title",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Standard Chartered KL 10K",
+      "brand": "ASICS",
+      "type": "gold",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Standard Chartered KL 10K",
+      "brand": "IHH Healthcare",
+      "type": "gold",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Standard Chartered KL 10K",
+      "brand": "Seiko",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Dubai Marathon",
+      "brand": "Standard Chartered",
+      "type": "title",
+      "years": [
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Doha Marathon",
+      "brand": "Ooredoo",
+      "type": "title",
+      "years": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Doha Marathon",
+      "brand": "WHOOP",
+      "type": "official",
+      "years": [
+        2026,
+        2027
       ]
     }
   ]
