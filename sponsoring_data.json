@@ -2374,6 +2374,51 @@
       "full_name": "Scania AB",
       "sector": "Automobile/Camions",
       "country": "SE"
+    },
+    "Northwest Orthopedic Specialist": {
+      "full_name": "Northwest Orthopedic Specialist",
+      "sector": "Santé/Orthopédie",
+      "country": "US"
+    },
+    "Boozt.com": {
+      "full_name": "Boozt AB",
+      "sector": "E-commerce mode",
+      "country": "SE"
+    },
+    "ADNOC": {
+      "full_name": "Abu Dhabi National Oil Company",
+      "sector": "Énergie/Pétrole",
+      "country": "AE"
+    },
+    "Asahi Shimbun": {
+      "full_name": "The Asahi Shimbun Company",
+      "sector": "Médias/Presse",
+      "country": "JP"
+    },
+    "Sysmex": {
+      "full_name": "Sysmex Corporation",
+      "sector": "Santé/Diagnostic",
+      "country": "JP"
+    },
+    "Katara Hospitality": {
+      "full_name": "Katara Hospitality",
+      "sector": "Hôtellerie",
+      "country": "QA"
+    },
+    "Doha Bank": {
+      "full_name": "Doha Bank Q.P.S.C.",
+      "sector": "Banque",
+      "country": "QA"
+    },
+    "Qatar Airways": {
+      "full_name": "Qatar Airways Group",
+      "sector": "Transport aérien",
+      "country": "QA"
+    },
+    "Essentia": {
+      "full_name": "Essentia Water",
+      "sector": "Eau/Boisson",
+      "country": "US"
     }
   },
   "partnerships": [
@@ -14122,6 +14167,248 @@
       "type": "official",
       "years": [
         2025,
+        2026
+      ]
+    },
+    {
+      "event": "Lilac Bloomsday Run",
+      "brand": "Northwest Orthopedic Specialist",
+      "type": "presenting",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Göteborgsvarvet ",
+      "brand": "Boozt.com",
+      "type": "title",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Göteborgsvarvet ",
+      "brand": "Maurten",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Göteborgsvarvet ",
+      "brand": "ASICS",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Bank of America Shamrock Shuffle",
+      "brand": "Bank of America",
+      "type": "title",
+      "years": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Zurich Rock 'n' Roll Running Series Madrid",
+      "brand": "Zurich",
+      "type": "title",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Zurich Rock 'n' Roll Running Series Madrid",
+      "brand": "Xiaomi",
+      "type": "sponsor",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Zurich Rock 'n' Roll Running Series Madrid",
+      "brand": "226ERS",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "\tIrish Life Dublin Marathon",
+      "brand": "Irish Life",
+      "type": "title",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029
+      ]
+    },
+    {
+      "event": "\tIrish Life Dublin Marathon",
+      "brand": "Decathlon",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Abu Dhabi Marathon",
+      "brand": "ADNOC",
+      "type": "title",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026,
+        2027
+      ]
+    },
+    {
+      "event": "Abu Dhabi Marathon",
+      "brand": "Nike",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Abu Dhabi Marathon",
+      "brand": "New Balance",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Kobe Marathon",
+      "brand": "Asahi Shimbun",
+      "type": "media",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Kobe Marathon",
+      "brand": "Sysmex",
+      "type": "sponsor",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "event": "Doha Marathon by Ooredoo",
+      "brand": "Ooredoo",
+      "type": "title",
+      "years": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Doha Marathon by Ooredoo",
+      "brand": "New Balance",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Doha Marathon by Ooredoo",
+      "brand": "Katara Hospitality",
+      "type": "platinum",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Doha Marathon by Ooredoo",
+      "brand": "Doha Bank",
+      "type": "gold",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Doha Marathon by Ooredoo",
+      "brand": "Qatar Airways",
+      "type": "partner",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Brighton Marathon",
+      "brand": "Altra",
+      "type": "title",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "NYCRUNS Brooklyn Experience Half Marathon",
+      "brand": "Essentia",
+      "type": "presenting",
+      "years": [
         2026
       ]
     }
