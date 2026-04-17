@@ -2159,6 +2159,36 @@
       "full_name": "Fulfil Nutrition",
       "sector": "Nutrition/Barres protéinées",
       "country": "IE"
+    },
+    "NLB": {
+      "full_name": "NLB d.d.",
+      "sector": "Banque",
+      "country": "SI"
+    },
+    "Heineken": {
+      "full_name": "Heineken N.V.",
+      "sector": "Brasserie",
+      "country": "NL"
+    },
+    "Amgen": {
+      "full_name": "Amgen Inc.",
+      "sector": "Pharma/Biotech",
+      "country": "US"
+    },
+    "MAMA": {
+      "full_name": "Thai President Foods (MAMA)",
+      "sector": "Alimentation",
+      "country": "TH"
+    },
+    "Ochsner Sport": {
+      "full_name": "Ochsner Sport",
+      "sector": "Distribution sport",
+      "country": "CH"
+    },
+    "Zürcher Kantonalbank": {
+      "full_name": "Zürcher Kantonalbank",
+      "sector": "Banque",
+      "country": "CH"
     }
   },
   "partnerships": [
@@ -13039,6 +13069,164 @@
       "type": "title",
       "years": [
         2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Saucony 10km de le Tour Eiffel",
+      "brand": "Saucony",
+      "type": "title",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Ljubljana Marathon",
+      "brand": "NLB",
+      "type": "title",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Ljubljana Marathon",
+      "brand": "Heineken",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Ljubljana Marathon",
+      "brand": "Generali",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Ljubljana Marathon",
+      "brand": "Garmin",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Bredase Singelloop",
+      "brand": "Amgen",
+      "type": "title",
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Bilbao Night Running Fest",
+      "brand": "TotalEnergies",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Pattaya Marathon",
+      "brand": "MAMA",
+      "type": "presenting",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Zurich Marathon",
+      "brand": "Ochsner Sport",
+      "type": "title",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Zurich Marathon",
+      "brand": "Zürcher Kantonalbank",
+      "type": "partner",
+      "years": [
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Zurich Marathon",
+      "brand": "Garmin",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Zurich Marathon",
+      "brand": "On",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "SOLA-Stafette Zürich",
+      "brand": "Craft",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "SOLA-Stafette Zürich",
+      "brand": "Zürcher Kantonalbank",
+      "type": "sponsor",
+      "years": [
         2025,
         2026
       ]
