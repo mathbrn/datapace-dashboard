@@ -2094,6 +2094,26 @@
       "full_name": "badenova AG & Co. KG",
       "sector": "Energie",
       "country": "DE"
+    },
+    "All4running": {
+      "full_name": "All4running",
+      "sector": "Distribution sport",
+      "country": "NL"
+    },
+    "Lotto Baden-Württemberg": {
+      "full_name": "Staatliche Toto-Lotto GmbH",
+      "sector": "Loterie",
+      "country": "DE"
+    },
+    "HiPRO": {
+      "full_name": "HiPRO (Danone)",
+      "sector": "Alimentation protéinée",
+      "country": "NL"
+    },
+    "Apollo Reizen": {
+      "full_name": "Apollo Reizen B.V.",
+      "sector": "Tourisme",
+      "country": "NL"
     }
   },
   "partnerships": [
@@ -12643,6 +12663,119 @@
       "brand": "Badenova",
       "type": "partner",
       "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Egmond Halve marathon",
+      "brand": "NN",
+      "type": "title",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "event": "Egmond Halve marathon",
+      "brand": "Saucony",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Egmond Halve marathon",
+      "brand": "All4running",
+      "type": "retail",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "15KM de Rotterdam",
+      "brand": "NN",
+      "type": "title",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "15KM de Rotterdam",
+      "brand": "Zalando",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "15KM de Rotterdam",
+      "brand": "Chiquita",
+      "type": "sponsor",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Stuttgart-Lauf",
+      "brand": "Lotto Baden-Württemberg",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Utrecht Marathon",
+      "brand": "HiPRO",
+      "type": "title",
+      "years": [
+        2024,
+        2025,
+        2026,
+        2027
+      ]
+    },
+    {
+      "event": "Utrecht Marathon",
+      "brand": "Apollo Reizen",
+      "type": "sponsor",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Utrecht Marathon",
+      "brand": "Craft",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Lausanne Marathon",
+      "brand": "Generali",
+      "type": "title",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
         2025,
         2026
       ]
