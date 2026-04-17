@@ -2369,6 +2369,11 @@
       "full_name": "Diadora S.p.A.",
       "sector": "Equipementier sport",
       "country": "IT"
+    },
+    "Scania": {
+      "full_name": "Scania AB",
+      "sector": "Automobile/Camions",
+      "country": "SE"
     }
   },
   "partnerships": [
@@ -14061,6 +14066,62 @@
       "brand": "Red Bull",
       "type": "partner",
       "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Halve Marathon Zwolle",
+      "brand": "Scania",
+      "type": "title",
+      "years": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Generali Geneve Marathon 10km",
+      "brand": "Generali",
+      "type": "title",
+      "years": [
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Generali Geneve Marathon 10km",
+      "brand": "NORQAIN",
+      "type": "official",
+      "years": [
+        2025,
         2026
       ]
     }
