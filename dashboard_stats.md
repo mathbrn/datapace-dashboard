@@ -1,6 +1,6 @@
 # DataPace Dashboard — Stats à jour
 
-**Généré le** : 2026-04-17 21:50
+**Généré le** : 2026-04-18 12:17
 **Source historique** : finishers (mémoire)
 
 > **Note pour Claude** : c'est la source de vérité pour tous les chiffres DataPace.
@@ -28,26 +28,27 @@
 
 | Métrique | Valeur |
 |---|---|
-| Événements avec données sponsoring | 279 |
-| Sponsors uniques trackés | 499 |
-| Relations sponsor-événement totales | 1024 |
+| Événements avec données sponsoring | 291 |
+| Sponsors uniques trackés | 511 |
+| Relations sponsor-événement totales | 1045 |
 | Sources | sponsoring_data.json, scraped_partners.json |
 
 **Répartition par type :**
 
-  - official: 430
-  - title: 258
-  - partner: 203
+  - official: 437
+  - title: 263
+  - partner: 209
   - sponsor: 44
   - premium: 36
   - major: 21
   - presenting: 9
   - gold: 6
-  - media: 4
+  - media: 5
   - retail: 3
   - powered_by: 2
   - associate: 2
   - charity: 2
+  - label: 2
   - silver: 1
   - bronze: 1
   - diamond: 1
@@ -60,4 +61,4 @@
 - Plus de **2,418** points de données historiques depuis 2000
 - **34,441,168** finishers cumulés sur la période 2000 - 2026
 - Historique depuis **2000** (27 années de données)
-- **499** sponsors trackés sur **279** événements
+- **511** sponsors trackés sur **291** événements
