@@ -589,9 +589,46 @@ function getTimeData(rn){
   for(var i=0;i<keys.length;i++){var k=keys[i];if(l.indexOf(k)>=0||k.indexOf(l.substring(0,12))>=0)return TIMES_DB[k];}
   return null;
 }
-var _spSectorMap={'Equipementier sport':'Sport','Equipementier':'Sport','Fitness':'Sport','Fitness/Tech':'Sport','Banque':'Finance','Banque/Finance':'Finance','Banque/Assurance':'Finance','Assurance':'Finance','Assurance sante':'Finance','Finance/Investissement':'Finance','Paiement/Finance':'Finance','Crypto/Fintech':'Finance','Fintech/Paiement':'Finance','Banque/Cooperative':'Finance','Tech/IT':'Tech','Tech/Wearables':'Tech','Tech/App sport':'Tech','Tech/SaaS':'Tech','Tech/Electronique':'Tech','Tech/Tourisme':'Tech','Audio/Wearables':'Tech','Conglomerat/Tech':'Tech','Conglomeral/Tech':'Tech','Immobilier/Tech':'Tech','Automobile':'Automobile','Automobile/EV':'Automobile','Mobilite/Location':'Automobile','Nutrition/Alimentaire':'Alimentation','Alimentaire':'Alimentation','Alimentaire/Livraison':'Alimentation','Nutrition/Boisson':'Alimentation','Nutrition sport':'Alimentation','Boisson/Brasserie':'Boisson','Hydratation/Consommation':'Boisson','Eau/Boisson':'Boisson','Restauration/Boisson':'Boisson','Restauration':'Boisson','Boisson':'Boisson','Boisson sport':'Boisson','Boisson energetique':'Boisson','Brasserie':'Boisson','Energie':'Energie','Industrie/Energie':'Energie','Energie/Petrole':'Energie','Industrie/Ressources':'Energie','Industrie/Batteries':'Energie','Sante':'Sante','Retail/Pharmacie':'Sante','Hygiene/Cosmetique':'Sante','Cosmetique':'Sante','Sante/Diagnostic':'Sante','Sante/Orthopédie':'Sante','Sante/Physiothérapie':'Sante','Retail/Mode':'Distribution','Retail/Distribution sport':'Distribution','Grande distribution':'Distribution','Distribution':'Distribution','Distribution sport':'Distribution','E-commerce mode':'Distribution','E-commerce sport':'Distribution','E-commerce/Livraison':'Distribution','Transport':'Transport','Aviation/Transport':'Transport','Transport/Croisiere':'Transport','Transport aerien':'Transport','Transport public':'Transport','Telecom':'Transport','Horlogerie/Luxe':'Luxe','Horlogerie/Chronometrage':'Luxe','Horlogerie':'Luxe','Luxe/Joaillerie':'Luxe','Fondation/Mecenat':'Institutionnel','Marketing sportif':'Institutionnel','Organisateur/Media':'Medias','Medias':'Medias','Medias/Presse':'Medias','Medias/Radio':'Medias','Environnement/Recyclage':'Autre','Immobilier':'Autre','Running/Communaute':'Autre','Collectivite':'Autre','BTP/Construction':'Autre','ONG/Charite':'Autre','ONG/Sport':'Autre','Fundraising/Tech':'Autre','Federation sportive':'Autre','Evenementiel sport':'Autre','Loterie':'Autre','Logistique':'Autre','Tourisme':'Autre','Soins sport':'Autre','Nettoyant/Menage':'Autre','Textile sport':'Sport','App Running':'Tech','Wearable/Tech':'Tech','Semi-conducteurs/Tech':'Tech','Technologie/Sante':'Tech','Pharma/Biotech':'Sante','Pharma':'Sante','Pharma/Sante':'Sante','Nutrition sport/Pharma':'Alimentation','Sidérurgie':'Energie','Industrie/Auto':'Automobile','Industrie/Filtration':'Energie','Viticulture':'Boisson','Champagne/Viticulture':'Boisson','Alimentation/Lait':'Alimentation','Alimentation proteinee':'Alimentation','Alimentation/Barres proteinees':'Alimentation','Alimentation/Patisserie':'Alimentation','Eau minerale':'Boisson','Musique/Tech':'Tech'};
-var _spCols={'Sport':'#22C55E','Finance':'#38BDF8','Tech':'#F472B6','Automobile':'#FF8A50','Alimentation':'#FF9F45','Boisson':'#FCD34D','Energie':'#FCDB00','Sante':'#2DBF7E','Distribution':'#FB923C','Transport':'#60A5FA','Luxe':'#E2E8F0','Institutionnel':'#FF6B9D','Medias':'#94A3B8','Autre':'#6B7280'};
-function _spNormSec(s){return _spSectorMap[s]||_spSectorMap[s.replace(/[éèê]/g,'e').replace(/[àâ]/g,'a')]||'Autre';}
+var _spSectorMap={
+'Equipementier sport':'Equipement & Mode','Equipementier':'Equipement & Mode','Textile sport':'Equipement & Mode','Fitness':'Equipement & Mode',
+'Horlogerie':'Equipement & Mode','Horlogerie/Luxe':'Equipement & Mode','Horlogerie/Chronometrage':'Equipement & Mode','Luxe/Joaillerie':'Equipement & Mode',
+'Audio/Wearables':'Equipement & Mode','Wearable/Tech':'Equipement & Mode',
+'Nutrition sport':'Alimentation & Boissons','Nutrition sport/Pharma':'Alimentation & Boissons','Nutrition/Alimentaire':'Alimentation & Boissons','Nutrition/Boisson':'Alimentation & Boissons',
+'Boisson':'Alimentation & Boissons','Boisson sport':'Alimentation & Boissons','Boisson energetique':'Alimentation & Boissons','Boisson/Brasserie':'Alimentation & Boissons','Brasserie':'Alimentation & Boissons',
+'Eau/Boisson':'Alimentation & Boissons','Eau minerale':'Alimentation & Boissons','Hydratation/Consommation':'Alimentation & Boissons',
+'Alimentaire':'Alimentation & Boissons','Alimentaire/Livraison':'Alimentation & Boissons','Alimentation/Lait':'Alimentation & Boissons','Alimentation proteinee':'Alimentation & Boissons',
+'Alimentation/Barres proteinees':'Alimentation & Boissons','Alimentation/Patisserie':'Alimentation & Boissons',
+'Restauration':'Alimentation & Boissons','Restauration/Boisson':'Alimentation & Boissons','Viticulture':'Alimentation & Boissons','Champagne/Viticulture':'Alimentation & Boissons',
+'Soins sport':'Alimentation & Boissons','Nettoyant/Menage':'Alimentation & Boissons',
+'Banque':'Finance & Assurance','Banque/Finance':'Finance & Assurance','Banque/Assurance':'Finance & Assurance','Banque/Cooperative':'Finance & Assurance',
+'Assurance':'Finance & Assurance','Assurance sante':'Finance & Assurance','Finance/Investissement':'Finance & Assurance',
+'Paiement/Finance':'Finance & Assurance','Crypto/Fintech':'Finance & Assurance','Fintech/Paiement':'Finance & Assurance',
+'Automobile':'Mobilite & Transport','Automobile/EV':'Mobilite & Transport','Mobilite/Location':'Mobilite & Transport','Industrie/Auto':'Mobilite & Transport',
+'Transport':'Mobilite & Transport','Transport aerien':'Mobilite & Transport','Transport public':'Mobilite & Transport','Transport/Croisiere':'Mobilite & Transport','Aviation/Transport':'Mobilite & Transport',
+'Sante':'Sante & Bien-etre','Sante/Diagnostic':'Sante & Bien-etre','Sante/Orthopedie':'Sante & Bien-etre','Sante/Physiotherapie':'Sante & Bien-etre',
+'Pharma':'Sante & Bien-etre','Pharma/Biotech':'Sante & Bien-etre','Pharma/Sante':'Sante & Bien-etre','Retail/Pharmacie':'Sante & Bien-etre',
+'Hygiene/Cosmetique':'Sante & Bien-etre','Cosmetique':'Sante & Bien-etre','Fitness/Tech':'Sante & Bien-etre','Technologie/Sante':'Sante & Bien-etre',
+'Tech/IT':'Tech & Telecoms','Tech/SaaS':'Tech & Telecoms','Tech/Electronique':'Tech & Telecoms','Tech/Wearables':'Tech & Telecoms','Tech/App sport':'Tech & Telecoms',
+'Tech/Tourisme':'Tech & Telecoms','Conglomerat/Tech':'Tech & Telecoms','Conglomeral/Tech':'Tech & Telecoms','Semi-conducteurs/Tech':'Tech & Telecoms','Immobilier/Tech':'Tech & Telecoms',
+'Telecom':'Tech & Telecoms','App Running':'Tech & Telecoms','Musique/Tech':'Tech & Telecoms','Fundraising/Tech':'Tech & Telecoms',
+'Energie':'Energie & Environnement','Industrie/Energie':'Energie & Environnement','Energie/Petrole':'Energie & Environnement',
+'Industrie/Ressources':'Energie & Environnement','Industrie/Batteries':'Energie & Environnement','Industrie/Filtration':'Energie & Environnement','Siderurgie':'Energie & Environnement',
+'Environnement/Recyclage':'Energie & Environnement',
+'Distribution':'Retail & Distribution','Distribution sport':'Retail & Distribution','Retail/Distribution sport':'Retail & Distribution','Retail/Mode':'Retail & Distribution',
+'Grande distribution':'Retail & Distribution','E-commerce mode':'Retail & Distribution','E-commerce sport':'Retail & Distribution','E-commerce/Livraison':'Retail & Distribution',
+'Tourisme':'Tourisme & Hotellerie','Hotellerie':'Tourisme & Hotellerie',
+'Immobilier':'Immobilier & Construction','BTP/Construction':'Immobilier & Construction',
+'Medias':'Medias & Communication','Medias/Presse':'Medias & Communication','Medias/Radio':'Medias & Communication','Organisateur/Media':'Medias & Communication','Marketing sportif':'Medias & Communication',
+'Logistique':'Services','Loterie':'Services','Evenementiel sport':'Services','Running/Communaute':'Services',
+'Collectivite':'Services','Federation sportive':'Services','ONG/Charite':'Services','ONG/Sport':'Services','Fondation/Mecenat':'Services'
+};
+var _spCols={
+'Equipement & Mode':'#22C55E','Alimentation & Boissons':'#FF9F45','Finance & Assurance':'#38BDF8',
+'Mobilite & Transport':'#FF8A50','Sante & Bien-etre':'#2DBF7E','Tech & Telecoms':'#F472B6',
+'Energie & Environnement':'#FCDB00','Retail & Distribution':'#FB923C','Tourisme & Hotellerie':'#5CDFA0',
+'Immobilier & Construction':'#94A3B8','Medias & Communication':'#818CF8','Services':'#6B7280'
+};
+function _spNormSec(s){return _spSectorMap[s]||_spSectorMap[s.replace(/[éèê]/g,'e').replace(/[àâ]/g,'a')]||'Services';}
 function buildOvSponsoring(eventName,eventColor){
   if(typeof SP_PARTNERSHIPS==='undefined')return '';
   var ec=eventColor||'var(--purple)';
