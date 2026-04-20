@@ -1,6 +1,15 @@
 {
   "updates": [
     {
+      "event": "Vienna City Marathon",
+      "date": "19APR2026",
+      "data": {
+        "winner_men": "02:06:53",
+        "winner_women": "02:20:06"
+      },
+      "timestamp": "2026-04-20T07:49:12Z"
+    },
+    {
       "event": "Schneider Electric Marathon de Paris",
       "date": "2026-04-12",
       "data": {
