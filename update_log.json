@@ -1,6 +1,14 @@
 {
   "updates": [
     {
+      "event": "Atlanta Journal-Constitution Peachtree Road Race",
+      "date": "21APR2026",
+      "data": {
+        "finishers": 43337
+      },
+      "timestamp": "2026-04-22T07:18:45Z"
+    },
+    {
       "event": "Vienna City Marathon",
       "date": "19APR2026",
       "data": {
@@ -8,14 +16,6 @@
         "winner_women": "02:20:06"
       },
       "timestamp": "2026-04-21T07:20:42Z"
-    },
-    {
-      "event": "Atlanta Journal-Constitution Peachtree Road Race",
-      "date": "21APR2026",
-      "data": {
-        "finishers": 43337
-      },
-      "timestamp": "2026-04-21T07:20:39Z"
     },
     {
       "event": "Schneider Electric Marathon de Paris",
