@@ -1,6 +1,15 @@
 {
   "updates": [
     {
+      "event": "Haspa Marathon Hamburg",
+      "date": "26APR2026",
+      "data": {
+        "winner_men": "02:04:24",
+        "winner_women": "02:17:05"
+      },
+      "timestamp": "2026-04-27T08:03:02Z"
+    },
+    {
       "event": "Atlanta Journal-Constitution Peachtree Road Race",
       "date": "21APR2026",
       "data": {

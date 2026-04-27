@@ -340,5 +340,14 @@
     "nom_homme": null,
     "temps_femme": "02:20:06",
     "nom_femme": null
+  },
+  {
+    "course": "Haspa Marathon Hamburg",
+    "distance": "MARATHON",
+    "annee": 2026,
+    "temps_homme": "02:04:24",
+    "nom_homme": null,
+    "temps_femme": "02:17:05",
+    "nom_femme": null
   }
 ]
