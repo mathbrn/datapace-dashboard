@@ -155,13 +155,14 @@
   },
   "tcs london marathon": {
     "platform": "mikatiming",
-    "subdomain": "tcslondonmarathon",
-    "event_code": "MAL",
+    "subdomain": "results.tcslondonmarathon.com",
+    "event_code": "MAS",
     "country": "GBR",
     "distance": "MARATHON",
     "name": "TCS London Marathon",
     "marathonview_id": "57",
-    "event_codes_by_year": {}
+    "winners_event_code": "ELIT",
+    "finishers_event_code": "MAS"
   },
   "bmw berlin marathon": {
     "platform": "mikatiming",

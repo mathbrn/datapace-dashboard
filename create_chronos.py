@@ -156,6 +156,7 @@ marathon_data = [
     ("TCS London Marathon", "42K", 2023, "2:01:25", "2:18:33"),
     ("TCS London Marathon", "42K", 2024, "2:04:01", "2:16:16"),
     ("TCS London Marathon", "42K", 2025, "2:02:27", "2:15:50"),
+    ("TCS London Marathon", "42K", 2026, "1:59:30", "2:15:41"),
     # Zurich Rock 'n' Roll Running Series Madrid
     ("Zurich Rock 'n' Roll Running Series Madrid", "42K", 2023, "2:10:29", "2:26:31"),
     ("Zurich Rock 'n' Roll Running Series Madrid", "42K", 2024, "2:08:05", "2:26:19"),
@@ -179,6 +180,7 @@ marathon_data = [
     ("Vienna City Marathon", "42K", 2023, "2:05:08", "2:24:12"),
     ("Vienna City Marathon", "42K", 2024, "2:06:35", "2:24:08"),
     ("Vienna City Marathon", "42K", 2025, "2:08:28", "2:24:14"),
+    ("Vienna City Marathon", "42K", 2026, "2:06:53", "2:20:06"),
     # Copenhagen Marathon
     ("Copenhagen Marathon", "42K", 2023, "2:09:12", "2:23:14"),
     ("Copenhagen Marathon", "42K", 2024, "2:09:11", "2:23:19"),
@@ -187,6 +189,7 @@ marathon_data = [
     ("Prague International Marathon", "42K", 2023, "2:05:09", "2:20:42"),
     ("Prague International Marathon", "42K", 2024, "2:08:43", "2:23:41"),
     ("Prague International Marathon", "42K", 2025, "2:05:14", "2:20:55"),
+    ("Prague International Marathon", "42K", 2026, "2:05:51", "2:24:19"),
     # Sanlam Cape Town Marathon
     ("Sanlam Cape Town Marathon", "42K", 2023, "2:11:28", "2:24:17"),
     ("Sanlam Cape Town Marathon", "42K", 2024, "2:08:16", "2:22:22"),
@@ -469,6 +472,7 @@ marathon_data = [
     ("Haspa Marathon Hamburg", "42K", 2023, "2:04:09", "2:20:09"),
     ("Haspa Marathon Hamburg", "42K", 2024, "2:04:24", "2:18:22"),
     ("Haspa Marathon Hamburg", "42K", 2025, "2:03:46", "2:17:55"),
+    ("Haspa Marathon Hamburg", "42K", 2026, "2:04:24", "2:17:05"),
     # Milano Marathon
     ("Milano Marathon", "42K", 2015, "2:08:44", "2:27:35"),
     ("Milano Marathon", "42K", 2016, "2:08:15", "2:27:45"),

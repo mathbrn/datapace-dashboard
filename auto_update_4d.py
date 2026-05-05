@@ -138,6 +138,64 @@ def extract_country_code(venue):
 
 def match_wa_to_ours(wa_races, our_events):
     """Match WA races to our dashboard events by best name+city+country score."""
+    # Aliases: normalized WA name → our event name (exact, score=100)
+    ALIASES = {
+        "tcs london marathon": "TCS London Marathon",
+        "london marathon": "TCS London Marathon",
+        "virgin money london marathon": "TCS London Marathon",
+        "haspa marathon hamburg": "Haspa Marathon Hamburg",
+        "hamburg marathon": "Haspa Marathon Hamburg",
+        "haspa marathon": "Haspa Marathon Hamburg",
+        "vienna city marathon": "Vienna City Marathon",
+        "wien marathon": "Vienna City Marathon",
+        "vienna marathon": "Vienna City Marathon",
+        "volkswagen prague marathon": "Prague International Marathon",
+        "orlen prague marathon": "Prague International Marathon",
+        "prague marathon": "Prague International Marathon",
+        "bmw berlin marathon": "BMW Berlin Marathon",
+        "berlin marathon": "BMW Berlin Marathon",
+        "bank of america chicago marathon": "Bank of America Chicago Marathon",
+        "chicago marathon": "Bank of America Chicago Marathon",
+        "tcs new york city marathon": "TCS New York City Marathon",
+        "new york city marathon": "TCS New York City Marathon",
+        "tokyo marathon": "Tokyo Marathon",
+        "nn marathon rotterdam": "NN Marathon Rotterdam",
+        "rotterdam marathon": "NN Marathon Rotterdam",
+        "boston marathon": "Boston Marathon",
+        "schneider electric marathon de paris": "Schneider Electric Marathon de Paris",
+        "marathon de paris": "Schneider Electric Marathon de Paris",
+        "edp maratona de lisboa": "EDP Maratona de Lisboa",
+        "maratona de lisboa": "EDP Maratona de Lisboa",
+        "tcs amsterdam marathon": "TCS Amsterdam Marathon",
+        "amsterdam marathon": "TCS Amsterdam Marathon",
+        "stockholm marathon": "Stockholm Marathon",
+        "athens classic marathon": "Athens Classic Marathon",
+        "athens marathon": "Athens Classic Marathon",
+        "generali berlin half marathon": "Generali Berlin Half Marathon",
+        "berlin half marathon": "Generali Berlin Half Marathon",
+        "brighton marathon": "Brighton Marathon",
+        "mainova frankfurt marathon": "Mainova Frankfurt Marathon",
+        "frankfurt marathon": "Mainova Frankfurt Marathon",
+        "adidas manchester marathon": "Adidas Manchester Marathon",
+        "manchester marathon": "Adidas Manchester Marathon",
+        "great north run": "AJ Bell Great North Run",
+        "aj bell great north run": "AJ Bell Great North Run",
+        "great manchester run": "AJ Bell Great Manchester Run",
+        "aj bell great manchester run": "AJ Bell Great Manchester Run",
+        "great bristol run": "AJ Bell Great Bristol Run",
+        "aj bell great bristol run": "AJ Bell Great Bristol Run",
+        "hoka semi de paris": "HOKA Semi de Paris",
+        "semi de paris": "HOKA Semi de Paris",
+        "paris half marathon": "HOKA Semi de Paris",
+        "edp lisboa meia maratona": "EDP Lisboa Meia Maratona",
+        "lisboa half marathon": "EDP Lisboa Meia Maratona",
+        "nn cpc loop den haag": "NN CPC Loop Den Haag - Half Marathon",
+        "the half": "The Big Half",
+        "big half": "The Big Half",
+    }
+    # Build lookup: normalized our_name → event dict
+    our_by_norm = {normalize_name(ev["name"]): ev for ev in our_events}
+
     matches = []
     STOPWORDS = {"the", "de", "la", "le", "les", "du", "of", "a", "and", "et",
                  "marathon", "semi", "half", "run", "race", "runs", "races",
@@ -147,6 +205,15 @@ def match_wa_to_ours(wa_races, our_events):
         wa_venue_raw = wa.get("venue", "") or ""
         wa_venue = normalize_name(wa_venue_raw)
         wa_country = extract_country_code(wa_venue_raw)
+
+        # Check aliases first (exact match → score = 100, bypasses fuzzy)
+        alias_target = ALIASES.get(wa_name)
+        if alias_target:
+            our_ev = our_by_norm.get(normalize_name(alias_target))
+            if our_ev:
+                matches.append({"wa": wa, "our": our_ev, "score": 100})
+                continue
+
         wa_words = set(wa_name.split()) - STOPWORDS
         best = None
         best_score = 0
@@ -179,7 +246,7 @@ def match_wa_to_ours(wa_races, our_events):
             if score > best_score:
                 best_score = score
                 best = ev
-        if best and best_score >= 15:
+        if best and best_score >= 20:
             matches.append({"wa": wa, "our": best, "score": best_score})
     print(f"  Matched: {len(matches)} events")
     return matches
@@ -406,22 +473,25 @@ def fetch_athlinks_4d(master_id_or_info, year):
 def fetch_mikatiming_4d(platform_info_or_year, year):
     """Fetch 4D from Mikatiming (Berlin, London, Hamburg, Chicago, etc.).
 
-    `platform_info_or_year` may be a dict {subdomain, event_code} or just a year string.
-    Reads the platform map entry for the event to get subdomain + event code pattern.
+    platform_info_or_year: dict with keys:
+      subdomain, event_code, event_code_pattern
+      winners_event_code  — optional, separate code for winner extraction (e.g. ELIT for London)
+      finishers_event_code — optional, separate code for finisher count (e.g. MAS for London)
     """
     try:
-        # Caller passes the platform_info dict or we use a default
         info = platform_info_or_year if isinstance(platform_info_or_year, dict) else {}
         subdomain = info.get("subdomain", "")
         event_code = info.get("event_code") or info.get("event_code_pattern", "MAL").format(yyyy=year)
+        winners_event_code = info.get("winners_event_code") or event_code
+        finishers_event_code = info.get("finishers_event_code") or event_code
         if not subdomain:
             return None
 
-        # Build URL prefix - some subdomains include full host
+        # Dot in first path segment → full hostname
         if subdomain.startswith("http") or "." in subdomain.split("/")[0]:
             base = subdomain.rstrip("/")
             if not base.startswith("http"):
-                base = f"https://{base}"
+                base = f"https://{subdomain}"
         else:
             tld = "de" if subdomain in ("hamburg", "berlin-marathon", "vienna", "berlin-halbmarathon") else "com"
             base = f"https://{subdomain}.r.mikatiming.{tld}"
@@ -429,30 +499,44 @@ def fetch_mikatiming_4d(platform_info_or_year, year):
         sess = requests.Session()
         sess.headers.update({"User-Agent": "Mozilla/5.0"})
 
-        # Winners
-        def get_first_time(sex):
-            url = f"{base}/{year}/?pid=list&event={event_code}&num_results=3&search%5Bsex%5D={sex}"
+        # Skip wheelchair/para times (too fast for ambulating athletes)
+        # Men: wheelchair ~1:20-1:30 → min 1:40:00 (6000s); Women: wheelchair ~1:38 → min 1:56:40 (7000s)
+        MIN_SECS = {"M": 6000, "W": 7000}
+
+        def time_to_secs(t):
+            p = t.split(":")
+            return int(p[0]) * 3600 + int(p[1]) * 60 + int(p[2]) if len(p) == 3 else 0
+
+        def get_winner_time(sex):
+            url = f"{base}/{year}/?pid=list&event={winners_event_code}&num_results=10&search%5Bsex%5D={sex}"
             r = sess.get(url, timeout=15)
             if not r.ok:
                 return None
             times = re.findall(r"type-time[^>]*>(?:<div[^>]*>[^<]*(?:Finish|Netto|Net)[^<]*</div>)?(\d{2}:\d{2}:\d{2})", r.text)
             if not times:
                 times = re.findall(r"(\d{2}:\d{2}:\d{2})", r.text)
-            return times[0] if times else None
+            seen = set()
+            for t in times:
+                if t not in seen:
+                    seen.add(t)
+                    secs = time_to_secs(t)
+                    if MIN_SECS[sex] <= secs <= 36000:
+                        return t
+            return None
 
-        men_winner = get_first_time("M")
-        women_winner = get_first_time("W")
+        men_winner = get_winner_time("M")
+        women_winner = get_winner_time("W")
 
-        # Total finishers (best-effort: count times on big results page)
-        url_all = f"{base}/{year}/?pid=list&event={event_code}&num_results=99999"
-        r_all = sess.get(url_all, timeout=60)
-        all_times = re.findall(r"type-time[^>]*>(?:<div[^>]*>[^<]*(?:Finish|Netto|Net)[^<]*</div>)?(\d{2}:\d{2}:\d{2})", r_all.text)
-        finishers = len(all_times)
+        # Finisher count via page navigation (max_page × 25, accurate to ±24)
+        r_p1 = sess.get(f"{base}/{year}/?pid=list&event={finishers_event_code}&num_results=25&page=1", timeout=30)
+        page_nums = [int(p) for p in re.findall(r"page=(\d+)", r_p1.text) if p.isdigit()]
+        max_page = max(page_nums, default=0)
+        finishers = max_page * 25 if max_page >= 2 else None
 
         if not men_winner and not women_winner and not finishers:
             return None
 
-        return {"finishers": finishers if finishers >= 100 else None,
+        return {"finishers": finishers,
                 "avg_time": None, "avg_speed_kmh": None,
                 "winner_men": men_winner, "winner_women": women_winner,
                 "source": "mikatiming", "confidence": "medium"}
@@ -852,25 +936,30 @@ def main():
             "winner_women": result.get("winner_women"),
         })
 
-    # 5. Regenerate + push
+    # 5. Regenerate dashboard (only when there are actual updates)
     if log["updates"] and not args.dry_run:
         print(f"\n=== Regenerating dashboard ({len(log['updates'])} updates) ===")
         subprocess.run(["python", "create_chronos.py"], cwd=str(SCRIPT_DIR))
         subprocess.run(["python", "generate_dashboard.py"], cwd=str(SCRIPT_DIR))
-        subprocess.run(["git", "add", "-A"], cwd=str(SCRIPT_DIR))
-        msg = f"Auto Update 4D {date_str}: {len(log['updates'])} event(s)"
-        r = subprocess.run(["git", "commit", "-m", msg], cwd=str(SCRIPT_DIR), capture_output=True, text=True)
-        if r.returncode == 0:
-            subprocess.run(["git", "push"], cwd=str(SCRIPT_DIR))
-            print(f"  Pushed: {msg}")
-        else:
-            print(f"  No changes to commit")
 
-    # 6. Log report
+    # 6. Always save log + commit (even 0 updates) so every cron run is auditable
     log_path = LOGS_DIR / f"update_4d_{date_str}.json"
     with open(log_path, "w", encoding="utf-8") as f:
         json.dump(log, f, indent=2, ensure_ascii=False)
     print(f"\n  Report saved: {log_path}")
+
+    if not args.dry_run:
+        subprocess.run(["git", "add", "-A"], cwd=str(SCRIPT_DIR))
+        n = len(log["updates"])
+        msg = (f"Auto Update 4D {date_str} — {n} update(s)"
+               if n > 0 else f"Auto Update 4D {date_str} — 0 update (log only)")
+        r = subprocess.run(["git", "commit", "-m", msg], cwd=str(SCRIPT_DIR),
+                            capture_output=True, text=True)
+        if r.returncode == 0:
+            subprocess.run(["git", "push"], cwd=str(SCRIPT_DIR))
+            print(f"  Pushed: {msg}")
+        else:
+            print(f"  Nothing new to commit")
 
     return 0
 
