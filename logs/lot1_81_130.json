@@ -1,0 +1,302 @@
+[
+  {
+    "rank": 1,
+    "name": "Wizz Air Venicemarathon",
+    "total_2025": 13599,
+    "city": "Venise"
+  },
+  {
+    "rank": 2,
+    "name": "Bank of China Beijing Half Marathon",
+    "total_2025": 9960,
+    "city": "Pekin"
+  },
+  {
+    "rank": 3,
+    "name": "Marathon des Chateaux du Médoc",
+    "total_2025": 8221,
+    "city": "Pauillac"
+  },
+  {
+    "rank": 4,
+    "name": "Marathon des Grands Crus",
+    "total_2025": 8100,
+    "city": "Dijon"
+  },
+  {
+    "rank": 5,
+    "name": "The Hapalua - Hawaii's Hlaf marathon",
+    "total_2025": 7816,
+    "city": "Honolulu"
+  },
+  {
+    "rank": 6,
+    "name": "AMGEN Singelloop Breda 10km",
+    "total_2025": 7609,
+    "city": "Breda"
+  },
+  {
+    "rank": 7,
+    "name": "Saucony Run Shoreditch 10K",
+    "total_2025": 7599,
+    "city": "Londres"
+  },
+  {
+    "rank": 8,
+    "name": "Course Eiffage du Viaduc de Millau",
+    "total_2025": 7449,
+    "city": "Millau"
+  },
+  {
+    "rank": 9,
+    "name": "NLB Ljubljana Marathon 10K",
+    "total_2025": 7382,
+    "city": "Ljubljana"
+  },
+  {
+    "rank": 10,
+    "name": "Under Armour Toronto 10K",
+    "total_2025": 7379,
+    "city": "Toronto "
+  },
+  {
+    "rank": 11,
+    "name": "Zürcher Silvesterlauf",
+    "total_2025": 7070,
+    "city": "Zurich "
+  },
+  {
+    "rank": 12,
+    "name": "Hyundai Meia Maratona do Porto",
+    "total_2025": 7025,
+    "city": "Porto "
+  },
+  {
+    "rank": 13,
+    "name": "MG Vadodara International Marathon",
+    "total_2025": 6992,
+    "city": "Vadodara"
+  },
+  {
+    "rank": 14,
+    "name": "Tokushima Marathon",
+    "total_2025": 6640,
+    "city": "Tokushima"
+  },
+  {
+    "rank": 15,
+    "name": "Alliance Bank Borneo International Marathon",
+    "total_2025": 6587,
+    "city": "Sabah"
+  },
+  {
+    "rank": 16,
+    "name": "10K Night Race Prague",
+    "total_2025": 6550,
+    "city": "Prague"
+  },
+  {
+    "rank": 17,
+    "name": "Yorkshire Marathon",
+    "total_2025": 6537,
+    "city": "York"
+  },
+  {
+    "rank": 18,
+    "name": "Maraton de Zaragoza",
+    "total_2025": 6488,
+    "city": "Saragosse"
+  },
+  {
+    "rank": 19,
+    "name": "Semi marathon du Bois de Vincennes",
+    "total_2025": 6100,
+    "city": "Vincennes"
+  },
+  {
+    "rank": 20,
+    "name": "Thien Phong Marathon",
+    "total_2025": 6018,
+    "city": "Thien Phong"
+  },
+  {
+    "rank": 21,
+    "name": "Guadalajara Marathon",
+    "total_2025": 5810,
+    "city": "Guadalajara"
+  },
+  {
+    "rank": 22,
+    "name": "10km du bois de Boulogne",
+    "total_2025": 5400,
+    "city": "Paris"
+  },
+  {
+    "rank": 23,
+    "name": "La course du château de Vincennes",
+    "total_2025": 5318,
+    "city": "Vincennes"
+  },
+  {
+    "rank": 24,
+    "name": "Bengaluru Midnight Marathon",
+    "total_2025": 5162,
+    "city": "Bengalore"
+  },
+  {
+    "rank": 25,
+    "name": "ACSE - La Strasbourgeoise",
+    "total_2025": 4950,
+    "city": "Strasbourg"
+  },
+  {
+    "rank": 26,
+    "name": "Ekiden du Stade Français",
+    "total_2025": 4830,
+    "city": "Paris"
+  },
+  {
+    "rank": 27,
+    "name": "10km du Trocadéro",
+    "total_2025": 4820,
+    "city": "Paris"
+  },
+  {
+    "rank": 28,
+    "name": "Route du Louvre",
+    "total_2025": 4800,
+    "city": "Lens"
+  },
+  {
+    "rank": 29,
+    "name": "ASICS LDNX",
+    "total_2025": 4681,
+    "city": "Londres"
+  },
+  {
+    "rank": 30,
+    "name": "Bengaluru 10K Challenge",
+    "total_2025": 4630,
+    "city": "Bengalore"
+  },
+  {
+    "rank": 31,
+    "name": "15Km de Woluwe",
+    "total_2025": 4581,
+    "city": "Woluwe"
+  },
+  {
+    "rank": 32,
+    "name": "20km de maroilles",
+    "total_2025": 4549,
+    "city": "Maroilles"
+  },
+  {
+    "rank": 33,
+    "name": "Les foulées Valenciennoises",
+    "total_2025": 4400,
+    "city": "Valenciennes"
+  },
+  {
+    "rank": 34,
+    "name": "Halve Marathon Zwolle",
+    "total_2025": 4337,
+    "city": "Zwolle"
+  },
+  {
+    "rank": 35,
+    "name": "Generali Geneve Marathon 10km",
+    "total_2025": 4215,
+    "city": "Geneve"
+  },
+  {
+    "rank": 36,
+    "name": "Brooks Adelaide Marathon festival",
+    "total_2025": 4172,
+    "city": "Adelaide"
+  },
+  {
+    "rank": 37,
+    "name": "Marathon de la mer",
+    "total_2025": 4100,
+    "city": "Boulogne-sur-Mer"
+  },
+  {
+    "rank": 38,
+    "name": "Gran Carrera del Mediterraneo",
+    "total_2025": 4093,
+    "city": "Alicante"
+  },
+  {
+    "rank": 39,
+    "name": "Sparkassen Phoenix Halbmarathn",
+    "total_2025": 4050,
+    "city": "Dortmund"
+  },
+  {
+    "rank": 40,
+    "name": "Semi-marathon de Troyes",
+    "total_2025": 3841,
+    "city": "Troyes"
+  },
+  {
+    "rank": 41,
+    "name": "Salomon New shapers run",
+    "total_2025": 3657,
+    "city": "Milan"
+  },
+  {
+    "rank": 42,
+    "name": "Bajaj Pune Marathon",
+    "total_2025": 3606,
+    "city": "Pune"
+  },
+  {
+    "rank": 43,
+    "name": "Zagreb21 Spring Half Marathon",
+    "total_2025": 3468,
+    "city": "Zagreb"
+  },
+  {
+    "rank": 44,
+    "name": "10 km du 14e",
+    "total_2025": 3400,
+    "city": "Paris"
+  },
+  {
+    "rank": 45,
+    "name": "SportScheck Run Hamburg",
+    "total_2025": 3381,
+    "city": "Hambourg"
+  },
+  {
+    "rank": 46,
+    "name": "Nikolaslauf Tübigen",
+    "total_2025": 3288,
+    "city": " Tübigen"
+  },
+  {
+    "rank": 47,
+    "name": "Premiär Halvan",
+    "total_2025": 3081,
+    "city": "Stockholm "
+  },
+  {
+    "rank": 48,
+    "name": "Run the City",
+    "total_2025": 2988,
+    "city": "Beyrouth"
+  },
+  {
+    "rank": 49,
+    "name": "Maasmarathon",
+    "total_2025": 2922,
+    "city": "Liège"
+  },
+  {
+    "rank": 50,
+    "name": "La liégeoise Women Only",
+    "total_2025": 2905,
+    "city": "Liège"
+  }
+]

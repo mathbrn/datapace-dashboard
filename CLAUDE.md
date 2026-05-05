@@ -1,5 +1,107 @@
 # Dashboard Running - Consignes de projet
 
+## Méthode primordiale — Scraping pages de résultats
+
+### RÈGLE ABSOLUE pour toute recherche de données :
+Quand une URL de page de résultats est disponible (API ou page web), TOUJOURS scraper directement pour calculer les 4D :
+
+1. **FINISHERS** : compter le nombre total de lignes dans le classement général (hors virtual, hors distances > 42.195km)
+2. **TEMPS MOYEN** : calculer la moyenne des temps officiels de TOUS les finishers
+3. **CHRONO VAINQUEUR HOMME** : premier temps homme dans le classement
+4. **CHRONO VAINQUEUR FEMME** : premier temps femme dans le classement
+
+### Priorité des sources (dans l'ordre) :
+1. API JSON directe (Sporthive, Tracx, TimeTo...) → extraire classificationsCount + résultats
+2. URL page de résultats fournie par l'utilisateur → scraper avec requests + BeautifulSoup/regex
+3. web_search "{nom événement} résultats {année}" → premier lien = page officielle → scraper
+4. Wikipedia / presse → en dernier recours seulement
+
+### Pattern de scraping standard :
+```python
+import requests, re
+from bs4 import BeautifulSoup
+
+def scrape_results(url):
+    resp = requests.get(url, headers={
+        "User-Agent": "Mozilla/5.0",
+        "Accept-Language": "fr-FR,fr;q=0.9,en;q=0.8"
+    }, timeout=30)
+
+    # Chercher le total dans la page
+    patterns = [
+        r'(\d[\d\s,\.]+)\s*(finishers|participants|classés|arrivants|coureurs)',
+        r'total[^\d]*(\d[\d\s,\.]+)',
+        r'"total"\s*:\s*(\d+)',
+        r'"count"\s*:\s*(\d+)',
+        r'(\d+)\s*résultats',
+        r'classificationsCount["\s:]+(\d+)',
+    ]
+    for p in patterns:
+        m = re.search(p, resp.text, re.IGNORECASE)
+        if m:
+            val = int(re.sub(r'[\s,\.]', '', m.group(1)))
+            if val > 100:
+                return val
+
+    # Si pas de total → compter les lignes résultats
+    soup = BeautifulSoup(resp.text, 'html.parser')
+    rows = soup.select('table tbody tr, .result-row, .runner-row')
+    if len(rows) > 100:
+        return len(rows)
+    return None
+```
+
+### Pour les APIs JSON (pattern standard) :
+```python
+# Chercher l'API sous-jacente dans le HTML
+api_patterns = [
+    r'"apiUrl"\s*:\s*"([^"]+)"',
+    r'fetch\(["\']([^"\']+/results[^"\']*)["\']',
+    r'axios\.get\(["\']([^"\']+)["\']',
+]
+# Puis appeler l'API directement
+```
+
+### Règle anti-estimation :
+- Jamais utiliser un chiffre mentionné dans un article de presse sans vérifier la source officielle
+- Toujours préférer le compte exact des lignes du classement officiel
+- Rejeter tout chiffre rond (% 500 == 0)
+
+### Ordre de fallback OBLIGATOIRE pour scraping :
+
+1. **requests + BeautifulSoup** (HTML statique)
+   → Si échec ou page vide :
+
+2. **Chercher l'API JSON sous-jacente dans le HTML**
+   (Network calls, fetch(), axios, XHR patterns)
+   → appeler l'API directement avec requests
+   → Si échec :
+
+3. **Playwright (OBLIGATOIRE si JS-rendered)**
+   NE JAMAIS demander la permission — lancer directement :
+   ```python
+   from playwright.sync_api import sync_playwright
+   with sync_playwright() as p:
+       browser = p.chromium.launch(headless=True)
+       page = browser.new_page()
+       # Intercepter les appels réseau pour trouver l'API
+       page.on("request", lambda req: print(req.url) if "api" in req.url.lower() else None)
+       page.goto(url, wait_until="networkidle")
+       content = page.content()
+       browser.close()
+   ```
+   Installer si nécessaire :
+   ```bash
+   pip install playwright --break-system-packages
+   playwright install chromium
+   ```
+
+4. **Si Playwright échoue** → web_search + web_fetch sur page officielle alternative
+
+5. **En dernier recours seulement** → presse/articles
+
+**RÈGLE** : Ne jamais s'arrêter sur un échec de scraping sans avoir essayé TOUTES les méthodes dans l'ordre. Ne jamais demander la permission pour utiliser Playwright.
+
 ## Architecture des donnees
 
 ### Source de verite pour le dashboard
@@ -44,6 +146,15 @@
 - `avg_times_sporthive.json` : Temps moyens calcules depuis APIs (Sporthive + Tracx)
 - `datapace_dashboard.html` : Dashboard genere (ouvrir dans navigateur)
 
+## Distinction participants vs finishers
+
+### Regle absolue : participants/inscrits ≠ finishers
+- **Rejeter systematiquement** les chiffres issus de sources mentionnant "participants", "inscrits", "registered", "entries", "runners took part" SANS confirmer que ce sont des finishers reels ayant franchi la ligne d'arrivee.
+- **Accepter uniquement** : "finishers", "classés", "arrivants", "completers", "classified", "ranked", count de lignes dans un classement officiel, `classificationsCount` API.
+- **En cas de doute** : ne PAS ecrire la valeur. Laisser la cellule vide est toujours preferable a un chiffre faux.
+- **Sources fiables** : pages de resultats officiels (chronometrage), APIs de timing (Sporthive, ChronoRace, NYRR), `services.datasport.com/{year}/lauf/{event}/` (somme des "classés" par categorie).
+- **Sources NON fiables pour finishers** : articles de presse ("40 000 participants"), communiques d'inscription, Wikipedia (souvent imprecis sur les counts).
+
 ## Regles strictes
 
 ### Validation permanente (onglet Temps moyen)
@@ -65,6 +176,22 @@
 - `SEMI` : ~21.1km (half marathon)
 - `10KM` : 10km
 - `AUTRE` : distances non-standard (10 miles, 12K, 15K, etc.)
+
+### Distances non-standard connues (toujours classer en AUTRE)
+- Course de l'escalade (Geneve) : 7.3km -> AUTRE (jamais 10KM)
+- 20KM de Bruxelles : 20km -> AUTRE
+- Baloise Antwerp 10 miles : 10 miles (16.09km) -> AUTRE
+- Dam tot Damloop : 10 miles -> AUTRE
+- AJ Bell Great South Run : 10 miles -> AUTRE
+- Lilac Bloomsday Run : 12km -> AUTRE
+- Bay to Breakers : 12km -> AUTRE
+- Bolder Boulder 10K : 10km -> 10KM
+- Paris-Versailles La Grande Classique : 16.2km -> AUTRE
+- City-Bay Fun Run (Adelaide) : 12km -> AUTRE
+
+Regle : toujours classer ces events dans `AUTRE` meme si le nom
+contient un nombre (ex: "10 miles", "20KM") qui pourrait preter
+a confusion avec 10KM/SEMI. Le critere est la distance reelle en km.
 
 ### Badges evenements
 - `WMM` (bleu #38BDF8) : World Marathon Majors (NYC, London, Boston, Sydney, Berlin, Chicago, Tokyo)
@@ -249,6 +376,38 @@
 - **Auth** : Inconnu pour API publique
 - **Couverture** : NYCRUNS Brooklyn Experience Half Marathon, et autres petits events US
 - **Reference** : `runsignup_crawl_results.json` dans le repo
+
+### 25. NYRR Brooklyn Half + autres events NYRR (payload confirme)
+- **API** : `POST https://rmsprodapi.nyrr.org/api/v2/runners/finishers-filter`
+- **Body** : `{"eventCode": "24BKH", "pageNum": 1, "pageSize": 1}`
+- **Headers** : `Origin: https://results.nyrr.org` + `Referer: https://results.nyrr.org/` requis
+- **Donnees** : `totalItems` = total finishers ; `items[]` avec `gender` ("M"/"W"), `overallPlace`, `overallTime`, `firstName`, `lastName`
+- **Filtre F/M** : ajouter `"gender":"M"` ou `"W"` dans body pour winner par sexe
+- **Sort** : `"sortColumn":"overallPlace","sortDescending":false` pour ordre officiel
+- **Codes events** : `{YY}{CODE}` (ex: `24BKH` pour 2024 Brooklyn Half, `23BKH` pour 2023, `22BKH` pour 2022)
+- **Couverture** : tous les events NYRR (Brooklyn Half, NYC Half United Airlines, etc.)
+
+### 26. ChronoRace moderne (table/search API)
+- **API** : `GET https://results.chronorace.be/api/results/table/search/{ctx}/{report}?srch=&pageSize=1&fromRecord=0`
+- **ctx** : format `{YYYYMMDD}_{eventslug}` (ex: `20240421_10miles` pour Baloise Antwerp 2024)
+- **report** : `LIVE1` (course principale) ou `LIVE2` (short run / course secondaire)
+- **Donnees** : `Count` = total finishers, `Groups[0].SlaveRows` = rangs (premier = vainqueur)
+- **Extraction vainqueur** : `SlaveRows[0]` → `[pos, bib, nom, team, status, time, ...]`
+- **Couverture** : Baloise Antwerp 10 miles + short run, tous les events ChronoRace recents (hors Bruxelles qui a son propre endpoint)
+
+### 27. 20km Bruxelles (ChronoRace custom endpoint)
+- **API** : `GET https://prod.chronorace.be/api/Results/20km/Search?eventId={id}&year={yyyy}&search=&race=1&gender=&yearOfBirth=&category=&nationality=&province=&postalCode=&team=&isInitial=1&maxEntries=25&fromEntry=0`
+- **eventId** : decouvert via page HTML principale (ex: `2159234678608985` pour 2024)
+- **race=1** : course principale ; autres groupes (Handisport, Company) = race=2, 3, ...
+- **gender=M/F** : filtre par sexe pour vainqueur
+- **Donnees** : `Count` = total ; `Matches[]` avec `nom`, `prenom`, `x_time`, `x_sexe`, `x_pos`
+- **Couverture** : 20km de Bruxelles uniquement (pas de cross-over avec autres events ChronoRace)
+
+### 28. Playwright fallback (pages JS-rendered)
+- **Outil** : `playwright` Python + `chromium` headless
+- **Usage** : pour ChronoRace anciennes pages ASP.NET (2010-2019), datasport live, ACN-timing
+- **Technique** : intercepter `page.on("request")` pour capturer les appels API reels, puis utiliser ces URLs directement avec `requests`
+- **Extraction** : `page.inner_text("body")` pour regex sur texte rendu (ex: "22658 Inschrijvingen" pour Antwerp 2019)
 
 ## Etat d'implementation des fetchers (auto_update_4d.py)
 

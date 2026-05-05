@@ -1,0 +1,404 @@
+[
+  {
+    "rank": 1,
+    "name": "Bank of China Beijing Half Marathon",
+    "total_2025": 9960,
+    "city": "Pekin"
+  },
+  {
+    "rank": 2,
+    "name": "Hyundai Meia Maratona do Porto",
+    "total_2025": 7025,
+    "city": "Porto "
+  },
+  {
+    "rank": 3,
+    "name": "La course du château de Vincennes",
+    "total_2025": 5318,
+    "city": "Vincennes"
+  },
+  {
+    "rank": 4,
+    "name": "Bengaluru Midnight Marathon",
+    "total_2025": 5162,
+    "city": "Bengalore"
+  },
+  {
+    "rank": 5,
+    "name": "ACSE - La Strasbourgeoise",
+    "total_2025": 4950,
+    "city": "Strasbourg"
+  },
+  {
+    "rank": 6,
+    "name": "Ekiden du Stade Français",
+    "total_2025": 4830,
+    "city": "Paris"
+  },
+  {
+    "rank": 7,
+    "name": "10km du Trocadéro",
+    "total_2025": 4820,
+    "city": "Paris"
+  },
+  {
+    "rank": 8,
+    "name": "Route du Louvre",
+    "total_2025": 4800,
+    "city": "Lens"
+  },
+  {
+    "rank": 9,
+    "name": "ASICS LDNX",
+    "total_2025": 4681,
+    "city": "Londres"
+  },
+  {
+    "rank": 10,
+    "name": "Bengaluru 10K Challenge",
+    "total_2025": 4630,
+    "city": "Bengalore"
+  },
+  {
+    "rank": 11,
+    "name": "15Km de Woluwe",
+    "total_2025": 4581,
+    "city": "Woluwe"
+  },
+  {
+    "rank": 12,
+    "name": "20km de maroilles",
+    "total_2025": 4549,
+    "city": "Maroilles"
+  },
+  {
+    "rank": 13,
+    "name": "Les foulées Valenciennoises",
+    "total_2025": 4400,
+    "city": "Valenciennes"
+  },
+  {
+    "rank": 14,
+    "name": "Halve Marathon Zwolle",
+    "total_2025": 4337,
+    "city": "Zwolle"
+  },
+  {
+    "rank": 15,
+    "name": "Generali Geneve Marathon 10km",
+    "total_2025": 4215,
+    "city": "Geneve"
+  },
+  {
+    "rank": 16,
+    "name": "Brooks Adelaide Marathon festival",
+    "total_2025": 4172,
+    "city": "Adelaide"
+  },
+  {
+    "rank": 17,
+    "name": "Marathon de la mer",
+    "total_2025": 4100,
+    "city": "Boulogne-sur-Mer"
+  },
+  {
+    "rank": 18,
+    "name": "Gran Carrera del Mediterraneo",
+    "total_2025": 4093,
+    "city": "Alicante"
+  },
+  {
+    "rank": 19,
+    "name": "Sparkassen Phoenix Halbmarathn",
+    "total_2025": 4050,
+    "city": "Dortmund"
+  },
+  {
+    "rank": 20,
+    "name": "Semi-marathon de Troyes",
+    "total_2025": 3841,
+    "city": "Troyes"
+  },
+  {
+    "rank": 21,
+    "name": "Salomon New shapers run",
+    "total_2025": 3657,
+    "city": "Milan"
+  },
+  {
+    "rank": 22,
+    "name": "Bajaj Pune Marathon",
+    "total_2025": 3606,
+    "city": "Pune"
+  },
+  {
+    "rank": 23,
+    "name": "Zagreb21 Spring Half Marathon",
+    "total_2025": 3468,
+    "city": "Zagreb"
+  },
+  {
+    "rank": 24,
+    "name": "10 km du 14e",
+    "total_2025": 3400,
+    "city": "Paris"
+  },
+  {
+    "rank": 25,
+    "name": "SportScheck Run Hamburg",
+    "total_2025": 3381,
+    "city": "Hambourg"
+  },
+  {
+    "rank": 26,
+    "name": "Nikolaslauf Tübigen",
+    "total_2025": 3288,
+    "city": " Tübigen"
+  },
+  {
+    "rank": 27,
+    "name": "Premiär Halvan",
+    "total_2025": 3081,
+    "city": "Stockholm "
+  },
+  {
+    "rank": 28,
+    "name": "Run the City",
+    "total_2025": 2988,
+    "city": "Beyrouth"
+  },
+  {
+    "rank": 29,
+    "name": "Maasmarathon",
+    "total_2025": 2922,
+    "city": "Liège"
+  },
+  {
+    "rank": 30,
+    "name": "La liégeoise Women Only",
+    "total_2025": 2905,
+    "city": "Liège"
+  },
+  {
+    "rank": 31,
+    "name": "Premiär  Milen",
+    "total_2025": 2831,
+    "city": "Stockholm "
+  },
+  {
+    "rank": 32,
+    "name": "Mumbai Midnight 10K",
+    "total_2025": 2822,
+    "city": "Mumbai"
+  },
+  {
+    "rank": 33,
+    "name": "Hull 10K",
+    "total_2025": 2780,
+    "city": "Hull"
+  },
+  {
+    "rank": 34,
+    "name": "Font Vella Lanzarote International Marathon",
+    "total_2025": 2766,
+    "city": "Teguise"
+  },
+  {
+    "rank": 35,
+    "name": "Agra Taj Half Marathon",
+    "total_2025": 2686,
+    "city": "Agra"
+  },
+  {
+    "rank": 36,
+    "name": "Jonkoping Marathon",
+    "total_2025": 2546,
+    "city": "Jonkoping"
+  },
+  {
+    "rank": 37,
+    "name": "Semi Marathon et 10km de Hyères",
+    "total_2025": 2500,
+    "city": "Hyères"
+  },
+  {
+    "rank": 38,
+    "name": "Women's 5K Run Prague",
+    "total_2025": 2451,
+    "city": "Prague"
+  },
+  {
+    "rank": 39,
+    "name": "Kolkata Full Marathon",
+    "total_2025": 2377,
+    "city": "Calcutta "
+  },
+  {
+    "rank": 40,
+    "name": "Middlesbrough half marathon",
+    "total_2025": 2241,
+    "city": "Middlesbrough"
+  },
+  {
+    "rank": 41,
+    "name": "Binter Night Run Zaragoza",
+    "total_2025": 2212,
+    "city": "Saragosse"
+  },
+  {
+    "rank": 42,
+    "name": "Euro Marathon Metz",
+    "total_2025": 2200,
+    "city": "Metz"
+  },
+  {
+    "rank": 43,
+    "name": "Norwich Half Marathon",
+    "total_2025": 2110,
+    "city": "Norwich"
+  },
+  {
+    "rank": 44,
+    "name": "Media Maraton Ciudad de Salamanca",
+    "total_2025": 1982,
+    "city": "Salamanque "
+  },
+  {
+    "rank": 45,
+    "name": "Hyderabad Hitec Marathon",
+    "total_2025": 1879,
+    "city": "Hyderabad"
+  },
+  {
+    "rank": 46,
+    "name": "Westenergie marathon",
+    "total_2025": 1828,
+    "city": "Essen"
+  },
+  {
+    "rank": 47,
+    "name": "Corrida da Liberdade",
+    "total_2025": 1537,
+    "city": "Portimao "
+  },
+  {
+    "rank": 48,
+    "name": "Placentia half marathon",
+    "total_2025": 1522,
+    "city": "Plaisance"
+  },
+  {
+    "rank": 49,
+    "name": "Hampton Court Palace Half Marathon",
+    "total_2025": 1489,
+    "city": "Hampton court"
+  },
+  {
+    "rank": 50,
+    "name": "La trenta trentina",
+    "total_2025": 1411,
+    "city": "Levico"
+  },
+  {
+    "rank": 51,
+    "name": "Dogi's Half Marathon",
+    "total_2025": 1394,
+    "city": "Dolo"
+  },
+  {
+    "rank": 52,
+    "name": "Söder Runt 10K",
+    "total_2025": 1272,
+    "city": "Stockholm "
+  },
+  {
+    "rank": 53,
+    "name": "Rolling Half",
+    "total_2025": 1245,
+    "city": "Beyrouth"
+  },
+  {
+    "rank": 54,
+    "name": "Semi-marathon des sources du lac d’Annecy",
+    "total_2025": 1200,
+    "city": "Annecy"
+  },
+  {
+    "rank": 55,
+    "name": "Dosti Thane Half Marathon",
+    "total_2025": 1184,
+    "city": "Thane"
+  },
+  {
+    "rank": 56,
+    "name": "Chandigarh Half Marathon",
+    "total_2025": 1029,
+    "city": "Chandigarh"
+  },
+  {
+    "rank": 57,
+    "name": "Toyota Amazing Thailand Bangkok Marathon",
+    "total_2025": 1020,
+    "city": "Bangkok "
+  },
+  {
+    "rank": 58,
+    "name": "Quijote Maraton",
+    "total_2025": 986,
+    "city": "Ciudad Real"
+  },
+  {
+    "rank": 59,
+    "name": "DrammenDrammen Halv Maraton",
+    "total_2025": 830,
+    "city": "Drammen"
+  },
+  {
+    "rank": 60,
+    "name": "Terre di Siena Ultramarathon",
+    "total_2025": 830,
+    "city": "Sienne"
+  },
+  {
+    "rank": 61,
+    "name": "Meia Maratona de Almada",
+    "total_2025": 780,
+    "city": "Almada"
+  },
+  {
+    "rank": 62,
+    "name": "MAIF Ekiden de Paris",
+    "total_2025": 735,
+    "city": "Paris"
+  },
+  {
+    "rank": 63,
+    "name": "Stavanger Marathon",
+    "total_2025": 464,
+    "city": "Stavanger"
+  },
+  {
+    "rank": 64,
+    "name": "Jahez Alareen Run",
+    "total_2025": 429,
+    "city": "Al Areen"
+  },
+  {
+    "rank": 65,
+    "name": "Pre-season Run",
+    "total_2025": 373,
+    "city": "Manama"
+  },
+  {
+    "rank": 66,
+    "name": "Beyon Full Marathon",
+    "total_2025": 268,
+    "city": "Zallaq"
+  },
+  {
+    "rank": 67,
+    "name": "NBK Bahrain Marathon Relays",
+    "total_2025": 168,
+    "city": "Manama"
+  }
+]

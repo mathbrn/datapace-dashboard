@@ -1,0 +1,54 @@
+{
+  "deleted": [
+    {
+      "row": 529,
+      "event": "Shamrock Run",
+      "dist": "SEMI",
+      "city": "Portland"
+    },
+    {
+      "row": 530,
+      "event": "Shamrock Run",
+      "dist": "5KM",
+      "city": "Portland"
+    },
+    {
+      "row": 531,
+      "event": "Shamrock Run",
+      "dist": "AUTRE",
+      "city": "Portland"
+    },
+    {
+      "row": 569,
+      "event": "Denver Marathon",
+      "dist": "MARATHON",
+      "city": "Denver"
+    },
+    {
+      "row": 570,
+      "event": "Denver Marathon",
+      "dist": "SEMI",
+      "city": "Denver"
+    },
+    {
+      "row": 571,
+      "event": "Denver Marathon",
+      "dist": "AUTRE",
+      "city": "Denver"
+    }
+  ],
+  "renamed": [
+    {
+      "old": "Paris-Versailles - La grande classique",
+      "new": "Paris-Versailles La Grande Classique",
+      "rows": 1
+    },
+    {
+      "old": "Generali Tranquilidade Meia Maratona Descobrimentos",
+      "new": "Tranquilidade Meia Maratona dos Descobrimentos",
+      "rows": 2
+    }
+  ],
+  "final_rows": 1934,
+  "final_events": 861
+}

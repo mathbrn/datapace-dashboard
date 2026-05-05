@@ -1,0 +1,266 @@
+{
+  "date": "2026-04-15",
+  "deleted": [
+    {
+      "row": 58,
+      "event": "Hoka Runaway Sydney Half Marathon",
+      "dist": "SEMI",
+      "city": "Sydney"
+    },
+    {
+      "row": 90,
+      "event": "Wizz Air Rome Half Marathon by Brooks",
+      "dist": "SEMI",
+      "city": "Rome"
+    },
+    {
+      "row": 94,
+      "event": "Tokyo Legacy Half Marathon",
+      "dist": "SEMI",
+      "city": "Tokyo"
+    },
+    {
+      "row": 204,
+      "event": "NYC Marathon",
+      "dist": "MARATHON",
+      "city": "New York"
+    },
+    {
+      "row": 212,
+      "event": "Rock'n'roll Running Madrid",
+      "dist": "MARATHON",
+      "city": "Madrid"
+    },
+    {
+      "row": 213,
+      "event": "Rock'n'roll Running Madrid",
+      "dist": "SEMI",
+      "city": "Madrid"
+    },
+    {
+      "row": 214,
+      "event": "Rock'n'roll Running Madrid",
+      "dist": "10KM",
+      "city": "Madrid"
+    },
+    {
+      "row": 229,
+      "event": "Valencia Trinidad Alfonso",
+      "dist": "MARATHON",
+      "city": "Valence"
+    },
+    {
+      "row": 239,
+      "event": "NYC Half Marathon",
+      "dist": "SEMI",
+      "city": "New York"
+    },
+    {
+      "row": 240,
+      "event": "NN CPC Loop Den Haag",
+      "dist": "SEMI",
+      "city": "La Haye"
+    },
+    {
+      "row": 241,
+      "event": "NN CPC Loop Den Haag",
+      "dist": "10KM",
+      "city": "La Haye"
+    },
+    {
+      "row": 242,
+      "event": "NN CPC Loop Den Haag",
+      "dist": "5KM",
+      "city": "La Haye"
+    },
+    {
+      "row": 247,
+      "event": "Walt Disney Marathon",
+      "dist": "MARATHON",
+      "city": "Orlando"
+    },
+    {
+      "row": 248,
+      "event": "Walt Disney Marathon",
+      "dist": "SEMI",
+      "city": "Orlando"
+    },
+    {
+      "row": 249,
+      "event": "Walt Disney Marathon",
+      "dist": "10KM",
+      "city": "Orlando"
+    },
+    {
+      "row": 250,
+      "event": "Walt Disney Marathon",
+      "dist": "5KM",
+      "city": "Orlando"
+    },
+    {
+      "row": 260,
+      "event": "Medio Maration Ciudad de Mexico",
+      "dist": "SEMI",
+      "city": "Mexico"
+    },
+    {
+      "row": 261,
+      "event": "Cardiff Half",
+      "dist": "SEMI",
+      "city": "Cardiff"
+    },
+    {
+      "row": 269,
+      "event": "Mexico city marathon",
+      "dist": "MARATHON",
+      "city": "Mexico"
+    },
+    {
+      "row": 303,
+      "event": "Sydney Half Marathon",
+      "dist": "SEMI",
+      "city": "Sydney"
+    },
+    {
+      "row": 304,
+      "event": "Sydney Half Marathon",
+      "dist": "10KM",
+      "city": "Sydney"
+    },
+    {
+      "row": 305,
+      "event": "Winter Run",
+      "dist": "10KM",
+      "city": "Londres"
+    },
+    {
+      "row": 325,
+      "event": "Vedanta Delhi Half",
+      "dist": "SEMI",
+      "city": "New Delhi "
+    },
+    {
+      "row": 326,
+      "event": "Vedanta Delhi Half",
+      "dist": "10KM",
+      "city": "New Delhi "
+    },
+    {
+      "row": 327,
+      "event": "Vedanta Delhi Half",
+      "dist": "AUTRE",
+      "city": "New Delhi "
+    },
+    {
+      "row": 329,
+      "event": "500 Festival Half Marathon",
+      "dist": "SEMI",
+      "city": "Indianapolis"
+    },
+    {
+      "row": 330,
+      "event": "500 Festival Half Marathon",
+      "dist": "5KM",
+      "city": "Indianapolis"
+    },
+    {
+      "row": 338,
+      "event": "Rock'n'Roll San Diego Half Marathon",
+      "dist": "MARATHON",
+      "city": "San Diego"
+    },
+    {
+      "row": 339,
+      "event": "Rock'n'Roll San Diego Half Marathon",
+      "dist": "SEMI",
+      "city": "San Diego"
+    },
+    {
+      "row": 340,
+      "event": "Rock'n'Roll San Diego Half Marathon",
+      "dist": "5KM",
+      "city": "San Diego"
+    },
+    {
+      "row": 506,
+      "event": "SportScheck RUN Munchen",
+      "dist": "SEMI",
+      "city": "Munich"
+    },
+    {
+      "row": 507,
+      "event": "SportScheck RUN Munchen",
+      "dist": "10KM",
+      "city": "Munich"
+    },
+    {
+      "row": 508,
+      "event": "SportScheck RUN Munchen",
+      "dist": "5KM",
+      "city": "Munich"
+    },
+    {
+      "row": 661,
+      "event": "Rock'n'Roll Arizona",
+      "dist": "SEMI",
+      "city": "Tempe"
+    },
+    {
+      "row": 662,
+      "event": "Rock'n'Roll Arizona",
+      "dist": "10KM",
+      "city": "Tempe"
+    },
+    {
+      "row": 663,
+      "event": "Rock'n'Roll Arizona",
+      "dist": "5KM",
+      "city": "Tempe"
+    },
+    {
+      "row": 685,
+      "event": "Bath Half Marathon",
+      "dist": "SEMI",
+      "city": "Bath"
+    },
+    {
+      "row": 837,
+      "event": "10km Onatéra Paris 17",
+      "dist": "10KM",
+      "city": "Paris"
+    },
+    {
+      "row": 860,
+      "event": "Chicago Triathlon",
+      "dist": "AUTRE",
+      "city": "Chicago "
+    },
+    {
+      "row": 974,
+      "event": "Great 10K",
+      "dist": "10KM",
+      "city": "Berlin"
+    },
+    {
+      "row": 975,
+      "event": "Great 10K",
+      "dist": "AUTRE",
+      "city": "Berlin"
+    },
+    {
+      "row": 1222,
+      "event": "Rock'n'Roll Taipei",
+      "dist": "SEMI",
+      "city": "Taiwan"
+    },
+    {
+      "row": 1223,
+      "event": "Rock'n'Roll Taipei",
+      "dist": "10KM",
+      "city": "Taiwan"
+    }
+  ],
+  "not_found": [],
+  "final_rows": 1940,
+  "final_events": 863
+}

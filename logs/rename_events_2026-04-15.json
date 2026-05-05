@@ -1,0 +1,185 @@
+{
+  "date": "2026-04-15",
+  "applied": [
+    {
+      "old": "Meia Maratona do Porto",
+      "new": "Hyundai Meia Maratona do Porto",
+      "rows": 1
+    },
+    {
+      "old": "Meia maratona de Braga",
+      "new": "Meia Maratona de Braga",
+      "rows": 2
+    },
+    {
+      "old": "Meia Maratona De Almada",
+      "new": "Meia Maratona de Almada",
+      "rows": 2
+    },
+    {
+      "old": "Meia Maratona Setubal",
+      "new": "Alegro Meia Maratona de Setúbal",
+      "rows": 3
+    },
+    {
+      "old": "Montepio Meia Maratona Cascais",
+      "new": "Montepio Meia Maratona de Cascais",
+      "rows": 3
+    },
+    {
+      "old": "Maratona do Porto",
+      "new": "EDP Maratona do Porto",
+      "rows": 3
+    },
+    {
+      "old": "Meia Maratona internacional Do Rio de Janeiro",
+      "new": "Meia Maratona Internacional do Rio de Janeiro",
+      "rows": 3
+    },
+    {
+      "old": "Maratona Internacional de Sao Paulo",
+      "new": "Maratona Internacional de São Paulo",
+      "rows": 4
+    },
+    {
+      "old": "Maratona Di Ravenna",
+      "new": "Maratona di Ravenna Città d'Arte",
+      "rows": 3
+    },
+    {
+      "old": "Maratona Da Europa",
+      "new": "Padova Marathon",
+      "rows": 3
+    },
+    {
+      "old": "Wizz Air Venice Marathon",
+      "new": "Wizz Air Venicemarathon",
+      "rows": 3
+    },
+    {
+      "old": "Beijing Miyun Eco Marathon",
+      "new": "Miyun Eco Marathon",
+      "rows": 2
+    },
+    {
+      "old": "Doha Running Festival",
+      "new": "Doha Marathon by Ooredoo",
+      "rows": 4
+    },
+    {
+      "old": "Dubai Creek Striders Half Marathon",
+      "new": "Marina Home Dubai Creek Striders Half Marathon",
+      "rows": 2
+    },
+    {
+      "old": "Expo City Dubai Half Marathon 2026",
+      "new": "Expo City Dubai Half Marathon",
+      "rows": 4
+    },
+    {
+      "old": "Brisbane marathon festival",
+      "new": "EVA Air Brisbane Marathon Festival",
+      "rows": 4
+    },
+    {
+      "old": "City-Bay",
+      "new": "City-Bay Fun Run",
+      "rows": 2
+    },
+    {
+      "old": "VHI Women's Mini Marathon",
+      "new": "Vhi Women's Mini Marathon",
+      "rows": 1
+    },
+    {
+      "old": "Maratona Monumental Brasilia",
+      "new": "Maratona Monumental de Brasília",
+      "rows": 4
+    },
+    {
+      "old": "Marathon Munchen",
+      "new": "Marathon München by Brooks",
+      "rows": 3
+    },
+    {
+      "old": "Bruges marathon",
+      "new": "Athora Bruges Marathon",
+      "rows": 2
+    },
+    {
+      "old": "MoRunning Cardiff",
+      "new": "The Cardiff MoRun",
+      "rows": 3
+    },
+    {
+      "old": "10 km de Marseille",
+      "new": "Les 10 km de Marseille by ASPTT",
+      "rows": 2
+    },
+    {
+      "old": "10km Hoka Paris centre",
+      "new": "10km HOKA Paris Centre",
+      "rows": 1
+    },
+    {
+      "old": "Sydney Harbour 10K",
+      "new": "Real Insurance Sydney Harbour 10K",
+      "rows": 2
+    }
+  ],
+  "skipped_clash": [
+    {
+      "old": "Denver Marathon",
+      "new": "Denver Colfax Marathon"
+    },
+    {
+      "old": "Shamrock Run",
+      "new": "Shamrock Run Portland"
+    }
+  ],
+  "not_found_in_excel": [
+    "Generali Tranquilidade Meia Maratona Descobrimento",
+    "Paris-Versailles"
+  ],
+  "unchanged": [
+    "Maratona do Rio",
+    "Maratona di Palermo",
+    "Maratona Maga Circe",
+    "Mezza Maratona d'Italia - Memorial Enzo Ferrari",
+    "Shanghai Yangtze River Half Marathon",
+    "Poseidon Athens Half Marathon",
+    "Tokyo East Run 30K",
+    "Midnattsloppet Stockholm",
+    "Nagoya Women's Marathon",
+    "Royal Victoria Marathon",
+    "Carrera Ponle Freno Madrid",
+    "MAIF Ekiden de Paris",
+    "La Grande Course RATP du Grand Paris"
+  ],
+  "not_processed": [
+    "Rome 15K",
+    "Singapore Compression Run",
+    "Plus500 City Half Marathon Dubai 2026",
+    "Winter Run Istanbul",
+    "Toronto Marathon",
+    "Waterfront Half Marathon",
+    "Mumbai Half Marathon",
+    "Mumbai Fast Marathon",
+    "Mumbai Monsoon Marathon",
+    "Aamchi Mumbai Half Marathon",
+    "Swachh Navy Mumbai Half Marathon",
+    "Mumbai Midnight 10K",
+    "Zydus Pinkathon Mumbai",
+    "Delhi Heroes Half Marathon",
+    "Delhi Stride Half Marathon",
+    "Delhi Legends Half Marathon",
+    "New Delhi Marathon",
+    "Global 10K New Delhi",
+    "Bank of China Beijing Half Marathon",
+    "15KM de Rotterdam",
+    "Women's day Run",
+    "Rewe Women's Run"
+  ],
+  "final_rows": 1940,
+  "final_events": 863
+}

@@ -16,6 +16,7 @@ import os
 import pandas as pd
 import json
 import datetime
+import re
 import sys
 from pathlib import Path
 
@@ -346,7 +347,7 @@ def load_finishers():
                 if yr >= 2000:
                     first_yr = yr
                 break  # stop at first non-x year regardless
-        city = str(r.get("City", "")).strip()
+        city = re.sub(r"\s*\([^)]+\)\s*$", "", str(r.get("City", ""))).strip()
         dist = str(r.get("Distance", "")).strip()
         circ = compute_circuits(race, dist, city)
         rows.append({"p": str(r.get("Période", "")).strip(), "c": city,
@@ -373,7 +374,7 @@ def load_biggest():
             try: iv = int(float(v)); return iv if iv > 0 else None
             except: return None
         hist = {yr: v for yr in year_cols if (v := gv(yr)) is not None}
-        city = str(r.get("City", "")).strip()
+        city = re.sub(r"\s*\([^)]+\)\s*$", "", str(r.get("City", ""))).strip()
         rows.append({"c": city, "r": race, "rg": get_region(city),
                      "hist": hist})
     print(f"  Biggest    : {len(rows)} courses")
@@ -408,7 +409,7 @@ def load_marathon(year):
             if is_invalid_race_name(race):
                 continue
             rows.append({"race": race,
-                         "city": str(r["city"]).strip() if pd.notna(r["city"]) else "",
+                         "city": re.sub(r"\s*\([^)]+\)\s*$", "", str(r["city"])).strip() if pd.notna(r["city"]) else "",
                          "finishers": safe_int(r["finishers"]),
                          "avg": fmt_time(r["avg_time"]), "men": fmt_time(r["men_time"]),
                          "women": fmt_time(r["women_time"]), "year": year})
@@ -444,7 +445,7 @@ def load_semi():
             if is_invalid_race_name(race):
                 continue
             rows.append({"race": race,
-                         "city": str(r["city"]).strip() if pd.notna(r["city"]) else "",
+                         "city": re.sub(r"\s*\([^)]+\)\s*$", "", str(r["city"])).strip() if pd.notna(r["city"]) else "",
                          "finishers": safe_int(r["finishers"]),
                          "avg": fmt_time(r["avg_time"]), "men": fmt_time(r["men_time"]),
                          "women": fmt_time(r["women_time"]), "year": yr})
@@ -588,7 +589,46 @@ function getTimeData(rn){
   for(var i=0;i<keys.length;i++){var k=keys[i];if(l.indexOf(k)>=0||k.indexOf(l.substring(0,12))>=0)return TIMES_DB[k];}
   return null;
 }
-var _spCols=_spCols||{'Equipementier sport':'#22C55E','Banque/Finance':'#38BDF8','Assurance':'#818CF8','Finance/Investissement':'#38BDF8','Automobile':'#FF8A50','Tech/IT':'#F472B6','Energie':'#FCDB00','Industrie/Energie':'#FCDB00','Sante':'#2DBF7E','Fondation/Mecenat':'#FF6B9D','Aviation/Transport':'#5CDFA0','Nutrition/Alimentaire':'#FF9F45','Audio/Wearables':'#C084FC','Paiement/Finance':'#34D399','Retail/Mode':'#FB923C','Conglomeral/Tech':'#94A3B8','Transport':'#60A5FA','Boisson/Brasserie':'#FCD34D','Hydratation/Consommation':'#FB923C','Horlogerie/Luxe':'#E2E8F0','Nutrition/Boisson':'#FF9F45','Tech/Wearables':'#F472B6','Tech/App sport':'#F472B6','Nutrition sport':'#FF9F45','Horlogerie/Chronometrage':'#E2E8F0','Crypto/Fintech':'#34D399','Telecom':'#60A5FA','Eau/Boisson':'#5CDFA0','Energie/Petrole':'#FCDB00','Alimentaire/Livraison':'#FF9F45','Restauration/Boisson':'#FCD34D','Tech/Tourisme':'#F472B6','Fitness/Tech':'#F472B6','Mobilite/Location':'#FF8A50','Alimentaire':'#FF9F45','Retail/Distribution sport':'#FB923C','Automobile/EV':'#FF8A50','Industrie/Ressources':'#94A3B8','Retail/Pharmacie':'#FB923C','Environnement/Recyclage':'#5CDFA0','Marketing sportif':'#94A3B8','Hygiene/Cosmetique':'#F472B6','Cosmetique':'#F472B6','Tech/SaaS':'#F472B6','Immobilier':'#94A3B8','Restauration':'#FCD34D','Fintech/Paiement':'#34D399','Industrie/Batteries':'#94A3B8','Tech/Electronique':'#F472B6','Luxe/Joaillerie':'#E2E8F0','Transport/Croisiere':'#60A5FA','Grande distribution':'#FB923C','Organisateur/Media':'#94A3B8','Immobilier/Tech':'#94A3B8','Conglomerat/Tech':'#94A3B8'};
+var _spSectorMap={
+'Equipementier sport':'Equipement & Mode','Equipementier':'Equipement & Mode','Textile sport':'Equipement & Mode','Fitness':'Equipement & Mode',
+'Horlogerie':'Equipement & Mode','Horlogerie/Luxe':'Equipement & Mode','Horlogerie/Chronometrage':'Equipement & Mode','Luxe/Joaillerie':'Equipement & Mode',
+'Audio/Wearables':'Equipement & Mode','Wearable/Tech':'Equipement & Mode',
+'Nutrition sport':'Alimentation & Boissons','Nutrition sport/Pharma':'Alimentation & Boissons','Nutrition/Alimentaire':'Alimentation & Boissons','Nutrition/Boisson':'Alimentation & Boissons',
+'Boisson':'Alimentation & Boissons','Boisson sport':'Alimentation & Boissons','Boisson energetique':'Alimentation & Boissons','Boisson/Brasserie':'Alimentation & Boissons','Brasserie':'Alimentation & Boissons',
+'Eau/Boisson':'Alimentation & Boissons','Eau minerale':'Alimentation & Boissons','Hydratation/Consommation':'Alimentation & Boissons',
+'Alimentaire':'Alimentation & Boissons','Alimentaire/Livraison':'Alimentation & Boissons','Alimentation/Lait':'Alimentation & Boissons','Alimentation proteinee':'Alimentation & Boissons',
+'Alimentation/Barres proteinees':'Alimentation & Boissons','Alimentation/Patisserie':'Alimentation & Boissons',
+'Restauration':'Alimentation & Boissons','Restauration/Boisson':'Alimentation & Boissons','Viticulture':'Alimentation & Boissons','Champagne/Viticulture':'Alimentation & Boissons',
+'Soins sport':'Alimentation & Boissons','Nettoyant/Menage':'Alimentation & Boissons',
+'Banque':'Finance & Assurance','Banque/Finance':'Finance & Assurance','Banque/Assurance':'Finance & Assurance','Banque/Cooperative':'Finance & Assurance',
+'Assurance':'Finance & Assurance','Assurance sante':'Finance & Assurance','Finance/Investissement':'Finance & Assurance',
+'Paiement/Finance':'Finance & Assurance','Crypto/Fintech':'Finance & Assurance','Fintech/Paiement':'Finance & Assurance',
+'Automobile':'Mobilite & Transport','Automobile/EV':'Mobilite & Transport','Mobilite/Location':'Mobilite & Transport','Industrie/Auto':'Mobilite & Transport',
+'Transport':'Mobilite & Transport','Transport aerien':'Mobilite & Transport','Transport public':'Mobilite & Transport','Transport/Croisiere':'Mobilite & Transport','Aviation/Transport':'Mobilite & Transport',
+'Sante':'Sante & Bien-etre','Sante/Diagnostic':'Sante & Bien-etre','Sante/Orthopedie':'Sante & Bien-etre','Sante/Physiotherapie':'Sante & Bien-etre',
+'Pharma':'Sante & Bien-etre','Pharma/Biotech':'Sante & Bien-etre','Pharma/Sante':'Sante & Bien-etre','Retail/Pharmacie':'Sante & Bien-etre',
+'Hygiene/Cosmetique':'Sante & Bien-etre','Cosmetique':'Sante & Bien-etre','Fitness/Tech':'Sante & Bien-etre','Technologie/Sante':'Sante & Bien-etre',
+'Tech/IT':'Tech & Telecoms','Tech/SaaS':'Tech & Telecoms','Tech/Electronique':'Tech & Telecoms','Tech/Wearables':'Tech & Telecoms','Tech/App sport':'Tech & Telecoms',
+'Tech/Tourisme':'Tech & Telecoms','Conglomerat/Tech':'Tech & Telecoms','Conglomeral/Tech':'Tech & Telecoms','Semi-conducteurs/Tech':'Tech & Telecoms','Immobilier/Tech':'Tech & Telecoms',
+'Telecom':'Tech & Telecoms','App Running':'Tech & Telecoms','Musique/Tech':'Tech & Telecoms','Fundraising/Tech':'Tech & Telecoms',
+'Energie':'Energie & Environnement','Industrie/Energie':'Energie & Environnement','Energie/Petrole':'Energie & Environnement',
+'Industrie/Ressources':'Energie & Environnement','Industrie/Batteries':'Energie & Environnement','Industrie/Filtration':'Energie & Environnement','Siderurgie':'Energie & Environnement',
+'Environnement/Recyclage':'Energie & Environnement',
+'Distribution':'Retail & Distribution','Distribution sport':'Retail & Distribution','Retail/Distribution sport':'Retail & Distribution','Retail/Mode':'Retail & Distribution',
+'Grande distribution':'Retail & Distribution','E-commerce mode':'Retail & Distribution','E-commerce sport':'Retail & Distribution','E-commerce/Livraison':'Retail & Distribution',
+'Tourisme':'Tourisme & Hotellerie','Hotellerie':'Tourisme & Hotellerie',
+'Immobilier':'Immobilier & Construction','BTP/Construction':'Immobilier & Construction',
+'Medias':'Medias & Communication','Medias/Presse':'Medias & Communication','Medias/Radio':'Medias & Communication','Organisateur/Media':'Medias & Communication','Marketing sportif':'Medias & Communication',
+'Logistique':'Services','Loterie':'Services','Evenementiel sport':'Services','Running/Communaute':'Services',
+'Collectivite':'Services','Federation sportive':'Services','ONG/Charite':'Services','ONG/Sport':'Services','Fondation/Mecenat':'Services'
+};
+var _spCols={
+'Equipement & Mode':'#22C55E','Alimentation & Boissons':'#FF9F45','Finance & Assurance':'#38BDF8',
+'Mobilite & Transport':'#FF8A50','Sante & Bien-etre':'#2DBF7E','Tech & Telecoms':'#F472B6',
+'Energie & Environnement':'#FCDB00','Retail & Distribution':'#FB923C','Tourisme & Hotellerie':'#5CDFA0',
+'Immobilier & Construction':'#94A3B8','Medias & Communication':'#818CF8','Services':'#6B7280'
+};
+function _spNormSec(s){return _spSectorMap[s]||_spSectorMap[s.replace(/[éèê]/g,'e').replace(/[àâ]/g,'a')]||'Services';}
 function buildOvSponsoring(eventName,eventColor){
   if(typeof SP_PARTNERSHIPS==='undefined')return '';
   var ec=eventColor||'var(--purple)';
@@ -1412,7 +1452,7 @@ function filterTable(){
       if(sz===5000&&(peak<5000||peak>=10000))return false;
       if(sz===0&&peak>=5000)return false;
     }
-    return globalYears.some(function(y){return(r.hist||{})[y];});
+    return true;
   });
   // Sort
   var sortMode=document.getElementById('sort-data').value;
@@ -1527,7 +1567,7 @@ function spBuildData(){
     // Only include partnerships active in the selected period
     var active=(p.years||[]).some(function(y){return y>=pMinYr&&y<=pMaxYr;});
     if(!active)return;
-    if(!_spBS[p.brand])_spBS[p.brand]={events:[],exposure:0,types:[],sector:(SP_BRANDS[p.brand]||{}).sector||'Autre',partnerships:[]};
+    if(!_spBS[p.brand])_spBS[p.brand]={events:[],exposure:0,types:[],sector:_spNormSec((SP_BRANDS[p.brand]||{}).sector||'Autre'),partnerships:[]};
     var exp=getExposure(p.event,p.years||[]);
     var evKey=p.event;
     if(_spBS[p.brand].events.indexOf(evKey)<0)_spBS[p.brand].events.push(evKey);
@@ -2975,6 +3015,198 @@ window.onerror=function(msg,url,line,col,err){{document.body.insertAdjacentHTML(
 </html>"""
 
 
+def export_stats(finishers, biggest, md, sd, tdb):
+    import sqlite3
+    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+    unique_names = set(r["r"] for r in finishers)
+    race_dist_pairs = len(finishers)
+    n_avg_marathon = sum(len(rows) for rows in md.values())
+    n_avg_semi = sum(len(rows) for yr, rows in sd.items())
+    n_winners_m = sum(1 for v in tdb.values() if v.get("men"))
+    n_winners_f = sum(1 for v in tdb.values() if v.get("women"))
+
+    dp_pre = dp_recent = 0
+    cum_pre = cum_recent = 0
+    min_yr = max_yr = None
+    dp_total = 0
+    cum_total = 0
+    hist_source = None
+
+    db_path = SCRIPT_DIR / "datapace.db"
+
+    if db_path.exists():
+        try:
+            conn = sqlite3.connect(str(db_path))
+            c = conn.cursor()
+            dp_total = c.execute("SELECT COUNT(*) FROM finishers WHERE count > 0").fetchone()[0]
+            dp_pre = c.execute("SELECT COUNT(*) FROM finishers WHERE year BETWEEN 2000 AND 2022 AND count > 0").fetchone()[0]
+            dp_recent = c.execute("SELECT COUNT(*) FROM finishers WHERE year BETWEEN 2023 AND 2026 AND count > 0").fetchone()[0]
+            row = c.execute("SELECT MIN(year), MAX(year) FROM finishers WHERE count > 0").fetchone()
+            min_yr, max_yr = row if row else (None, None)
+            cum_total = c.execute("SELECT SUM(count) FROM finishers WHERE count > 0").fetchone()[0] or 0
+            cum_pre = c.execute("SELECT SUM(count) FROM finishers WHERE year BETWEEN 2000 AND 2022 AND count > 0").fetchone()[0] or 0
+            cum_recent = c.execute("SELECT SUM(count) FROM finishers WHERE year BETWEEN 2023 AND 2026 AND count > 0").fetchone()[0] or 0
+            conn.close()
+            hist_source = "datapace.db"
+        except Exception:
+            pass
+
+    if hist_source is None:
+        for r in finishers:
+            for yr, v in r.get("hist", {}).items():
+                if isinstance(v, (int, float)) and v > 0:
+                    dp_total += 1
+                    cum_total += int(v)
+                    if yr <= 2022:
+                        dp_pre += 1
+                        cum_pre += int(v)
+                    else:
+                        dp_recent += 1
+                        cum_recent += int(v)
+                    if min_yr is None or yr < min_yr:
+                        min_yr = yr
+                    if max_yr is None or yr > max_yr:
+                        max_yr = yr
+        hist_source = "finishers (mémoire)"
+
+    year_range = f"{min_yr} - {max_yr}" if min_yr and max_yr else "N/A"
+
+    lines = [
+        "# DataPace Dashboard — Stats à jour",
+        "",
+        f"**Généré le** : {now}",
+        f"**Source historique** : {hist_source}",
+        "",
+        "> **Note pour Claude** : c'est la source de vérité pour tous les chiffres DataPace.",
+        "> Toujours consulter ce fichier avant tout pitch ou communication externe.",
+        "",
+        "## Base Excel (fichiers sources)",
+        "",
+        "| Métrique | Valeur |",
+        "|---|---|",
+        f"| Épreuves uniques (noms distincts) | {len(unique_names)} |",
+        f"| Couples Race × Distance | {race_dist_pairs} |",
+        f"| Plage d'années effective | {year_range} |",
+        f"| Points de données 2000-2022 | {dp_pre:,} |",
+        f"| Points de données 2023-2026 | {dp_recent:,} |",
+        f"| Points de données totaux ({year_range}) | {dp_total:,} |",
+        f"| Finishers cumulés 2000-2022 | {cum_pre:,} |",
+        f"| Finishers cumulés 2023-2026 | {cum_recent:,} |",
+        f"| Finishers cumulés totaux ({year_range}) | {cum_total:,} |",
+        f"| Temps moyens marathon | {n_avg_marathon} |",
+        f"| Temps moyens semi-marathon | {n_avg_semi} |",
+        f"| Chronos vainqueurs Homme | {n_winners_m} |",
+        f"| Chronos vainqueurs Femme | {n_winners_f} |",
+        "",
+    ]
+
+    if db_path.exists():
+        try:
+            conn = sqlite3.connect(str(db_path))
+            c = conn.cursor()
+            n_events = c.execute("SELECT COUNT(*) FROM events").fetchone()[0]
+            n_fin_rows = c.execute("SELECT COUNT(*) FROM finishers").fetchone()[0]
+            n_win_db = c.execute("SELECT COUNT(*) FROM winners").fetchone()[0]
+            n_avg_db = c.execute("SELECT COUNT(*) FROM avg_times").fetchone()[0]
+            conn.close()
+            lines += [
+                "## Base SQLite (datapace.db)",
+                "",
+                "| Métrique | Valeur |",
+                "|---|---|",
+                f"| Events | {n_events} |",
+                f"| Lignes finishers | {n_fin_rows} |",
+                f"| Lignes winners | {n_win_db} |",
+                f"| Lignes avg_times | {n_avg_db} |",
+                "",
+            ]
+        except Exception:
+            pass
+
+    sp_events = sp_brands = sp_total = 0
+    sp_by_tier = {}
+    sp_sources = []
+    sp_path = SCRIPT_DIR / "sponsoring_data.json"
+    sp_scraped = SCRIPT_DIR / "scraped_partners.json"
+    seen_pairs = set()
+
+    for src_path, src_label in [(sp_path, "sponsoring_data.json"), (sp_scraped, "scraped_partners.json")]:
+        if not src_path.exists():
+            continue
+        sp_sources.append(src_label)
+        try:
+            raw = json.loads(src_path.read_text(encoding="utf-8"))
+            entries = []
+            if isinstance(raw, list):
+                entries = raw
+            elif isinstance(raw, dict):
+                if "partnerships" in raw and isinstance(raw["partnerships"], list):
+                    entries = raw["partnerships"]
+                else:
+                    for v in raw.values():
+                        if isinstance(v, list):
+                            entries.extend(v)
+            for e in entries:
+                if not isinstance(e, dict):
+                    continue
+                ev = e.get("event", "")
+                br = e.get("brand") or e.get("sponsor") or e.get("partner") or ""
+                if not ev or not br:
+                    continue
+                pair = (ev, br)
+                if pair in seen_pairs:
+                    continue
+                seen_pairs.add(pair)
+                tier = e.get("type") or e.get("tier") or e.get("level") or e.get("category") or "other"
+                sp_by_tier[tier] = sp_by_tier.get(tier, 0) + 1
+        except Exception:
+            pass
+
+    sp_total = len(seen_pairs)
+    sp_events = len({p[0] for p in seen_pairs})
+    sp_brands = len({p[1] for p in seen_pairs})
+
+    if sp_sources:
+        tier_bullets = [f"  - {t}: {n}" for t, n in sorted(sp_by_tier.items(), key=lambda x: -x[1])]
+        lines += [
+            "## Sponsoring",
+            "",
+            "| Métrique | Valeur |",
+            "|---|---|",
+            f"| Événements avec données sponsoring | {sp_events} |",
+            f"| Sponsors uniques trackés | {sp_brands} |",
+            f"| Relations sponsor-événement totales | {sp_total} |",
+            f"| Sources | {', '.join(sp_sources)} |",
+            "",
+            "**Répartition par type :**",
+            "",
+        ] + tier_bullets + [""]
+    else:
+        lines += [
+            "## Sponsoring",
+            "",
+            "Données sponsoring non disponibles dans les sources courantes.",
+            "",
+        ]
+
+    sp_line = f"- **{sp_brands}** sponsors trackés sur **{sp_events}** événements" if sp_brands else ""
+    lines += [
+        "## Chiffres à utiliser en communication externe",
+        "",
+        f"- **{len(unique_names)}** épreuves de course à pied trackées dans le monde",
+        f"- **{race_dist_pairs}** couples événement × distance en base",
+        f"- Plus de **{dp_total:,}** points de données historiques depuis {min_yr or 2000}",
+        f"- **{cum_total:,}** finishers cumulés sur la période {year_range}",
+        f"- Historique depuis **{min_yr or 2000}** ({(max_yr or 2026) - (min_yr or 2000) + 1} années de données)",
+    ]
+    if sp_line:
+        lines.append(sp_line)
+    lines.append("")
+    stats_file = SCRIPT_DIR / "dashboard_stats.md"
+    stats_file.write_text("\n".join(lines), encoding="utf-8")
+    print(f"Stats exportees : {stats_file.name}")
+
+
 def main():
     print("\nASO Dashboard Generator (internal)")
     print("-" * 40)
@@ -3008,7 +3240,9 @@ def main():
     html = generate_html(finishers, biggest, md, sd, tdb, winners)
     OUTPUT_FILE.write_text(html, encoding="utf-8")
     print(f"\nDashboard genere : {OUTPUT_FILE.name}  ({OUTPUT_FILE.stat().st_size // 1024} Ko)")
-    print("Ouvre ce fichier dans le navigateur via http://localhost:8000/datapace_dashboard.html\n")
+    print("Ouvre ce fichier dans le navigateur via http://localhost:8000/datapace_dashboard.html")
+
+    export_stats(finishers, biggest, md, sd, tdb)
 
 
 if __name__ == "__main__":

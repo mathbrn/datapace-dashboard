@@ -1,0 +1,107 @@
+{
+  "applied": [
+    {
+      "event": "Acea Run Rome The Marathon",
+      "dist": "MARATHON",
+      "year": 2019,
+      "value": 8877
+    },
+    {
+      "event": "Haspa Marathon Hamburg",
+      "dist": "MARATHON",
+      "year": 2019,
+      "value": 10079
+    },
+    {
+      "event": "Antwerp Marathon",
+      "dist": "MARATHON",
+      "year": 2019,
+      "value": 2686
+    },
+    {
+      "event": "Antwerp Marathon",
+      "dist": "MARATHON",
+      "year": 2022,
+      "value": 1056
+    },
+    {
+      "event": "Antwerp Marathon",
+      "dist": "MARATHON",
+      "year": 2023,
+      "value": 2802
+    },
+    {
+      "event": "Antwerp Marathon",
+      "dist": "MARATHON",
+      "year": 2024,
+      "value": 3744
+    },
+    {
+      "event": "Course de l'escalade",
+      "dist": "AUTRE",
+      "year": 2015,
+      "value": 38957
+    },
+    {
+      "event": "Course de l'escalade",
+      "dist": "AUTRE",
+      "year": 2016,
+      "value": 40566
+    },
+    {
+      "event": "Course de l'escalade",
+      "dist": "AUTRE",
+      "year": 2017,
+      "value": 46844
+    },
+    {
+      "event": "Course de l'escalade",
+      "dist": "AUTRE",
+      "year": 2018,
+      "value": 41221
+    },
+    {
+      "event": "Course de l'escalade",
+      "dist": "AUTRE",
+      "year": 2020,
+      "value": "-"
+    },
+    {
+      "event": "Course de l'escalade",
+      "dist": "AUTRE",
+      "year": 2021,
+      "value": "-"
+    },
+    {
+      "event": "Course de l'escalade",
+      "dist": "AUTRE",
+      "year": 2019,
+      "value": 40051
+    },
+    {
+      "event": "Course de l'escalade",
+      "dist": "AUTRE",
+      "year": 2022,
+      "value": 52588
+    },
+    {
+      "event": "Vancouver Sun Run",
+      "dist": "10KM",
+      "year": 2019,
+      "value": 43300
+    },
+    {
+      "event": "Mitja Marato Barcelona by Brooks",
+      "dist": "SEMI",
+      "year": 2016,
+      "value": 16511
+    },
+    {
+      "event": "Mitja Marato Barcelona by Brooks",
+      "dist": "SEMI",
+      "year": 2018,
+      "value": 17855
+    }
+  ],
+  "skipped": []
+}

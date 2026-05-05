@@ -1,0 +1,6228 @@
+{
+  "generated_at": "2026-04-15",
+  "summary": {
+    "passees_total": 234,
+    "passees_mappees": 11,
+    "avenir_total": 496,
+    "avenir_mappees": 26,
+    "sans_date": 46
+  },
+  "passees_non_mappees_backfill_manuel": [
+    {
+      "event": "GM Half Marathon",
+      "benchmark_name": "GM Half Marathon",
+      "ville": "Mumbai",
+      "pays": "Inde",
+      "date": "2025-02-16",
+      "platform": null
+    },
+    {
+      "event": "Mumbai Half Marathon",
+      "benchmark_name": "Bidadi Half Marathon",
+      "ville": "Bidadi",
+      "pays": "Inde",
+      "date": "2025-03-23",
+      "platform": null
+    },
+    {
+      "event": "Mumbai Midnight 10K",
+      "benchmark_name": "Mumbai Midnight 10K",
+      "ville": "Mumbai",
+      "pays": "Inde",
+      "date": "2025-05-10",
+      "platform": null
+    },
+    {
+      "event": "Malsehj Ghat Half",
+      "benchmark_name": "Malsehj Ghat Half",
+      "ville": "Malsehj Ghat",
+      "pays": "Inde",
+      "date": "2025-07-13",
+      "platform": null
+    },
+    {
+      "event": "Saviorthon 10K",
+      "benchmark_name": "Saviorthon 10K",
+      "ville": "Mumbai",
+      "pays": "Inde",
+      "date": "2025-08-10",
+      "platform": null
+    },
+    {
+      "event": "Dadi Prakashmani Mount Abu International Half",
+      "benchmark_name": "Dadi Prakashmani Mount Abu International Half",
+      "ville": "Abu Road",
+      "pays": "Inde",
+      "date": "2025-08-17",
+      "platform": null
+    },
+    {
+      "event": "Baja Indef Half Marathon",
+      "benchmark_name": "Baja Indef Half Marathon",
+      "ville": "Thane",
+      "pays": "Inde",
+      "date": "2025-08-17",
+      "platform": null
+    },
+    {
+      "event": "Accomplish 10K",
+      "benchmark_name": "Accomplish 10K",
+      "ville": "Mumbai",
+      "pays": "Inde",
+      "date": "2025-08-24",
+      "platform": null
+    },
+    {
+      "event": "NMPA Golden Jubilee 10K",
+      "benchmark_name": "NMPA Golden Jubilee 10K",
+      "ville": "Mangalore",
+      "pays": "Inde",
+      "date": "2025-08-31",
+      "platform": null
+    },
+    {
+      "event": "Vedanta Zinc City Half Marathon",
+      "benchmark_name": "Vedanta Zinc City Half Marathon",
+      "ville": "Udaipur",
+      "pays": "Inde",
+      "date": "2025-09-21",
+      "platform": null
+    },
+    {
+      "event": "Run for Happiness",
+      "benchmark_name": "Run for Happiness",
+      "ville": "Bengalore + multi-city series",
+      "pays": "Inde",
+      "date": "2025-09-28",
+      "platform": null
+    },
+    {
+      "event": "Chandigarh Half Marathon",
+      "benchmark_name": "Chandigarh Half Marathon",
+      "ville": "Chandigarh",
+      "pays": "Inde",
+      "date": "2025-09-28",
+      "platform": null
+    },
+    {
+      "event": "Run GP 2025",
+      "benchmark_name": "Run GP 2025",
+      "ville": "Lusail",
+      "pays": "Qatar",
+      "date": "2025-10-03",
+      "platform": null
+    },
+    {
+      "event": "Hindustan Marathon",
+      "benchmark_name": "Hindustan Marathon",
+      "ville": "New Delhi",
+      "pays": "Inde",
+      "date": "2025-10-05",
+      "platform": null
+    },
+    {
+      "event": "Saquib Rizvi Memorial Cancer Awareness Half",
+      "benchmark_name": "Saquib Rizvi Memorial Cancer Awareness Half",
+      "ville": "Mumbai",
+      "pays": "Inde",
+      "date": "2025-10-05",
+      "platform": null
+    },
+    {
+      "event": "IIT Bombay Half Marathon",
+      "benchmark_name": "IIT Bombay Half Marathon",
+      "ville": "Mumbai",
+      "pays": "Inde",
+      "date": "2025-11-02",
+      "platform": null
+    },
+    {
+      "event": "Lucknow Half",
+      "benchmark_name": "Lucknow Half",
+      "ville": "Lucknow",
+      "pays": "Inde",
+      "date": "2025-11-02",
+      "platform": null
+    },
+    {
+      "event": "Kashmir Marathon",
+      "benchmark_name": "Kashmir Marathon",
+      "ville": "Jammu",
+      "pays": "Inde",
+      "date": "2025-11-02",
+      "platform": null
+    },
+    {
+      "event": "Sekhon Indian Air Force Marathon",
+      "benchmark_name": "Sekhon Indian Air Force Marathon",
+      "ville": "New Delhi (+ 60 locations)",
+      "pays": "Inde",
+      "date": "2025-11-02",
+      "platform": null
+    },
+    {
+      "event": "Niveus Mangalore Marathon",
+      "benchmark_name": "Niveus Mangalore Marathon",
+      "ville": "Mangalore",
+      "pays": "Inde",
+      "date": "2025-11-09",
+      "platform": null
+    },
+    {
+      "event": "Dombivlikar Friendship Run",
+      "benchmark_name": "Dombivlikar Friendship Run",
+      "ville": "Dombivli",
+      "pays": "Inde",
+      "date": "2025-11-09",
+      "platform": null
+    },
+    {
+      "event": "Lucknow Marathon",
+      "benchmark_name": "Lucknow Marathon",
+      "ville": "Lucknow",
+      "pays": "Inde",
+      "date": "2025-11-16",
+      "platform": null
+    },
+    {
+      "event": "IndianOil WNC Navy Half",
+      "benchmark_name": "IndianOil WNC Navy Half",
+      "ville": "Mumbai ",
+      "pays": "Inde",
+      "date": "2025-11-23",
+      "platform": null
+    },
+    {
+      "event": "Vedanta Pink City Half",
+      "benchmark_name": "Vedanta Pink City Half",
+      "ville": "Jaipur",
+      "pays": "Inde",
+      "date": "2025-11-30",
+      "platform": null
+    },
+    {
+      "event": "JBG Kolkata Marathon",
+      "benchmark_name": "JBG Kolkata Marathon",
+      "ville": "Calcutta ",
+      "pays": "Inde",
+      "date": "2025-11-30",
+      "platform": null
+    },
+    {
+      "event": "Bengaluru Midnight Marathon",
+      "benchmark_name": "Bengaluru Midnight Marathon",
+      "ville": "Bengalore",
+      "pays": "Inde",
+      "date": "2025-12-06",
+      "platform": null
+    },
+    {
+      "event": "Dosti Thane Half Marathon",
+      "benchmark_name": "Dosti Thane Half Marathon",
+      "ville": "Thane",
+      "pays": "Inde",
+      "date": "2025-12-07",
+      "platform": null
+    },
+    {
+      "event": "Swachh Navi Mumbai Half Marathon",
+      "benchmark_name": "Swachh Navy Mumbai Half Marathon",
+      "ville": "Mumbai",
+      "pays": "Inde",
+      "date": "2025-12-07",
+      "platform": null
+    },
+    {
+      "event": "Shah & Sons REVA Marathon 3.0",
+      "benchmark_name": "Shah & Sons REVA Marathon 3.0",
+      "ville": "Ankleshwar",
+      "pays": "Inde",
+      "date": "2025-12-07",
+      "platform": null
+    },
+    {
+      "event": "Vasai-Virar Marathon",
+      "benchmark_name": "Vasai-Virar Marathon",
+      "ville": "Vasai–Virar",
+      "pays": "Inde",
+      "date": "2025-12-07",
+      "platform": null
+    },
+    {
+      "event": "SKF Goa River Marathon",
+      "benchmark_name": "SKF Goa River Marathon",
+      "ville": "Goa",
+      "pays": "Inde",
+      "date": "2025-12-14",
+      "platform": null
+    },
+    {
+      "event": "Darjeeling Hill Marathon",
+      "benchmark_name": "Darjeeling Hill Marathon",
+      "ville": "Darjeeling",
+      "pays": "Inde",
+      "date": "2025-12-14",
+      "platform": null
+    },
+    {
+      "event": "SK Jodhpur Marathon",
+      "benchmark_name": "SK Jodhpur Marathon",
+      "ville": "Jodhpur",
+      "pays": "Inde",
+      "date": "2025-12-15",
+      "platform": null
+    },
+    {
+      "event": "Rotary Valsad City Marathon",
+      "benchmark_name": "Rotary Valsad City Marathon",
+      "ville": "Valsad",
+      "pays": "Inde",
+      "date": "2025-12-21",
+      "platform": null
+    },
+    {
+      "event": "Zydus Pinkathon Mumbai",
+      "benchmark_name": "Zydus Pinkathon Mumbai",
+      "ville": "6 cities (Mumbai, Bengaluru, Hyderabad, Delhi, Pune and Chennai)",
+      "pays": "Inde",
+      "date": "2025-12-21",
+      "platform": null
+    },
+    {
+      "event": "Desert Warriors BSF Marathon",
+      "benchmark_name": "Desert Warriors BSF Marathon",
+      "ville": "Jaisalmer",
+      "pays": "Inde",
+      "date": "2025-12-21",
+      "platform": null
+    },
+    {
+      "event": "Kisna Diamond Marathon",
+      "benchmark_name": "Kisna Diamond Marathon",
+      "ville": "Mumbai",
+      "pays": "Inde",
+      "date": "2025-12-28",
+      "platform": null
+    },
+    {
+      "event": "Freshworks Chennai Marathon",
+      "benchmark_name": "Freshworks Chennai Marathon",
+      "ville": "Chennai",
+      "pays": "Inde",
+      "date": "2026-01-04",
+      "platform": null
+    },
+    {
+      "event": "Prom'Classique",
+      "benchmark_name": "Prom'Classique",
+      "ville": "Nice",
+      "pays": "France",
+      "date": "2026-01-04",
+      "platform": null
+    },
+    {
+      "event": "Palanpur Half Marathon",
+      "benchmark_name": "Palanpur Half Marathon",
+      "ville": "Palanpur",
+      "pays": "Inde",
+      "date": "2026-01-04",
+      "platform": null
+    },
+    {
+      "event": "Island Ultra & Half Marathon",
+      "benchmark_name": "Island Ultra & Half Marathon",
+      "ville": "Andaman",
+      "pays": "Inde",
+      "date": "2026-01-05",
+      "platform": null
+    },
+    {
+      "event": "GM Half Marathon",
+      "benchmark_name": "Amex Half Marathon",
+      "ville": "Seef",
+      "pays": "Bahreïn",
+      "date": "2026-01-09",
+      "platform": null
+    },
+    {
+      "event": "Egmond Halve marathon",
+      "benchmark_name": "Egmond Halve marathon",
+      "ville": "Egmond aan Zee",
+      "pays": "Pays-Bas",
+      "date": "2026-01-11",
+      "platform": null
+    },
+    {
+      "event": "Indian Army Day Half Marathon",
+      "benchmark_name": "Indian Army Day Half Marathon",
+      "ville": "New Delhi",
+      "pays": "Inde",
+      "date": "2026-01-11",
+      "platform": null
+    },
+    {
+      "event": "Ho Chi Minh city marathon",
+      "benchmark_name": "Ho Chi Minh city marathon",
+      "ville": "Ho Chi Minh",
+      "pays": "Vietnam",
+      "date": "2026-01-11",
+      "platform": null
+    },
+    {
+      "event": "JBG Durgapur Marathon",
+      "benchmark_name": "JBG Durgapur Marathon",
+      "ville": "Durgapur",
+      "pays": "Inde",
+      "date": "2026-01-11",
+      "platform": null
+    },
+    {
+      "event": "Udupi Full Marathon",
+      "benchmark_name": "Udupi Full Marathon",
+      "ville": "Udupi",
+      "pays": "Inde",
+      "date": "2026-01-11",
+      "platform": null
+    },
+    {
+      "event": "Marina Home Dubai Creek Striders Half Marathon",
+      "benchmark_name": "Dubai Creek Striders Half Marathon",
+      "ville": "Dubai",
+      "pays": "Emirats arabes unis",
+      "date": "2026-01-11",
+      "platform": null
+    },
+    {
+      "event": "Louisiana Marathon",
+      "benchmark_name": "Louisiana Marathon",
+      "ville": "Baton Rouge",
+      "pays": "Etats-Unis",
+      "date": "2026-01-15",
+      "platform": null
+    },
+    {
+      "event": "Doha Marathon",
+      "benchmark_name": "Doha Marathon",
+      "ville": "Doha",
+      "pays": "Qatar",
+      "date": "2026-01-16",
+      "platform": null
+    },
+    {
+      "event": "Dubai Marathon",
+      "benchmark_name": "Mumbai Marathon",
+      "ville": "Mumbai",
+      "pays": "Inde",
+      "date": "2026-01-17",
+      "platform": null
+    },
+    {
+      "event": "Marathon de Funchal",
+      "benchmark_name": "Marathon de Funchal",
+      "ville": "Madère",
+      "pays": "Portugal",
+      "date": "2026-01-17",
+      "platform": null
+    },
+    {
+      "event": "Jodphur Marathon",
+      "benchmark_name": "Jodphur Marathon",
+      "ville": "Jodhpur",
+      "pays": "Inde",
+      "date": "2026-01-18",
+      "platform": null
+    },
+    {
+      "event": "10 km du 14e",
+      "benchmark_name": "10 km du 14e",
+      "ville": "Paris",
+      "pays": "France",
+      "date": "2026-01-18",
+      "platform": null
+    },
+    {
+      "event": "HSBC Charity Run",
+      "benchmark_name": "HSBC Charity Run",
+      "ville": "Doha",
+      "pays": "Qatar",
+      "date": "2026-01-23",
+      "platform": null
+    },
+    {
+      "event": "Muscat Marathon",
+      "benchmark_name": "Muscat Marathon",
+      "ville": "Mascate ",
+      "pays": "Oman",
+      "date": "2026-01-24",
+      "platform": null
+    },
+    {
+      "event": "Miami Marathon",
+      "benchmark_name": "Miami marathon",
+      "ville": "Miami",
+      "pays": "Etats-Unis",
+      "date": "2026-01-25",
+      "platform": null
+    },
+    {
+      "event": "Marathon international de Marrakech",
+      "benchmark_name": "Marathon international de Marrakech",
+      "ville": "Marrakech",
+      "pays": "Maroc",
+      "date": "2026-01-25",
+      "platform": null
+    },
+    {
+      "event": "Hyderabad 10K",
+      "benchmark_name": "Hyderabad 10K",
+      "ville": "Hyderabad",
+      "pays": "Inde",
+      "date": "2026-01-25",
+      "platform": null
+    },
+    {
+      "event": "Equathon Kolkata",
+      "benchmark_name": "Equathon Kolkata",
+      "ville": "Calcutta ",
+      "pays": "Inde",
+      "date": "2026-01-25",
+      "platform": null
+    },
+    {
+      "event": "Riyadh Marathon",
+      "benchmark_name": "Riyadh Marathon",
+      "ville": "Riyadh",
+      "pays": "Arabie Saoudite",
+      "date": "2026-01-31",
+      "platform": null
+    },
+    {
+      "event": "10km Fulfil des Champs Elysées",
+      "benchmark_name": "10km Fulfil des Champs Elysées",
+      "ville": "Paris",
+      "pays": "France",
+      "date": "2026-02-01",
+      "platform": null
+    },
+    {
+      "event": "Surf City Marathon",
+      "benchmark_name": "Surf City Marathon",
+      "ville": "Huntington Beach",
+      "pays": "Etats-Unis",
+      "date": "2026-02-01",
+      "platform": null
+    },
+    {
+      "event": "Maraton Murcia Costa Calida",
+      "benchmark_name": "Maraton Murcia Costa Calida",
+      "ville": "Murcia",
+      "pays": "Espagne ",
+      "date": "2026-02-01",
+      "platform": null
+    },
+    {
+      "event": "Dubai Marathon",
+      "benchmark_name": "Dubai Marathon",
+      "ville": "Dubai",
+      "pays": "Emirats arabes unis",
+      "date": "2026-02-01",
+      "platform": null
+    },
+    {
+      "event": "Montepio Meia Maratona de Cascais",
+      "benchmark_name": "Montepio Meia Maratona Cascais",
+      "ville": "Cascais ",
+      "pays": "Portugal",
+      "date": "2026-02-01",
+      "platform": null
+    },
+    {
+      "event": "MG Vadodara International Marathon",
+      "benchmark_name": "MG Vadodara International Marathon",
+      "ville": "Vadodara",
+      "pays": "Inde",
+      "date": "2026-02-01",
+      "platform": null
+    },
+    {
+      "event": "Bengaluru half Marathon",
+      "benchmark_name": "Bengaluru half Marathon",
+      "ville": "Bengalore",
+      "pays": "Inde",
+      "date": "2026-02-01",
+      "platform": null
+    },
+    {
+      "event": "Maratona Maga Circe",
+      "benchmark_name": "Maratona Maga Circe",
+      "ville": "Sabaudia",
+      "pays": "Italie",
+      "date": "2026-02-01",
+      "platform": null
+    },
+    {
+      "event": "Bodhgaya Marathon",
+      "benchmark_name": "Bodhgaya Marathon",
+      "ville": "Bodh Gaya ",
+      "pays": "Inde",
+      "date": "2026-02-01",
+      "platform": null
+    },
+    {
+      "event": "Indore Marathon",
+      "benchmark_name": "Indore Marathon",
+      "ville": "Indore",
+      "pays": "Inde",
+      "date": "2026-02-01",
+      "platform": null
+    },
+    {
+      "event": "Wilson Ultra Marathon",
+      "benchmark_name": "Wilson Ultra Marathon",
+      "ville": "Valsad",
+      "pays": "Inde",
+      "date": "2026-02-01",
+      "platform": null
+    },
+    {
+      "event": "Jaipur Marathon",
+      "benchmark_name": "Jaipur Marathon",
+      "ville": "Jaipur",
+      "pays": "Inde",
+      "date": "2026-02-01",
+      "platform": null
+    },
+    {
+      "event": "Toulouse Onco Run",
+      "benchmark_name": "Toulouse Onco Run",
+      "ville": "Toulouse",
+      "pays": "France",
+      "date": "2026-02-01",
+      "platform": null
+    },
+    {
+      "event": "Fargo Marathon",
+      "benchmark_name": "Cairo Marathon",
+      "ville": "Le Caire",
+      "pays": "Egypte",
+      "date": "2026-02-06",
+      "platform": null
+    },
+    {
+      "event": "Saitama Marathon",
+      "benchmark_name": "Saitama Marathon",
+      "ville": "Saitama",
+      "pays": "Japon",
+      "date": "2026-02-08",
+      "platform": null
+    },
+    {
+      "event": "Burj2Burj Half Marathon",
+      "benchmark_name": "Burj2Burj Half Marathon",
+      "ville": "Dubai",
+      "pays": "Emirats arabes unis",
+      "date": "2026-02-08",
+      "platform": null
+    },
+    {
+      "event": "Union Bank of India Thane Half Marathon",
+      "benchmark_name": "Union Bank of India Thane Half Marathon",
+      "ville": "Thane",
+      "pays": "Inde",
+      "date": "2026-02-08",
+      "platform": null
+    },
+    {
+      "event": "Les foulées de Vincennes",
+      "benchmark_name": "Les foulées de Vincennes",
+      "ville": "Vincennes",
+      "pays": "France",
+      "date": "2026-02-08",
+      "platform": null
+    },
+    {
+      "event": "Bergamo21",
+      "benchmark_name": "Bergamo21",
+      "ville": "Bergame",
+      "pays": "Italie",
+      "date": "2026-02-08",
+      "platform": null
+    },
+    {
+      "event": "Kolkata Full Marathon",
+      "benchmark_name": "Kolkata Full Marathon",
+      "ville": "Calcutta ",
+      "pays": "Inde",
+      "date": "2026-02-08",
+      "platform": null
+    },
+    {
+      "event": "Agra Taj Half Marathon",
+      "benchmark_name": "Agra Taj Half Marathon",
+      "ville": "Agra",
+      "pays": "Inde",
+      "date": "2026-02-08",
+      "platform": null
+    },
+    {
+      "event": "DDR Dwarka Half Marathon",
+      "benchmark_name": "DDR Dwarka Half Marathon",
+      "ville": "New Delhi",
+      "pays": "Inde",
+      "date": "2026-02-08",
+      "platform": null
+    },
+    {
+      "event": "QOC Half Martahon",
+      "benchmark_name": "QOC Half Martahon",
+      "ville": "Lusail ",
+      "pays": "Qatar",
+      "date": "2026-02-10",
+      "platform": null
+    },
+    {
+      "event": "BrighTEN Marina Run",
+      "benchmark_name": "BrighTEN Marina Run",
+      "ville": "Brighton",
+      "pays": "Royaume-Uni",
+      "date": "2026-02-13",
+      "platform": null
+    },
+    {
+      "event": "Kitakyushu Marathon",
+      "benchmark_name": "Kitakyushu Marathon",
+      "ville": "Kitakyushu",
+      "pays": "Japon",
+      "date": "2026-02-14",
+      "platform": null
+    },
+    {
+      "event": "Course de la St Valentin",
+      "benchmark_name": "Course de la St Valentin",
+      "ville": "Paris",
+      "pays": "France",
+      "date": "2026-02-14",
+      "platform": null
+    },
+    {
+      "event": "Medio Maraton de Sevilla",
+      "benchmark_name": "Maraton de Sevilla",
+      "ville": "Séville",
+      "pays": "Espagne ",
+      "date": "2026-02-15",
+      "platform": null
+    },
+    {
+      "event": "Romeo & Giuletta Run Half marathon",
+      "benchmark_name": "Romeo & Giuletta Run Half marathon",
+      "ville": "Verone",
+      "pays": "Italie",
+      "date": "2026-02-15",
+      "platform": null
+    },
+    {
+      "event": "Monaco Run",
+      "benchmark_name": "Monaco Run",
+      "ville": "Monaco ",
+      "pays": "Monaco ",
+      "date": "2026-02-15",
+      "platform": null
+    },
+    {
+      "event": "Southern Cross Round The Bays",
+      "benchmark_name": "Southern Cross Round The Bays",
+      "ville": "Christchurch",
+      "pays": "Nouvelle-Zélande",
+      "date": "2026-02-15",
+      "platform": null
+    },
+    {
+      "event": "Winter Run Istanbul",
+      "benchmark_name": "Winter Run Istanbul",
+      "ville": "Istanbul ",
+      "pays": "Turquie",
+      "date": "2026-02-15",
+      "platform": null
+    },
+    {
+      "event": "Split Marathon",
+      "benchmark_name": "Split Marathon",
+      "ville": "Split",
+      "pays": "Croatie",
+      "date": "2026-02-15",
+      "platform": null
+    },
+    {
+      "event": "White marble marathon",
+      "benchmark_name": "White marble marathon",
+      "ville": "Forli",
+      "pays": "Italie",
+      "date": "2026-02-15",
+      "platform": null
+    },
+    {
+      "event": "Maratona di san valentino",
+      "benchmark_name": "Maratona di san valentino",
+      "ville": "Terni",
+      "pays": "Italie",
+      "date": "2026-02-15",
+      "platform": null
+    },
+    {
+      "event": "Tokyo Marathon",
+      "benchmark_name": "Kyoto Marathon",
+      "ville": "Kyoto",
+      "pays": "Japon",
+      "date": "2026-02-15",
+      "platform": null
+    },
+    {
+      "event": "Salomon New shapers run",
+      "benchmark_name": "Salomon New shapers run",
+      "ville": "Milan",
+      "pays": "Italie",
+      "date": "2026-02-20",
+      "platform": null
+    },
+    {
+      "event": "Osaka Marathon",
+      "benchmark_name": "Osaka Marathon",
+      "ville": "Osaka",
+      "pays": "Japon",
+      "date": "2026-02-22",
+      "platform": null
+    },
+    {
+      "event": "Guadalajara Half Marathon",
+      "benchmark_name": "Guadalajara Half Marathon",
+      "ville": "Guadalajara",
+      "pays": "Mexique",
+      "date": "2026-02-22",
+      "platform": null
+    },
+    {
+      "event": "Southern Cross Round The Bays",
+      "benchmark_name": "Southern Cross Round The Bays",
+      "ville": "Wellington",
+      "pays": "Nouvelle-Zélande",
+      "date": "2026-02-22",
+      "platform": null
+    },
+    {
+      "event": "Coelmo Napoli City Half Marathon",
+      "benchmark_name": "Napoli city half marathon",
+      "ville": "Naples",
+      "pays": "Italie",
+      "date": "2026-02-22",
+      "platform": null
+    },
+    {
+      "event": "Media Maraton Bidasoa",
+      "benchmark_name": "Media Maraton Bidasoa",
+      "ville": "Irun",
+      "pays": "Espagne ",
+      "date": "2026-02-22",
+      "platform": null
+    },
+    {
+      "event": "Marathon di Parma",
+      "benchmark_name": "Marathon di Parma",
+      "ville": "Parme",
+      "pays": "Italie",
+      "date": "2026-02-22",
+      "platform": null
+    },
+    {
+      "event": "Semi-marathon du Finistère",
+      "benchmark_name": "Semi-marathon du Finistère",
+      "ville": "Camaret-sur-mer",
+      "pays": "France",
+      "date": "2026-02-22",
+      "platform": null
+    },
+    {
+      "event": "GetPro Bath Half",
+      "benchmark_name": "GetPro Bath Half",
+      "ville": "Bath",
+      "pays": "Royaume-Uni",
+      "date": "2026-02-24",
+      "platform": null
+    },
+    {
+      "event": "The North Challenge",
+      "benchmark_name": "The North Challenge",
+      "ville": "Heenat Salma",
+      "pays": "Qatar",
+      "date": "2026-02-27",
+      "platform": null
+    },
+    {
+      "event": "Full Moon Infinity - Marseille",
+      "benchmark_name": "Full Moon Infinity - Marseille",
+      "ville": "Marseille ",
+      "pays": "France",
+      "date": "2026-02-28",
+      "platform": null
+    },
+    {
+      "event": "Tokyo Marathon",
+      "benchmark_name": "Tokyo Marathon",
+      "ville": "Tokyo",
+      "pays": "Japon",
+      "date": "2026-03-01",
+      "platform": null
+    },
+    {
+      "event": "Karnataka State Police Run",
+      "benchmark_name": "Karnataka State Police Run",
+      "ville": "Bengalore",
+      "pays": "Inde",
+      "date": "2026-03-01",
+      "platform": null
+    },
+    {
+      "event": "Termal Bologna Marathon",
+      "benchmark_name": "Termal Bologna Marathon",
+      "ville": "Bologne",
+      "pays": "Italie",
+      "date": "2026-03-01",
+      "platform": null
+    },
+    {
+      "event": "Lotus Juhu Half Marathon",
+      "benchmark_name": "Lotus Juhu Half Marathon",
+      "ville": "Juhu",
+      "pays": "Inde",
+      "date": "2026-03-01",
+      "platform": null
+    },
+    {
+      "event": "Middlesbrough half marathon",
+      "benchmark_name": "Middlesbrough half marathon",
+      "ville": "Middlesbrough",
+      "pays": "Royaume-Uni",
+      "date": "2026-03-01",
+      "platform": null
+    },
+    {
+      "event": "Media Maraton Ciudad de Salamanca",
+      "benchmark_name": "Media Maraton Ciudad de Salamanca",
+      "ville": "Salamanque ",
+      "pays": "Espagne ",
+      "date": "2026-03-01",
+      "platform": null
+    },
+    {
+      "event": "1/2 Maraton de la Mujer",
+      "benchmark_name": "1/2 Maraton de la Mujer",
+      "ville": "Cancun",
+      "pays": "Mexique",
+      "date": "2026-03-01",
+      "platform": null
+    },
+    {
+      "event": "Group 108 Half Marathon",
+      "benchmark_name": "Group 108 Half Marathon",
+      "ville": "Noida",
+      "pays": "Inde",
+      "date": "2026-03-01",
+      "platform": null
+    },
+    {
+      "event": "Birla Opus Half Marathon",
+      "benchmark_name": "Birla Opus Half Marathon",
+      "ville": "Mahad",
+      "pays": "Inde",
+      "date": "2026-03-01",
+      "platform": null
+    },
+    {
+      "event": "Nagoya Women's Marathon",
+      "benchmark_name": "Nagoya Women's Marathon",
+      "ville": "Nagoya",
+      "pays": "Japon",
+      "date": "2026-03-03",
+      "platform": null
+    },
+    {
+      "event": "Gate River Run",
+      "benchmark_name": "Gate River Run",
+      "ville": "Jacksonville",
+      "pays": "Etats-Unis",
+      "date": "2026-03-07",
+      "platform": null
+    },
+    {
+      "event": "Semi de Nuits Saint Georges",
+      "benchmark_name": "Semi de Nuits Saint Georges",
+      "ville": "Nuit St Georges",
+      "pays": "France",
+      "date": "2026-03-07",
+      "platform": null
+    },
+    {
+      "event": "ASICS Los Angeles Marathon",
+      "benchmark_name": "Los Angeles Marathon",
+      "ville": "Los Angeles",
+      "pays": "Etats-Unis",
+      "date": "2026-03-08",
+      "platform": null
+    },
+    {
+      "event": "Southern Cross Round The Bays",
+      "benchmark_name": "Southern Cross Round The Bays",
+      "ville": "Auckland",
+      "pays": "Nouvelle-Zélande",
+      "date": "2026-03-08",
+      "platform": null
+    },
+    {
+      "event": "Semi marathon de Lisbonne",
+      "benchmark_name": "Semi marathon de Lisbonne",
+      "ville": "Lisbonne",
+      "pays": "Portugal",
+      "date": "2026-03-08",
+      "platform": null
+    },
+    {
+      "event": "Brescia art marathon",
+      "benchmark_name": "Brescia art marathon",
+      "ville": "Brescia",
+      "pays": "Italie",
+      "date": "2026-03-08",
+      "platform": null
+    },
+    {
+      "event": "Victoria Park Half marathon",
+      "benchmark_name": "Victoria Park Half marathon",
+      "ville": "Londres",
+      "pays": "Royaume-Uni",
+      "date": "2026-03-08",
+      "platform": null
+    },
+    {
+      "event": "RunForLife",
+      "benchmark_name": "RunForLife",
+      "ville": "Monza",
+      "pays": "Italie",
+      "date": "2026-03-08",
+      "platform": null
+    },
+    {
+      "event": "Great Welsh Marathon",
+      "benchmark_name": "Great Welsh Marathon",
+      "ville": "Pembrey",
+      "pays": "Royaume-Uni",
+      "date": "2026-03-08",
+      "platform": null
+    },
+    {
+      "event": "Women's day Run",
+      "benchmark_name": "Women's day Run",
+      "ville": "Mumbai",
+      "pays": "Inde",
+      "date": "2026-03-08",
+      "platform": null
+    },
+    {
+      "event": "KEM Marathon",
+      "benchmark_name": "KEM Marathon",
+      "ville": "Mumbai",
+      "pays": "Inde",
+      "date": "2026-03-08",
+      "platform": null
+    },
+    {
+      "event": "Marathon d'Arcachon",
+      "benchmark_name": "Marathon d'Arcachon",
+      "ville": "Arcachon",
+      "pays": "France",
+      "date": "2026-03-08",
+      "platform": null
+    },
+    {
+      "event": "21km de Blagnac",
+      "benchmark_name": "21km de Blagnac",
+      "ville": "Blagnac",
+      "pays": "France",
+      "date": "2026-03-08",
+      "platform": null
+    },
+    {
+      "event": "Inverness Half Marathon",
+      "benchmark_name": "Inverness Half Marathon",
+      "ville": "Inverness",
+      "pays": "Royaume-Uni",
+      "date": "2026-03-14",
+      "platform": null
+    },
+    {
+      "event": "Courir pour toit",
+      "benchmark_name": "Courir pour toit",
+      "ville": "Paris",
+      "pays": "France",
+      "date": "2026-03-14",
+      "platform": null
+    },
+    {
+      "event": "Konya Half Marathon",
+      "benchmark_name": "NYC Half Marathon",
+      "ville": "New York",
+      "pays": "Etats-Unis",
+      "date": "2026-03-15",
+      "platform": null
+    },
+    {
+      "event": "Liverpool Half Marathon",
+      "benchmark_name": "Liverpool Half Marathon",
+      "ville": "Liverpool",
+      "pays": "Royaume-Uni",
+      "date": "2026-03-15",
+      "platform": null
+    },
+    {
+      "event": "La liégeoise Women Only",
+      "benchmark_name": "La liégeoise Women Only",
+      "ville": "Liège",
+      "pays": "Belgique",
+      "date": "2026-03-15",
+      "platform": null
+    },
+    {
+      "event": "Media Maraton Zaragoza",
+      "benchmark_name": "Media Maraton Zaragoza",
+      "ville": "Saragosse",
+      "pays": "Espagne ",
+      "date": "2026-03-15",
+      "platform": null
+    },
+    {
+      "event": "Hampton Court Palace Half Marathon",
+      "benchmark_name": "Hampton Court Palace Half Marathon",
+      "ville": "Hampton court",
+      "pays": "Royaume-Uni",
+      "date": "2026-03-15",
+      "platform": null
+    },
+    {
+      "event": "ICT Marathon",
+      "benchmark_name": "ICT Marathon",
+      "ville": "Mumbai",
+      "pays": "Inde",
+      "date": "2026-03-15",
+      "platform": null
+    },
+    {
+      "event": "21km Tras storia e natura",
+      "benchmark_name": "21km Tras storia e natura",
+      "ville": "Acaya",
+      "pays": "Italie",
+      "date": "2026-03-15",
+      "platform": null
+    },
+    {
+      "event": "Lucknow Heritage Half Marathon",
+      "benchmark_name": "Lucknow Heritage Half Marathon",
+      "ville": "Lucknow",
+      "pays": "Inde",
+      "date": "2026-03-15",
+      "platform": null
+    },
+    {
+      "event": "Pattaya Marathon",
+      "benchmark_name": "Patna Marathon",
+      "ville": "Patna",
+      "pays": "Inde",
+      "date": "2026-03-15",
+      "platform": null
+    },
+    {
+      "event": "Delhi Heroes Half Marathon",
+      "benchmark_name": "Delhi Heroes Half Marathon",
+      "ville": "New Delhi",
+      "pays": "Inde",
+      "date": "2026-03-15",
+      "platform": null
+    },
+    {
+      "event": "Rodi Media Maraton Zaragoza",
+      "benchmark_name": "Rodi Media Maraton Zaragoza",
+      "ville": "Saragosse",
+      "pays": "Espagne",
+      "date": "2026-03-15",
+      "platform": null
+    },
+    {
+      "event": "Tokushima Marathon",
+      "benchmark_name": "Tokushima Marathon",
+      "ville": "Tokushima",
+      "pays": "Japon",
+      "date": "2026-03-21",
+      "platform": null
+    },
+    {
+      "event": "Kerzerslauf",
+      "benchmark_name": "Kerzerslauf",
+      "ville": "Kerzers",
+      "pays": "Suisse",
+      "date": "2026-03-21",
+      "platform": null
+    },
+    {
+      "event": "Chengdu World heritage Marathon",
+      "benchmark_name": "Chengdu World heritage Marathon",
+      "ville": "Chengdu",
+      "pays": "Chine",
+      "date": "2026-03-22",
+      "platform": null
+    },
+    {
+      "event": "Wuxi Marathon",
+      "benchmark_name": "Wuxi Marathon",
+      "ville": "Wuxi",
+      "pays": "Chine",
+      "date": "2026-03-22",
+      "platform": null
+    },
+    {
+      "event": "Osaka Marathon",
+      "benchmark_name": "Oakland Marathon",
+      "ville": "Oakland",
+      "pays": "Etats-Unis",
+      "date": "2026-03-22",
+      "platform": null
+    },
+    {
+      "event": "Semi du Grand Nancy",
+      "benchmark_name": "Semi du Grand Nancy",
+      "ville": "Nancy",
+      "pays": "France",
+      "date": "2026-03-22",
+      "platform": null
+    },
+    {
+      "event": "Media Elche",
+      "benchmark_name": "Media Elche",
+      "ville": "Elche",
+      "pays": "Espagne ",
+      "date": "2026-03-22",
+      "platform": null
+    },
+    {
+      "event": "Limassol Marathon",
+      "benchmark_name": "Limassol Marathon",
+      "ville": "Limassol",
+      "pays": "Chypre",
+      "date": "2026-03-22",
+      "platform": null
+    },
+    {
+      "event": "Gurugram Half Marathon",
+      "benchmark_name": "Gurugram Half Marathon",
+      "ville": "Gurgaon",
+      "pays": "Inde",
+      "date": "2026-03-22",
+      "platform": null
+    },
+    {
+      "event": "Soli'Run",
+      "benchmark_name": "Soli'Run",
+      "ville": "Paris",
+      "pays": "France",
+      "date": "2026-03-22",
+      "platform": null
+    },
+    {
+      "event": "Shanghai Yangtze River Half Marathon",
+      "benchmark_name": "Shanghai Yangtze River Half Marathon",
+      "ville": "Shanghai",
+      "pays": "Chine",
+      "date": "2026-03-22",
+      "platform": null
+    },
+    {
+      "event": "Wuhan Marathon",
+      "benchmark_name": "Wuhan Marathon",
+      "ville": "Wuhan",
+      "pays": "Chine",
+      "date": "2026-03-22",
+      "platform": null
+    },
+    {
+      "event": "Jahez Alareen Run",
+      "benchmark_name": "Jahez Alareen Run",
+      "ville": "Al Areen",
+      "pays": "Bahreïn",
+      "date": "2026-03-27",
+      "platform": null
+    },
+    {
+      "event": "Generali Prague Half Marathon",
+      "benchmark_name": "Generali Prague Half Marathon",
+      "ville": "Prague",
+      "pays": "République Tchèque ",
+      "date": "2026-03-28",
+      "platform": null
+    },
+    {
+      "event": "Marathon des vins de la côte chalonnaise",
+      "benchmark_name": "Marathon des vins de la côte chalonnaise",
+      "ville": "Givry",
+      "pays": "France",
+      "date": "2026-03-28",
+      "platform": null
+    },
+    {
+      "event": "Premiär  Milen",
+      "benchmark_name": "Premiär  Milen",
+      "ville": "Stockholm ",
+      "pays": "Suède",
+      "date": "2026-03-28",
+      "platform": null
+    },
+    {
+      "event": "CMP Venice Night Trail",
+      "benchmark_name": "CMP Venice Night Trail",
+      "ville": "Venise",
+      "pays": "Italie",
+      "date": "2026-03-28",
+      "platform": null
+    },
+    {
+      "event": "Eugene Marathon",
+      "benchmark_name": "Gent marathon",
+      "ville": "Ghent",
+      "pays": "Belgique",
+      "date": "2026-03-29",
+      "platform": null
+    },
+    {
+      "event": "Zandvoort circuit run",
+      "benchmark_name": "Zandvoort circuit run",
+      "ville": "Zandvoort",
+      "pays": "Pays-Bas",
+      "date": "2026-03-29",
+      "platform": null
+    },
+    {
+      "event": "Mezza Maratona d'Italia - Memorial Enzo Ferrari",
+      "benchmark_name": "Mezza Maratona d'Italia - Memorial Enzo Ferrari",
+      "ville": "Modène",
+      "pays": "Italie",
+      "date": "2026-03-29",
+      "platform": null
+    },
+    {
+      "event": "Love Run",
+      "benchmark_name": "Love Run",
+      "ville": "Philadelphie",
+      "pays": "Etats-Unis",
+      "date": "2026-03-29",
+      "platform": null
+    },
+    {
+      "event": "Wizz Air Napoca Marathon",
+      "benchmark_name": "Wizz Air Napoca Marathon",
+      "ville": "Napoca",
+      "pays": "Roumanie",
+      "date": "2026-03-29",
+      "platform": null
+    },
+    {
+      "event": "Marathon Golfe de Saint-Tropez",
+      "benchmark_name": "Marathon Golfe de Saint-Tropez",
+      "ville": "Saint-Tropez",
+      "pays": "France",
+      "date": "2026-03-29",
+      "platform": null
+    },
+    {
+      "event": "Half marathon Firenze",
+      "benchmark_name": "Half marathon Firenze",
+      "ville": "Florence",
+      "pays": "Italie",
+      "date": "2026-03-29",
+      "platform": null
+    },
+    {
+      "event": "Foulées du Populaire",
+      "benchmark_name": "Foulées du Populaire",
+      "ville": "Limoges",
+      "pays": "France",
+      "date": "2026-03-29",
+      "platform": null
+    },
+    {
+      "event": "Meia Maratona de Braga",
+      "benchmark_name": "Meia maratona de Braga",
+      "ville": "Braga",
+      "pays": "Portugal",
+      "date": "2026-03-29",
+      "platform": null
+    },
+    {
+      "event": "Renascenca Fatima Half Marathon",
+      "benchmark_name": "Renascenca Fatima Half Marathon",
+      "ville": "Fatima ",
+      "pays": "Portugal",
+      "date": "2026-03-29",
+      "platform": null
+    },
+    {
+      "event": "Purvankara 10K Run",
+      "benchmark_name": "Purvankara 10K Run",
+      "ville": "Bengalore",
+      "pays": "Inde",
+      "date": "2026-03-29",
+      "platform": null
+    },
+    {
+      "event": "Allianz Riviera Run",
+      "benchmark_name": "Allianz Riviera Run",
+      "ville": "Nice",
+      "pays": "France",
+      "date": "2026-03-29",
+      "platform": null
+    },
+    {
+      "event": "La Rennaise",
+      "benchmark_name": "La Rennaise",
+      "ville": "Rennes ",
+      "pays": "France",
+      "date": "2026-03-29",
+      "platform": null
+    },
+    {
+      "event": "Semi Marathon de Cabourg",
+      "benchmark_name": "Semi Marathon de Cabourg",
+      "ville": "Cabourg",
+      "pays": "France",
+      "date": "2026-03-29",
+      "platform": null
+    },
+    {
+      "event": "Les Foulées de Bayeux",
+      "benchmark_name": "Les Foulées de Bayeux",
+      "ville": "Bayeux ",
+      "pays": "France",
+      "date": "2026-03-29",
+      "platform": null
+    },
+    {
+      "event": "Semi de Mulhouse",
+      "benchmark_name": "Semi de Mulhouse",
+      "ville": "Mulhouse ",
+      "pays": "France",
+      "date": "2026-03-29",
+      "platform": null
+    },
+    {
+      "event": "Thien Phong Marathon",
+      "benchmark_name": "Thien Phong Marathon",
+      "ville": "Thien Phong",
+      "pays": "Vietnam",
+      "date": "2026-03-30",
+      "platform": null
+    },
+    {
+      "event": "Hot Chocolate Run",
+      "benchmark_name": "Hot Chocolate Run",
+      "ville": "Philadelphie",
+      "pays": "Etats-Unis",
+      "date": "2026-04-04",
+      "platform": null
+    },
+    {
+      "event": "Bredase Singelloop",
+      "benchmark_name": "Bredase Singelloop",
+      "ville": "Breda",
+      "pays": "Pays-Bas",
+      "date": "2026-04-04",
+      "platform": null
+    },
+    {
+      "event": "Paderborner Osterlauf",
+      "benchmark_name": "Paderborner Osterlauf",
+      "ville": "Paderborn",
+      "pays": "Allemagne",
+      "date": "2026-04-04",
+      "platform": null
+    },
+    {
+      "event": "La Grande Course RATP du Grand Paris",
+      "benchmark_name": "La Grande Course RATP du Grand Paris",
+      "ville": "Saint Denis ",
+      "pays": "France",
+      "date": "2026-04-05",
+      "platform": null
+    },
+    {
+      "event": "10km du bois de Boulogne",
+      "benchmark_name": "10km du bois de Boulogne",
+      "ville": "Paris",
+      "pays": "France",
+      "date": "2026-04-05",
+      "platform": null
+    },
+    {
+      "event": "Kharghar Half Marathon",
+      "benchmark_name": "Kharghar Half Marathon",
+      "ville": "Kharghar",
+      "pays": "Inde",
+      "date": "2026-04-05",
+      "platform": null
+    },
+    {
+      "event": "Ironwings Marathon Gurugram",
+      "benchmark_name": "Ironwings Marathon Gurugram",
+      "ville": "Gurugram",
+      "pays": "Inde",
+      "date": "2026-04-05",
+      "platform": null
+    },
+    {
+      "event": "Ekiden de Toulouse",
+      "benchmark_name": "Ekiden de Toulouse",
+      "ville": "Toulouse",
+      "pays": "France",
+      "date": "2026-04-05",
+      "platform": null
+    },
+    {
+      "event": "Semi Marathon et 10km de Hyères",
+      "benchmark_name": "Semi Marathon et 10km de Hyères",
+      "ville": "Hyères",
+      "pays": "France",
+      "date": "2026-04-05",
+      "platform": null
+    },
+    {
+      "event": "Les Foulées de Villeurbanne",
+      "benchmark_name": "Les Foulées de Villeurbanne",
+      "ville": "Villeurbanne",
+      "pays": "France",
+      "date": "2026-04-05",
+      "platform": null
+    },
+    {
+      "event": "Belgrade Marathon",
+      "benchmark_name": "Belgrade Marathon",
+      "ville": "Belgrade",
+      "pays": "Serbie ",
+      "date": "2026-04-06",
+      "platform": null
+    },
+    {
+      "event": "Peak Lake Garda 42",
+      "benchmark_name": "Peak Lake Garda 42",
+      "ville": "Grada",
+      "pays": "Italie",
+      "date": "2026-04-10",
+      "platform": null
+    },
+    {
+      "event": "Two Oceans Marathon",
+      "benchmark_name": "Two Oceans Marathon",
+      "ville": "Cape Town",
+      "pays": "Afrique du Sud",
+      "date": "2026-04-11",
+      "platform": null
+    },
+    {
+      "event": "Drammen 10K",
+      "benchmark_name": "Drammen 10K",
+      "ville": "Drammen",
+      "pays": "Norvège",
+      "date": "2026-04-11",
+      "platform": null
+    },
+    {
+      "event": "Saaletal Marathon",
+      "benchmark_name": "Saaletal Marathon",
+      "ville": "Ramsthal",
+      "pays": "Allemagne",
+      "date": "2026-04-11",
+      "platform": null
+    },
+    {
+      "event": "Bhujalvauy Half Marathon",
+      "benchmark_name": "Bhujalvauy Half Marathon",
+      "ville": "New Delhi",
+      "pays": "Inde",
+      "date": "2026-04-11",
+      "platform": null
+    },
+    {
+      "event": "University of Charleston Marathon by United Bank",
+      "benchmark_name": "University of Charleston Marathon by United Bank",
+      "ville": "Charleston",
+      "pays": "Etats-Unis",
+      "date": "2026-04-11",
+      "platform": null
+    },
+    {
+      "event": "Wizz Air Sofia Marathon",
+      "benchmark_name": "Wizz Air Milano Marathon",
+      "ville": "Milan",
+      "pays": "Italie",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "ADAC Marathon de Hannover",
+      "benchmark_name": "ADAC Marathon de Hannover",
+      "ville": "Hanovre",
+      "pays": "Allemagne",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Brighton Marathon Week end",
+      "benchmark_name": "Brighton Marathon Week end",
+      "ville": "Brighton",
+      "pays": "Royaume-Uni",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Zurich Marathon",
+      "benchmark_name": "Zurich Marathon",
+      "ville": "Zurich",
+      "pays": "Suisse",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Enschede Marathon",
+      "benchmark_name": "Enschede Marathon",
+      "ville": "Enschede ",
+      "pays": "Pays-Bas",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Freiburg Marathon",
+      "benchmark_name": "Freiburg Marathon",
+      "ville": "Fribourg",
+      "pays": "Allemagne",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Tay Ho Half Marathon",
+      "benchmark_name": "Tay Ho Half Marathon",
+      "ville": "Hanoi",
+      "pays": "Vietnam",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Bank of China Beijing Half Marathon",
+      "benchmark_name": "Bank of China Beijing Half Marathon",
+      "ville": "Pekin",
+      "pays": "Chine",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Linz Donau Marathon",
+      "benchmark_name": "Linz Donau Marathon",
+      "ville": "Linz",
+      "pays": "Autriche",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "The Hapalua - Hawaii's Hlaf marathon",
+      "benchmark_name": "The Hapalua - Hawaii's Hlaf marathon",
+      "ville": "Honolulu",
+      "pays": "Etats-Unis",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Baloise Namur Marathon",
+      "benchmark_name": "Baloise Namur Marathon",
+      "ville": "Namur",
+      "pays": "Belgique",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Bratislava Marathon",
+      "benchmark_name": "Bratislava Marathon",
+      "ville": "Bratislava",
+      "pays": "Slovaquie",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Around the Bay Road Race",
+      "benchmark_name": "Around the Bay Road Race",
+      "ville": "Hamilton",
+      "pays": "Canada",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Maraton de Zaragoza",
+      "benchmark_name": "Maraton de Zaragoza",
+      "ville": "Saragosse",
+      "pays": "Espagne ",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Maraton de Zaragoza",
+      "benchmark_name": "Maraton de Zaragoza",
+      "ville": "Saragosse",
+      "pays": "Espagne",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Les foulées Valenciennoises",
+      "benchmark_name": "Les foulées Valenciennoises",
+      "ville": "Valenciennes",
+      "pays": "France",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Maraton Lodz",
+      "benchmark_name": "Maraton Lodz",
+      "ville": "Lodz",
+      "pays": "Pologne",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Christchurch marathon",
+      "benchmark_name": "Christchurch marathon",
+      "ville": "Christchurch",
+      "pays": "Nouvelle-Zélande",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Maratona Internacional de São Paulo",
+      "benchmark_name": "Maratona Internacional de Sao Paulo",
+      "ville": "Sao Paulo ",
+      "pays": "Brésil",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Medio Maraton Almeria",
+      "benchmark_name": "Medio Maraton Almeria",
+      "ville": "Almeria",
+      "pays": "Espagne ",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Marathon Poitiers-Futuroscope",
+      "benchmark_name": "Marathon Poitiers-Futuroscope",
+      "ville": "Poitiers",
+      "pays": "France",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Vienna City Half Marathon",
+      "benchmark_name": "Noida City Half Marathon",
+      "ville": "Noida",
+      "pays": "Inde",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Raja Rao Tularam Rewari Half Marathon",
+      "benchmark_name": "Raja Rao Tularam Rewari Half Marathon",
+      "ville": "Rewari",
+      "pays": "Inde",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Lokraja Marathon",
+      "benchmark_name": "Lokraja Marathon",
+      "ville": "Pune",
+      "pays": "Inde",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Delhi Stride Half Marathon",
+      "benchmark_name": "Delhi Stride Half Marathon",
+      "ville": "New Delhi",
+      "pays": "Inde",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Foulée Impériale de Fontainebleau",
+      "benchmark_name": "Foulée Impériale de Fontainebleau",
+      "ville": "Fontainebeau",
+      "pays": "France",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Lisbon Eco Marathon",
+      "benchmark_name": "Lisbon Eco Marathon",
+      "ville": "Lisbonne",
+      "pays": "Portugal",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "ACSE - Ekiden de Strasbourg",
+      "benchmark_name": "ACSE - Ekiden de Strasbourg",
+      "ville": "Strasbourg",
+      "pays": "France",
+      "date": "2026-04-12",
+      "platform": null
+    },
+    {
+      "event": "Canberra Times Marathon Festival",
+      "benchmark_name": "Canberra Times Marathon Festival",
+      "ville": "Canberra",
+      "pays": "Australie",
+      "date": "2026-04-12",
+      "platform": null
+    }
+  ],
+  "passees_mappees_backfill_api": [
+    {
+      "event": "Boston Marathon",
+      "benchmark_name": "Houston Marathon",
+      "ville": "Houston",
+      "pays": "Etats-Unis",
+      "date": "2026-01-10",
+      "platform": "baa"
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "benchmark_name": "Gasparilla Distance Classic",
+      "ville": "Tampa",
+      "pays": "Etats-Unis",
+      "date": "2026-02-21",
+      "platform": "athlinks"
+    },
+    {
+      "event": "HOKA Semi de Paris",
+      "benchmark_name": "Hoka Semi de Paris",
+      "ville": "Paris",
+      "pays": "France",
+      "date": "2026-03-08",
+      "platform": "timeto"
+    },
+    {
+      "event": "Seoul Marathon",
+      "benchmark_name": "Seoul Marathon",
+      "ville": "Séoul",
+      "pays": "Corée du Sud",
+      "date": "2026-03-15",
+      "platform": "smartchip"
+    },
+    {
+      "event": "NN Maraton Warszawski",
+      "benchmark_name": "Polmaraton Warszawski",
+      "ville": "Varsovie",
+      "pays": "Pologne",
+      "date": "2026-03-22",
+      "platform": "sts-timing"
+    },
+    {
+      "event": "Prague International Marathon",
+      "benchmark_name": "Danang international Marathon",
+      "ville": "Danang",
+      "pays": "Vietnam",
+      "date": "2026-03-22",
+      "platform": "runczech"
+    },
+    {
+      "event": "Cooper River Bridge Run",
+      "benchmark_name": "Cooper River Bridge Run",
+      "ville": "Charleston",
+      "pays": "Etats-Unis",
+      "date": "2026-03-28",
+      "platform": "athlinks"
+    },
+    {
+      "event": "Schneider Electric Marathon de Paris",
+      "benchmark_name": "Schneider Electric Marathon de Paris",
+      "ville": "Paris",
+      "pays": "France",
+      "date": "2026-04-12",
+      "platform": "timeto"
+    },
+    {
+      "event": "NN Marathon Rotterdam",
+      "benchmark_name": "NN Marathon Rotterdam",
+      "ville": "Rotterdam",
+      "pays": "Pays-Bas",
+      "date": "2026-04-12",
+      "platform": "chronorace"
+    },
+    {
+      "event": "London Landmarks Half Marathon",
+      "benchmark_name": "London Landmarks Half Marathon",
+      "ville": "Londres",
+      "pays": "Royaume-Uni",
+      "date": "2026-04-12",
+      "platform": "tracx"
+    },
+    {
+      "event": "Statesman Capitol 10K",
+      "benchmark_name": "Statesman Capitol 10K",
+      "ville": "Austin",
+      "pays": "Etats-Unis",
+      "date": "2026-04-12",
+      "platform": "athlinks"
+    }
+  ],
+  "avenir_mappees_automatique": [
+    {
+      "event": "Vienna City Marathon",
+      "benchmark_name": "Vienna City marathon",
+      "ville": "Vienne",
+      "pays": "Autriche",
+      "date": "2026-04-19",
+      "platform": "mikatiming"
+    },
+    {
+      "event": "Istanbul Marathon",
+      "benchmark_name": "Istanbul Half Marathon",
+      "ville": "Istanbul",
+      "pays": "Turquie",
+      "date": "2026-04-19",
+      "platform": "splittime"
+    },
+    {
+      "event": "Boston Marathon",
+      "benchmark_name": "Boston Marathon",
+      "ville": "Boston",
+      "pays": "Etats-Unis",
+      "date": "2026-04-20",
+      "platform": "baa"
+    },
+    {
+      "event": "TCS London Marathon",
+      "benchmark_name": "London Marathon",
+      "ville": "Londres",
+      "pays": "Royaume-Uni",
+      "date": "2026-04-26",
+      "platform": "mikatiming"
+    },
+    {
+      "event": "Haspa Marathon Hamburg",
+      "benchmark_name": "Haspa Marathon Hamburg",
+      "ville": "Hambourg",
+      "pays": "Allemagne",
+      "date": "2026-04-26",
+      "platform": "mikatiming"
+    },
+    {
+      "event": "Broad Street Run",
+      "benchmark_name": "Broad Street Run",
+      "ville": "Philadelphie",
+      "pays": "Etats-Unis",
+      "date": "2026-05-03",
+      "platform": "athlinks"
+    },
+    {
+      "event": "Flying Pig Marathon",
+      "benchmark_name": "Flying Pig Marathon",
+      "ville": "Cincinnati ",
+      "pays": "Etats-Unis",
+      "date": "2026-05-03",
+      "platform": "athlinks"
+    },
+    {
+      "event": "Prague International Marathon",
+      "benchmark_name": "Prague International Marathon",
+      "ville": "Prague",
+      "pays": "République Tchèque ",
+      "date": "2026-05-03",
+      "platform": "runczech"
+    },
+    {
+      "event": "Bay to Breakers",
+      "benchmark_name": "Bay to Breakers",
+      "ville": "San Francisco",
+      "pays": "Etats-Unis",
+      "date": "2026-05-17",
+      "platform": "athlinks"
+    },
+    {
+      "event": "BOLDERBoulder 10K",
+      "benchmark_name": "BolderBoulder",
+      "ville": "Boulder",
+      "pays": "Etats-Unis",
+      "date": "2026-05-25",
+      "platform": "athlinks"
+    },
+    {
+      "event": "Stockholm Marathon",
+      "benchmark_name": "Stockholm Marathon",
+      "ville": "Stockholm ",
+      "pays": "Suède",
+      "date": "2026-05-31",
+      "platform": "mikatiming"
+    },
+    {
+      "event": "Warsaw Half Marathon",
+      "benchmark_name": "Astana Half Marathon",
+      "ville": "Astana",
+      "pays": "Kazakhstan",
+      "date": "2026-05-31",
+      "platform": "sts-timing"
+    },
+    {
+      "event": "Adidas 10K Paris",
+      "benchmark_name": "Adidas 10k Paris",
+      "ville": "Paris",
+      "pays": "France",
+      "date": "2026-06-07",
+      "platform": "timeto"
+    },
+    {
+      "event": "Milano Marathon",
+      "benchmark_name": "Manila Marathon",
+      "ville": "Manille",
+      "pays": "Philippines",
+      "date": "2026-06-12",
+      "platform": "endu"
+    },
+    {
+      "event": "Generali Berlin Half Marathon",
+      "benchmark_name": "Generali Berliner Halbmarathon",
+      "ville": "Berlin",
+      "pays": "Allemagne",
+      "date": "2026-08-01",
+      "platform": "mikatiming"
+    },
+    {
+      "event": "Stockholm Marathon",
+      "benchmark_name": "Stockholm Half Marathon",
+      "ville": "Stockholm ",
+      "pays": "Suède",
+      "date": "2026-08-29",
+      "platform": "mikatiming"
+    },
+    {
+      "event": "Boston Marathon",
+      "benchmark_name": "Oslo Marathon",
+      "ville": "Oslo",
+      "pays": "Norvège",
+      "date": "2026-09-12",
+      "platform": "baa"
+    },
+    {
+      "event": "Dam tot Damloop",
+      "benchmark_name": "Dam Tot Dal Loop",
+      "ville": "Amsterdam",
+      "pays": "Pays-Bas",
+      "date": "2026-09-20",
+      "platform": "tracx"
+    },
+    {
+      "event": "NN Maraton Warszawski",
+      "benchmark_name": "Maraton Warszawski",
+      "ville": "Varsovie",
+      "pays": "Pologne",
+      "date": "2026-09-27",
+      "platform": "sts-timing"
+    },
+    {
+      "event": "Harmonie Mutuelle 20km de Paris",
+      "benchmark_name": "Harmonie Mutuelle 20 km de Paris",
+      "ville": "Paris",
+      "pays": "France",
+      "date": "2026-10-11",
+      "platform": "timeto"
+    },
+    {
+      "event": "EDP Maratona de Lisboa",
+      "benchmark_name": "Maratona de Lisboa",
+      "ville": "Lisbonne",
+      "pays": "Portugal",
+      "date": "2026-10-11",
+      "platform": "sporthive"
+    },
+    {
+      "event": "TCS Amsterdam Marathon",
+      "benchmark_name": "Amsterdam marathon",
+      "ville": "Amsterdam",
+      "pays": "Pays-Bas",
+      "date": "2026-10-18",
+      "platform": "sporthive"
+    },
+    {
+      "event": "Marine Corps Marathon",
+      "benchmark_name": "Marine Corps Marathon",
+      "ville": "Washington",
+      "pays": "Etats-Unis",
+      "date": "2026-10-25",
+      "platform": "athlinks"
+    },
+    {
+      "event": "\tIrish Life Dublin Marathon",
+      "benchmark_name": "Irish life Dublin Marathon",
+      "ville": "Dublin",
+      "pays": "Irlande",
+      "date": "2026-10-25",
+      "platform": "myrunresults"
+    },
+    {
+      "event": "Istanbul Marathon",
+      "benchmark_name": "Istanbul Maratonu",
+      "ville": "Istanbul",
+      "pays": "Turquie",
+      "date": "2026-11-01",
+      "platform": "splittime"
+    },
+    {
+      "event": "Honolulu Marathon",
+      "benchmark_name": "Honolulu Marathon",
+      "ville": "Honolulu",
+      "pays": "Etats-Unis",
+      "date": "2026-12-13",
+      "platform": "pse"
+    }
+  ],
+  "avenir_non_mappees_restera_manuel": [
+    {
+      "event": "Under Armour Toronto 10K",
+      "benchmark_name": "Under Armour Toronto 10K",
+      "ville": "Toronto ",
+      "pays": "Canada",
+      "date": "2026-04-18",
+      "platform": null
+    },
+    {
+      "event": "Ibiza Marathon",
+      "benchmark_name": "Ibiza Marathon",
+      "ville": "Ibiza",
+      "pays": "Espagne ",
+      "date": "2026-04-18",
+      "platform": null
+    },
+    {
+      "event": "Meia Maratona de Almada",
+      "benchmark_name": "Meia Maratona De Almada",
+      "ville": "Almada",
+      "pays": "Portugal",
+      "date": "2026-04-18",
+      "platform": null
+    },
+    {
+      "event": "Vancouver Sun Run",
+      "benchmark_name": "Vancouver Sun Run",
+      "ville": "Vancouver",
+      "pays": "Canada",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "Chester marathon",
+      "benchmark_name": "Manchester Marathon",
+      "ville": "Manchester",
+      "pays": "Royaume-Uni",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "Eugene Marathon",
+      "benchmark_name": "Leuven marathon",
+      "ville": "Louvain",
+      "pays": "Belgique",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "Nice Semi-Marathon International",
+      "benchmark_name": "Nice Semi-Marathon International",
+      "ville": "Nice",
+      "pays": "France",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "Deutsche Post Marathon Bonn",
+      "benchmark_name": "Deutsche Post Marathon Bonn",
+      "ville": "Bonn",
+      "pays": "Allemagne",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "Brooks Marathon du Lac d’Annecy",
+      "benchmark_name": "Brooks Marathon du Lac d’Annecy",
+      "ville": "Annecy",
+      "pays": "France",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "Montpellier Run Festival",
+      "benchmark_name": "Montpellier Run Festival",
+      "ville": "Montpellier",
+      "pays": "France",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "Almaty Half Marathon",
+      "benchmark_name": "Almaty Half Marathon",
+      "ville": "Almaty",
+      "pays": "Kazakhstan",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "Leipzig Marathon",
+      "benchmark_name": "Leipzig Marathon",
+      "ville": "Leipzig ",
+      "pays": "Allemagne",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "Newport Marathon",
+      "benchmark_name": "Newport Marathon",
+      "ville": "Newport",
+      "pays": "Royaume-Uni",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "21K de Montréal",
+      "benchmark_name": "21K de Montréal",
+      "ville": "Montréal",
+      "pays": "Canada",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "Cracovia Maraton",
+      "benchmark_name": "Cracovia Maraton",
+      "ville": "Cracovie",
+      "pays": "Pologne",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "S25",
+      "benchmark_name": "S25",
+      "ville": "Berlin",
+      "pays": "Allemagne",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "Roma Appia Run",
+      "benchmark_name": "Roma Appia Run",
+      "ville": "Rome",
+      "pays": "Italie",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "Mezza di Genova",
+      "benchmark_name": "Mezza di Genova",
+      "ville": "Genes",
+      "pays": "Italie",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "La mezza di Torino",
+      "benchmark_name": "La mezza di Torino",
+      "ville": "Turin",
+      "pays": "Italie",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "Coventry Half marathon",
+      "benchmark_name": "Coventry Half marathon",
+      "ville": "Coventry",
+      "pays": "Royaume-Uni",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "Energa Gdansk Marathon",
+      "benchmark_name": "Energa Gdansk Marathon",
+      "ville": "Gdansk",
+      "pays": "Pologne",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "Prayagraj Half Marathon",
+      "benchmark_name": "Prayagraj Half Marathon",
+      "ville": "Prayagraj",
+      "pays": "Inde",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "Mumbai Fast Marathon",
+      "benchmark_name": "Mumbai Fast Marathon",
+      "ville": "Mumbai",
+      "pays": "Inde",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "Spreewald Marathon",
+      "benchmark_name": "Spreewald Marathon",
+      "ville": "Burg",
+      "pays": "Allemagne",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "Expo City Dubai Half Marathon",
+      "benchmark_name": "Expo City Dubai Half Marathon 2026",
+      "ville": "Dubai",
+      "pays": "Emirats Arabes Unis",
+      "date": "2026-04-19",
+      "platform": null
+    },
+    {
+      "event": "Eugene Marathon",
+      "benchmark_name": "Eugene Marathon",
+      "ville": "Eugene",
+      "pays": "Etats-Unis",
+      "date": "2026-04-24",
+      "platform": null
+    },
+    {
+      "event": "The Music Run",
+      "benchmark_name": "The Music Run",
+      "ville": "Singapour",
+      "pays": "Singapour ",
+      "date": "2026-04-25",
+      "platform": null
+    },
+    {
+      "event": "Bergen City Marathon",
+      "benchmark_name": "Bergen City Marathon",
+      "ville": "Bergen ",
+      "pays": "Norvège",
+      "date": "2026-04-25",
+      "platform": null
+    },
+    {
+      "event": "Premiär Halvan",
+      "benchmark_name": "Premiär Halvan",
+      "ville": "Stockholm ",
+      "pays": "Suède",
+      "date": "2026-04-25",
+      "platform": null
+    },
+    {
+      "event": "Corrida da Liberdade",
+      "benchmark_name": "Corrida da Liberdade",
+      "ville": "Portimao ",
+      "pays": "Portugal",
+      "date": "2026-04-25",
+      "platform": null
+    },
+    {
+      "event": "Granada Media maraton",
+      "benchmark_name": "Granada Media maraton",
+      "ville": "Grenade",
+      "pays": "Espagne ",
+      "date": "2026-04-25",
+      "platform": null
+    },
+    {
+      "event": "Nike After Dark Tour",
+      "benchmark_name": "Nike After Dark Tour",
+      "ville": "Shanghai",
+      "pays": "Chine",
+      "date": "2026-04-25",
+      "platform": null
+    },
+    {
+      "event": "Baloise Antwerp 10 miles",
+      "benchmark_name": "Baloise Antwerp 10 miles",
+      "ville": "Anvers",
+      "pays": "Belgique",
+      "date": "2026-04-26",
+      "platform": null
+    },
+    {
+      "event": "World 10K bengaluru",
+      "benchmark_name": "World 10K bengaluru",
+      "ville": "Bengalore",
+      "pays": "Inde",
+      "date": "2026-04-26",
+      "platform": null
+    },
+    {
+      "event": "Brooklyn Half Marathon",
+      "benchmark_name": "Brooklyn Half Marathon",
+      "ville": "New York",
+      "pays": "Etats-Unis",
+      "date": "2026-04-26",
+      "platform": null
+    },
+    {
+      "event": "Maraton de Santiago",
+      "benchmark_name": "Maraton de Santiago",
+      "ville": "Santiago",
+      "pays": "Chili",
+      "date": "2026-04-26",
+      "platform": null
+    },
+    {
+      "event": "20Km de Lausanne",
+      "benchmark_name": "20Km de Lausanne",
+      "ville": "Lausanne",
+      "pays": "Suisse",
+      "date": "2026-04-26",
+      "platform": null
+    },
+    {
+      "event": "Abalone Marathon de Nantes",
+      "benchmark_name": "Abalone Marathon de Nantes",
+      "ville": "Nantes",
+      "pays": "France",
+      "date": "2026-04-26",
+      "platform": null
+    },
+    {
+      "event": "Uniper Marathon de Düsseldorf",
+      "benchmark_name": "Uniper Marathon de Düsseldorf",
+      "ville": "Düsseldorf",
+      "pays": "Allemagne",
+      "date": "2026-04-26",
+      "platform": null
+    },
+    {
+      "event": "Padova marathon",
+      "benchmark_name": "Padova marathon",
+      "ville": "Padova",
+      "pays": "Italie",
+      "date": "2026-04-26",
+      "platform": null
+    },
+    {
+      "event": "Foulées d’Orléans",
+      "benchmark_name": "Foulées d’Orléans",
+      "ville": "Orléans",
+      "pays": "France",
+      "date": "2026-04-26",
+      "platform": null
+    },
+    {
+      "event": "Poseidon Athens Half Marathon",
+      "benchmark_name": "Poseidon Athens Half Marathon",
+      "ville": "Athènes",
+      "pays": "Grèce",
+      "date": "2026-04-26",
+      "platform": null
+    },
+    {
+      "event": "Bucharest international half marathon",
+      "benchmark_name": "Bucharest international half marathon",
+      "ville": "Bucharest",
+      "pays": "Roumanie",
+      "date": "2026-04-26",
+      "platform": null
+    },
+    {
+      "event": "Charleroi marathon",
+      "benchmark_name": "Charleroi marathon",
+      "ville": "Charleroi",
+      "pays": "Belgique",
+      "date": "2026-04-26",
+      "platform": null
+    },
+    {
+      "event": "Marato Vies Verdes",
+      "benchmark_name": "Marato Vies Verdes",
+      "ville": "Girona",
+      "pays": "Espagne ",
+      "date": "2026-04-26",
+      "platform": null
+    },
+    {
+      "event": "Farmley Snack Run",
+      "benchmark_name": "Farmley Snack Run",
+      "ville": "New Delhi",
+      "pays": "Inde",
+      "date": "2026-04-26",
+      "platform": null
+    },
+    {
+      "event": "Tata Mumbai Marathon",
+      "benchmark_name": "Fit Mumbai Marathon",
+      "ville": "Mumbai",
+      "pays": "Inde",
+      "date": "2026-04-26",
+      "platform": null
+    },
+    {
+      "event": "AirAsia RedRun Danang",
+      "benchmark_name": "AirAsia RedRun Danang",
+      "ville": "Danang ",
+      "pays": "Vietnam",
+      "date": "2026-04-26",
+      "platform": null
+    },
+    {
+      "event": "Course des 2 Stades",
+      "benchmark_name": "Course des 2 Stades",
+      "ville": "Villeneuve d'Ascq",
+      "pays": "France",
+      "date": "2026-04-26",
+      "platform": null
+    },
+    {
+      "event": "GM Half Marathon",
+      "benchmark_name": "Gifu Half Marathon",
+      "ville": "Gifu",
+      "pays": "Japon",
+      "date": "2026-04-26",
+      "platform": null
+    },
+    {
+      "event": "Darb Marathon",
+      "benchmark_name": "Darb Marathon",
+      "ville": "Darb",
+      "pays": "Allemagne",
+      "date": "2026-04-26",
+      "platform": null
+    },
+    {
+      "event": "20km de maroilles",
+      "benchmark_name": "20km de maroilles",
+      "ville": "Maroilles",
+      "pays": "France",
+      "date": "2026-05-01",
+      "platform": null
+    },
+    {
+      "event": "Marathon de la mer",
+      "benchmark_name": "Marathon de la mer",
+      "ville": "Boulogne-sur-Mer",
+      "pays": "France",
+      "date": "2026-05-02",
+      "platform": null
+    },
+    {
+      "event": "Rotorua Marathon",
+      "benchmark_name": "Rotorua Marathon",
+      "ville": "Rotorua",
+      "pays": "Nouvelle-Zélande",
+      "date": "2026-05-02",
+      "platform": null
+    },
+    {
+      "event": "Corri a tor Vergata",
+      "benchmark_name": "Corri a tor Vergata",
+      "ville": "Rome",
+      "pays": "Italie",
+      "date": "2026-05-02",
+      "platform": null
+    },
+    {
+      "event": "Neubrandenburger Halbmarathon",
+      "benchmark_name": "Neubrandenburger Halbmarathon",
+      "ville": "Neubrandenburg",
+      "pays": "Allemagne",
+      "date": "2026-05-02",
+      "platform": null
+    },
+    {
+      "event": "Marathon de Biarritz",
+      "benchmark_name": "Marathon de Biarritz",
+      "ville": "Biarritz",
+      "pays": "France",
+      "date": "2026-05-03",
+      "platform": null
+    },
+    {
+      "event": "Konya Half Marathon",
+      "benchmark_name": "Konya Half Marathon",
+      "ville": "Konya ",
+      "pays": "Turquie",
+      "date": "2026-05-03",
+      "platform": null
+    },
+    {
+      "event": "Belfast City Marathon",
+      "benchmark_name": "Belfast City Marathon",
+      "ville": "Belfast",
+      "pays": "Irlande",
+      "date": "2026-05-03",
+      "platform": null
+    },
+    {
+      "event": "Southampton Marathon festival",
+      "benchmark_name": "Southampton Marathon festival",
+      "ville": "Southampton",
+      "pays": "Royaume-Uni",
+      "date": "2026-05-03",
+      "platform": null
+    },
+    {
+      "event": "Belfast City Marathon",
+      "benchmark_name": "Belfast city Marathon",
+      "ville": "Belfast",
+      "pays": "Royaume-Uni",
+      "date": "2026-05-03",
+      "platform": null
+    },
+    {
+      "event": "Belfast City Marathon",
+      "benchmark_name": "Belfast City Half Marathon",
+      "ville": "Belfast",
+      "pays": "Royaume-Uni",
+      "date": "2026-05-03",
+      "platform": null
+    },
+    {
+      "event": "Stramilano",
+      "benchmark_name": "Stramilano",
+      "ville": "Milan",
+      "pays": "Italie",
+      "date": "2026-05-03",
+      "platform": null
+    },
+    {
+      "event": "Brooks Adelaide Marathon festival",
+      "benchmark_name": "Brooks Adelaide Marathon festival",
+      "ville": "Adelaide",
+      "pays": "Australie",
+      "date": "2026-05-03",
+      "platform": null
+    },
+    {
+      "event": "ColleMar-athon",
+      "benchmark_name": "ColleMar-athon",
+      "ville": "Barchi",
+      "pays": "Italie",
+      "date": "2026-05-03",
+      "platform": null
+    },
+    {
+      "event": "Maasmarathon",
+      "benchmark_name": "Maasmarathon",
+      "ville": "Liège",
+      "pays": "Belgique",
+      "date": "2026-05-03",
+      "platform": null
+    },
+    {
+      "event": "Great Breweries",
+      "benchmark_name": "Great Breweries",
+      "ville": "Puurs",
+      "pays": "Belgique",
+      "date": "2026-05-03",
+      "platform": null
+    },
+    {
+      "event": "Newcastle-Gateshead Marathon",
+      "benchmark_name": "Newcastle-Gateshead Marathon",
+      "ville": "Newcastle ",
+      "pays": "Royaume-Uni",
+      "date": "2026-05-03",
+      "platform": null
+    },
+    {
+      "event": "Med marathon",
+      "benchmark_name": "Med marathon",
+      "ville": "Bari",
+      "pays": "Italie",
+      "date": "2026-05-03",
+      "platform": null
+    },
+    {
+      "event": "Trieste21",
+      "benchmark_name": "Trieste21",
+      "ville": "Trieste",
+      "pays": "Italie",
+      "date": "2026-05-03",
+      "platform": null
+    },
+    {
+      "event": "Konqr Half Marathon",
+      "benchmark_name": "Konqr Half Marathon",
+      "ville": "New Delhi",
+      "pays": "Inde",
+      "date": "2026-05-03",
+      "platform": null
+    },
+    {
+      "event": "Delhi Legends Half Marathon",
+      "benchmark_name": "Delhi Legends Half Marathon",
+      "ville": "New Delhi",
+      "pays": "Inde",
+      "date": "2026-05-03",
+      "platform": null
+    },
+    {
+      "event": "Marathon des deux rives",
+      "benchmark_name": "Marathon des deux rives",
+      "ville": "Ambes",
+      "pays": "France",
+      "date": "2026-05-03",
+      "platform": null
+    },
+    {
+      "event": "Maraton de Mendoza",
+      "benchmark_name": "Maraton de Mendoza",
+      "ville": "Mendoza",
+      "pays": "Argentine",
+      "date": "2026-05-04",
+      "platform": null
+    },
+    {
+      "event": "Grand Prix Von Bern",
+      "benchmark_name": "Grand Prix Von Bern",
+      "ville": "Berne",
+      "pays": "Suisse",
+      "date": "2026-05-09",
+      "platform": null
+    },
+    {
+      "event": "Santa Barbara Wine Country Half",
+      "benchmark_name": "Santa Barbara Wine Country Half",
+      "ville": "Solvang",
+      "pays": "Etats-Unis",
+      "date": "2026-05-09",
+      "platform": null
+    },
+    {
+      "event": "Comacchio Half Marathon",
+      "benchmark_name": "Comacchio Half Marathon",
+      "ville": "Comacchio",
+      "pays": "Italie",
+      "date": "2026-05-09",
+      "platform": null
+    },
+    {
+      "event": "Bibione half marathon",
+      "benchmark_name": "Bibione half marathon",
+      "ville": "Bibione",
+      "pays": "Italie",
+      "date": "2026-05-09",
+      "platform": null
+    },
+    {
+      "event": "Marathon des vins de Blaye",
+      "benchmark_name": "Marathon des vins de Blaye",
+      "ville": "Blaye",
+      "pays": "France",
+      "date": "2026-05-09",
+      "platform": null
+    },
+    {
+      "event": "Cursa El corte Ingles",
+      "benchmark_name": "Cursa El corte Ingles",
+      "ville": "Barcelone",
+      "pays": "Espagne ",
+      "date": "2026-05-10",
+      "platform": null
+    },
+    {
+      "event": "Generali Geneve Marathon 10km",
+      "benchmark_name": "Generali Genève Marathon",
+      "ville": "Genève",
+      "pays": "Suisse",
+      "date": "2026-05-10",
+      "platform": null
+    },
+    {
+      "event": "ACSE - Les courses de Strasbourg Eurométropole",
+      "benchmark_name": "ACSE - Les courses de Strasbourg Eurométropole",
+      "ville": "Strasbourg",
+      "pays": "France",
+      "date": "2026-05-10",
+      "platform": null
+    },
+    {
+      "event": "Gutenberg Halbmarathon Mainz",
+      "benchmark_name": "Gutenberg Halbmarathon Mainz",
+      "ville": "Mayence",
+      "pays": "Allemagne",
+      "date": "2026-05-10",
+      "platform": null
+    },
+    {
+      "event": "Route du Louvre",
+      "benchmark_name": "Route du Louvre",
+      "ville": "Lens",
+      "pays": "France",
+      "date": "2026-05-10",
+      "platform": null
+    },
+    {
+      "event": "Marathon de la Loire",
+      "benchmark_name": "Marathon de la Loire",
+      "ville": "Saumur",
+      "pays": "France",
+      "date": "2026-05-10",
+      "platform": null
+    },
+    {
+      "event": "Alliance Bank Borneo International Marathon",
+      "benchmark_name": "Alliance Bank Borneo International Marathon",
+      "ville": "Sabah",
+      "pays": "Malaisie",
+      "date": "2026-05-10",
+      "platform": null
+    },
+    {
+      "event": "Dwars Door Bruges",
+      "benchmark_name": "Dwars Door Bruges",
+      "ville": "Bruges",
+      "pays": "Belgique",
+      "date": "2026-05-10",
+      "platform": null
+    },
+    {
+      "event": "Würzburg marathon",
+      "benchmark_name": "Würzburg marathon",
+      "ville": "Würzburg",
+      "pays": "Allemagne",
+      "date": "2026-05-10",
+      "platform": null
+    },
+    {
+      "event": "Leiden Marathon",
+      "benchmark_name": "Leiden Marathon",
+      "ville": "Leyde",
+      "pays": "Pays-Bas",
+      "date": "2026-05-10",
+      "platform": null
+    },
+    {
+      "event": "Placentia half marathon",
+      "benchmark_name": "Placentia half marathon",
+      "ville": "Plaisance",
+      "pays": "Italie",
+      "date": "2026-05-10",
+      "platform": null
+    },
+    {
+      "event": "Media Maraton Pamplona",
+      "benchmark_name": "Media Maraton Pamplona",
+      "ville": "Pamplume",
+      "pays": "Espagne ",
+      "date": "2026-05-10",
+      "platform": null
+    },
+    {
+      "event": "Bharat Ka Bhavishya Shahoton 2.0",
+      "benchmark_name": "Bharat Ka Bhavishya Shahoton 2.0",
+      "ville": "New Delhi",
+      "pays": "Inde",
+      "date": "2026-05-10",
+      "platform": null
+    },
+    {
+      "event": "10Km de Dakar",
+      "benchmark_name": "10Km de Dakar",
+      "ville": "Dakar",
+      "pays": "Sénégal",
+      "date": "2026-05-10",
+      "platform": null
+    },
+    {
+      "event": "Salomon Cesme Yari Maratonu",
+      "benchmark_name": "Salomon Cesme Yari Maratonu",
+      "ville": "Thesmé",
+      "pays": "Turquie",
+      "date": "2026-05-10",
+      "platform": null
+    },
+    {
+      "event": "La Foulée Montreuilloise",
+      "benchmark_name": "La Foulée Montreuilloise",
+      "ville": "Montreuil",
+      "pays": "France",
+      "date": "2026-05-10",
+      "platform": null
+    },
+    {
+      "event": "La Marseillaise des Femmes",
+      "benchmark_name": "La Marseillaise des Femmes",
+      "ville": "Marseille ",
+      "pays": "France",
+      "date": "2026-05-10",
+      "platform": null
+    },
+    {
+      "event": "Generali Geneve Marathon 10km",
+      "benchmark_name": "Generali Genève Marathon",
+      "ville": "Genève",
+      "pays": "Suisse",
+      "date": "2026-05-10",
+      "platform": null
+    },
+    {
+      "event": "Marathon médiéval",
+      "benchmark_name": "Marathon médiéval",
+      "ville": "Provins",
+      "pays": "France",
+      "date": "2026-05-10",
+      "platform": null
+    },
+    {
+      "event": "Semi-marathon de Troyes",
+      "benchmark_name": "Semi-marathon de Troyes",
+      "ville": "Troyes",
+      "pays": "France",
+      "date": "2026-05-10",
+      "platform": null
+    },
+    {
+      "event": "10km du Panthéon",
+      "benchmark_name": "10km du Panthéon",
+      "ville": "Paris",
+      "pays": "France",
+      "date": "2026-05-11",
+      "platform": null
+    },
+    {
+      "event": "Auffahrtslauf St.Gallen",
+      "benchmark_name": "Auffahrtslauf St.Gallen",
+      "ville": "Saint-Gall",
+      "pays": "Suisse",
+      "date": "2026-05-14",
+      "platform": null
+    },
+    {
+      "event": "Helsinki City run",
+      "benchmark_name": "Helsinki City run",
+      "ville": "Helsinki",
+      "pays": "Finlande",
+      "date": "2026-05-16",
+      "platform": null
+    },
+    {
+      "event": "ING Night Marathon Luxembourg",
+      "benchmark_name": "ING Night Marathon Luxembourg",
+      "ville": "Luxembourg",
+      "pays": "Luxembourg",
+      "date": "2026-05-16",
+      "platform": null
+    },
+    {
+      "event": "Jesolo Moonlight HalfMarathon",
+      "benchmark_name": "Jesolo Moonlight HalfMarathon",
+      "ville": "Jesolo",
+      "pays": "Italie",
+      "date": "2026-05-16",
+      "platform": null
+    },
+    {
+      "event": "Bijlmer run",
+      "benchmark_name": "Bijlmer run",
+      "ville": "Amsterdam",
+      "pays": "Pays-Bas",
+      "date": "2026-05-16",
+      "platform": null
+    },
+    {
+      "event": "Beer Lovers' Marathon",
+      "benchmark_name": "Beer Lovers' Marathon",
+      "ville": "Liège",
+      "pays": "Belgique",
+      "date": "2026-05-16",
+      "platform": null
+    },
+    {
+      "event": "Regensburg Marathon",
+      "benchmark_name": "Regensburg Marathon",
+      "ville": "Regensburg",
+      "pays": "Allemagne",
+      "date": "2026-05-16",
+      "platform": null
+    },
+    {
+      "event": "Hackney Half Marathon",
+      "benchmark_name": "Hackney Half Marathon",
+      "ville": "Londres",
+      "pays": "Royaume-Uni",
+      "date": "2026-05-17",
+      "platform": null
+    },
+    {
+      "event": "Stuttgart-Lauf",
+      "benchmark_name": "Stuttgart-Lauf",
+      "ville": "Stuttgart",
+      "pays": "Allemagne",
+      "date": "2026-05-17",
+      "platform": null
+    },
+    {
+      "event": "Running Festival in Mozart City",
+      "benchmark_name": "Running Festival in Mozart City",
+      "ville": "Salzbourg",
+      "pays": "Autriche",
+      "date": "2026-05-17",
+      "platform": null
+    },
+    {
+      "event": "15Km de Woluwe",
+      "benchmark_name": "15Km de Woluwe",
+      "ville": "Woluwe",
+      "pays": "Belgique",
+      "date": "2026-05-17",
+      "platform": null
+    },
+    {
+      "event": "Run Festival Tossa de Mar",
+      "benchmark_name": "Run Festival Tossa de Mar",
+      "ville": "Tossa de Mar",
+      "pays": "Espagne ",
+      "date": "2026-05-17",
+      "platform": null
+    },
+    {
+      "event": "Maratonina del Mare",
+      "benchmark_name": "Maratonina del Mare",
+      "ville": "Pescara",
+      "pays": "Italie",
+      "date": "2026-05-17",
+      "platform": null
+    },
+    {
+      "event": "Women's Race",
+      "benchmark_name": "Women's Race",
+      "ville": "Beyrouth",
+      "pays": "Liban",
+      "date": "2026-05-17",
+      "platform": null
+    },
+    {
+      "event": "Corrida FPF",
+      "benchmark_name": "Corrida FPF",
+      "ville": "Lisbonne",
+      "pays": "Portugal",
+      "date": "2026-05-17",
+      "platform": null
+    },
+    {
+      "event": "Barry Island 10K",
+      "benchmark_name": "Barry Island 10K",
+      "ville": "Barry Island",
+      "pays": "Royaume-Uni",
+      "date": "2026-05-17",
+      "platform": null
+    },
+    {
+      "event": "Fukushima City Half Marathon",
+      "benchmark_name": "Fukushima City Half Marathon",
+      "ville": "Fukushima",
+      "pays": "Japon",
+      "date": "2026-05-17",
+      "platform": null
+    },
+    {
+      "event": "Bangkok Double bridge Half Marathon for Red Cross",
+      "benchmark_name": "Bangkok Double bridge Half Marathon for Red Cross",
+      "ville": "Bangkok ",
+      "pays": "Thailande",
+      "date": "2026-05-17",
+      "platform": null
+    },
+    {
+      "event": "Bank Bjb Bandoeng 10K",
+      "benchmark_name": "Bank Bjb Bandoeng 10K",
+      "ville": "Bandung",
+      "pays": "Indonésie ",
+      "date": "2026-05-17",
+      "platform": null
+    },
+    {
+      "event": "Manchester Half Marathon",
+      "benchmark_name": "Chester Half marathon",
+      "ville": "Chester",
+      "pays": "Royaume-Uni",
+      "date": "2026-05-18",
+      "platform": null
+    },
+    {
+      "event": "Stadsloop Gent",
+      "benchmark_name": "Stadsloop Gent",
+      "ville": "Ghent",
+      "pays": "Belgique",
+      "date": "2026-05-18",
+      "platform": null
+    },
+    {
+      "event": "Maastricht Marathon",
+      "benchmark_name": "Maastricht Marathon",
+      "ville": "Maastricht",
+      "pays": "Pays-Bas",
+      "date": "2026-05-21",
+      "platform": null
+    },
+    {
+      "event": "Göteborgsvarvet ",
+      "benchmark_name": "GöteborgsVarvet",
+      "ville": "Goteborg",
+      "pays": "Suède",
+      "date": "2026-05-23",
+      "platform": null
+    },
+    {
+      "event": "Odysséa Chambéry",
+      "benchmark_name": "Odysséa Chambéry",
+      "ville": "Chambéry",
+      "pays": "France",
+      "date": "2026-05-23",
+      "platform": null
+    },
+    {
+      "event": "Tamarack Ottawa Race week end",
+      "benchmark_name": "Tamarack Ottawa Race week end",
+      "ville": "Ottawa",
+      "pays": "Canada",
+      "date": "2026-05-24",
+      "platform": null
+    },
+    {
+      "event": "Maraton Lima 42K",
+      "benchmark_name": "Maraton Lima 42K",
+      "ville": "Lima ",
+      "pays": "Pérou",
+      "date": "2026-05-24",
+      "platform": null
+    },
+    {
+      "event": "Servus Calgary Marathon",
+      "benchmark_name": "Servus Calgary Marathon",
+      "ville": "Calgary",
+      "pays": "Canada",
+      "date": "2026-05-24",
+      "platform": null
+    },
+    {
+      "event": "Calgary Marathon",
+      "benchmark_name": "Calgary Marathon",
+      "ville": "Calgary",
+      "pays": "Canada",
+      "date": "2026-05-24",
+      "platform": null
+    },
+    {
+      "event": "Edimburgh Marathon Festival",
+      "benchmark_name": "Edimburgh Marathon Festival",
+      "ville": "Edimbourg",
+      "pays": "Royaume-Uni",
+      "date": "2026-05-24",
+      "platform": null
+    },
+    {
+      "event": "La course du château de Vincennes",
+      "benchmark_name": "La course du château de Vincennes",
+      "ville": "Vincennes",
+      "pays": "France",
+      "date": "2026-05-24",
+      "platform": null
+    },
+    {
+      "event": "Freedom Bengaluru Half Marathon",
+      "benchmark_name": "Freedom Bengaluru Half Marathon",
+      "ville": "Bengalore",
+      "pays": "Inde",
+      "date": "2026-05-24",
+      "platform": null
+    },
+    {
+      "event": "Tokyo East Run 30K",
+      "benchmark_name": "Tokyo East Run 30K",
+      "ville": "Tokyo",
+      "pays": "Japon",
+      "date": "2026-05-24",
+      "platform": null
+    },
+    {
+      "event": "Half Marathon Do Douro Vinhateiro",
+      "benchmark_name": "Half Marathon Do Douro Vinhateiro",
+      "ville": "Peso da Regua",
+      "pays": "Portugal",
+      "date": "2026-05-24",
+      "platform": null
+    },
+    {
+      "event": "Mattoni Running Festival Ceské Budejovice",
+      "benchmark_name": "Mattoni Running Festival Ceské Budejovice",
+      "ville": "Ceske Budejovice",
+      "pays": "République Tchèque ",
+      "date": "2026-05-30",
+      "platform": null
+    },
+    {
+      "event": "20KM de Bruxelles",
+      "benchmark_name": "20KM de Bruxelles",
+      "ville": "Bruxelles",
+      "pays": "Belgique",
+      "date": "2026-05-31",
+      "platform": null
+    },
+    {
+      "event": "Osterreichischer Frauenlauf",
+      "benchmark_name": "Osterreichischer Frauenlauf",
+      "ville": "Vienne",
+      "pays": "Autriche",
+      "date": "2026-05-31",
+      "platform": null
+    },
+    {
+      "event": "Utrecht Marathon",
+      "benchmark_name": "Utrecht Marathon",
+      "ville": "Utrecht",
+      "pays": "Pays-Bas",
+      "date": "2026-05-31",
+      "platform": null
+    },
+    {
+      "event": "Hull 10K",
+      "benchmark_name": "Hull 10K",
+      "ville": "Hull",
+      "pays": "Royaume-Uni",
+      "date": "2026-05-31",
+      "platform": null
+    },
+    {
+      "event": "10km du Neuf",
+      "benchmark_name": "10km du Neuf",
+      "ville": "Paris",
+      "pays": "France",
+      "date": "2026-05-31",
+      "platform": null
+    },
+    {
+      "event": "Ingelheimer Halbe",
+      "benchmark_name": "Ingelheimer Halbe",
+      "ville": "Ingelheim",
+      "pays": "Allemagne",
+      "date": "2026-05-31",
+      "platform": null
+    },
+    {
+      "event": "Drübber Lauf",
+      "benchmark_name": "Drübber Lauf",
+      "ville": "Drübber",
+      "pays": "Allemagne",
+      "date": "2026-06-03",
+      "platform": null
+    },
+    {
+      "event": "Bjorn Borg Helsinki Marathon",
+      "benchmark_name": "Bjorn Borg Helsinki Marathon",
+      "ville": "Helsinki",
+      "pays": "Finlande",
+      "date": "2026-06-06",
+      "platform": null
+    },
+    {
+      "event": "Huy Night Run",
+      "benchmark_name": "Huy Night Run",
+      "ville": "Huy",
+      "pays": "Belgique",
+      "date": "2026-06-06",
+      "platform": null
+    },
+    {
+      "event": "Söder Runt 10K",
+      "benchmark_name": "Söder Runt 10K",
+      "ville": "Stockholm ",
+      "pays": "Suède",
+      "date": "2026-06-06",
+      "platform": null
+    },
+    {
+      "event": "Norske Fjell Marathon",
+      "benchmark_name": "Norske Fjell Marathon",
+      "ville": "Beitostolen",
+      "pays": "Norvège",
+      "date": "2026-06-06",
+      "platform": null
+    },
+    {
+      "event": "Maratona Do Rio",
+      "benchmark_name": "Maratona Do Rio",
+      "ville": "Rio de Janeiro ",
+      "pays": "Brésil",
+      "date": "2026-06-07",
+      "platform": null
+    },
+    {
+      "event": "Marathon de la Liberté - Normandy Running Festival",
+      "benchmark_name": "Marathon de la Liberté - Normandy Running Festival",
+      "ville": "Caen",
+      "pays": "France",
+      "date": "2026-06-07",
+      "platform": null
+    },
+    {
+      "event": "Nairobi City Marathon",
+      "benchmark_name": "Nairobi City Marathon",
+      "ville": "Nairobi",
+      "pays": "Kenya",
+      "date": "2026-06-07",
+      "platform": null
+    },
+    {
+      "event": "EVA Air Brisbane Marathon Festival",
+      "benchmark_name": "Brisbane marathon festival",
+      "ville": "Brisbane",
+      "pays": "Australie",
+      "date": "2026-06-07",
+      "platform": null
+    },
+    {
+      "event": "Schweizer Frauenlauf Bern",
+      "benchmark_name": "Schweizer Frauenlauf Bern",
+      "ville": "Berne",
+      "pays": "Suisse",
+      "date": "2026-06-07",
+      "platform": null
+    },
+    {
+      "event": "Pro Potsdam Schlösserlauf",
+      "benchmark_name": "Pro Potsdam Schlösserlauf",
+      "ville": "Berlin",
+      "pays": "Allemagne",
+      "date": "2026-06-07",
+      "platform": null
+    },
+    {
+      "event": "Salzkotten Marathon",
+      "benchmark_name": "Salzkotten Marathon",
+      "ville": "Salkotten",
+      "pays": "Allemagne",
+      "date": "2026-06-07",
+      "platform": null
+    },
+    {
+      "event": "Aamchi Mumbai Half Marathon",
+      "benchmark_name": "Aamchi Mumbai Half Marathon",
+      "ville": "Mumbai",
+      "pays": "Inde",
+      "date": "2026-06-07",
+      "platform": null
+    },
+    {
+      "event": "Courir pour elles",
+      "benchmark_name": "Courir pour elles",
+      "ville": "Lyon",
+      "pays": "France",
+      "date": "2026-06-07",
+      "platform": null
+    },
+    {
+      "event": "Brest Running Tour",
+      "benchmark_name": "Brest Running Tour",
+      "ville": "Brest",
+      "pays": "France",
+      "date": "2026-06-07",
+      "platform": null
+    },
+    {
+      "event": "Corrida de Santo Antonio",
+      "benchmark_name": "Corrida de Santo Antonio",
+      "ville": "Lisbonne",
+      "pays": "Portugal",
+      "date": "2026-06-08",
+      "platform": null
+    },
+    {
+      "event": "Mattoni Running Festival Olomouc",
+      "benchmark_name": "Mattoni Running Festival Olomouc",
+      "ville": "Olomouc",
+      "pays": "République Tchèque ",
+      "date": "2026-06-13",
+      "platform": null
+    },
+    {
+      "event": "Halve Marathon Zwolle",
+      "benchmark_name": "Halve Marathon Zwolle",
+      "ville": "Zwolle",
+      "pays": "Pays-Bas",
+      "date": "2026-06-13",
+      "platform": null
+    },
+    {
+      "event": "EVL Halbmarathon Leverkusen",
+      "benchmark_name": "EVL Halbmarathon Leverkusen",
+      "ville": "Leverkusen",
+      "pays": "Allemagne",
+      "date": "2026-06-14",
+      "platform": null
+    },
+    {
+      "event": "Sparkassen Metropolmarathon",
+      "benchmark_name": "Sparkassen Metropolmarathon",
+      "ville": "Fürth",
+      "pays": "Allemagne",
+      "date": "2026-06-14",
+      "platform": null
+    },
+    {
+      "event": "Phuket marathon",
+      "benchmark_name": "Phuket marathon",
+      "ville": "Phuket",
+      "pays": "Thailande",
+      "date": "2026-06-14",
+      "platform": null
+    },
+    {
+      "event": "Odyssea Dijon",
+      "benchmark_name": "Odyssea Dijon",
+      "ville": "Dijon",
+      "pays": "France",
+      "date": "2026-06-14",
+      "platform": null
+    },
+    {
+      "event": "Noida Warrior Run",
+      "benchmark_name": "Noida Warrior Run",
+      "ville": "Noida",
+      "pays": "Inde",
+      "date": "2026-06-17",
+      "platform": null
+    },
+    {
+      "event": "SportScheck Run Hamburg",
+      "benchmark_name": "SportScheck Run Hamburg",
+      "ville": "Hambourg",
+      "pays": "Allemagne",
+      "date": "2026-06-19",
+      "platform": null
+    },
+    {
+      "event": "Midnight sun Marathon",
+      "benchmark_name": "Midnight sun Marathon",
+      "ville": "Tromso",
+      "pays": "Norvège",
+      "date": "2026-06-20",
+      "platform": null
+    },
+    {
+      "event": "Wiesbaden Marathon",
+      "benchmark_name": "Wiesbaden Marathon",
+      "ville": "Wiesbaden",
+      "pays": "Allemagne",
+      "date": "2026-06-20",
+      "platform": null
+    },
+    {
+      "event": "Ekiden du Stade Français",
+      "benchmark_name": "Ekiden du Stade Français",
+      "ville": "Paris",
+      "pays": "France",
+      "date": "2026-06-21",
+      "platform": null
+    },
+    {
+      "event": "Marathon du vignoble d’Alsace",
+      "benchmark_name": "Marathon du vignoble d’Alsace",
+      "ville": "Molsheim",
+      "pays": "France",
+      "date": "2026-06-21",
+      "platform": null
+    },
+    {
+      "event": "Waterford Viking Marathon",
+      "benchmark_name": "Waterford Viking Marathon",
+      "ville": "Waterford",
+      "pays": "Irlande",
+      "date": "2026-06-21",
+      "platform": null
+    },
+    {
+      "event": "MS 10K",
+      "benchmark_name": "MS 10K",
+      "ville": "Mumbai",
+      "pays": "Inde",
+      "date": "2026-06-21",
+      "platform": null
+    },
+    {
+      "event": "San Francisco Marathon",
+      "benchmark_name": "San Francisco Marathon",
+      "ville": "San Franciso",
+      "pays": "Etats-Unis",
+      "date": "2026-06-26",
+      "platform": null
+    },
+    {
+      "event": "Marathon du Cap d'Agde",
+      "benchmark_name": "Marathon du Cap d'Agde",
+      "ville": "Montpellier",
+      "pays": "France",
+      "date": "2026-06-26",
+      "platform": null
+    },
+    {
+      "event": "Decathlon Night Run Budapest",
+      "benchmark_name": "Decathlon Night Run Budapest",
+      "ville": "Budapest",
+      "pays": "Hongrie",
+      "date": "2026-06-27",
+      "platform": null
+    },
+    {
+      "event": "Remmers Hasetal Marathon",
+      "benchmark_name": "Remmers Hasetal Marathon",
+      "ville": "Löningen",
+      "pays": "Allemagne",
+      "date": "2026-06-27",
+      "platform": null
+    },
+    {
+      "event": "Hamburg Halbmarathon",
+      "benchmark_name": "Hamburg Halbmarathon",
+      "ville": "Francfort",
+      "pays": "Allemagne",
+      "date": "2026-06-28",
+      "platform": null
+    },
+    {
+      "event": "Wellington Marathon",
+      "benchmark_name": "Wellington Marathon",
+      "ville": "Wellington",
+      "pays": "Nouvelle-Zélande",
+      "date": "2026-06-28",
+      "platform": null
+    },
+    {
+      "event": "Thane Monsoon 15K",
+      "benchmark_name": "Thane Monsoon 15K",
+      "ville": "Thane",
+      "pays": "Inde",
+      "date": "2026-06-28",
+      "platform": null
+    },
+    {
+      "event": "Marathon du Finistère - La Transléonarde",
+      "benchmark_name": "Marathon du Finistère - La Transléonarde",
+      "ville": "Brest",
+      "pays": "France",
+      "date": "2026-06-28",
+      "platform": null
+    },
+    {
+      "event": "Beneva Vancouver Half Marathon",
+      "benchmark_name": "Beneva Vancouver Half Marathon",
+      "ville": "Vancouver ",
+      "pays": "Canada",
+      "date": "2026-06-28",
+      "platform": null
+    },
+    {
+      "event": "Marathon du Vercors",
+      "benchmark_name": "Marathon du Vercors",
+      "ville": "Villard-de-Lans",
+      "pays": "France",
+      "date": "2026-06-28",
+      "platform": null
+    },
+    {
+      "event": "Marathon Calais XXL",
+      "benchmark_name": "Marathon Calais XXL",
+      "ville": "Calais ",
+      "pays": "France",
+      "date": "2026-06-28",
+      "platform": null
+    },
+    {
+      "event": "La Corrida Crédit Agricole Toulouse",
+      "benchmark_name": "La Corrida Crédit Agricole Toulouse",
+      "ville": "Toulouse",
+      "pays": "France",
+      "date": "2026-07-03",
+      "platform": null
+    },
+    {
+      "event": "Gold Coast Marathon",
+      "benchmark_name": "Goald Coast Marathon",
+      "ville": "Gold Coast",
+      "pays": "Australie",
+      "date": "2026-07-05",
+      "platform": null
+    },
+    {
+      "event": "Run set & Match",
+      "benchmark_name": "Run set & Match",
+      "ville": "Paris",
+      "pays": "France",
+      "date": "2026-07-05",
+      "platform": null
+    },
+    {
+      "event": "Mumbai Monsoon Marathon",
+      "benchmark_name": "Mumbai Monsoon Marathon",
+      "ville": "Mumbai",
+      "pays": "Inde",
+      "date": "2026-07-05",
+      "platform": null
+    },
+    {
+      "event": "RunThrough Australia",
+      "benchmark_name": "RunThrough Australia",
+      "ville": "Sydney",
+      "pays": "Australie",
+      "date": "2026-07-05",
+      "platform": null
+    },
+    {
+      "event": "Mekong Delta Marathon Hau Giang",
+      "benchmark_name": "Mekong Delta Marathon Hau Giang",
+      "ville": "Can Tho",
+      "pays": "Vietnam",
+      "date": "2026-07-05",
+      "platform": null
+    },
+    {
+      "event": "Bengaluru 10K Challenge",
+      "benchmark_name": "Bengaluru 10K Challenge",
+      "ville": "Bengalore",
+      "pays": "Inde",
+      "date": "2026-07-06",
+      "platform": null
+    },
+    {
+      "event": "J.P Morgan City Jogging",
+      "benchmark_name": "J.P Morgan City Jogging",
+      "ville": "Luxembourg",
+      "pays": "Luxembourg",
+      "date": "2026-07-06",
+      "platform": null
+    },
+    {
+      "event": "Vitality London 10,000",
+      "benchmark_name": "Vitality London 10,000",
+      "ville": "Londres",
+      "pays": "Royaume-Uni",
+      "date": "2026-07-12",
+      "platform": null
+    },
+    {
+      "event": "Saucony London 10K",
+      "benchmark_name": "Saucony Londres 10K",
+      "ville": "Londres",
+      "pays": "Royaume-Uni",
+      "date": "2026-07-12",
+      "platform": null
+    },
+    {
+      "event": "Cairns Marathon Festival",
+      "benchmark_name": "Cairns Marathon Festival",
+      "ville": "Cairns",
+      "pays": "Australie",
+      "date": "2026-07-12",
+      "platform": null
+    },
+    {
+      "event": "Ciderthon",
+      "benchmark_name": "Ciderthon",
+      "ville": "Henley",
+      "pays": "Royaume-Uni",
+      "date": "2026-07-18",
+      "platform": null
+    },
+    {
+      "event": "Pattaya Marathon",
+      "benchmark_name": "Pattaya Marathon",
+      "ville": "Pattaya",
+      "pays": "Thailande",
+      "date": "2026-07-20",
+      "platform": null
+    },
+    {
+      "event": "Bix 7",
+      "benchmark_name": "Bix 7",
+      "ville": "Davenport",
+      "pays": "Etats-Unis",
+      "date": "2026-07-25",
+      "platform": null
+    },
+    {
+      "event": "The flames Race",
+      "benchmark_name": "The flames Race",
+      "ville": "Marseille ",
+      "pays": "France",
+      "date": "2026-07-25",
+      "platform": null
+    },
+    {
+      "event": "Media Maraton de Bogota",
+      "benchmark_name": "Media maraton de Bogota",
+      "ville": "Bogota",
+      "pays": "Colombie",
+      "date": "2026-07-26",
+      "platform": null
+    },
+    {
+      "event": "Napa To Sonama",
+      "benchmark_name": "Napa To Sonama",
+      "ville": "Sonoma ",
+      "pays": "Etats-Unis",
+      "date": "2026-07-26",
+      "platform": null
+    },
+    {
+      "event": "Kargil Vijay Diwas Half Marathon",
+      "benchmark_name": "Kargil Vijay Diwas Half Marathon",
+      "ville": "New Delhi",
+      "pays": "Inde",
+      "date": "2026-07-26",
+      "platform": null
+    },
+    {
+      "event": "Adidas Runners city night",
+      "benchmark_name": "Adidas Runners city night",
+      "ville": "Berlin",
+      "pays": "Allemagne",
+      "date": "2026-08-01",
+      "platform": null
+    },
+    {
+      "event": "marathon halb marathon rostocker",
+      "benchmark_name": "marathon halb marathon rostocker",
+      "ville": "Rostock",
+      "pays": "Allemagne",
+      "date": "2026-08-01",
+      "platform": null
+    },
+    {
+      "event": "Sunshine coast Marathon Festival",
+      "benchmark_name": "Sunshine coast Marathon Festival",
+      "ville": "Sunshine coast",
+      "pays": "Australie",
+      "date": "2026-08-02",
+      "platform": null
+    },
+    {
+      "event": "Matheran Hillf Half Marathon",
+      "benchmark_name": "Matheran Hillf Half Marathon",
+      "ville": "Mumbai",
+      "pays": "Inde",
+      "date": "2026-08-02",
+      "platform": null
+    },
+    {
+      "event": "Pune Full Marathon",
+      "benchmark_name": "Pune Full Marathon",
+      "ville": "Pune",
+      "pays": "Inde",
+      "date": "2026-08-03",
+      "platform": null
+    },
+    {
+      "event": "City2Surf",
+      "benchmark_name": "City2Surf",
+      "ville": "Sydney",
+      "pays": "Australie",
+      "date": "2026-08-09",
+      "platform": null
+    },
+    {
+      "event": "Demi-Marathon de Mont-Tremblant",
+      "benchmark_name": "Demi-Marathon de Mont-Tremblant",
+      "ville": "Mont-Tremblant",
+      "pays": "Canada",
+      "date": "2026-08-09",
+      "platform": null
+    },
+    {
+      "event": "Meia Maratona Internacional do Rio de Janeiro",
+      "benchmark_name": "Meia Maratona internacional Do Rio de Janeiro",
+      "ville": "Rio de Janeiro ",
+      "pays": "Brésil",
+      "date": "2026-08-16",
+      "platform": null
+    },
+    {
+      "event": "Falmouth Road Race",
+      "benchmark_name": "Falmouth Road Race",
+      "ville": "Flamouth",
+      "pays": "Etats-Unis",
+      "date": "2026-08-16",
+      "platform": null
+    },
+    {
+      "event": "Mumbai Half Marathon",
+      "benchmark_name": "Mumbai Half Marathon",
+      "ville": "Mumbai",
+      "pays": "Inde",
+      "date": "2026-08-17",
+      "platform": null
+    },
+    {
+      "event": "Medio Maraton de Buenos Aires",
+      "benchmark_name": "Medio Maraton de Buenos Aires",
+      "ville": "Buenos Aires",
+      "pays": "Argentine",
+      "date": "2026-08-23",
+      "platform": null
+    },
+    {
+      "event": "Media Maraton de Lima",
+      "benchmark_name": "Media Maraton de Lima",
+      "ville": "Lima ",
+      "pays": "Pérou",
+      "date": "2026-08-23",
+      "platform": null
+    },
+    {
+      "event": "Jotiba Dakkan Hill Half Marathon",
+      "benchmark_name": "Jotiba Dakkan Hill Half Marathon",
+      "ville": "Kolhapur",
+      "pays": "Inde",
+      "date": "2026-08-23",
+      "platform": null
+    },
+    {
+      "event": "Jonkoping Marathon",
+      "benchmark_name": "Jonkoping Marathon",
+      "ville": "Jonkoping",
+      "pays": "Suède",
+      "date": "2026-08-29",
+      "platform": null
+    },
+    {
+      "event": "Stavanger Marathon",
+      "benchmark_name": "Stavanger Marathon",
+      "ville": "Stavanger",
+      "pays": "Norvège",
+      "date": "2026-08-29",
+      "platform": null
+    },
+    {
+      "event": "Hokkaido Marathon",
+      "benchmark_name": "Hokkaido Marathon",
+      "ville": "Sapporo",
+      "pays": "Japon",
+      "date": "2026-08-30",
+      "platform": null
+    },
+    {
+      "event": "NMDC Hyderabad Marathon",
+      "benchmark_name": "NMDC Hyderabad Marathon",
+      "ville": "Hyderabad",
+      "pays": "Inde",
+      "date": "2026-08-30",
+      "platform": null
+    },
+    {
+      "event": "Eskisehir Kurtulus Half Marathon",
+      "benchmark_name": "Eskisehir Kurtulus Half Marathon",
+      "ville": "Eskisehir",
+      "pays": "Turquie",
+      "date": "2026-08-30",
+      "platform": null
+    },
+    {
+      "event": "Hofmul-Volksfest Halbmarathon",
+      "benchmark_name": "Hofmul-Volksfest Halbmarathon",
+      "ville": "Eischatt",
+      "pays": "Allemagne",
+      "date": "2026-08-30",
+      "platform": null
+    },
+    {
+      "event": "10K Night Race Prague",
+      "benchmark_name": "10K Night Race Prague",
+      "ville": "Prague",
+      "pays": "République Tchèque ",
+      "date": "2026-09-05",
+      "platform": null
+    },
+    {
+      "event": "Marcia Longa",
+      "benchmark_name": "Marcia Longa",
+      "ville": "Moena",
+      "pays": "Italie",
+      "date": "2026-09-05",
+      "platform": null
+    },
+    {
+      "event": "Women's 5K Run Prague",
+      "benchmark_name": "Women's 5K Run Prague",
+      "ville": "Prague",
+      "pays": "République Tchèque ",
+      "date": "2026-09-05",
+      "platform": null
+    },
+    {
+      "event": "Sudstroum escher kulturlaf",
+      "benchmark_name": "Sudstroum escher kulturlaf",
+      "ville": "Esch-sur-Alzette",
+      "pays": "Luxembourg",
+      "date": "2026-09-05",
+      "platform": null
+    },
+    {
+      "event": "DrammenDrammen Halv Maraton",
+      "benchmark_name": "DrammenDrammen Halv Maraton",
+      "ville": "Drammen",
+      "pays": "Norvège",
+      "date": "2026-09-05",
+      "platform": null
+    },
+    {
+      "event": "Maraton Medellin",
+      "benchmark_name": "Maraton Medellin",
+      "ville": "Medelin",
+      "pays": "Colombie",
+      "date": "2026-09-06",
+      "platform": null
+    },
+    {
+      "event": "The Big Half",
+      "benchmark_name": "The big Half",
+      "ville": "Londres",
+      "pays": "Royaume-Uni",
+      "date": "2026-09-06",
+      "platform": null
+    },
+    {
+      "event": "Wizz Air Budapest Half marathon",
+      "benchmark_name": "Wizz Air Budapest Half marathon",
+      "ville": "Budapest",
+      "pays": "Hongrie",
+      "date": "2026-09-06",
+      "platform": null
+    },
+    {
+      "event": "Trondheim Marathon",
+      "benchmark_name": "Trondheim Marathon",
+      "ville": "Trondheim",
+      "pays": "Norvège",
+      "date": "2026-09-06",
+      "platform": null
+    },
+    {
+      "event": "Marathon des Chateaux du Médoc",
+      "benchmark_name": "Marathon des Chateaux du Médoc",
+      "ville": "Pauillac",
+      "pays": "France",
+      "date": "2026-09-06",
+      "platform": null
+    },
+    {
+      "event": "10km du Trocadéro",
+      "benchmark_name": "10km du Trocadéro",
+      "ville": "Paris",
+      "pays": "France",
+      "date": "2026-09-06",
+      "platform": null
+    },
+    {
+      "event": "Fulda Marathon",
+      "benchmark_name": "Fulda Marathon",
+      "ville": "Fulda",
+      "pays": "Allemagne",
+      "date": "2026-09-06",
+      "platform": null
+    },
+    {
+      "event": "JBG Satara Hill Half Marathon",
+      "benchmark_name": "JBG Satara Hill Half Marathon",
+      "ville": "Satara",
+      "pays": "Inde",
+      "date": "2026-09-06",
+      "platform": null
+    },
+    {
+      "event": "Kodagu Monsoon Half Marathon",
+      "benchmark_name": "Kodagu Monsoon Half Marathon",
+      "ville": "Kodagu",
+      "pays": "Inde",
+      "date": "2026-09-07",
+      "platform": null
+    },
+    {
+      "event": "SportScheck Run Köln",
+      "benchmark_name": "SportScheck Run Köln",
+      "ville": "Cologne",
+      "pays": "Allemagne",
+      "date": "2026-09-11",
+      "platform": null
+    },
+    {
+      "event": "Transurban Bridge to Brisbane",
+      "benchmark_name": "Transurban Bridge to Brisbane",
+      "ville": "Brisbane",
+      "pays": "Australie",
+      "date": "2026-09-13",
+      "platform": null
+    },
+    {
+      "event": "Swedbank Tallinna maraton",
+      "benchmark_name": "Swedbank Tallinna maraton",
+      "ville": "Tallinn",
+      "pays": "Estonie",
+      "date": "2026-09-13",
+      "platform": null
+    },
+    {
+      "event": "Bangsaen10",
+      "benchmark_name": "Bangsaen 10",
+      "ville": "Bang Saen",
+      "pays": "Thailande",
+      "date": "2026-09-13",
+      "platform": null
+    },
+    {
+      "event": "Course Eiffage du Viaduc de Millau",
+      "benchmark_name": "Course Eiffage du Viaduc de Millau",
+      "ville": "Millau",
+      "pays": "France",
+      "date": "2026-09-13",
+      "platform": null
+    },
+    {
+      "event": "Santa Monica Classic",
+      "benchmark_name": "Santa Monica Classic",
+      "ville": "Santa Monica",
+      "pays": "Etats-Unis",
+      "date": "2026-09-13",
+      "platform": null
+    },
+    {
+      "event": "Lauf Für Mehir Zeit",
+      "benchmark_name": "Lauf Für Mehir Zeit",
+      "ville": "Francfort",
+      "pays": "Allemagne",
+      "date": "2026-09-13",
+      "platform": null
+    },
+    {
+      "event": "Parma Mezza maratona",
+      "benchmark_name": "Parma Mezza maratona",
+      "ville": "Parme",
+      "pays": "Italie",
+      "date": "2026-09-13",
+      "platform": null
+    },
+    {
+      "event": "The Amazing Northampton run",
+      "benchmark_name": "The Amazing Northampton run",
+      "ville": "Northampton",
+      "pays": "Royaume-Uni",
+      "date": "2026-09-13",
+      "platform": null
+    },
+    {
+      "event": "SWB Marathon de Brême",
+      "benchmark_name": "SWB Marathon de Brême",
+      "ville": "Breme ",
+      "pays": "Allemagne",
+      "date": "2026-09-13",
+      "platform": null
+    },
+    {
+      "event": "Odyssea Brest",
+      "benchmark_name": "Odyssea Brest",
+      "ville": "Brest",
+      "pays": "France",
+      "date": "2026-09-13",
+      "platform": null
+    },
+    {
+      "event": "Sarajevo Half Marathon",
+      "benchmark_name": "Sarajevo Half Marathon",
+      "ville": "Sarajevo ",
+      "pays": "Bosnie-Herzégovine ",
+      "date": "2026-09-13",
+      "platform": null
+    },
+    {
+      "event": "La Parisienne",
+      "benchmark_name": "La Parisienne",
+      "ville": "Paris",
+      "pays": "France",
+      "date": "2026-09-14",
+      "platform": null
+    },
+    {
+      "event": "Vilniaus Maratonas",
+      "benchmark_name": "Vilniaus Maratonas",
+      "ville": "Vilnius",
+      "pays": "Lithuanie",
+      "date": "2026-09-14",
+      "platform": null
+    },
+    {
+      "event": "Rimi Riga Marathon",
+      "benchmark_name": "Rimi Riga Marathon",
+      "ville": "Riga",
+      "pays": "Lettonie",
+      "date": "2026-09-17",
+      "platform": null
+    },
+    {
+      "event": "SportScheck Run Hannovre",
+      "benchmark_name": "SportScheck Run Hannovre",
+      "ville": "Hanovre",
+      "pays": "Allemagne",
+      "date": "2026-09-18",
+      "platform": null
+    },
+    {
+      "event": "Nieuwpoort Marathon",
+      "benchmark_name": "Nieuwpoort Marathon",
+      "ville": "Nieuport",
+      "pays": "Belgique",
+      "date": "2026-09-18",
+      "platform": null
+    },
+    {
+      "event": "Greifenseelauf",
+      "benchmark_name": "Greifenseelauf",
+      "ville": "Greifensee",
+      "pays": "Suisse",
+      "date": "2026-09-19",
+      "platform": null
+    },
+    {
+      "event": "Mattoni Running Festival Usti Nad Labem",
+      "benchmark_name": "Mattoni Running Festival Usti Nad Labem",
+      "ville": "Usti nad Labem ",
+      "pays": "République Tchèque ",
+      "date": "2026-09-19",
+      "platform": null
+    },
+    {
+      "event": "Bodensee Marathon",
+      "benchmark_name": "Bodensee Marathon",
+      "ville": "Bodensee",
+      "pays": "Allemagne",
+      "date": "2026-09-19",
+      "platform": null
+    },
+    {
+      "event": "Pre-season Run",
+      "benchmark_name": "Pre-season Run",
+      "ville": "Manama",
+      "pays": "Bahreïn",
+      "date": "2026-09-19",
+      "platform": null
+    },
+    {
+      "event": "Thimphu Marathon",
+      "benchmark_name": "Thimphu Marathon",
+      "ville": "Thimphu",
+      "pays": "Bhouthan",
+      "date": "2026-09-19",
+      "platform": null
+    },
+    {
+      "event": "La Nocturne de Marseille",
+      "benchmark_name": "La Nocturne de Marseille",
+      "ville": "Marseille ",
+      "pays": "France",
+      "date": "2026-09-19",
+      "platform": null
+    },
+    {
+      "event": "Wiesbaden Marathon",
+      "benchmark_name": "Baden Marathon",
+      "ville": "Karlsruhe",
+      "pays": "Allemagne",
+      "date": "2026-09-20",
+      "platform": null
+    },
+    {
+      "event": "Maraton Leon",
+      "benchmark_name": "Maraton Leon",
+      "ville": "Leon",
+      "pays": "Espagne ",
+      "date": "2026-09-20",
+      "platform": null
+    },
+    {
+      "event": "Halbmaratho Altötting",
+      "benchmark_name": "Halbmaratho Altötting",
+      "ville": "Altötting",
+      "pays": "Allemagne",
+      "date": "2026-09-20",
+      "platform": null
+    },
+    {
+      "event": "Les mulhousiennes",
+      "benchmark_name": "Les mulhousiennes",
+      "ville": "Mulhouse ",
+      "pays": "France",
+      "date": "2026-09-20",
+      "platform": null
+    },
+    {
+      "event": "Saucony Shoreditch Half",
+      "benchmark_name": "Saucony Shoreditch Half",
+      "ville": "Londres",
+      "pays": "Royaume-Uni",
+      "date": "2026-09-20",
+      "platform": null
+    },
+    {
+      "event": "Semi de Marcq-en-Baroeul",
+      "benchmark_name": "Semi de Marcq-en-Baroeul",
+      "ville": "Marcq-en-Baroeul",
+      "pays": "France",
+      "date": "2026-09-20",
+      "platform": null
+    },
+    {
+      "event": "Bengaluru Marathon",
+      "benchmark_name": "Bengaluru Marathon",
+      "ville": "Bengalore",
+      "pays": "Inde",
+      "date": "2026-09-21",
+      "platform": null
+    },
+    {
+      "event": "Münster Marathon",
+      "benchmark_name": "Münster Marathon",
+      "ville": "Münster",
+      "pays": "Allemagne",
+      "date": "2026-09-23",
+      "platform": null
+    },
+    {
+      "event": "Binter Night Run Zaragoza",
+      "benchmark_name": "Binter Night Run Zaragoza",
+      "ville": "Saragosse",
+      "pays": "Espagne",
+      "date": "2026-09-26",
+      "platform": null
+    },
+    {
+      "event": "Bacala Night",
+      "benchmark_name": "Bacala Night",
+      "ville": "Bordeaux",
+      "pays": "France",
+      "date": "2026-09-26",
+      "platform": null
+    },
+    {
+      "event": "Running Loire Valley",
+      "benchmark_name": "Running Loire Valley",
+      "ville": "Tours",
+      "pays": "France",
+      "date": "2026-09-27",
+      "platform": null
+    },
+    {
+      "event": "Almaty Marathon",
+      "benchmark_name": "Almaty Marathon",
+      "ville": "Almaty",
+      "pays": "Kazakhstan",
+      "date": "2026-09-27",
+      "platform": null
+    },
+    {
+      "event": "Tjejmilen",
+      "benchmark_name": "Tjejmilen",
+      "ville": "Stockholm ",
+      "pays": "Suède",
+      "date": "2026-09-27",
+      "platform": null
+    },
+    {
+      "event": "Marathon Bière Flandre Festival",
+      "benchmark_name": "Marathon Bière Flandre Festival",
+      "ville": "Bergues",
+      "pays": "France",
+      "date": "2026-09-27",
+      "platform": null
+    },
+    {
+      "event": "Baxters Marathon du Loch Ness",
+      "benchmark_name": "Baxters Marathon du Loch Ness",
+      "ville": "Loch",
+      "pays": "Royaume-Uni",
+      "date": "2026-09-27",
+      "platform": null
+    },
+    {
+      "event": "les Boucles dunkerquoises",
+      "benchmark_name": "les Boucles dunkerquoises",
+      "ville": "Dunkerque",
+      "pays": "France",
+      "date": "2026-09-27",
+      "platform": null
+    },
+    {
+      "event": "Trento Running Festival",
+      "benchmark_name": "Trento Running Festival",
+      "ville": "Trente",
+      "pays": "Italie",
+      "date": "2026-09-27",
+      "platform": null
+    },
+    {
+      "event": "Sierra Blanca Estates Marbella Media maraton",
+      "benchmark_name": "Sierra Blanca Estates Marbella Media maraton",
+      "ville": "Marbella",
+      "pays": "Espagne ",
+      "date": "2026-09-27",
+      "platform": null
+    },
+    {
+      "event": "Semi-marathon des sources du lac d’Annecy",
+      "benchmark_name": "Semi-marathon des sources du lac d’Annecy",
+      "ville": "Annecy",
+      "pays": "France",
+      "date": "2026-09-27",
+      "platform": null
+    },
+    {
+      "event": "La scintillante",
+      "benchmark_name": "La scintillante",
+      "ville": "Lyon",
+      "pays": "France",
+      "date": "2026-09-27",
+      "platform": null
+    },
+    {
+      "event": "Marathon Avignon",
+      "benchmark_name": "Marathon Avignon",
+      "ville": "Avignon",
+      "pays": "France",
+      "date": "2026-09-27",
+      "platform": null
+    },
+    {
+      "event": "Decathlon International Prince's Half Marathon",
+      "benchmark_name": "Decathlon International Prince's Half Marathon",
+      "ville": "Prince's Island",
+      "pays": "Turquie",
+      "date": "2026-09-27",
+      "platform": null
+    },
+    {
+      "event": "Paris-Versailles La Grande Classique",
+      "benchmark_name": "Paris-Versailles - La grande classique",
+      "ville": "Versailles ",
+      "pays": "France",
+      "date": "2026-09-28",
+      "platform": null
+    },
+    {
+      "event": "Seine-Marathon 76",
+      "benchmark_name": "Seine-Marathon 76",
+      "ville": "Rouen",
+      "pays": "France",
+      "date": "2026-09-28",
+      "platform": null
+    },
+    {
+      "event": "Dyes Mysuru Dasara 10K",
+      "benchmark_name": "Dyes Mysuru Dasara 10K",
+      "ville": "Mysore",
+      "pays": "Inde",
+      "date": "2026-09-28",
+      "platform": null
+    },
+    {
+      "event": "Einstein Marathon",
+      "benchmark_name": "Einstein Marathon",
+      "ville": "Ulm ",
+      "pays": "Allemagne",
+      "date": "2026-09-28",
+      "platform": null
+    },
+    {
+      "event": "KLM Curacao Marathon",
+      "benchmark_name": "KLM Curacao Marathon",
+      "ville": "Curacao",
+      "pays": "Curacao",
+      "date": "2026-09-29",
+      "platform": null
+    },
+    {
+      "event": "Sparkassen Phoenix Halbmarathn",
+      "benchmark_name": "Sparkassen Phoenix Halbmarathn",
+      "ville": "Dortmund",
+      "pays": "Allemagne",
+      "date": "2026-10-03",
+      "platform": null
+    },
+    {
+      "event": "Kuala Lampur Standard Chartered Marathon",
+      "benchmark_name": "Kuala Lampur Standard Chartered Marathon",
+      "ville": "Kuala Lampur",
+      "pays": "Malaisie",
+      "date": "2026-10-04",
+      "platform": null
+    },
+    {
+      "event": "Generali Köln Marathon",
+      "benchmark_name": "Generali Köln Marathon",
+      "ville": "Cologne",
+      "pays": "Allemagne",
+      "date": "2026-10-04",
+      "platform": null
+    },
+    {
+      "event": "Manchester Half Marathon",
+      "benchmark_name": "Manchester Half Marathon",
+      "ville": "Manchester",
+      "pays": "Royaume-Uni",
+      "date": "2026-10-04",
+      "platform": null
+    },
+    {
+      "event": "Tout Rennes Court",
+      "benchmark_name": "Tout Rennes Court",
+      "ville": "Rennes ",
+      "pays": "France",
+      "date": "2026-10-04",
+      "platform": null
+    },
+    {
+      "event": "Great Scottish Run",
+      "benchmark_name": "Great Scottish Run",
+      "ville": "Glasgow",
+      "pays": "Royaume-Uni",
+      "date": "2026-10-04",
+      "platform": null
+    },
+    {
+      "event": "Wizz Air Sofia Marathon",
+      "benchmark_name": "Wizz Air Skopje Marathon",
+      "ville": "Skopje",
+      "pays": "Macédoine du Nord",
+      "date": "2026-10-04",
+      "platform": null
+    },
+    {
+      "event": "Rock'n'Roll San Jose",
+      "benchmark_name": "Rock'n'Roll San Jose",
+      "ville": "San Jose",
+      "pays": "Etats-Unis",
+      "date": "2026-10-04",
+      "platform": null
+    },
+    {
+      "event": "ACSE - La Strasbourgeoise",
+      "benchmark_name": "ACSE - La Strasbourgeoise",
+      "ville": "Strasbourg",
+      "pays": "France",
+      "date": "2026-10-04",
+      "platform": null
+    },
+    {
+      "event": "Monza21",
+      "benchmark_name": "Monza21",
+      "ville": "Monza",
+      "pays": "Italie",
+      "date": "2026-10-04",
+      "platform": null
+    },
+    {
+      "event": "Gijon Half Marathon",
+      "benchmark_name": "Lincoln Half Marathon",
+      "ville": "Lincoln",
+      "pays": "Royaume-Uni",
+      "date": "2026-10-04",
+      "platform": null
+    },
+    {
+      "event": "La trenta trentina",
+      "benchmark_name": "La trenta trentina",
+      "ville": "Levico",
+      "pays": "Italie",
+      "date": "2026-10-04",
+      "platform": null
+    },
+    {
+      "event": "Sarmang Dehradun Marathon",
+      "benchmark_name": "Sarmang Dehradun Marathon",
+      "ville": "Dehradun ",
+      "pays": "Inde",
+      "date": "2026-10-04",
+      "platform": null
+    },
+    {
+      "event": "Punjab Half Marathon",
+      "benchmark_name": "Punjab Half Marathon",
+      "ville": "Chandigarh",
+      "pays": "Inde",
+      "date": "2026-10-04",
+      "platform": null
+    },
+    {
+      "event": "Sapporo Half Marathon",
+      "benchmark_name": "Sapporo Half Marathon",
+      "ville": "Sapporo",
+      "pays": "Japon",
+      "date": "2026-10-05",
+      "platform": null
+    },
+    {
+      "event": "Quebec City Marathon",
+      "benchmark_name": "Quebec City Marathon",
+      "ville": "Quebec",
+      "pays": "Canada",
+      "date": "2026-10-05",
+      "platform": null
+    },
+    {
+      "event": "Semi-marathon de Mons",
+      "benchmark_name": "Semi-marathon de Mons",
+      "ville": "Mons",
+      "pays": "Belgique",
+      "date": "2026-10-05",
+      "platform": null
+    },
+    {
+      "event": "Eker Run",
+      "benchmark_name": "Eker Run",
+      "ville": "Bursa",
+      "pays": "Turquie",
+      "date": "2026-10-05",
+      "platform": null
+    },
+    {
+      "event": "Marseille en rose",
+      "benchmark_name": "Marseille en rose",
+      "ville": "Marseille ",
+      "pays": "France",
+      "date": "2026-10-05",
+      "platform": null
+    },
+    {
+      "event": "Hallwilerseelauf",
+      "benchmark_name": "Hallwilerseelauf",
+      "ville": "Hallwil",
+      "pays": "Suisse",
+      "date": "2026-10-10",
+      "platform": null
+    },
+    {
+      "event": "Westenergie marathon",
+      "benchmark_name": "Westenergie marathon",
+      "ville": "Essen",
+      "pays": "Allemagne",
+      "date": "2026-10-10",
+      "platform": null
+    },
+    {
+      "event": "15K Formentera Sunset Run",
+      "benchmark_name": "15K Formentera Sunset Run",
+      "ville": "Formentera",
+      "pays": "Espagne ",
+      "date": "2026-10-10",
+      "platform": null
+    },
+    {
+      "event": "Gijon Half Marathon",
+      "benchmark_name": "Gijon Half Marathon",
+      "ville": "Gijon",
+      "pays": "Espagne ",
+      "date": "2026-10-10",
+      "platform": null
+    },
+    {
+      "event": "Beneva Montréal Marathon",
+      "benchmark_name": "Beneva Montréal Marathon",
+      "ville": "Montréal",
+      "pays": "Canada",
+      "date": "2026-10-11",
+      "platform": null
+    },
+    {
+      "event": "Long Beach Marathon",
+      "benchmark_name": "Long Beach Marathon",
+      "ville": "Long Beach",
+      "pays": "Etats-Unis",
+      "date": "2026-10-11",
+      "platform": null
+    },
+    {
+      "event": "Army Ten Miler",
+      "benchmark_name": "Army Ten Miler",
+      "ville": "Washington",
+      "pays": "Etats-Unis",
+      "date": "2026-10-11",
+      "platform": null
+    },
+    {
+      "event": "Royal Parks Half Marathon",
+      "benchmark_name": "Royal Parks Half Marathon",
+      "ville": "Londres",
+      "pays": "Royaume-Uni",
+      "date": "2026-10-11",
+      "platform": null
+    },
+    {
+      "event": "Royal Victoria Marathon",
+      "benchmark_name": "Royal Victoria Marathon",
+      "ville": "Victoria",
+      "pays": "Canada",
+      "date": "2026-10-11",
+      "platform": null
+    },
+    {
+      "event": "Perth running festival",
+      "benchmark_name": "Perth running festival",
+      "ville": "Perth",
+      "pays": "Australie",
+      "date": "2026-10-11",
+      "platform": null
+    },
+    {
+      "event": "Oxford Half",
+      "benchmark_name": "Oxford Half",
+      "ville": "Oxford ",
+      "pays": "Royaume-Uni",
+      "date": "2026-10-11",
+      "platform": null
+    },
+    {
+      "event": "Graz Marathon",
+      "benchmark_name": "Graz Marathon",
+      "ville": "Graz",
+      "pays": "Autriche",
+      "date": "2026-10-11",
+      "platform": null
+    },
+    {
+      "event": "Wizz Air Sofia Marathon",
+      "benchmark_name": "Wizz Air Sofia Marathon",
+      "ville": "Sofia",
+      "pays": "Bulgarie",
+      "date": "2026-10-11",
+      "platform": null
+    },
+    {
+      "event": "Euro Marathon Metz",
+      "benchmark_name": "Euro Marathon Metz",
+      "ville": "Metz",
+      "pays": "France",
+      "date": "2026-10-11",
+      "platform": null
+    },
+    {
+      "event": "Marathon des Grands Crus",
+      "benchmark_name": "Marathon des Grands Crus",
+      "ville": "Dijon",
+      "pays": "France",
+      "date": "2026-10-11",
+      "platform": null
+    },
+    {
+      "event": "Chester marathon",
+      "benchmark_name": "Chester marathon",
+      "ville": "Chester",
+      "pays": "Royaume-Uni",
+      "date": "2026-10-11",
+      "platform": null
+    },
+    {
+      "event": "3-Länder-Marathon",
+      "benchmark_name": "3-Länder-Marathon",
+      "ville": "Lindau ",
+      "pays": "Allemagne",
+      "date": "2026-10-11",
+      "platform": null
+    },
+    {
+      "event": "Zagreb Marathon",
+      "benchmark_name": "Zagreb Marathon",
+      "ville": "Zagreb",
+      "pays": "Croatie",
+      "date": "2026-10-11",
+      "platform": null
+    },
+    {
+      "event": "La mezza di Treviso",
+      "benchmark_name": "La mezza di Treviso",
+      "ville": "Trevise",
+      "pays": "Italie",
+      "date": "2026-10-11",
+      "platform": null
+    },
+    {
+      "event": "Run Bournemouth",
+      "benchmark_name": "Run Bournemouth",
+      "ville": "Bournemouth",
+      "pays": "Royaume-Uni",
+      "date": "2026-10-11",
+      "platform": null
+    },
+    {
+      "event": "Clermont en rose",
+      "benchmark_name": "Clermont en rose",
+      "ville": "Clermont-Ferrand",
+      "pays": "France",
+      "date": "2026-10-11",
+      "platform": null
+    },
+    {
+      "event": "Grenoble Ekiden by Giant",
+      "benchmark_name": "Grenoble Ekiden by Giant",
+      "ville": "Grenoble",
+      "pays": "France",
+      "date": "2026-10-11",
+      "platform": null
+    },
+    {
+      "event": "ASML Marathon Eindhoven",
+      "benchmark_name": "ASML Marathon Eindhoven",
+      "ville": "Eindhoven",
+      "pays": "Pays-Bas",
+      "date": "2026-10-12",
+      "platform": null
+    },
+    {
+      "event": "Zevenheuvelenloop",
+      "benchmark_name": "Zevenheuvelenloop",
+      "ville": "Nijmegen",
+      "pays": "Pays-Bas",
+      "date": "2026-10-12",
+      "platform": null
+    },
+    {
+      "event": "Reims Champagne Run",
+      "benchmark_name": "Reims Champagne Run",
+      "ville": "Reims",
+      "pays": "France",
+      "date": "2026-10-12",
+      "platform": null
+    },
+    {
+      "event": "Runkara International Half Marathon",
+      "benchmark_name": "Runkara International Half Marathon",
+      "ville": "Ankara",
+      "pays": "Turquie",
+      "date": "2026-10-13",
+      "platform": null
+    },
+    {
+      "event": "Semi marathon de Binche",
+      "benchmark_name": "Semi marathon de Binche",
+      "ville": "Binche",
+      "pays": "Belgique",
+      "date": "2026-10-14",
+      "platform": null
+    },
+    {
+      "event": "Bilbao Night Running Fest",
+      "benchmark_name": "Bilbao Night Running Fest",
+      "ville": "Bilbao",
+      "pays": "Espagne ",
+      "date": "2026-10-17",
+      "platform": null
+    },
+    {
+      "event": "CrediMax Grand Prix",
+      "benchmark_name": "CrediMax Grand Prix",
+      "ville": "Manama",
+      "pays": "Bahreïn",
+      "date": "2026-10-17",
+      "platform": null
+    },
+    {
+      "event": "TCS Toronto Waterfront Marathon",
+      "benchmark_name": "TCS Toronto Waterfront Mrathon",
+      "ville": "Toronto ",
+      "pays": "Canada",
+      "date": "2026-10-18",
+      "platform": null
+    },
+    {
+      "event": "Bank of China Beijing Half Marathon",
+      "benchmark_name": "Bank of China Beijing Marathon",
+      "ville": "Pekin",
+      "pays": "Chine",
+      "date": "2026-10-18",
+      "platform": null
+    },
+    {
+      "event": "Ljubljana Marathon",
+      "benchmark_name": "Ljubljana Marathon",
+      "ville": "Ljubljana",
+      "pays": "Slovénie",
+      "date": "2026-10-18",
+      "platform": null
+    },
+    {
+      "event": "Antwerp Marathon",
+      "benchmark_name": "Antwerp Marathon",
+      "ville": "Anvers",
+      "pays": "Belgique",
+      "date": "2026-10-18",
+      "platform": null
+    },
+    {
+      "event": "Marathon Vert",
+      "benchmark_name": "Marathon Vert",
+      "ville": "Rennes",
+      "pays": "France",
+      "date": "2026-10-18",
+      "platform": null
+    },
+    {
+      "event": "LDN X",
+      "benchmark_name": "LDN X",
+      "ville": "Londres",
+      "pays": "Royaume-Uni",
+      "date": "2026-10-18",
+      "platform": null
+    },
+    {
+      "event": "Palma Marathon Mallorca",
+      "benchmark_name": "Palma Marathon Mallorca",
+      "ville": "Palma de Majorque",
+      "pays": "Espagne ",
+      "date": "2026-10-18",
+      "platform": null
+    },
+    {
+      "event": "Yorkshire Marathon",
+      "benchmark_name": "Yorkshire Marathon",
+      "ville": "York",
+      "pays": "Royaume-Uni",
+      "date": "2026-10-18",
+      "platform": null
+    },
+    {
+      "event": "Semi marathon du Bois de Vincennes",
+      "benchmark_name": "Semi marathon du Bois de Vincennes",
+      "ville": "Vincennes",
+      "pays": "France",
+      "date": "2026-10-18",
+      "platform": null
+    },
+    {
+      "event": "Neapolis marathon",
+      "benchmark_name": "Neapolis marathon",
+      "ville": "Naples",
+      "pays": "Italie",
+      "date": "2026-10-18",
+      "platform": null
+    },
+    {
+      "event": "Bruells Ekiden",
+      "benchmark_name": "Bruells Ekiden",
+      "ville": "Bruxelles",
+      "pays": "Belgique",
+      "date": "2026-10-18",
+      "platform": null
+    },
+    {
+      "event": "Media Maraton Bucaramanga",
+      "benchmark_name": "Media Maraton Bucaramanga",
+      "ville": "Bucaramanga",
+      "pays": "Colombie",
+      "date": "2026-10-18",
+      "platform": null
+    },
+    {
+      "event": "Palermo international half marathon",
+      "benchmark_name": "Palermo international half marathon",
+      "ville": "Palerme",
+      "pays": "Italie",
+      "date": "2026-10-18",
+      "platform": null
+    },
+    {
+      "event": "Quijote Maraton",
+      "benchmark_name": "Quijote Maraton",
+      "ville": "Ciudad Real",
+      "pays": "Espagne",
+      "date": "2026-10-18",
+      "platform": null
+    },
+    {
+      "event": "Aix en foulées",
+      "benchmark_name": "Aix en foulées",
+      "ville": "Aix en Provence",
+      "pays": "France",
+      "date": "2026-10-18",
+      "platform": null
+    },
+    {
+      "event": "Province de Liège semi marathon",
+      "benchmark_name": "Province de Liège semi marathon",
+      "ville": "Liège",
+      "pays": "Belgique",
+      "date": "2026-10-19",
+      "platform": null
+    },
+    {
+      "event": "Marathon de Chablis",
+      "benchmark_name": "Marathon de Chablis",
+      "ville": "Chablis",
+      "pays": "France",
+      "date": "2026-10-24",
+      "platform": null
+    },
+    {
+      "event": "Valencia Half Marathon Trinidad Alfonso Zurich",
+      "benchmark_name": "Valencia Half Marathon Trinidad Alfonso",
+      "ville": "Valence",
+      "pays": "Espagne ",
+      "date": "2026-10-25",
+      "platform": null
+    },
+    {
+      "event": "Jakarta Running Festival",
+      "benchmark_name": "Jakarta Running Festival",
+      "ville": "Jakarta",
+      "pays": "Indonésie",
+      "date": "2026-10-25",
+      "platform": null
+    },
+    {
+      "event": "Standard Chartered Dubai Marathon",
+      "benchmark_name": "Standard Chartered Nairobi Marathon",
+      "ville": "Nairobi",
+      "pays": "Kenya",
+      "date": "2026-10-25",
+      "platform": null
+    },
+    {
+      "event": "Wizz Air Venicemarathon",
+      "benchmark_name": "Wizz Air Venice Marathon",
+      "ville": "Venise",
+      "pays": "Italie",
+      "date": "2026-10-25",
+      "platform": null
+    },
+    {
+      "event": "Dresden Marathon",
+      "benchmark_name": "Dresden Marathon",
+      "ville": "Dresde ",
+      "pays": "Allemagne",
+      "date": "2026-10-25",
+      "platform": null
+    },
+    {
+      "event": "Lausanne Marathon",
+      "benchmark_name": "Lausanne Marathon",
+      "ville": "Lausanne",
+      "pays": "Suisse",
+      "date": "2026-10-25",
+      "platform": null
+    },
+    {
+      "event": "Swiss city Marathon",
+      "benchmark_name": "Swiss city Marathon",
+      "ville": "Lucerne",
+      "pays": "Suisse",
+      "date": "2026-10-25",
+      "platform": null
+    },
+    {
+      "event": "SportScheck Run Nuremberg",
+      "benchmark_name": "SportScheck Run Nuremberg",
+      "ville": "Nuremberg",
+      "pays": "Allemagne",
+      "date": "2026-10-25",
+      "platform": null
+    },
+    {
+      "event": "Casablanca Marathon",
+      "benchmark_name": "Casablanca Marathon",
+      "ville": "Casablanca",
+      "pays": "Maroc",
+      "date": "2026-10-25",
+      "platform": null
+    },
+    {
+      "event": "Salto 15K Donostia San Sebastian",
+      "benchmark_name": "Salto 15K Donostia San Sebastian",
+      "ville": "San Sebastian",
+      "pays": "Espagne ",
+      "date": "2026-10-25",
+      "platform": null
+    },
+    {
+      "event": "Dehradun Half Marathon",
+      "benchmark_name": "Dehradun Half Marathon",
+      "ville": "Dehradun",
+      "pays": "Inde",
+      "date": "2026-10-25",
+      "platform": null
+    },
+    {
+      "event": "Bank of Chanhsha Changsha Marathon",
+      "benchmark_name": "Bank of Chanhsha Changsha Marathon",
+      "ville": "Yuelu ",
+      "pays": "Chine",
+      "date": "2026-10-25",
+      "platform": null
+    },
+    {
+      "event": "La courstache",
+      "benchmark_name": "La courstache",
+      "ville": "Clermont-Ferrand",
+      "pays": "France",
+      "date": "2026-10-25",
+      "platform": null
+    },
+    {
+      "event": "Challenge du Ruban rose",
+      "benchmark_name": "Challenge du Ruban rose",
+      "ville": "Bordeaux",
+      "pays": "France",
+      "date": "2026-10-25",
+      "platform": null
+    },
+    {
+      "event": "Marathon de Lille",
+      "benchmark_name": "Marathon de Lille",
+      "ville": "Lille",
+      "pays": "France",
+      "date": "2026-10-25",
+      "platform": null
+    },
+    {
+      "event": "Santa Cruz Marathon",
+      "benchmark_name": "Santa Cruz Marathon",
+      "ville": "Santa Cruz",
+      "pays": "Etats-Unis",
+      "date": "2026-10-25",
+      "platform": null
+    },
+    {
+      "event": "VPBank Hanoi International Marathon",
+      "benchmark_name": "VPBank Hanoi International Marathon",
+      "ville": "Hanoi",
+      "pays": "Vietnam",
+      "date": "2026-10-25",
+      "platform": null
+    },
+    {
+      "event": "Eva Air Marathon",
+      "benchmark_name": "Eva Air Marathon",
+      "ville": "Taiwan",
+      "pays": "Taiwan",
+      "date": "2026-10-26",
+      "platform": null
+    },
+    {
+      "event": "Les voies royales de Saint Denis",
+      "benchmark_name": "Les voies royales de Saint Denis",
+      "ville": "Saint Denis ",
+      "pays": "France",
+      "date": "2026-10-26",
+      "platform": null
+    },
+    {
+      "event": "Mysuru Marathon",
+      "benchmark_name": "Mysuru Marathon",
+      "ville": "Mysore",
+      "pays": "Inde",
+      "date": "2026-10-26",
+      "platform": null
+    },
+    {
+      "event": "Chengdu Marathon",
+      "benchmark_name": "Chengdu Marathon",
+      "ville": "Chengdu",
+      "pays": "Chine",
+      "date": "2026-10-26",
+      "platform": null
+    },
+    {
+      "event": "La route du vin",
+      "benchmark_name": "La route du vin",
+      "ville": "Remich",
+      "pays": "Luxembourg",
+      "date": "2026-10-27",
+      "platform": null
+    },
+    {
+      "event": "Runaway Auckland Marathon",
+      "benchmark_name": "Runaway Auckland Marathon",
+      "ville": "Auckland",
+      "pays": "Nouvelle-Zélande",
+      "date": "2026-11-01",
+      "platform": null
+    },
+    {
+      "event": "Golden Gate",
+      "benchmark_name": "Golden Gate",
+      "ville": "San Francisco",
+      "pays": "Etats-Unis",
+      "date": "2026-11-01",
+      "platform": null
+    },
+    {
+      "event": "20km de Genève",
+      "benchmark_name": "20km de Genève",
+      "ville": "Genève",
+      "pays": "Suisse",
+      "date": "2026-11-01",
+      "platform": null
+    },
+    {
+      "event": "Xinyu Fairy Lake Marathon",
+      "benchmark_name": "Xinyu Fairy Lake Marathon",
+      "ville": "Yushui",
+      "pays": "Chine",
+      "date": "2026-11-01",
+      "platform": null
+    },
+    {
+      "event": "Balexert 20km de Genève",
+      "benchmark_name": "Balexert 20km de Genève",
+      "ville": "Genève",
+      "pays": "Suisse",
+      "date": "2026-11-01",
+      "platform": null
+    },
+    {
+      "event": "Brusells airport marathon",
+      "benchmark_name": "Brusells airport marathon",
+      "ville": "Bruxelles",
+      "pays": "Belgique",
+      "date": "2026-11-02",
+      "platform": null
+    },
+    {
+      "event": "Hyderabad Hitec Marathon",
+      "benchmark_name": "Hyderabad Hitec Marathon",
+      "ville": "Hyderabad",
+      "pays": "Inde",
+      "date": "2026-11-02",
+      "platform": null
+    },
+    {
+      "event": "Media Marton Ciudad de Huelva",
+      "benchmark_name": "Media Marton Ciudad de Huelva",
+      "ville": "Huelva",
+      "pays": "Espagne ",
+      "date": "2026-11-02",
+      "platform": null
+    },
+    {
+      "event": "MAIF Ekiden de Paris",
+      "benchmark_name": "MAIF Ekiden de Paris",
+      "ville": "Paris",
+      "pays": "France",
+      "date": "2026-11-02",
+      "platform": null
+    },
+    {
+      "event": "Alexandria Marathon",
+      "benchmark_name": "Alexandria Marathon",
+      "ville": "Alexandrie",
+      "pays": "Egypte",
+      "date": "2026-11-06",
+      "platform": null
+    },
+    {
+      "event": "Guadalajara Marathon",
+      "benchmark_name": "Guadalajara Marathon",
+      "ville": "Guadalajara",
+      "pays": "Mexique",
+      "date": "2026-11-07",
+      "platform": null
+    },
+    {
+      "event": "Behobia San Sebastian",
+      "benchmark_name": "Behobia San Sebastian",
+      "ville": "San Sebastian",
+      "pays": "Espagne ",
+      "date": "2026-11-08",
+      "platform": null
+    },
+    {
+      "event": "Semi & 10km de Bordeaux",
+      "benchmark_name": "Semi & 10km de Bordeaux",
+      "ville": "Bordeaux",
+      "pays": "France",
+      "date": "2026-11-08",
+      "platform": null
+    },
+    {
+      "event": "Marathon des Alpes-Maritimes Nice-Cannes by Kiprun",
+      "benchmark_name": "Marathon des Alpes-Maritimes Nice-Cannes by Kiprun",
+      "ville": "Nice",
+      "pays": "France",
+      "date": "2026-11-08",
+      "platform": null
+    },
+    {
+      "event": "Standard Chartered Hanoi Marathon - Heritage Race",
+      "benchmark_name": "Standard Chartered Hanoi Marathon - Heritage Race",
+      "ville": "Hanoi",
+      "pays": "Vietnam",
+      "date": "2026-11-08",
+      "platform": null
+    },
+    {
+      "event": "Marathon International de la Côte d’Amour Amarris",
+      "benchmark_name": "Marathon International de la Côte d’Amour Amarris",
+      "ville": "La Baule",
+      "pays": "France",
+      "date": "2026-11-08",
+      "platform": null
+    },
+    {
+      "event": "Generali Maraton Malaga",
+      "benchmark_name": "Generali Maraton Malaga",
+      "ville": "Malaga ",
+      "pays": "Espagne ",
+      "date": "2026-11-08",
+      "platform": null
+    },
+    {
+      "event": "EDP Maratona do Porto",
+      "benchmark_name": "Maratona do Porto",
+      "ville": "Porto ",
+      "pays": "Portugal",
+      "date": "2026-11-08",
+      "platform": null
+    },
+    {
+      "event": "Gran Carrera del Mediterraneo",
+      "benchmark_name": "Gran Carrera del Mediterraneo",
+      "ville": "Alicante",
+      "pays": "Espagne ",
+      "date": "2026-11-08",
+      "platform": null
+    },
+    {
+      "event": "Half Marathon Garda Trentino",
+      "benchmark_name": "Half Marathon Garda Trentino",
+      "ville": "Garda",
+      "pays": "Italie",
+      "date": "2026-11-08",
+      "platform": null
+    },
+    {
+      "event": "Fukuoka Marathon",
+      "benchmark_name": "Fukuoka Marathon",
+      "ville": "Fukuoka",
+      "pays": "Japon",
+      "date": "2026-11-09",
+      "platform": null
+    },
+    {
+      "event": "Rome 15K",
+      "benchmark_name": "Rome 15K",
+      "ville": "Rome",
+      "pays": "Italie",
+      "date": "2026-11-09",
+      "platform": null
+    },
+    {
+      "event": "Run Malibu",
+      "benchmark_name": "Run Malibu",
+      "ville": "Malibu",
+      "pays": "Etats-Unis",
+      "date": "2026-11-11",
+      "platform": null
+    },
+    {
+      "event": "Rocky Run",
+      "benchmark_name": "Rocky Run",
+      "ville": "Philadelphie",
+      "pays": "Etats-Unis",
+      "date": "2026-11-14",
+      "platform": null
+    },
+    {
+      "event": "Richmond Marathon",
+      "benchmark_name": "Richmond Marathon",
+      "ville": "Richmond",
+      "pays": "Etats-Unis",
+      "date": "2026-11-14",
+      "platform": null
+    },
+    {
+      "event": "Semi-Marathon de la Vente des Vins",
+      "benchmark_name": "Semi-Marathon de la Vente des Vins",
+      "ville": "Beaune",
+      "pays": "France",
+      "date": "2026-11-14",
+      "platform": null
+    },
+    {
+      "event": "Savannah Southern Half",
+      "benchmark_name": "Savannah Southern Half",
+      "ville": "Savannah",
+      "pays": "Etats-Unis",
+      "date": "2026-11-14",
+      "platform": null
+    },
+    {
+      "event": "La course des Lumières",
+      "benchmark_name": "La course des Lumières",
+      "ville": "Paris",
+      "pays": "France",
+      "date": "2026-11-14",
+      "platform": null
+    },
+    {
+      "event": "Kobe Marathon",
+      "benchmark_name": "Kobe Marathon",
+      "ville": "Kobe",
+      "pays": "Japon",
+      "date": "2026-11-15",
+      "platform": null
+    },
+    {
+      "event": "Marathon International inDeauville",
+      "benchmark_name": "Marathon International inDeauville",
+      "ville": "Deauville",
+      "pays": "France",
+      "date": "2026-11-15",
+      "platform": null
+    },
+    {
+      "event": "Bangkok Marathon",
+      "benchmark_name": "Bangkok Marathon",
+      "ville": "Bangkok ",
+      "pays": "Thailande",
+      "date": "2026-11-15",
+      "platform": null
+    },
+    {
+      "event": "Maratona di Palermo",
+      "benchmark_name": "Maratona di Palermo",
+      "ville": "Palerme",
+      "pays": "Italie",
+      "date": "2026-11-15",
+      "platform": null
+    },
+    {
+      "event": "Mehsana Marathon",
+      "benchmark_name": "Mehsana Marathon",
+      "ville": "Mehsana",
+      "pays": "Inde",
+      "date": "2026-11-15",
+      "platform": null
+    },
+    {
+      "event": "Ekiden de Marseille",
+      "benchmark_name": "Ekiden de Marseille",
+      "ville": "Marseille ",
+      "pays": "France",
+      "date": "2026-11-15",
+      "platform": null
+    },
+    {
+      "event": "Carrera Ponle Freno Madrid",
+      "benchmark_name": "Carrera Ponle Freno Madrid",
+      "ville": "Madrid",
+      "pays": "Espagne ",
+      "date": "2026-11-16",
+      "platform": null
+    },
+    {
+      "event": "10km HOKA Paris Centre",
+      "benchmark_name": "10km Hoka Paris centre",
+      "ville": "Paris",
+      "pays": "France",
+      "date": "2026-11-16",
+      "platform": null
+    },
+    {
+      "event": "Semi-Marathon de Boulogne-Billancourt",
+      "benchmark_name": "Semi-marathon de Boulogne-Billancourt",
+      "ville": "Boulogne-Billancourt",
+      "pays": "France",
+      "date": "2026-11-16",
+      "platform": null
+    },
+    {
+      "event": "Havana marathon",
+      "benchmark_name": "Havana marathon",
+      "ville": "La Havane",
+      "pays": "Cuba",
+      "date": "2026-11-16",
+      "platform": null
+    },
+    {
+      "event": "NBK Bahrain Marathon Relays",
+      "benchmark_name": "NBK Bahrain Marathon Relays",
+      "ville": "Manama",
+      "pays": "Bahreïn",
+      "date": "2026-11-21",
+      "platform": null
+    },
+    {
+      "event": "Great Ethiopan Run",
+      "benchmark_name": "Great Ethiopan Run",
+      "ville": "Addis-Abeba",
+      "pays": "Ethiopie",
+      "date": "2026-11-22",
+      "platform": null
+    },
+    {
+      "event": "Carrera de la Mujer Barcelona",
+      "benchmark_name": "Carrera de la Mujer Barcelona",
+      "ville": "Barcelone",
+      "pays": "Espagne ",
+      "date": "2026-11-22",
+      "platform": null
+    },
+    {
+      "event": "Halong Bay Heritage Marathon",
+      "benchmark_name": "Halong Bay Heritage Marathon",
+      "ville": "Halong",
+      "pays": "Vietnam",
+      "date": "2026-11-22",
+      "platform": null
+    },
+    {
+      "event": "San Sebastian Marathon",
+      "benchmark_name": "San Sebastian Marathon",
+      "ville": "San Sebastian",
+      "pays": "Espagne ",
+      "date": "2026-11-22",
+      "platform": null
+    },
+    {
+      "event": "Milano21",
+      "benchmark_name": "Milano21",
+      "ville": "Milan",
+      "pays": "Italie",
+      "date": "2026-11-22",
+      "platform": null
+    },
+    {
+      "event": "Federal Bank Pune Marathon",
+      "benchmark_name": "Federal Bank Pune Marathon",
+      "ville": "Pune",
+      "pays": "Inde",
+      "date": "2026-11-22",
+      "platform": null
+    },
+    {
+      "event": "Tengchong Marathon",
+      "benchmark_name": "Tengchong Marathon",
+      "ville": "Tengchong",
+      "pays": "Chine",
+      "date": "2026-11-22",
+      "platform": null
+    },
+    {
+      "event": "La course des Lumières",
+      "benchmark_name": "La course des Lumières",
+      "ville": "Lyon",
+      "pays": "France",
+      "date": "2026-11-22",
+      "platform": null
+    },
+    {
+      "event": "La course des Lumières",
+      "benchmark_name": "La course des Lumières",
+      "ville": "Toulouse",
+      "pays": "France",
+      "date": "2026-11-22",
+      "platform": null
+    },
+    {
+      "event": "Marathon International du Beaujolais",
+      "benchmark_name": "Marathon International du Beaujolais",
+      "ville": "Villefranche sur Saone ",
+      "pays": "France",
+      "date": "2026-11-23",
+      "platform": null
+    },
+    {
+      "event": "Norwich Half Marathon",
+      "benchmark_name": "Norwich Half Marathon",
+      "ville": "Norwich",
+      "pays": "Royaume-Uni",
+      "date": "2026-11-23",
+      "platform": null
+    },
+    {
+      "event": "Mezza Maratona Citta di Palmanova",
+      "benchmark_name": "Mezza Maratona Citta di Palmanova",
+      "ville": "Palmanova",
+      "pays": "Italie",
+      "date": "2026-11-23",
+      "platform": null
+    },
+    {
+      "event": "Tranquilidade Meia Maratona dos Descobrimentos",
+      "benchmark_name": "Generali Tranquilidade Meia Maratona Descobrimentos",
+      "ville": "Lisbonne",
+      "pays": "Portugal",
+      "date": "2026-11-28",
+      "platform": null
+    },
+    {
+      "event": "Adani Ahmedabad Marathon",
+      "benchmark_name": "Adani Ahmedabad Marathon",
+      "ville": "Ahmedabad",
+      "pays": "Inde",
+      "date": "2026-11-29",
+      "platform": null
+    },
+    {
+      "event": "Rock'n'Roll Manila",
+      "benchmark_name": "Rock'n'Roll Manila",
+      "ville": "Manille",
+      "pays": "Philippines",
+      "date": "2026-11-29",
+      "platform": null
+    },
+    {
+      "event": "Estra Firenze Marathon",
+      "benchmark_name": "Estra Firenze Marathon",
+      "ville": "Florence",
+      "pays": "Italie",
+      "date": "2026-11-29",
+      "platform": null
+    },
+    {
+      "event": "Torino city marathon",
+      "benchmark_name": "Torino city marathon",
+      "ville": "Turin",
+      "pays": "Italie",
+      "date": "2026-11-29",
+      "platform": null
+    },
+    {
+      "event": "Gulf Bank 642 Marathon",
+      "benchmark_name": "Gulf Bank 642 Marathon",
+      "ville": "Kuwait",
+      "pays": "Koweït",
+      "date": "2026-11-29",
+      "platform": null
+    },
+    {
+      "event": "20 km de Montpellier",
+      "benchmark_name": "20 km de Montpellier",
+      "ville": "Montpellier",
+      "pays": "France",
+      "date": "2026-11-29",
+      "platform": null
+    },
+    {
+      "event": "Toyota Amazing Thailand Bangkok Marathon",
+      "benchmark_name": "Toyota Amazing Thailand Bangkok Marathon",
+      "ville": "Bangkok ",
+      "pays": "Thailande",
+      "date": "2026-11-29",
+      "platform": null
+    },
+    {
+      "event": "Allianz Jean Bouin",
+      "benchmark_name": "Allianz Jean Bouin",
+      "ville": "Barcelone",
+      "pays": "Espagne ",
+      "date": "2026-11-30",
+      "platform": null
+    },
+    {
+      "event": "Marathon de La Rochelle Serge Vigot",
+      "benchmark_name": "Marathon de La Rochelle Serge Vigot",
+      "ville": "La Rochelle",
+      "pays": "France",
+      "date": "2026-11-30",
+      "platform": null
+    },
+    {
+      "event": "Media Maraton de Bogota",
+      "benchmark_name": "Media maraton de Cordoba",
+      "ville": "Cordoba",
+      "pays": "Espagne ",
+      "date": "2026-11-30",
+      "platform": null
+    },
+    {
+      "event": "Marathon Comar Tunis-Carthage",
+      "benchmark_name": "Marathon Comar Tunis-Carthage",
+      "ville": "Tunis",
+      "pays": "Tunisie ",
+      "date": "2026-11-30",
+      "platform": null
+    },
+    {
+      "event": "Font Vella Lanzarote International Marathon",
+      "benchmark_name": "Font Vella Lanzarote International Marathon",
+      "ville": "Teguise",
+      "pays": "Espagne",
+      "date": "2026-12-05",
+      "platform": null
+    },
+    {
+      "event": "East to West Ultra Run",
+      "benchmark_name": "East to West Ultra Run",
+      "ville": "Doha",
+      "pays": "Qatar",
+      "date": "2026-12-05",
+      "platform": null
+    },
+    {
+      "event": "Course de l'escalade",
+      "benchmark_name": "Course de l'escalade",
+      "ville": "Genève",
+      "pays": "Suisse",
+      "date": "2026-12-06",
+      "platform": null
+    },
+    {
+      "event": "Shanghai Marathon",
+      "benchmark_name": "Shanghai Marathon",
+      "ville": "Shanghai",
+      "pays": "Chine",
+      "date": "2026-12-06",
+      "platform": null
+    },
+    {
+      "event": "California International Marathon",
+      "benchmark_name": "Sonan International Marathon",
+      "ville": "Oiso",
+      "pays": "Japon",
+      "date": "2026-12-06",
+      "platform": null
+    },
+    {
+      "event": "San Antonio Marathon",
+      "benchmark_name": "San Antonio Marathon",
+      "ville": "San Antonio",
+      "pays": "Etats-Unis",
+      "date": "2026-12-06",
+      "platform": null
+    },
+    {
+      "event": "California International Marathon",
+      "benchmark_name": "California International Marathon",
+      "ville": "Sacramento",
+      "pays": "Etats-Unis",
+      "date": "2026-12-06",
+      "platform": null
+    },
+    {
+      "event": "Conegliano Valdobbiadene Prosecco Running festival",
+      "benchmark_name": "Conegliano Valdobbiadene Prosecco Running festival",
+      "ville": "Trevise",
+      "pays": "Italie",
+      "date": "2026-12-06",
+      "platform": null
+    },
+    {
+      "event": "Saucony 10km de le Tour Eiffel",
+      "benchmark_name": "Saucony 10km de le Tour Eiffel",
+      "ville": "Paris",
+      "pays": "France",
+      "date": "2026-12-07",
+      "platform": null
+    },
+    {
+      "event": "SanRemo Marathon",
+      "benchmark_name": "SanRemo Marathon",
+      "ville": "San Remo",
+      "pays": "Italie",
+      "date": "2026-12-07",
+      "platform": null
+    },
+    {
+      "event": "Abu Dhabi Marathon",
+      "benchmark_name": "ADNOC Abu Dhabi Marathon",
+      "ville": "Abu Dhabi",
+      "pays": "Emirats Arabes Unis",
+      "date": "2026-12-12",
+      "platform": null
+    },
+    {
+      "event": "15KM de Rotterdam",
+      "benchmark_name": "15KM de Rotterdam",
+      "ville": "Rotterdam",
+      "pays": "Pays-Bas",
+      "date": "2026-12-12",
+      "platform": null
+    },
+    {
+      "event": "Nikolaslauf Tübigen",
+      "benchmark_name": "Nikolaslauf Tübigen",
+      "ville": " Tübigen",
+      "pays": "Allemagne",
+      "date": "2026-12-12",
+      "platform": null
+    },
+    {
+      "event": "Abu Dhabi Marathon",
+      "benchmark_name": "Abu Dhabi Marathon",
+      "ville": "Abou Dabi ",
+      "pays": "Emirats arabes unis",
+      "date": "2026-12-13",
+      "platform": null
+    },
+    {
+      "event": "Sharqiyah International Race",
+      "benchmark_name": "Sharqiyah International Race",
+      "ville": "Khobar",
+      "pays": "Arabie Saoudite",
+      "date": "2026-12-13",
+      "platform": null
+    },
+    {
+      "event": "Pyramids Half Marathon",
+      "benchmark_name": "Pyramids Half Marathon",
+      "ville": "Gizeh ",
+      "pays": "Egypte",
+      "date": "2026-12-13",
+      "platform": null
+    },
+    {
+      "event": "Zürcher Silvesterlauf",
+      "benchmark_name": "Zürcher Silvesterlauf",
+      "ville": "Zurich ",
+      "pays": "Suisse",
+      "date": "2026-12-13",
+      "platform": null
+    },
+    {
+      "event": "Bajaj Pune Marathon",
+      "benchmark_name": "Bajaj Pune Marathon",
+      "ville": "Pune",
+      "pays": "Inde",
+      "date": "2026-12-13",
+      "platform": null
+    },
+    {
+      "event": "Maraton Powerade Monterrey",
+      "benchmark_name": "Maraton Powerade Monterrey",
+      "ville": "Monterrey",
+      "pays": "Mexique",
+      "date": "2026-12-13",
+      "platform": null
+    },
+    {
+      "event": "Chennai Navy Half Marathon",
+      "benchmark_name": "Chennai Navy Half Marathon",
+      "ville": "Chennai",
+      "pays": "Inde",
+      "date": "2026-12-14",
+      "platform": null
+    },
+    {
+      "event": "Corrida de Noël",
+      "benchmark_name": "Corrida de Noël",
+      "ville": "Issy les moulineaux ",
+      "pays": "France",
+      "date": "2026-12-14",
+      "platform": null
+    },
+    {
+      "event": "La corrida de Noël de Toulouse",
+      "benchmark_name": "La corrida de Noël de Toulouse",
+      "ville": "Toulouse",
+      "pays": "France",
+      "date": "2026-12-14",
+      "platform": null
+    },
+    {
+      "event": "World 25K Kolkata",
+      "benchmark_name": "World 25K Kolkata",
+      "ville": "Calcutta ",
+      "pays": "Inde",
+      "date": "2026-12-20",
+      "platform": null
+    },
+    {
+      "event": "Maratona di Pisa",
+      "benchmark_name": "Maratona di Pisa",
+      "ville": "Pise",
+      "pays": "Italie",
+      "date": "2026-12-20",
+      "platform": null
+    },
+    {
+      "event": "Corrida de Houilles",
+      "benchmark_name": "Corrida de Houilles",
+      "ville": "Houilles",
+      "pays": "France",
+      "date": "2026-12-20",
+      "platform": null
+    },
+    {
+      "event": "ICA International Half-Marathon",
+      "benchmark_name": "ICA International Half-Marathon",
+      "ville": "Colombo ",
+      "pays": "Sri Lanka",
+      "date": "2026-12-20",
+      "platform": null
+    },
+    {
+      "event": "Portsmouth Coastal Marathon",
+      "benchmark_name": "Portsmouth Coastal Marathon",
+      "ville": "Portsmouth",
+      "pays": "Royaume-Uni",
+      "date": "2026-12-20",
+      "platform": null
+    },
+    {
+      "event": "Taipei Marathon",
+      "benchmark_name": "Taipei Marathon",
+      "ville": "Taiwan",
+      "pays": "Taiwan",
+      "date": "2026-12-21",
+      "platform": null
+    },
+    {
+      "event": "Guangzhou Marathon",
+      "benchmark_name": "Guangzhou Marathon",
+      "ville": "Guangzhou",
+      "pays": "Chine",
+      "date": "2026-12-21",
+      "platform": null
+    },
+    {
+      "event": "Can Tho Marathon Heritage Race",
+      "benchmark_name": "Can Tho Marathon Heritage Race",
+      "ville": "Can Tho",
+      "pays": "Vietnam",
+      "date": "2026-12-21",
+      "platform": null
+    },
+    {
+      "event": "Bengaluru Ultra",
+      "benchmark_name": "Bengaluru Ultra",
+      "ville": "Bengalore",
+      "pays": "Inde",
+      "date": "2026-12-21",
+      "platform": null
+    },
+    {
+      "event": "Runtalya",
+      "benchmark_name": "Runtalya",
+      "ville": "Antalya",
+      "pays": "Turquie",
+      "date": "2026-12-22",
+      "platform": null
+    },
+    {
+      "event": "Sao Silvestre de Lisboa",
+      "benchmark_name": "Sao Silvestre de Lisboa",
+      "ville": "Lisbonne",
+      "pays": "Portugal",
+      "date": "2026-12-27",
+      "platform": null
+    },
+    {
+      "event": "Almaty Half Marathon",
+      "benchmark_name": "Ajman Half Marathon",
+      "ville": "Ajman",
+      "pays": "Emirats Arabes Unis",
+      "date": "2026-12-27",
+      "platform": null
+    },
+    {
+      "event": "Sao Silvestre do Porto",
+      "benchmark_name": "Sao Silvestre do Porto",
+      "ville": "Porto ",
+      "pays": "Portugal",
+      "date": "2026-12-28",
+      "platform": null
+    },
+    {
+      "event": "NN San Silvestre Vallecana",
+      "benchmark_name": "San Silvestre Vallecana",
+      "ville": "Madrid",
+      "pays": "Espagne ",
+      "date": "2026-12-31",
+      "platform": null
+    },
+    {
+      "event": "Cursa dels Nassos",
+      "benchmark_name": "Cursa dels Nassos",
+      "ville": "Barcelone",
+      "pays": "Espagne ",
+      "date": "2026-12-31",
+      "platform": null
+    },
+    {
+      "event": "We Run rome",
+      "benchmark_name": "We Run rome",
+      "ville": "Rome",
+      "pays": "Italie",
+      "date": "2026-12-31",
+      "platform": null
+    }
+  ],
+  "sans_date": [
+    {
+      "event": "Copenhagen Half Marathon",
+      "benchmark_name": "Copenhagen Half Marathon",
+      "ville": "Copenhague ",
+      "pays": "Danemark",
+      "date": null,
+      "platform": "ultimate"
+    },
+    {
+      "event": "Vhi Women's Mini Marathon",
+      "benchmark_name": "VHI Women's Mini Marathon",
+      "ville": "Dublin",
+      "pays": "Irlande",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "benchmark_name": "Dick's Pittsburgh Marathon",
+      "ville": "Pittsburg",
+      "pays": "Etats-Unis",
+      "date": null,
+      "platform": "athlinks"
+    },
+    {
+      "event": "Silicon Valley Turkey Trot",
+      "benchmark_name": "Silicon Valley Turkey Trot",
+      "ville": "San Jose",
+      "pays": "Etats-Unis",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Carrera Nocturna del Guadalquivir KH7",
+      "benchmark_name": "Carrera Nocturna del Guadalquivir KH7",
+      "ville": "Séville",
+      "pays": "Espagne ",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Grandma's Marathon",
+      "benchmark_name": "Grandma's Marathon",
+      "ville": "Duluth",
+      "pays": "Etats-Unis",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "St. Jude Memphis Marathon",
+      "benchmark_name": "St Jude Memphis Marathon",
+      "ville": "Memphis",
+      "pays": "Etats-Unis",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Crescent City Classic",
+      "benchmark_name": "Crescent City Classic",
+      "ville": "Nouvelle-Orléans",
+      "pays": "Etats-Unis",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "SOLA-Stafette Zürich",
+      "benchmark_name": "SOLA-Stafette Zürich",
+      "ville": "Zurich ",
+      "pays": "Suisse",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Midwintern Marathon",
+      "benchmark_name": "Midwintern Marathon",
+      "ville": "Apeldoorn",
+      "pays": "Pays-Bas",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Baltimore Running Festival",
+      "benchmark_name": "Baltimore Running Festival",
+      "ville": "Baltimore",
+      "pays": "Etats-Unis",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Bangsaen21",
+      "benchmark_name": "Bangsaen 21",
+      "ville": "Bang Saen",
+      "pays": "Thailande",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Bangsaen 42 Marathon",
+      "benchmark_name": "Bangsaen 42 Marathon",
+      "ville": "Bang Saen",
+      "pays": "Thailande",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Kagawa Marugama Half Marathon",
+      "benchmark_name": "Kagawa Marugama Half Marathon",
+      "ville": "Marugame",
+      "pays": "Japon",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "EDP Maratona do Porto",
+      "benchmark_name": "Meia Maratona do Porto",
+      "ville": "Porto ",
+      "pays": "Portugal",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Media Maraton internacional aguas de alicante",
+      "benchmark_name": "Media Maraton internacional aguas de alicante",
+      "ville": "Alicante",
+      "pays": "Espagne ",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "KPMG Lentermarathon",
+      "benchmark_name": "KPMG Lentermarathon",
+      "ville": "Amstelveen",
+      "pays": "Pays-Bas",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Maratona Monumental de Brasília",
+      "benchmark_name": "Maratona Monumental Brasilia",
+      "ville": "Brasilia",
+      "pays": "Brésil",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Besox Halve Van Oostende",
+      "benchmark_name": "Besox Halve Van Oostende",
+      "ville": "Ostende",
+      "pays": "Belgique",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Run the City",
+      "benchmark_name": "Run the City",
+      "ville": "Beyrouth",
+      "pays": "Liban",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Spa-Francorchamps Run",
+      "benchmark_name": "Spa-Francorchamps Run",
+      "ville": "Francorchamps",
+      "pays": "Belgique",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Zagreb21 Spring Half Marathon",
+      "benchmark_name": "Zagreb21 Spring Half Marathon",
+      "ville": "Zagreb",
+      "pays": "Croatie",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Dogi's Half Marathon",
+      "benchmark_name": "Dogi's Half Marathon",
+      "ville": "Dolo",
+      "pays": "Italie",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Mezza maratona di Latina",
+      "benchmark_name": "Mezza maratona di Latina",
+      "ville": "Latina",
+      "pays": "Italie",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "UST Trivandrum Marathon",
+      "benchmark_name": "UST Trivandrum Marathon",
+      "ville": "Trivandrum",
+      "pays": "Inde",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Rolling Half",
+      "benchmark_name": "Rolling Half",
+      "ville": "Beyrouth",
+      "pays": "Liban",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "21KM.BE - Semi marathon de Dour",
+      "benchmark_name": "21KM.BE - Semi marathon de Dour",
+      "ville": "Dour",
+      "pays": "Belgique",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Sapporo Half Marathon",
+      "benchmark_name": "Faro Half Marathon",
+      "ville": "Faro",
+      "pays": "Portugal",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Bahrain Night Half Marathon",
+      "benchmark_name": "Bahrain Night Half Marathon",
+      "ville": "Bahreïn",
+      "pays": "Bahreïn",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Terre di Siena Ultramarathon",
+      "benchmark_name": "Terre di Siena Ultramarathon",
+      "ville": "Sienne",
+      "pays": "Italie",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Almaty Half Marathon",
+      "benchmark_name": "Ajman Half Marathon",
+      "ville": "Ajman",
+      "pays": "Emirats arabes unis",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Hunsrück Marathon",
+      "benchmark_name": "Hunsrück Marathon",
+      "ville": "Simmern",
+      "pays": "Allemagne",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Beyon Full Marathon",
+      "benchmark_name": "Beyon Full Marathon",
+      "ville": "Zallaq",
+      "pays": "Bahreïn",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Halve Marathon",
+      "benchmark_name": "Halve Marathon",
+      "ville": "Groningen",
+      "pays": "Pays-Bas",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Dalian Marathon",
+      "benchmark_name": "Dalian Marathon",
+      "ville": "Dalian",
+      "pays": "Chine",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Guangzhou Marathon",
+      "benchmark_name": "Lanzhou Marathon",
+      "ville": "Lanzhou ",
+      "pays": "Chine",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Guangzhou Marathon",
+      "benchmark_name": "Hangzhou Marathon",
+      "ville": "Wuya",
+      "pays": "Chine",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "QuangTri Amazing Marathon",
+      "benchmark_name": "QuangTri Amazing Marathon",
+      "ville": "Quang Tri",
+      "pays": "Vietnam",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Guiyang Marathon",
+      "benchmark_name": "Guiyang Marathon",
+      "ville": "Guiyang",
+      "pays": "Chine",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Yerevan Marathon",
+      "benchmark_name": "Yerevan Marathon",
+      "ville": "Yerevan",
+      "pays": "Arménie",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Istanbul Marathon",
+      "benchmark_name": "Istanbul Night Marathon",
+      "ville": "Istanbul ",
+      "pays": "Turquie",
+      "date": null,
+      "platform": "splittime"
+    },
+    {
+      "event": "Marathon de Göltzschal",
+      "benchmark_name": "Marathon de Göltzschal",
+      "ville": "Göltzschtal ",
+      "pays": "Allemagne",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Skosana Legend Race",
+      "benchmark_name": "Skosana Legend Race",
+      "ville": "Pretoria",
+      "pays": "Afrique du Sud",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Puma Toronto Spring 10K",
+      "benchmark_name": "Puma Toronto Spring 10K",
+      "ville": "Toronto ",
+      "pays": "Canada",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Lazada Run",
+      "benchmark_name": "Lazada Run",
+      "ville": "Bangkok ",
+      "pays": "Thailande",
+      "date": null,
+      "platform": null
+    },
+    {
+      "event": "Midnattsloppet Stockholm",
+      "benchmark_name": "Midnattsloppet Stockholm",
+      "ville": "Stockholm ",
+      "pays": "Suède",
+      "date": null,
+      "platform": null
+    }
+  ]
+}

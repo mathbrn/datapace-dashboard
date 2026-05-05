@@ -1,0 +1,182 @@
+[
+  {
+    "rank": 1,
+    "name": "Marathon de Lille",
+    "total_2025": 14000,
+    "city": "Lille"
+  },
+  {
+    "rank": 2,
+    "name": "Wizz Air Venicemarathon",
+    "total_2025": 13599,
+    "city": "Venise"
+  },
+  {
+    "rank": 3,
+    "name": "Servus Calgary Marathon",
+    "total_2025": 13586,
+    "city": "Calgary"
+  },
+  {
+    "rank": 4,
+    "name": "Calgary Marathon",
+    "total_2025": 13586,
+    "city": "Calgary"
+  },
+  {
+    "rank": 5,
+    "name": "Bratislava Marathon",
+    "total_2025": 12502,
+    "city": "Bratislava"
+  },
+  {
+    "rank": 6,
+    "name": "Freiburg Marathon",
+    "total_2025": 12217,
+    "city": "Fribourg"
+  },
+  {
+    "rank": 7,
+    "name": "Egmond Halve marathon",
+    "total_2025": 11625,
+    "city": "Egmond aan Zee"
+  },
+  {
+    "rank": 8,
+    "name": "15KM de Rotterdam",
+    "total_2025": 11442,
+    "city": "Rotterdam"
+  },
+  {
+    "rank": 9,
+    "name": "Stuttgart-Lauf",
+    "total_2025": 11414,
+    "city": "Stuttgart"
+  },
+  {
+    "rank": 10,
+    "name": "Utrecht Marathon",
+    "total_2025": 11401,
+    "city": "Utrecht"
+  },
+  {
+    "rank": 11,
+    "name": "Lausanne Marathon",
+    "total_2025": 11305,
+    "city": "Lausanne"
+  },
+  {
+    "rank": 12,
+    "name": "Paderborner Osterlauf",
+    "total_2025": 10941,
+    "city": "Paderborn"
+  },
+  {
+    "rank": 13,
+    "name": "Sao Silvestre de Lisboa",
+    "total_2025": 10868,
+    "city": "Lisbonne"
+  },
+  {
+    "rank": 14,
+    "name": "Fukuoka Marathon",
+    "total_2025": 10790,
+    "city": "Fukuoka"
+  },
+  {
+    "rank": 15,
+    "name": "ING Night Marathon Luxembourg",
+    "total_2025": 10789,
+    "city": "Luxembourg"
+  },
+  {
+    "rank": 16,
+    "name": "Swiss city Marathon",
+    "total_2025": 10551,
+    "city": "Lucerne"
+  },
+  {
+    "rank": 17,
+    "name": "IndianOil WNC Navy Half",
+    "total_2025": 10421,
+    "city": "Mumbai "
+  },
+  {
+    "rank": 18,
+    "name": "Bix 7",
+    "total_2025": 10142,
+    "city": "Davenport"
+  },
+  {
+    "rank": 19,
+    "name": "Guadalajara Half Marathon",
+    "total_2025": 9960,
+    "city": "Guadalajara"
+  },
+  {
+    "rank": 20,
+    "name": "Bank of China Beijing Half Marathon",
+    "total_2025": 9960,
+    "city": "Pekin"
+  },
+  {
+    "rank": 21,
+    "name": "Oxford Half",
+    "total_2025": 9947,
+    "city": "Oxford "
+  },
+  {
+    "rank": 22,
+    "name": "Prom'Classique",
+    "total_2025": 9946,
+    "city": "Nice"
+  },
+  {
+    "rank": 23,
+    "name": "Bangsaen 42 Marathon",
+    "total_2025": 9651,
+    "city": "Bang Saen"
+  },
+  {
+    "rank": 24,
+    "name": "Kagawa Marugama Half Marathon",
+    "total_2025": 9638,
+    "city": "Marugame"
+  },
+  {
+    "rank": 25,
+    "name": "Dresden Marathon",
+    "total_2025": 9363,
+    "city": "Dresde "
+  },
+  {
+    "rank": 26,
+    "name": "LDN X",
+    "total_2025": 9356,
+    "city": "Londres"
+  },
+  {
+    "rank": 27,
+    "name": "Run set & Match",
+    "total_2025": 9013,
+    "city": "Paris"
+  },
+  {
+    "rank": 28,
+    "name": "Tranquilidade Meia Maratona dos Descobrimentos",
+    "total_2025": 8632,
+    "city": "Lisbonne"
+  },
+  {
+    "rank": 29,
+    "name": "10km du Panthéon",
+    "total_2025": 8513,
+    "city": "Paris"
+  },
+  {
+    "rank": 30,
+    "name": "Kitakyushu Marathon",
+    "total_2025": 8300,
+    "city": "Kitakyushu"
+  }
+]

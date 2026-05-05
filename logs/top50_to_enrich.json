@@ -1,0 +1,465 @@
+[
+  {
+    "name": "Tamarack Ottawa Race week end",
+    "total_2025": 56052,
+    "distances": [
+      "MARATHON",
+      "SEMI",
+      "10KM",
+      "5KM",
+      "AUTRE"
+    ],
+    "city": "Ottawa"
+  },
+  {
+    "name": "World 10K bengaluru",
+    "total_2025": 55819,
+    "distances": [
+      "10KM",
+      "AUTRE"
+    ],
+    "city": "Bengalore"
+  },
+  {
+    "name": "ASML Marathon Eindhoven",
+    "total_2025": 55160,
+    "distances": [
+      "MARATHON",
+      "SEMI",
+      "5KM",
+      "AUTRE"
+    ],
+    "city": "Eindhoven"
+  },
+  {
+    "name": "Maratona Do Rio",
+    "total_2025": 54494,
+    "distances": [
+      "MARATHON",
+      "SEMI",
+      "10KM",
+      "5KM"
+    ],
+    "city": "Rio de Janeiro "
+  },
+  {
+    "name": "Course de l'escalade",
+    "total_2025": 50702,
+    "distances": [
+      "10KM"
+    ],
+    "city": "Genève"
+  },
+  {
+    "name": "Generali Köln Marathon",
+    "total_2025": 47870,
+    "distances": [
+      "MARATHON",
+      "SEMI",
+      "AUTRE"
+    ],
+    "city": "Cologne"
+  },
+  {
+    "name": "Great Ethiopan Run",
+    "total_2025": 45650,
+    "distances": [
+      "10KM"
+    ],
+    "city": "Addis-Abeba"
+  },
+  {
+    "name": "Freshworks Chennai Marathon",
+    "total_2025": 45649,
+    "distances": [
+      "MARATHON",
+      "SEMI",
+      "10KM",
+      "AUTRE"
+    ],
+    "city": "Chennai"
+  },
+  {
+    "name": "20KM de Bruxelles",
+    "total_2025": 41616,
+    "distances": [
+      "AUTRE"
+    ],
+    "city": "Bruxelles"
+  },
+  {
+    "name": "Southern Cross Round The Bays",
+    "total_2025": 36768,
+    "distances": [
+      "AUTRE",
+      "SEMI",
+      "5KM",
+      "AUTRE",
+      "AUTRE"
+    ],
+    "city": "Auckland"
+  },
+  {
+    "name": "Baloise Antwerp 10 miles",
+    "total_2025": 35070,
+    "distances": [
+      "AUTRE"
+    ],
+    "city": "Anvers"
+  },
+  {
+    "name": "Rimi Riga Marathon",
+    "total_2025": 35014,
+    "distances": [
+      "MARATHON",
+      "SEMI",
+      "10KM",
+      "AUTRE"
+    ],
+    "city": "Riga"
+  },
+  {
+    "name": "World 25K Kolkata",
+    "total_2025": 31394,
+    "distances": [
+      "10KM",
+      "AUTRE"
+    ],
+    "city": "Calcutta "
+  },
+  {
+    "name": "Antwerp Marathon",
+    "total_2025": 30848,
+    "distances": [
+      "MARATHON",
+      "SEMI",
+      "10KM",
+      "AUTRE"
+    ],
+    "city": "Anvers"
+  },
+  {
+    "name": "Wizz Air Budapest Half marathon",
+    "total_2025": 30545,
+    "distances": [
+      "SEMI",
+      "10KM",
+      "AUTRE"
+    ],
+    "city": "Budapest"
+  },
+  {
+    "name": "Carrera de la Mujer Barcelona",
+    "total_2025": 27969,
+    "distances": [
+      "AUTRE"
+    ],
+    "city": "Barcelone"
+  },
+  {
+    "name": "Swedbank Tallinna maraton",
+    "total_2025": 27276,
+    "distances": [
+      "MARATHON",
+      "SEMI",
+      "10KM",
+      "5KM",
+      "AUTRE"
+    ],
+    "city": "Tallinn"
+  },
+  {
+    "name": "Saitama Marathon",
+    "total_2025": 26137,
+    "distances": [
+      "MARATHON",
+      "AUTRE"
+    ],
+    "city": "Saitama"
+  },
+  {
+    "name": "Beneva Montréal Marathon",
+    "total_2025": 25964,
+    "distances": [
+      "MARATHON",
+      "SEMI",
+      "10KM",
+      "5KM"
+    ],
+    "city": "Montréal"
+  },
+  {
+    "name": "Maraton de Santiago",
+    "total_2025": 25749,
+    "distances": [
+      "MARATHON",
+      "SEMI",
+      "10KM"
+    ],
+    "city": "Santiago"
+  },
+  {
+    "name": "Runaway Auckland Marathon",
+    "total_2025": 25605,
+    "distances": [
+      "MARATHON",
+      "SEMI",
+      "5KM",
+      "AUTRE"
+    ],
+    "city": "Auckland"
+  },
+  {
+    "name": "Cursa El corte Ingles",
+    "total_2025": 25588,
+    "distances": [
+      "10KM"
+    ],
+    "city": "Barcelone"
+  },
+  {
+    "name": "Medio Maraton de Buenos Aires",
+    "total_2025": 24968,
+    "distances": [
+      "SEMI"
+    ],
+    "city": "Buenos Aires"
+  },
+  {
+    "name": "Zevenheuvelenloop",
+    "total_2025": 23957,
+    "distances": [
+      "AUTRE"
+    ],
+    "city": "Nijmegen"
+  },
+  {
+    "name": "Hackney Half Marathon",
+    "total_2025": 23908,
+    "distances": [
+      "SEMI",
+      "5KM"
+    ],
+    "city": "Londres"
+  },
+  {
+    "name": "Vhi Women's Mini Marathon",
+    "total_2025": 23758,
+    "distances": [
+      "10KM"
+    ],
+    "city": "Dublin"
+  },
+  {
+    "name": "Paris-Versailles La Grande Classique",
+    "total_2025": 23335,
+    "distances": [
+      "AUTRE"
+    ],
+    "city": "Versailles "
+  },
+  {
+    "name": "Grand Prix Von Bern",
+    "total_2025": 23045,
+    "distances": [
+      "AUTRE"
+    ],
+    "city": "Berne"
+  },
+  {
+    "name": "Maraton Medellin",
+    "total_2025": 22566,
+    "distances": [
+      "MARATHON",
+      "SEMI",
+      "10KM",
+      "5KM"
+    ],
+    "city": "Medelin"
+  },
+  {
+    "name": "Guangzhou Marathon",
+    "total_2025": 21580,
+    "distances": [
+      "MARATHON"
+    ],
+    "city": "Guangzhou"
+  },
+  {
+    "name": "Jakarta Running Festival",
+    "total_2025": 21521,
+    "distances": [
+      "MARATHON",
+      "SEMI",
+      "10KM",
+      "5KM"
+    ],
+    "city": "Jakarta"
+  },
+  {
+    "name": "Meia Maratona Internacional do Rio de Janeiro",
+    "total_2025": 19337,
+    "distances": [
+      "SEMI",
+      "10KM",
+      "5KM"
+    ],
+    "city": "Rio de Janeiro "
+  },
+  {
+    "name": "Marathon München by Brooks",
+    "total_2025": 19223,
+    "distances": [
+      "MARATHON",
+      "SEMI",
+      "10KM"
+    ],
+    "city": "Munich"
+  },
+  {
+    "name": "10km Fulfil des Champs Elysées",
+    "total_2025": 19074,
+    "distances": [
+      "10KM"
+    ],
+    "city": "Paris"
+  },
+  {
+    "name": "Saucony 10km de le Tour Eiffel",
+    "total_2025": 18776,
+    "distances": [
+      "10KM"
+    ],
+    "city": "Paris"
+  },
+  {
+    "name": "City-Bay Fun Run",
+    "total_2025": 18722,
+    "distances": [
+      "SEMI",
+      "AUTRE"
+    ],
+    "city": "Adelaide"
+  },
+  {
+    "name": "Semi marathon de Lisbonne",
+    "total_2025": 17674,
+    "distances": [
+      "SEMI"
+    ],
+    "city": "Lisbonne"
+  },
+  {
+    "name": "Ljubljana Marathon",
+    "total_2025": 16790,
+    "distances": [
+      "MARATHON",
+      "SEMI",
+      "10KM"
+    ],
+    "city": "Ljubljana"
+  },
+  {
+    "name": "Bredase Singelloop",
+    "total_2025": 16685,
+    "distances": [
+      "SEMI",
+      "10KM",
+      "5KM"
+    ],
+    "city": "Breda"
+  },
+  {
+    "name": "Hokkaido Marathon",
+    "total_2025": 16600,
+    "distances": [
+      "MARATHON"
+    ],
+    "city": "Sapporo"
+  },
+  {
+    "name": "Bilbao Night Running Fest",
+    "total_2025": 16286,
+    "distances": [
+      "SEMI",
+      "10KM"
+    ],
+    "city": "Bilbao"
+  },
+  {
+    "name": "Pattaya Marathon",
+    "total_2025": 16055,
+    "distances": [
+      "MARATHON",
+      "SEMI",
+      "10KM"
+    ],
+    "city": "Pattaya"
+  },
+  {
+    "name": "Zurich Marathon",
+    "total_2025": 15599,
+    "distances": [
+      "MARATHON",
+      "SEMI",
+      "10KM"
+    ],
+    "city": "Zurich"
+  },
+  {
+    "name": "SOLA-Stafette Zürich",
+    "total_2025": 15470,
+    "distances": [
+      "AUTRE"
+    ],
+    "city": "Zurich "
+  },
+  {
+    "name": "Nagoya Women's Marathon",
+    "total_2025": 15421,
+    "distances": [
+      "MARATHON"
+    ],
+    "city": "Nagoya"
+  },
+  {
+    "name": "Hamburg Halbmarathon",
+    "total_2025": 14506,
+    "distances": [
+      "SEMI"
+    ],
+    "city": "Francfort"
+  },
+  {
+    "name": "10km HOKA Paris Centre",
+    "total_2025": 14412,
+    "distances": [
+      "10KM"
+    ],
+    "city": "Paris"
+  },
+  {
+    "name": "TREK Singelloop Utrecht",
+    "total_2025": 14380,
+    "distances": [
+      "10KM"
+    ],
+    "city": "Utrecht"
+  },
+  {
+    "name": "Zandvoort circuit run",
+    "total_2025": 14163,
+    "distances": [
+      "AUTRE"
+    ],
+    "city": "Zandvoort"
+  },
+  {
+    "name": "The Music Run",
+    "total_2025": 14110,
+    "distances": [
+      "5KM"
+    ],
+    "city": "Singapour"
+  }
+]

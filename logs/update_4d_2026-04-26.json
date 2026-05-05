@@ -1,0 +1,1888 @@
+{
+  "date": "2026-04-26",
+  "wa_races": [
+    {
+      "name": "Ethiopian U18 Championships",
+      "venue": "Addis Ababa (ETH)",
+      "area": "Africa",
+      "dateRange": "27 APR–03 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Ethiopian U20 Championships",
+      "venue": "Addis Ababa (ETH)",
+      "area": "Africa",
+      "dateRange": "27 APR–03 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Southampton AC Invitation Throws",
+      "venue": "Univ. of Winchester Sports Stadium, Winchester (GBR)",
+      "area": "Europe",
+      "dateRange": "27 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Israeli U18 U20 League - Round 3",
+      "venue": "Givat Ram Stadium, Jerusalem (ISR)",
+      "area": "Europe",
+      "dateRange": "27 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "PK Alle Categorieën Vlaams-Brabant - Dag 2",
+      "venue": "AtletiekArena Gaston Roelants Kessel-Lo / Hal 5, Leuven (BEL)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Maratón de Santiago",
+      "venue": "Santiago de Chile (CHI)",
+      "area": "South America",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Europe Marathon",
+      "venue": "Aveiro (POR)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Mandelbärlicup",
+      "venue": "Stadion Buser-Arena, Grenchen (SUI)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Grand Prix Darwin Piñeyrúa",
+      "venue": "Pista de Atletismo Darwin Piñeyrúa, Montevideo (URU)",
+      "area": "South America",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "PK Alle Categorieën Antwerpen - Dag 2",
+      "venue": "Netestadion, Lier (BEL)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "TCS London Marathon",
+      "venue": "London (GBR)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "TCS World 10K Bengaluru",
+      "venue": "Bengaluru (IND)",
+      "area": "Asia",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Bucharest International Half Marathon - 10km",
+      "venue": "Bucureşti (ROU)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Meeting Label Regional WA de Reims",
+      "venue": "Stade Régional G. Hebert, Reims (FRA)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Europe Half Marathon",
+      "venue": "Aveiro (POR)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Ukrainian 10,000m Championships",
+      "venue": "Avangard Stadium, Lutsk (UKR)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Marsala Half Marathon \"Città Garibaldina\"",
+      "venue": "Marsala (ITA)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "I. round Regional SsAZ U20 & U18",
+      "venue": "Atletický areál Spojenej školy, Nitra (SVK)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "The 36th Dalian Marathon",
+      "venue": "Dalian (CHN)",
+      "area": "Asia",
+      "dateRange": "26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Gifu Half Marathon",
+      "venue": "Gifu (JPN)",
+      "area": "Asia",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "BFTTA Outdoor Series",
+      "venue": "Lee Valley Athletics Centre, London (GBR)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "OÖ. Landesmeisterschaft 4x400m mixed & Hindernislauf (U18-AK)",
+      "venue": "Rennbahn, Steyr (AUT)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Kazantzakeia (Nikos Kazantzakis Memorial)",
+      "venue": "Pankritio Stadium, Herakleion (GRE)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Finale du Challenge Mario Gatti",
+      "venue": "Redon (FRA)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Oklahoma Throws Series",
+      "venue": "Millican Field at Throw Town, Ramona, OK (USA)",
+      "area": "North and Central America",
+      "dateRange": "26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "9. Internationales EMM-Athletik-Sportfest",
+      "venue": "Eugen-Reintjes-Stadion, Emmerich am Rhein (GER)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Eugene Marathon",
+      "venue": "Hayward Field, Eugene, OR (USA)",
+      "area": "North and Central America",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Meia Maratona Internacional de Balneário Camboriú",
+      "venue": "Camboriú (BRA)",
+      "area": "South America",
+      "dateRange": "26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "German U20 Race Walking Championships",
+      "venue": "Mörfelder Straße, Kelsterbach (GER)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "German U18 Race Walking Championships",
+      "venue": "Mörfelder Straße, Kelsterbach (GER)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Uniper Düsseldorf Half Marathon",
+      "venue": "Staufenplatz, Düsseldorf (GER)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "4° Meeting Mercurio",
+      "venue": "Campo Andrea Gorla, Novara (ITA)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Bucharest International Half Marathon by Constantina Dita presented by Decathlon",
+      "venue": "Bucureşti (ROU)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "36. Internationaler Würzburger Residenzlauf",
+      "venue": "Würzburg (GER)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Eugene Half Marathon",
+      "venue": "Hayward Field, Eugene, OR (USA)",
+      "area": "North and Central America",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Sesongstartstevne",
+      "venue": "Sentralidrettsanlegg, Nittedal (NOR)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Marsala Marathon - Citta Garibaldina",
+      "venue": "Marsala (ITA)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Campionati Regionali di Staffette Assoluti su Pista",
+      "venue": "Stadio Atleti Azzurri d'Italia, Gallarate (ITA)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Botswana Golden Grand Prix",
+      "venue": "National Stadium, Gaborone (BOT)",
+      "area": "Africa",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Atledo Lente Trackmeeting",
+      "venue": "Sportpark Hertog Jan, Dongen (NED)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Universtiy of Birmingham T&F Series",
+      "venue": "Birmingham University Athletics Track, Birmingham (GBR)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Arab U20 Championships",
+      "venue": "Stadion Radés, Radés (TUN)",
+      "area": "Africa",
+      "dateRange": "26–30 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Cyprus Road Races Grand Prix - Paralimni",
+      "venue": "Paralimni (CYP)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "36. Internationaler Korschenbroicher Citylauf",
+      "venue": "Korschenbroich (GER)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "German Race Walking Championships",
+      "venue": "Mörfelder Straße, Kelsterbach (GER)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Mujalonga Sul Mar",
+      "venue": "Muggia (ITA)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Provas de Preparação",
+      "venue": "Pista Municipal Prof. Mário Moniz Pereira, Lisboa (POR)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Rhodes Marathnon - Half Marathon",
+      "venue": "Eleftherias Square, Rhodes (GRE)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "1. kolo KP mužů a žen SKAS",
+      "venue": "Beroun (CZE)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Spanish Clubs Championships Primera Division Liga Joma-Leg 1-Match A",
+      "venue": "Estadio El Fontanar, Córdoba (ESP)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Vrhačská tour - 1. kolo",
+      "venue": "Mestský atletický štadión, Humenné (SVK)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Cork County Juvenile T&F Day 1",
+      "venue": "Munster Technological University Track, Cork (IRL)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Spanish Clubs Championships Primera Division Liga Iberdrola-Leg 1-Match A",
+      "venue": "Estadi Municipal de Cornellà de Llobregat, Cornellá (ESP)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Haspa Half Marathon Hamburg",
+      "venue": "Hamburg (GER)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Interclubs Jeunes",
+      "venue": "Stade Jean Jacoby, Schifflange (LUX)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "TC10K",
+      "venue": "Victoria (CAN)",
+      "area": "North and Central America",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Bålsta Stadslopp",
+      "venue": "Gröna Dalens IP, Bålsta (SWE)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Meeting Memorial Brandoli",
+      "venue": "Campo Comunale, Modena (ITA)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "4ème Meeting Fédéral",
+      "venue": "Fes (MAR)",
+      "area": "Africa",
+      "dateRange": "26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Zurich Rock 'n' Roll Running Series Madrid Half Marathon",
+      "venue": "Madrid (ESP)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "TUI Rhodes Marathon",
+      "venue": "Eleftherias Square, Rhodes (GRE)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Kasttävling",
+      "venue": "Arenastadens Kastpark, Växjö (SWE)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Festival of Sport Youth and Kids Athletics Day",
+      "venue": "Wan Chai Sports Ground, Hong Kong (HKG)",
+      "area": "Asia",
+      "dateRange": "26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "21K Salvador",
+      "venue": "Salvador (BRA)",
+      "area": "South America",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Medio Maratón de Santiago",
+      "venue": "Santiago de Chile (CHI)",
+      "area": "South America",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Torneo Jackeline Soliz",
+      "venue": "Gobierno Autónomo Municipal de Cochabamba, Cochabamba (BOL)",
+      "area": "South America",
+      "dateRange": "26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Zurich Rock 'n' Roll Running Series Madrid Maraton",
+      "venue": "Madrid (ESP)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "International Marathon Alexander the Great - bwin - 10K & 5K",
+      "venue": "Thessaloniki (GRE)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Meeting d'Ouverture",
+      "venue": "Boudewijnstadion, Bruxelles (BEL)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "International Marathon Alexander the Great - bwin",
+      "venue": "Thessaloniki (GRE)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Chinese Athletics Association 10Km Elite Series Jiashan Dayun",
+      "venue": "Jiaxing (CHN)",
+      "area": "Asia",
+      "dateRange": "26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "ZsAZ 1. Regional Meeting",
+      "venue": "Atletický areál Spojenej školy, Nitra (SVK)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Run With The Wind 2",
+      "venue": "Cardiff Athletic Stadium, Cardiff (GBR)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Dia da Vara",
+      "venue": "Pista de Atletismo de Penafiel, Penafiel (POR)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Medio Maraton BJX",
+      "venue": "Poliforum, León (MEX)",
+      "area": "North and Central America",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "40. Haspa Marathon Hamburg",
+      "venue": "Hamburg (GER)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Uniper Düsseldorf Marathon",
+      "venue": "Düsseldorf (GER)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Chinese Athletics Association 10Km Elite Series Xiamen Tongan",
+      "venue": "Tong'an District, Xiamen (CHN)",
+      "area": "Asia",
+      "dateRange": "26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Chinese Athletics Association 10Km Elite Series Zhangzhou Xiangcheng",
+      "venue": "Zhangzhou (CHN)",
+      "area": "Asia",
+      "dateRange": "26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Lithuanian Half Marathon Championships",
+      "venue": "Kaunas (LTU)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Miyun Marathon",
+      "venue": "Beijing (CHN)",
+      "area": "Asia",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Campionati regionali di staffette",
+      "venue": "Stadio Vittorio Morandini, Remanzacco (ITA)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Majstrovstvá VsAZ družstiev dorast a mladšie žiactvo",
+      "venue": "Mestský atletický štadión, Humenné (SVK)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "International Marathon Alexander the Great - 10km",
+      "venue": "Thessaloniki (GRE)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Padova Marathon",
+      "venue": "Padova (ITA)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "PK Alle Categorieën Oost-Vlaanderen - Dag 2",
+      "venue": "Wouter Weylandtstadion, Gentbrugge (BEL)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Padova Half Marathon",
+      "venue": "Padova (ITA)",
+      "area": "Europe",
+      "dateRange": "26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Mityng otwarcia sezonu",
+      "venue": "Golęcin Stadion, Poznan (POL)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Segundo Torneo Regional de O´Higgins",
+      "venue": "Pista Atlética Estadio Municipal, San Fernando (CHI)",
+      "area": "South America",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Spanish Clubs Championships División de Honor Liga Joma Leg 1 - Match A",
+      "venue": "Pistes d'atletisme Gaetà Huguet, Castellón (ESP)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Spanish Clubs Championships Division Honor Liga Iberdrola Leg 1-Match A",
+      "venue": "Estadi Joan Serrahima, Barcelona (ESP)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Spanish Clubs Championships Division Honor Liga Iberdrola Leg 1-Match C",
+      "venue": "Estadio Vallehermoso, Madrid (ESP)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Spanish Clubs Championships División de Honor Liga Joma Leg 1-Match D",
+      "venue": "Helmántico, Salamanca (ESP)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Spanish Clubs Championships Division Honor Liga Iberdrola Leg 1-Match B",
+      "venue": "Complex Esportiu L’Hospitalet Nord, L'Hospitalet (ESP)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Spanish Clubs Championships División de Honor Liga Joma Leg 1-Match C",
+      "venue": "Estadio de Larrabide, Pamplona (ESP)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Spanish Clubs Championships División de Honor Liga Joma Leg 1-Match B",
+      "venue": "Estadio de Atletismo del Turia, Valencia (ESP)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Regional FENAUDE",
+      "venue": "Pista Atlética Mario Recordón, Santiago de Chile (CHI)",
+      "area": "South America",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Spanish Clubs Championships Primera Division Liga Iberdrola-Leg 1-Match B",
+      "venue": "Estadio Municipal Emilio Hidalgo, Motril (ESP)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Spanish Clubs Championships Division Honor Liga Iberdrola Leg 1-Match D",
+      "venue": "Pistas Universad de León, León (ESP)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Spanish Clubs Championships Primera Division Liga Joma-Leg 1-Match C",
+      "venue": "Estadi Municipal d'Atletisme Congost, Manresa (ESP)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Spanish Clubs Championships Primera Division Liga Joma-Leg 1-Match B",
+      "venue": "Pista atletismo La Granadilla, Badajoz (ESP)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Spanish Clubs Championships Primera Division Liga Joma-Leg 1-Match D",
+      "venue": "Pista Yago Lamela, Avilés (ESP)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Souvenir L. Pauchard",
+      "venue": "Stade M. Chevalier, Cannes (FRA)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Campeonato Pernambucano Loterias Caixa de Atletismo Sub 23",
+      "venue": "Pista de Atletismo do Santos Dumont, Recifé (BRA)",
+      "area": "South America",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Spanish Clubs Championships Primera Division Liga Iberdrola-Leg 1-Match D",
+      "venue": "Pista de Atletismo de Landako, Durango (ESP)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Meeting André Joannes",
+      "venue": "Stade des Fusillés, Dampicourt (BEL)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Olímpico Jovem Regional - jornada 2",
+      "venue": "RG3 e Centro Desportivo da Madeira, Funchal (POR)",
+      "area": "Europe",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Interregional Competitions Pamyati ZT UdSSR Dmitry Syropegin",
+      "venue": "SUOR Stadium, Stavropol (RUS)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "4th National Trials",
+      "venue": "Mandela National Stadium, Kampala (UGA)",
+      "area": "Africa",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Grand Prix Ragazzi, Cadetti M/F",
+      "venue": "Stadio Crestella, Donnas (ITA)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Championnat Provincial Liégeois",
+      "venue": "Province Naimette Arena, Liège (BEL)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "2ª Milha de Tábua",
+      "venue": "Tábua (POR)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "British Grand Prix Of Race Walking",
+      "venue": "Brownlee Centre, Leeds (GBR)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "TM 10.000m und Langstaffeln 3x800m, 3x1000m mit TM 4x400m Mixedstaffel",
+      "venue": "Sportzentrum Wörgl, Wörgl (AUT)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "C.D.S. DI MARCIA - 3^ Prova (Pista): 10.000m Sen/Pro M/F - 5000m Jun M/F - 5000m Allievi/Allieve",
+      "venue": "Campo Mauro Ferrari, Prato (ITA)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "The 80th Oita Prefectural Championships",
+      "venue": "Municipal Stadium, Oita (JPN)",
+      "area": "Asia",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Border Duel",
+      "venue": "CSU Jack Christiansen Track, Fort Collins, CO (USA)",
+      "area": "North and Central America",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Torneo Regional de Otoño",
+      "venue": "Estadio Municipal de Limache, Limache (CHI)",
+      "area": "South America",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "1ª Légua de Tábua",
+      "venue": "Tábua (POR)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Grand Prix Estrella Puente",
+      "venue": "Pista de Atletismo Darwin Piñeyrúa, Montevideo (URU)",
+      "area": "South America",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Open Challenge 3",
+      "venue": "Marsa Athletics Track, Marsa (MLT)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Meeting della Liberazione - Siena",
+      "venue": "Campo Scuola Renzo Corsi, Siena (ITA)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Tokai University Throwing Meet",
+      "venue": "Tokai University Stadium, Hiratsuka (JPN)",
+      "area": "Asia",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "47° Trofeo Liberazione",
+      "venue": "Campo Comunale, Modena (ITA)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Metropolitano U20",
+      "venue": "CeNARD, Buenos Aires (ARG)",
+      "area": "South America",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Torneo Provincial U20",
+      "venue": "Campo de deportes de la UNLP, La Plata (ARG)",
+      "area": "South America",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "1 ATP - U18 Y U20",
+      "venue": "Pista Atlética Luis Oliva, Córdoba (ARG)",
+      "area": "South America",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "adidas Premiärhalvan",
+      "venue": "Norra Djurgården, Stockholm (SWE)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Lithuanian Cross Country Championships",
+      "venue": "Jurbarkas city park (LTU)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Campeonato Estadual Loterias Caixa de Atletismo U23",
+      "venue": "Pista de Atletismo da Universidade Federal do Piaui, Teresina (BRA)",
+      "area": "South America",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "J Fred Duckett Rice Twilight Meet",
+      "venue": "Rice University Ley Track/Holloway Field, Houston, TX (USA)",
+      "area": "North and Central America",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Meeting d'ouverture",
+      "venue": "Stade de l'Ancien Stand, Sion (SUI)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Torneio FAP 6 - U16/U14/U12",
+      "venue": "Pista da Universidade Estadual de Londrina, Londrina (BRA)",
+      "area": "South America",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "MAA Series",
+      "venue": "Stade Germain Comarmond, Bambous (MRI)",
+      "area": "Africa",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "3è Meeting Inter Clubs",
+      "venue": "Stade Omnisports de Kouekong, Bafoussam (CMR)",
+      "area": "Africa",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Torneio Atleta Completo",
+      "venue": "Complexo Desportivo das Laranjeiras, Ponta Delgada (POR)",
+      "area": "Europe",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "PKO Gdynia Half Marathlon",
+      "venue": "Gdynia (POL)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "2. kolo chůze pro I. a II. lig",
+      "venue": "Atletický stadion Radotín, Radotín, Praha (CZE)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Meeting du Club Colonial",
+      "venue": "Stade L. Achille, Fort-de-France (FRA)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Maltese U20 10,000Championships",
+      "venue": "Marsa Athletics Track, Marsa (MLT)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Maltese U23 10,000 Championships",
+      "venue": "Marsa Athletics Track, Marsa (MLT)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Maltese U18 10,000 Championships",
+      "venue": "Marsa Athletics Track, Marsa (MLT)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "18th International Shot Put Meeting",
+      "venue": "Draževina (MNE)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Greek U23 10,000m Championships",
+      "venue": "Municipal Stadium, Egio (GRE)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Greek 10,000m Championships",
+      "venue": "Municipal Stadium, Egio (GRE)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "39th Multistars",
+      "venue": "Centro Gabre Gabric, Brescia (ITA)",
+      "area": "Europe",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "4ª Jornada de Lançamentos ADAL",
+      "venue": "Estádio Municipal da Marinha Grande, Marinha Grande (POR)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "National Competitions Throws for the honor of the Olympic champions F. Melnik and A. Bondarchuk",
+      "venue": "Stadium KPNU, Kamianets Podilskyi (UKR)",
+      "area": "Europe",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Copa RS De Atletismo",
+      "venue": "Pista da Sogipa, Porto Alegre (BRA)",
+      "area": "South America",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Templemore Throws Weekend",
+      "venue": "Templemore Stadium, Templemore (IRL)",
+      "area": "Europe",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "National Athletics Grand Prix 1",
+      "venue": "Zhaoqing Sports Center, Zhaoqing (CHN)",
+      "area": "Asia",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "17. Berliner Läufermeeting und Bahneröffnung",
+      "venue": "Sportplatz Allee der Kosmonauten 131, Berlin-Marzhan, Berlin (GER)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Torneo Juan Silva de Lota",
+      "venue": "Estadio Municipal de Coronel, Coronel (CHI)",
+      "area": "South America",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "2do RunTime Endurance Acapulco",
+      "venue": "Unidad Deportiva de Acapulco, Acapulco (MEX)",
+      "area": "North and Central America",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "1° Meeting della Liberazione - Città di Cuneo",
+      "venue": "Campo Walter Merlo, Cuneo (ITA)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "April Classic",
+      "venue": "Usain Bolt Complex, Bridgetown (BAR)",
+      "area": "North and Central America",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "XXV Junior Meeting",
+      "venue": "Stadio Narciso Soldan, Conegliano (ITA)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "20 km de Lausanne - 5km",
+      "venue": "Stade Pierre de Coubertin, Lausanne (SUI)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Meeting da Liberdade",
+      "venue": "Pista Municipal Prof. Mário Moniz Pereira, Lisboa (POR)",
+      "area": "Europe",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Szekszárdi Szezonnyitó",
+      "venue": "Atlétikai Centrum, Szekszárd (HUN)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Throws U Series #1",
+      "venue": "Throws University, Fleetwood, PA (USA)",
+      "area": "North and Central America",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Meeting de la Réunion",
+      "venue": "Stade Sarda Garriga, Saint-André (FRA)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "XLIII Memorial Todaro, II Trofeo Benedetti",
+      "venue": "Campo Sportivo Dal Dan, Udine (ITA)",
+      "area": "Europe",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Campeonato Estadual Adulto eSub 20 Loterias Caixa",
+      "venue": "Pista de Atletismo da Escola Marcelo Cândia, Porto Velho (BRA)",
+      "area": "South America",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Torneo Jorge Guzmán Mora",
+      "venue": "Pista Atlética Villa Olimpica de Osorno, Osorno (CHI)",
+      "area": "South America",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Eröffnungsmeeting",
+      "venue": "Grendelmatte, Riehen (SUI)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Torneio de Atletismo de Manaus - SUB-18 - 2º Etapa",
+      "venue": "Pista de Atletismo da SEDEL, Manaus (BRA)",
+      "area": "South America",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Torneio de Atletismo de Manaus - SUB-16 - 2º Etapa",
+      "venue": "Pista de Atletismo da SEDEL, Manaus (BRA)",
+      "area": "South America",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Torneio de Atletismo de Manaus - Adulto - 2º Etapa",
+      "venue": "Pista de Atletismo da SEDEL, Manaus (BRA)",
+      "area": "South America",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Copa Minas de Arremesos e Lançamentos",
+      "venue": "Pista de Atletismo da USIPA, Ipatinga (BRA)",
+      "area": "South America",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "PURE Athletics Spring Invitational",
+      "venue": "National Training Center, Clermont, FL (USA)",
+      "area": "North and Central America",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Algeria Athletics One Day",
+      "venue": "Complexe Olympique Mohamed Boudiaf, Algiers (ALG)",
+      "area": "Africa",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Campeonatos Estaduais Caixa de Atletismo Sub-18",
+      "venue": "Complexo Olímpico Heróis do Araguaia, Palmas (BRA)",
+      "area": "South America",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "UAAPR - Final Youth and Adults",
+      "venue": "Pista Atletica Manuel Gonzalez Pato, Ponce (PUR)",
+      "area": "North and Central America",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonatos Estaduais Loterias Caixa de Atletismo Sub-23",
+      "venue": "Complexo Olímpico Heróis do Araguaia, Palmas (BRA)",
+      "area": "South America",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "PK Alle Categorieën Oost-Vlaanderen - Dag 1",
+      "venue": "Sportpark Molenkouter, Melle (BEL)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "PK Alle Categorieën Antwerpen - Dag 1",
+      "venue": "Atletiekbaan Bornem, Bornem (BEL)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "PK Alle Categorieën Vlaams-Brabant - Dag 1",
+      "venue": "AtletiekArena Gaston Roelants Kessel-Lo / Hal 5, Leuven (BEL)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Korzeniowski Warsaw Race Walking Cup",
+      "venue": "Świetokrzyska Street, Warszawa (POL)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "PK Alle Categorieën Limburg",
+      "venue": "Atletiekpiste De Weeg, Bree (BEL)",
+      "area": "Europe",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "PK Alle Categorieën West-Vlaanderen",
+      "venue": "Atletiekpiste, Tielt (BEL)",
+      "area": "Europe",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Sentrumsløpet",
+      "venue": "Oslo (NOR)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Black Country Hammerfest JGP 1",
+      "venue": "Telford Athletics Stadium, Telford (GBR)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "ETAPA SUB 16",
+      "venue": "Pista de Atletismo da Universidade Federal do Mato Grosso, Cuiaba (BRA)",
+      "area": "South America",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonatos Estaduais Loterias Caixa De Atletismo Sub 23",
+      "venue": "Pista de Atletismo da Universidade Federal do Mato Grosso, Cuiaba (BRA)",
+      "area": "South America",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "3ra Fecha Campeonato Nacional de 10K Ruta Ciudad de Reconquista",
+      "venue": "Reconquista (ARG)",
+      "area": "South America",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Torneo Nacional Asociación de Entrenadores",
+      "venue": "Pista de Hatillo, San José (CRC)",
+      "area": "North and Central America",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "1. kolo KPD mužů, žen, juniorů, dorostu a žactva",
+      "venue": "Atletický stadion Na Stoupách, Jihlava (CZE)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "I Copa FMO Nordeste de Meio-Fundo e Fundo e Provas Combinadas",
+      "venue": "Pista de Atletismo do Santos Dumont, Recifé (BRA)",
+      "area": "South America",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Reprezentační závody sekce vrhů ČR",
+      "venue": "Mestský Stadion Sletište, Kladno (CZE)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Team DM Qualification",
+      "venue": "Stadion Manfort, Leverkusen (GER)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Somerset Schools' AA / Somerset County AA Combined Events Championships",
+      "venue": "Athletic Arena, Yeovil (GBR)",
+      "area": "Europe",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "LSU Alumni Gold",
+      "venue": "LSU Bernie Moore Stadium, Baton Rouge, LA (USA)",
+      "area": "North and Central America",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Kagoshima Prefecture 2nd Track and Field Meet",
+      "venue": "Kamoike Auxiliary Stadium, Kagoshima (JPN)",
+      "area": "Asia",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "ANZAC Autumn Meet",
+      "venue": "Mitre10 Sports Park, Hastings (NZL)",
+      "area": "Oceania",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "UW-Whitewater Drake Alternative",
+      "venue": "UW - Rex Foster at Fiskum Field, Whitewater, WI (USA)",
+      "area": "North and Central America",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Miting otvorenja sezone",
+      "venue": "Gradski Vrt Stadium, Osijek (CRO)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Russian Cross Country Championships",
+      "venue": "Vladimir (RUS)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "77° Trofeo Liberazione (Manifestazione C-A-J-P-S-SM)",
+      "venue": "Stadio Paolo Rosi, Roma (ITA)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Campionato Regionale Prove Multiple JPS, Allievi, Master, Cadetti",
+      "venue": "Campo Angelo Lagorio, Imperia (ITA)",
+      "area": "Europe",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "C.R.Individuali PUGLIA Prove Multiple A/J/P/S e CdS PUGLIA Prove Multiple Allievi/e",
+      "venue": "Stadio M.S. Cozzoli, Molfetta (ITA)",
+      "area": "Europe",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "1. kolo KP družstev mužů, žen, mladších žáků a žákyň",
+      "venue": "Atletický stadion Prachatice (CZE)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Finnish Half Marathon Championships",
+      "venue": "Pyhtää (FIN)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Finnish U18 Road Running Championships",
+      "venue": "Pyhtää (FIN)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Finnish U20 Road Running Championships",
+      "venue": "Pyhtää (FIN)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Ballarat Marathon",
+      "venue": "Ballarat Town Hall, Ballarat (AUS)",
+      "area": "Oceania",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Bulgarian 10,000m Championships",
+      "venue": "Krepost Stadium, Hisarya (BUL)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "VEDAC Dobóakadémia Évadnyitó Dobóversenye",
+      "venue": "Egyetemi Stadion, Veszprém (HUN)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Tiger Track Classic",
+      "venue": "Hutsell-Rosen Track, Auburn, AL (USA)",
+      "area": "North and Central America",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Hungarian 10,000m Championships",
+      "venue": "Atlétikai Centrum, Bonyhád (HUN)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Ballarat Road Races",
+      "venue": "Ballarat (AUS)",
+      "area": "Oceania",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Maltese 10,000m Championships",
+      "venue": "Marsa Athletics Track, Marsa (MLT)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Spanish Clubs Championships Primera Division Liga Iberdrola-Leg 1-Match C",
+      "venue": "Pista atletismo Josefina Salgado, Pereiro de Aguiar (ESP)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "PAL Premier Athletics League - Round 3",
+      "venue": "Sports Park Mladost, Zagreb (CRO)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Italian 10,000m Championships",
+      "venue": "Stadio Nicola Serafini, Sulmona (ITA)",
+      "area": "Europe",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Kvarnerska liga - 5.kolo",
+      "venue": "ŠRC Uljanik Veruda, Pula (CRO)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "HALS - 2. kolo za starije kategorije",
+      "venue": "Stadion ŠC Sloboda, Varaždin (CRO)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Kärntner Meisterschaften 10.000m, 3.000m und Rahmenbewerben",
+      "venue": "Stadion Lind, Villach (AUT)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "4. Internationales Eröffnungsmeeting",
+      "venue": "Mösle-Stadium, Götzis (AUT)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "1° Meeting Città di Rivarolo",
+      "venue": "Stadio Comunale, Rivarolo Canavese (ITA)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "21st Nittaidai Challenge Games",
+      "venue": "NITTAIDAI Athletic Stadium, Yokohama (JPN)",
+      "area": "Asia",
+      "dateRange": "25–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Oklahoma Throws Series",
+      "venue": "Millican Field at Throw Town, Ramona, OK (USA)",
+      "area": "North and Central America",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Werfertag mit OM Wurf und Langstaffeln",
+      "venue": "Sportzentrum, Wiesau (GER)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Hungarian 10,000m Race Walking Championships",
+      "venue": "Atlétikai Centrum, Bonyhád (HUN)",
+      "area": "Europe",
+      "dateRange": "25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "LubawkAthletics",
+      "venue": "Stadion MKS, Lubawka (POL)",
+      "area": "Europe",
+      "dateRange": "24–25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "All Japan University Track & Field Challenge",
+      "venue": "Lemon Gas Stadium, Hiratsuka (JPN)",
+      "area": "Asia",
+      "dateRange": "24–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "UCSB Invite",
+      "venue": "Pauley Track & Field Complex UC Santa Barbara, Goleta, CA (USA)",
+      "area": "North and Central America",
+      "dateRange": "24–25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Primorskaya Vesna",
+      "venue": "Dinamo Stadium, Vladivostok (RUS)",
+      "area": "Europe",
+      "dateRange": "24–25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "GVSU Extra Weekend Meet",
+      "venue": "GVSU Track/Lacrosse Stadium, Allendale, MI (USA)",
+      "area": "North and Central America",
+      "dateRange": "24–25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Troféu Adhemar Ferreira da Silva Loterias Caixa de Atletismo",
+      "venue": "CNDA, Bragança Paulista (BRA)",
+      "area": "South America",
+      "dateRange": "24–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "XXIX Campeonato Paraibano Loterias Caixa De Atletismo Adulto",
+      "venue": "Pista de Atletismo da Universidade Federal da Paraíba, Joao Pessoa (BRA)",
+      "area": "South America",
+      "dateRange": "24–25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "10ma Copa Tepic",
+      "venue": "Estadio Olímpico Santa Teresita, Tepic (MEX)",
+      "area": "North and Central America",
+      "dateRange": "24–26 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "24th National Junior Athletics Federation Competition",
+      "venue": "Sree Kanteerava Outdoor Stadium, Bengaluru (IND)",
+      "area": "Asia",
+      "dateRange": "24–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Namibian Championships",
+      "venue": "Independence Stadium, Windhoek (NAM)",
+      "area": "Africa",
+      "dateRange": "24–25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "John Weaver Invitational",
+      "venue": "Randy Marion Track & Field Facility, Boone, NC (USA)",
+      "area": "North and Central America",
+      "dateRange": "24–25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Michael Johnson Invitational",
+      "venue": "Clyde Hart Track & Field Stadium, Waco, TX (USA)",
+      "area": "North and Central America",
+      "dateRange": "24–25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Charlotte Invitational",
+      "venue": "Irwin Belk TF Center, Charlotte, NC (USA)",
+      "area": "North and Central America",
+      "dateRange": "24–25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "89th Tokyo Athletics Open Championships",
+      "venue": "Komazawa Olympic Park Athletic Stadium, Tokyo (JPN)",
+      "area": "Asia",
+      "dateRange": "24 APR–05 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Sunshine State Conference Outdoor Championships",
+      "venue": "ERAU T&F Complex, Daytona Beach, FL (USA)",
+      "area": "North and Central America",
+      "dateRange": "24–25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Ashland Alumni Open",
+      "venue": "Dwight Schar Athletic Complex - Ferguson Field, Ashland, OH (USA)",
+      "area": "North and Central America",
+      "dateRange": "24–25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Camp. Nacional de Especialidades / 3ra Parada de la Liga Nacional de Atletismo",
+      "venue": "Polideportivo Maximo Viloria, Barquisimeto (VEN)",
+      "area": "South America",
+      "dateRange": "24–25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Rocky Mountain Athletic Conference Outdoor Championships",
+      "venue": "CSU - Neta and Eddie DeRose Thunderbowl, Pueblo, CO (USA)",
+      "area": "North and Central America",
+      "dateRange": "24–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "XVIII Festival Nayarita de Lanzamientos",
+      "venue": "Estadio Olímpico Santa Teresita, Tepic (MEX)",
+      "area": "North and Central America",
+      "dateRange": "24–25 APR 2026",
+      "hasResults": false
+    },
+    {
+      "name": "ODAC Outdoor Track and Field Championships",
+      "venue": "Bomberger Field, Harrisonburg, VA (USA)",
+      "area": "North and Central America",
+      "dateRange": "24–25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Montana Open",
+      "venue": "Dornblaser Field - Montana, Missoula, MT (USA)",
+      "area": "North and Central America",
+      "dateRange": "24–25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Cougar Classic",
+      "venue": "Washington University Mooberry& TF Complex, Pullman, WA (USA)",
+      "area": "North and Central America",
+      "dateRange": "24–25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "OU O'Ring Alumni Invitational",
+      "venue": "John Jacobs Track Complex, Norman, OK (USA)",
+      "area": "North and Central America",
+      "dateRange": "24–25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Campeonato Nacional Interclubes y Municipios",
+      "venue": "Estadio de Atletismo - Unidad Deportiva el Salitre, Bogotá (COL)",
+      "area": "South America",
+      "dateRange": "24–26 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "PacWest Conference Championships",
+      "venue": "PLNU Carroll B. Land Stadium, San Diego, CA (USA)",
+      "area": "North and Central America",
+      "dateRange": "23–25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Saudi U14 & U18 Championships",
+      "venue": "Prince Faisal Bin Fahad Stadium, Riyadh (KSA)",
+      "area": "Asia",
+      "dateRange": "23–25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "USSA Track & Field Championships",
+      "venue": "University of the Western Cape, Cape Town (RSA)",
+      "area": "Africa",
+      "dateRange": "23–25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Clark Wood / Jim Freeman Open",
+      "venue": "Cardinal Park, Louisville, KY (USA)",
+      "area": "North and Central America",
+      "dateRange": "23–25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Penn Relay Carnival",
+      "venue": "Franklin Field, Philadelphia, PA (USA)",
+      "area": "North and Central America",
+      "dateRange": "23–25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "South American Youth Games",
+      "venue": "Estadio Rommel Fernández Gutierrez, Panama City (PAN)",
+      "area": "South America",
+      "dateRange": "22–25 APR 2026",
+      "hasResults": true
+    },
+    {
+      "name": "116th Drake Relays",
+      "venue": "Drake Stadium, Des Moines, IA (USA)",
+      "area": "North and Central America",
+      "dateRange": "22–25 APR 2026",
+      "hasResults": true
+    }
+  ],
+  "matched": [
+    {
+      "wa_name": "Maratón de Santiago",
+      "our_name": "Maraton de Santiago",
+      "score": 25
+    },
+    {
+      "wa_name": "Grand Prix Darwin Piñeyrúa",
+      "our_name": "Grand Prix Von Bern",
+      "score": 20
+    },
+    {
+      "wa_name": "TCS London Marathon",
+      "our_name": "TCS London Marathon",
+      "score": 100
+    },
+    {
+      "wa_name": "TCS World 10K Bengaluru",
+      "our_name": "World 10K bengaluru",
+      "score": 23
+    },
+    {
+      "wa_name": "Meia Maratona Internacional de Balneário Camboriú",
+      "our_name": "Meia Maratona internacional Do Rio de Janeiro",
+      "score": 30
+    },
+    {
+      "wa_name": "Uniper Düsseldorf Half Marathon",
+      "our_name": "Uniper Marathon de Düsseldorf",
+      "score": 28
+    },
+    {
+      "wa_name": "Universtiy of Birmingham T&F Series",
+      "our_name": "AJ Bell Great Birmingham Run",
+      "score": 20
+    },
+    {
+      "wa_name": "40. Haspa Marathon Hamburg",
+      "our_name": "Haspa Marathon Hamburg",
+      "score": 33
+    },
+    {
+      "wa_name": "Zurich Rock 'n' Roll Running Series Madrid Half Marathon",
+      "our_name": "Zurich Rock 'n' Roll Running Series Madrid",
+      "score": 78
+    },
+    {
+      "wa_name": "International Marathon Alexander the Great - bwin - 10K & 5K",
+      "our_name": "Life Time Chicago Half Marathon & 5K",
+      "score": 20
+    },
+    {
+      "wa_name": "Medio Maraton BJX",
+      "our_name": "Medio Maraton de Sevilla",
+      "score": 20
+    },
+    {
+      "wa_name": "1° Meeting della Liberazione - Città di Cuneo",
+      "our_name": "Mezza Maratona Citta di Palmanova",
+      "score": 20
+    },
+    {
+      "wa_name": "20 km de Lausanne - 5km",
+      "our_name": "NN CPC Loop Den Haag - 10 KM Loop",
+      "score": 20
+    },
+    {
+      "wa_name": "Meeting da Liberdade",
+      "our_name": "Corrida da Liberdade",
+      "score": 20
+    },
+    {
+      "wa_name": "89th Tokyo Athletics Open Championships",
+      "our_name": "Tokyo Marathon",
+      "score": 20
+    }
+  ],
+  "updates": [
+    {
+      "event": "TCS London Marathon",
+      "year": 2026,
+      "platform": "mikatiming",
+      "finishers": 59875,
+      "avg_time": null,
+      "winner_men": "02:12:54",
+      "winner_women": "02:30:16"
+    },
+    {
+      "event": "Haspa Marathon Hamburg",
+      "year": 2026,
+      "platform": "mikatiming",
+      "finishers": 15550,
+      "avg_time": null,
+      "winner_men": "02:04:24",
+      "winner_women": "02:17:05"
+    }
+  ],
+  "errors": []
+}

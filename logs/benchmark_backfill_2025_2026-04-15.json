@@ -1,0 +1,2171 @@
+{
+  "applied": [
+    {
+      "event": "Dubai Marathon",
+      "dist": "MARATHON",
+      "val": 9510,
+      "row": 606,
+      "bm_name": "Mumbai Marathon"
+    },
+    {
+      "event": "Dubai Marathon",
+      "dist": "10KM",
+      "val": 5729,
+      "row": 607,
+      "bm_name": "Mumbai Marathon"
+    },
+    {
+      "event": "Generali Geneve Marathon 10km",
+      "dist": "10KM",
+      "val": 4215,
+      "row": 199,
+      "bm_name": "Generali Genève Marathon"
+    },
+    {
+      "event": "Dresden Marathon",
+      "dist": "MARATHON",
+      "val": 2084,
+      "row": 475,
+      "bm_name": "Dresden Marathon"
+    },
+    {
+      "event": "Dresden Marathon",
+      "dist": "SEMI",
+      "val": 6168,
+      "row": 476,
+      "bm_name": "Dresden Marathon"
+    },
+    {
+      "event": "Dresden Marathon",
+      "dist": "5KM",
+      "val": 1111,
+      "row": 478,
+      "bm_name": "Dresden Marathon"
+    },
+    {
+      "event": "Route du Louvre",
+      "dist": "10KM",
+      "val": 3600,
+      "row": 689,
+      "bm_name": "Route du Louvre"
+    },
+    {
+      "event": "Route du Louvre",
+      "dist": "5KM",
+      "val": 1200,
+      "row": 690,
+      "bm_name": "Route du Louvre"
+    },
+    {
+      "event": "Euro Marathon Metz",
+      "dist": "MARATHON",
+      "val": 2200,
+      "row": 697,
+      "bm_name": "Euro Marathon Metz"
+    },
+    {
+      "event": "Maraton de Zaragoza",
+      "dist": "MARATHON",
+      "val": 1351,
+      "row": 773,
+      "bm_name": "Maraton de Zaragoza"
+    },
+    {
+      "event": "Maraton de Zaragoza",
+      "dist": "10KM",
+      "val": 5137,
+      "row": 774,
+      "bm_name": "Maraton de Zaragoza"
+    },
+    {
+      "event": "Les foulées Valenciennoises",
+      "dist": "10KM",
+      "val": 4400,
+      "row": 804,
+      "bm_name": "Les foulées Valenciennoises"
+    },
+    {
+      "event": "Marathon des Grands Crus",
+      "dist": "MARATHON",
+      "val": 1620,
+      "row": 841,
+      "bm_name": "Marathon des Grands Crus"
+    },
+    {
+      "event": "Marathon des Grands Crus",
+      "dist": "SEMI",
+      "val": 3240,
+      "row": 842,
+      "bm_name": "Marathon des Grands Crus"
+    },
+    {
+      "event": "Marathon des Grands Crus",
+      "dist": "10KM",
+      "val": 3240,
+      "row": 843,
+      "bm_name": "Marathon des Grands Crus"
+    },
+    {
+      "event": "Marathon de la mer",
+      "dist": "MARATHON",
+      "val": 1700,
+      "row": 873,
+      "bm_name": "Marathon de la mer"
+    },
+    {
+      "event": "Marathon de la mer",
+      "dist": "SEMI",
+      "val": 2400,
+      "row": 874,
+      "bm_name": "Marathon de la mer"
+    },
+    {
+      "event": "Bengaluru 10K Challenge",
+      "dist": "10KM",
+      "val": 4630,
+      "row": 922,
+      "bm_name": "Bengaluru 10K Challenge"
+    },
+    {
+      "event": "Kolkata Full Marathon",
+      "dist": "MARATHON",
+      "val": 304,
+      "row": 1157,
+      "bm_name": "Kolkata Full Marathon"
+    },
+    {
+      "event": "Kolkata Full Marathon",
+      "dist": "SEMI",
+      "val": 604,
+      "row": 1158,
+      "bm_name": "Kolkata Full Marathon"
+    },
+    {
+      "event": "Kolkata Full Marathon",
+      "dist": "10KM",
+      "val": 1469,
+      "row": 1159,
+      "bm_name": "Kolkata Full Marathon"
+    },
+    {
+      "event": "Hyderabad Hitec Marathon",
+      "dist": "SEMI",
+      "val": 797,
+      "row": 1208,
+      "bm_name": "Hyderabad Hitec Marathon"
+    },
+    {
+      "event": "Hyderabad Hitec Marathon",
+      "dist": "10KM",
+      "val": 1082,
+      "row": 1209,
+      "bm_name": "Hyderabad Hitec Marathon"
+    },
+    {
+      "event": "Dosti Thane Half Marathon",
+      "dist": "SEMI",
+      "val": 288,
+      "row": 1343,
+      "bm_name": "Dosti Thane Half Marathon"
+    },
+    {
+      "event": "Dosti Thane Half Marathon",
+      "dist": "10KM",
+      "val": 896,
+      "row": 1344,
+      "bm_name": "Dosti Thane Half Marathon"
+    }
+  ],
+  "skipped_round": [
+    {
+      "event": "Chengdu World heritage Marathon",
+      "dist": "MARATHON",
+      "val": 15000
+    },
+    {
+      "event": "Chengdu World heritage Marathon",
+      "dist": "SEMI",
+      "val": 20000
+    },
+    {
+      "event": "TCS Toronto Waterfront Marathon",
+      "dist": "MARATHON",
+      "val": 8500
+    },
+    {
+      "event": "Wuxi Marathon",
+      "dist": "MARATHON",
+      "val": 25000
+    },
+    {
+      "event": "Wuxi Marathon",
+      "dist": "SEMI",
+      "val": 8000
+    },
+    {
+      "event": "Marathon International du Beaujolais",
+      "dist": "MARATHON",
+      "val": 4500
+    },
+    {
+      "event": "Marathon International du Beaujolais",
+      "dist": "SEMI",
+      "val": 9500
+    },
+    {
+      "event": "Semi & 10km de Bordeaux",
+      "dist": "SEMI",
+      "val": 15000
+    },
+    {
+      "event": "Semi & 10km de Bordeaux",
+      "dist": "10KM",
+      "val": 8000
+    },
+    {
+      "event": "10km Fulfil des Champs Elysées",
+      "dist": "10KM",
+      "val": 18000
+    },
+    {
+      "event": "Saucony 10km de le Tour Eiffel",
+      "dist": "10KM",
+      "val": 20000
+    },
+    {
+      "event": "Tout Rennes Court",
+      "dist": "SEMI",
+      "val": 5000
+    },
+    {
+      "event": "Tout Rennes Court",
+      "dist": "10KM",
+      "val": 9000
+    },
+    {
+      "event": "Tout Rennes Court",
+      "dist": "5KM",
+      "val": 5000
+    },
+    {
+      "event": "Marathon des Alpes-Maritimes Nice-Cannes by Kiprun",
+      "dist": "MARATHON",
+      "val": 15000
+    },
+    {
+      "event": "Marathon International inDeauville",
+      "dist": "MARATHON",
+      "val": 3500
+    },
+    {
+      "event": "Marathon International inDeauville",
+      "dist": "SEMI",
+      "val": 6500
+    },
+    {
+      "event": "Marathon International inDeauville",
+      "dist": "10KM",
+      "val": 3500
+    },
+    {
+      "event": "Abalone Marathon de Nantes",
+      "dist": "MARATHON",
+      "val": 7000
+    },
+    {
+      "event": "Abalone Marathon de Nantes",
+      "dist": "SEMI",
+      "val": 7000
+    },
+    {
+      "event": "Abalone Marathon de Nantes",
+      "dist": "10KM",
+      "val": 7000
+    },
+    {
+      "event": "10km HOKA Paris Centre",
+      "dist": "10KM",
+      "val": 16000
+    },
+    {
+      "event": "Marathon de la Liberté - Normandy Running Festival",
+      "dist": "MARATHON",
+      "val": 5000
+    },
+    {
+      "event": "Marathon de la Liberté - Normandy Running Festival",
+      "dist": "SEMI",
+      "val": 5000
+    },
+    {
+      "event": "Marathon de la Liberté - Normandy Running Festival",
+      "dist": "10KM",
+      "val": 5000
+    },
+    {
+      "event": "Marathon de la Liberté - Normandy Running Festival",
+      "dist": "5KM",
+      "val": 10000
+    },
+    {
+      "event": "Nice Semi-Marathon International",
+      "dist": "SEMI",
+      "val": 9000
+    },
+    {
+      "event": "Nice Semi-Marathon International",
+      "dist": "10KM",
+      "val": 7500
+    },
+    {
+      "event": "Nice Semi-Marathon International",
+      "dist": "5KM",
+      "val": 2000
+    },
+    {
+      "event": "Marathon Vert",
+      "dist": "10KM",
+      "val": 5000
+    },
+    {
+      "event": "Marathon International de la Côte d’Amour Amarris",
+      "dist": "MARATHON",
+      "val": 7000
+    },
+    {
+      "event": "Marathon International de la Côte d’Amour Amarris",
+      "dist": "SEMI",
+      "val": 4000
+    },
+    {
+      "event": "Marathon International de la Côte d’Amour Amarris",
+      "dist": "10KM",
+      "val": 3000
+    },
+    {
+      "event": "Marathon International de la Côte d’Amour Amarris",
+      "dist": "5KM",
+      "val": 1000
+    },
+    {
+      "event": "Marathon de La Rochelle Serge Vigot",
+      "dist": "MARATHON",
+      "val": 9000
+    },
+    {
+      "event": "Marathon de La Rochelle Serge Vigot",
+      "dist": "10KM",
+      "val": 3500
+    },
+    {
+      "event": "Dresden Marathon",
+      "dist": "10KM",
+      "val": 2000
+    },
+    {
+      "event": "Baltimore Running Festival",
+      "dist": "SEMI",
+      "val": 4500
+    },
+    {
+      "event": "Brooks Marathon du Lac d’Annecy",
+      "dist": "MARATHON",
+      "val": 4500
+    },
+    {
+      "event": "Montpellier Run Festival",
+      "dist": "MARATHON",
+      "val": 1500
+    },
+    {
+      "event": "Montpellier Run Festival",
+      "dist": "SEMI",
+      "val": 7000
+    },
+    {
+      "event": "Montpellier Run Festival",
+      "dist": "10KM",
+      "val": 5000
+    },
+    {
+      "event": "La Grande Course RATP du Grand Paris",
+      "dist": "SEMI",
+      "val": 8500
+    },
+    {
+      "event": "La Grande Course RATP du Grand Paris",
+      "dist": "10KM",
+      "val": 6500
+    },
+    {
+      "event": "La Grande Course RATP du Grand Paris",
+      "dist": "5KM",
+      "val": 2000
+    },
+    {
+      "event": "Bank of China Beijing Half Marathon",
+      "dist": "SEMI",
+      "val": 12000
+    },
+    {
+      "event": "Prom'Classique",
+      "dist": "10KM",
+      "val": 15000
+    },
+    {
+      "event": "Run set & Match",
+      "dist": "10KM",
+      "val": 11000
+    },
+    {
+      "event": "10km du Panthéon",
+      "dist": "10KM",
+      "val": 8500
+    },
+    {
+      "event": "Marathon des Chateaux du Médoc",
+      "dist": "MARATHON",
+      "val": 8500
+    },
+    {
+      "event": "Route du Louvre",
+      "dist": "MARATHON",
+      "val": 1500
+    },
+    {
+      "event": "Les foulées Valenciennoises",
+      "dist": "5KM",
+      "val": 1500
+    },
+    {
+      "event": "Marathon de la mer",
+      "dist": "10KM",
+      "val": 1000
+    },
+    {
+      "event": "10km du Trocadéro",
+      "dist": "10KM",
+      "val": 6000
+    },
+    {
+      "event": "Semi-Marathon de la Vente des Vins",
+      "dist": "SEMI",
+      "val": 3000
+    },
+    {
+      "event": "Marathon Poitiers-Futuroscope",
+      "dist": "SEMI",
+      "val": 3000
+    },
+    {
+      "event": "Semi-marathon des sources du lac d’Annecy",
+      "dist": "10KM",
+      "val": 1000
+    },
+    {
+      "event": "Marathon de Lille",
+      "dist": "10KM",
+      "val": 4000
+    },
+    {
+      "event": "Generali Geneve Marathon 10km",
+      "dist": "MARATHON",
+      "val": 5500
+    },
+    {
+      "event": "Generali Geneve Marathon 10km",
+      "dist": "10KM",
+      "val": 6000
+    },
+    {
+      "event": "Wuhan Marathon",
+      "dist": "MARATHON",
+      "val": 17000
+    },
+    {
+      "event": "Wuhan Marathon",
+      "dist": "SEMI",
+      "val": 13000
+    }
+  ],
+  "skipped_already_filled": [
+    {
+      "event": "Schneider Electric Marathon de Paris",
+      "dist": "MARATHON",
+      "current": 55499,
+      "candidate": 66360
+    },
+    {
+      "event": "Maratona Do Rio",
+      "dist": "MARATHON",
+      "current": 13125,
+      "candidate": 13125
+    },
+    {
+      "event": "Maratona Do Rio",
+      "dist": "SEMI",
+      "current": 23680,
+      "candidate": 23680
+    },
+    {
+      "event": "Maratona Do Rio",
+      "dist": "10KM",
+      "current": 10075,
+      "candidate": 10075
+    },
+    {
+      "event": "Maratona Do Rio",
+      "dist": "5KM",
+      "current": 7614,
+      "candidate": 7614
+    },
+    {
+      "event": "HOKA Semi de Paris",
+      "dist": "SEMI",
+      "current": 47633,
+      "candidate": 54508
+    },
+    {
+      "event": "TCS Amsterdam Marathon",
+      "dist": "MARATHON",
+      "current": 23326,
+      "candidate": 23328
+    },
+    {
+      "event": "Media Maraton de Bogota",
+      "dist": "SEMI",
+      "current": 21011,
+      "candidate": 21011
+    },
+    {
+      "event": "Seoul Marathon",
+      "dist": "MARATHON",
+      "current": 19112,
+      "candidate": 19007
+    },
+    {
+      "event": "NN Marathon Rotterdam",
+      "dist": "MARATHON",
+      "current": 17867,
+      "candidate": 17867
+    },
+    {
+      "event": "Adidas 10K Paris",
+      "dist": "10KM",
+      "current": 34353,
+      "candidate": 38558
+    },
+    {
+      "event": "World 10K bengaluru",
+      "dist": "10KM",
+      "current": 21403,
+      "candidate": 21403
+    },
+    {
+      "event": "Gold Coast Marathon",
+      "dist": "MARATHON",
+      "current": 12700,
+      "candidate": 12707
+    },
+    {
+      "event": "Honolulu Marathon",
+      "dist": "MARATHON",
+      "current": 22772,
+      "candidate": 22772
+    },
+    {
+      "event": "ASML Marathon Eindhoven",
+      "dist": "MARATHON",
+      "current": 4763,
+      "candidate": 4763
+    },
+    {
+      "event": "ASML Marathon Eindhoven",
+      "dist": "SEMI",
+      "current": 14711,
+      "candidate": 14711
+    },
+    {
+      "event": "ASML Marathon Eindhoven",
+      "dist": "5KM",
+      "current": 3937,
+      "candidate": 3937
+    },
+    {
+      "event": "Marine Corps Marathon",
+      "dist": "MARATHON",
+      "current": 28990,
+      "candidate": 30085
+    },
+    {
+      "event": "Tamarack Ottawa Race week end",
+      "dist": "MARATHON",
+      "current": 3267,
+      "candidate": 3267
+    },
+    {
+      "event": "Tamarack Ottawa Race week end",
+      "dist": "SEMI",
+      "current": 9478,
+      "candidate": 9478
+    },
+    {
+      "event": "Tamarack Ottawa Race week end",
+      "dist": "10KM",
+      "current": 6252,
+      "candidate": 6252
+    },
+    {
+      "event": "Tamarack Ottawa Race week end",
+      "dist": "5KM",
+      "current": 7414,
+      "candidate": 7414
+    },
+    {
+      "event": "TCS Toronto Waterfront Marathon",
+      "dist": "SEMI",
+      "current": 11416,
+      "candidate": 12600
+    },
+    {
+      "event": "Flying Pig Marathon",
+      "dist": "MARATHON",
+      "current": 4699,
+      "candidate": 4711
+    },
+    {
+      "event": "Boston Marathon",
+      "dist": "MARATHON",
+      "current": 28506,
+      "candidate": 7568
+    },
+    {
+      "event": "Beneva Montréal Marathon",
+      "dist": "MARATHON",
+      "current": 4413,
+      "candidate": 4413
+    },
+    {
+      "event": "Beneva Montréal Marathon",
+      "dist": "SEMI",
+      "current": 11758,
+      "candidate": 11758
+    },
+    {
+      "event": "Beneva Montréal Marathon",
+      "dist": "10KM",
+      "current": 5311,
+      "candidate": 5311
+    },
+    {
+      "event": "Beneva Montréal Marathon",
+      "dist": "5KM",
+      "current": 4482,
+      "candidate": 4482
+    },
+    {
+      "event": "Maraton de Santiago",
+      "dist": "MARATHON",
+      "current": 4902,
+      "candidate": 4902
+    },
+    {
+      "event": "Maraton de Santiago",
+      "dist": "SEMI",
+      "current": 11524,
+      "candidate": 11524
+    },
+    {
+      "event": "Maraton de Santiago",
+      "dist": "10KM",
+      "current": 9323,
+      "candidate": 9323
+    },
+    {
+      "event": "Taipei Marathon",
+      "dist": "MARATHON",
+      "current": 8278,
+      "candidate": 8778
+    },
+    {
+      "event": "Vienna City Marathon",
+      "dist": "MARATHON",
+      "current": 9286,
+      "candidate": 9742
+    },
+    {
+      "event": "Medio Maraton de Buenos Aires",
+      "dist": "SEMI",
+      "current": 24968,
+      "candidate": 24968
+    },
+    {
+      "event": "Generali Köln Marathon",
+      "dist": "MARATHON",
+      "current": 7940,
+      "candidate": 7940
+    },
+    {
+      "event": "Generali Köln Marathon",
+      "dist": "SEMI",
+      "current": 15995,
+      "candidate": 15995
+    },
+    {
+      "event": "Hackney Half Marathon",
+      "dist": "SEMI",
+      "current": 20912,
+      "candidate": 20912
+    },
+    {
+      "event": "Hackney Half Marathon",
+      "dist": "5KM",
+      "current": 2996,
+      "candidate": 2996
+    },
+    {
+      "event": "Freshworks Chennai Marathon",
+      "dist": "MARATHON",
+      "current": 883,
+      "candidate": 883
+    },
+    {
+      "event": "Freshworks Chennai Marathon",
+      "dist": "SEMI",
+      "current": 3876,
+      "candidate": 3876
+    },
+    {
+      "event": "Freshworks Chennai Marathon",
+      "dist": "10KM",
+      "current": 17544,
+      "candidate": 17544
+    },
+    {
+      "event": "World 25K Kolkata",
+      "dist": "10KM",
+      "current": 8068,
+      "candidate": 8068
+    },
+    {
+      "event": "San Francisco Marathon",
+      "dist": "MARATHON",
+      "current": 6536,
+      "candidate": 6545
+    },
+    {
+      "event": "Maraton Medellin",
+      "dist": "MARATHON",
+      "current": 4431,
+      "candidate": 4431
+    },
+    {
+      "event": "Maraton Medellin",
+      "dist": "SEMI",
+      "current": 10310,
+      "candidate": 10310
+    },
+    {
+      "event": "Maraton Medellin",
+      "dist": "10KM",
+      "current": 4748,
+      "candidate": 4748
+    },
+    {
+      "event": "Maraton Medellin",
+      "dist": "5KM",
+      "current": 3077,
+      "candidate": 3077
+    },
+    {
+      "event": "Jakarta Running Festival",
+      "dist": "MARATHON",
+      "current": 1050,
+      "candidate": 1050
+    },
+    {
+      "event": "Jakarta Running Festival",
+      "dist": "SEMI",
+      "current": 8779,
+      "candidate": 8779
+    },
+    {
+      "event": "Jakarta Running Festival",
+      "dist": "10KM",
+      "current": 7837,
+      "candidate": 7837
+    },
+    {
+      "event": "Jakarta Running Festival",
+      "dist": "5KM",
+      "current": 3855,
+      "candidate": 3855
+    },
+    {
+      "event": "Rimi Riga Marathon",
+      "dist": "MARATHON",
+      "current": 2664,
+      "candidate": 2664
+    },
+    {
+      "event": "Rimi Riga Marathon",
+      "dist": "SEMI",
+      "current": 5354,
+      "candidate": 5354
+    },
+    {
+      "event": "Rimi Riga Marathon",
+      "dist": "10KM",
+      "current": 5744,
+      "candidate": 5744
+    },
+    {
+      "event": "Haspa Marathon Hamburg",
+      "dist": "MARATHON",
+      "current": 11671,
+      "candidate": 11683
+    },
+    {
+      "event": "Miami Marathon",
+      "dist": "MARATHON",
+      "current": 19119,
+      "candidate": 3300
+    },
+    {
+      "event": "Long Beach Marathon",
+      "dist": "MARATHON",
+      "current": 20332,
+      "candidate": 4754
+    },
+    {
+      "event": "Standard Chartered Dubai Marathon",
+      "dist": "MARATHON",
+      "current": 1800,
+      "candidate": 1486
+    },
+    {
+      "event": "Meia Maratona Internacional do Rio de Janeiro",
+      "dist": "SEMI",
+      "current": 10564,
+      "candidate": 10564
+    },
+    {
+      "event": "Meia Maratona Internacional do Rio de Janeiro",
+      "dist": "10KM",
+      "current": 3159,
+      "candidate": 3159
+    },
+    {
+      "event": "Meia Maratona Internacional do Rio de Janeiro",
+      "dist": "5KM",
+      "current": 5614,
+      "candidate": 5614
+    },
+    {
+      "event": "Abu Dhabi Marathon",
+      "dist": "MARATHON",
+      "current": 2402,
+      "candidate": 2402
+    },
+    {
+      "event": "Abu Dhabi Marathon",
+      "dist": "10KM",
+      "current": 5788,
+      "candidate": 5788
+    },
+    {
+      "event": "Abu Dhabi Marathon",
+      "dist": "5KM",
+      "current": 8103,
+      "candidate": 8103
+    },
+    {
+      "event": "Ljubljana Marathon",
+      "dist": "MARATHON",
+      "current": 2874,
+      "candidate": 2874
+    },
+    {
+      "event": "Ljubljana Marathon",
+      "dist": "SEMI",
+      "current": 7444,
+      "candidate": 7444
+    },
+    {
+      "event": "Ljubljana Marathon",
+      "dist": "10KM",
+      "current": 6472,
+      "candidate": 6472
+    },
+    {
+      "event": "Bilbao Night Running Fest",
+      "dist": "SEMI",
+      "current": 9418,
+      "candidate": 9418
+    },
+    {
+      "event": "Bilbao Night Running Fest",
+      "dist": "10KM",
+      "current": 6868,
+      "candidate": 6868
+    },
+    {
+      "event": "Wizz Air Budapest Half marathon",
+      "dist": "SEMI",
+      "current": 11084,
+      "candidate": 11084
+    },
+    {
+      "event": "Wizz Air Budapest Half marathon",
+      "dist": "10KM",
+      "current": 2680,
+      "candidate": 2680
+    },
+    {
+      "event": "Bredase Singelloop",
+      "dist": "SEMI",
+      "current": 4899,
+      "candidate": 4899
+    },
+    {
+      "event": "Bredase Singelloop",
+      "dist": "10KM",
+      "current": 6435,
+      "candidate": 6435
+    },
+    {
+      "event": "Bredase Singelloop",
+      "dist": "5KM",
+      "current": 5351,
+      "candidate": 5351
+    },
+    {
+      "event": "Pattaya Marathon",
+      "dist": "MARATHON",
+      "current": 3034,
+      "candidate": 3034
+    },
+    {
+      "event": "Pattaya Marathon",
+      "dist": "SEMI",
+      "current": 6969,
+      "candidate": 6969
+    },
+    {
+      "event": "Pattaya Marathon",
+      "dist": "10KM",
+      "current": 6052,
+      "candidate": 6052
+    },
+    {
+      "event": "Zurich Marathon",
+      "dist": "MARATHON",
+      "current": 4135,
+      "candidate": 4135
+    },
+    {
+      "event": "Zurich Marathon",
+      "dist": "SEMI",
+      "current": 7291,
+      "candidate": 7291
+    },
+    {
+      "event": "Zurich Marathon",
+      "dist": "10KM",
+      "current": 4173,
+      "candidate": 4173
+    },
+    {
+      "event": "Antwerp Marathon",
+      "dist": "MARATHON",
+      "current": 1313,
+      "candidate": 1313
+    },
+    {
+      "event": "Antwerp Marathon",
+      "dist": "SEMI",
+      "current": 9963,
+      "candidate": 9963
+    },
+    {
+      "event": "Antwerp Marathon",
+      "dist": "10KM",
+      "current": 4148,
+      "candidate": 4148
+    },
+    {
+      "event": "Runaway Auckland Marathon",
+      "dist": "MARATHON",
+      "current": 2775,
+      "candidate": 2775
+    },
+    {
+      "event": "Runaway Auckland Marathon",
+      "dist": "SEMI",
+      "current": 6620,
+      "candidate": 6620
+    },
+    {
+      "event": "Runaway Auckland Marathon",
+      "dist": "5KM",
+      "current": 1088,
+      "candidate": 1088
+    },
+    {
+      "event": "Istanbul Marathon",
+      "dist": "MARATHON",
+      "current": 4456,
+      "candidate": 4497
+    },
+    {
+      "event": "Doha Marathon",
+      "dist": "MARATHON",
+      "current": 698,
+      "candidate": 698
+    },
+    {
+      "event": "Doha Marathon",
+      "dist": "SEMI",
+      "current": 2732,
+      "candidate": 2732
+    },
+    {
+      "event": "Doha Marathon",
+      "dist": "10KM",
+      "current": 5093,
+      "candidate": 5093
+    },
+    {
+      "event": "Doha Marathon",
+      "dist": "5KM",
+      "current": 6351,
+      "candidate": 6351
+    },
+    {
+      "event": "Swedbank Tallinna maraton",
+      "dist": "MARATHON",
+      "current": 2265,
+      "candidate": 2265
+    },
+    {
+      "event": "Swedbank Tallinna maraton",
+      "dist": "SEMI",
+      "current": 4375,
+      "candidate": 4375
+    },
+    {
+      "event": "Swedbank Tallinna maraton",
+      "dist": "10KM",
+      "current": 4505,
+      "candidate": 4505
+    },
+    {
+      "event": "Swedbank Tallinna maraton",
+      "dist": "5KM",
+      "current": 2367,
+      "candidate": 2367
+    },
+    {
+      "event": "Saitama Marathon",
+      "dist": "MARATHON",
+      "current": 12405,
+      "candidate": 12405
+    },
+    {
+      "event": "Wizz Air Venicemarathon",
+      "dist": "MARATHON",
+      "current": 2951,
+      "candidate": 2951
+    },
+    {
+      "event": "Wizz Air Venicemarathon",
+      "dist": "SEMI",
+      "current": 4055,
+      "candidate": 4055
+    },
+    {
+      "event": "Wizz Air Venicemarathon",
+      "dist": "10KM",
+      "current": 6593,
+      "candidate": 6593
+    },
+    {
+      "event": "Servus Calgary Marathon",
+      "dist": "MARATHON",
+      "current": 1938,
+      "candidate": 1938
+    },
+    {
+      "event": "Servus Calgary Marathon",
+      "dist": "SEMI",
+      "current": 4905,
+      "candidate": 4905
+    },
+    {
+      "event": "Servus Calgary Marathon",
+      "dist": "10KM",
+      "current": 4008,
+      "candidate": 4008
+    },
+    {
+      "event": "Servus Calgary Marathon",
+      "dist": "5KM",
+      "current": 2735,
+      "candidate": 2735
+    },
+    {
+      "event": "Calgary Marathon",
+      "dist": "MARATHON",
+      "current": 1938,
+      "candidate": 1938
+    },
+    {
+      "event": "Calgary Marathon",
+      "dist": "SEMI",
+      "current": 4905,
+      "candidate": 4905
+    },
+    {
+      "event": "Calgary Marathon",
+      "dist": "10KM",
+      "current": 4008,
+      "candidate": 4008
+    },
+    {
+      "event": "Calgary Marathon",
+      "dist": "5KM",
+      "current": 2735,
+      "candidate": 2735
+    },
+    {
+      "event": "Brusells airport marathon",
+      "dist": "MARATHON",
+      "current": 2978,
+      "candidate": 2978
+    },
+    {
+      "event": "Brusells airport marathon",
+      "dist": "SEMI",
+      "current": 8634,
+      "candidate": 8634
+    },
+    {
+      "event": "Freiburg Marathon",
+      "dist": "MARATHON",
+      "current": 1462,
+      "candidate": 1462
+    },
+    {
+      "event": "Freiburg Marathon",
+      "dist": "SEMI",
+      "current": 8523,
+      "candidate": 8523
+    },
+    {
+      "event": "Freiburg Marathon",
+      "dist": "10KM",
+      "current": 2232,
+      "candidate": 2232
+    },
+    {
+      "event": "Stuttgart-Lauf",
+      "dist": "SEMI",
+      "current": 7120,
+      "candidate": 7120
+    },
+    {
+      "event": "Stuttgart-Lauf",
+      "dist": "10KM",
+      "current": 3321,
+      "candidate": 3321
+    },
+    {
+      "event": "Stuttgart-Lauf",
+      "dist": "5KM",
+      "current": 973,
+      "candidate": 973
+    },
+    {
+      "event": "Baltimore Running Festival",
+      "dist": "MARATHON",
+      "current": 11475,
+      "candidate": 1962
+    },
+    {
+      "event": "Utrecht Marathon",
+      "dist": "MARATHON",
+      "current": 1614,
+      "candidate": 1614
+    },
+    {
+      "event": "Utrecht Marathon",
+      "dist": "SEMI",
+      "current": 7147,
+      "candidate": 7147
+    },
+    {
+      "event": "Utrecht Marathon",
+      "dist": "10KM",
+      "current": 2640,
+      "candidate": 2640
+    },
+    {
+      "event": "Lausanne Marathon",
+      "dist": "MARATHON",
+      "current": 1853,
+      "candidate": 1853
+    },
+    {
+      "event": "Lausanne Marathon",
+      "dist": "SEMI",
+      "current": 4804,
+      "candidate": 4804
+    },
+    {
+      "event": "Lausanne Marathon",
+      "dist": "10KM",
+      "current": 4648,
+      "candidate": 4648
+    },
+    {
+      "event": "Paderborner Osterlauf",
+      "dist": "SEMI",
+      "current": 3055,
+      "candidate": 3055
+    },
+    {
+      "event": "Paderborner Osterlauf",
+      "dist": "10KM",
+      "current": 4529,
+      "candidate": 4529
+    },
+    {
+      "event": "Paderborner Osterlauf",
+      "dist": "5KM",
+      "current": 3357,
+      "candidate": 3357
+    },
+    {
+      "event": "ING Night Marathon Luxembourg",
+      "dist": "MARATHON",
+      "current": 1692,
+      "candidate": 1692
+    },
+    {
+      "event": "ING Night Marathon Luxembourg",
+      "dist": "SEMI",
+      "current": 8410,
+      "candidate": 8410
+    },
+    {
+      "event": "ING Night Marathon Luxembourg",
+      "dist": "5KM",
+      "current": 687,
+      "candidate": 687
+    },
+    {
+      "event": "Swiss city Marathon",
+      "dist": "MARATHON",
+      "current": 2897,
+      "candidate": 2897
+    },
+    {
+      "event": "Swiss city Marathon",
+      "dist": "SEMI",
+      "current": 5876,
+      "candidate": 5876
+    },
+    {
+      "event": "Swiss city Marathon",
+      "dist": "10KM",
+      "current": 1778,
+      "candidate": 1778
+    },
+    {
+      "event": "IndianOil WNC Navy Half",
+      "dist": "SEMI",
+      "current": 2586,
+      "candidate": 2586
+    },
+    {
+      "event": "IndianOil WNC Navy Half",
+      "dist": "10KM",
+      "current": 3300,
+      "candidate": 3300
+    },
+    {
+      "event": "IndianOil WNC Navy Half",
+      "dist": "5KM",
+      "current": 4535,
+      "candidate": 4535
+    },
+    {
+      "event": "Nairobi City Marathon",
+      "dist": "MARATHON",
+      "current": 773,
+      "candidate": 773
+    },
+    {
+      "event": "Nairobi City Marathon",
+      "dist": "SEMI",
+      "current": 4082,
+      "candidate": 4082
+    },
+    {
+      "event": "Nairobi City Marathon",
+      "dist": "10KM",
+      "current": 4728,
+      "candidate": 4728
+    },
+    {
+      "event": "Southern Cross Round The Bays",
+      "dist": "SEMI",
+      "current": 2223,
+      "candidate": 2223
+    },
+    {
+      "event": "Southern Cross Round The Bays",
+      "dist": "5KM",
+      "current": 297,
+      "candidate": 297
+    },
+    {
+      "event": "Bratislava Marathon",
+      "dist": "MARATHON",
+      "current": 1102,
+      "candidate": 1102
+    },
+    {
+      "event": "Bratislava Marathon",
+      "dist": "SEMI",
+      "current": 4145,
+      "candidate": 4145
+    },
+    {
+      "event": "MG Vadodara International Marathon",
+      "dist": "MARATHON",
+      "current": 170,
+      "candidate": 170
+    },
+    {
+      "event": "MG Vadodara International Marathon",
+      "dist": "SEMI",
+      "current": 998,
+      "candidate": 998
+    },
+    {
+      "event": "MG Vadodara International Marathon",
+      "dist": "10KM",
+      "current": 4364,
+      "candidate": 4364
+    },
+    {
+      "event": "MG Vadodara International Marathon",
+      "dist": "5KM",
+      "current": 1460,
+      "candidate": 1460
+    },
+    {
+      "event": "Alliance Bank Borneo International Marathon",
+      "dist": "MARATHON",
+      "current": 2040,
+      "candidate": 2040
+    },
+    {
+      "event": "Alliance Bank Borneo International Marathon",
+      "dist": "SEMI",
+      "current": 2354,
+      "candidate": 2354
+    },
+    {
+      "event": "Alliance Bank Borneo International Marathon",
+      "dist": "10KM",
+      "current": 2193,
+      "candidate": 2193
+    },
+    {
+      "event": "Semi marathon du Bois de Vincennes",
+      "dist": "SEMI",
+      "current": 6100,
+      "candidate": 6100
+    },
+    {
+      "event": "Thien Phong Marathon",
+      "dist": "MARATHON",
+      "current": 1983,
+      "candidate": 1983
+    },
+    {
+      "event": "Thien Phong Marathon",
+      "dist": "SEMI",
+      "current": 2466,
+      "candidate": 2466
+    },
+    {
+      "event": "Thien Phong Marathon",
+      "dist": "10KM",
+      "current": 961,
+      "candidate": 961
+    },
+    {
+      "event": "Thien Phong Marathon",
+      "dist": "5KM",
+      "current": 608,
+      "candidate": 608
+    },
+    {
+      "event": "10km du bois de Boulogne",
+      "dist": "10KM",
+      "current": 5400,
+      "candidate": 5400
+    },
+    {
+      "event": "Brooks Adelaide Marathon festival",
+      "dist": "MARATHON",
+      "current": 761,
+      "candidate": 761
+    },
+    {
+      "event": "Brooks Adelaide Marathon festival",
+      "dist": "SEMI",
+      "current": 2207,
+      "candidate": 2207
+    },
+    {
+      "event": "Brooks Adelaide Marathon festival",
+      "dist": "10KM",
+      "current": 883,
+      "candidate": 883
+    },
+    {
+      "event": "Brooks Adelaide Marathon festival",
+      "dist": "5KM",
+      "current": 321,
+      "candidate": 321
+    },
+    {
+      "event": "Font Vella Lanzarote International Marathon",
+      "dist": "MARATHON",
+      "current": 784,
+      "candidate": 784
+    },
+    {
+      "event": "Font Vella Lanzarote International Marathon",
+      "dist": "SEMI",
+      "current": 1244,
+      "candidate": 1244
+    },
+    {
+      "event": "Font Vella Lanzarote International Marathon",
+      "dist": "10KM",
+      "current": 738,
+      "candidate": 738
+    },
+    {
+      "event": "Bengaluru Midnight Marathon",
+      "dist": "SEMI",
+      "current": 558,
+      "candidate": 558
+    },
+    {
+      "event": "Bengaluru Midnight Marathon",
+      "dist": "10KM",
+      "current": 1304,
+      "candidate": 1304
+    },
+    {
+      "event": "Bengaluru Midnight Marathon",
+      "dist": "5KM",
+      "current": 641,
+      "candidate": 641
+    },
+    {
+      "event": "Jonkoping Marathon",
+      "dist": "MARATHON",
+      "current": 601,
+      "candidate": 601
+    },
+    {
+      "event": "Jonkoping Marathon",
+      "dist": "SEMI",
+      "current": 1945,
+      "candidate": 1945
+    },
+    {
+      "event": "Bajaj Pune Marathon",
+      "dist": "MARATHON",
+      "current": 138,
+      "candidate": 138
+    },
+    {
+      "event": "Bajaj Pune Marathon",
+      "dist": "SEMI",
+      "current": 580,
+      "candidate": 580
+    },
+    {
+      "event": "Bajaj Pune Marathon",
+      "dist": "10KM",
+      "current": 1085,
+      "candidate": 1085
+    },
+    {
+      "event": "Zagreb21 Spring Half Marathon",
+      "dist": "SEMI",
+      "current": 1245,
+      "candidate": 1245
+    },
+    {
+      "event": "Zagreb21 Spring Half Marathon",
+      "dist": "5KM",
+      "current": 489,
+      "candidate": 489
+    },
+    {
+      "event": "Binter Night Run Zaragoza",
+      "dist": "10KM",
+      "current": 828,
+      "candidate": 828
+    },
+    {
+      "event": "Agra Taj Half Marathon",
+      "dist": "SEMI",
+      "current": 251,
+      "candidate": 251
+    },
+    {
+      "event": "Agra Taj Half Marathon",
+      "dist": "10KM",
+      "current": 532,
+      "candidate": 532
+    },
+    {
+      "event": "Agra Taj Half Marathon",
+      "dist": "5KM",
+      "current": 560,
+      "candidate": 560
+    },
+    {
+      "event": "Quijote Maraton",
+      "dist": "MARATHON",
+      "current": 209,
+      "candidate": 209
+    },
+    {
+      "event": "Quijote Maraton",
+      "dist": "SEMI",
+      "current": 431,
+      "candidate": 431
+    },
+    {
+      "event": "Quijote Maraton",
+      "dist": "10KM",
+      "current": 346,
+      "candidate": 346
+    },
+    {
+      "event": "Meia Maratona de Almada",
+      "dist": "SEMI",
+      "current": 247,
+      "candidate": 247
+    },
+    {
+      "event": "Meia Maratona de Almada",
+      "dist": "10KM",
+      "current": 533,
+      "candidate": 533
+    },
+    {
+      "event": "Chandigarh Half Marathon",
+      "dist": "SEMI",
+      "current": 427,
+      "candidate": 427
+    },
+    {
+      "event": "Chandigarh Half Marathon",
+      "dist": "10KM",
+      "current": 602,
+      "candidate": 602
+    },
+    {
+      "event": "Semi-marathon des sources du lac d’Annecy",
+      "dist": "SEMI",
+      "current": 1200,
+      "candidate": 1200
+    },
+    {
+      "event": "10 km du 14e",
+      "dist": "10KM",
+      "current": 3400,
+      "candidate": 3400
+    },
+    {
+      "event": "Semi Marathon et 10km de Hyères",
+      "dist": "SEMI",
+      "current": 1350,
+      "candidate": 1350
+    },
+    {
+      "event": "Semi Marathon et 10km de Hyères",
+      "dist": "10KM",
+      "current": 1150,
+      "candidate": 1150
+    },
+    {
+      "event": "Marathon de Lille",
+      "dist": "MARATHON",
+      "current": 2900,
+      "candidate": 2900
+    },
+    {
+      "event": "Marathon de Lille",
+      "dist": "SEMI",
+      "current": 8900,
+      "candidate": 8900
+    },
+    {
+      "event": "Marathon de Lille",
+      "dist": "5KM",
+      "current": 2200,
+      "candidate": 2200
+    },
+    {
+      "event": "Toyota Amazing Thailand Bangkok Marathon",
+      "dist": "MARATHON",
+      "current": 1020,
+      "candidate": 1020
+    },
+    {
+      "event": "Semi-marathon de Troyes",
+      "dist": "SEMI",
+      "current": 2870,
+      "candidate": 2870
+    },
+    {
+      "event": "Semi-marathon de Troyes",
+      "dist": "10KM",
+      "current": 971,
+      "candidate": 971
+    }
+  ],
+  "skipped_not_found": [
+    {
+      "event": "Hong Kong Marathon",
+      "dist": "SEMI",
+      "val": 22872
+    },
+    {
+      "event": "Allwyn Athens Marathon",
+      "dist": "MARATHON",
+      "val": 18977
+    },
+    {
+      "event": "Allwyn Athens Marathon",
+      "dist": "10KM",
+      "val": 13644
+    },
+    {
+      "event": "Allwyn Athens Marathon",
+      "dist": "5KM",
+      "val": 19357
+    },
+    {
+      "event": "TCS Amsterdam Marathon",
+      "dist": "SEMI",
+      "val": 1341,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Singapore Marathon",
+      "dist": "MARATHON",
+      "val": 8933
+    },
+    {
+      "event": "Singapore Marathon",
+      "dist": "SEMI",
+      "val": 14747
+    },
+    {
+      "event": "Singapore Marathon",
+      "dist": "10KM",
+      "val": 10143
+    },
+    {
+      "event": "Singapore Marathon",
+      "dist": "5KM",
+      "val": 5610
+    },
+    {
+      "event": "Run in Lyon by Harmonie Mutuelle",
+      "dist": "MARATHON",
+      "val": 6283
+    },
+    {
+      "event": "Run in Lyon by Harmonie Mutuelle",
+      "dist": "SEMI",
+      "val": 18339
+    },
+    {
+      "event": "Run in Lyon by Harmonie Mutuelle",
+      "dist": "10KM",
+      "val": 12829
+    },
+    {
+      "event": "Run in Lyon by Harmonie Mutuelle",
+      "dist": "5KM",
+      "val": 1024
+    },
+    {
+      "event": "Seoul Marathon",
+      "dist": "10KM",
+      "val": 18615,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Rock'n'roll Running Madrid",
+      "dist": "MARATHON",
+      "val": 10641
+    },
+    {
+      "event": "Rock'n'roll Running Madrid",
+      "dist": "SEMI",
+      "val": 19356
+    },
+    {
+      "event": "Rock'n'roll Running Madrid",
+      "dist": "10KM",
+      "val": 7091
+    },
+    {
+      "event": "NN Marathon Rotterdam",
+      "dist": "10KM",
+      "val": 16985,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Gold Coast Marathon",
+      "dist": "SEMI",
+      "val": 9657,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Gold Coast Marathon",
+      "dist": "10KM",
+      "val": 5563,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Gold Coast Marathon",
+      "dist": "5KM",
+      "val": 4213,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Honolulu Marathon",
+      "dist": "10KM",
+      "val": 9101,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Toulouse Metropole Run Experience",
+      "dist": "MARATHON",
+      "val": 9000
+    },
+    {
+      "event": "Toulouse Metropole Run Experience",
+      "dist": "SEMI",
+      "val": 17000
+    },
+    {
+      "event": "Toulouse Metropole Run Experience",
+      "dist": "10KM",
+      "val": 10000
+    },
+    {
+      "event": "Run Rome Marathon",
+      "dist": "MARATHON",
+      "val": 9054
+    },
+    {
+      "event": "Wizz Air Milano Marathon",
+      "dist": "MARATHON",
+      "val": 8331
+    },
+    {
+      "event": "Los Angeles Marathon",
+      "dist": "MARATHON",
+      "val": 21443
+    },
+    {
+      "event": "Los Angeles Marathon",
+      "dist": "5KM",
+      "val": 6220
+    },
+    {
+      "event": "TCS Toronto Waterfront Marathon",
+      "dist": "5KM",
+      "val": 7400,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "NN CPC Loop Den Haag",
+      "dist": "SEMI",
+      "val": 14636
+    },
+    {
+      "event": "NN CPC Loop Den Haag",
+      "dist": "10KM",
+      "val": 8734
+    },
+    {
+      "event": "NN CPC Loop Den Haag",
+      "dist": "5KM",
+      "val": 5006
+    },
+    {
+      "event": "Flying Pig Marathon",
+      "dist": "SEMI",
+      "val": 11762,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Flying Pig Marathon",
+      "dist": "10KM",
+      "val": 4519,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Flying Pig Marathon",
+      "dist": "5KM",
+      "val": 6872,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Boston Marathon",
+      "dist": "SEMI",
+      "val": 13923,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Boston Marathon",
+      "dist": "5KM",
+      "val": 5718,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Dubai Marathon",
+      "dist": "SEMI",
+      "val": 11369,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Taipei Marathon",
+      "dist": "SEMI",
+      "val": 16954,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Vienna City Marathon",
+      "dist": "SEMI",
+      "val": 12789,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "San Francisco Marathon",
+      "dist": "SEMI",
+      "val": 10708,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "San Francisco Marathon",
+      "dist": "10KM",
+      "val": 3974,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "San Francisco Marathon",
+      "dist": "5KM",
+      "val": 1640,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Marato Barcelona",
+      "dist": "MARATHON",
+      "val": 21707
+    },
+    {
+      "event": "Haspa Marathon Hamburg",
+      "dist": "SEMI",
+      "val": 3904,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Oslo Marathon",
+      "dist": "MARATHON",
+      "val": 4145
+    },
+    {
+      "event": "Oslo Marathon",
+      "dist": "SEMI",
+      "val": 9769
+    },
+    {
+      "event": "Oslo Marathon",
+      "dist": "10KM",
+      "val": 6518
+    },
+    {
+      "event": "Miami Marathon",
+      "dist": "SEMI",
+      "val": 14284,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Miami Marathon",
+      "dist": "5KM",
+      "val": 2737,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Long Beach Marathon",
+      "dist": "SEMI",
+      "val": 12121,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Long Beach Marathon",
+      "dist": "5KM",
+      "val": 3371,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Standard Chartered Dubai Marathon",
+      "dist": "SEMI",
+      "val": 8223,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Standard Chartered Dubai Marathon",
+      "dist": "10KM",
+      "val": 10022,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Marathon Munchen",
+      "dist": "MARATHON",
+      "val": 5196
+    },
+    {
+      "event": "Marathon Munchen",
+      "dist": "SEMI",
+      "val": 10752
+    },
+    {
+      "event": "Marathon Munchen",
+      "dist": "10KM",
+      "val": 3275
+    },
+    {
+      "event": "Vedanta Delhi Half",
+      "dist": "SEMI",
+      "val": 11471
+    },
+    {
+      "event": "Vedanta Delhi Half",
+      "dist": "10KM",
+      "val": 7119
+    },
+    {
+      "event": "Generali Geneve Marathon 10km",
+      "dist": "MARATHON",
+      "val": 4252,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Generali Geneve Marathon 10km",
+      "dist": "SEMI",
+      "val": 6972,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Generali Geneve Marathon 10km",
+      "dist": "5KM",
+      "val": 1243,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "500 Festival Half Marathon",
+      "dist": "SEMI",
+      "val": 17593
+    },
+    {
+      "event": "Manila Marathon",
+      "dist": "MARATHON",
+      "val": 2827
+    },
+    {
+      "event": "Manila Marathon",
+      "dist": "SEMI",
+      "val": 6801
+    },
+    {
+      "event": "Manila Marathon",
+      "dist": "10KM",
+      "val": 4754
+    },
+    {
+      "event": "Manila Marathon",
+      "dist": "5KM",
+      "val": 3196
+    },
+    {
+      "event": "Toronto Marathon",
+      "dist": "MARATHON",
+      "val": 3008
+    },
+    {
+      "event": "Toronto Marathon",
+      "dist": "SEMI",
+      "val": 8824
+    },
+    {
+      "event": "Toronto Marathon",
+      "dist": "10KM",
+      "val": 3050
+    },
+    {
+      "event": "Toronto Marathon",
+      "dist": "5KM",
+      "val": 2430
+    },
+    {
+      "event": "Gent marathon",
+      "dist": "MARATHON",
+      "val": 4487
+    },
+    {
+      "event": "Gent marathon",
+      "dist": "SEMI",
+      "val": 12627
+    },
+    {
+      "event": "City-Bay",
+      "dist": "SEMI",
+      "val": 1881
+    },
+    {
+      "event": "Istanbul Half Marathon",
+      "dist": "SEMI",
+      "val": 4888
+    },
+    {
+      "event": "Istanbul Half Marathon",
+      "dist": "10KM",
+      "val": 7578
+    },
+    {
+      "event": "Great Manchester Run",
+      "dist": "SEMI",
+      "val": 4697
+    },
+    {
+      "event": "Great Manchester Run",
+      "dist": "10KM",
+      "val": 4498
+    },
+    {
+      "event": "Baltimore Running Festival",
+      "dist": "10KM",
+      "val": 2283,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Baltimore Running Festival",
+      "dist": "5KM",
+      "val": 2721,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "AG2R 10K Montmartre",
+      "dist": "10KM",
+      "val": 12250
+    },
+    {
+      "event": "Denver Marathon",
+      "dist": "MARATHON",
+      "val": 2282
+    },
+    {
+      "event": "Denver Marathon",
+      "dist": "SEMI",
+      "val": 6209
+    },
+    {
+      "event": "Generali Tranquilidade Meia Maratona Descobrimentos",
+      "dist": "SEMI",
+      "val": 5305
+    },
+    {
+      "event": "Generali Tranquilidade Meia Maratona Descobrimentos",
+      "dist": "10KM",
+      "val": 3327
+    },
+    {
+      "event": "Rock'n'Roll Washington DC",
+      "dist": "SEMI",
+      "val": 5000
+    },
+    {
+      "event": "Rock'n'Roll Washington DC",
+      "dist": "5KM",
+      "val": 2905
+    },
+    {
+      "event": "EDP Maratona do Porto",
+      "dist": "SEMI",
+      "val": 7025,
+      "reason": "dist not in dashboard"
+    },
+    {
+      "event": "Great 10K",
+      "dist": "10KM",
+      "val": 4471
+    },
+    {
+      "event": "Runaway Sydney Half Marathon",
+      "dist": "SEMI",
+      "val": 1348
+    },
+    {
+      "event": "Runaway Sydney Half Marathon",
+      "dist": "10KM",
+      "val": 1093
+    },
+    {
+      "event": "Runaway Sydney Half Marathon",
+      "dist": "5KM",
+      "val": 493
+    },
+    {
+      "event": "Ajman Half Marathon",
+      "dist": "SEMI",
+      "val": 430
+    },
+    {
+      "event": "Ajman Half Marathon",
+      "dist": "10KM",
+      "val": 163
+    },
+    {
+      "event": "Ajman Half Marathon",
+      "dist": "5KM",
+      "val": 149
+    },
+    {
+      "event": "Generali Geneve Marathon 10km",
+      "dist": "SEMI",
+      "val": 8400,
+      "reason": "dist not in dashboard"
+    }
+  ]
+}

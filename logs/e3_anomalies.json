@@ -1,0 +1,188 @@
+{
+  "round": [
+    {
+      "row": 77,
+      "event": "Copenhagen Half Marathon",
+      "dist": "SEMI",
+      "year": 2015,
+      "val": 20000
+    },
+    {
+      "row": 80,
+      "event": "Vitality London 10,000",
+      "dist": "10KM",
+      "year": 2022,
+      "val": 13500
+    },
+    {
+      "row": 135,
+      "event": "Richmond Marathon",
+      "dist": "MARATHON",
+      "year": 2018,
+      "val": 4000
+    },
+    {
+      "row": 168,
+      "event": "Athens Marathon",
+      "dist": "MARATHON",
+      "year": 2013,
+      "val": 8500
+    }
+  ],
+  "aberrant": [
+    {
+      "event": "Riyadh Marathon",
+      "dist": "SEMI",
+      "y1": 2024,
+      "v1": 499,
+      "y2": 2025,
+      "v2": 3640,
+      "type": "spike"
+    },
+    {
+      "event": "Saucony London 10K",
+      "dist": "10KM",
+      "y1": 2011,
+      "v1": 6521,
+      "y2": 2012,
+      "v2": 20102,
+      "type": "spike"
+    },
+    {
+      "event": "TCS Sydney Marathon presented by ASICS",
+      "dist": "MARATHON",
+      "y1": 2022,
+      "v1": 3453,
+      "y2": 2023,
+      "v2": 13297,
+      "type": "spike"
+    },
+    {
+      "event": "Flying Pig Marathon",
+      "dist": "MARATHON",
+      "y1": 2018,
+      "v1": 5829,
+      "y2": 2019,
+      "v2": 31325,
+      "type": "spike"
+    },
+    {
+      "event": "San Francisco Marathon",
+      "dist": "MARATHON",
+      "y1": 2018,
+      "v1": 5264,
+      "y2": 2019,
+      "v2": 17587,
+      "type": "spike"
+    },
+    {
+      "event": "Cowtown Marathon",
+      "dist": "MARATHON",
+      "y1": 2018,
+      "v1": 1179,
+      "y2": 2019,
+      "v2": 18852,
+      "type": "spike"
+    },
+    {
+      "event": "Austin Marathon",
+      "dist": "MARATHON",
+      "y1": 2018,
+      "v1": 2549,
+      "y2": 2019,
+      "v2": 13914,
+      "type": "spike"
+    },
+    {
+      "event": "Grandma's Marathon",
+      "dist": "MARATHON",
+      "y1": 2018,
+      "v1": 6098,
+      "y2": 2019,
+      "v2": 18957,
+      "type": "spike"
+    },
+    {
+      "event": "Detroit Marathon",
+      "dist": "MARATHON",
+      "y1": 2018,
+      "v1": 3067,
+      "y2": 2019,
+      "v2": 18806,
+      "type": "spike"
+    },
+    {
+      "event": "St. Jude Memphis Marathon",
+      "dist": "MARATHON",
+      "y1": 2017,
+      "v1": 2348,
+      "y2": 2018,
+      "v2": 19406,
+      "type": "spike"
+    },
+    {
+      "event": "St. Jude Memphis Marathon",
+      "dist": "MARATHON",
+      "y1": 2021,
+      "v1": 1499,
+      "y2": 2022,
+      "v2": 18944,
+      "type": "spike"
+    },
+    {
+      "event": "Richmond Marathon",
+      "dist": "MARATHON",
+      "y1": 2018,
+      "v1": 4000,
+      "y2": 2019,
+      "v2": 15382,
+      "type": "spike"
+    },
+    {
+      "event": "Shamrock Marathon",
+      "dist": "MARATHON",
+      "y1": 2018,
+      "v1": 1435,
+      "y2": 2019,
+      "v2": 19965,
+      "type": "spike"
+    },
+    {
+      "event": "Shamrock Marathon",
+      "dist": "MARATHON",
+      "y1": 2021,
+      "v1": 339,
+      "y2": 2022,
+      "v2": 1255,
+      "type": "spike"
+    },
+    {
+      "event": "Columbus Marathon",
+      "dist": "MARATHON",
+      "y1": 2018,
+      "v1": 3214,
+      "y2": 2019,
+      "v2": 12530,
+      "type": "spike"
+    },
+    {
+      "event": "Eugene Marathon",
+      "dist": "MARATHON",
+      "y1": 2023,
+      "v1": 2088,
+      "y2": 2024,
+      "v2": 8915,
+      "type": "spike"
+    },
+    {
+      "event": "Haspa Marathon Hamburg",
+      "dist": "MARATHON",
+      "y1": 2021,
+      "v1": 1977,
+      "y2": 2022,
+      "v2": 6620,
+      "type": "spike"
+    }
+  ],
+  "identical_long": []
+}

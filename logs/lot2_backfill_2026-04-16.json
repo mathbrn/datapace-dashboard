@@ -1,0 +1,11 @@
+{
+  "applied": [
+    {
+      "event": "15Km de Woluwe",
+      "dist": "AUTRE",
+      "year": 2024,
+      "value": 3109
+    }
+  ],
+  "notes": "Lot 2 limited results — most platform_id events have one-year IDs (raceresult, sporthive per edition). ChronoRace ctx discovery via brute force found only Woluwe 2024. Mikatiming/Athlinks returned round values or wrong events. Future sessions should use Playwright discovery on event archive pages to collect ctx for each year."
+}
