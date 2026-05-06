@@ -1,0 +1,350 @@
+{
+  "date": "2026-05-05",
+  "wa_races": [
+    {
+      "name": "IV Prueba de Confrontación",
+      "venue": "Estadio Panamericano, La Habana (CUB)",
+      "area": "North and Central America",
+      "dateRange": "06–07 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "2. vrhačská středa",
+      "venue": "Sportovní areál Srnčí důl, Jablonec nad Nisou (CZE)",
+      "area": "Europe",
+      "dateRange": "06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Heggedal Open 1",
+      "venue": "Heggedal kastarena, Heggedal (NOR)",
+      "area": "Europe",
+      "dateRange": "06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting di contorno",
+      "venue": "Stadio Comunale, Bellinzona (SUI)",
+      "area": "Europe",
+      "dateRange": "06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Shukevich Memorial",
+      "venue": "Regional Sport Complex, Brest (BLR)",
+      "area": "Europe",
+      "dateRange": "06–07 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Akron Last Chance Meet",
+      "venue": "Lee R. JacksonT&F Complex, Akron, OH (USA)",
+      "area": "North and Central America",
+      "dateRange": "06–07 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "International Athletics Meeting Varaždin",
+      "venue": "Stadion ŠC Sloboda, Varaždin (CRO)",
+      "area": "Europe",
+      "dateRange": "06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Bogatyr Long Throws National Competitions",
+      "venue": "Yunost Stadium, Adler, Sochi (RUS)",
+      "area": "Europe",
+      "dateRange": "06–07 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Internationales Abendsportfest",
+      "venue": "TSV Stadion, Pfungstadt (GER)",
+      "area": "Europe",
+      "dateRange": "06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Liberty Twilight Qualifier",
+      "venue": "Matthes-Hopkins Track Complex, Lynchburg, VA (USA)",
+      "area": "North and Central America",
+      "dateRange": "06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Kasttävling",
+      "venue": "Uppsala Friidrottsarenas kastplan, Uppsala (SWE)",
+      "area": "Europe",
+      "dateRange": "06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Akademickie mistrzostwa woj. lubelskiego",
+      "venue": "Athletics Stadium, Lublin (POL)",
+      "area": "Europe",
+      "dateRange": "06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "AVEVE Tuincentrum FAGARD open meeting",
+      "venue": "THES Sport, Tessenderlo (BEL)",
+      "area": "Europe",
+      "dateRange": "06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "KEVEK ja Tartu KALEV STAADIONIJOOKSU I etapp",
+      "venue": "Tamme staadion, Tartu (EST)",
+      "area": "Europe",
+      "dateRange": "06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "2.kolo AZB družstiev starších žiakov a žiačok + kontrolne preteky",
+      "venue": "Atletický štadión STU, Bratislava (SVK)",
+      "area": "Europe",
+      "dateRange": "06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "The 10th Tokai Sprint Games",
+      "venue": "Lemon Gas Stadium, Hiratsuka (JPN)",
+      "area": "Asia",
+      "dateRange": "05 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Aspire Invitational 5",
+      "venue": "Aspire Academy Warm Up Track, Doha (QAT)",
+      "area": "Asia",
+      "dateRange": "05–06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Greek U19 School Championships",
+      "venue": "Municipal Stadium, Argos Orestiko (GRE)",
+      "area": "Europe",
+      "dateRange": "05–06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "NCAA Athletics Competition",
+      "venue": "New Clark City Stadium, New Clark City (PHI)",
+      "area": "Asia",
+      "dateRange": "05–07 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Nacional Mayor Ranking 5",
+      "venue": "Estadio Jorge Magico Gonzalez, San Salvador (ESA)",
+      "area": "North and Central America",
+      "dateRange": "05–07 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "19th wttk & DEN-EN Club Middle Distance Record Challenge",
+      "venue": "Edogawa Stadium, Tokyo (JPN)",
+      "area": "Asia",
+      "dateRange": "05 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Campeonato da AASM de U18",
+      "venue": "Complexo Desportivo das Laranjeiras, Ponta Delgada (POR)",
+      "area": "Europe",
+      "dateRange": "05–06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Ahkeran arkiheitot",
+      "venue": "Rakokiven kenttä, Lahti (FIN)",
+      "area": "Europe",
+      "dateRange": "05 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "KM langdistanse",
+      "venue": "Trondheim Stadion, Trondheim (NOR)",
+      "area": "Europe",
+      "dateRange": "05 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Mito Invitational",
+      "venue": "Municipal Stadium, Mito (JPN)",
+      "area": "Asia",
+      "dateRange": "05 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "St. Kitts & Navis U20 Championships",
+      "venue": "Nevis Athletic Stadium, Charlestown (SKN)",
+      "area": "North and Central America",
+      "dateRange": "04 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "DSA Elit 6",
+      "venue": "Lugnets friidrottsarena, Falun (SWE)",
+      "area": "Europe",
+      "dateRange": "04 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "BMC Bannister Miles",
+      "venue": "Oxford University Track, Oxford (GBR)",
+      "area": "Europe",
+      "dateRange": "04 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "The First Tokai University Throwing Competition",
+      "venue": "Tokai University Stadium, Hiratsuka (JPN)",
+      "area": "Asia",
+      "dateRange": "04–05 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "37th Golden Games in Nobeoka",
+      "venue": "Nishishina Athletic Stadium, Nobeoka (JPN)",
+      "area": "Asia",
+      "dateRange": "04 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "The Great Northwest Athletic Conference Outdoor Track and Field Championship",
+      "venue": "Recreation Sports Complex, Ellensburg, WA (USA)",
+      "area": "North and Central America",
+      "dateRange": "04–05 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Tekstilny Kray",
+      "venue": "Stadion Tekstilshchik, Ivanovo (RUS)",
+      "area": "Europe",
+      "dateRange": "04–05 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting \"Grigor Hristov\"",
+      "venue": "Vasil Levski National Stadium, Sofia (BUL)",
+      "area": "Europe",
+      "dateRange": "04 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Kagawa Athletics Championships",
+      "venue": "Prefectural Stadium, Marugame (JPN)",
+      "area": "Asia",
+      "dateRange": "04–05 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Selection Meeting for 58th All Japan Inter-University Ekiden",
+      "venue": "Lemon Gas Stadium, Hiratsuka (JPN)",
+      "area": "Asia",
+      "dateRange": "04 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Tokyo : Speed : Race",
+      "venue": "Meijijingu Gaien area, Tokyo (JPN)",
+      "area": "Asia",
+      "dateRange": "04 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Kagoshima Prefecture 3rd Track and Field Meet",
+      "venue": "Kamoike Auxiliary Stadium, Kagoshima (JPN)",
+      "area": "Asia",
+      "dateRange": "03–04 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Israeli U20 Combined Events Championships",
+      "venue": "Hadar Yosef Stadium, Tel Aviv (ISR)",
+      "area": "Europe",
+      "dateRange": "03–04 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Invitational meet Jerusalem",
+      "venue": "Hadar Yosef Stadium, Tel Aviv (ISR)",
+      "area": "Europe",
+      "dateRange": "03–04 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Israeli U18 Combined Events Championships",
+      "venue": "Hadar Yosef Stadium, Tel Aviv (ISR)",
+      "area": "Europe",
+      "dateRange": "03–04 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Israeli Combined Events Championships",
+      "venue": "Hadar Yosef Stadium, Tel Aviv (ISR)",
+      "area": "Europe",
+      "dateRange": "03–04 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "68th Toyama Championships in Athletics",
+      "venue": "Athletics Stadium, Toyama (JPN)",
+      "area": "Asia",
+      "dateRange": "03–04 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Fukuoka Athletics Championships",
+      "venue": "Hakatanomori Athletic Stadium, Fukuoka (JPN)",
+      "area": "Asia",
+      "dateRange": "03–04 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "BUCS Athletics: Outdoor Championships",
+      "venue": "Cardiff Athletic Stadium, Cardiff (GBR)",
+      "area": "Europe",
+      "dateRange": "02–04 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Kuwait Senior Cup",
+      "venue": "Ahmed Al Rashdan Stadium, Al-Kuwait (KUW)",
+      "area": "Asia",
+      "dateRange": "02–06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Kuwait U18 Cup",
+      "venue": "Ahmed Al Rashdan Stadium, Al-Kuwait (KUW)",
+      "area": "Asia",
+      "dateRange": "02–06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "55th National Division Athletics Championships",
+      "venue": "Mokpo Sports Complex, Mokpo (KOR)",
+      "area": "Asia",
+      "dateRange": "30 APR–04 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "89th Tokyo Athletics Open Championships",
+      "venue": "Komazawa Olympic Park Athletic Stadium, Tokyo (JPN)",
+      "area": "Asia",
+      "dateRange": "24 APR–05 MAY 2026",
+      "hasResults": true
+    }
+  ],
+  "matched": [
+    {
+      "wa_name": "Tokyo : Speed : Race",
+      "our_name": "Tokyo Marathon",
+      "score": 20
+    }
+  ],
+  "updates": [],
+  "errors": []
+}
