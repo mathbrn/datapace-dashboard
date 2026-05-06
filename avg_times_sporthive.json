@@ -1966,5 +1966,14 @@
     "count": 1706,
     "avg_time": "0:52:25",
     "avg_speed_kmh": 11.45
+  },
+  {
+    "label": "Houston M 2026",
+    "race": "Chevron Houston Marathon",
+    "dist_m": 42195,
+    "year": 2026,
+    "count": null,
+    "avg_time": "04:14:16",
+    "avg_speed_kmh": 9.96
   }
 ]
