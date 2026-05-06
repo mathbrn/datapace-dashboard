@@ -1,6 +1,6 @@
 # DataPace Dashboard — Stats à jour
 
-**Généré le** : 2026-04-28 08:03
+**Généré le** : 2026-05-06 09:54
 **Source historique** : finishers (mémoire)
 
 > **Note pour Claude** : c'est la source de vérité pour tous les chiffres DataPace.
@@ -10,15 +10,15 @@
 
 | Métrique | Valeur |
 |---|---|
-| Épreuves uniques (noms distincts) | 855 |
-| Couples Race × Distance | 1919 |
+| Épreuves uniques (noms distincts) | 876 |
+| Couples Race × Distance | 1961 |
 | Plage d'années effective | 2000 - 2026 |
-| Points de données 2000-2022 | 1,544 |
-| Points de données 2023-2026 | 875 |
-| Points de données totaux (2000 - 2026) | 2,419 |
-| Finishers cumulés 2000-2022 | 23,086,374 |
-| Finishers cumulés 2023-2026 | 11,398,131 |
-| Finishers cumulés totaux (2000 - 2026) | 34,484,505 |
+| Points de données 2000-2022 | 1,498 |
+| Points de données 2023-2026 | 980 |
+| Points de données totaux (2000 - 2026) | 2,478 |
+| Finishers cumulés 2000-2022 | 22,230,851 |
+| Finishers cumulés 2023-2026 | 12,160,691 |
+| Finishers cumulés totaux (2000 - 2026) | 34,391,542 |
 | Temps moyens marathon | 91 |
 | Temps moyens semi-marathon | 52 |
 | Chronos vainqueurs Homme | 53 |
@@ -28,15 +28,15 @@
 
 | Métrique | Valeur |
 |---|---|
-| Événements avec données sponsoring | 291 |
+| Événements avec données sponsoring | 290 |
 | Sponsors uniques trackés | 511 |
-| Relations sponsor-événement totales | 1045 |
+| Relations sponsor-événement totales | 1044 |
 | Sources | sponsoring_data.json, scraped_partners.json |
 
 **Répartition par type :**
 
   - official: 437
-  - title: 263
+  - title: 262
   - partner: 209
   - sponsor: 44
   - premium: 36
@@ -56,9 +56,9 @@
 
 ## Chiffres à utiliser en communication externe
 
-- **855** épreuves de course à pied trackées dans le monde
-- **1919** couples événement × distance en base
-- Plus de **2,419** points de données historiques depuis 2000
-- **34,484,505** finishers cumulés sur la période 2000 - 2026
+- **876** épreuves de course à pied trackées dans le monde
+- **1961** couples événement × distance en base
+- Plus de **2,478** points de données historiques depuis 2000
+- **34,391,542** finishers cumulés sur la période 2000 - 2026
 - Historique depuis **2000** (27 années de données)
-- **511** sponsors trackés sur **291** événements
+- **511** sponsors trackés sur **290** événements
