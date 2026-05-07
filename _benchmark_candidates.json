@@ -2799,33 +2799,6 @@
     "finishers_2025": 13150
   },
   {
-    "pays": "Etats-Unis",
-    "region": "Amérique du Nord",
-    "ville": "Nashvile",
-    "name": "Rock'n'Roll Nashville",
-    "date_month": 4,
-    "year_creation": null,
-    "distances": [
-      [
-        "MARATHON",
-        null
-      ],
-      [
-        "SEMI",
-        null
-      ],
-      [
-        "10KM",
-        null
-      ],
-      [
-        "5KM",
-        null
-      ]
-    ],
-    "finishers_2025": 13098
-  },
-  {
     "pays": "Pays-Bas",
     "region": "Europe",
     "ville": "Apeldoorn",
@@ -4344,29 +4317,6 @@
     "finishers_2025": 8786
   },
   {
-    "pays": "Etats-Unis",
-    "region": "Amérique du Nord",
-    "ville": "Tempe",
-    "name": "Rock'n'Roll Arizona",
-    "date_month": 1,
-    "year_creation": null,
-    "distances": [
-      [
-        "SEMI",
-        null
-      ],
-      [
-        "10KM",
-        null
-      ],
-      [
-        "5KM",
-        null
-      ]
-    ],
-    "finishers_2025": 8767
-  },
-  {
     "pays": "Belgique",
     "region": "Europe",
     "ville": "Liège",
@@ -4759,25 +4709,6 @@
     "finishers_2025": 8069
   },
   {
-    "pays": "Etats-Unis",
-    "region": "Amérique du Nord",
-    "ville": "Washington",
-    "name": "Rock'n'Roll Washington DC",
-    "date_month": 3,
-    "year_creation": null,
-    "distances": [
-      [
-        "SEMI",
-        5000
-      ],
-      [
-        "5KM",
-        2905
-      ]
-    ],
-    "finishers_2025": 7905
-  },
-  {
     "pays": "Egypte",
     "region": "Afrique",
     "ville": "Gizeh ",
@@ -4879,29 +4810,6 @@
       ]
     ],
     "finishers_2025": 7764
-  },
-  {
-    "pays": "Etats-Unis",
-    "region": "Amérique du Nord",
-    "ville": "San Jose",
-    "name": "Rock'n'Roll San Jose",
-    "date_month": 10,
-    "year_creation": null,
-    "distances": [
-      [
-        "SEMI",
-        null
-      ],
-      [
-        "10KM",
-        null
-      ],
-      [
-        "5KM",
-        null
-      ]
-    ],
-    "finishers_2025": 7724
   },
   {
     "pays": "Portugal",
@@ -5138,33 +5046,6 @@
       ]
     ],
     "finishers_2025": 7355
-  },
-  {
-    "pays": "Philippines",
-    "region": "Asie",
-    "ville": "Manille",
-    "name": "Rock'n'Roll Manila",
-    "date_month": 11,
-    "year_creation": null,
-    "distances": [
-      [
-        "MARATHON",
-        null
-      ],
-      [
-        "SEMI",
-        null
-      ],
-      [
-        "10KM",
-        null
-      ],
-      [
-        "5KM",
-        null
-      ]
-    ],
-    "finishers_2025": 7312
   },
   {
     "pays": "Italie",
@@ -5716,25 +5597,6 @@
       ]
     ],
     "finishers_2025": 6488
-  },
-  {
-    "pays": "Mexique",
-    "region": "Amérique du Nord",
-    "ville": "Mexico",
-    "name": "Rock'n' Roll Mexico City",
-    "date_month": 12,
-    "year_creation": null,
-    "distances": [
-      [
-        "SEMI",
-        null
-      ],
-      [
-        "10KM",
-        null
-      ]
-    ],
-    "finishers_2025": 6427
   },
   {
     "pays": "Royaume-Uni",
@@ -9212,25 +9074,6 @@
       ]
     ],
     "finishers_2025": 2349
-  },
-  {
-    "pays": "Taiwan",
-    "region": "Asie",
-    "ville": "Taiwan",
-    "name": "Rock'n'Roll Taipei",
-    "date_month": 4,
-    "year_creation": null,
-    "distances": [
-      [
-        "SEMI",
-        null
-      ],
-      [
-        "10KM",
-        null
-      ]
-    ],
-    "finishers_2025": 2305
   },
   {
     "pays": "Royaume-Uni",
