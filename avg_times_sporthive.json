@@ -1975,5 +1975,32 @@
     "count": null,
     "avg_time": "04:14:16",
     "avg_speed_kmh": 9.96
+  },
+  {
+    "label": "Aramco Houston HM 2026",
+    "race": "Aramco Houston Half Marathon",
+    "dist_m": 21097,
+    "year": 2026,
+    "count": null,
+    "avg_time": "02:24:29",
+    "avg_speed_kmh": null
+  },
+  {
+    "label": "Sevilla HM 2026",
+    "race": "Medio Maraton de Sevilla",
+    "dist_m": 21097,
+    "year": 2026,
+    "count": null,
+    "avg_time": "01:51:50",
+    "avg_speed_kmh": null
+  },
+  {
+    "label": "Mitja Barcelona 2026",
+    "race": "Mitja Marato Barcelona by Brooks",
+    "dist_m": 21097,
+    "year": 2026,
+    "count": null,
+    "avg_time": "01:54:19",
+    "avg_speed_kmh": null
   }
 ]
