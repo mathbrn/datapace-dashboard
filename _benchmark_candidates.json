@@ -615,29 +615,6 @@
     "finishers_2025": 28677
   },
   {
-    "pays": "Pays-Bas",
-    "region": "Europe",
-    "ville": "La Haye",
-    "name": "NN CPC Loop Den Haag",
-    "date_month": 3,
-    "year_creation": 27,
-    "distances": [
-      [
-        "SEMI",
-        14636
-      ],
-      [
-        "10KM",
-        8734
-      ],
-      [
-        "5KM",
-        5006
-      ]
-    ],
-    "finishers_2025": 28376
-  },
-  {
     "pays": "Espagne ",
     "region": "Europe",
     "ville": "Barcelone",
