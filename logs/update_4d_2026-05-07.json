@@ -1,0 +1,638 @@
+{
+  "date": "2026-05-07",
+  "wa_races": [
+    {
+      "name": "Mistrovství Jihočeského a Plzeňského kraje ve vícebojích",
+      "venue": "Atletický stadion, Nová Včelnice (CZE)",
+      "area": "Europe",
+      "dateRange": "08–09 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "NDSU Tune Up",
+      "venue": "Schlanser Track Complex, Fargo, ND (USA)",
+      "area": "North and Central America",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "6. Badener Short Track Meeting",
+      "venue": "Sportanlage Aue, Baden (SUI)",
+      "area": "Europe",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Lambertsetersprinten",
+      "venue": "Lambertseter Stadion, Oslo (NOR)",
+      "area": "Europe",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "The 96th Kyushu Inter University Track & Field Championships",
+      "venue": "Amashin Stadium, Amakusa (JPN)",
+      "area": "Asia",
+      "dateRange": "08–10 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Memoriál Zuzky Krejčové",
+      "venue": "Sport Park Liberec, Liberec (CZE)",
+      "area": "Europe",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Groruddalslekene",
+      "venue": "Stovnerbanen, Oslo (NOR)",
+      "area": "Europe",
+      "dateRange": "08–10 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Regina Spring Classic",
+      "venue": "Canada Games Stadium, Regina (CAN)",
+      "area": "North and Central America",
+      "dateRange": "08–09 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "1. kolo mládeže Dci, Dky, Jři, a Jky SKAS",
+      "venue": "Atletický stadion Kolín, Kolin (CZE)",
+      "area": "Europe",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "2. kolo KPD mužů, žen, juniorů, dorostu a žactva",
+      "venue": "Atletický stadion, Trebic (CZE)",
+      "area": "Europe",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "25 Jahre Waldstadion",
+      "venue": "Waldstadion, Haldensleben (GER)",
+      "area": "Europe",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "1. kolo chůze pro extraligu",
+      "venue": "Kolonáda, Poděbrady (CZE)",
+      "area": "Europe",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Luxembourg Relays Championships",
+      "venue": "Stade de Luxembourg, Luxembourg (LUX)",
+      "area": "Europe",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting Régional de Saint Barthélemy d’Anjou",
+      "venue": "Stade de la Venaiserie, St-Barthélémy-d'Anjou (FRA)",
+      "area": "Europe",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "U18 Regional Club Championships - Region 14",
+      "venue": "Municipal Stadium of Leros, Xirokampos (GRE)",
+      "area": "Europe",
+      "dateRange": "08–09 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Wichita State Shocker Open",
+      "venue": "Cessna Stadium, Wichita, KS (USA)",
+      "area": "North and Central America",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "USD Twilight",
+      "venue": "USD Lillibridge Track Complex, Vermillion, SD (USA)",
+      "area": "North and Central America",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Arkansas Twilight",
+      "venue": "John McDonnell Field, Fayetteville, AR (USA)",
+      "area": "North and Central America",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "IV Circuito Paulista Open de Atletismo",
+      "venue": "COTP Stadium, São Paulo (BRA)",
+      "area": "South America",
+      "dateRange": "08–09 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Titan Tune-Up",
+      "venue": "CSU Titan Track Complex, Fullerton, CA (USA)",
+      "area": "North and Central America",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Youth Athletic Meeting Usti Academy U20 and U18",
+      "venue": "Stadion Čestmíra Dudy, Bílina (CZE)",
+      "area": "Europe",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "94th Poděbrady Walking",
+      "venue": "Kolonáda, Poděbrady (CZE)",
+      "area": "Europe",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Athletics Manitoba Spring Open",
+      "venue": "University Stadium - U. of Manitoba, Winnipeg (CAN)",
+      "area": "North and Central America",
+      "dateRange": "08–09 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Calgary Spring Challenge",
+      "venue": "Foothills Athletic Park, Calgary (CAN)",
+      "area": "North and Central America",
+      "dateRange": "08–10 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Horizon League Outdoor Track & Field Championships",
+      "venue": "Oakland Track and Field Complex, Rochester, MI (USA)",
+      "area": "North and Central America",
+      "dateRange": "08–10 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Midwest Conference Outdoor Championship",
+      "venue": "Ash Park Stadium, Mount Vernon, IA (USA)",
+      "area": "North and Central America",
+      "dateRange": "08–09 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "1. kolo mládeže Dci, Dky, Jři, Jky SKAS, skupina A",
+      "venue": "Mestský Stadion Sletište, Kladno (CZE)",
+      "area": "Europe",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Mistrovství Karlovarského a Plzeňského kraje na 5000m",
+      "venue": "Atletický Stadion Chodov, Chodov (CZE)",
+      "area": "Europe",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Colombian U23 Championships",
+      "venue": "Estadio de Atletismo de la Unidad Deportiva Centenario, Armenia (COL)",
+      "area": "South America",
+      "dateRange": "08–10 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "1. kolo MPD juniorů a dorostu",
+      "venue": "Atletický stadion Děkanka, Praha (CZE)",
+      "area": "Europe",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "AF Twilight",
+      "venue": "Cadet Outdoor T&F Complex, Colorado Springs, CO (USA)",
+      "area": "North and Central America",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "The Big West Track and Field Championships",
+      "venue": "Jack Rose Track, Long Beach, CA (USA)",
+      "area": "North and Central America",
+      "dateRange": "08–16 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Oregon Twilight",
+      "venue": "Hayward Field, Eugene, OR (USA)",
+      "area": "North and Central America",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "United Arab Emirates Championships",
+      "venue": "Dubai Police Club Stadium, Dubai (UAE)",
+      "area": "Asia",
+      "dateRange": "08–10 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Danderydsspelen",
+      "venue": "Danderyds IP, Danderyd (SWE)",
+      "area": "Europe",
+      "dateRange": "08–10 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Czech Mile and 5km Road Running Championships",
+      "venue": "Kolonáda, Poděbrady (CZE)",
+      "area": "Europe",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "The Saudi Arabian Championships for Men",
+      "venue": "King Fahd Sports City Stadium, Taif (KSA)",
+      "area": "Asia",
+      "dateRange": "08–09 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Lithuanian U16 Combined Events Championships",
+      "venue": "Centrinis Stadionas, Šiauliai (LTU)",
+      "area": "Europe",
+      "dateRange": "08–09 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Lithuanian U20 Combined Events Championships",
+      "venue": "Centrinis Stadionas, Šiauliai (LTU)",
+      "area": "Europe",
+      "dateRange": "08–09 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Lithuanian U18 Combined Events Championships",
+      "venue": "Centrinis Stadionas, Šiauliai (LTU)",
+      "area": "Europe",
+      "dateRange": "08–09 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Billy Hayes Invitational",
+      "venue": "Billy Hayes T& F Complex, Bloomington, IN (USA)",
+      "area": "North and Central America",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Baku Championships",
+      "venue": "ASAPES Stadium, Baku (AZE)",
+      "area": "Europe",
+      "dateRange": "08–09 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Egyptian U23 Championships",
+      "venue": "The Olympic Center For Training National Teams, Cairo (EGY)",
+      "area": "Africa",
+      "dateRange": "08–09 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Len Paddock Open",
+      "venue": "University of Michigan Outdoor Track Stadium, Ann Arbor, MI (USA)",
+      "area": "North and Central America",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Mount Olive First Chance",
+      "venue": "Ray McDonald, Sr., Track Complex, Mount Olive, NC (USA)",
+      "area": "North and Central America",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Régionaux EC U18 et plus",
+      "venue": "Stade Louis Boyer, Gien (FRA)",
+      "area": "Europe",
+      "dateRange": "08–09 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Sixth Challenge Meeting",
+      "venue": "The Olympic Center For Training National Teams, Cairo (EGY)",
+      "area": "Africa",
+      "dateRange": "08–09 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Ward Haylett Invitational",
+      "venue": "RV Christian Track, Manhattan, KS (USA)",
+      "area": "North and Central America",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Tochigi High School Championships",
+      "venue": "Tochigi Prefectural Sports Park Stadium, Utsunomiya (JPN)",
+      "area": "Asia",
+      "dateRange": "08–11 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Torneo del club ADF",
+      "venue": "Centro Nacional De Atletismo Del Chaco, Filadelfia (PAR)",
+      "area": "South America",
+      "dateRange": "08–09 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Fanalekene",
+      "venue": "Fana Stadion, Bergen (NOR)",
+      "area": "Europe",
+      "dateRange": "08–10 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Circuit 14 Track Meeting",
+      "venue": "Sportpark De Hondsheuvels, Eindhoven (NED)",
+      "area": "Europe",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Road Race Modi'in",
+      "venue": "Modi'in (ISR)",
+      "area": "Europe",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Illini Tune-Up",
+      "venue": "Demirjian Park, Champaign, IL (USA)",
+      "area": "North and Central America",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Velká cena Olomouce",
+      "venue": "Stadion TJ Lokomotiva Olomouc,, Olomouc (CZE)",
+      "area": "Europe",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Lebanese U20 Championships",
+      "venue": "Camille Chamoun Sports City Stadium, Beirut (LBN)",
+      "area": "Asia",
+      "dateRange": "08–10 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "19. ročník Hvězdného házení",
+      "venue": "Městský stadion Střelnice, Domažlice (CZE)",
+      "area": "Europe",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Sycamore Open",
+      "venue": "Gibson Track & Field Complex, Terre Haute, IN (USA)",
+      "area": "North and Central America",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Cyclone Twilight",
+      "venue": "Bill and Karen Bergan outdoor track,Cyclone Sports Complex, Ames, IA (USA)",
+      "area": "North and Central America",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Challenge Oudot - Crédit Mutuel",
+      "venue": "Complexe Sportif L. Lagrange, Besancon (FRA)",
+      "area": "Europe",
+      "dateRange": "08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Tokai Conference Inter Collegiate Track＆Field Championships",
+      "venue": "Municipal Mizuho Stadium, Nagoya (JPN)",
+      "area": "Asia",
+      "dateRange": "07–09 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "H.E. The Emir Cup",
+      "venue": "Suhaim bin Hamad Stadium, Doha (QAT)",
+      "area": "Asia",
+      "dateRange": "07–08 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Falkenbergs Kasttävling",
+      "venue": "Falkenbergs IP, Falkenberg (SWE)",
+      "area": "Europe",
+      "dateRange": "07 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "NSIC Outdoor Track and Field Championships",
+      "venue": "Malosky Stadium, Duluth, MN (USA)",
+      "area": "North and Central America",
+      "dateRange": "07–09 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Edge Sport 8/3 Invitational & Hamilton HP 10K",
+      "venue": "Campbell Track, Hamilton (CAN)",
+      "area": "North and Central America",
+      "dateRange": "07 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Franson Last Chance",
+      "venue": "Cougar Athletic Stadium, Azusa, CA (USA)",
+      "area": "North and Central America",
+      "dateRange": "07–09 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Lone Star Conference Outdoor Championships",
+      "venue": "West Texas A&M University Track & Soccer Complex, Canyon, TX (USA)",
+      "area": "North and Central America",
+      "dateRange": "07–09 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "2. vrhačská středa",
+      "venue": "Sportovní areál Srnčí důl, Jablonec nad Nisou (CZE)",
+      "area": "Europe",
+      "dateRange": "06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "AVEVE Tuincentrum FAGARD open meeting",
+      "venue": "THES Sport, Tessenderlo (BEL)",
+      "area": "Europe",
+      "dateRange": "06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "KEVEK ja Tartu KALEV STAADIONIJOOKSU I etapp",
+      "venue": "Tamme staadion, Tartu (EST)",
+      "area": "Europe",
+      "dateRange": "06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting di contorno",
+      "venue": "Stadio Comunale, Bellinzona (SUI)",
+      "area": "Europe",
+      "dateRange": "06 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Akademickie mistrzostwa woj. lubelskiego",
+      "venue": "Athletics Stadium, Lublin (POL)",
+      "area": "Europe",
+      "dateRange": "06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "2.kolo AZB družstiev starších žiakov a žiačok + kontrolne preteky",
+      "venue": "Atletický štadión STU, Bratislava (SVK)",
+      "area": "Europe",
+      "dateRange": "06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Heggedal Open 1",
+      "venue": "Heggedal kastarena, Heggedal (NOR)",
+      "area": "Europe",
+      "dateRange": "06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Shukevich Memorial",
+      "venue": "Regional Sport Complex, Brest (BLR)",
+      "area": "Europe",
+      "dateRange": "06–07 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Internationales Abendsportfest",
+      "venue": "TSV Stadion, Pfungstadt (GER)",
+      "area": "Europe",
+      "dateRange": "06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Liberty Twilight Qualifier",
+      "venue": "Matthes-Hopkins Track Complex, Lynchburg, VA (USA)",
+      "area": "North and Central America",
+      "dateRange": "06 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Bogatyr Long Throws National Competitions",
+      "venue": "Yunost Stadium, Adler, Sochi (RUS)",
+      "area": "Europe",
+      "dateRange": "06–07 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "IV Prueba de Confrontación",
+      "venue": "Estadio Panamericano, La Habana (CUB)",
+      "area": "North and Central America",
+      "dateRange": "06–07 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "International Athletics Meeting Varaždin",
+      "venue": "Stadion ŠC Sloboda, Varaždin (CRO)",
+      "area": "Europe",
+      "dateRange": "06 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Kasttävling",
+      "venue": "Uppsala Friidrottsarenas kastplan, Uppsala (SWE)",
+      "area": "Europe",
+      "dateRange": "06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Akron Last Chance Meet",
+      "venue": "Lee R. JacksonT&F Complex, Akron, OH (USA)",
+      "area": "North and Central America",
+      "dateRange": "06–07 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Greek U19 School Championships",
+      "venue": "Municipal Stadium, Argos Orestiko (GRE)",
+      "area": "Europe",
+      "dateRange": "05–06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato da AASM de U18",
+      "venue": "Complexo Desportivo das Laranjeiras, Ponta Delgada (POR)",
+      "area": "Europe",
+      "dateRange": "05–06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Qatar Cup Championships",
+      "venue": "Al Rayyan Club Stadium, Doha (QAT)",
+      "area": "Asia",
+      "dateRange": "05–06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Aspire Invitational 5",
+      "venue": "Aspire Academy Warm Up Track, Doha (QAT)",
+      "area": "Asia",
+      "dateRange": "05–06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Nacional Mayor Ranking 5",
+      "venue": "Estadio Jorge Magico Gonzalez, San Salvador (ESA)",
+      "area": "North and Central America",
+      "dateRange": "05–07 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "NCAA Athletics Competition",
+      "venue": "New Clark City Stadium, New Clark City (PHI)",
+      "area": "Asia",
+      "dateRange": "05–07 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Kuwait Senior Cup",
+      "venue": "Ahmed Al Rashdan Stadium, Al-Kuwait (KUW)",
+      "area": "Asia",
+      "dateRange": "02–06 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Kuwait U18 Cup",
+      "venue": "Ahmed Al Rashdan Stadium, Al-Kuwait (KUW)",
+      "area": "Asia",
+      "dateRange": "02–06 MAY 2026",
+      "hasResults": false
+    }
+  ],
+  "matched": [],
+  "updates": [],
+  "errors": []
+}
