@@ -1,0 +1,398 @@
+{
+  "date": "2026-05-12",
+  "wa_races": [
+    {
+      "name": "1ª Noite Quente",
+      "venue": "Estádio José Vieira de Carvalho, Maia (POR)",
+      "area": "Europe",
+      "dateRange": "13 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Mistrzostwa Wielkopolski LZS",
+      "venue": "Stadion Miejski, Pila (POL)",
+      "area": "Europe",
+      "dateRange": "13 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Mini Internationales",
+      "venue": "Stadion Oberwerth, Koblenz (GER)",
+      "area": "Europe",
+      "dateRange": "13–14 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Throwing Competitions",
+      "venue": "Kalininets Stadium, Yekaterinburg (RUS)",
+      "area": "Europe",
+      "dateRange": "13 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "University of Birmingham T&F Series",
+      "venue": "Birmingham University Athletics Track, Birmingham (GBR)",
+      "area": "Europe",
+      "dateRange": "13 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "All-Russian Long Throws Competitons",
+      "venue": "Nizhniy Novgorod (RUS)",
+      "area": "Europe",
+      "dateRange": "13–14 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Vault Manchester Summer Series 2",
+      "venue": "Sportcity Regional Arena, Manchester (GBR)",
+      "area": "Europe",
+      "dateRange": "13 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Big Sky Outdoor Track and Field Championships",
+      "venue": "Mt. Hood Community College, Gresham, OR (USA)",
+      "area": "North and Central America",
+      "dateRange": "13–16 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Police Athletics Championships",
+      "venue": "Wan Chai Sports Ground, Hong Kong (HKG)",
+      "area": "Asia",
+      "dateRange": "13 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Watford Harriers Open Graded Meeting",
+      "venue": "Woodside Stadium, Watford (GBR)",
+      "area": "Europe",
+      "dateRange": "13 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Athletics Evening Sports Festival of TV Waldstrasse and WLV",
+      "venue": "Helmut-Schön-Sportpark, Wiesbaden (GER)",
+      "area": "Europe",
+      "dateRange": "13 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Skokanská streda",
+      "venue": "Mestský atletický štadión Antona Hajmássyho, Trnava (SVK)",
+      "area": "Europe",
+      "dateRange": "13 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "3. SVS-Wurf-Einladungsmeeting",
+      "venue": "Rudolf Tonn Stadion, Schwechat (AUT)",
+      "area": "Europe",
+      "dateRange": "13 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "TLV-Abendmeeting (Weitsprung)",
+      "venue": "Innsbruck USI, Innsbruck (AUT)",
+      "area": "Europe",
+      "dateRange": "13 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Far Eastern Federal District U20 and U18 Championships",
+      "venue": "Spartak Stadium, Yuzhno-Sakhalinsk (RUS)",
+      "area": "Europe",
+      "dateRange": "13–15 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Kohila pikamaajooksude sari I etapp",
+      "venue": "Kohila staadion, Kohila (EST)",
+      "area": "Europe",
+      "dateRange": "13 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "3. vrhačská středa",
+      "venue": "Sportovní areál Srnčí důl, Jablonec nad Nisou (CZE)",
+      "area": "Europe",
+      "dateRange": "13 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "BMC Gold Standard Races",
+      "venue": "Birmingham University Athletics Track, Birmingham (GBR)",
+      "area": "Europe",
+      "dateRange": "13 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "1. Abendsportfest 2026 des Berliner Sport-Verein 1892 & oBBM 4x400m",
+      "venue": "Stadion Wilmersdorf, Berlin (GER)",
+      "area": "Europe",
+      "dateRange": "13 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Sri Lanka Open Stage 2",
+      "venue": "Diyagama Stadium, Diyagama (SRI)",
+      "area": "Asia",
+      "dateRange": "13–15 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Bounce to the Nordics",
+      "venue": "Aarhus Atletik og Løbeakademi, Århus (DEN)",
+      "area": "Europe",
+      "dateRange": "13 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Track & Field Live - Mayo",
+      "venue": "Claremorris (IRL)",
+      "area": "Europe",
+      "dateRange": "13 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "North Caucasus Federal District Championships",
+      "venue": "SUOR Stadium, Stavropol (RUS)",
+      "area": "Europe",
+      "dateRange": "13–14 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "BAC on TRACK",
+      "venue": "Bagsværd Stadion, Bagsvaerd (DEN)",
+      "area": "Europe",
+      "dateRange": "12 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "1. Sokolské úterý",
+      "venue": "Tyršův stadion, Opava (CZE)",
+      "area": "Europe",
+      "dateRange": "12 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Limbra Baanwedstrijd",
+      "venue": "Atletiekbaan Helmondse Atletiek Club, Helmond (NED)",
+      "area": "Europe",
+      "dateRange": "12 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Kasttävling",
+      "venue": "Uppsala Friidrottsarenas kastplan, Uppsala (SWE)",
+      "area": "Europe",
+      "dateRange": "12 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "African Athletics Championships",
+      "venue": "University of Ghana Sports Stadium, Accra (GHA)",
+      "area": "Africa",
+      "dateRange": "12–17 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "GD- stevne",
+      "venue": "Stampesletta, Lillehammer (NOR)",
+      "area": "Europe",
+      "dateRange": "12 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Mistrovství Jihomoravského kraje dospělých, juiniorstva a dorostu v bězích a skocích",
+      "venue": "Sports Stadium CESA VUT, Brno (CZE)",
+      "area": "Europe",
+      "dateRange": "12 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Salzburger Landesmeisterschaften 5000m",
+      "venue": "ULSZ-Rif, Salzburg (AUT)",
+      "area": "Europe",
+      "dateRange": "12 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "YXE Twilight Meet #1",
+      "venue": "Gordie Howe Sports Complex, Saskatoon (CAN)",
+      "area": "North and Central America",
+      "dateRange": "12 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Abendsportfest Wurf I",
+      "venue": "Werferplatz im Sportforum, Chemnitz (GER)",
+      "area": "Europe",
+      "dateRange": "12 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Veřejné závody dorostu, juniorů a dospělých",
+      "venue": "Atletický stadion Slavia Praha, Praha (CZE)",
+      "area": "Europe",
+      "dateRange": "12 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Athletics Kenya Prison Services Track and Field Championships",
+      "venue": "Nyayo National Stadium, Nairobi (KEN)",
+      "area": "Africa",
+      "dateRange": "12–13 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Aspire Invitational 6",
+      "venue": "Aspire Academy Warm Up Track, Doha (QAT)",
+      "area": "Asia",
+      "dateRange": "12–13 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Open Meet Tel Aviv 5",
+      "venue": "Hadar Yosef Stadium, Tel Aviv (ISR)",
+      "area": "Europe",
+      "dateRange": "11 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Israeli 5000m Championships",
+      "venue": "Hadar Yosef Stadium, Tel Aviv (ISR)",
+      "area": "Europe",
+      "dateRange": "11 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Sibbo Energi-tävling / Sipoon Energia-kisa 1",
+      "venue": "Nikkilän keskusurheilukenttä, Sipoo (FIN)",
+      "area": "Europe",
+      "dateRange": "11 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Big South Conference Championships",
+      "venue": "Dick Vert Stadium, High Point, NC (USA)",
+      "area": "North and Central America",
+      "dateRange": "11–13 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Widener Final Qualifier",
+      "venue": "Leslie C. Quick Jr. Stadium, Chester, PA (USA)",
+      "area": "North and Central America",
+      "dateRange": "11 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Interregional Competitions",
+      "venue": "Stadium, Vladimir (RUS)",
+      "area": "Europe",
+      "dateRange": "11 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "2. SVS-Wurf-Einladungsmeeting",
+      "venue": "Rudolf Tonn Stadion, Schwechat (AUT)",
+      "area": "Europe",
+      "dateRange": "11 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Korean U18 Championships",
+      "venue": "Jeongseon Sports Complex, Jeongseon (KOR)",
+      "area": "Asia",
+      "dateRange": "11–15 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Korean U20 Championships",
+      "venue": "Jeongseon Sports Complex, Jeongseon (KOR)",
+      "area": "Asia",
+      "dateRange": "11–15 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Southern Conference Outdoor Track & Field Championship",
+      "venue": "Catamount Athletic Complex, Cullowhee, NC (USA)",
+      "area": "North and Central America",
+      "dateRange": "11–12 MAY 2026",
+      "hasResults": true
+    },
+    {
+      "name": "80th Korean Championships",
+      "venue": "Jeongseon Sports Complex, Jeongseon (KOR)",
+      "area": "Asia",
+      "dateRange": "11–15 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "SWAC Men's and Women's Outdoor Track and Field Championships",
+      "venue": "A.W: Mumford Stadium, Baton Rouge, LA (USA)",
+      "area": "North and Central America",
+      "dateRange": "10–12 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Tokyo Highschool Championships",
+      "venue": "Komazawa Olympic Park Athletic Stadium, Tokyo (JPN)",
+      "area": "Asia",
+      "dateRange": "09–17 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "65th Chugoku Corporate Athletics Championship",
+      "venue": "Municipal Stadium, Miyoshi (JPN)",
+      "area": "Asia",
+      "dateRange": "09–17 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Tochigi High School Championships",
+      "venue": "Tochigi Prefectural Sports Park Stadium, Utsunomiya (JPN)",
+      "area": "Asia",
+      "dateRange": "08–11 MAY 2026",
+      "hasResults": false
+    },
+    {
+      "name": "The Big West Track and Field Championships",
+      "venue": "Jack Rose Track, Long Beach, CA (USA)",
+      "area": "North and Central America",
+      "dateRange": "08–16 MAY 2026",
+      "hasResults": true
+    }
+  ],
+  "matched": [
+    {
+      "wa_name": "University of Birmingham T&F Series",
+      "our_name": "AJ Bell Great Birmingham Run",
+      "score": 20
+    },
+    {
+      "wa_name": "Vault Manchester Summer Series 2",
+      "our_name": "Adidas Manchester Marathon",
+      "score": 20
+    },
+    {
+      "wa_name": "Tokyo Highschool Championships",
+      "our_name": "Tokyo Marathon",
+      "score": 20
+    }
+  ],
+  "updates": [
+    {
+      "event": "AJ Bell Great Birmingham Run",
+      "year": 2026,
+      "platform": "rtrt",
+      "finishers": 19256,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null
+    }
+  ],
+  "errors": []
+}

@@ -1,6 +1,14 @@
 {
   "updates": [
     {
+      "event": "AJ Bell Great Birmingham Run",
+      "date": "13MAY2026",
+      "data": {
+        "finishers": 19256
+      },
+      "timestamp": "2026-05-13T08:31:56Z"
+    },
+    {
       "event": "Haspa Marathon Hamburg",
       "date": "26APR2026",
       "data": {
