@@ -1,6 +1,14 @@
 {
   "updates": [
     {
+      "event": "AJ Bell Great Manchester Run",
+      "date": "31MAY2026",
+      "data": {
+        "finishers": 31340
+      },
+      "timestamp": "2026-06-01T11:05:49Z"
+    },
+    {
       "event": "AJ Bell Great Birmingham Run",
       "date": "13MAY2026",
       "data": {
