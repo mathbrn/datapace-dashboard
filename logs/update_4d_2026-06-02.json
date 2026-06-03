@@ -1,0 +1,374 @@
+{
+  "date": "2026-06-02",
+  "wa_races": [
+    {
+      "name": "Belgrade U18 Trophy",
+      "venue": "Athletics Stadium, Beograd (SRB)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting Città della Quintana",
+      "venue": "Stadio Enzo Blasone, Foligno (ITA)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Central Federal District Championships",
+      "venue": "SGAFKST Arena, Smolensk (RUS)",
+      "area": "Europe",
+      "dateRange": "03–05 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "KEVEK ja Tartu KALEV STAADIONIJOOKSU III etapp",
+      "venue": "Tamme staadion, Tartu (EST)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Silver Gala",
+      "venue": "Stadio Olimpico, Roma (ITA)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Gran Premio de Valladolid - Ciudad Europea del Deporte",
+      "venue": "Complejo Deportivo Ciudad de Valladolid, Valladolid (ESP)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Dublin Graded Leagues 4",
+      "venue": "Morton Stadium, Santry, Dublin (IRL)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Regional Athletics Invitational Meeting 8",
+      "venue": "Sports Center, Nanping (CHN)",
+      "area": "Asia",
+      "dateRange": "03–04 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting Capriaschese",
+      "venue": "Arena Sportiva Capriasca, Tesserete (SUI)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Kenya Defence Forces Track and Field Championships",
+      "venue": "Ulinzi Sports Complex, Langata, Nairobi (KEN)",
+      "area": "Africa",
+      "dateRange": "03–05 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting de Saint Médard en Jalles",
+      "venue": "Stade R.Monseau, St-Médard (FRA)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "3. kolo MPD juniorů",
+      "venue": "Atletický stadion Slavia Praha, Praha (CZE)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "2ª Noite Quente",
+      "venue": "Complexo Desportivo de Leça da Palmeira, Matosinhos (POR)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Crépuscule André-Grimard",
+      "venue": "Stade University Sherbrooke, Sherbrooke (CAN)",
+      "area": "North and Central America",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Royal City Inferno Track and Field Festival",
+      "venue": "Alumni Stadium, Guelph (CAN)",
+      "area": "North and Central America",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Miting AK Slavonija-Žito",
+      "venue": "Gradski Vrt Stadium, Osijek (CRO)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Paavo Nurmi Games",
+      "venue": "Paavo Nurmen Stadion, Turku (FIN)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting d'Athlétisme de Namur",
+      "venue": "Piste Olympique Adeps de Jambes, Jambes (BEL)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "5. vrhačská středa",
+      "venue": "Sportovní areál Srnčí důl, Jablonec nad Nisou (CZE)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Filothei Women Gala",
+      "venue": "Filothei Stadium, Athina (GRE)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Kohila pikamaajooksude sari IV etapp",
+      "venue": "Kohila staadion, Kohila (EST)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting \"Samarsko zname\"",
+      "venue": "Beroe Stadium, Stara Zagora (BUL)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Open Meet 6 Jerusalem",
+      "venue": "Givat Ram Stadium, Jerusalem (ISR)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "6ª Noite do Lis",
+      "venue": "Estádio Dr. Magalhães Pessoa, Leiria (POR)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Ottawa Lions Summer Twilight Series 2",
+      "venue": "Terry Fox AF, Ottawa (CAN)",
+      "area": "North and Central America",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Mohagen Bil Cup 1",
+      "venue": "Brandbu Stadion, Brandbu (NOR)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Dobromiejski mityng lekkoaltetyczny",
+      "venue": "Stadion w Dobrym Mieście, Dobre Miasto (POL)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Championntas de Bretagne du 5000m",
+      "venue": "Stade Jean Manfredi, Fougéres (FRA)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "38. Freienbacher Abendmeeting",
+      "venue": "Sportanlage Chrummen, Freienbach (SUI)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Granada Challenger",
+      "venue": "Estadio de la Juventud de Granada, Granada (ESP)",
+      "area": "Europe",
+      "dateRange": "03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Tartu City Championships Pole Vault",
+      "venue": "Tamme staadion, Tartu (EST)",
+      "area": "Europe",
+      "dateRange": "02 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "EAP XX Atletica 2000 Meeting",
+      "venue": "Polisportivo Comunale, San Vito al Tagliamento (ITA)",
+      "area": "Europe",
+      "dateRange": "02 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "CC Strandtorget-stevnet",
+      "venue": "Stampesletta, Lillehammer (NOR)",
+      "area": "Europe",
+      "dateRange": "02 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Aspire Invitational 9",
+      "venue": "Aspire Academy Warm Up Track, Doha (QAT)",
+      "area": "Asia",
+      "dateRange": "02–03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Monika Pyrek Tour - Bydgoszcz",
+      "venue": "Zdzisław Krzyszkowiak Stadium, Bydgoszcz (POL)",
+      "area": "Europe",
+      "dateRange": "02 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Trofeo Bracco",
+      "venue": "Centro di Atletica, Busto Arsizio (ITA)",
+      "area": "Europe",
+      "dateRange": "02 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Lääne-Virumaa Noorte MV",
+      "venue": "Staadion, Rakvere (EST)",
+      "area": "Europe",
+      "dateRange": "02–03 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Kankaanpää Kero Games",
+      "venue": "Urheilukenttä, Kankaanpää (FIN)",
+      "area": "Europe",
+      "dateRange": "02 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Monika Pyrek Toruń - Poznań",
+      "venue": "Golęcin Stadion, Poznan (POL)",
+      "area": "Europe",
+      "dateRange": "02 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting di Primavera",
+      "venue": "Pista Fantoni, Mondovi (ITA)",
+      "area": "Europe",
+      "dateRange": "02 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Sibbo Energi-tävling / Sipoon Energia-kisa 4",
+      "venue": "Nikkilän keskusurheilukenttä, Sipoo (FIN)",
+      "area": "Europe",
+      "dateRange": "01 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Josef Odlozil Memorial",
+      "venue": "Stadion Juliska, Praha (CZE)",
+      "area": "Europe",
+      "dateRange": "01 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Ahkeran arkiheitot",
+      "venue": "Rakokiven kenttä, Lahti (FIN)",
+      "area": "Europe",
+      "dateRange": "01 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Säästöpankki Paunu Games 1",
+      "venue": "Paunun urheilukeskus, Jämsä (FIN)",
+      "area": "Europe",
+      "dateRange": "01 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Leeds BMC",
+      "venue": "Beckett Park Athletics Centre, Leeds (GBR)",
+      "area": "Europe",
+      "dateRange": "01 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Southampton AC Invitation Throws",
+      "venue": "Univ. of Winchester Sports Stadium, Winchester (GBR)",
+      "area": "Europe",
+      "dateRange": "01 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Far Eastern Federal District Championships (Long Throws)",
+      "venue": "Stadium, Spassk-Dalniy (RUS)",
+      "area": "Europe",
+      "dateRange": "01–02 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Josef Odlozil Memorial - National Events",
+      "venue": "Stadion Juliska, Praha (CZE)",
+      "area": "Europe",
+      "dateRange": "01 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Fukui Prefecture High School Spring Athletics Championships",
+      "venue": "Prefectural Stadium, Fukui (JPN)",
+      "area": "Asia",
+      "dateRange": "30 MAY–01 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "63rd SAGA High School Championships",
+      "venue": "Saga Stadium, Saga (JPN)",
+      "area": "Asia",
+      "dateRange": "29 MAY–01 JUN 2026",
+      "hasResults": false
+    }
+  ],
+  "matched": [
+    {
+      "wa_name": "Gran Premio de Valladolid - Ciudad Europea del Deporte",
+      "our_name": "Gran Carrera del Mediterraneo",
+      "score": 20
+    },
+    {
+      "wa_name": "Dublin Graded Leagues 4",
+      "our_name": "Irish Life Dublin Marathon",
+      "score": 20
+    },
+    {
+      "wa_name": "Josef Odlozil Memorial - National Events",
+      "our_name": "Mezza Maratona d'Italia - Memorial Enzo Ferrari",
+      "score": 20
+    }
+  ],
+  "updates": [],
+  "errors": []
+}
