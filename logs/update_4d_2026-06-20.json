@@ -1,0 +1,1850 @@
+{
+  "date": "2026-06-20",
+  "wa_races": [
+    {
+      "name": "SPAR Competitie U18/U20 Poule 31 R3",
+      "venue": "Sportpark Elzenhagen, Amsterdam (NED)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "WGV Leichtathletikfestival 2026",
+      "venue": "Stuttgart (GER)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting National Quatrache de Macon",
+      "venue": "Stade Marie José Pérec, Macon (FRA)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "SPAR Competitie U18/U20 Poule 32 R3",
+      "venue": "Atletiekbaan De Aarhoek, Alphen aan den Rijn (NED)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting du Val de Marne",
+      "venue": "Stade Louis Dolly, Villejuif (FRA)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "SPAR Competitie U18/U20 Poule 36 R3",
+      "venue": "Atletiekbaan Overvecht, Utrecht (NED)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Pobezhday National Competitions",
+      "venue": "Kalitva Stadium, Belaya Kalitva (RUS)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "IV. Szabó István Emlékverseny",
+      "venue": "UTE Atlétikai Stadion, Budapest (HUN)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Irish 5 Mile Road Running Championships",
+      "venue": "Phoenix Park, Dublin (IRL)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Mistrzostwa WMZLA U18 i open",
+      "venue": "Uniwersytetu Warmińsko-Mazurskiego, Olsztyn (POL)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting Fédéral 5 sur Piste Seniors / U20 / U18 / U16",
+      "venue": "Stadion Radés, Radés (TUN)",
+      "area": "Africa",
+      "dateRange": "21–22 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Extremadura Absoluto",
+      "venue": "Polideportivo Municipal, Villafranca de los Barros (ESP)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "3.kolo II.liga sk.D",
+      "venue": "Městský stadion, Třinec (CZE)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Hylo Javelin Meeting",
+      "venue": "ETSV Stadion, Offenburg (GER)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "SPAR Competitie U18/U20 Poule 35 R3",
+      "venue": "Sportpark St. Theunis, Weert (NED)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Bannister Summer Night Classic",
+      "venue": "Slottsskogsvallen, Göteborg (SWE)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Perseløpet 3",
+      "venue": "Eidsvoll (NOR)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "SPAR Competitie U18/U20 Poule 34 R3",
+      "venue": "Sportpark Stappegoor, Tilburg (NED)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Saarijärven 90. Juhannuskisat",
+      "venue": "Keskusurheilukenttä, Saarijärvi (FIN)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "FBK Games",
+      "venue": "FBK Stadium, Hengelo (NED)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "2. kolo extraligy mužů a žen",
+      "venue": "Atletický stadion města Plzně, Plzeň (CZE)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Prvenstvo ASCS za pionire",
+      "venue": "Stadion Morava, Ćuprija (SRB)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "CRL Meeting - Bronze Lombardia - Memorial Yuro e Foresti",
+      "venue": "Centro Gabre Gabric, Brescia (ITA)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Open Meeting",
+      "venue": "Sportcentrum De Rode Loop, Merksem, Antwerpen (BEL)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Lower Austrian Half Marathon Championships",
+      "venue": "Baden (AUT)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "SPAR Competitie U18/U20 Poule 37 R3",
+      "venue": "Atletiekvereniging Noordoostpolder, Emmeloord (NED)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "B.A.A. 10K",
+      "venue": "Boston, MA (USA)",
+      "area": "North and Central America",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Polish 5km Road Running Championships - Women",
+      "venue": "Warszawa (POL)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "3. kolo II. ligy skupina C",
+      "venue": "Městský stadion, Jicin (CZE)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "CK10 - Čakovečki Noćni Cener",
+      "venue": "Čakovec (CRO)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "FBK Games - Talentenprogramma",
+      "venue": "FBK Stadium, Hengelo (NED)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Cataluña Sub-23",
+      "venue": "Pista atletismo Palau Sacosta, Girona (ESP)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Finale par Equipes sur Piste U20 M+F SAUTS - 1/2 FOND",
+      "venue": "Stade D'athlétisme, Kairouan (TUN)",
+      "area": "Africa",
+      "dateRange": "21–22 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "3. kolo II. ligy skupina A",
+      "venue": "Městský stadion, Liberec (CZE)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "3. kolo II. ligy mužů a žen, skupina E",
+      "venue": "Městský Atletický Stadion, Blansko (CZE)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Riunione regionale",
+      "venue": "Pista Pietro Mennea, Agropoli (ITA)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "2. kolo Mistrovství ÚKAS družstev mužů a žen",
+      "venue": "Stadion SK Děčín, Děčín (CZE)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Jakub Pracharczyk Memorial",
+      "venue": "Stadion RKS Skra, Warszawa (POL)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Championnats régionaux J2 - Bourges",
+      "venue": "Stade Alfred Depège, Bourges (FRA)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Championnats Grand-Est U18-U20-U23-SE J1",
+      "venue": "Stade Régional G. Hebert, Reims (FRA)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "3. kolo mužů a žen SKAS",
+      "venue": "Atletický stadion Mirka Tučka, Kolin (CZE)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Cataluña Sub-18",
+      "venue": "Pista atletismo Palau Sacosta, Girona (ESP)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Resultattävling stav",
+      "venue": "Uppsala Friidrottsarena, Uppsala (SWE)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Andalucía U18",
+      "venue": "Estadio Enrique Lopez Cuenca, Nerja (ESP)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "St. Kitts & Navis Championship",
+      "venue": "Kim Collins Athletic Stadium, Basseterre (SKN)",
+      "area": "North and Central America",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Manitoba Marathon",
+      "venue": "University Stadium - U. of Manitoba, Winnipeg (CAN)",
+      "area": "North and Central America",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Corrida de São Tiago",
+      "venue": "Rio Meão (POR)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "SPAR Competitie U18/U20 Poule 33 R3",
+      "venue": "Atletiekbaan Zuiderpark, Den Haag (NED)",
+      "area": "Europe",
+      "dateRange": "21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Regionen Meisterschaften Zentralschweiz U18",
+      "venue": "Stadion Trinermatten, Zofingen (SUI)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Festiwal Sprintersko-Płotkarski",
+      "venue": "Stadion Lekkoatletyczny, Szczecinek (POL)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "79th Shikoku Highschool Championships",
+      "venue": "Prefectural Stadium, Marugame (JPN)",
+      "area": "Asia",
+      "dateRange": "20–22 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Tempo run league eacpa",
+      "venue": "Stade des Maradas, Cergy-Pontoise (FRA)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Championnats Régionaux CA-JU",
+      "venue": "Stade Maurice Baquet, Guyancourt (FRA)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Gaúcho De Atletismo Sub20",
+      "venue": "Pista da Sogipa, Porto Alegre (BRA)",
+      "area": "South America",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "C.D.S. Assoluto su Pista - Finale \"A\" Argento",
+      "venue": "Campo Comunale, Modena (ITA)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Festival de Atletismo de Pomerode",
+      "venue": "Pista de Atletismo de Pomerode, Pomerode (BRA)",
+      "area": "South America",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "VI Campeonatos Estadual Rio Loterias Caixa de Atletismo U18",
+      "venue": "Pista da Universidade Federal Fluminense – UFF, Rio de Janeiro (BRA)",
+      "area": "South America",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "5ème Meeting d'Antony",
+      "venue": "Stade Georges Suant, Antony (FRA)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Korea Athletics Open",
+      "venue": "Yecheon Stadium, Yecheon (KOR)",
+      "area": "Asia",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Øst ungdom",
+      "venue": "Greve Stadion, Greve (DEN)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Norddeutsche Meisterschaften Jugend U20 und M/W 15",
+      "venue": "Buniamshof, Lübeck (GER)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Jump'in Balan",
+      "venue": "Parc des Sports, Balan (FRA)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Jogos Universitários Catarinenses",
+      "venue": "Pista da UFSC, Florianópolis (BRA)",
+      "area": "South America",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato do Norte e Regional de U20",
+      "venue": "Estádio 1o de Maio, Braga (POR)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Mineiro Loterias Caixa de Atletismo ADULTO",
+      "venue": "Pista de Atletismo da Universidade Federal de Juiz de Fora, Juiz de Fora (BRA)",
+      "area": "South America",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "ETAPA SUB 18",
+      "venue": "Pista de Atletismo da Universidade Federal do Mato Grosso, Cuiaba (BRA)",
+      "area": "South America",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonatos Estaduais Loterias Caixa De Atletismo Adultos",
+      "venue": "Pista de Atletismo da Universidade Federal do Mato Grosso, Cuiaba (BRA)",
+      "area": "South America",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Balkan Senior Championships",
+      "venue": "Panthessaliko Stadium, Volos (GRE)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "3. kolo I. ligy mužů a žen, skupina A",
+      "venue": "Městský stadion Střelnice, Domažlice (CZE)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "2. kolo KPD mužů a žen Pardubického a HK kraje",
+      "venue": "Stadion Emila Zátopka, Chrudium (CZE)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Süddeutsche Meisterschaften",
+      "venue": "Stadion Oberwerth, Koblenz (GER)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "VI. Königs Wusterhausener Funkerbergmeeting",
+      "venue": "Stadion der Freundschaft, Königs Wusterhausen (GER)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "C.D.S. Assoluto su Pista - Finale \"A\" Bronzo",
+      "venue": "Stadio Comunale, Borgo Valbelluna (ITA)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Ciney Golden Series",
+      "venue": "Stade Rebompré, Ciney (BEL)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Warszawski Mityng Ogólnopolski",
+      "venue": "Stadion Podskarbińska, Warszawa (POL)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Norwegian Marathon Championships",
+      "venue": "Storgata, Tromsö (NOR)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "USATF SD/Imperial Championships",
+      "venue": "CVEATC, Chula Vista, CA (USA)",
+      "area": "North and Central America",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Mistrzostwa Województwa Opolskiego U18 i U20 Memoriał Wiesława Kulpy",
+      "venue": "Miejski Stadion, Opole (POL)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Lublin Athletics Cup. Memoriał Wiśniewskiego i Kleczka",
+      "venue": "Athletics Stadium, Lublin (POL)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Luxembourg and LBFA Combined Events Championships",
+      "venue": "Stade de Luxembourg, Luxembourg (LUX)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Distrital U20",
+      "venue": "Pista Susana Feitor, Rio Maior (POR)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Autonómico U23/U18 Comunidad Valenciana",
+      "venue": "Estadio de Atletismo del Turia, Valencia (ESP)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Moroccan U16 Championships",
+      "venue": "Stade Municipal d'Ifrane, Ifrane (MAR)",
+      "area": "Africa",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Championnats de Bretagne Individuels",
+      "venue": "Complexe Sportif Du Penthièvre, Lamballe (FRA)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Régionaux Elite CJES",
+      "venue": "Parc des Sports Bernard Amsalem, Val-de-Reuil (FRA)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Régionaux d'Epreuves Combinées CJES Laon",
+      "venue": "Stade Levindrey, Laon (FRA)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Torneio Pro Indice",
+      "venue": "Pista de Atletismo da Universidade Federal de Juiz de Fora, Juiz de Fora (BRA)",
+      "area": "South America",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Escolar Municipal",
+      "venue": "Vila Olímpica Roberto Marinho, Boa Vista (BRA)",
+      "area": "South America",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "4th Kyushu Kyoritsu University Challenge Meet",
+      "venue": "Kyushu Kyoritsu University Stadium, Kitakyushu (JPN)",
+      "area": "Asia",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "156th Nippon Sport Science University Competition",
+      "venue": "NITTAIDAI Athletic Stadium, Yokohama (JPN)",
+      "area": "Asia",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "3rd Kokushikan University Competition",
+      "venue": "Kokushikan University Stadium, Tama (JPN)",
+      "area": "Asia",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Star Athletics Sprint Series",
+      "venue": "Horizon HS, Winter Garden, FL (USA)",
+      "area": "North and Central America",
+      "dateRange": "20 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Portland Track Festival",
+      "venue": "Griswold Stadium, Portland, OR (USA)",
+      "area": "North and Central America",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Primer Torneo Regional de Invierno - Primera Etapa",
+      "venue": "Estadio Municipal de Limache, Limache (CHI)",
+      "area": "South America",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "KNOSEIA Athletics Meeting",
+      "venue": "Pankritio Stadium, Herakleion (GRE)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "3. kolo II. ligy mužů a žen sk. B",
+      "venue": "Stadion Míru, Tábor (CZE)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "CDS Master + Gare Extra",
+      "venue": "Stadio M.S. Cozzoli, Molfetta (ITA)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "IX Margus Keerma Mälestusvõistlused",
+      "venue": "Kuusalu staadion, Kuusalu (EST)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Ranking National N°6 Torneo Olimpico U18, U20 y Mayor",
+      "venue": "Estadio Jorge Magico Gonzalez, San Salvador (ESA)",
+      "area": "North and Central America",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonaatos Provinciales U23 y Mayor- 2° Evaulativo U20 Juegos binacionales - FAC",
+      "venue": "Pista Atlética Luis Oliva, Córdoba (ARG)",
+      "area": "South America",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting National Quatrache de Tarare",
+      "venue": "Stade L. Masson, Tarare (FRA)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Tailteann Interprovincial Championships",
+      "venue": "South Eastern Technical University-SETU, Carlow (IRL)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "National League Preliminary Round",
+      "venue": "Tullamore Harriers AC Stadium, Tullamore (IRL)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Castilla y León Senior Championships - Gran Premio Ciudad de León",
+      "venue": "Pistas Universad de León, León (ESP)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Open Challenge 7",
+      "venue": "Marsa Athletics Track, Marsa (MLT)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "National Outdoor Championships Window",
+      "venue": "Various (UND)",
+      "area": "Undefined",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting Daniel Prevost Blagnac",
+      "venue": "Stade Stéphane Diagana, Blagnac (FRA)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting de la Ville d'Alès",
+      "venue": "Stade Raphaël Pujazon, Ales (FRA)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Józef Żylewicz Memorial",
+      "venue": "Stadion GOS, Gdansk (POL)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Championnat Open",
+      "venue": "Stade du CREPS, Les Abymes (FRA)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Festival Lancers",
+      "venue": "Stade d'Honneur Marcel Roustan, Salon-de-Provence (FRA)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Tag der Überflieger",
+      "venue": "Kennedyplatz, Essen (GER)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Campeonato Galicia Pruebas Combinadas",
+      "venue": "Pista atletismo Josefina Salgado, Pereiro de Aguiar (ESP)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Motonet GP Kuortane",
+      "venue": "Kuortaneen keskusurheilukenttä, Kuortane (FIN)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Track Night Vienna",
+      "venue": "LAZ Wien, Wien (AUT)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Nordrhein Meisterschaften 2026 U14/U18",
+      "venue": "Waldstadion, Aachen (GER)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "20. Schönebecker SoleCup",
+      "venue": "UNION-Stadion, Schönebeck (GER)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Campeonato Castilla La Mancha absoluto - Trofeo Excmo. Ayuntamiento Ciudad Real",
+      "venue": "Polideportivo Rey Juan Carlos, Ciudad Real (ESP)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Festspill-lekene",
+      "venue": "Stangnes Idrettspark, Harstad (NOR)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "National Race Walking Competitions \"Lutsk Ten",
+      "venue": "Lutsk (UKR)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Ukrainian Half Marathon Race Walking Championships",
+      "venue": "Lutsk (UKR)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Bottnarydskastet International",
+      "venue": "Bottnaryds IP, Bottnaryd (SWE)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Madrid Absoluto",
+      "venue": "Estadio Vallehermoso, Madrid (ESP)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting Annecy",
+      "venue": "Parc des Sports, Annecy (FRA)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "National Competitions Throws for the honor of the L. Smelash and A. Konchits",
+      "venue": "Olympic Training and Sports Center, Koncha-Zaspa, Kyiv (UKR)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Festival Professor Neides Nobre",
+      "venue": "Pista de Atletismo da UNIFOR, Fortaleza (BRA)",
+      "area": "South America",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting Prof Eduardo Cunha",
+      "venue": "Pista Municipal Prof. Mário Moniz Pereira, Lisboa (POR)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Mityng Jubileuszowy TL Pogoń Ruda Śląska",
+      "venue": "Stadion MOSiR, Ruda Slaska (POL)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "3.kolo I.liga sk.C",
+      "venue": "Městský stadion, Třinec (CZE)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "2º Festival Instituto Gaúcho de Atletismo",
+      "venue": "Pista ESEFID/UFRGS, Porto Alegre (BRA)",
+      "area": "South America",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Rutger Smith Throwing Games",
+      "venue": "Stadspark, Groningen (NED)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Lithuanian 10 km Road Running Championships",
+      "venue": "Birstonas (LTU)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Estadual Loterias Caixa de Atletismo Sub 18",
+      "venue": "Pista de Atletismo da UNIFOR, Fortaleza (BRA)",
+      "area": "South America",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campionatul Municipal Bucuresti",
+      "venue": "Stadionul Iolanda Balas Soter, Bucureşti (ROU)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Navarro aire libre",
+      "venue": "Estadio de Larrabide, Pamplona (ESP)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Islas Baleares",
+      "venue": "CTEIB Palma, Palma de Mallorca (ESP)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Birštonas Half Marathon Race",
+      "venue": "Birstonas (LTU)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Regionen Meisterschaften Ostschweiz U18",
+      "venue": "Stadion Deutweg, Winterthur (SUI)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Regionen Meisterschaften Westschweiz U18",
+      "venue": "Stade d'Octodure, Martigny (SUI)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Cantabria U23 - 2ª jornada",
+      "venue": "Complejo Deportivo Ruth Beitia, Santander (ESP)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Grandma's Marathon / Garry Bjorklund Half Marathon",
+      "venue": "Duluth, MN (USA)",
+      "area": "North and Central America",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting de Saint-Etienne",
+      "venue": "Stade Henri Lux, St-Etienne (FRA)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "2° Journée Championnat Régional Elite 974",
+      "venue": "Stade P-J. Bénard, St-Paul (FRA)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Otwarte Mistrzostwa Tarnowa, Sokołów Cup, Sokołów Awards Competition",
+      "venue": "Stadion TOSiR, Tarnów (POL)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting Emmanuel Mathieu",
+      "venue": "Stade Municipal, Marck (FRA)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "32. midsommar EAP",
+      "venue": "Mommsenstadion, Berlin (GER)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Austrian Senior Steeplechase & 5000m Championships",
+      "venue": "LAZ Wien, Wien (AUT)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "2. kolo KPD mužů a žen LKAS",
+      "venue": "Městský stadion, Ceská Lípa (CZE)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "3. kolo I. ligy skupina A",
+      "venue": "Městský stadion Jana Železného, Mlada Boleslav (CZE)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Ghana Athletics Dean Hayes International Classic - Commonwealth Games Qualifier",
+      "venue": "University of Ghana Sports Stadium, Accra (GHA)",
+      "area": "Africa",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting Robert Bobin",
+      "venue": "Stade R. Quintard, Cerizay (FRA)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Hardanger Friidrettsfestival",
+      "venue": "Strandebarm Idrettspark, Strandebarm (NOR)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Ginza Mile",
+      "venue": "Tokyo (JPN)",
+      "area": "Asia",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Asturias Absoluto & Sub-23 - 2ª y 3ª jornada",
+      "venue": "Pista Yago Lamela, Avilés (ESP)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Bottnarydskastet",
+      "venue": "Bottnaryds IP, Bottnaryd (SWE)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Vestdanske Mesterskaber Ungdom og Senior",
+      "venue": "Randers Atletik Stadion, Randers (DEN)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "FLVW Meisterschaften III",
+      "venue": "Carl-Heinz-Reiche-Stadion, Lage (GER)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Corrida 4 Estações Soure Verão",
+      "venue": "Soure (POR)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Ogólnopolski Miting Kwalifikacyjny PLKS GWDA",
+      "venue": "Stadion Miejski, Pila (POL)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Mityng kwalifikacyjny",
+      "venue": "Stadion BOSiR, Białystok (POL)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Grote Prijs Paul Vanwalleghem",
+      "venue": "Sportcentrum Wembley, Kortrijk (BEL)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Campeonato Distrital U20",
+      "venue": "Estádio Municipal das Caldas da Rainha, Caldas da Rainha (POR)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Belarus U20 Championships",
+      "venue": "Stadium Luch, Gomel (BLR)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Belarus U23 Championships",
+      "venue": "Stadium Luch, Gomel (BLR)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Metropolitano Fenaude",
+      "venue": "Pista Atlética Mario Recordón, Santiago de Chile (CHI)",
+      "area": "South America",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Mityng DZLA",
+      "venue": "Stadion Miejski, Jelenia Góra (POL)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campionato Regionale Individuale Master su Pista",
+      "venue": "Centro Sportivo A. Montagna, La Spezia (ITA)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Championat de Guyane Cadet-Junior-Espoirs-Seniors 2026",
+      "venue": "Stade Edmard Lama, Remire-Montjoly (FRA)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Distrital Sub18",
+      "venue": "Complexo Desportivo de Febres, Coimbra (POR)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting ouvert",
+      "venue": "Stade de Luxembourg, Luxembourg (LUX)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "67. Nemzetközi Atlétikai Balaton Bajnokság",
+      "venue": "Egyetemi Stadion, Veszprém (HUN)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "scottishathletics Jumps and Throws Grand Prix",
+      "venue": "Ayrshire Athletics Arena, Kilmarnock (GBR)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Novuna UK Athletics Championships",
+      "venue": "Alexander Stadium, Birmingham (GBR)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Antiguan Championships",
+      "venue": "YASCO Sports Complex, St. John's (ANT)",
+      "area": "North and Central America",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Distrital Sub18",
+      "venue": "Estádio Municipal de Vagos, Vagos (POR)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "VI Meeting Dia Nacional do Dardo",
+      "venue": "Estádio Manuel Rodrigues, Castelo de Vide (POR)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Andalucia U23",
+      "venue": "Estadio Municipal Emilio Hidalgo, Motril (ESP)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "17o Grand prix Orestia",
+      "venue": "Municipal Stadium, Argos Orestiko (GRE)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campionato Xunta de Galicia",
+      "venue": "Pista atletismo Josefina Salgado, Pereiro de Aguiar (ESP)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Regional Absolutos",
+      "venue": "Complexo Municipal de Atletismo Carla Sacramento, Seixal (POR)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "The Bislett Open by Bandit",
+      "venue": "Bislett Stadion, Oslo (NOR)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Bermuda Championships",
+      "venue": "Flora Duffy Stadium, Devonshire (BER)",
+      "area": "North and Central America",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "3rd Arab Athletics U23 Championships / 1st Arab Athletics U16 Championships",
+      "venue": "Suez Canal Authority Stadium, Ismailia (EGY)",
+      "area": "Africa",
+      "dateRange": "20–24 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Torneo otoño porteño",
+      "venue": "CeNARD, Buenos Aires (ARG)",
+      "area": "South America",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Slovak Mixed Relay Championships",
+      "venue": "Atletický štadión, Martin (SVK)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Slovak Combined Events Championships",
+      "venue": "Atletický štadión, Martin (SVK)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Slovak U20 Combined Events Championships",
+      "venue": "Atletický štadión, Martin (SVK)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Slovak U18 Championships",
+      "venue": "Atletický štadión, Martin (SVK)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Bolivian Championships - 800m - 10,000m & 3000mSC",
+      "venue": "Pista Atletica, Villa Tunari (BOL)",
+      "area": "South America",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Croatian U20 Championships",
+      "venue": "Stadion Branko Čavlović-Čavlek, Karlovac (CRO)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campionato Galicia",
+      "venue": "Pista atletismo Josefina Salgado, Pereiro de Aguiar (ESP)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Regional de Sub18",
+      "venue": "Pista de Atletismo de Quarteira, Quarteira (POR)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Knarvik Maraton",
+      "venue": "Knarvik (NOR)",
+      "area": "Europe",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "BAA Track And Field Event",
+      "venue": "Francistown Stadion, Francistown (BOT)",
+      "area": "Africa",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Nigerian Championships - Commonwealth Games Trials",
+      "venue": "Godswill Akpabio International Stadium, Uyo (NGR)",
+      "area": "Africa",
+      "dateRange": "20–22 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "C.D.S. Assoluto su Pista - Finale \"A\" Oro",
+      "venue": "Stadio Guidobaldi, Rieti (ITA)",
+      "area": "Europe",
+      "dateRange": "20–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "ATX Classic",
+      "venue": "Southwestern University Track Stadium, Georgetown, TX (USA)",
+      "area": "North and Central America",
+      "dateRange": "20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Icelandic U23 Outdoor Championships",
+      "venue": "Akureyrarvöllur, Akureyri (ISL)",
+      "area": "Europe",
+      "dateRange": "19–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Bahamas U20 Championships",
+      "venue": "T. Robinson Stadium, Nassau (BAH)",
+      "area": "North and Central America",
+      "dateRange": "19–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonatos Regionais de Sub-20",
+      "venue": "RG3 e Centro Desportivo da Madeira, Funchal (POR)",
+      "area": "Europe",
+      "dateRange": "19–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "48th All North-Japan Inter University Track and Field Championships",
+      "venue": "Athletic Field, Kitakami (JPN)",
+      "area": "Asia",
+      "dateRange": "19–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Malaysia Open Athletics Championships",
+      "venue": "Stadium UPM, Selangor (MAS)",
+      "area": "Asia",
+      "dateRange": "19–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "V° Meeting Memorial Ettore Panzetti",
+      "venue": "Campo Comunale, Crema (ITA)",
+      "area": "Europe",
+      "dateRange": "19 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "TCAA Open Athletics Championships Round 3",
+      "venue": "Wan Chai Sports Ground, Hong Kong (HKG)",
+      "area": "Asia",
+      "dateRange": "19 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Trinidad & Tobago Championship",
+      "venue": "Hasely Crawford Stadium, Port-of-Spain (TTO)",
+      "area": "North and Central America",
+      "dateRange": "19–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "79th National High School Track and Field Championships Tokai District Qualifiers",
+      "venue": "Nagaragawa Stadium, Gifu (JPN)",
+      "area": "Asia",
+      "dateRange": "19–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Ikaalisten Juhannuskisat",
+      "venue": "Läykkälänlahden urheilukenttä, Ikaalinen (FIN)",
+      "area": "Europe",
+      "dateRange": "19 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Doha Meeting",
+      "venue": "Suhaim bin Hamad Stadium, Doha (QAT)",
+      "area": "Asia",
+      "dateRange": "19 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Lithuanian U16 Championships",
+      "venue": "Klaipėdos centrinis stadionas, Klaipėda (LTU)",
+      "area": "Europe",
+      "dateRange": "19–20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Strafoligno",
+      "venue": "Foligno (ITA)",
+      "area": "Europe",
+      "dateRange": "19 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "KOASA-Meeting",
+      "venue": "Grenzlandstadion, Kufstein (AUT)",
+      "area": "Europe",
+      "dateRange": "19 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Slovenian Championships",
+      "venue": "Atletski stadion Poljane, Maribor (SLO)",
+      "area": "Europe",
+      "dateRange": "19–20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Jornadas Competitivas",
+      "venue": "Complexo Desportivo Fernando Mamede, Beja (POR)",
+      "area": "Europe",
+      "dateRange": "19 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Bahamas Championship",
+      "venue": "T. Robinson Stadium, Nassau (BAH)",
+      "area": "North and Central America",
+      "dateRange": "19–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "The 79th West-Japan Inter-Unversity Track＆ Field Championships",
+      "venue": "Yanmar Stadium Nagai, Osaka (JPN)",
+      "area": "Asia",
+      "dateRange": "19–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "54th Flag of KAAF National Athletics Meeting",
+      "venue": "Yecheon Stadium, Yecheon (KOR)",
+      "area": "Asia",
+      "dateRange": "19–23 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Lillehammerlekene",
+      "venue": "Stampesletta, Lillehammer (NOR)",
+      "area": "Europe",
+      "dateRange": "19–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Keuruun 59. Juhannuskisat",
+      "venue": "Keuruun keskuskenttä, Keuruu (FIN)",
+      "area": "Europe",
+      "dateRange": "19 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Ibero American U20 Athletics Championships",
+      "venue": "Estadio Atlético de la VIDENA, Lima (PER)",
+      "area": "South America",
+      "dateRange": "19–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "40ème Meeting International Montgeron-Essonne",
+      "venue": "Stade Pierre de Coubertin, Montgeron (FRA)",
+      "area": "Europe",
+      "dateRange": "19 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "28. Anhalt Meeting Dessau",
+      "venue": "Paul-Greifzu-Stadion, Dessau (GER)",
+      "area": "Europe",
+      "dateRange": "19 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Meeting du BOUC",
+      "venue": "Stade Paul Ladoumègue, Beauvais (FRA)",
+      "area": "Europe",
+      "dateRange": "19 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Meeting du Souvenir",
+      "venue": "Stade Pierre Carous, Valenciennes (FRA)",
+      "area": "Europe",
+      "dateRange": "19 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "British Virgin Islands Championships",
+      "venue": "A.O. Shirley Grounds, Road Town (IVB)",
+      "area": "North and Central America",
+      "dateRange": "19–20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Regional Athletics Invitational Meeting 9",
+      "venue": "Shanxi Athletics Administrative Center, Xi'an (CHN)",
+      "area": "Asia",
+      "dateRange": "19–20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Icelandic U20 Championships",
+      "venue": "Akureyrarvöllur, Akureyri (ISL)",
+      "area": "Europe",
+      "dateRange": "19–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Latvian Youth Olympiad",
+      "venue": "Jāņa Daliņa Stadium, Valmiera (LAT)",
+      "area": "Europe",
+      "dateRange": "19–20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Championnats Grand-Est 3000-5000 & steeple",
+      "venue": "Stade Municipal, Amneville (FRA)",
+      "area": "Europe",
+      "dateRange": "19 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Icelandic U18 Championships",
+      "venue": "Akureyrarvöllur, Akureyri (ISL)",
+      "area": "Europe",
+      "dateRange": "19–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Fredags stang",
+      "venue": "Østerbro Stadium, Copenhagen (DEN)",
+      "area": "Europe",
+      "dateRange": "19 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Bahamas U18 Championships",
+      "venue": "T. Robinson Stadium, Nassau (BAH)",
+      "area": "North and Central America",
+      "dateRange": "19–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "LM U16 & offene Landesmeisterschaften U18, U20, Männer/Frauen",
+      "venue": "Stadion am Schwanenteich, Mittweida (GER)",
+      "area": "Europe",
+      "dateRange": "19–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Kenyan Championships Cum Trials for Commonwealth Games",
+      "venue": "Nyayo National Stadium, Nairobi (KEN)",
+      "area": "Africa",
+      "dateRange": "19–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Vorprogramm Anhalt-Meeting",
+      "venue": "Paul-Greifzu-Stadion, Dessau (GER)",
+      "area": "Europe",
+      "dateRange": "19 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "The 79th National High School Track and Field Championships Kitakyushu Regional Qualifiers",
+      "venue": "Showa Denko Stadium, Oita (JPN)",
+      "area": "Asia",
+      "dateRange": "19–22 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "V Prueba de Confrontación",
+      "venue": "Estadio Panamericano, La Habana (CUB)",
+      "area": "North and Central America",
+      "dateRange": "19–20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Benfica Athletics Meeting",
+      "venue": "Pista Municipal Prof. Mário Moniz Pereira, Lisboa (POR)",
+      "area": "Europe",
+      "dateRange": "19 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato da AASM de Sub20",
+      "venue": "Complexo Desportivo das Laranjeiras, Ponta Delgada (POR)",
+      "area": "Europe",
+      "dateRange": "19–20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Chinese Relays Championships",
+      "venue": "Shangyu Stadium, Shaoxing (CHN)",
+      "area": "Asia",
+      "dateRange": "19–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "2ème Aix en Piste",
+      "venue": "Stade Georges Carcassone, Aix-en-Provence (FRA)",
+      "area": "Europe",
+      "dateRange": "19 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "2nd Asian Relays Championships",
+      "venue": "Shangyu Stadium, Shaoxing (CHN)",
+      "area": "Asia",
+      "dateRange": "19–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Barbados Championships",
+      "venue": "Usain Bolt Complex, Bridgetown (BAR)",
+      "area": "North and Central America",
+      "dateRange": "19–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Belgian 10km Road Running Championships",
+      "venue": "Torhout (BEL)",
+      "area": "Europe",
+      "dateRange": "19 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Jamaican Championships",
+      "venue": "National Stadium, Kingston (JAM)",
+      "area": "North and Central America",
+      "dateRange": "18–21 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Jamaican U20 Championships",
+      "venue": "National Stadium, Kingston (JAM)",
+      "area": "North and Central America",
+      "dateRange": "18–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "The 79th Chugoku High School Track and Field Championships",
+      "venue": "Ishin Me-Life Stadium, Yamaguchi (JPN)",
+      "area": "Asia",
+      "dateRange": "18–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato Paulista Loterias Caixa De Atletismo Adulto",
+      "venue": "COTP Stadium, São Paulo (BRA)",
+      "area": "South America",
+      "dateRange": "18–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Russian Cup",
+      "venue": "Olympic Stadium, Cheboksary (RUS)",
+      "area": "Europe",
+      "dateRange": "18–21 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "New Balance Nationals Outdoors",
+      "venue": "Franklin Field, Philadelphia, PA (USA)",
+      "area": "North and Central America",
+      "dateRange": "18–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Kinki High School Athletics Championships",
+      "venue": "Athletic Stadium, Hikone (JPN)",
+      "area": "Asia",
+      "dateRange": "18–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Maldivian Championships",
+      "venue": "Ekuveni Synthetic Track, Malé (MDV)",
+      "area": "Asia",
+      "dateRange": "18–20 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "The 65th Hokushinetsu High School Athletics Championship",
+      "venue": "Seibu Ryokuchi Park Athletics Stadium, Kanazawa (JPN)",
+      "area": "Asia",
+      "dateRange": "18–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "adidas Outdoor Nationals",
+      "venue": "Marcus T. Johnson Track, Greensboro, NC (USA)",
+      "area": "North and Central America",
+      "dateRange": "18–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "USA U20 Championships",
+      "venue": "Hayward Field, Eugene, OR (USA)",
+      "area": "North and Central America",
+      "dateRange": "18–19 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Iron Wood Classic",
+      "venue": "Iron Wood Throwers Center, Rathdrum, ID (USA)",
+      "area": "North and Central America",
+      "dateRange": "18–20 JUN 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Canadian U20 Championships",
+      "venue": "Terry Fox AF, Ottawa (CAN)",
+      "area": "North and Central America",
+      "dateRange": "17–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Canadian Championships",
+      "venue": "Terry Fox AF, Ottawa (CAN)",
+      "area": "North and Central America",
+      "dateRange": "17–21 JUN 2026",
+      "hasResults": false
+    },
+    {
+      "name": "79th Hokkaido High School Championships",
+      "venue": "Municipal Stadium, Obihiro (JPN)",
+      "area": "Asia",
+      "dateRange": "15–19 JUN 2026",
+      "hasResults": false
+    }
+  ],
+  "matched": [
+    {
+      "wa_name": "Irish 5 Mile Road Running Championships",
+      "our_name": "Irish Life Dublin Marathon",
+      "score": 20
+    },
+    {
+      "wa_name": "CRL Meeting - Bronze Lombardia - Memorial Yuro e Foresti",
+      "our_name": "Mezza Maratona d'Italia - Memorial Enzo Ferrari",
+      "score": 20
+    },
+    {
+      "wa_name": "Polish 5km Road Running Championships - Women",
+      "our_name": "Marathon de la Liberté - Normandy Running Festival",
+      "score": 20
+    },
+    {
+      "wa_name": "Campeonato Madrid Absoluto",
+      "our_name": "Movistar Madrid Medio Maraton",
+      "score": 20
+    },
+    {
+      "wa_name": "Lithuanian 10 km Road Running Championships",
+      "our_name": "NN CPC Loop Den Haag - 10 KM Loop",
+      "score": 20
+    },
+    {
+      "wa_name": "scottishathletics Jumps and Throws Grand Prix",
+      "our_name": "Grand Prix Von Bern",
+      "score": 20
+    },
+    {
+      "wa_name": "2ème Aix en Piste",
+      "our_name": "Aix en foulées",
+      "score": 20
+    }
+  ],
+  "updates": [],
+  "errors": []
+}
