@@ -842,17 +842,8 @@ def update_winners(race_name, year, distance, men_time, women_time, dry_run=Fals
 # ============================================================================
 # MAIN
 # ============================================================================
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--date", default=None, help="Target date (default: yesterday)")
-    parser.add_argument("--dry-run", action="store_true", help="Preview without changes")
-    args = parser.parse_args()
-
-    if args.date:
-        target_date = datetime.date.fromisoformat(args.date)
-    else:
-        target_date = datetime.date.today() - datetime.timedelta(days=1)
-
+def run_one(target_date, dry_run=False, regenerate=True, commit=True):
+    """Traite une seule date. Retourne le log de la journee."""
     date_str = target_date.isoformat()
     print(f"=== Auto Update 4D for {date_str} ===")
 
@@ -905,16 +896,16 @@ def main():
         # Update (track what actually changed for the log)
         logged_data = {}
         if result.get("finishers"):
-            update_finishers(our_name, dist_code, year, result["finishers"], args.dry_run)
+            update_finishers(our_name, dist_code, year, result["finishers"], dry_run)
             logged_data["finishers"] = result["finishers"]
         if result.get("avg_time"):
             update_avg_time(our_name, year, dist_m, result.get("finishers", 0),
-                            result["avg_time"], result.get("avg_speed_kmh"), args.dry_run)
+                            result["avg_time"], result.get("avg_speed_kmh"), dry_run)
             logged_data["avg_time"] = result["avg_time"]
         if result.get("winner_men") or result.get("winner_women"):
             dist_label = {"MARATHON": "MARATHON", "SEMI": "SEMI", "10KM": "10KM"}.get(dist_code, dist_code)
             update_winners(our_name, year, dist_label,
-                           result.get("winner_men"), result.get("winner_women"), args.dry_run)
+                           result.get("winner_men"), result.get("winner_women"), dry_run)
             if result.get("winner_men"):
                 logged_data["winner_men"] = result["winner_men"]
             if result.get("winner_women"):
@@ -925,7 +916,7 @@ def main():
             event_date = (match["wa"].get("dateRange") or "").replace(" ", "")
             if not event_date:
                 event_date = date_str
-            log_update(our_name, event_date, logged_data, args.dry_run)
+            log_update(our_name, event_date, logged_data, dry_run)
 
         log["updates"].append({
             "event": our_name, "year": year,
@@ -937,7 +928,7 @@ def main():
         })
 
     # 5. Regenerate dashboard (only when there are actual updates)
-    if log["updates"] and not args.dry_run:
+    if log["updates"] and not dry_run and regenerate:
         print(f"\n=== Regenerating dashboard ({len(log['updates'])} updates) ===")
         subprocess.run(["python", "create_chronos.py"], cwd=str(SCRIPT_DIR))
         subprocess.run(["python", "generate_dashboard.py"], cwd=str(SCRIPT_DIR))
@@ -948,7 +939,7 @@ def main():
         json.dump(log, f, indent=2, ensure_ascii=False)
     print(f"\n  Report saved: {log_path}")
 
-    if not args.dry_run:
+    if not dry_run and commit:
         subprocess.run(["git", "add", "-A"], cwd=str(SCRIPT_DIR))
         n = len(log["updates"])
         msg = (f"Auto Update 4D {date_str} — {n} update(s)"
@@ -961,6 +952,68 @@ def main():
         else:
             print(f"  Nothing new to commit")
 
+    return log
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--date", default=None, help="Target date (default: yesterday)")
+    parser.add_argument("--from", dest="date_from", default=None,
+                        help="Backfill: premiere date de la plage (YYYY-MM-DD)")
+    parser.add_argument("--to", dest="date_to", default=None,
+                        help="Backfill: derniere date de la plage (YYYY-MM-DD, defaut: hier)")
+    parser.add_argument("--dry-run", action="store_true", help="Preview without changes")
+    args = parser.parse_args()
+
+    # --- Mode backfill : on balaie une plage de dates ---
+    if args.date_from:
+        d0 = datetime.date.fromisoformat(args.date_from)
+        d1 = (datetime.date.fromisoformat(args.date_to) if args.date_to
+              else datetime.date.today() - datetime.timedelta(days=1))
+        if d1 < d0:
+            print("ERREUR: --to est anterieur a --from")
+            return 1
+        ndays = (d1 - d0).days + 1
+        print(f"=== BACKFILL {d0} -> {d1} ({ndays} jours) ===\n")
+        all_updates = []
+        for i in range(ndays):
+            day = d0 + datetime.timedelta(days=i)
+            try:
+                # un seul regen + un seul commit a la fin de la plage
+                log = run_one(day, dry_run=args.dry_run, regenerate=False, commit=False)
+                all_updates.extend(log["updates"])
+            except Exception as e:
+                print(f"  [ERREUR] {day}: {e}")
+            print()
+
+        print(f"\n=== BACKFILL TERMINE : {len(all_updates)} mise(s) a jour ===")
+        for u in all_updates:
+            print(f"  {u['event']} {u['year']}: finishers={u.get('finishers')} "
+                  f"avg={u.get('avg_time')} H={u.get('winner_men')} F={u.get('winner_women')}")
+
+        if all_updates and not args.dry_run:
+            print("\n=== Regeneration du dashboard ===")
+            subprocess.run(["python", "create_chronos.py"], cwd=str(SCRIPT_DIR))
+            subprocess.run(["python", "generate_dashboard.py"], cwd=str(SCRIPT_DIR))
+
+        if not args.dry_run:
+            subprocess.run(["git", "add", "-A"], cwd=str(SCRIPT_DIR))
+            msg = f"Auto Update 4D backfill {d0} -> {d1} — {len(all_updates)} update(s)"
+            r = subprocess.run(["git", "commit", "-m", msg], cwd=str(SCRIPT_DIR),
+                               capture_output=True, text=True)
+            if r.returncode == 0:
+                subprocess.run(["git", "push"], cwd=str(SCRIPT_DIR))
+                print(f"  Pushed: {msg}")
+            else:
+                print("  Nothing new to commit")
+        return 0
+
+    # --- Mode normal : une seule date ---
+    if args.date:
+        target_date = datetime.date.fromisoformat(args.date)
+    else:
+        target_date = datetime.date.today() - datetime.timedelta(days=1)
+    run_one(target_date, dry_run=args.dry_run)
     return 0
 
 

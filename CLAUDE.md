@@ -469,6 +469,30 @@ a confusion avec 10KM/SEMI. Le critere est la distance reelle en km.
 - **Fenetre de date** : ±1 jour autour de la cible (capture les courses dont les resultats sont publies le lendemain)
 - **Matching pays** : extraction ISO code depuis WA venue "Paris (FRA)", bonus +5 si match, **malus -10 si mismatch** (evite les faux positifs geographiques)
 - **Test manuel** : `python auto_update_4d.py --date YYYY-MM-DD --dry-run`
+- **Backfill (rattrapage d'une plage de dates)** :
+  `python auto_update_4d.py --from YYYY-MM-DD --to YYYY-MM-DD`
+  → balaie chaque jour de la plage, puis **un seul** `create_chronos.py` +
+  `generate_dashboard.py` + commit a la fin. Egalement disponible en
+  `workflow_dispatch` sur le workflow « Auto Update 4D » via les champs
+  `date_from` / `date_to`.
+
+### PIEGE CONNU : le cron se desactive tout seul
+GitHub desactive automatiquement les workflows `schedule` apres **60 jours sans
+activite d'un utilisateur humain** sur le repo (`state: disabled_inactivity`).
+Les commits pousses par le workflow lui-meme avec `GITHUB_TOKEN` **ne comptent
+pas** comme activite — c'est ce qui s'est produit : l'auto-update s'est arrete
+apres le 2026-06-20 sans aucune erreur, laissant ~3 mois de trou.
+
+**Verifier l'etat** :
+`GET /repos/mathbrn/datapace-dashboard/actions/workflows/auto_update_4d.yml`
+→ champ `state` (`active` vs `disabled_inactivity`).
+
+**Reactiver** : bouton « Enable workflow » dans l'onglet Actions, ou
+`PUT /repos/mathbrn/datapace-dashboard/actions/workflows/auto_update_4d.yml/enable`.
+
+**Prevention** : pousser un commit manuel (depuis un compte utilisateur, pas le
+bot) au moins une fois tous les 2 mois, et controler le champ `state` a chaque
+session de maintenance du dashboard.
 
 ## Workflow de mise a jour
 

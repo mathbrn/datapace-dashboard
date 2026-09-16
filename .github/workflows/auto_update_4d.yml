@@ -9,6 +9,14 @@ on:
         description: 'Target date (YYYY-MM-DD, default: yesterday)'
         required: false
         default: ''
+      date_from:
+        description: 'Backfill: premiere date de la plage (YYYY-MM-DD). Prioritaire sur "date".'
+        required: false
+        default: ''
+      date_to:
+        description: 'Backfill: derniere date de la plage (YYYY-MM-DD, defaut: hier)'
+        required: false
+        default: ''
 
 jobs:
   update:
@@ -36,9 +44,19 @@ jobs:
           git config user.email "bot@datapace.fr"
 
       - name: Run Auto Update 4D
+        env:
+          IN_DATE: ${{ github.event.inputs.date }}
+          IN_FROM: ${{ github.event.inputs.date_from }}
+          IN_TO: ${{ github.event.inputs.date_to }}
         run: |
-          if [ -n "${{ github.event.inputs.date }}" ]; then
-            python auto_update_4d.py --date ${{ github.event.inputs.date }}
+          if [ -n "$IN_FROM" ]; then
+            if [ -n "$IN_TO" ]; then
+              python auto_update_4d.py --from "$IN_FROM" --to "$IN_TO"
+            else
+              python auto_update_4d.py --from "$IN_FROM"
+            fi
+          elif [ -n "$IN_DATE" ]; then
+            python auto_update_4d.py --date "$IN_DATE"
           else
             python auto_update_4d.py
           fi
