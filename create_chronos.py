@@ -152,6 +152,7 @@ marathon_data = [
     ("Boston Marathon", "42K", 2023, "2:05:54", "2:21:38"),
     ("Boston Marathon", "42K", 2024, "2:06:17", "2:22:37"),
     ("Boston Marathon", "42K", 2025, "2:04:45", "2:17:22"),
+    ("Boston Marathon", "42K", 2026, "2:01:52", "2:18:51"),
     # TCS London Marathon
     ("TCS London Marathon", "42K", 2023, "2:01:25", "2:18:33"),
     ("TCS London Marathon", "42K", 2024, "2:04:01", "2:16:16"),
@@ -202,6 +203,7 @@ marathon_data = [
     ("TCS Sydney Marathon presented by ASICS", "42K", 2023, "2:08:20", "2:26:47"),
     ("TCS Sydney Marathon presented by ASICS", "42K", 2024, "2:06:17", "2:21:40"),
     ("TCS Sydney Marathon presented by ASICS", "42K", 2025, "2:06:06", "2:18:22"),
+    ("TCS Sydney Marathon presented by ASICS", "42K", 2026, "2:04:42", "2:18:31"),
     # BMW Berlin Marathon
     ("BMW Berlin Marathon", "42K", 2023, "2:02:42", "2:11:53"),
     ("BMW Berlin Marathon", "42K", 2024, "2:03:17", "2:16:42"),
@@ -806,6 +808,7 @@ half_marathon_data = [
     ("Copenhagen Half Marathon", "21K", 2025, "0:58:23", "1:04:44"),
     # AJ Bell Great North Run
     ("AJ Bell Great North Run", "21K", 2025, "1:00:52", "1:09:32"),
+    ("AJ Bell Great North Run", "21K", 2026, "0:59:47", "1:06:15"),
     # Valencia Half Marathon Trinidad Alfonso Zurich
     ("Valencia Half Marathon Trinidad Alfonso Zurich", "21K", 2025, "0:58:02", "1:03:08"),
     # Göteborgsvarvet
@@ -869,6 +872,7 @@ half_marathon_data = [
     ("Rock 'n' Roll Running Series San Diego", "21K", 2025, "N/A", "N/A"),
     ("AJ Bell Great Manchester Run", "21K", 2025, "N/A", "N/A"),
     ("AJ Bell Great Bristol Run", "21K", 2025, "N/A", "N/A"),
+    ("AJ Bell Great Bristol Run", "21K", 2026, "1:07:02", "1:22:30"),
     ("Brølløbet - The Bridge Run", "21K", 2025, "N/A", "N/A"),
     ("Media Maraton de Bogota", "21K", 2025, "N/A", "N/A"),
     ("Asics Run Melbourne", "21K", 2025, "N/A", "N/A"),
@@ -1037,6 +1041,7 @@ tenk_data = [
     ("Adidas 10K Paris", "10K", 2023, "N/A", "N/A"),
     ("Adidas 10K Paris", "10K", 2024, "0:29:37", "0:32:18"),
     ("Adidas 10K Paris", "10K", 2025, "N/A", "N/A"),
+    ("Adidas 10K Paris", "10K", 2026, "0:28:11", "0:31:48"),
     # Royal Run
     ("Royal Run", "10K", 2023, "N/A", "N/A"),
     ("Royal Run", "10K", 2024, "N/A", "N/A"),
@@ -1049,6 +1054,7 @@ tenk_data = [
     ("Saucony London 10K", "10K", 2023, "N/A", "N/A"),
     ("Saucony London 10K", "10K", 2024, "0:29:41", "0:32:51"),
     ("Saucony London 10K", "10K", 2025, "0:29:33", "N/A"),
+    ("Saucony London 10K", "10K", 2026, "0:29:48", "0:33:50"),
     # Transurban Bridge to Brisbane
     ("Transurban Bridge to Brisbane", "10K", 2023, "N/A", "N/A"),
     ("Transurban Bridge to Brisbane", "10K", 2024, "N/A", "N/A"),
@@ -1079,6 +1085,7 @@ tenk_data = [
     ("Great Scottish Run 10K", "10K", 2025, "N/A", "N/A"),
     # AJ Bell Great Bristol Run 10K
     ("AJ Bell Great Bristol Run 10K", "10K", 2025, "N/A", "N/A"),
+    ("AJ Bell Great Bristol Run 10K", "10K", 2026, "0:30:55", "0:36:50"),
     # AJ Bell Great Birmingham Run 10K
     ("AJ Bell Great Birmingham Run 10K", "10K", 2025, "N/A", "N/A"),
     # AJ Bell Great North 10K
