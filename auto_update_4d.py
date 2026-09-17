@@ -845,8 +845,16 @@ def fetch_mikatiming_4d(platform_info_or_year, year):
                     print(f"    Mikatiming {finishers_event_code}: HTTP "
                           f"{r_last.status_code} sur la page {max_page}")
             else:
+                # Diagnostic : distinguer « page de resultats vide » (mauvais
+                # code evenement ou edition absente) de « resultats presents
+                # mais sans pagination » (liste tenant sur une seule page).
+                n_temps = len(re.findall(RE_TEMPS, r_p1.text))
                 print(f"    Mikatiming {finishers_event_code}: pagination absente "
-                      f"(max_page={max_page}), comptage impossible")
+                      f"(max_page={max_page}), {n_temps} temps sur la page 1, "
+                      f"{len(r_p1.text)} octets")
+                if n_temps:
+                    finishers = n_temps
+                    print(f"      -> liste tenant sur une page : {n_temps} finishers")
 
         if not men_winner and not women_winner and not finishers:
             return None
@@ -1354,6 +1362,39 @@ def update_winners(race_name, year, distance, men_time, women_time, dry_run=Fals
 # ============================================================================
 # MAIN
 # ============================================================================
+
+def _git_commit_et_pousse(msg):
+    """Commit puis push, en verifiant reellement que le push aboutit.
+
+    L'ancien code ignorait le code de retour de `git push` et affichait
+    « Pushed » quoi qu'il arrive. Quand quelqu'un poussait pendant le run, le
+    push etait rejete en non-fast-forward, le runner etait detruit, et le
+    travail disparaissait SANS AUCUNE TRACE — c'est ce qui est arrive au
+    run #140 (chronos Stockholm et Brighton perdus). On rebase et on retente.
+    """
+    r = subprocess.run(["git", "commit", "-m", msg], cwd=str(SCRIPT_DIR),
+                       capture_output=True, text=True)
+    if r.returncode != 0:
+        print("  Rien a commiter")
+        return False
+    for essai in range(3):
+        p = subprocess.run(["git", "push"], cwd=str(SCRIPT_DIR),
+                           capture_output=True, text=True)
+        if p.returncode == 0:
+            print(f"  Pousse: {msg}")
+            return True
+        print(f"  Push refuse (tentative {essai + 1}/3) : "
+              f"{(p.stderr or '').strip().splitlines()[-1] if p.stderr else '?'}")
+        pr = subprocess.run(["git", "pull", "--rebase"], cwd=str(SCRIPT_DIR),
+                            capture_output=True, text=True)
+        if pr.returncode != 0:
+            print(f"  ECHEC du rebase, travail NON pousse : "
+                  f"{(pr.stderr or '').strip()[:300]}")
+            return False
+    print("  ECHEC : impossible de pousser apres 3 tentatives, travail perdu")
+    return False
+
+
 def run_one(target_date, dry_run=False, regenerate=True, commit=True):
     """Traite une seule date. Retourne le log de la journee."""
     date_str = target_date.isoformat()
@@ -1546,13 +1587,7 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
                    f"{s['matched']} matchee(s), {s['skipped']} echec(s)")
         else:
             msg = f"Auto Update 4D {date_str} — aucune course ce jour-la"
-        r = subprocess.run(["git", "commit", "-m", msg], cwd=str(SCRIPT_DIR),
-                            capture_output=True, text=True)
-        if r.returncode == 0:
-            subprocess.run(["git", "push"], cwd=str(SCRIPT_DIR))
-            print(f"  Pushed: {msg}")
-        else:
-            print(f"  Nothing new to commit")
+        _git_commit_et_pousse(msg)
 
     return log
 
@@ -1613,13 +1648,7 @@ def main():
         if not args.dry_run:
             subprocess.run(["git", "add", "-A"], cwd=str(SCRIPT_DIR))
             msg = f"Auto Update 4D backfill {d0} -> {d1} — {len(all_updates)} update(s)"
-            r = subprocess.run(["git", "commit", "-m", msg], cwd=str(SCRIPT_DIR),
-                               capture_output=True, text=True)
-            if r.returncode == 0:
-                subprocess.run(["git", "push"], cwd=str(SCRIPT_DIR))
-                print(f"  Pushed: {msg}")
-            else:
-                print("  Nothing new to commit")
+            _git_commit_et_pousse(msg)
         return 0
 
     # --- Mode normal : une seule date ---
