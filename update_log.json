@@ -1,6 +1,14 @@
 {
   "updates": [
     {
+      "event": "BOLDERBoulder 10K",
+      "date": "2026-06-21",
+      "data": {
+        "finishers": 47508
+      },
+      "timestamp": "2026-09-17T07:59:08Z"
+    },
+    {
       "event": "Atlanta Journal-Constitution Peachtree Road Race",
       "date": "2026-09-16",
       "data": {

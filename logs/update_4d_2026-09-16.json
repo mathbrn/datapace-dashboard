@@ -3,11 +3,6 @@
   "wa_races": [],
   "matched": [
     {
-      "wa_name": "BOLDERBoulder 10K",
-      "our_name": "BOLDERBoulder 10K",
-      "score": 0
-    },
-    {
       "wa_name": "AJ Bell Great Manchester Run",
       "our_name": "AJ Bell Great Manchester Run",
       "score": 0
@@ -125,11 +120,6 @@
   ],
   "updates": [],
   "skipped": [
-    {
-      "event": "BOLDERBoulder 10K",
-      "reason": "fetch_returned_nothing",
-      "platform": "athlinks"
-    },
     {
       "event": "AJ Bell Great Manchester Run",
       "reason": "fetch_returned_nothing",
@@ -255,12 +245,12 @@
   "mode": "fallback_no_calendar",
   "summary": {
     "wa_races": 0,
-    "matched": 24,
+    "matched": 23,
     "updated": 0,
-    "skipped": 24,
+    "skipped": 23,
     "errors": 1,
     "skip_reasons": {
-      "fetch_returned_nothing": 24
+      "fetch_returned_nothing": 23
     },
     "mode": "fallback_no_calendar"
   }
