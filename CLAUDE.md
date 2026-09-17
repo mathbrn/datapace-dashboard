@@ -434,6 +434,12 @@ extraits correctement : mikatiming reste une bonne source pour 2 des 4D
 - **Attention** : la page liste plusieurs totaux (general, par sexe, par
   tranche d'age). Ne retenir que le premier, le classement general.
 
+- **Fetcher** : `fetch_multisport_4d()`, plateforme `multisport` dans
+  `event_platform_map.json` avec les cles `slug` et `event`. Il essaie quelques
+  dossards d'elite (1, 2, 3, 5, 7, 10, 11, 21, 101) jusqu'a en trouver un qui a
+  fini, lit les totaux et retient le plus grand (le general). Epreuves mappees :
+  sydney-marathon, city2surf, runaway-sydney-half-marathon, bridge-to-brisbane.
+
 ### 9. World Athletics GraphQL (catalogue) — ENDPOINT MORT depuis juin 2026
 - **Endpoint** : `https://graphql-prod-4860.edge.aws.worldathletics.org/graphql`
   → **ne resout plus en DNS** (`Name or service not known`). L'identifiant

@@ -215,11 +215,13 @@
     "platform_id": "108"
   },
   "tcs sydney marathon presented by asics": {
-    "platform": "tracx",
+    "platform": "multisport",
     "country": "AUS",
     "distance": "MARATHON",
     "name": "TCS Sydney Marathon presented by ASICS",
-    "marathonview_id": "113"
+    "marathonview_id": "113",
+    "slug": "sydney-marathon",
+    "event": 1
   },
   "valencia marathon trinidad alfonso zurich": {
     "platform": null,
@@ -631,16 +633,20 @@
     "name": "IU Health 500 Festival Mini-Marathon"
   },
   "transurban bridge to brisbane": {
-    "platform": null,
+    "platform": "multisport",
     "country": "AUS",
     "distance": "10KM",
-    "name": "Transurban Bridge to Brisbane"
+    "name": "Transurban Bridge to Brisbane",
+    "slug": "bridge-to-brisbane",
+    "event": 1
   },
   "city2surf": {
-    "platform": null,
+    "platform": "multisport",
     "country": "AUS",
     "distance": "AUTRE",
-    "name": "City2Surf"
+    "name": "City2Surf",
+    "slug": "city2surf",
+    "event": 1
   },
   "st. jude rock 'n' roll series nashville": {
     "platform": null,
@@ -690,5 +696,13 @@
     "country": "GBR",
     "distance": "SEMI",
     "name": "The Big Half"
+  },
+  "hoka runaway sydney half marathon": {
+    "platform": "multisport",
+    "name": "Hoka Runaway Sydney Half Marathon",
+    "country": "AUS",
+    "slug": "runaway-sydney-half-marathon",
+    "event": 1,
+    "distance": "SEMI"
   }
 }

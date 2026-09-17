@@ -1060,6 +1060,56 @@ def fetch_tracx_4d(event_id, year, dist_code=None):
 # ============================================================================
 # HELPERS
 # ============================================================================
+
+def fetch_multisport_4d(info, year, dist_code=None):
+    """MultiSport Australia / SportSplits — comptage exact via une fiche athlete.
+
+    La page d'un coureur affiche son rang sous la forme « 1 DE 36259 » : le
+    second nombre est le total d'arrivants de la course. C'est plus fiable et
+    bien moins couteux que de paginer le classement entier.
+
+    La page expose trois totaux (general, par sexe, par tranche d'age) ; le
+    general est forcement le plus grand, on retient donc le maximum.
+
+    info : {"slug": "sydney-marathon", "event": 1}
+    """
+    if not isinstance(info, dict) or not info.get("slug"):
+        return None
+    sess = requests.Session()
+    sess.headers.update({
+        "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                       "AppleWebKit/537.36 (KHTML, like Gecko) "
+                       "Chrome/131.0.0.0 Safari/537.36"),
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    })
+    base = (f"https://www.multisportaustralia.com.au/races/"
+            f"{info['slug']}-{year}/events/{info.get('event', 1)}"
+            f"/results/individuals")
+    # Quelques dossards d'elite suffisent : l'un d'eux aura fini.
+    for bib in info.get("bibs") or (1, 2, 3, 5, 7, 10, 11, 21, 101):
+        try:
+            r = sess.get(f"{base}/{bib}", timeout=20)
+        except Exception as e:
+            print(f"    MultiSport {info['slug']}: {type(e).__name__}")
+            return None
+        if r.status_code == 404:
+            continue
+        if not r.ok:
+            print(f"    MultiSport {info['slug']}/{bib}: HTTP {r.status_code}")
+            return None
+        totaux = [int(x) for x in re.findall(r"(?:DE|OF)\s+([\d,]{3,})",
+                                             r.text.upper().replace(",", ""))]
+        totaux = [t for t in totaux if t >= 100]
+        if totaux:
+            n = max(totaux)
+            print(f"    MultiSport {info['slug']} (dossard {bib}) : {n} arrivants")
+            return {"finishers": n, "avg_time": None, "avg_speed_kmh": None,
+                    "winner_men": None, "winner_women": None,
+                    "source": "multisport", "confidence": "high"}
+    print(f"    MultiSport {info['slug']}: aucun dossard exploitable")
+    return None
+
+
 def compute_4d_from_results(results, source="generic"):
     """Compute 4D stats from a list of individual results (TimeTo format)."""
     def parse_time(t):
@@ -1113,6 +1163,7 @@ def compute_4d_from_results(results, source="generic"):
 
 
 PLATFORM_MAP = {
+    "multisport": fetch_multisport_4d,
     "timeto": fetch_timeto_4d,
     "sporthive": fetch_sporthive_4d,
     "chronorace": fetch_chronorace_4d,
@@ -1234,6 +1285,11 @@ def discover_platform(event_name, year, date_str=None):
             ref_name = normalize_name(info.get("name", ev_key))
             if ref_name and _names_match(key, ref_name):
                 platform = info.get("platform")
+                # MultiSport : le fetcher a besoin du slug et du numero d'epreuve
+                if platform == "multisport":
+                    return platform, {"slug": info.get("slug"),
+                                      "event": info.get("event", 1),
+                                      "bibs": info.get("bibs")}
                 # Mikatiming: pass the whole info dict (subdomain, event_code, event_code_pattern)
                 if platform == "mikatiming":
                     pid_info = {
