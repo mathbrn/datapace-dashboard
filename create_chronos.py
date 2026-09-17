@@ -10,6 +10,11 @@ data = []
 # ============================================================
 
 marathon_data = [
+    # --- Ajouts 2026 : marathons (sources presse croisees) ---
+    ("Grandma's Marathon", "42K", 2026, "2:11:21", "2:28:51"),
+    ("Copenhagen Marathon", "42K", 2026, "2:08:26", "2:22:08"),
+    ("Miami Marathon", "42K", 2026, "2:17:47", "2:42:14"),
+
     # ============================================================
     # HISTORICAL DATA (2015-2022)
     # ============================================================
@@ -744,6 +749,15 @@ marathon_data = [
 # ============================================================
 
 half_marathon_data = [
+    # --- Ajouts 2026 : semis (sources presse croisees) ---
+    ("Göteborgsvarvet ", "21K", 2026, "1:03:30", "1:13:03"),
+    ("NYRR RBC Brooklyn Half", "21K", 2026, "1:04:32", "1:13:11"),
+    ("IU Health 500 Festival Mini-Marathon", "21K", 2026, "1:02:27", "1:10:07"),
+    ("Rock 'n' Roll Running Series San Diego", "21K", 2026, "1:04:18", "1:16:00"),
+    ("Maratona Do Rio", "21K", 2026, "1:01:53", "1:11:11"),
+    ("Media Maraton de Bogota", "21K", 2026, "1:01:59", "1:12:27"),
+    ("Hackney Half Marathon", "21K", 2026, "1:06:34", "1:14:54"),
+
     # --- Ajouts 2026 (sources presse croisees) ---
     ("Chengdu World heritage Marathon", "21K", 2026, "1:08:23", "1:18:30"),
     # Record du monde du semi-marathon : Yomif Kejelcha, 56:50
@@ -999,6 +1013,11 @@ half_marathon_data = [
 # ============================================================
 
 tenk_data = [
+    # --- Ajouts 2026 : 10 km (sources presse croisees) ---
+    ("Ukrop's Monument Avenue 10K", "10K", 2026, "0:30:04", "0:33:54"),
+    ("World 10K bengaluru", "10K", 2026, "0:27:29", "N/A"),
+    ("10km Fulfil des Champs Elysées", "10K", 2026, "0:28:34", "0:33:24"),
+
     # 10K Valencia Ibercaja by Kiprun
     ("10K Valencia Ibercaja by Kiprun", "10K", 2023, "N/A", "0:29:19"),
     ("10K Valencia Ibercaja by Kiprun", "10K", 2024, "N/A", "0:28:45"),
@@ -1112,6 +1131,11 @@ tenk_data = [
 # ============================================================
 
 autre_data = [
+    # --- Ajouts 2026 : distances non standard (sources presse croisees) ---
+    ("City2Surf", "AUTRE", 2026, "0:40:27", "0:46:35"),
+    ("20KM de Bruxelles", "AUTRE", 2026, "0:59:47", "1:11:20"),
+    ("Grand Prix Von Bern", "AUTRE", 2026, "0:46:58", "0:55:50"),
+
     # Baloise Antwerp 10 miles (16.09 km)
     ("Baloise Antwerp 10 miles", "AUTRE", 2022, "0:48:48", "N/A"),
     ("Baloise Antwerp 10 miles", "AUTRE", 2023, "0:47:50", "N/A"),
