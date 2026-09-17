@@ -1,6 +1,46 @@
 {
   "updates": [
     {
+      "event": "Bay to Breakers",
+      "date": "2026-09-16",
+      "data": {
+        "finishers": 19814
+      },
+      "timestamp": "2026-09-17T10:39:57Z"
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "date": "2026-09-16",
+      "data": {
+        "finishers": 5026
+      },
+      "timestamp": "2026-09-17T10:39:54Z"
+    },
+    {
+      "event": "Lilac Bloomsday Run",
+      "date": "2026-09-16",
+      "data": {
+        "finishers": 27883
+      },
+      "timestamp": "2026-09-17T10:39:51Z"
+    },
+    {
+      "event": "Flying Pig Marathon",
+      "date": "2026-09-16",
+      "data": {
+        "finishers": 5279
+      },
+      "timestamp": "2026-09-17T10:39:47Z"
+    },
+    {
+      "event": "Broad Street Run",
+      "date": "2026-09-16",
+      "data": {
+        "finishers": 34003
+      },
+      "timestamp": "2026-09-17T10:39:43Z"
+    },
+    {
       "event": "BOLDERBoulder 10K",
       "date": "2026-06-21",
       "data": {
@@ -124,17 +164,6 @@
         "winner_women": "02:18:35"
       },
       "timestamp": "2026-04-13T06:12:34Z"
-    },
-    {
-      "event": "NN Marathon Rotterdam",
-      "date": "2026-04-11",
-      "data": {
-        "finishers": 15814,
-        "avg_time": "04:25:29",
-        "winner_men": "02:03:54",
-        "winner_women": "02:18:56"
-      },
-      "timestamp": "2026-04-12T06:05:00Z"
     }
   ]
 }

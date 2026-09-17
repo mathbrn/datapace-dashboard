@@ -118,7 +118,53 @@
       "score": 0
     }
   ],
-  "updates": [],
+  "updates": [
+    {
+      "event": "Broad Street Run",
+      "year": 2026,
+      "platform": "athlinks",
+      "finishers": 34003,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null
+    },
+    {
+      "event": "Flying Pig Marathon",
+      "year": 2026,
+      "platform": "athlinks",
+      "finishers": 5279,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null
+    },
+    {
+      "event": "Lilac Bloomsday Run",
+      "year": 2026,
+      "platform": "athlinks",
+      "finishers": 27883,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "year": 2026,
+      "platform": "athlinks",
+      "finishers": 5026,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null
+    },
+    {
+      "event": "Bay to Breakers",
+      "year": 2026,
+      "platform": "athlinks",
+      "finishers": 19814,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null
+    }
+  ],
   "skipped": [
     {
       "event": "AJ Bell Great Manchester Run",
@@ -149,31 +195,6 @@
       "event": "AJ Bell Great North Run",
       "reason": "fetch_returned_nothing",
       "platform": "rtrt"
-    },
-    {
-      "event": "Broad Street Run",
-      "reason": "fetch_returned_nothing",
-      "platform": "athlinks"
-    },
-    {
-      "event": "Flying Pig Marathon",
-      "reason": "fetch_returned_nothing",
-      "platform": "athlinks"
-    },
-    {
-      "event": "Lilac Bloomsday Run",
-      "reason": "fetch_returned_nothing",
-      "platform": "athlinks"
-    },
-    {
-      "event": "Dick's Pittsburgh Marathon",
-      "reason": "fetch_returned_nothing",
-      "platform": "athlinks"
-    },
-    {
-      "event": "Bay to Breakers",
-      "reason": "fetch_returned_nothing",
-      "platform": "athlinks"
     },
     {
       "event": "Gasparilla Distance Classic",
@@ -246,11 +267,11 @@
   "summary": {
     "wa_races": 0,
     "matched": 23,
-    "updated": 0,
-    "skipped": 23,
+    "updated": 5,
+    "skipped": 18,
     "errors": 1,
     "skip_reasons": {
-      "fetch_returned_nothing": 23
+      "fetch_returned_nothing": 18
     },
     "mode": "fallback_no_calendar"
   }
