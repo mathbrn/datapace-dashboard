@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 CHEMIN = Path(__file__).parent / "update_log.json"
-MAX_ENTREES = 20
+MAX_ENTREES = 200  # un gros rattrapage doit tenir entier, sinon les comptes du resume sont faux
 
 
 def log_update(event_name, event_date, data, dry_run=False):

@@ -769,8 +769,34 @@ function renderUpdateNotifications(){
   var seenKey='seen_updates_v1';
   var seen={};
   try{seen=JSON.parse(localStorage.getItem(seenKey)||'{}');}catch(e){}
-  var toShow=recent.filter(function(u){return !seen[u.event+'|'+u.date];});
-  if(!toShow.length)return;
+  var nonVues=recent.filter(function(u){return !seen[u.event+'|'+u.date];});
+  if(!nonVues.length)return;
+  // Regroupement en lots : les entrees d'un meme run partagent un horodatage
+  // proche. Au-dela de SEUIL_LOT entrees, on affiche un resume au lieu d'une
+  // notification par epreuve, qui serait illisible sur un gros rattrapage.
+  var SEUIL_LOT=10, FENETRE_MS=10*60*1000;
+  nonVues.sort(function(a,b){return new Date(b.timestamp)-new Date(a.timestamp);});
+  var lots=[],cour=[nonVues[0]];
+  for(var i=1;i<nonVues.length;i++){
+    var ecart=new Date(cour[cour.length-1].timestamp)-new Date(nonVues[i].timestamp);
+    if(ecart<=FENETRE_MS){cour.push(nonVues[i]);}else{lots.push(cour);cour=[nonVues[i]];}
+  }
+  lots.push(cour);
+  var toShow=[];
+  lots.forEach(function(l){
+    if(l.length>SEUIL_LOT){
+      var c={finishers:0,avg_time:0,chronos:0};
+      l.forEach(function(u){
+        var d=u.data||{};
+        if(d.finishers)c.finishers++;
+        if(d.avg_time)c.avg_time++;
+        if(d.winner_men||d.winner_women)c.chronos++;
+      });
+      toShow.push({lot:l,compte:c,timestamp:l[0].timestamp});
+    }else{
+      l.forEach(function(u){toShow.push(u);});
+    }
+  });
   // Build container
   var container=document.getElementById('update-notifs');
   if(!container){
@@ -790,17 +816,26 @@ function renderUpdateNotifications(){
     container.innerHTML='';
     if(idx>=toShow.length){
       // Mark all as read
-      toShow.forEach(function(u){seen[u.event+'|'+u.date]=1;});
+      toShow.forEach(marquerVu);
       localStorage.setItem(seenKey,JSON.stringify(seen));
       return;
     }
     var u=toShow[idx];
+    var estLot=!!u.lot;
+    var titre=u.event;
     var d=u.data||{};
     var items=[];
-    if(d.finishers)items.push('<div style="display:flex;align-items:center;gap:8px;margin-top:2px"><span style="color:var(--text3);font-size:10px;width:16px">#</span><span><b>'+d.finishers.toLocaleString('fr-FR')+'</b> finishers</span></div>');
-    if(d.avg_time)items.push('<div style="display:flex;align-items:center;gap:8px;margin-top:2px"><span style="color:var(--text3);font-size:10px;width:16px">\u2300</span><span>Moyen <b>'+d.avg_time+'</b></span></div>');
-    if(d.winner_men)items.push('<div style="display:flex;align-items:center;gap:8px;margin-top:2px"><span style="color:#60A5FA;font-size:11px;width:16px">H</span><span><b>'+d.winner_men+'</b></span></div>');
-    if(d.winner_women)items.push('<div style="display:flex;align-items:center;gap:8px;margin-top:2px"><span style="color:#FF8A50;font-size:11px;width:16px">F</span><span><b>'+d.winner_women+'</b></span></div>');
+    if(estLot){
+      var c=u.compte;
+      titre=u.lot.length+' courses mises a jour';
+      if(c.finishers)items.push('<div style="display:flex;align-items:center;gap:8px;margin-top:2px"><span style="color:var(--text3);font-size:10px;width:16px">#</span><span>Finishers pour <b>'+c.finishers+'</b> course'+(c.finishers>1?'s':'')+'</span></div>');
+      if(c.avg_time)items.push('<div style="display:flex;align-items:center;gap:8px;margin-top:2px"><span style="color:var(--text3);font-size:10px;width:16px">\u2300</span><span>Temps moyen pour <b>'+c.avg_time+'</b> course'+(c.avg_time>1?'s':'')+'</span></div>');
+      if(c.chronos)items.push('<div style="display:flex;align-items:center;gap:8px;margin-top:2px"><span style="color:#60A5FA;font-size:11px;width:16px">\u26A1</span><span>Chronos vainqueurs pour <b>'+c.chronos+'</b> course'+(c.chronos>1?'s':'')+'</span></div>');
+    }
+    if(!estLot&&d.finishers)items.push('<div style="display:flex;align-items:center;gap:8px;margin-top:2px"><span style="color:var(--text3);font-size:10px;width:16px">#</span><span><b>'+d.finishers.toLocaleString('fr-FR')+'</b> finishers</span></div>');
+    if(!estLot&&d.avg_time)items.push('<div style="display:flex;align-items:center;gap:8px;margin-top:2px"><span style="color:var(--text3);font-size:10px;width:16px">\u2300</span><span>Moyen <b>'+d.avg_time+'</b></span></div>');
+    if(!estLot&&d.winner_men)items.push('<div style="display:flex;align-items:center;gap:8px;margin-top:2px"><span style="color:#60A5FA;font-size:11px;width:16px">H</span><span><b>'+d.winner_men+'</b></span></div>');
+    if(!estLot&&d.winner_women)items.push('<div style="display:flex;align-items:center;gap:8px;margin-top:2px"><span style="color:#FF8A50;font-size:11px;width:16px">F</span><span><b>'+d.winner_women+'</b></span></div>');
     var lt=document.documentElement.getAttribute('data-theme')==='light';
     var bg=lt?'#ffffff':'#1a1a2e';
     // Barre de navigation toujours rendue : sans elle la hauteur de la
@@ -816,7 +851,7 @@ function renderUpdateNotifications(){
     var html='<div style="position:relative;background:'+bg+';border-left:3px solid #DC2626;border-radius:6px;padding:12px 14px;box-shadow:0 4px 12px rgba(0,0,0,0.15);font-size:12px;color:var(--text);animation:notif-slide 0.3s ease-out">'
       +'<button onclick="window._notifClose()" style="position:absolute;top:6px;right:8px;background:none;border:none;color:var(--text3);cursor:pointer;font-size:14px;padding:0;line-height:1" title="Fermer">\u2715</button>'
       +'<div style="display:flex;align-items:center;gap:6px;margin-bottom:6px"><span style="background:#DC2626;color:#fff;font-size:9px;font-weight:700;padding:2px 6px;border-radius:100px;letter-spacing:0.05em">UPDATE 4D</span><span style="color:var(--text3);font-size:10px">\u00B7 '+fmtDate(u.timestamp)+'</span></div>'
-      +'<div style="font-weight:600;line-height:1.3;margin-bottom:8px;min-height:32px;display:flex;align-items:center">'+u.event+'</div>'
+      +'<div style="font-weight:600;line-height:1.3;margin-bottom:8px;min-height:32px;display:flex;align-items:center">'+titre+'</div>'
       +'<div style="min-height:76px">'+items.join('')+'</div>'
       +navH
       +allBtn
@@ -826,8 +861,13 @@ function renderUpdateNotifications(){
     clearTimeout(window._notifTimer);
     window._notifTimer=setTimeout(function(){window._notifNext();},8000);
   }
+  function marquerVu(x){
+    if(!x)return;
+    if(x.lot){x.lot.forEach(function(u){seen[u.event+'|'+u.date]=1;});}
+    else{seen[x.event+'|'+x.date]=1;}
+  }
   window._notifClose=function(){
-    if(toShow[idx])seen[toShow[idx].event+'|'+toShow[idx].date]=1;
+    marquerVu(toShow[idx]);
     localStorage.setItem(seenKey,JSON.stringify(seen));
     idx++;
     render();
@@ -835,7 +875,7 @@ function renderUpdateNotifications(){
   window._notifNext=function(){idx=Math.min(idx+1,toShow.length);render();};
   window._notifPrev=function(){idx=Math.max(idx-1,0);render();};
   window._notifMarkAll=function(){
-    toShow.forEach(function(u){seen[u.event+'|'+u.date]=1;});
+    toShow.forEach(marquerVu);
     localStorage.setItem(seenKey,JSON.stringify(seen));
     container.innerHTML='';
     clearTimeout(window._notifTimer);

@@ -159,6 +159,14 @@ moyen (que `update_finishers.py` ne couvre pas) :
     python update_log.py "Nom de l'epreuve" --date 2026-08-30 \
         --finishers 36259 --men 2:04:42 --women 2:18:31 --avg 4:13:24
 
+**Regroupement en lots** : les entrees d'un meme run partagent un horodatage
+proche (fenetre de 10 min). Au-dela de **10 entrees**, le dashboard affiche un
+resume unique — « N courses mises a jour » avec le nombre de courses par type de
+donnee — au lieu d'une notification par epreuve, qui serait illisible sur un gros
+rattrapage. En dessous du seuil, une notification par epreuve comme avant.
+`MAX_ENTREES` vaut 200 dans `update_log.py` : un gros rattrapage doit tenir
+entier dans le journal, sinon les comptes du resume sont faux.
+
 La notification a une **taille fixe** (320 px de large, hauteurs reservees pour
 le titre et la zone de donnees, barre de navigation toujours rendue). Ne pas
 reintroduire de `max-width` ni de bloc conditionnel : la boite changeait de
