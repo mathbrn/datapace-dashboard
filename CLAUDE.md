@@ -244,6 +244,12 @@ a confusion avec 10KM/SEMI. Le critere est la distance reelle en km.
 ## APIs decouvertes et exploitees
 
 ### 1. Sporthive/MYLAPS (MEILLEURE SOURCE)
+**Piege corrige** : le fetcher ne renvoyait un resultat que si
+`raceStatistics.averageSpeedInKmh` etait presente. Sans vitesse moyenne il
+tombait jusqu'au `return None` final et **perdait aussi les finishers**, pourtant
+deja lus dans `classificationsCount`. Les finishers sont la donnee principale :
+ils sont desormais renvoyes meme sans temps moyen.
+
 - **API** : `https://eventresults-api.speedhive.com/sporthive/events/{eventId}/races`
 - **Auth** : Aucune
 - **Donnees** : `classificationsCount` = finishers, `raceStatistics.averageSpeedInKmh` = vitesse moyenne reelle
@@ -347,6 +353,16 @@ RunSignup (`runsignup.com/Race/Results/53948`). L'entree a ete rebasculee sur
 - **Count** : `GET /events/{appName}/participants?groupId={overallId}&routeId={id}&offset=0&limit=1` → `meta.totalCount`
 - **Auth** : Aucune
 - **Noms d'app** : `{Sponsor}{EventName}{Year}` (ex: `SchneiderElectricMarathondeParis2019`, `RunInLyon2018`, `Adidas10KParis2022`)
+
+### 7. Mikatiming (scraping) — comptage exact obligatoire
+**Piege** : l'ancien fetcher calculait `finishers = max_page * 25`, une
+ESTIMATION a ±24 pres, et toujours un multiple de 25 — donc un chiffre rond, ce
+que la regle « zero tolerance » interdit. Il ecrivait par exemple 25 000 la ou
+la vraie valeur etait 24 982. Le comptage est desormais exact :
+`(max_page - 1) * 25 + lignes de la derniere page`, et renvoie None si la
+derniere page est illisible. Les chronos vainqueurs, eux, ont toujours ete
+extraits correctement : mikatiming reste une bonne source pour 2 des 4D
+(Berlin, Chicago, Hambourg, Stockholm, Francfort, Vienne, Brighton, Athenes).
 
 ### 7. Mikatiming (scraping)
 - **URL pattern** : `https://{subdomain}.r.mikatiming.{de|com}/{year}/?pid=list&event={code}`

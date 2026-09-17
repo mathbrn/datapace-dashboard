@@ -378,11 +378,14 @@ def fetch_sporthive_4d(event_id, year, dist_code=None):
     """Fetch 4D from Sporthive/MYLAPS API. Needs event_id."""
     try:
         sess = requests.Session()
-        resp = sess.get(f"https://eventresults-api.speedhive.com/sporthive/events/{event_id}/races", timeout=15)
+        url = f"https://eventresults-api.speedhive.com/sporthive/events/{event_id}/races"
+        resp = sess.get(url, timeout=15)
         if not resp.ok:
+            print(f"    Sporthive events/{event_id}/races: HTTP {resp.status_code}")
             return None
         races = resp.json()
         if not races:
+            print(f"    Sporthive events/{event_id}: aucune course renvoyee")
             return None
         # Viser la distance demandee, pas la plus grosse course de l'evenement
         r = pick_race_for_distance(
@@ -391,18 +394,31 @@ def fetch_sporthive_4d(event_id, year, dist_code=None):
             get_title=lambda x: x.get("name") or x.get("title") or "")
         if not r:
             print(f"    Sporthive: aucune course {dist_code} identifiable — abandon")
+            print(f"      courses vues={[(str(x.get('name') or x.get('title'))[:26], x.get('distance')) for x in races][:8]}")
             return None
         count = r.get("classificationsCount", 0)
+        if not count:
+            print(f"    Sporthive: course trouvee ({r.get('name')}) mais "
+                  f"classificationsCount absent — cles={sorted(r.keys())[:12]}")
+            return None
         speed = r.get("raceStatistics", {}).get("averageSpeedInKmh", 0)
         distance = r.get("distance", 0) / 1000  # meters → km
+        avg_time = None
         if speed and distance:
             hours = distance / speed
             total_sec = int(hours * 3600)
             h, m, s = total_sec // 3600, (total_sec % 3600) // 60, total_sec % 60
             avg_time = f"{h:02d}:{m:02d}:{s:02d}"
-            return {"finishers": count, "avg_time": avg_time, "avg_speed_kmh": round(speed, 2),
-                    "winner_men": None, "winner_women": None,
-                    "source": "sporthive", "confidence": "medium"}
+        else:
+            # Sans vitesse moyenne on perdait AUSSI les finishers : la fonction
+            # tombait jusqu'au `return None` final. Les finishers sont la
+            # donnee principale, on les renvoie meme sans temps moyen.
+            print(f"    Sporthive: pas de vitesse moyenne pour {r.get('name')}, "
+                  f"finishers seuls")
+        return {"finishers": count, "avg_time": avg_time,
+                "avg_speed_kmh": round(speed, 2) if speed else None,
+                "winner_men": None, "winner_women": None,
+                "source": "sporthive", "confidence": "medium"}
     except Exception as e:
         print(f"  Sporthive error: {e}")
     return None
@@ -784,11 +800,35 @@ def fetch_mikatiming_4d(platform_info_or_year, year):
         men_winner = get_winner_time("M")
         women_winner = get_winner_time("W")
 
-        # Finisher count via page navigation (max_page × 25, accurate to ±24)
-        r_p1 = sess.get(f"{base}/{year}/?pid=list&event={finishers_event_code}&num_results=25&page=1", timeout=30)
-        page_nums = [int(p) for p in re.findall(r"page=(\d+)", r_p1.text) if p.isdigit()]
-        max_page = max(page_nums, default=0)
-        finishers = max_page * 25 if max_page >= 2 else None
+        # Comptage des finishers.
+        # L'ancienne formule `max_page * 25` etait une ESTIMATION a ±24 pres, et
+        # toujours un multiple de 25 : elle produisait donc mecaniquement des
+        # chiffres ronds, ce que la regle « zero tolerance » interdit. On compte
+        # desormais exactement : (max_page - 1) * 25 + lignes de la derniere page.
+        RE_TEMPS = r"type-time[^>]*>(?:<div[^>]*>[^<]*(?:Finish|Netto|Net)[^<]*</div>)?\d{2}:\d{2}:\d{2}"
+        finishers = None
+        liste = f"{base}/{year}/?pid=list&event={finishers_event_code}&num_results=25"
+        r_p1 = sess.get(f"{liste}&page=1", timeout=30)
+        if not r_p1.ok:
+            print(f"    Mikatiming {finishers_event_code}: HTTP {r_p1.status_code} sur la liste")
+        else:
+            page_nums = [int(p) for p in re.findall(r"page=(\d+)", r_p1.text) if p.isdigit()]
+            max_page = max(page_nums, default=0)
+            if max_page >= 2:
+                r_last = sess.get(f"{liste}&page={max_page}", timeout=30)
+                if r_last.ok:
+                    n_last = len(re.findall(RE_TEMPS, r_last.text))
+                    if n_last:
+                        finishers = (max_page - 1) * 25 + n_last
+                    else:
+                        print(f"    Mikatiming {finishers_event_code}: derniere page "
+                              f"({max_page}) illisible, comptage abandonne")
+                else:
+                    print(f"    Mikatiming {finishers_event_code}: HTTP "
+                          f"{r_last.status_code} sur la page {max_page}")
+            else:
+                print(f"    Mikatiming {finishers_event_code}: pagination absente "
+                      f"(max_page={max_page}), comptage impossible")
 
         if not men_winner and not women_winner and not finishers:
             return None
@@ -893,8 +933,15 @@ def fetch_tracx_4d(event_id, year, dist_code=None):
                              "Authorization": "Bearer 40496C26-9BEF-4266-8A27-43C78540F669"})
         resp = sess.get(f"https://api.tracx.events/v1/events/{event_id}/races", timeout=15)
         if not resp.ok:
+            print(f"    Tracx events/{event_id}/races: HTTP {resp.status_code}")
             return None
         races = resp.json()
+        if isinstance(races, dict):
+            # certaines reponses enveloppent la liste
+            races = races.get("data") or races.get("races") or []
+        if not races:
+            print(f"    Tracx events/{event_id}: aucune course renvoyee")
+            return None
         # Viser la distance demandee, pas la plus grosse course de l'evenement
         main = pick_race_for_distance(
             races, dist_code,
@@ -902,8 +949,13 @@ def fetch_tracx_4d(event_id, year, dist_code=None):
             get_title=lambda r: r.get("name") or r.get("title") or "")
         if not main:
             print(f"    Tracx: aucune course {dist_code} identifiable — abandon")
+            print(f"      courses vues={[(str(x.get('name') or x.get('title'))[:26], x.get('distance') or x.get('distance_m')) for x in races][:8]}")
             return None
         count = main.get("participant_count", 0)
+        if not count:
+            print(f"    Tracx: course trouvee ({main.get('name')}) mais "
+                  f"participant_count absent — cles={sorted(main.keys())[:12]}")
+            return None
         return {"finishers": count, "avg_time": None, "avg_speed_kmh": None,
                 "winner_men": None, "winner_women": None,
                 "source": "tracx", "confidence": "low"}
