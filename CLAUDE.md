@@ -146,6 +146,31 @@ api_patterns = [
 - `avg_times_sporthive.json` : Temps moyens calcules depuis APIs (Sporthive + Tracx)
 - `datapace_dashboard.html` : Dashboard genere (ouvrir dans navigateur)
 
+## PRIORITE ABSOLUE : les finishers
+
+Le nombre de finishers est **la donnee principale du dashboard**. Les trois
+autres dimensions du 4D (temps moyen, chrono vainqueur H, chrono vainqueur F)
+sont des complements.
+
+**Regle** : un fetcher ne doit JAMAIS renvoyer `None` parce qu'une donnee
+secondaire manque. Si le nombre de finishers est connu, il doit remonter, avec
+`avg_time` / `winner_men` / `winner_women` a `None` et `confidence: "medium"`.
+
+Cette regle n'etait respectee par aucun des quatre fetchers concernes :
+
+| Fetcher | Ce qui faisait tout perdre | Etat |
+|---|---|---|
+| sporthive | absence de `raceStatistics.averageSpeedInKmh` | corrige |
+| chronorace | chronos illisibles, alors que `Count` donnait le total | corrige |
+| timeto (`compute_4d_from_results`) | aucun temps parsable dans les resultats | corrige |
+| mikatiming | (deja tolerant : renvoie des que l'un des trois existe) | OK |
+
+**Seule exception legitime** : quand le nombre disponible n'est pas attribuable
+a la distance demandee — cas RTRT, ou `/events/{code}` ne donne qu'un total
+d'epreuve melangeant semi et 10K. La, renvoyer `None` est correct : ce n'est pas
+une donnee secondaire manquante, c'est une donnee fausse pour la cellule visee.
+Voir la section suivante.
+
 ## Distinction EVENEMENT vs COURSE (piege structurel n°1)
 
 Le dashboard tient **une ligne par couple (epreuve, distance)**. Les APIs, elles,

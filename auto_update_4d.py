@@ -468,7 +468,14 @@ def fetch_chronorace_4d(db_name, year):
                 elif gender in ("F", "W", "V") and not women_winner:
                     women_winner = f"{m.group(1).zfill(2)}:{m.group(2)}:{m.group(3)}"
         if not times:
-            return None
+            # best[0] est le Count renvoye par l'API : c'est deja un comptage de
+            # finishers valable. Le jeter parce que les chronos sont illisibles
+            # revenait a perdre la donnee prioritaire du dashboard.
+            print(f"    ChronoRace {db_name}: aucun temps exploitable, "
+                  f"finishers seuls ({best[0]})")
+            return {"finishers": best[0], "avg_time": None, "avg_speed_kmh": None,
+                    "winner_men": None, "winner_women": None,
+                    "source": "chronorace", "confidence": "medium"}
         avg = sum(times) / len(times)
         h, mn, s = int(avg // 3600), int((avg % 3600) // 60), int(avg % 60)
         return {"finishers": len(times), "avg_time": f"{h:02d}:{mn:02d}:{s:02d}",
@@ -994,6 +1001,17 @@ def compute_4d_from_results(results, source="generic"):
                 women_winner = r.get("officialTime")
 
     if not times:
+        # Les finishers sont la donnee prioritaire du dashboard : meme si aucun
+        # temps n'est exploitable, le nombre de resultats reste un comptage
+        # valable. Renvoyer None ici jetait une epreuve entiere pour un simple
+        # probleme de format de chrono.
+        if results:
+            print(f"    {source}: aucun temps exploitable sur {len(results)} "
+                  f"resultats, finishers seuls")
+            return {"finishers": len(results), "avg_time": None,
+                    "avg_speed_kmh": None, "winner_men": None,
+                    "winner_women": None, "source": source,
+                    "confidence": "medium"}
         return None
     avg = sum(times) / len(times)
     h, m, s = int(avg // 3600), int((avg % 3600) // 60), int(avg % 60)
