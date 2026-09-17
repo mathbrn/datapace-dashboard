@@ -554,6 +554,64 @@ def fetch_rtrt_4d(event_code, year, dist_code=None):
         return None
 
 
+
+# Courses annexes a exclure d'un decompte de finishers : handisport, relais,
+# defis et versions virtuelles ne sont pas la course principale.
+ATHLINKS_SECONDAIRE = ("wheelchair", "wheel", "handcycle", "hand cycle", "push",
+                       "relay", "virtual", "junior", "kids", "centipede",
+                       "bonus", "challenge", "walk only")
+
+
+def parse_athlinks_description(desc):
+    """Transforme la description d'une edition Athlinks en liste de courses.
+
+    Une ligne par course, le nombre de finishers en fin de ligne. Le separateur
+    varie ( ' - ' ou une tabulation ) et les milliers sont parfois separes par
+    une virgule :
+        'Marathon - 5,279'              -> Marathon / 5279
+        '12K Run\t             19814'   -> 12K Run / 19814
+        '10 Mi Wheelchair Race - 8'     -> 10 Mi Wheelchair Race / 8
+    L'ancien motif exigeait un tiret et ignorait les virgules : « 5,279 » etait
+    lu « 279 », et les evenements a tabulations ne donnaient aucune ligne.
+    """
+    out = []
+    for ligne in re.split(r"[\r\n]+", desc or ""):
+        ligne = ligne.strip()
+        if not ligne:
+            continue
+        m = re.match(r"^(?P<title>.*?)[\s\-\t]*(?P<n>\d[\d,\s]*)$", ligne)
+        if not m:
+            continue
+        titre = m.group("title").strip(" -\t")
+        brut = re.sub(r"[,\s]", "", m.group("n"))
+        if not titre or not brut.isdigit():
+            continue
+        out.append({"title": titre, "count": int(brut)})
+    return out
+
+
+def pick_athlinks_race(lignes, dist_code):
+    """Choisit la course correspondant a la distance demandee.
+
+    Les courses annexes sont ecartees d'abord. Pour AUTRE (10 miles, 12K, 15K...)
+    aucune distance de reference n'existe : on n'accepte que s'il ne reste
+    qu'une seule course principale, sinon None.
+    """
+    principales = [l for l in lignes
+                   if not any(x in l["title"].lower() for x in ATHLINKS_SECONDAIRE)]
+    if not principales:
+        return None
+    if dist_code == "AUTRE":
+        if len(principales) == 1:
+            return principales[0]
+        print(f"    {len(principales)} courses principales pour AUTRE "
+              f"({[l['title'][:24] for l in principales][:6]}) — ambigu, abandon")
+        return None
+    return pick_race_for_distance(principales, dist_code,
+                                  get_distance_m=lambda r: None,
+                                  get_title=lambda r: r["title"])
+
+
 def fetch_athlinks_4d(master_id_or_info, year, dist_code=None):
     """Fetch 4D from Athlinks API.
 
@@ -607,19 +665,6 @@ def fetch_athlinks_4d(master_id_or_info, year, dist_code=None):
                     _e / 1000, _dt0.timezone.utc).year)
         print(f"    Athlinks master/{master_id}: {len(events)} edition(s), "
               f"annees={sorted(set(annees), reverse=True)[:6]}, cible={year}")
-        # Diagnostic cible : la description est vide pour la plupart des
-        # epreuves (Bay to Breakers, Gasparilla...). Il faut passer par
-        # l'endpoint structure /Events/Race/Api/{eventId}/Course/0, qui donne
-        # les finishers PAR COURSE. Reste a identifier le champ portant cet
-        # eventId dans la metadata. A retirer une fois le parser ecrit.
-        if events:
-            _e0 = events[0]
-            print(f"      cles d'une edition = {sorted(_e0.keys())}")
-            _ids = {k: v for k, v in _e0.items()
-                    if "id" in k.lower() and not isinstance(v, (dict, list))}
-            print(f"      champs *id* = {_ids}")
-            _desc = str(_e0.get("description") or "")[:120]
-            print(f"      description (120c) = {_desc!r}")
         # Find event matching target year (by epoch timestamp)
         import datetime as _dt
         target_event = None
@@ -640,14 +685,8 @@ def fetch_athlinks_4d(master_id_or_info, year, dist_code=None):
         # de l'evenement quelle que soit la distance demandee — meme bug que
         # partout ailleurs. On parse chaque ligne et on vise la bonne distance.
         desc = target_event.get("description", "") or ""
-        import re as _re
-        lignes = []
-        for m in _re.finditer(r"([^\r\n]+?)\s*-\s*(\d{3,})", desc):
-            lignes.append({"title": m.group(1).strip(), "count": int(m.group(2))})
-
-        choisi = pick_race_for_distance(lignes, dist_code,
-                                        get_distance_m=lambda r: None,
-                                        get_title=lambda r: r["title"])
+        lignes = parse_athlinks_description(desc)
+        choisi = pick_athlinks_race(lignes, dist_code)
         finishers = choisi["count"] if choisi else None
 
         # Repli : tableau races structure, qui porte parfois la distance
@@ -924,9 +963,12 @@ DIST_TARGETS = {"MARATHON": (42195, 1200), "SEMI": (21097, 700), "10KM": (10000,
 
 # Mots-cles dans le titre d'une course, quand la distance chiffree manque
 DIST_WORDS = {
-    "MARATHON": (("marathon", "42k", "42.2", "full"), ("half", "semi", "demi", "10k", "5k", "relay")),
-    "SEMI": (("half", "semi", "demi", "21k", "21.1"), ("10k", "5k", "relay", "quarter")),
-    "10KM": (("10k", "10 km", "10km"), ("half", "semi", "relay", "5k", "100k")),
+    "MARATHON": (("marathon", "42k", "42.2", "full"),
+                 ("half", "semi", "demi", "10k", "5k", "relay")),
+    "SEMI": (("half", "semi", "demi", "21k", "21.1"),
+             ("10k", "5k", "relay", "quarter")),
+    "10KM": (("10k", "10 km", "10km"),
+             ("half", "semi", "relay", "5k", "100k")),
 }
 
 
@@ -1222,9 +1264,13 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
             continue
         # Determine distance (avant le fetch : certains fetchers en ont besoin
         # pour viser la bonne course et non le total de l'epreuve)
-        dist_code = "MARATHON" if match["our"]["distance"] == "MARATHON" else \
-                    "SEMI" if match["our"]["distance"] == "SEMI" else "10KM"
-        dist_m = 42195 if dist_code == "MARATHON" else 21097 if dist_code == "SEMI" else 10000
+        # AUTRE (10 miles, 12K, 15K...) doit rester AUTRE : le rabattre sur
+        # 10KM faisait chercher une course de 10 km dans des epreuves qui n'en
+        # ont pas (Bay to Breakers est un 12K, Broad Street un 10 miles), d'ou
+        # des « aucune course 10KM identifiable » systematiques.
+        _d = (match["our"]["distance"] or "").strip().upper()
+        dist_code = _d if _d in ("MARATHON", "SEMI", "10KM", "AUTRE") else "10KM"
+        dist_m = {"MARATHON": 42195, "SEMI": 21097, "10KM": 10000}.get(dist_code)
 
         try:
             if "dist_code" in inspect.signature(fetcher).parameters:
@@ -1264,7 +1310,9 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
             seen_counts[result["finishers"]] = (our_name, dist_code)
             update_finishers(our_name, dist_code, year, result["finishers"], dry_run)
             logged_data["finishers"] = result["finishers"]
-        if result.get("avg_time"):
+        if result.get("avg_time") and dist_m:
+            # dist_m est None pour AUTRE : distance non standard, donc pas de
+            # temps moyen comparable a enregistrer.
             update_avg_time(our_name, year, dist_m, result.get("finishers", 0),
                             result["avg_time"], result.get("avg_speed_kmh"), dry_run)
             logged_data["avg_time"] = result["avg_time"]
