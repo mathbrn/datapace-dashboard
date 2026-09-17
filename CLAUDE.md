@@ -146,6 +146,24 @@ api_patterns = [
 - `avg_times_sporthive.json` : Temps moyens calcules depuis APIs (Sporthive + Tracx)
 - `datapace_dashboard.html` : Dashboard genere (ouvrir dans navigateur)
 
+## Notifications du dashboard
+
+`update_log.json` alimente les notifications affichees sur le dashboard. Il est
+alimente par **`update_log.py`**, source unique : `auto_update_4d.py` l'importe,
+et `update_finishers.py` l'appelle a chaque cellule ecrite.
+
+**Regle** : tout ajout de donnee doit produire une notification, qu'il vienne de
+l'Update 4D ou d'un ajout manuel. Pour un ajout manuel de chronos ou de temps
+moyen (que `update_finishers.py` ne couvre pas) :
+
+    python update_log.py "Nom de l'epreuve" --date 2026-08-30 \
+        --finishers 36259 --men 2:04:42 --women 2:18:31 --avg 4:13:24
+
+La notification a une **taille fixe** (320 px de large, hauteurs reservees pour
+le titre et la zone de donnees, barre de navigation toujours rendue). Ne pas
+reintroduire de `max-width` ni de bloc conditionnel : la boite changeait de
+taille selon le nombre de donnees et la longueur du nom.
+
 ## Style de reponse
 
 Reponses courtes, a l'essentiel. Trois choses seulement :

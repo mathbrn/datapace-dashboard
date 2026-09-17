@@ -1,6 +1,6 @@
 # DataPace Dashboard — Stats à jour
 
-**Généré le** : 2026-09-17 12:35
+**Généré le** : 2026-09-17 12:48
 **Source historique** : finishers (mémoire)
 
 > **Note pour Claude** : c'est la source de vérité pour tous les chiffres DataPace.

@@ -776,7 +776,7 @@ function renderUpdateNotifications(){
   if(!container){
     container=document.createElement('div');
     container.id='update-notifs';
-    container.style.cssText='position:fixed;top:80px;right:16px;z-index:9998;max-width:320px;display:flex;flex-direction:column;gap:8px;';
+    container.style.cssText='position:fixed;top:80px;right:16px;z-index:9998;width:320px;display:flex;flex-direction:column;gap:8px;';
     document.body.appendChild(container);
   }
   var idx=0;
@@ -803,20 +803,21 @@ function renderUpdateNotifications(){
     if(d.winner_women)items.push('<div style="display:flex;align-items:center;gap:8px;margin-top:2px"><span style="color:#FF8A50;font-size:11px;width:16px">F</span><span><b>'+d.winner_women+'</b></span></div>');
     var lt=document.documentElement.getAttribute('data-theme')==='light';
     var bg=lt?'#ffffff':'#1a1a2e';
-    var navH='';
-    if(toShow.length>1){
-      navH='<div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding-top:8px;border-top:1px solid var(--border);font-size:10px;color:var(--text3)">'
-        +'<button onclick="window._notifPrev()" style="background:none;border:1px solid var(--border);color:var(--text3);cursor:pointer;padding:2px 8px;border-radius:4px;font-size:10px">\u25C0</button>'
-        +'<span>'+(idx+1)+' / '+toShow.length+'</span>'
-        +'<button onclick="window._notifNext()" style="background:none;border:1px solid var(--border);color:var(--text3);cursor:pointer;padding:2px 8px;border-radius:4px;font-size:10px">\u25B6</button>'
-        +'</div>';
-    }
+    // Barre de navigation toujours rendue : sans elle la hauteur de la
+    // notification changeait selon qu'il y ait une ou plusieurs entrees.
+    var seul=toShow.length<2;
+    var opa=seul?'opacity:0.35;pointer-events:none;':'';
+    var navH='<div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding-top:8px;border-top:1px solid var(--border);font-size:10px;color:var(--text3)">'
+      +'<button onclick="window._notifPrev()" style="'+opa+'background:none;border:1px solid var(--border);color:var(--text3);cursor:pointer;padding:2px 8px;border-radius:4px;font-size:10px">\u25C0</button>'
+      +'<span>'+(idx+1)+' / '+toShow.length+'</span>'
+      +'<button onclick="window._notifNext()" style="'+opa+'background:none;border:1px solid var(--border);color:var(--text3);cursor:pointer;padding:2px 8px;border-radius:4px;font-size:10px">\u25B6</button>'
+      +'</div>';
     var allBtn='<button onclick="window._notifMarkAll()" style="margin-top:6px;background:none;border:none;color:var(--text3);cursor:pointer;font-size:10px;text-decoration:underline;padding:0;align-self:flex-start">Tout marquer comme lu</button>';
     var html='<div style="position:relative;background:'+bg+';border-left:3px solid #DC2626;border-radius:6px;padding:12px 14px;box-shadow:0 4px 12px rgba(0,0,0,0.15);font-size:12px;color:var(--text);animation:notif-slide 0.3s ease-out">'
       +'<button onclick="window._notifClose()" style="position:absolute;top:6px;right:8px;background:none;border:none;color:var(--text3);cursor:pointer;font-size:14px;padding:0;line-height:1" title="Fermer">\u2715</button>'
       +'<div style="display:flex;align-items:center;gap:6px;margin-bottom:6px"><span style="background:#DC2626;color:#fff;font-size:9px;font-weight:700;padding:2px 6px;border-radius:100px;letter-spacing:0.05em">UPDATE 4D</span><span style="color:var(--text3);font-size:10px">\u00B7 '+fmtDate(u.timestamp)+'</span></div>'
-      +'<div style="font-weight:600;line-height:1.3;margin-bottom:8px">'+u.event+'</div>'
-      +items.join('')
+      +'<div style="font-weight:600;line-height:1.3;margin-bottom:8px;min-height:32px;display:flex;align-items:center">'+u.event+'</div>'
+      +'<div style="min-height:76px">'+items.join('')+'</div>'
       +navH
       +allBtn
       +'</div>';

@@ -60,6 +60,14 @@ def update(race_name, distance, year, count):
             row[year_col - 1].value = count
             found = True
             print(f"[NOUVEAU] {race_name} ({distance}) {year}: {old_val} -> {count}")
+            # Notification dashboard : tout ajout doit apparaitre, pas seulement
+            # ceux de l'Update 4D automatique.
+            if isinstance(count, int):
+                try:
+                    from update_log import log_update
+                    log_update(race_name, f"{year}-01-01", {"finishers": count})
+                except Exception as e:
+                    print(f"  (notification non journalisee: {e})")
             break
 
     if not found:

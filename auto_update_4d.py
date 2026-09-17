@@ -1362,31 +1362,7 @@ def update_avg_time(race_name, year, distance_m, count, avg_time, speed, dry_run
     print(f"  avg_times added: {race_name} {year} = {avg_time}")
 
 
-def log_update(event_name, event_date, data, dry_run=False):
-    """Append an update entry to update_log.json (top of list, max 20, dedup by event+date)."""
-    path = SCRIPT_DIR / "update_log.json"
-    if path.exists():
-        with open(path, "r", encoding="utf-8") as f:
-            log = json.load(f)
-    else:
-        log = {"updates": []}
-    # Remove existing entry for same event+date
-    log["updates"] = [u for u in log["updates"]
-                      if not (u.get("event") == event_name and u.get("date") == event_date)]
-    # Prepend new entry
-    entry = {
-        "event": event_name,
-        "date": event_date,
-        "data": data,
-        "timestamp": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
-    }
-    log["updates"].insert(0, entry)
-    # Keep last 20
-    log["updates"] = log["updates"][:20]
-    if not dry_run:
-        with open(path, "w", encoding="utf-8") as f:
-            json.dump(log, f, indent=2, ensure_ascii=False)
-    print(f"  update_log: {event_name} {event_date} -> {list(data.keys())}")
+from update_log import log_update  # source unique des notifications
 
 
 def update_winners(race_name, year, distance, men_time, women_time, dry_run=False):
