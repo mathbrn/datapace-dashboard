@@ -295,8 +295,13 @@ nombre dans `athlinks.com/event/{id}`. IDs etablis :
 | Marine Corps Marathon | 3281 |
 | Statesman Capitol 10K | introuvable (pas de page event moderne) |
 
-**403 intermittent** : observe sur des master_id pourtant valides (Bay to
-Breakers). Probable limitation de debit — le fetcher retente une fois apres 3 s.
+**403 = limitation de debit, pas un mauvais ID.** Confirme au run #137 : apres
+8 lancements du workflow en 20 minutes (~80 requetes), les 6 epreuves qui
+avaient repondu au run precedent sont toutes passees en 403. Le fetcher espace
+desormais chaque appel de 2 s et reprend a 5 s, 15 s puis 40 s.
+**Ne pas enchainer les lancements** : laisser au moins 15-30 minutes entre deux
+backfills, sinon Athlinks bloque et les epreuves ressortent en
+`fetch_returned_nothing` sans que rien ne soit casse.
 
 **Ukrop's Monument Avenue 10K n'est PAS sur Athlinks** : ses resultats sont sur
 RunSignup (`runsignup.com/Race/Results/53948`). L'entree a ete rebasculee sur

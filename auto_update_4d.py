@@ -557,6 +557,10 @@ def fetch_rtrt_4d(event_code, year, dist_code=None):
 
 # Courses annexes a exclure d'un decompte de finishers : handisport, relais,
 # defis et versions virtuelles ne sont pas la course principale.
+# Pause systematique avant chaque appel Athlinks, pour ne pas declencher
+# la limitation de debit quand plusieurs epreuves se suivent dans un run.
+_ATHLINKS_DELAI = 2.0
+
 ATHLINKS_SECONDAIRE = ("wheelchair", "wheel", "handcycle", "hand cycle", "push",
                        "relay", "virtual", "junior", "kids", "centipede",
                        "bonus", "challenge", "walk only")
@@ -637,14 +641,21 @@ def fetch_athlinks_4d(master_id_or_info, year, dist_code=None):
             "Origin": "https://www.athlinks.com", "Referer": "https://www.athlinks.com/",
         })
         url = f"https://reignite-api.athlinks.com/master/{master_id}/metadata"
-        r = sess.get(url, timeout=15)
-        if r.status_code == 403:
-            # 403 intermittent observe sur des master_id pourtant valides
-            # (Bay to Breakers 18246 existe bien) : probable limitation de
-            # debit. Une seule nouvelle tentative, apres une pause.
-            import time as _t
-            _t.sleep(3)
-            r = sess.get(url, timeout=15)
+        # Athlinks limite le debit : apres quelques dizaines de requetes
+        # rapprochees, il renvoie 403 sur des master_id parfaitement valides
+        # (run #137 : les 6 epreuves qui avaient repondu au run precedent sont
+        # passees en 403). Espacement systematique + reprise exponentielle.
+        import time as _t
+        _t.sleep(_ATHLINKS_DELAI)
+        r = None
+        for essai, attente in enumerate((5, 15, 40)):
+            r = sess.get(url, timeout=20)
+            if r.status_code != 403:
+                break
+            if essai < 2:
+                print(f"    Athlinks master/{master_id}: 403, nouvelle tentative "
+                      f"dans {attente} s")
+                _t.sleep(attente)
         if not r.ok:
             print(f"    Athlinks master/{master_id}/metadata: HTTP {r.status_code}")
             return None
