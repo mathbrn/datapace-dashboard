@@ -1,6 +1,22 @@
 {
   "updates": [
     {
+      "event": "Atlanta Journal-Constitution Peachtree Road Race",
+      "date": "2026-09-16",
+      "data": {
+        "finishers": 45299
+      },
+      "timestamp": "2026-09-17T07:37:50Z"
+    },
+    {
+      "event": "Cooper River Bridge Run",
+      "date": "2026-06-21",
+      "data": {
+        "finishers": 33686
+      },
+      "timestamp": "2026-09-17T07:37:39Z"
+    },
+    {
       "event": "AJ Bell Great North 10K",
       "date": "2026-09-16",
       "data": {

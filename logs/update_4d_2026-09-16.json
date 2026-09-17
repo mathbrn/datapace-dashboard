@@ -3,11 +3,6 @@
   "wa_races": [],
   "matched": [
     {
-      "wa_name": "Cooper River Bridge Run",
-      "our_name": "Cooper River Bridge Run",
-      "score": 0
-    },
-    {
       "wa_name": "Ukrop's Monument Avenue 10K",
       "our_name": "Ukrop's Monument Avenue 10K",
       "score": 0
@@ -15,6 +10,21 @@
     {
       "wa_name": "BOLDERBoulder 10K",
       "our_name": "BOLDERBoulder 10K",
+      "score": 0
+    },
+    {
+      "wa_name": "AJ Bell Great Manchester Run",
+      "our_name": "AJ Bell Great Manchester Run",
+      "score": 0
+    },
+    {
+      "wa_name": "AJ Bell Great Manchester Run",
+      "our_name": "AJ Bell Great Manchester Run",
+      "score": 0
+    },
+    {
+      "wa_name": "AJ Bell Great Bristol Run",
+      "our_name": "AJ Bell Great Bristol Run",
       "score": 0
     },
     {
@@ -53,11 +63,6 @@
       "score": 0
     },
     {
-      "wa_name": "Bank of America Shamrock Shuffle",
-      "our_name": "Bank of America Shamrock Shuffle",
-      "score": 0
-    },
-    {
       "wa_name": "Dick's Pittsburgh Marathon",
       "our_name": "Dick's Pittsburgh Marathon",
       "score": 0
@@ -83,28 +88,8 @@
       "score": 0
     },
     {
-      "wa_name": "AJ Bell Great North 10K",
-      "our_name": "AJ Bell Great North 10K",
-      "score": 0
-    },
-    {
-      "wa_name": "Harmonie Mutuelle 10km de Tours",
-      "our_name": "Harmonie Mutuelle 10km de Tours",
-      "score": 0
-    },
-    {
-      "wa_name": "Harmonie Mutuelle Marathon de Tours",
-      "our_name": "Harmonie Mutuelle Marathon de Tours",
-      "score": 0
-    },
-    {
-      "wa_name": "Harmonie Mutuelle 20k de Tours",
-      "our_name": "Harmonie Mutuelle 20k de Tours",
-      "score": 0
-    },
-    {
-      "wa_name": "NN CPC Loop Den Haag",
-      "our_name": "NN CPC Loop Den Haag",
+      "wa_name": "AJ Bell Great Birmingham Run",
+      "our_name": "AJ Bell Great Birmingham Run",
       "score": 0
     },
     {
@@ -150,30 +135,16 @@
   ],
   "updates": [
     {
-      "event": "AJ Bell Great North Run",
+      "event": "Atlanta Journal-Constitution Peachtree Road Race",
       "year": 2026,
-      "platform": "rtrt",
-      "finishers": 48705,
-      "avg_time": null,
-      "winner_men": null,
-      "winner_women": null
-    },
-    {
-      "event": "AJ Bell Great North 10K",
-      "year": 2026,
-      "platform": "rtrt",
-      "finishers": 48705,
+      "platform": "athlinks",
+      "finishers": 45299,
       "avg_time": null,
       "winner_men": null,
       "winner_women": null
     }
   ],
   "skipped": [
-    {
-      "event": "Cooper River Bridge Run",
-      "reason": "fetch_returned_nothing",
-      "platform": "athlinks"
-    },
     {
       "event": "Ukrop's Monument Avenue 10K",
       "reason": "fetch_returned_nothing",
@@ -185,9 +156,19 @@
       "platform": "athlinks"
     },
     {
-      "event": "Atlanta Journal-Constitution Peachtree Road Race",
+      "event": "AJ Bell Great Manchester Run",
       "reason": "fetch_returned_nothing",
-      "platform": "athlinks"
+      "platform": "rtrt"
+    },
+    {
+      "event": "AJ Bell Great Manchester Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "rtrt"
+    },
+    {
+      "event": "AJ Bell Great Bristol Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "rtrt"
     },
     {
       "event": "TCS Sydney Marathon presented by ASICS",
@@ -198,6 +179,11 @@
       "event": "BMW Berlin Marathon",
       "reason": "fetch_returned_nothing",
       "platform": "mikatiming"
+    },
+    {
+      "event": "AJ Bell Great North Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "rtrt"
     },
     {
       "event": "Broad Street Run",
@@ -213,11 +199,6 @@
       "event": "Lilac Bloomsday Run",
       "reason": "fetch_returned_nothing",
       "platform": "athlinks"
-    },
-    {
-      "event": "Bank of America Shamrock Shuffle",
-      "reason": "fetch_returned_nothing",
-      "platform": "mikatiming"
     },
     {
       "event": "Dick's Pittsburgh Marathon",
@@ -245,24 +226,9 @@
       "platform": "tracx"
     },
     {
-      "event": "Harmonie Mutuelle 10km de Tours",
+      "event": "AJ Bell Great Birmingham Run",
       "reason": "fetch_returned_nothing",
-      "platform": "timeto"
-    },
-    {
-      "event": "Harmonie Mutuelle Marathon de Tours",
-      "reason": "fetch_returned_nothing",
-      "platform": "timeto"
-    },
-    {
-      "event": "Harmonie Mutuelle 20k de Tours",
-      "reason": "fetch_returned_nothing",
-      "platform": "timeto"
-    },
-    {
-      "event": "NN CPC Loop Den Haag",
-      "reason": "fetch_returned_nothing",
-      "platform": "sporthive"
+      "platform": "rtrt"
     },
     {
       "event": "Paris-Versailles - La grande classique",
@@ -314,12 +280,12 @@
   "mode": "fallback_no_calendar",
   "summary": {
     "wa_races": 0,
-    "matched": 29,
-    "updated": 2,
-    "skipped": 27,
+    "matched": 26,
+    "updated": 1,
+    "skipped": 25,
     "errors": 1,
     "skip_reasons": {
-      "fetch_returned_nothing": 27
+      "fetch_returned_nothing": 25
     },
     "mode": "fallback_no_calendar"
   }
