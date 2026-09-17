@@ -777,7 +777,16 @@ def fetch_mikatiming_4d(platform_info_or_year, year):
             base = f"https://{subdomain}.r.mikatiming.{tld}"
 
         sess = requests.Session()
-        sess.headers.update({"User-Agent": "Mozilla/5.0"})
+        # « Mozilla/5.0 » seul est une signature de bot : mikatiming repond 403
+        # (run #139, Berlin / Stockholm / Brighton). En-tetes de navigateur reel.
+        sess.headers.update({
+            "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                           "AppleWebKit/537.36 (KHTML, like Gecko) "
+                           "Chrome/131.0.0.0 Safari/537.36"),
+            "Accept": ("text/html,application/xhtml+xml,application/xml;q=0.9,"
+                       "image/avif,image/webp,*/*;q=0.8"),
+            "Accept-Language": "en-US,en;q=0.9,de;q=0.8,fr;q=0.7",
+        })
 
         # Skip wheelchair/para times (too fast for ambulating athletes)
         # Men: wheelchair ~1:20-1:30 → min 1:40:00 (6000s); Women: wheelchair ~1:38 → min 1:56:40 (7000s)
@@ -791,6 +800,8 @@ def fetch_mikatiming_4d(platform_info_or_year, year):
             url = f"{base}/{year}/?pid=list&event={winners_event_code}&num_results=10&search%5Bsex%5D={sex}"
             r = sess.get(url, timeout=15)
             if not r.ok:
+                print(f"    Mikatiming {winners_event_code} vainqueur {sex}: "
+                      f"HTTP {r.status_code}")
                 return None
             times = re.findall(r"type-time[^>]*>(?:<div[^>]*>[^<]*(?:Finish|Netto|Net)[^<]*</div>)?(\d{2}:\d{2}:\d{2})", r.text)
             if not times:
@@ -932,12 +943,79 @@ def fetch_baa_4d(event_id_or_year, year):
         return None
 
 
+
+_TRACX_CATALOGUE = None
+
+
+def _tracx_id_par_nom(sess, nom, year):
+    """Retrouve l'id Tracx d'un evenement a partir de son nom.
+
+    Le catalogue (~860 evenements) est pagine et mis en cache pour le run.
+    On exige que tous les mots significatifs du nom recherche soient presents
+    dans le nom Tracx, et on privilegie l'edition de l'annee ciblee.
+    """
+    global _TRACX_CATALOGUE
+    if _TRACX_CATALOGUE is None:
+        _TRACX_CATALOGUE = []
+        page = 1
+        while page <= 12:
+            r = sess.get("https://api.tracx.events/v1/events",
+                         params={"page": page, "per_page": 100}, timeout=20)
+            if not r.ok:
+                print(f"    Tracx catalogue page {page}: HTTP {r.status_code}")
+                break
+            lot = r.json()
+            if isinstance(lot, dict):
+                lot = lot.get("data") or lot.get("events") or []
+            if not lot:
+                break
+            _TRACX_CATALOGUE.extend(lot)
+            if len(lot) < 100:
+                break
+            page += 1
+        print(f"    Tracx catalogue: {len(_TRACX_CATALOGUE)} evenements")
+
+    STOP = {"the", "de", "la", "le", "du", "of", "by", "presented", "marathon",
+            "half", "run", "race", "series", "tcs", "aj", "bell"}
+    cibles = {w for w in normalize_name(nom).split() if w not in STOP and len(w) > 2}
+    if not cibles:
+        return None
+    candidats = []
+    for ev in _TRACX_CATALOGUE:
+        titre = normalize_name(str(ev.get("name") or ev.get("title") or ""))
+        if not titre or not cibles.issubset(set(titre.split())):
+            continue
+        millesime = str(ev.get("year") or ev.get("start_date") or ev.get("date") or "")
+        candidats.append((str(year) in millesime, ev.get("id")))
+    if not candidats:
+        return None
+    # priorite a l'edition de l'annee ciblee
+    candidats.sort(key=lambda x: not x[0])
+    if len(candidats) > 1 and not candidats[0][0]:
+        print(f"    Tracx: {len(candidats)} correspondances pour {nom!r} sans "
+              f"edition {year} identifiable — abandon")
+        return None
+    return candidats[0][1]
+
+
 def fetch_tracx_4d(event_id, year, dist_code=None):
     """Fetch 4D from Tracx Events API."""
     try:
         sess = requests.Session()
         sess.headers.update({"Accept": "application/json", "User-Agent": "Mozilla/5.0",
                              "Authorization": "Bearer 40496C26-9BEF-4266-8A27-43C78540F669"})
+        # Sans platform_id, discover_platform retombe sur le NOM de l'epreuve,
+        # qui partait tel quel dans l'URL -> 404 garanti (run #139 :
+        # « events/TCS Sydney Marathon presented by ASICS/races: HTTP 404 »).
+        # Meme defaut qu'athlinks, mais Tracx expose un catalogue : on resout
+        # l'identifiant par le nom plutot que d'exiger qu'il soit dans le map.
+        if not str(event_id).strip().isdigit():
+            resolu = _tracx_id_par_nom(sess, str(event_id), year)
+            if not resolu:
+                print(f"    Tracx: aucun evenement trouve pour {event_id!r}")
+                return None
+            print(f"    Tracx: {event_id!r} -> id={resolu}")
+            event_id = resolu
         resp = sess.get(f"https://api.tracx.events/v1/events/{event_id}/races", timeout=15)
         if not resp.ok:
             print(f"    Tracx events/{event_id}/races: HTTP {resp.status_code}")

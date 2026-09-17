@@ -282,6 +282,14 @@ ils sont desormais renvoyes meme sans temps moyen.
 - **Calcul temps moyen** : `temps = distance / vitesse`
 
 ### 2. Tracx Events
+**L'identifiant se resout tout seul.** Sans `platform_id`, `discover_platform`
+retombe sur le NOM de l'epreuve, qui partait tel quel dans l'URL — meme defaut
+qu'athlinks : `events/TCS Sydney Marathon presented by ASICS/races` -> 404
+(run #139). Mais Tracx expose un catalogue, donc `_tracx_id_par_nom()` resout
+l'id par le nom au lieu d'exiger qu'il figure dans le map : catalogue pagine mis
+en cache pour le run, tous les mots significatifs du nom doivent etre presents,
+et l'edition de l'annee ciblee est prioritaire. Abandon si plusieurs
+correspondances sans millesime identifiable.
 - **API** : `https://api.tracx.events/v1/`
 - **Auth** : `Authorization: Bearer 40496C26-9BEF-4266-8A27-43C78540F669`
 - **Events** : `GET /events?page=1&per_page=100` (860 events total)
