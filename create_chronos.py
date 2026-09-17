@@ -10,6 +10,10 @@ data = []
 # ============================================================
 
 marathon_data = [
+    # --- Ajouts 2026 : Hokkaido (record du parcours) et Cape Town ---
+    ("Hokkaido Marathon", "42K", 2026, "2:10:46", "2:24:14"),
+    ("Sanlam Cape Town Marathon", "42K", 2026, "2:04:55", "2:23:18"),
+
     # --- Ajouts 2026 : marathons francais (sources presse croisees) ---
     ("Abalone Marathon de Nantes", "42K", 2026, "2:15:19", "2:52:33"),
     ("Marathon de la Liberté - Normandy Running Festival", "42K", 2026, "2:27:13", "2:57:05"),
