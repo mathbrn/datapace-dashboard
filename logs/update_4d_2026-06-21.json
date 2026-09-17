@@ -3,11 +3,6 @@
   "wa_races": [],
   "matched": [
     {
-      "wa_name": "Cooper River Bridge Run",
-      "our_name": "Cooper River Bridge Run",
-      "score": 0
-    },
-    {
       "wa_name": "Ukrop's Monument Avenue 10K",
       "our_name": "Ukrop's Monument Avenue 10K",
       "score": 0
@@ -98,17 +93,7 @@
       "score": 0
     }
   ],
-  "updates": [
-    {
-      "event": "Cooper River Bridge Run",
-      "year": 2026,
-      "platform": "athlinks",
-      "finishers": 33686,
-      "avg_time": null,
-      "winner_men": null,
-      "winner_women": null
-    }
-  ],
+  "updates": [],
   "skipped": [
     {
       "event": "Ukrop's Monument Avenue 10K",
@@ -210,8 +195,8 @@
   "mode": "fallback_no_calendar",
   "summary": {
     "wa_races": 0,
-    "matched": 19,
-    "updated": 1,
+    "matched": 18,
+    "updated": 0,
     "skipped": 18,
     "errors": 1,
     "skip_reasons": {
