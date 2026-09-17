@@ -1,0 +1,326 @@
+{
+  "date": "2026-09-16",
+  "wa_races": [],
+  "matched": [
+    {
+      "wa_name": "Cooper River Bridge Run",
+      "our_name": "Cooper River Bridge Run",
+      "score": 0
+    },
+    {
+      "wa_name": "Ukrop's Monument Avenue 10K",
+      "our_name": "Ukrop's Monument Avenue 10K",
+      "score": 0
+    },
+    {
+      "wa_name": "BOLDERBoulder 10K",
+      "our_name": "BOLDERBoulder 10K",
+      "score": 0
+    },
+    {
+      "wa_name": "Atlanta Journal-Constitution Peachtree Road Race",
+      "our_name": "Atlanta Journal-Constitution Peachtree Road Race",
+      "score": 0
+    },
+    {
+      "wa_name": "TCS Sydney Marathon presented by ASICS",
+      "our_name": "TCS Sydney Marathon presented by ASICS",
+      "score": 0
+    },
+    {
+      "wa_name": "BMW Berlin Marathon",
+      "our_name": "BMW Berlin Marathon",
+      "score": 0
+    },
+    {
+      "wa_name": "AJ Bell Great North Run",
+      "our_name": "AJ Bell Great North Run",
+      "score": 0
+    },
+    {
+      "wa_name": "Broad Street Run",
+      "our_name": "Broad Street Run",
+      "score": 0
+    },
+    {
+      "wa_name": "Flying Pig Marathon",
+      "our_name": "Flying Pig Marathon",
+      "score": 0
+    },
+    {
+      "wa_name": "Lilac Bloomsday Run",
+      "our_name": "Lilac Bloomsday Run",
+      "score": 0
+    },
+    {
+      "wa_name": "Bank of America Shamrock Shuffle",
+      "our_name": "Bank of America Shamrock Shuffle",
+      "score": 0
+    },
+    {
+      "wa_name": "Dick's Pittsburgh Marathon",
+      "our_name": "Dick's Pittsburgh Marathon",
+      "score": 0
+    },
+    {
+      "wa_name": "Bay to Breakers",
+      "our_name": "Bay to Breakers",
+      "score": 0
+    },
+    {
+      "wa_name": "Gasparilla Distance Classic",
+      "our_name": "Gasparilla Distance Classic",
+      "score": 0
+    },
+    {
+      "wa_name": "Stockholm Marathon",
+      "our_name": "Stockholm Marathon",
+      "score": 0
+    },
+    {
+      "wa_name": "Dam tot Damloop",
+      "our_name": "Dam tot Damloop",
+      "score": 0
+    },
+    {
+      "wa_name": "AJ Bell Great North 10K",
+      "our_name": "AJ Bell Great North 10K",
+      "score": 0
+    },
+    {
+      "wa_name": "Harmonie Mutuelle 10km de Tours",
+      "our_name": "Harmonie Mutuelle 10km de Tours",
+      "score": 0
+    },
+    {
+      "wa_name": "Harmonie Mutuelle Marathon de Tours",
+      "our_name": "Harmonie Mutuelle Marathon de Tours",
+      "score": 0
+    },
+    {
+      "wa_name": "Harmonie Mutuelle 20k de Tours",
+      "our_name": "Harmonie Mutuelle 20k de Tours",
+      "score": 0
+    },
+    {
+      "wa_name": "NN CPC Loop Den Haag",
+      "our_name": "NN CPC Loop Den Haag",
+      "score": 0
+    },
+    {
+      "wa_name": "Paris-Versailles - La grande classique",
+      "our_name": "Paris-Versailles - La grande classique",
+      "score": 0
+    },
+    {
+      "wa_name": "Brighton Marathon Week end",
+      "our_name": "Brighton Marathon Week end",
+      "score": 0
+    },
+    {
+      "wa_name": "La Parisienne",
+      "our_name": "La Parisienne",
+      "score": 0
+    },
+    {
+      "wa_name": "La Parisienne",
+      "our_name": "La Parisienne",
+      "score": 0
+    },
+    {
+      "wa_name": "La Grande Course RATP du Grand Paris",
+      "our_name": "La Grande Course RATP du Grand Paris",
+      "score": 0
+    },
+    {
+      "wa_name": "La Grande Course RATP du Grand Paris",
+      "our_name": "La Grande Course RATP du Grand Paris",
+      "score": 0
+    },
+    {
+      "wa_name": "La Grande Course RATP du Grand Paris",
+      "our_name": "La Grande Course RATP du Grand Paris",
+      "score": 0
+    },
+    {
+      "wa_name": "La Grande Course RATP du Grand Paris",
+      "our_name": "La Grande Course RATP du Grand Paris",
+      "score": 0
+    }
+  ],
+  "updates": [
+    {
+      "event": "AJ Bell Great North Run",
+      "year": 2026,
+      "platform": "rtrt",
+      "finishers": 48705,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null
+    },
+    {
+      "event": "AJ Bell Great North 10K",
+      "year": 2026,
+      "platform": "rtrt",
+      "finishers": 48705,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null
+    }
+  ],
+  "skipped": [
+    {
+      "event": "Cooper River Bridge Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
+    },
+    {
+      "event": "Ukrop's Monument Avenue 10K",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
+    },
+    {
+      "event": "BOLDERBoulder 10K",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
+    },
+    {
+      "event": "Atlanta Journal-Constitution Peachtree Road Race",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
+    },
+    {
+      "event": "TCS Sydney Marathon presented by ASICS",
+      "reason": "fetch_returned_nothing",
+      "platform": "tracx"
+    },
+    {
+      "event": "BMW Berlin Marathon",
+      "reason": "fetch_returned_nothing",
+      "platform": "mikatiming"
+    },
+    {
+      "event": "Broad Street Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
+    },
+    {
+      "event": "Flying Pig Marathon",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
+    },
+    {
+      "event": "Lilac Bloomsday Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
+    },
+    {
+      "event": "Bank of America Shamrock Shuffle",
+      "reason": "fetch_returned_nothing",
+      "platform": "mikatiming"
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
+    },
+    {
+      "event": "Bay to Breakers",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
+    },
+    {
+      "event": "Stockholm Marathon",
+      "reason": "fetch_returned_nothing",
+      "platform": "mikatiming"
+    },
+    {
+      "event": "Dam tot Damloop",
+      "reason": "fetch_returned_nothing",
+      "platform": "tracx"
+    },
+    {
+      "event": "Harmonie Mutuelle 10km de Tours",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "Harmonie Mutuelle Marathon de Tours",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "Harmonie Mutuelle 20k de Tours",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "NN CPC Loop Den Haag",
+      "reason": "fetch_returned_nothing",
+      "platform": "sporthive"
+    },
+    {
+      "event": "Paris-Versailles - La grande classique",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "Brighton Marathon Week end",
+      "reason": "fetch_returned_nothing",
+      "platform": "mikatiming"
+    },
+    {
+      "event": "La Parisienne",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "La Parisienne",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "La Grande Course RATP du Grand Paris",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "La Grande Course RATP du Grand Paris",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "La Grande Course RATP du Grand Paris",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "La Grande Course RATP du Grand Paris",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    }
+  ],
+  "errors": [
+    {
+      "stage": "worldathletics",
+      "error": "HTTPSConnectionPool(host='graphql-prod-4860.edge.aws.worldathletics.org', port=443): Max retries exceeded with url: /graphql (Caused by NameResolutionError(\"HTTPSConnection(host='graphql-prod-4860.edge.aws.worldathletics.org', port=443): Failed to resolve 'graphql-prod-4860.edge.aws.worldathletics.org' ([Errno -2] Name or service not known)\"))"
+    }
+  ],
+  "mode": "fallback_no_calendar",
+  "summary": {
+    "wa_races": 0,
+    "matched": 29,
+    "updated": 2,
+    "skipped": 27,
+    "errors": 1,
+    "skip_reasons": {
+      "fetch_returned_nothing": 27
+    },
+    "mode": "fallback_no_calendar"
+  }
+}
