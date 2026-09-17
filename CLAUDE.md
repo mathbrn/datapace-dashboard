@@ -457,7 +457,44 @@ a confusion avec 10KM/SEMI. Le critere est la distance reelle en km.
 - **Script** : `auto_update_4d.py`
 - **Declencheur** : GitHub Actions cron 06h00 UTC quotidien (`.github/workflows/auto_update_4d.yml`)
 - **Logs** : `logs/update_4d_{date}.json` (artifact GitHub Actions, retention 30j)
-- **Couverture** : 88 evenements mappes sur 202 (via `event_platform_map.json`)
+- **Couverture reelle** : `event_platform_map.json` compte 88 entrees, mais
+  **47 seulement sont exploitables** : 24 ont `platform: null` (aucune plateforme
+  identifiee) et 17 pointent vers une plateforme sans fetcher implemente
+  (sportmaniacs, endu, sts-timing, ultimate, runczech, myrunresults, pse,
+  splittime, smartchip, runsignup, mararun). Ne pas confondre « mappe » et
+  « collectable ».
+
+### RENDEMENT MESURE (logs du 2026-04-12 au 2026-06-20, 50 runs)
+| Indicateur | Valeur |
+|---|---|
+| Courses World Athletics balayees | 8 574 |
+| Matches avec nos evenements | 333 |
+| **Mises a jour reellement ecrites** | **8** (2,4 %) |
+| Jours avec au moins 1 update | 7 / 50 |
+| Evenements distincts mis a jour | 5 |
+| Erreurs remontees dans les logs | **0** |
+
+Autrement dit l'auto-update **ne fonctionnait deja quasiment pas avant sa mise
+en veille**. Evenements matches en boucle sans jamais aboutir : Irish Life
+Dublin Marathon (27x), Standard Chartered Hong Kong Half (13x, tracx),
+EDP Lisboa Meia Maratona (10x, sporthive), Generali Berlin Half (7x,
+mikatiming), Adidas Manchester Marathon (6x, tracx), TCS New York City
+Marathon (3x, nyrr), BOLDERBoulder (3x, athlinks).
+
+**Pourquoi c'est passe inapercu** : les echecs n'etaient ecrits que sur stdout
+(`No platform found`, `No data from {platform}`), jamais dans le JSON de log —
+d'ou `errors: []` sur les 50 runs. Le message de commit disait « 0 update (log
+only) », indiscernable d'un jour sans course. **Corrige** : chaque echec est
+desormais trace dans `log["skipped"]` avec un motif (`no_platform_mapped`,
+`no_fetcher_implemented`, `fetch_returned_nothing`), les exceptions des fetchers
+vont dans `log["errors"]`, un bloc `log["summary"]` recapitule le run, et le
+message de commit distingue « aucune course ce jour-la » de « N matchee(s),
+M echec(s) ». **A surveiller** : un commit mentionnant des matches sans update
+signale un fetcher casse.
+
+**Bruit de matching a corriger** : certaines courses matchent des dizaines de
+fois sur 50 jours (Grand Prix Von Bern 35x, Mezza Maratona d'Italia 18x,
+Palmanova 16x) — le score flou attrape des faux positifs geographiques.
 - **Plateformes supportees** : TimeTo, Sporthive, Tracx, ChronoRace, Mikatiming, Sportmaniacs, Endu, RTRT, Athlinks, RunSignup, Ultimate, STS-Timing, RunCzech, MyRunResults, PSE, Splittime, Smartchip, Mararun
 - **Sans couverture API** : Tokyo, Valencia, Mexico, Taipei, Singapore (plateformes custom fermees) → **Update 4D manuel requis**
 - **WMM avec API identifiee mais non-implementee** : Chicago (mikatiming `results.chicagomarathon.com`), NYC (API POST `rmsprodapi.nyrr.org/api/v2`), Boston (HTML `results.baa.org/{yyyy}/`) → necessite scraper/fetcher dedie dans `auto_update_4d.py`

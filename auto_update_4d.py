@@ -52,6 +52,11 @@ query getCalendarEvents($startDate: String, $endDate: String, $regionType: Strin
 """
 
 
+class WorldAthleticsUnavailable(RuntimeError):
+    """Le catalogue World Athletics est injoignable : on ne peut rien matcher
+    ce jour-la. A distinguer d'un jour sans course."""
+
+
 def fetch_worldathletics_races(date_str, window_days=1):
     """Fetch road races with ±window_days around the given date."""
     sess = requests.Session()
@@ -62,13 +67,21 @@ def fetch_worldathletics_races(date_str, window_days=1):
     races = []
     offset = 0
     while True:
-        resp = sess.post(WA_ENDPOINT, json={
-            "query": WA_QUERY,
-            "variables": {"startDate": start, "endDate": end,
-                          "regionType": "world", "limit": 100, "offset": offset}
-        }, timeout=30)
+        # Une exception non rattrapee ici faisait planter tout le run : ni log
+        # ecrit, ni commit, donc aucune trace du jour manque.
+        try:
+            resp = sess.post(WA_ENDPOINT, json={
+                "query": WA_QUERY,
+                "variables": {"startDate": start, "endDate": end,
+                              "regionType": "world", "limit": 100, "offset": offset}
+            }, timeout=30)
+        except Exception as e:
+            print(f"  WA injoignable: {type(e).__name__}: {e}")
+            raise WorldAthleticsUnavailable(str(e)) from e
         if not resp.ok:
             print(f"  WA error: HTTP {resp.status_code}")
+            if offset == 0:
+                raise WorldAthleticsUnavailable(f"HTTP {resp.status_code}")
             break
         data = resp.json()
         hits = ((data.get("data") or {}).get("getCalendarEvents") or {}).get("results", [])
@@ -847,10 +860,22 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
     date_str = target_date.isoformat()
     print(f"=== Auto Update 4D for {date_str} ===")
 
-    log = {"date": date_str, "wa_races": [], "matched": [], "updates": [], "errors": []}
+    log = {"date": date_str, "wa_races": [], "matched": [], "updates": [],
+           "skipped": [], "errors": []}
 
     # 1. Fetch calendar
-    wa_races = fetch_worldathletics_races(date_str)
+    try:
+        wa_races = fetch_worldathletics_races(date_str)
+    except WorldAthleticsUnavailable as e:
+        log["errors"].append({"stage": "worldathletics", "error": str(e)})
+        log["summary"] = {"wa_races": 0, "matched": 0, "updated": 0,
+                          "skipped": 0, "errors": 1, "skip_reasons": {},
+                          "aborted": "worldathletics_unavailable"}
+        print(f"  ABANDON {date_str}: catalogue World Athletics injoignable.")
+        log_path = LOGS_DIR / f"update_4d_{date_str}.json"
+        with open(log_path, "w", encoding="utf-8") as f:
+            json.dump(log, f, indent=2, ensure_ascii=False)
+        return log
     log["wa_races"] = [{"name": r.get("name"), "venue": r.get("venue"),
                         "area": r.get("area"), "dateRange": r.get("dateRange"),
                         "hasResults": r.get("hasResults")} for r in wa_races]
@@ -876,16 +901,32 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
     for match in matches:
         our_name = match["our"]["name"]
         print(f"\n  → {our_name}")
+
+        def skip(reason, platform=None):
+            """Trace un echec dans le log (sinon il reste invisible : cf. les
+            50 logs 2026-04/06 qui affichaient tous errors:[] alors que 98%
+            des matches n'aboutissaient a rien)."""
+            log["skipped"].append({"event": our_name, "reason": reason,
+                                   "platform": platform})
+            print(f"    SKIP ({reason})")
+
         platform, platform_id = discover_platform(our_name, year, date_str)
         if not platform:
-            print(f"    No platform found")
+            skip("no_platform_mapped")
             continue
         fetcher = PLATFORM_MAP.get(platform)
         if not fetcher:
+            skip("no_fetcher_implemented", platform)
             continue
-        result = fetcher(platform_id or our_name, year)
+        try:
+            result = fetcher(platform_id or our_name, year)
+        except Exception as e:
+            log["errors"].append({"event": our_name, "platform": platform,
+                                  "error": f"{type(e).__name__}: {e}"})
+            print(f"    ERREUR {platform}: {type(e).__name__}: {e}")
+            continue
         if not result:
-            print(f"    No data from {platform}")
+            skip("fetch_returned_nothing", platform)
             continue
 
         # Determine distance
@@ -933,6 +974,27 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
         subprocess.run(["python", "create_chronos.py"], cwd=str(SCRIPT_DIR))
         subprocess.run(["python", "generate_dashboard.py"], cwd=str(SCRIPT_DIR))
 
+    # 5b. Recapitulatif : sans ca un run ou 100% des fetchs echouent ressemble
+    #     exactement a un run ou il n'y avait rien a collecter.
+    from collections import Counter as _C
+    reasons = _C(s["reason"] for s in log["skipped"])
+    log["summary"] = {
+        "wa_races": len(log["wa_races"]),
+        "matched": len(matches),
+        "updated": len(log["updates"]),
+        "skipped": len(log["skipped"]),
+        "errors": len(log["errors"]),
+        "skip_reasons": dict(reasons),
+    }
+    print(f"\n  --- Recap {date_str} ---")
+    print(f"  WA races={len(log['wa_races'])}  matched={len(matches)}  "
+          f"updated={len(log['updates'])}  skipped={len(log['skipped'])}  "
+          f"errors={len(log['errors'])}")
+    for r, n in reasons.most_common():
+        print(f"    {n:3d}x {r}")
+    if matches and not log["updates"]:
+        print(f"  ATTENTION: {len(matches)} course(s) matchee(s), AUCUNE donnee recuperee.")
+
     # 6. Always save log + commit (even 0 updates) so every cron run is auditable
     log_path = LOGS_DIR / f"update_4d_{date_str}.json"
     with open(log_path, "w", encoding="utf-8") as f:
@@ -942,8 +1004,15 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
     if not dry_run and commit:
         subprocess.run(["git", "add", "-A"], cwd=str(SCRIPT_DIR))
         n = len(log["updates"])
-        msg = (f"Auto Update 4D {date_str} — {n} update(s)"
-               if n > 0 else f"Auto Update 4D {date_str} — 0 update (log only)")
+        s = log["summary"]
+        if n > 0:
+            msg = f"Auto Update 4D {date_str} — {n} update(s)"
+        elif s["matched"] > 0:
+            # cas le plus trompeur : des courses matchees mais rien de collecte
+            msg = (f"Auto Update 4D {date_str} — 0 update / "
+                   f"{s['matched']} matchee(s), {s['skipped']} echec(s)")
+        else:
+            msg = f"Auto Update 4D {date_str} — aucune course ce jour-la"
         r = subprocess.run(["git", "commit", "-m", msg], cwd=str(SCRIPT_DIR),
                             capture_output=True, text=True)
         if r.returncode == 0:
