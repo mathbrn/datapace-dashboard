@@ -17,6 +17,7 @@ Scheduled via .github/workflows/auto_update_4d.yml (daily 06:00 UTC).
 """
 import argparse
 import datetime
+import inspect
 import json
 import re
 import subprocess
@@ -450,29 +451,67 @@ def fetch_chronorace_4d(db_name, year):
     return None
 
 
-def fetch_rtrt_4d(event_code, year):
+def fetch_rtrt_4d(event_code, year, dist_code=None):
     """Fetch 4D from RTRT.me API (Great Run events).
 
     event_code: GR-NORTH, GR-MANCHESTER, GR-SCOTTISH, GR-BRISTOL, GR-BIRMINGHAM, GR-SOUTH
+
+    ATTENTION — `GET /events/{code}` renvoie `finishers` = total de l'EPREUVE
+    (10K + semi cumules). L'ecrire dans la cellule d'une distance donnee est
+    faux : c'est ce qui a produit « Great Manchester Run 10KM = 31340 » et
+    « Great North 10K = 48705 » au run #130. On passe donc par
+    `/events/{code}/stats`, qui ventile par course, et on ne renvoie une valeur
+    que si une seule course correspond sans ambiguite a la distance demandee.
+    A defaut : None. Jamais le total.
     """
+    if not dist_code:
+        return None
     try:
         sess = requests.Session()
         params = {"appid": "623f2dd5e7847810bb1f0a07", "token": "9FA560A93CFC014488AB"}
-        # Code pattern: {CODE}-{YYYY}
         code = event_code if event_code else "GR-NORTH"
         if "-" + str(year) not in code:
             code = f"{code}-{year}"
-        r = sess.get(f"https://api.rtrt.me/events/{code}", params=params, timeout=15)
+        r = sess.get(f"https://api.rtrt.me/events/{code}/stats",
+                     params=params, timeout=15)
         if not r.ok:
             return None
-        data = r.json()
-        finishers = data.get("finishers")
-        if not finishers or int(finishers) < 100:
+        tags = (((r.json() or {}).get("stats") or {}).get("tags") or {})
+        if not isinstance(tags, dict):
             return None
-        return {"finishers": int(finishers),
+
+        # Mots-cles distinguant la course dans le nom du tag
+        wanted = {"MARATHON": ("marathon",), "SEMI": ("half", "semi"),
+                  "10KM": ("10k", "10 k")}.get(dist_code, ())
+        exclude = ("half", "semi", "10k", "relay", "junior", "mini", "virtual") \
+            if dist_code == "MARATHON" else ("virtual", "relay", "junior", "mini")
+
+        candidates = []
+        for tag, payload in tags.items():
+            low = str(tag).lower()
+            if any(x in low for x in exclude if x not in wanted):
+                continue
+            if not any(w in low for w in wanted):
+                continue
+            total = 0
+            for key, val in (payload or {}).items():
+                if str(key).upper().startswith("FINISH") and isinstance(val, dict):
+                    total += int(val.get("valid_count") or 0)
+            if total >= 100:
+                candidates.append((tag, total))
+
+        # Ambigu (0 ou plusieurs courses correspondantes) -> on n'ecrit rien
+        if len(candidates) != 1:
+            if candidates:
+                print(f"  RTRT {code}: {len(candidates)} courses possibles pour "
+                      f"{dist_code} ({[c[0] for c in candidates]}) — abandon")
+            return None
+
+        tag, finishers = candidates[0]
+        return {"finishers": finishers,
                 "avg_time": None, "avg_speed_kmh": None,
                 "winner_men": None, "winner_women": None,
-                "source": "rtrt", "confidence": "high"}
+                "source": f"rtrt:{tag}", "confidence": "high"}
     except Exception as e:
         print(f"  RTRT error: {e}")
         return None
@@ -776,6 +815,25 @@ PLATFORM_MAP = {
 }
 
 
+def _names_match(a, b):
+    """Deux noms d'evenement normalises designent-ils la meme course ?
+
+    Egalite stricte, volontairement. L'ancienne regle comparait les 15 premiers
+    caracteres : le prefixe de « aj bell great bristol run » et celui de
+    « aj bell great birmingham run » valent tous deux « aj bell great b », si
+    bien que les quatre courses de la famille « AJ Bell Great ... » se
+    confondaient. Degat constate au run #130 du 2026-09-17 : le total de
+    Birmingham ecrit dans les cellules de Bristol.
+
+    Un suffixe suffit a distinguer deux vraies courses (« Great North Run » vs
+    « Great North 10K »), donc aucune tolerance de prefixe n'est sure ici. Les
+    noms de `event_platform_map.json` doivent reproduire a l'identique ceux de
+    la colonne Race de l'Excel — 86 des 88 entrees le faisaient deja, les 2
+    autres ont ete alignees.
+    """
+    return bool(a) and a == b
+
+
 _PMAP_CACHE = None
 
 
@@ -801,7 +859,7 @@ def discover_platform(event_name, year, date_str=None):
         key = normalize_name(event_name)
         for ev_key, info in pmap.items():
             ref_name = normalize_name(info.get("name", ev_key))
-            if ref_name and (ref_name[:15] in key or key[:15] in ref_name):
+            if ref_name and _names_match(key, ref_name):
                 platform = info.get("platform")
                 # Mikatiming: pass the whole info dict (subdomain, event_code, event_code_pattern)
                 if platform == "mikatiming":
@@ -973,6 +1031,7 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
 
     # 4. For each match, try to fetch 4D data
     year = target_date.year
+    seen_counts = {}  # finishers -> (course, distance) deja servis dans ce run
     for match in matches:
         our_name = match["our"]["name"]
         print(f"\n  → {our_name}")
@@ -993,8 +1052,17 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
         if not fetcher:
             skip("no_fetcher_implemented", platform)
             continue
+        # Determine distance (avant le fetch : certains fetchers en ont besoin
+        # pour viser la bonne course et non le total de l'epreuve)
+        dist_code = "MARATHON" if match["our"]["distance"] == "MARATHON" else \
+                    "SEMI" if match["our"]["distance"] == "SEMI" else "10KM"
+        dist_m = 42195 if dist_code == "MARATHON" else 21097 if dist_code == "SEMI" else 10000
+
         try:
-            result = fetcher(platform_id or our_name, year)
+            if "dist_code" in inspect.signature(fetcher).parameters:
+                result = fetcher(platform_id or our_name, year, dist_code=dist_code)
+            else:
+                result = fetcher(platform_id or our_name, year)
         except Exception as e:
             log["errors"].append({"event": our_name, "platform": platform,
                                   "error": f"{type(e).__name__}: {e}"})
@@ -1004,14 +1072,28 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
             skip("fetch_returned_nothing", platform)
             continue
 
-        # Determine distance
-        dist_code = "MARATHON" if match["our"]["distance"] == "MARATHON" else \
-                    "SEMI" if match["our"]["distance"] == "SEMI" else "10KM"
-        dist_m = 42195 if dist_code == "MARATHON" else 21097 if dist_code == "SEMI" else 10000
+        # Garde-fou : un meme nombre de finishers ne peut pas valoir pour deux
+        # couples (course, distance) differents dans un meme run. Quand ca
+        # arrive, c'est que le fetcher a renvoye le total de l'epreuve (10K +
+        # semi cumules) au lieu du compte de la course. C'est exactement ce qui
+        # s'est produit au run #130 : 19256 ecrit sur Bristol semi, Bristol 10K
+        # et Birmingham 10K. On refuse d'ecrire plutot que de salir la base.
+        n = result.get("finishers")
+        if n and n in seen_counts and seen_counts[n] != (our_name, dist_code):
+            log["skipped"].append({
+                "event": our_name, "platform": platform,
+                "reason": "duplicate_count_across_events",
+                "detail": f"{n} deja attribue a {seen_counts[n][0]} "
+                          f"({seen_counts[n][1]}) — total d'epreuve probable",
+            })
+            print(f"    REFUS : {n} deja attribue a {seen_counts[n][0]} "
+                  f"({seen_counts[n][1]}) — total d'epreuve probable")
+            continue
 
         # Update (track what actually changed for the log)
         logged_data = {}
         if result.get("finishers"):
+            seen_counts[result["finishers"]] = (our_name, dist_code)
             update_finishers(our_name, dist_code, year, result["finishers"], dry_run)
             logged_data["finishers"] = result["finishers"]
         if result.get("avg_time"):
