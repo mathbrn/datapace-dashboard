@@ -1022,7 +1022,11 @@ def discover_platform(event_name, year, date_str=None):
                     if not pid_info["event_code"] and "event_code_pattern" in info:
                         pid_info["event_code"] = info["event_code_pattern"].format(yyyy=year)
                     return platform, pid_info
-                pid = info.get("platform_id")
+                # `master_id` accepte en synonyme de `platform_id` : les entrees
+                # athlinks documentent naturellement l'identifiant sous ce nom,
+                # et n'en lire qu'un seul faisait silencieusement retomber sur
+                # le nom de l'epreuve (run #134).
+                pid = info.get("platform_id") or info.get("master_id")
                 # Sporthive: year-specific IDs
                 if not pid and "sporthive_ids_by_year" in info:
                     pid = info["sporthive_ids_by_year"].get(str(year))

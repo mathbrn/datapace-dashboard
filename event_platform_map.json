@@ -404,7 +404,7 @@
     "country": "USA",
     "distance": "10KM",
     "name": "BOLDERBoulder 10K",
-    "master_id": 6172
+    "platform_id": 6172
   },
   "bay to breakers": {
     "platform": "athlinks",
@@ -418,7 +418,7 @@
     "country": "USA",
     "distance": "AUTRE",
     "name": "Broad Street Run",
-    "master_id": 168976
+    "platform_id": 168976
   },
   "cooper river bridge run": {
     "platform": "athlinks",
@@ -459,21 +459,21 @@
     "country": "USA",
     "distance": "MARATHON",
     "name": "Marine Corps Marathon",
-    "master_id": 3281
+    "platform_id": 3281
   },
   "dick's pittsburgh marathon": {
     "platform": "athlinks",
     "country": "USA",
     "distance": "MARATHON",
     "name": "Dick's Pittsburgh Marathon",
-    "master_id": 6620
+    "platform_id": 6620
   },
   "flying pig marathon": {
     "platform": "athlinks",
     "country": "USA",
     "distance": "MARATHON",
     "name": "Flying Pig Marathon",
-    "master_id": 137505
+    "platform_id": 137505
   },
   "osaka marathon": {
     "platform": null,
@@ -504,14 +504,14 @@
     "country": "USA",
     "distance": "AUTRE",
     "name": "Gasparilla Distance Classic",
-    "master_id": 20493
+    "platform_id": 20493
   },
   "lilac bloomsday run": {
     "platform": "athlinks",
     "country": "USA",
     "distance": "AUTRE",
     "name": "Lilac Bloomsday Run",
-    "master_id": 8432
+    "platform_id": 8432
   },
   "vancouver sun run": {
     "platform": null,

@@ -272,8 +272,14 @@ le **nom** de l'epreuve, qui part tel quel dans l'URL :
 cause des 8 echecs athlinks du run #132 (9 entrees sur 12 n'avaient pas d'ID).
 Le fetcher refuse desormais tout master_id non numerique.
 
-**Trouver un master_id** : chercher `athlinks.com/event "<nom>"` — l'ID est le
-nombre dans `athlinks.com/event/{masterId}`. IDs etablis :
+**Cle a utiliser** : `platform_id` dans `event_platform_map.json`. C'est la
+seule que `discover_platform` lisait ; ecrire l'ID sous `master_id`
+n'avait aucun effet et faisait retomber sur le nom de l'epreuve (run #134,
+les 7 IDs ajoutes etaient ignores). `master_id` est desormais accepte en
+synonyme, mais preferer `platform_id` pour rester homogene.
+
+**Trouver un ID** : chercher `athlinks.com/event "<nom>"` — l'ID est le
+nombre dans `athlinks.com/event/{id}`. IDs etablis :
 
 | Epreuve | master_id |
 |---|---|
