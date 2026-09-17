@@ -146,6 +146,17 @@ api_patterns = [
 - `avg_times_sporthive.json` : Temps moyens calcules depuis APIs (Sporthive + Tracx)
 - `datapace_dashboard.html` : Dashboard genere (ouvrir dans navigateur)
 
+## Style de reponse
+
+Reponses courtes, a l'essentiel. Trois choses seulement :
+1. **ce qui est commite** (valeurs ecrites, correctifs)
+2. **ce qui est rejete** et pourquoi (source non fiable, chiffre rond, doublon)
+3. **ce qui demande un arbitrage** de l'utilisateur
+
+Pas de recapitulatif de contexte, pas de reformulation de ce qui vient d'etre
+dit, pas de tableau quand une ligne suffit. Economiser les tokens : la session
+a une limite de 5 h.
+
 ## PRIORITE ABSOLUE : les finishers
 
 Le nombre de finishers est **la donnee principale du dashboard**. Les trois
