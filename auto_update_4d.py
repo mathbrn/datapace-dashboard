@@ -488,10 +488,17 @@ def fetch_rtrt_4d(event_code, year, dist_code=None):
         r = sess.get(f"https://api.rtrt.me/events/{code}/stats",
                      params=params, timeout=15)
         if not r.ok:
+            print(f"    RTRT {code}/stats: HTTP {r.status_code}")
             return None
         tags = (((r.json() or {}).get("stats") or {}).get("tags") or {})
         if not isinstance(tags, dict):
+            print(f"    RTRT {code}: pas de stats.tags exploitable "
+                  f"(cles racine: {list((r.json() or {}).keys())[:8]})")
             return None
+        # Diagnostic : les noms de tags reels conditionnent le ciblage par
+        # distance. Sans cette trace, un echec est indiscernable d'une course
+        # absente. A retirer une fois la correspondance etablie.
+        print(f"    RTRT {code}: tags disponibles = {list(tags.keys())[:15]}")
 
         # Mots-cles distinguant la course dans le nom du tag
         wanted = {"MARATHON": ("marathon",), "SEMI": ("half", "semi"),
@@ -595,7 +602,12 @@ def fetch_athlinks_4d(master_id_or_info, year, dist_code=None):
                 finishers = r.get("finisherCount") or r.get("participantCount")
 
         if not finishers:
+            # Diagnostic : distinguer « mauvais master_id / edition absente »
+            # de « course de cette distance introuvable dans l'evenement ».
             print(f"    Athlinks: aucune course {dist_code} identifiable — abandon")
+            print(f"      annee ciblee={year}, evenement retenu="
+                  f"{str(target_event.get('name') or target_event.get('title'))[:60]!r}")
+            print(f"      courses vues={[l['title'][:30] for l in lignes][:10]}")
             return None
         return {"finishers": finishers,
                 "avg_time": None, "avg_speed_kmh": None,
