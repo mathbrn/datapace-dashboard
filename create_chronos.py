@@ -10,6 +10,10 @@ data = []
 # ============================================================
 
 marathon_data = [
+    # --- Ajouts 2026 : marathons francais (sources presse croisees) ---
+    ("Abalone Marathon de Nantes", "42K", 2026, "2:15:19", "2:52:33"),
+    ("Marathon de la Liberté - Normandy Running Festival", "42K", 2026, "2:27:13", "2:57:05"),
+
     # --- Ajouts 2026 : marathons (sources presse croisees) ---
     ("Grandma's Marathon", "42K", 2026, "2:11:21", "2:28:51"),
     ("Copenhagen Marathon", "42K", 2026, "2:08:26", "2:22:08"),
