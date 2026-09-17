@@ -423,6 +423,17 @@ extraits correctement : mikatiming reste une bonne source pour 2 des 4D
 - **WebFetch** fonctionne
 - **Couverture** : 500+ series de marathons mondiaux
 
+### 8b. MultiSport Australia / SportSplits (City2Surf, Sydney Marathon...)
+- **URL** : `https://www.multisportaustralia.com.au/races/{slug}-{year}/events/{n}/results/individuals/{bib}`
+- **Astuce de comptage** : la page d'un athlete affiche son rang sous la forme
+  « 1 DE 36259 » — le second nombre est le **total d'arrivants** de la course.
+  C'est le moyen le plus simple d'obtenir un compte exact sans paginer le
+  classement entier. Fonctionne aussi sur sportsplits.com (meme plateforme).
+- **Couverture** : TCS Sydney Marathon, City2Surf, Runaway Sydney Half,
+  Bridge to Brisbane et les autres epreuves australiennes.
+- **Attention** : la page liste plusieurs totaux (general, par sexe, par
+  tranche d'age). Ne retenir que le premier, le classement general.
+
 ### 9. World Athletics GraphQL (catalogue) — ENDPOINT MORT depuis juin 2026
 - **Endpoint** : `https://graphql-prod-4860.edge.aws.worldathletics.org/graphql`
   → **ne resout plus en DNS** (`Name or service not known`). L'identifiant
