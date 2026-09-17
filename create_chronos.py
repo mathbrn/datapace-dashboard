@@ -198,7 +198,9 @@ marathon_data = [
     # Maratón de la Ciudad de México Telcel
     ("Maratón de la Ciudad de México Telcel", "42K", 2023, "2:08:23", "2:27:17"),
     ("Maratón de la Ciudad de México Telcel", "42K", 2024, "2:10:36", "2:29:19"),
-    ("Maratón de la Ciudad de México Telcel", "42K", 2025, "2:11:14", "2:23:22"),
+    ("Maratón de la Ciudad de México Telcel", "42K", 2026, "2:10:03", "2:29:30"),
+    # Chengdu World heritage Marathon
+    ("Chengdu World heritage Marathon", "42K", 2026, "2:17:55", "2:35:59"),
     # TCS Sydney Marathon
     ("TCS Sydney Marathon presented by ASICS", "42K", 2023, "2:08:20", "2:26:47"),
     ("TCS Sydney Marathon presented by ASICS", "42K", 2024, "2:06:17", "2:21:40"),
@@ -742,6 +744,11 @@ marathon_data = [
 # ============================================================
 
 half_marathon_data = [
+    # --- Ajouts 2026 (sources presse croisees) ---
+    ("Chengdu World heritage Marathon", "21K", 2026, "1:08:23", "1:18:30"),
+    # Record du monde du semi-marathon : Yomif Kejelcha, 56:50
+    ("Medio Maraton de Buenos Aires", "21K", 2026, "0:56:50", "1:03:56"),
+    ("Medio Maration Ciudad de Mexico", "21K", 2026, "1:04:36", "1:12:19"),
     # HOKA Semi de Paris
     ("HOKA Semi de Paris", "21K", 2023, "0:59:38", "1:06:01"),
     ("HOKA Semi de Paris", "21K", 2024, "1:00:45", "1:06:58"),
@@ -1094,6 +1101,10 @@ tenk_data = [
     ("AJ Bell Great Manchester Run", "10K", 2025, "N/A", "N/A"),
     # Run in Lyon 10K
     ("Run in Lyon", "10K", 2025, "N/A", "N/A"),
+    # --- Ajouts 2026 (sources presse croisees) ---
+    ("Cursa El corte Ingles", "10K", 2026, "0:29:44", "0:35:28"),
+    # Course 100% feminine : pas de vainqueur homme
+    ("VHI Women's Mini Marathon", "10K", 2026, "N/A", "0:31:41"),
 ]
 
 # ============================================================
