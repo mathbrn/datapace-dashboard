@@ -18,31 +18,6 @@
       "score": 0
     },
     {
-      "wa_name": "Broad Street Run",
-      "our_name": "Broad Street Run",
-      "score": 0
-    },
-    {
-      "wa_name": "Flying Pig Marathon",
-      "our_name": "Flying Pig Marathon",
-      "score": 0
-    },
-    {
-      "wa_name": "Lilac Bloomsday Run",
-      "our_name": "Lilac Bloomsday Run",
-      "score": 0
-    },
-    {
-      "wa_name": "Dick's Pittsburgh Marathon",
-      "our_name": "Dick's Pittsburgh Marathon",
-      "score": 0
-    },
-    {
-      "wa_name": "Bay to Breakers",
-      "our_name": "Bay to Breakers",
-      "score": 0
-    },
-    {
       "wa_name": "Gasparilla Distance Classic",
       "our_name": "Gasparilla Distance Classic",
       "score": 0
@@ -101,31 +76,6 @@
       "platform": "rtrt"
     },
     {
-      "event": "Broad Street Run",
-      "reason": "fetch_returned_nothing",
-      "platform": "athlinks"
-    },
-    {
-      "event": "Flying Pig Marathon",
-      "reason": "fetch_returned_nothing",
-      "platform": "athlinks"
-    },
-    {
-      "event": "Lilac Bloomsday Run",
-      "reason": "fetch_returned_nothing",
-      "platform": "athlinks"
-    },
-    {
-      "event": "Dick's Pittsburgh Marathon",
-      "reason": "fetch_returned_nothing",
-      "platform": "athlinks"
-    },
-    {
-      "event": "Bay to Breakers",
-      "reason": "fetch_returned_nothing",
-      "platform": "athlinks"
-    },
-    {
       "event": "Gasparilla Distance Classic",
       "reason": "fetch_returned_nothing",
       "platform": "athlinks"
@@ -175,12 +125,12 @@
   "mode": "fallback_no_calendar",
   "summary": {
     "wa_races": 0,
-    "matched": 16,
+    "matched": 11,
     "updated": 0,
-    "skipped": 16,
+    "skipped": 11,
     "errors": 1,
     "skip_reasons": {
-      "fetch_returned_nothing": 16
+      "fetch_returned_nothing": 11
     },
     "mode": "fallback_no_calendar"
   }
