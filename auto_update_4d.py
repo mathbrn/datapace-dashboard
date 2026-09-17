@@ -141,6 +141,63 @@ def load_our_events():
     return rows
 
 
+MOIS_INDEX = {"janvier": 1, "fevrier": 2, "mars": 3, "avril": 4, "mai": 5,
+              "juin": 6, "juillet": 7, "aout": 8, "septembre": 9,
+              "octobre": 10, "novembre": 11, "decembre": 12}
+
+
+def events_due_without_calendar(our_events, target_date):
+    """Repli quand le catalogue World Athletics est injoignable.
+
+    Le calendrier WA ne sert qu'a savoir quelles courses ont eu lieu. On peut
+    s'en passer : on prend les evenements du map dont le mois (colonne
+    « Période » de l'Excel) est deja passe dans l'annee cible et dont la
+    cellule finishers est encore vide. Un fetch sur une course pas encore
+    courue ne renvoie rien — c'est sans risque, juste logge en
+    fetch_returned_nothing.
+    """
+    year = target_date.year
+    filled = _years_already_filled(year)
+    due = []
+    for ev in our_events:
+        mois = MOIS_INDEX.get(normalize_name(ev.get("period", "")).lower())
+        if not mois or mois > target_date.month:
+            continue
+        if (ev["name"], ev["distance"]) in filled:
+            continue
+        platform, _ = discover_platform(ev["name"], year)
+        if not platform or platform not in PLATFORM_MAP:
+            continue
+        due.append({"wa": {"name": ev["name"], "dateRange": ""},
+                    "our": ev, "score": 0})
+    return due
+
+
+def _years_already_filled(year):
+    """Couples (course, distance) dont la cellule de l'annee est deja remplie."""
+    import openpyxl
+    path = SCRIPT_DIR / "Suivi_Finishers_Monde_10k_-_21k_-_42k_HISTORIQUE.xlsx"
+    wb = openpyxl.load_workbook(path, read_only=True)
+    ws = wb["ALL"]
+    filled = set()
+    headers = None
+    col = None
+    for row in ws.iter_rows(values_only=True):
+        if headers is None:
+            headers = list(row)
+            for i, h in enumerate(headers):
+                if isinstance(h, (int, float)) and int(h) == year:
+                    col = i
+            continue
+        if col is None:
+            break
+        race = str(row[3] or "").strip()
+        if race and row[col] not in (None, ""):
+            filled.add((race, str(row[2] or "").strip()))
+    wb.close()
+    return filled
+
+
 def extract_country_code(venue):
     """Extract ISO country code from WA venue like 'Paris (FRA)'."""
     if not venue:
@@ -719,13 +776,28 @@ PLATFORM_MAP = {
 }
 
 
+_PMAP_CACHE = None
+
+
+def _load_platform_map():
+    """event_platform_map.json, lu une seule fois (le mode repli appelle
+    discover_platform des centaines de fois)."""
+    global _PMAP_CACHE
+    if _PMAP_CACHE is None:
+        map_path = SCRIPT_DIR / "event_platform_map.json"
+        if map_path.exists():
+            with open(map_path, "r", encoding="utf-8") as f:
+                _PMAP_CACHE = json.load(f)
+        else:
+            _PMAP_CACHE = {}
+    return _PMAP_CACHE
+
+
 def discover_platform(event_name, year, date_str=None):
     """Try known platforms. Returns (platform, platform_id_or_info_dict).
     For Mikatiming, the second value is a dict with subdomain+event_code."""
-    map_path = SCRIPT_DIR / "event_platform_map.json"
-    if map_path.exists():
-        with open(map_path, "r", encoding="utf-8") as f:
-            pmap = json.load(f)
+    pmap = _load_platform_map()
+    if pmap:
         key = normalize_name(event_name)
         for ev_key, info in pmap.items():
             ref_name = normalize_name(info.get("name", ev_key))
@@ -863,19 +935,15 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
     log = {"date": date_str, "wa_races": [], "matched": [], "updates": [],
            "skipped": [], "errors": []}
 
-    # 1. Fetch calendar
+    # 1. Fetch calendar (peut etre indisponible : on bascule alors en repli)
+    wa_down = None
     try:
         wa_races = fetch_worldathletics_races(date_str)
     except WorldAthleticsUnavailable as e:
-        log["errors"].append({"stage": "worldathletics", "error": str(e)})
-        log["summary"] = {"wa_races": 0, "matched": 0, "updated": 0,
-                          "skipped": 0, "errors": 1, "skip_reasons": {},
-                          "aborted": "worldathletics_unavailable"}
-        print(f"  ABANDON {date_str}: catalogue World Athletics injoignable.")
-        log_path = LOGS_DIR / f"update_4d_{date_str}.json"
-        with open(log_path, "w", encoding="utf-8") as f:
-            json.dump(log, f, indent=2, ensure_ascii=False)
-        return log
+        wa_down = str(e)
+        wa_races = []
+        log["errors"].append({"stage": "worldathletics", "error": wa_down})
+        print(f"  Catalogue World Athletics injoignable → mode repli.")
     log["wa_races"] = [{"name": r.get("name"), "venue": r.get("venue"),
                         "area": r.get("area"), "dateRange": r.get("dateRange"),
                         "hasResults": r.get("hasResults")} for r in wa_races]
@@ -885,14 +953,21 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
     print(f"  Our events: {len(our_events)}")
 
     # 3. Match (deduplicate: keep only best score per our event)
-    raw_matches = match_wa_to_ours(wa_races, our_events)
-    best_per_event = {}
-    for m in raw_matches:
-        k = m["our"]["name"]
-        if k not in best_per_event or m.get("score", 0) > best_per_event[k].get("score", 0):
-            best_per_event[k] = m
-    matches = list(best_per_event.values())
-    print(f"  After dedup: {len(matches)} unique events")
+    if wa_down:
+        # Sans calendrier : on vise les evenements du map dont le mois est
+        # passe et dont la donnee manque encore.
+        matches = events_due_without_calendar(our_events, target_date)
+        log["mode"] = "fallback_no_calendar"
+        print(f"  Repli : {len(matches)} evenement(s) a tenter sans calendrier")
+    else:
+        raw_matches = match_wa_to_ours(wa_races, our_events)
+        best_per_event = {}
+        for m in raw_matches:
+            k = m["our"]["name"]
+            if k not in best_per_event or m.get("score", 0) > best_per_event[k].get("score", 0):
+                best_per_event[k] = m
+        matches = list(best_per_event.values())
+        print(f"  After dedup: {len(matches)} unique events")
     log["matched"] = [{"wa_name": m["wa"]["name"], "our_name": m["our"]["name"],
                        "score": m.get("score")} for m in matches]
 
@@ -985,6 +1060,7 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
         "skipped": len(log["skipped"]),
         "errors": len(log["errors"]),
         "skip_reasons": dict(reasons),
+        "mode": log.get("mode", "worldathletics_calendar"),
     }
     print(f"\n  --- Recap {date_str} ---")
     print(f"  WA races={len(log['wa_races'])}  matched={len(matches)}  "
@@ -1051,6 +1127,18 @@ def main():
                 # un seul regen + un seul commit a la fin de la plage
                 log = run_one(day, dry_run=args.dry_run, regenerate=False, commit=False)
                 all_updates.extend(log["updates"])
+                if log.get("mode") == "fallback_no_calendar":
+                    # Sans calendrier le balayage ne depend plus du jour mais du
+                    # mois : une seule passe sur la date la plus tardive couvre
+                    # toute la plage. Rejouer chaque jour serait redondant.
+                    if day != d1:
+                        print(f"  Mode repli : une seule passe, sur {d1}.")
+                        log = run_one(d1, dry_run=args.dry_run,
+                                      regenerate=False, commit=False)
+                        all_updates.extend(log["updates"])
+                    else:
+                        print("  Mode repli : plage traitee en une passe.")
+                    break
             except Exception as e:
                 print(f"  [ERREUR] {day}: {e}")
             print()

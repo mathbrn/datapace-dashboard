@@ -275,8 +275,14 @@ a confusion avec 10KM/SEMI. Le critere est la distance reelle en km.
 - **WebFetch** fonctionne
 - **Couverture** : 500+ series de marathons mondiaux
 
-### 9. World Athletics GraphQL (catalogue)
+### 9. World Athletics GraphQL (catalogue) — ENDPOINT MORT depuis juin 2026
 - **Endpoint** : `https://graphql-prod-4860.edge.aws.worldathletics.org/graphql`
+  → **ne resout plus en DNS** (`Name or service not known`). L'identifiant
+  numerique (`4860`) de cet hote AWS AppSync est tournant : il faut le
+  re-decouvrir dans les requetes reseau de worldathletics.org et mettre a jour
+  `WA_ENDPOINT` (et probablement `WA_API_KEY`) dans `auto_update_4d.py`.
+  En attendant, `auto_update_4d.py` bascule automatiquement en **mode repli**
+  (voir plus bas) : le catalogue n'est plus un point de panne unique.
 - **API Key** : `da2-5eqvkoavsnhjxfqd47jvjteray`
 - **Operation** : `getCalendarEvents` avec variables startDate/endDate/regionType/limit/offset
 - **Donnees** : Catalogue de 807 road races/an (pas de resultats de masse)
@@ -513,12 +519,36 @@ Palmanova 16x) — le score flou attrape des faux positifs geographiques.
   `workflow_dispatch` sur le workflow « Auto Update 4D » via les champs
   `date_from` / `date_to`.
 
+### CAUSE RACINE DE LA PANNE DE JUIN 2026 (a connaitre avant tout diagnostic)
+Enchainement reconstitue depuis les logs GitHub Actions :
+
+1. **~21 juin 2026** : l'hote `graphql-prod-4860.edge.aws.worldathletics.org`
+   cesse de resoudre en DNS. World Athletics a fait tourner l'identifiant de
+   son endpoint AppSync.
+2. Le script appelait ce catalogue a l'etape 1, **sans try/except** : chaque run
+   plantait en ~20 s avec `exit code 1`, donc **ni log ecrit, ni commit**.
+   Dernier commit reussi : `Auto Update 4D 2026-06-20`.
+3. Le workflow a continue de se declencher et d'echouer **tous les jours
+   jusqu'au 21 aout** (runs #100 a #129, tous rouges).
+4. 2026-06-20 + 60 jours = **2026-08-19** : plus aucune activite sur le repo,
+   GitHub desactive le cron le 21 aout (`state: disabled_inactivity`).
+
+**La desactivation est donc une consequence, pas la cause.** Reactiver le
+workflow sans corriger l'endpoint ne servirait a rien — d'ou le mode repli.
+
+**Mode repli (`fallback_no_calendar`)** : quand le catalogue est injoignable,
+`events_due_without_calendar()` prend le relais. Il selectionne les evenements
+de `event_platform_map.json` dont le mois (colonne « Période » de l'Excel) est
+deja passe et dont la cellule finishers de l'annee est encore vide, puis tente
+leur fetcher. Aucune dependance externe. En backfill, une seule passe est faite
+sur la date la plus tardive de la plage (le balayage depend du mois, pas du
+jour). Le log porte `mode: fallback_no_calendar`.
+
 ### PIEGE CONNU : le cron se desactive tout seul
 GitHub desactive automatiquement les workflows `schedule` apres **60 jours sans
 activite d'un utilisateur humain** sur le repo (`state: disabled_inactivity`).
 Les commits pousses par le workflow lui-meme avec `GITHUB_TOKEN` **ne comptent
-pas** comme activite — c'est ce qui s'est produit : l'auto-update s'est arrete
-apres le 2026-06-20 sans aucune erreur, laissant ~3 mois de trou.
+pas** comme activite.
 
 **Verifier l'etat** :
 `GET /repos/mathbrn/datapace-dashboard/actions/workflows/auto_update_4d.yml`
