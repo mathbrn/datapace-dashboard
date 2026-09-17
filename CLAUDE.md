@@ -265,13 +265,52 @@ a confusion avec 10KM/SEMI. Le critere est la distance reelle en km.
 - **Auth** : Aucune
 - **Decouverte IDs** : `site:athlinks.com/event "Event Name"`
 
+### 3b. Athlinks — le master_id est OBLIGATOIRE
+Sans `master_id` dans `event_platform_map.json`, `discover_platform` retombe sur
+le **nom** de l'epreuve, qui part tel quel dans l'URL :
+`/master/Gasparilla Distance Classic/metadata` -> **403 garanti**. C'etait la
+cause des 8 echecs athlinks du run #132 (9 entrees sur 12 n'avaient pas d'ID).
+Le fetcher refuse desormais tout master_id non numerique.
+
+**Trouver un master_id** : chercher `athlinks.com/event "<nom>"` — l'ID est le
+nombre dans `athlinks.com/event/{masterId}`. IDs etablis :
+
+| Epreuve | master_id |
+|---|---|
+| Peachtree Road Race | 115192 |
+| Broad Street Run | 168976 |
+| Flying Pig Marathon | 137505 |
+| Gasparilla Distance Classic | 20493 |
+| Bay to Breakers | 18246 |
+| Cooper River Bridge Run | 9036 |
+| Lilac Bloomsday Run | 8432 |
+| Dick's Pittsburgh Marathon | 6620 |
+| BOLDERBoulder 10K | 6172 |
+| Marine Corps Marathon | 3281 |
+| Statesman Capitol 10K | introuvable (pas de page event moderne) |
+
+**403 intermittent** : observe sur des master_id pourtant valides (Bay to
+Breakers). Probable limitation de debit — le fetcher retente une fois apres 3 s.
+
+**Ukrop's Monument Avenue 10K n'est PAS sur Athlinks** : ses resultats sont sur
+RunSignup (`runsignup.com/Race/Results/53948`). L'entree a ete rebasculee sur
+`platform: runsignup` (fetcher non implemente, donc logge proprement en
+`no_fetcher_implemented` au lieu de produire un 403 trompeur).
+
 ### 4. RTRT.me (Great Run events)
 - **API** : `https://api.rtrt.me/`
 - **Auth** : `appid=623f2dd5e7847810bb1f0a07&token=9FA560A93CFC014488AB`
 - **Total** : `GET /events/{code}` → `finishers` = total
 - **Par course** : `GET /events/{code}/stats` → `stats.tags.{course}.FINISH-*.valid_count`
 - **Codes** : `GR-NORTH-{YYYY}`, `GR-SCOTTISH-{YYYY}`, `GR-MANCHESTER-{YYYY}`, `GR-BRISTOL-{YYYY}`, `GR-BIRMINGHAM-{YYYY}`, `GR-SOUTH-{YYYY}`
-- **Couverture** : 2022-2025 uniquement
+- **Couverture** : 2022-2025 uniquement — **confirme pour 2026** : les codes
+  `GR-*-2026` existent et `GET /events/{code}` renvoie bien un total (ex.
+  `GR-BIRMINGHAM-2026` -> `finishers: 13613`), mais `GET /events/{code}/stats`
+  renvoie `stats.tags` **vide** : aucune ventilation par course. Impossible donc
+  de separer le semi du 10K, et le total d'epreuve ne doit surtout pas etre
+  ecrit dans une cellule de distance (c'est ce qui a corrompu le run #130).
+  Le fetcher renvoie None dans ce cas. **Pour debloquer les 6 Great Run il faut
+  une autre source** (results.greatrun.org, ou le chronometreur 2026).
 
 ### 5. TimeTo / SportInnovation (ASO France + resultats individuels)
 - **Events** : `https://sportinnovation.fr/api/events`

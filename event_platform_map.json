@@ -403,7 +403,8 @@
     "platform": "athlinks",
     "country": "USA",
     "distance": "10KM",
-    "name": "BOLDERBoulder 10K"
+    "name": "BOLDERBoulder 10K",
+    "master_id": 6172
   },
   "bay to breakers": {
     "platform": "athlinks",
@@ -416,7 +417,8 @@
     "platform": "athlinks",
     "country": "USA",
     "distance": "AUTRE",
-    "name": "Broad Street Run"
+    "name": "Broad Street Run",
+    "master_id": 168976
   },
   "cooper river bridge run": {
     "platform": "athlinks",
@@ -426,10 +428,11 @@
     "platform_id": 9036
   },
   "ukrop's monument avenue 10k": {
-    "platform": "athlinks",
+    "platform": "runsignup",
     "country": "USA",
     "distance": "10KM",
-    "name": "Ukrop's Monument Avenue 10K"
+    "name": "Ukrop's Monument Avenue 10K",
+    "race_id": 53948
   },
   "united airlines nyc half": {
     "platform": null,
@@ -455,19 +458,22 @@
     "platform": "athlinks",
     "country": "USA",
     "distance": "MARATHON",
-    "name": "Marine Corps Marathon"
+    "name": "Marine Corps Marathon",
+    "master_id": 3281
   },
   "dick's pittsburgh marathon": {
     "platform": "athlinks",
     "country": "USA",
     "distance": "MARATHON",
-    "name": "Dick's Pittsburgh Marathon"
+    "name": "Dick's Pittsburgh Marathon",
+    "master_id": 6620
   },
   "flying pig marathon": {
     "platform": "athlinks",
     "country": "USA",
     "distance": "MARATHON",
-    "name": "Flying Pig Marathon"
+    "name": "Flying Pig Marathon",
+    "master_id": 137505
   },
   "osaka marathon": {
     "platform": null,
@@ -497,13 +503,15 @@
     "platform": "athlinks",
     "country": "USA",
     "distance": "AUTRE",
-    "name": "Gasparilla Distance Classic"
+    "name": "Gasparilla Distance Classic",
+    "master_id": 20493
   },
   "lilac bloomsday run": {
     "platform": "athlinks",
     "country": "USA",
     "distance": "AUTRE",
-    "name": "Lilac Bloomsday Run"
+    "name": "Lilac Bloomsday Run",
+    "master_id": 8432
   },
   "vancouver sun run": {
     "platform": null,

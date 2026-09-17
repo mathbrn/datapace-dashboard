@@ -566,12 +566,27 @@ def fetch_athlinks_4d(master_id_or_info, year, dist_code=None):
         if not master_id:
             print("    Athlinks: aucun master_id dans event_platform_map.json")
             return None
+        # Sans master_id, discover_platform retombe sur le NOM de l'epreuve, qui
+        # partait tel quel dans l'URL : /master/Gasparilla Distance Classic/
+        # metadata -> 403 garanti. Un master_id est toujours numerique.
+        if not str(master_id).strip().isdigit():
+            print(f"    Athlinks: master_id non numerique ({master_id!r}) — "
+                  f"entree a completer dans event_platform_map.json")
+            return None
         sess = requests.Session()
         sess.headers.update({
             "User-Agent": "Mozilla/5.0", "Accept": "application/json",
             "Origin": "https://www.athlinks.com", "Referer": "https://www.athlinks.com/",
         })
-        r = sess.get(f"https://reignite-api.athlinks.com/master/{master_id}/metadata", timeout=15)
+        url = f"https://reignite-api.athlinks.com/master/{master_id}/metadata"
+        r = sess.get(url, timeout=15)
+        if r.status_code == 403:
+            # 403 intermittent observe sur des master_id pourtant valides
+            # (Bay to Breakers 18246 existe bien) : probable limitation de
+            # debit. Une seule nouvelle tentative, apres une pause.
+            import time as _t
+            _t.sleep(3)
+            r = sess.get(url, timeout=15)
         if not r.ok:
             print(f"    Athlinks master/{master_id}/metadata: HTTP {r.status_code}")
             return None
