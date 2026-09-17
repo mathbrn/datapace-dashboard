@@ -146,6 +146,44 @@ api_patterns = [
 - `avg_times_sporthive.json` : Temps moyens calcules depuis APIs (Sporthive + Tracx)
 - `datapace_dashboard.html` : Dashboard genere (ouvrir dans navigateur)
 
+## Distinction EVENEMENT vs COURSE (piege structurel n°1)
+
+Le dashboard tient **une ligne par couple (epreuve, distance)**. Les APIs, elles,
+raisonnent par **evenement** : un seul `event_id` heberge le 10K ET le semi.
+Exemple : Great Bristol Run = `GR-BRISTOL-2026`, qui contient un semi (10 768
+finishers en 2025) et un 10K (8 486). Ce sont deux epreuves du dashboard.
+
+**Consequence** : tout fetcher qui renvoie un total d'evenement, ou qui choisit
+`max(races, key=participants)` (« la plus grosse course »), ecrit le meme
+chiffre dans toutes les lignes de la famille. C'est ce qui a corrompu 6
+cellules au run #130 : `Great Manchester Run 10KM = 31340` alors que le 10K
+faisait 16 778 en 2025, `Great North 10K = 48705` alors qu'il faisait 6 962.
+
+**Regle** : un fetcher ne doit JAMAIS renvoyer un nombre sans avoir identifie la
+course correspondant a la distance demandee. En cas d'ambiguite, renvoyer None.
+
+**Outil** : `pick_race_for_distance(races, dist_code, get_distance_m, get_title)`
+choisit la course visee — d'abord par la distance chiffree (42195 ±1200,
+21097 ±700, 10000 ±450 m), sinon par mots-cles du titre — et renvoie None si
+zero ou plusieurs candidats. La distance est transmise aux fetchers qui
+declarent un parametre `dist_code` (detection par inspection de signature).
+
+| Fetcher | Recoit la distance | Comment il cible la course |
+|---|---|---|
+| timeto | oui | `pick_race_for_distance` sur `/events/{id}/races` |
+| sporthive | oui | idem, sur `classificationsCount` + `distance` |
+| tracx | oui | idem, sur `participant_count` |
+| athlinks | oui | parse ligne a ligne la `description` (« 10Km Run -43337 ») |
+| rtrt | oui | `/events/{code}/stats`, ventile par tag de course |
+| chronorace | non | un contexte `db` par course, pas de melange |
+| mikatiming | non | un `event_code` par course (MAL / HML) |
+| nyrr | non | un `eventCode` par course |
+| baa | non | marathon uniquement |
+
+**Filet de securite** : un meme nombre de finishers attribue a deux couples
+(course, distance) dans un meme run est refuse et logge en
+`duplicate_count_across_events`.
+
 ## Distinction participants vs finishers
 
 ### Regle absolue : participants/inscrits ≠ finishers

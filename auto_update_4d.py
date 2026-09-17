@@ -326,7 +326,7 @@ def match_wa_to_ours(wa_races, our_events):
 # ============================================================================
 # PLATFORM FETCHERS
 # ============================================================================
-def fetch_timeto_4d(event_name, year):
+def fetch_timeto_4d(event_name, year, dist_code=None):
     """Fetch 4D from TimeTo/SportInnovation API (ASO France)."""
     try:
         sess = requests.Session()
@@ -355,8 +355,15 @@ def fetch_timeto_4d(event_name, year):
         print(f"    TimeTo: matched event id={target['id']} title={target.get('title','')[:50]}")
         resp2 = sess.get(f"https://sportinnovation.fr/api/events/{target['id']}/races", timeout=15)
         races = resp2.json()
-        # Filter races matching the event distance
-        main_race = max(races, key=lambda r: r.get("totals", {}).get("maxGeneralRanking", 0))
+        # La course visee est celle de la distance demandee, pas la plus grosse
+        # de l'evenement (Run in Lyon = marathon + semi + 10K sous un seul id).
+        main_race = pick_race_for_distance(
+            races, dist_code,
+            get_distance_m=lambda r: r.get("distance") or r.get("distance_m"),
+            get_title=lambda r: r.get("title") or r.get("name") or "")
+        if not main_race:
+            print(f"    TimeTo: aucune course {dist_code} identifiable — abandon")
+            return None
         race_id = main_race["id"]
         print(f"    TimeTo: fetching race {race_id} ({main_race.get('title','')})")
         resp3 = sess.get(f"https://sportinnovation.fr/api/races/{race_id}/results", timeout=180)
@@ -367,7 +374,7 @@ def fetch_timeto_4d(event_name, year):
         return None
 
 
-def fetch_sporthive_4d(event_id, year):
+def fetch_sporthive_4d(event_id, year, dist_code=None):
     """Fetch 4D from Sporthive/MYLAPS API. Needs event_id."""
     try:
         sess = requests.Session()
@@ -377,8 +384,14 @@ def fetch_sporthive_4d(event_id, year):
         races = resp.json()
         if not races:
             return None
-        # Pick race with most finishers
-        r = max(races, key=lambda x: x.get("classificationsCount", 0))
+        # Viser la distance demandee, pas la plus grosse course de l'evenement
+        r = pick_race_for_distance(
+            races, dist_code,
+            get_distance_m=lambda x: x.get("distance"),
+            get_title=lambda x: x.get("name") or x.get("title") or "")
+        if not r:
+            print(f"    Sporthive: aucune course {dist_code} identifiable — abandon")
+            return None
         count = r.get("classificationsCount", 0)
         speed = r.get("raceStatistics", {}).get("averageSpeedInKmh", 0)
         distance = r.get("distance", 0) / 1000  # meters → km
@@ -517,7 +530,7 @@ def fetch_rtrt_4d(event_code, year, dist_code=None):
         return None
 
 
-def fetch_athlinks_4d(master_id_or_info, year):
+def fetch_athlinks_4d(master_id_or_info, year, dist_code=None):
     """Fetch 4D from Athlinks API.
 
     master_id_or_info: master_id (int) or dict with master_id/event_id
@@ -556,19 +569,33 @@ def fetch_athlinks_4d(master_id_or_info, year):
             target_event = events[0]  # most recent
         if not target_event:
             return None
-        # Parse finishers from description (format "10Km Run -43337\r\n...")
+        # La description liste une course par ligne : "10Km Run -43337".
+        # Prendre le plus grand nombre revenait a choisir la plus grosse course
+        # de l'evenement quelle que soit la distance demandee — meme bug que
+        # partout ailleurs. On parse chaque ligne et on vise la bonne distance.
         desc = target_event.get("description", "") or ""
         import re as _re
-        # Look for main race line (biggest count, excluding small wheelchair/push categories)
-        counts = _re.findall(r"-(\d{3,})", desc)
-        finishers = max(int(c) for c in counts) if counts else None
-        # Fallback: try races array
+        lignes = []
+        for m in _re.finditer(r"([^\r\n]+?)\s*-\s*(\d{3,})", desc):
+            lignes.append({"title": m.group(1).strip(), "count": int(m.group(2))})
+
+        choisi = pick_race_for_distance(lignes, dist_code,
+                                        get_distance_m=lambda r: None,
+                                        get_title=lambda r: r["title"])
+        finishers = choisi["count"] if choisi else None
+
+        # Repli : tableau races structure, qui porte parfois la distance
         if not finishers:
-            for race in target_event.get("races", []):
-                fc = race.get("finisherCount") or race.get("participantCount")
-                if fc and fc > (finishers or 0):
-                    finishers = fc
+            races = target_event.get("races", []) or []
+            r = pick_race_for_distance(
+                races, dist_code,
+                get_distance_m=lambda x: x.get("distance") or x.get("distanceMeters"),
+                get_title=lambda x: x.get("name") or x.get("description") or "")
+            if r:
+                finishers = r.get("finisherCount") or r.get("participantCount")
+
         if not finishers:
+            print(f"    Athlinks: aucune course {dist_code} identifiable — abandon")
             return None
         return {"finishers": finishers,
                 "avg_time": None, "avg_speed_kmh": None,
@@ -737,7 +764,7 @@ def fetch_baa_4d(event_id_or_year, year):
         return None
 
 
-def fetch_tracx_4d(event_id, year):
+def fetch_tracx_4d(event_id, year, dist_code=None):
     """Fetch 4D from Tracx Events API."""
     try:
         sess = requests.Session()
@@ -747,8 +774,14 @@ def fetch_tracx_4d(event_id, year):
         if not resp.ok:
             return None
         races = resp.json()
-        # Pick marathon/semi
-        main = max(races, key=lambda r: r.get("participant_count", 0))
+        # Viser la distance demandee, pas la plus grosse course de l'evenement
+        main = pick_race_for_distance(
+            races, dist_code,
+            get_distance_m=lambda r: r.get("distance") or r.get("distance_m"),
+            get_title=lambda r: r.get("name") or r.get("title") or "")
+        if not main:
+            print(f"    Tracx: aucune course {dist_code} identifiable — abandon")
+            return None
         count = main.get("participant_count", 0)
         return {"finishers": count, "avg_time": None, "avg_speed_kmh": None,
                 "winner_men": None, "winner_women": None,
@@ -813,6 +846,66 @@ PLATFORM_MAP = {
     "rtrt": fetch_rtrt_4d,
     "athlinks": fetch_athlinks_4d,
 }
+
+
+# Distance ciblee, en metres, et tolerance
+DIST_TARGETS = {"MARATHON": (42195, 1200), "SEMI": (21097, 700), "10KM": (10000, 450)}
+
+# Mots-cles dans le titre d'une course, quand la distance chiffree manque
+DIST_WORDS = {
+    "MARATHON": (("marathon", "42k", "42.2", "full"), ("half", "semi", "demi", "10k", "5k", "relay")),
+    "SEMI": (("half", "semi", "demi", "21k", "21.1"), ("10k", "5k", "relay", "quarter")),
+    "10KM": (("10k", "10 km", "10km"), ("half", "semi", "relay", "5k", "100k")),
+}
+
+
+def pick_race_for_distance(races, dist_code, get_distance_m=None, get_title=None):
+    """Choisit, parmi les courses d'un evenement, celle qui correspond a la
+    distance demandee. Renvoie None si c'est ambigu.
+
+    C'est LE correctif structurel de ce script. Le dashboard tient une ligne par
+    couple (epreuve, distance), alors que les APIs raisonnent par evenement : un
+    meme evenement heberge un 10K et un semi. Les fetchers prenaient
+    `max(races, key=participants)` — « la plus grosse course » — et ecrivaient
+    donc le meme chiffre dans les deux lignes. Cf. la corruption du run #130.
+
+    On retient d'abord la distance chiffree (fiable), sinon les mots-cles du
+    titre. Zero ou plusieurs candidats -> None : mieux vaut une cellule vide.
+    """
+    if not races or dist_code not in DIST_TARGETS:
+        return None
+    get_distance_m = get_distance_m or (lambda r: r.get("distance"))
+    get_title = get_title or (lambda r: r.get("title") or r.get("name") or "")
+
+    target, tol = DIST_TARGETS[dist_code]
+    by_metres = []
+    for r in races:
+        try:
+            d = float(get_distance_m(r) or 0)
+        except (TypeError, ValueError):
+            continue
+        if d and abs(d - target) <= tol:
+            by_metres.append(r)
+    if len(by_metres) == 1:
+        return by_metres[0]
+    if len(by_metres) > 1:
+        print(f"    {len(by_metres)} courses a {target} m — ambigu, abandon")
+        return None
+
+    inc, exc = DIST_WORDS[dist_code]
+    by_words = []
+    for r in races:
+        low = normalize_name(str(get_title(r)))
+        if not low or any(x in low for x in exc):
+            continue
+        if any(x in low for x in inc):
+            by_words.append(r)
+    if len(by_words) == 1:
+        return by_words[0]
+    if len(by_words) > 1:
+        print(f"    {len(by_words)} courses correspondent a {dist_code} par le "
+              f"titre — ambigu, abandon")
+    return None
 
 
 def _names_match(a, b):
