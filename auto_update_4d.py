@@ -499,6 +499,23 @@ def fetch_rtrt_4d(event_code, year, dist_code=None):
         # distance. Sans cette trace, un echec est indiscernable d'une course
         # absente. A retirer une fois la correspondance etablie.
         print(f"    RTRT {code}: tags disponibles = {list(tags.keys())[:15]}")
+        if not tags:
+            # stats vide : l'edition existe-t-elle seulement sous ce code ?
+            try:
+                ev = sess.get(f"https://api.rtrt.me/events/{code}",
+                              params=params, timeout=15)
+                if ev.ok:
+                    j = ev.json() or {}
+                    info = j.get("event") or j
+                    print(f"      /events/{code} -> total={info.get('finishers')} "
+                          f"name={str(info.get('name'))[:40]!r} "
+                          f"cles={list(info.keys())[:10]}")
+                else:
+                    print(f"      /events/{code} -> HTTP {ev.status_code} "
+                          f"(edition absente sous ce code ?)")
+            except Exception as e2:
+                print(f"      sonde /events/{code} impossible: {e2}")
+            return None
 
         # Mots-cles distinguant la course dans le nom du tag
         wanted = {"MARATHON": ("marathon",), "SEMI": ("half", "semi"),
@@ -547,6 +564,7 @@ def fetch_athlinks_4d(master_id_or_info, year, dist_code=None):
         if isinstance(master_id_or_info, dict):
             master_id = master_id_or_info.get("master_id") or master_id_or_info.get("platform_id")
         if not master_id:
+            print("    Athlinks: aucun master_id dans event_platform_map.json")
             return None
         sess = requests.Session()
         sess.headers.update({
@@ -555,12 +573,25 @@ def fetch_athlinks_4d(master_id_or_info, year, dist_code=None):
         })
         r = sess.get(f"https://reignite-api.athlinks.com/master/{master_id}/metadata", timeout=15)
         if not r.ok:
+            print(f"    Athlinks master/{master_id}/metadata: HTTP {r.status_code}")
             return None
         data = r.json()
         # New Athlinks schema: data['events'] list with race_id + description
         events = data.get("events", [])
         if not events:
+            print(f"    Athlinks master/{master_id}: aucun evenement "
+                  f"(cles racine: {list(data.keys())[:8]})")
             return None
+        # Diagnostic : savoir si l'edition de l'annee ciblee existe chez eux.
+        import datetime as _dt0
+        annees = []
+        for _ev in events:
+            _e = (_ev.get("end") or {}).get("epoch", 0)
+            if _e:
+                annees.append(_dt0.datetime.fromtimestamp(
+                    _e / 1000, _dt0.timezone.utc).year)
+        print(f"    Athlinks master/{master_id}: {len(events)} edition(s), "
+              f"annees={sorted(set(annees), reverse=True)[:6]}, cible={year}")
         # Find event matching target year (by epoch timestamp)
         import datetime as _dt
         target_event = None
