@@ -607,6 +607,19 @@ def fetch_athlinks_4d(master_id_or_info, year, dist_code=None):
                     _e / 1000, _dt0.timezone.utc).year)
         print(f"    Athlinks master/{master_id}: {len(events)} edition(s), "
               f"annees={sorted(set(annees), reverse=True)[:6]}, cible={year}")
+        # Diagnostic cible : la description est vide pour la plupart des
+        # epreuves (Bay to Breakers, Gasparilla...). Il faut passer par
+        # l'endpoint structure /Events/Race/Api/{eventId}/Course/0, qui donne
+        # les finishers PAR COURSE. Reste a identifier le champ portant cet
+        # eventId dans la metadata. A retirer une fois le parser ecrit.
+        if events:
+            _e0 = events[0]
+            print(f"      cles d'une edition = {sorted(_e0.keys())}")
+            _ids = {k: v for k, v in _e0.items()
+                    if "id" in k.lower() and not isinstance(v, (dict, list))}
+            print(f"      champs *id* = {_ids}")
+            _desc = str(_e0.get("description") or "")[:120]
+            print(f"      description (120c) = {_desc!r}")
         # Find event matching target year (by epoch timestamp)
         import datetime as _dt
         target_event = None
