@@ -1,6 +1,24 @@
 {
   "updates": [
     {
+      "event": "Stockholm Marathon",
+      "date": "2026-09-17",
+      "data": {
+        "finishers": 25,
+        "winner_men": "02:10:46",
+        "winner_women": "02:30:58"
+      },
+      "timestamp": "2026-09-18T10:15:41Z"
+    },
+    {
+      "event": "Stockholm Marathon",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 25
+      },
+      "timestamp": "2026-09-18T10:15:40Z"
+    },
+    {
       "event": "TCS Sydney Marathon presented by ASICS",
       "date": "2026-08-30",
       "data": {
