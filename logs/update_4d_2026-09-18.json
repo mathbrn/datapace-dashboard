@@ -1,0 +1,212 @@
+{
+  "date": "2026-09-18",
+  "wa_races": [],
+  "matched": [
+    {
+      "wa_name": "Hoka Runaway Sydney Half Marathon",
+      "our_name": "Hoka Runaway Sydney Half Marathon",
+      "score": 0
+    },
+    {
+      "wa_name": "AJ Bell Great Manchester Run",
+      "our_name": "AJ Bell Great Manchester Run",
+      "score": 0
+    },
+    {
+      "wa_name": "AJ Bell Great Manchester Run",
+      "our_name": "AJ Bell Great Manchester Run",
+      "score": 0
+    },
+    {
+      "wa_name": "AJ Bell Great Bristol Run",
+      "our_name": "AJ Bell Great Bristol Run",
+      "score": 0
+    },
+    {
+      "wa_name": "BMW Berlin Marathon",
+      "our_name": "BMW Berlin Marathon",
+      "score": 0
+    },
+    {
+      "wa_name": "AJ Bell Great North Run",
+      "our_name": "AJ Bell Great North Run",
+      "score": 0
+    },
+    {
+      "wa_name": "Transurban Bridge to Brisbane",
+      "our_name": "Transurban Bridge to Brisbane",
+      "score": 0
+    },
+    {
+      "wa_name": "Gasparilla Distance Classic",
+      "our_name": "Gasparilla Distance Classic",
+      "score": 0
+    },
+    {
+      "wa_name": "Dam tot Damloop",
+      "our_name": "Dam tot Damloop",
+      "score": 0
+    },
+    {
+      "wa_name": "AJ Bell Great Birmingham Run",
+      "our_name": "AJ Bell Great Birmingham Run",
+      "score": 0
+    },
+    {
+      "wa_name": "Paris-Versailles - La grande classique",
+      "our_name": "Paris-Versailles - La grande classique",
+      "score": 0
+    },
+    {
+      "wa_name": "Brighton Marathon Week end",
+      "our_name": "Brighton Marathon Week end",
+      "score": 0
+    },
+    {
+      "wa_name": "La Parisienne",
+      "our_name": "La Parisienne",
+      "score": 0
+    },
+    {
+      "wa_name": "La Parisienne",
+      "our_name": "La Parisienne",
+      "score": 0
+    },
+    {
+      "wa_name": "La Grande Course RATP du Grand Paris",
+      "our_name": "La Grande Course RATP du Grand Paris",
+      "score": 0
+    },
+    {
+      "wa_name": "La Grande Course RATP du Grand Paris",
+      "our_name": "La Grande Course RATP du Grand Paris",
+      "score": 0
+    },
+    {
+      "wa_name": "La Grande Course RATP du Grand Paris",
+      "our_name": "La Grande Course RATP du Grand Paris",
+      "score": 0
+    },
+    {
+      "wa_name": "La Grande Course RATP du Grand Paris",
+      "our_name": "La Grande Course RATP du Grand Paris",
+      "score": 0
+    }
+  ],
+  "updates": [
+    {
+      "event": "Brighton Marathon Week end",
+      "year": 2026,
+      "platform": "mikatiming",
+      "finishers": 25,
+      "avg_time": null,
+      "winner_men": "02:25:04",
+      "winner_women": "02:49:38"
+    }
+  ],
+  "skipped": [
+    {
+      "event": "Hoka Runaway Sydney Half Marathon",
+      "reason": "fetch_returned_nothing",
+      "platform": "multisport"
+    },
+    {
+      "event": "AJ Bell Great Manchester Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "rtrt"
+    },
+    {
+      "event": "AJ Bell Great Manchester Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "rtrt"
+    },
+    {
+      "event": "AJ Bell Great Bristol Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "rtrt"
+    },
+    {
+      "event": "BMW Berlin Marathon",
+      "reason": "fetch_returned_nothing",
+      "platform": "mikatiming"
+    },
+    {
+      "event": "AJ Bell Great North Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "rtrt"
+    },
+    {
+      "event": "Transurban Bridge to Brisbane",
+      "reason": "fetch_returned_nothing",
+      "platform": "multisport"
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
+    },
+    {
+      "event": "Dam tot Damloop",
+      "reason": "fetch_returned_nothing",
+      "platform": "tracx"
+    },
+    {
+      "event": "AJ Bell Great Birmingham Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "rtrt"
+    },
+    {
+      "event": "Paris-Versailles - La grande classique",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "La Parisienne",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "La Parisienne",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "La Grande Course RATP du Grand Paris",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "La Grande Course RATP du Grand Paris",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "La Grande Course RATP du Grand Paris",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "La Grande Course RATP du Grand Paris",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    }
+  ],
+  "errors": [
+    {
+      "stage": "worldathletics",
+      "error": "HTTPSConnectionPool(host='graphql-prod-4860.edge.aws.worldathletics.org', port=443): Max retries exceeded with url: /graphql (Caused by NameResolutionError(\"HTTPSConnection(host='graphql-prod-4860.edge.aws.worldathletics.org', port=443): Failed to resolve 'graphql-prod-4860.edge.aws.worldathletics.org' ([Errno -2] Name or service not known)\"))"
+    }
+  ],
+  "mode": "fallback_no_calendar",
+  "summary": {
+    "wa_races": 0,
+    "matched": 18,
+    "updated": 1,
+    "skipped": 17,
+    "errors": 1,
+    "skip_reasons": {
+      "fetch_returned_nothing": 17
+    },
+    "mode": "fallback_no_calendar"
+  }
+}

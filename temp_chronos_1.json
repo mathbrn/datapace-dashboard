@@ -376,5 +376,14 @@
     "nom_homme": null,
     "temps_femme": "02:30:58",
     "nom_femme": null
+  },
+  {
+    "course": "Brighton Marathon Week end",
+    "distance": "10KM",
+    "annee": 2026,
+    "temps_homme": "02:25:04",
+    "nom_homme": null,
+    "temps_femme": "02:49:38",
+    "nom_femme": null
   }
 ]

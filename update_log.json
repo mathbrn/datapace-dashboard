@@ -1,6 +1,24 @@
 {
   "updates": [
     {
+      "event": "Brighton Marathon Week end",
+      "date": "2026-09-18",
+      "data": {
+        "finishers": 25,
+        "winner_men": "02:25:04",
+        "winner_women": "02:49:38"
+      },
+      "timestamp": "2026-09-19T09:57:47Z"
+    },
+    {
+      "event": "Brighton Marathon Week end",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 25
+      },
+      "timestamp": "2026-09-19T09:57:46Z"
+    },
+    {
       "event": "Stockholm Marathon",
       "date": "2026-09-17",
       "data": {
