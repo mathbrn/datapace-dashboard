@@ -565,6 +565,23 @@ function circBadges(r){var ci=r.ci||[];if(!ci.length)return'';return ci.map(func
 function hasCircuit(r,code){return(r.ci||[]).indexOf(code)>=0;}
 function colByName(name){var r=RAW.find(function(x){return x.r===name;});return r?colDist(r):lc('#60A5FA');}
 function toMin(t){if(!t)return null;var p=String(t).split(':');if(p.length===3)return parseInt(p[0])*60+parseInt(p[1])+parseInt(p[2])/60;return null;}
+// Mois de la colonne « Periode » -> numero, pour distinguer « pas encore
+// couru » de « donnee manquante ».
+var MOIS_NUM={janvier:1,fevrier:2,mars:3,avril:4,mai:5,juin:6,juillet:7,
+  aout:8,septembre:9,octobre:10,novembre:11,decembre:12};
+function moisDe(p){
+  if(!p)return 0;
+  var k=p.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+  return MOIS_NUM[k]||0;
+}
+// Une cellule vide de l'annee en cours dont le mois n'est pas encore passe
+// n'est pas un trou de collecte : l'epreuve n'a simplement pas eu lieu.
+var _now=new Date(), ANNEE_COUR=_now.getFullYear(), MOIS_COUR=_now.getMonth()+1;
+function aVenir(r,y){
+  if(parseInt(y)!==ANNEE_COUR)return null;
+  var m=moisDe(r.p);
+  return (m&&m>MOIS_COUR)?r.p:null;
+}
 function fmt(n){if(n===-1)return'Annul\u00e9';if(n===-2)return'Elite';if(n===-3)return'';if(!n||isNaN(n))return'\u2014';return n>=1000?(n/1000).toFixed(1)+'k':n.toString();}
 function fmtFull(n){if(n===-1)return'Annul\u00e9';if(n===-2)return'Elite Only';if(n===-3)return'';if(!n||isNaN(n))return'\u2014';return Math.round(n).toLocaleString('fr-FR');}
 function delta(a,b){if(!a||!b||isNaN(a)||isNaN(b))return null;return((b-a)/a*100);}
@@ -1523,7 +1540,7 @@ function filterTable(){
     html+='<tr><td>'+r.p+'</td><td>'+(eventFlag(r.r)?eventFlag(r.r)+' ':'')+r.c+'</td>'
       +'<td><span class="badge" style="background:'+raceColor+'18;color:'+raceColor+'">'+bl+'</span>'+cBadges+'</td>'
       +'<td style="color:'+raceColor+'" title="'+r.r+'">'+r.r+'</td>'
-      +globalYears.map(function(y){var v=(r.hist||{})[y];var isFirst=r.fy&&y===r.fy;var starHtml=isFirst?'<span style="position:absolute;top:1px;left:2px;font-size:7px;color:'+raceColor+';opacity:0.7">\u2605</span>':'';if(v===-3)return'<td style="color:var(--text3);opacity:0.2">\u00b7</td>';if(v===-1)return'<td style="color:#FF4A6B;font-size:10px;font-style:italic;position:relative">'+starHtml+'Annul\u00e9</td>';if(v===-2)return'<td style="color:'+raceColor+';font-size:10px;font-style:italic;position:relative">'+starHtml+'Elite Only</td>';return'<td style="'+(v?'color:var(--text)':'')+';position:relative">'+starHtml+(v?fmtFull(v):'\u2014')+'</td>';}).join('')
+      +globalYears.map(function(y){var v=(r.hist||{})[y];var isFirst=r.fy&&y===r.fy;var starHtml=isFirst?'<span style="position:absolute;top:1px;left:2px;font-size:7px;color:'+raceColor+';opacity:0.7">\u2605</span>':'';if(v===-3)return'<td style="color:var(--text3);opacity:0.2">\u00b7</td>';if(v===-1)return'<td style="color:#FF4A6B;font-size:10px;font-style:italic;position:relative">'+starHtml+'Annul\u00e9</td>';if(v===-2)return'<td style="color:'+raceColor+';font-size:10px;font-style:italic;position:relative">'+starHtml+'Elite Only</td>';if(!v){var av=aVenir(r,y);if(av)return'<td title="Edition '+av+' '+y+'" style="color:#3B82F6;font-size:10px;font-style:italic;position:relative">'+starHtml+'\u00c0 venir</td>';}return'<td style="'+(v?'color:var(--text)':'')+';position:relative">'+starHtml+(v?fmtFull(v):'\u2014')+'</td>';}).join('')
       +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
   });
   document.getElementById('table-body').innerHTML=html;twemojify(document.getElementById('table-body'));

@@ -178,6 +178,20 @@ manquantes avaient ete constatees. Ils sont desormais regeneres depuis ALL :
 **A relancer apres toute modification des finishers.** Ne jamais y ecrire
 directement, ne jamais y lire une valeur pour la reinjecter ailleurs.
 
+## Onglet Tableau : « A venir » vs tiret
+
+Une cellule vide de l'annee en cours a deux sens tres differents, que le tiret
+confondait :
+- **l'epreuve n'a pas encore eu lieu** -> « A venir », en bleu italique
+  (#3B82F6), avec le mois de l'edition en infobulle ;
+- **la donnee manque** -> tiret, comme avant.
+
+Le depart se fait sur la colonne « Période » de l'Excel : `aVenir(r, y)` rend le
+mois si l'annee est l'annee courante et que le mois est **posterieur** au mois
+en cours. Le mois courant est volontairement traite comme deja passe : mieux
+vaut afficher un tiret sur une course a venir que masquer un trou de collecte
+derriere un « A venir ».
+
 ## Notifications du dashboard
 
 `update_log.json` alimente les notifications affichees sur le dashboard. Il est
