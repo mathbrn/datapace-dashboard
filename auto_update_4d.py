@@ -852,9 +852,16 @@ def fetch_mikatiming_4d(platform_info_or_year, year):
                 print(f"    Mikatiming {finishers_event_code}: pagination absente "
                       f"(max_page={max_page}), {n_temps} temps sur la page 1, "
                       f"{len(r_p1.text)} octets")
-                if n_temps:
+                # Ne JAMAIS prendre une page pleine pour un total : la liste
+                # est paginee a 25, donc 25 temps signifie « page complete »,
+                # pas « 25 arrivants ». Ce repli a ecrit 25 dans Stockholm
+                # Marathon 2026 et Brighton 10KM 2026.
+                if 0 < n_temps < 25:
                     finishers = n_temps
-                    print(f"      -> liste tenant sur une page : {n_temps} finishers")
+                    print(f"      -> liste courte, {n_temps} finishers")
+                elif n_temps >= 25:
+                    print(f"      -> page pleine ({n_temps}) sans pagination : "
+                          f"total inconnu, abandon")
 
         if not men_winner and not women_winner and not finishers:
             return None

@@ -434,6 +434,13 @@ derniere page est illisible. Les chronos vainqueurs, eux, ont toujours ete
 extraits correctement : mikatiming reste une bonne source pour 2 des 4D
 (Berlin, Chicago, Hambourg, Stockholm, Francfort, Vienne, Brighton, Athenes).
 
+**Second piege, introduit puis corrige** : quand la page de liste ne contient
+aucun lien de pagination, j'avais ajoute un repli comptant les temps de la
+page 1. Or la liste est paginee a 25 : une page pleine rend 25, qui a ete ecrit
+tel quel dans Stockholm Marathon 2026 et Brighton 10KM 2026. Le repli n'accepte
+desormais un comptage que si la page contient **moins de 25** temps, c'est-a-dire
+une liste reellement courte. Une page pleine sans pagination = total inconnu.
+
 ### 7. Mikatiming (scraping)
 - **URL pattern** : `https://{subdomain}.r.mikatiming.{de|com}/{year}/?pid=list&event={code}`
 - **Subdomains** : `berlin-marathon`, `tcslondonmarathon`, `hamburg`, `stockholm`, `athens`, `vienna`, `brighton`, `live.frankfurt-marathon.com`, `results.chicagomarathon.com`
