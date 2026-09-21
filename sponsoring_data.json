@@ -4735,14 +4735,6 @@
       ]
     },
     {
-      "event": "Bank of America Chicago Marathon",
-      "brand": "Maurten",
-      "type": "partner",
-      "years": [
-        2026
-      ]
-    },
-    {
       "event": "Boston Marathon",
       "brand": "JetBlue",
       "type": "official",
@@ -4971,8 +4963,7 @@
       "brand": "Adidas",
       "type": "official",
       "years": [
-        2025,
-        2026
+        2025
       ]
     },
     {
@@ -11953,14 +11944,6 @@
       ]
     },
     {
-      "event": "5km Harmonie Mutuelle",
-      "brand": "Decathlon",
-      "type": "official",
-      "years": [
-        2026
-      ]
-    },
-    {
       "event": "S'MI Ouest-France Semi",
       "brand": "Sobhi Sport",
       "type": "official",
@@ -14352,15 +14335,6 @@
       ]
     },
     {
-      "event": "Göteborgsvarvet",
-      "brand": "ASICS",
-      "type": "partner",
-      "years": [
-        2025,
-        2026
-      ]
-    },
-    {
       "event": "Bank of America Shamrock Shuffle",
       "brand": "Bank of America",
       "type": "title",
@@ -14410,14 +14384,6 @@
       "type": "official",
       "years": [
         2025,
-        2026
-      ]
-    },
-    {
-      "event": "Irish Life Dublin Marathon",
-      "brand": "Decathlon",
-      "type": "partner",
-      "years": [
         2026
       ]
     },
@@ -14967,24 +14933,6 @@
       "brand": "ASICS",
       "type": "official",
       "years": [
-        2009,
-        2010,
-        2011,
-        2012,
-        2013,
-        2014,
-        2015,
-        2016,
-        2017,
-        2018,
-        2019,
-        2020,
-        2021,
-        2022,
-        2023,
-        2024,
-        2025,
-        2026,
         2027,
         2028,
         2029,
@@ -14996,14 +14944,6 @@
       "event": "HOKA Semi de Paris",
       "brand": "Ker Cadélac",
       "type": "official",
-      "years": [
-        2026
-      ]
-    },
-    {
-      "event": "Harmonie Mutuelle Toulouse Metropole Run Experience",
-      "brand": "Alltricks",
-      "type": "partner",
       "years": [
         2026
       ]
