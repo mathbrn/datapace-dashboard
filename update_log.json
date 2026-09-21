@@ -1,6 +1,14 @@
 {
   "updates": [
     {
+      "event": "20KM de Bruxelles",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 40862
+      },
+      "timestamp": "2026-09-21T12:45:21Z"
+    },
+    {
       "event": "Stockholm Marathon",
       "date": "2026-09-20",
       "data": {
