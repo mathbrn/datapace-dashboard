@@ -210,6 +210,19 @@ dans `brands` (« HOKA » vs « Hoka ») apparait deux fois, et la variante abse
 de `brands` n'a pas de secteur, donc atterrit en Services. `generate_dashboard.py`
 les signale au generation : **VALIDATION Sponsors doit afficher OK**.
 
+**Doublons de partenariat** : un meme triplet (marque, evenement, type) ne doit
+apparaitre qu'une fois dans `partnerships`, sinon la fiche de marque affiche la
+ligne deux fois. Controle :
+
+    (brand, event, type) en double -> fusionner en une entree, annees unies
+
+**Espaces parasites dans les noms d'epreuve** : tabulation en tete, espace en
+fin, espace insecable `\xa0`. Ils cassent les rapprochements entre l'Excel,
+`sponsoring_data.json`, `avg_times_sporthive.json`, `event_countries.json` et
+`create_chronos.py`. Toujours `.replace('\xa0',' ').strip()` a l'ecriture, et
+verifier les cinq fichiers ensemble — nettoyer un seul cote **casse** le
+rapprochement au lieu de le reparer.
+
 **Categorie Collectivites** (#A78BFA) : villes, communes, regions et entites
 publiques. Secteurs rattaches : `Collectivite`, `Transport public`,
 `Energie/Services publics`. Ne pas y mettre `Institutionnel`, qui couvre des

@@ -1,5 +1,5 @@
 {
-  "\tIrish Life Dublin Marathon": {
+  "Irish Life Dublin Marathon": {
     "flag": "🇮🇪",
     "pays": "Irlande"
   },
@@ -1415,10 +1415,6 @@
     "flag": "🇸🇪",
     "pays": "Suède"
   },
-  "Göteborgsvarvet ": {
-    "flag": "🇸🇪",
-    "pays": "Suède"
-  },
   "HOKA Semi de Paris": {
     "flag": "🇫🇷",
     "pays": "France"
@@ -1587,10 +1583,6 @@
     "flag": "🇵🇹",
     "pays": "Portugal"
   },
-  "Hyundai Meia Maratona ": {
-    "flag": "🇵🇹",
-    "pays": "Portugal"
-  },
   "Hyundai Meia Maratona do Porto": {
     "flag": "🇵🇹",
     "pays": "Portugal"
@@ -1642,10 +1634,6 @@
   "Inverness Half Marathon": {
     "flag": "🇬🇧",
     "pays": "Royaume-Uni"
-  },
-  "Irish Life Dublin Marathon": {
-    "flag": "🇮🇪",
-    "pays": "Irlande"
   },
   "Ironman 70.2 Manama": {
     "flag": "🇧🇭",

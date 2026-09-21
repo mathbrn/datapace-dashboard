@@ -758,7 +758,7 @@ marathon_data = [
 
 half_marathon_data = [
     # --- Ajouts 2026 : semis (sources presse croisees) ---
-    ("Göteborgsvarvet ", "21K", 2026, "1:03:30", "1:13:03"),
+    ("Göteborgsvarvet", "21K", 2026, "1:03:30", "1:13:03"),
     ("NYRR RBC Brooklyn Half", "21K", 2026, "1:04:32", "1:13:11"),
     ("IU Health 500 Festival Mini-Marathon", "21K", 2026, "1:02:27", "1:10:07"),
     ("Rock 'n' Roll Running Series San Diego", "21K", 2026, "1:04:18", "1:16:00"),
