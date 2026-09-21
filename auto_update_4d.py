@@ -351,6 +351,10 @@ def fetch_timeto_4d(event_name, year, dist_code=None):
                 if not target:
                     target = ev
         if not target:
+            # Sans cette trace, l'echec ne laissait aucune ligne dans le log :
+            # « SKIP (fetch_returned_nothing) » sans cause visible.
+            print(f"    TimeTo: aucun evenement {year} pour {event_name!r} "
+                  f"({len(events)} au catalogue)")
             return None
         print(f"    TimeTo: matched event id={target['id']} title={target.get('title','')[:50]}")
         resp2 = sess.get(f"https://sportinnovation.fr/api/events/{target['id']}/races", timeout=15)
@@ -972,8 +976,14 @@ def _tracx_id_par_nom(sess, nom, year):
     global _TRACX_CATALOGUE
     if _TRACX_CATALOGUE is None:
         _TRACX_CATALOGUE = []
+        # `per_page` est ignore par l'API, qui sert 15 evenements par page. La
+        # boucle s'arretait des que la page en rendait moins de 100, donc au
+        # premier lot : le catalogue se limitait a 15 evenements sur ~860 et
+        # Dam tot Damloop ressortait « aucun evenement trouve ». On pagine
+        # maintenant jusqu'a une page vide, ou jusqu'a ne plus voir d'id neuf.
+        vus = set()
         page = 1
-        while page <= 12:
+        while page <= 80:
             r = sess.get("https://api.tracx.events/v1/events",
                          params={"page": page, "per_page": 100}, timeout=20)
             if not r.ok:
@@ -984,11 +994,14 @@ def _tracx_id_par_nom(sess, nom, year):
                 lot = lot.get("data") or lot.get("events") or []
             if not lot:
                 break
-            _TRACX_CATALOGUE.extend(lot)
-            if len(lot) < 100:
+            neufs = [e for e in lot if e.get("id") not in vus]
+            if not neufs:          # l'API reboucle sur la meme page
                 break
+            vus.update(e.get("id") for e in neufs)
+            _TRACX_CATALOGUE.extend(neufs)
             page += 1
-        print(f"    Tracx catalogue: {len(_TRACX_CATALOGUE)} evenements")
+        print(f"    Tracx catalogue: {len(_TRACX_CATALOGUE)} evenements "
+              f"({page - 1} page(s))")
 
     STOP = {"the", "de", "la", "le", "du", "of", "by", "presented", "marathon",
             "half", "run", "race", "series", "tcs", "aj", "bell"}
