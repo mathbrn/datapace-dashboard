@@ -1184,7 +1184,17 @@ PLATFORM_MAP = {
 
 
 # Distance ciblee, en metres, et tolerance
-DIST_TARGETS = {"MARATHON": (42195, 1200), "SEMI": (21097, 700), "10KM": (10000, 450)}
+DIST_TARGETS = {"MARATHON": (42195, 1200), "SEMI": (21097, 700),
+                "10KM": (10000, 450), "5KM": (5000, 300)}
+
+# Distance visee, en metres, pour la ligne AUTRE en cours de traitement.
+# AUTRE ne porte aucune distance ("10 miles", "12K", "16,2 km"...), si bien que
+# pick_race_for_distance rendait None pour toutes ces lignes : c'est la cause
+# des echecs de Dam tot Damloop, du 20km de Paris et de Paris-Versailles.
+# La valeur vient de `distance_m` dans event_platform_map.json, posee par la
+# boucle principale juste avant le fetch. Sans elle, le comportement d'avant
+# est conserve (abandon), jamais un chiffre au hasard.
+_CIBLE_AUTRE_M = None
 
 # Mots-cles dans le titre d'une course, quand la distance chiffree manque
 DIST_WORDS = {
@@ -1210,18 +1220,27 @@ def pick_race_for_distance(races, dist_code, get_distance_m=None, get_title=None
     On retient d'abord la distance chiffree (fiable), sinon les mots-cles du
     titre. Zero ou plusieurs candidats -> None : mieux vaut une cellule vide.
     """
-    if not races or dist_code not in DIST_TARGETS:
+    if not races:
+        return None
+    if dist_code in DIST_TARGETS:
+        target, tol = DIST_TARGETS[dist_code]
+    elif dist_code == "AUTRE" and _CIBLE_AUTRE_M:
+        target, tol = _CIBLE_AUTRE_M, 600
+    else:
         return None
     get_distance_m = get_distance_m or (lambda r: r.get("distance"))
     get_title = get_title or (lambda r: r.get("title") or r.get("name") or "")
-
-    target, tol = DIST_TARGETS[dist_code]
     by_metres = []
     for r in races:
         try:
             d = float(get_distance_m(r) or 0)
         except (TypeError, ValueError):
             continue
+        # Certaines APIs donnent la distance en kilometres (21.097) et non en
+        # metres. Sous 500, la valeur ne peut pas etre des metres pour une
+        # course sur route : on la convertit.
+        if 0 < d < 500:
+            d *= 1000
         if d and abs(d - target) <= tol:
             by_metres.append(r)
     if len(by_metres) == 1:
@@ -1230,6 +1249,8 @@ def pick_race_for_distance(races, dist_code, get_distance_m=None, get_title=None
         print(f"    {len(by_metres)} courses a {target} m — ambigu, abandon")
         return None
 
+    if dist_code not in DIST_WORDS:
+        return None
     inc, exc = DIST_WORDS[dist_code]
     by_words = []
     for r in races:
@@ -1280,6 +1301,20 @@ def _load_platform_map():
         else:
             _PMAP_CACHE = {}
     return _PMAP_CACHE
+
+
+def _info_epreuve(event_name):
+    """Entree de event_platform_map.json correspondant a l'epreuve, ou {}.
+
+    Meme rapprochement que discover_platform (sur `name`, pas sur la cle du
+    dictionnaire, qui n'est pas toujours normalisee de la meme facon).
+    """
+    key = normalize_name(event_name)
+    for ev_key, info in (_load_platform_map() or {}).items():
+        ref = normalize_name(info.get("name", ev_key))
+        if ref and _names_match(key, ref):
+            return info
+    return {}
 
 
 def discover_platform(event_name, year, date_str=None):
@@ -1508,8 +1543,23 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
         # ont pas (Bay to Breakers est un 12K, Broad Street un 10 miles), d'ou
         # des « aucune course 10KM identifiable » systematiques.
         _d = (match["our"]["distance"] or "").strip().upper()
-        dist_code = _d if _d in ("MARATHON", "SEMI", "10KM", "AUTRE") else "10KM"
-        dist_m = {"MARATHON": 42195, "SEMI": 21097, "10KM": 10000}.get(dist_code)
+        if _d not in ("MARATHON", "SEMI", "10KM", "5KM", "AUTRE"):
+            # Une distance inconnue etait rabattue sur 10KM : le fetcher visait
+            # alors la course de 10 km et son total partait dans une cellule
+            # d'une autre distance. Mieux vaut ne rien ecrire.
+            skip("distance_non_geree", platform)
+            continue
+        dist_code = _d
+        dist_m = {"MARATHON": 42195, "SEMI": 21097,
+                  "10KM": 10000, "5KM": 5000}.get(dist_code)
+
+        # Cible en metres pour AUTRE, lue dans le map (cf. _CIBLE_AUTRE_M).
+        globals()["_CIBLE_AUTRE_M"] = None
+        if dist_code == "AUTRE":
+            globals()["_CIBLE_AUTRE_M"] = _info_epreuve(our_name).get("distance_m")
+            if not _CIBLE_AUTRE_M:
+                print(f"    {our_name}: AUTRE sans distance_m dans "
+                      f"event_platform_map.json — la course ne peut pas etre visee")
 
         try:
             if "dist_code" in inspect.signature(fetcher).parameters:
@@ -1609,7 +1659,9 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
         print(f"  ATTENTION: {len(matches)} course(s) matchee(s), AUCUNE donnee recuperee.")
 
     # 6. Always save log + commit (even 0 updates) so every cron run is auditable
-    log_path = LOGS_DIR / f"update_4d_{date_str}.json"
+    # Un --dry-run ecrasait le log du vrai run du meme jour : suffixe distinct.
+    suffixe = "_dryrun" if dry_run else ""
+    log_path = LOGS_DIR / f"update_4d_{date_str}{suffixe}.json"
     with open(log_path, "w", encoding="utf-8") as f:
         json.dump(log, f, indent=2, ensure_ascii=False)
     print(f"\n  Report saved: {log_path}")

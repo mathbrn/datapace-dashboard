@@ -5,3 +5,4 @@ _fix_*
 _mv_*
 _wmm_*
 *.pyc
+logs/*_dryrun.json

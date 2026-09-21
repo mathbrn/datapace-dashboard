@@ -413,14 +413,16 @@
     "country": "USA",
     "distance": "AUTRE",
     "name": "Bay to Breakers",
-    "platform_id": 18246
+    "platform_id": 18246,
+    "distance_m": 12000
   },
   "broad street run": {
     "platform": "athlinks",
     "country": "USA",
     "distance": "AUTRE",
     "name": "Broad Street Run",
-    "platform_id": 168976
+    "platform_id": 168976,
+    "distance_m": 16093
   },
   "cooper river bridge run": {
     "platform": "athlinks",
@@ -499,7 +501,8 @@
     "platform": null,
     "country": "USA",
     "distance": "AUTRE",
-    "name": "Credit Union Cherry Blossom"
+    "name": "Credit Union Cherry Blossom",
+    "distance_m": 16093
   },
   "gasparilla distance classic": {
     "platform": "athlinks",
@@ -513,7 +516,8 @@
     "country": "USA",
     "distance": "AUTRE",
     "name": "Lilac Bloomsday Run",
-    "platform_id": 8432
+    "platform_id": 8432,
+    "distance_m": 12000
   },
   "vancouver sun run": {
     "platform": null,
@@ -525,7 +529,8 @@
     "platform": null,
     "country": "USA",
     "distance": "AUTRE",
-    "name": "Army Ten Miler"
+    "name": "Army Ten Miler",
+    "distance_m": 16093
   },
   "bank of america shamrock shuffle": {
     "platform": null,
@@ -543,7 +548,8 @@
     "platform": "tracx",
     "country": "NED",
     "distance": "AUTRE",
-    "name": "Dam tot Damloop"
+    "name": "Dam tot Damloop",
+    "distance_m": 16093
   },
   "goteborgsvarvet": {
     "platform": null,
@@ -624,7 +630,8 @@
     "platform": "timeto",
     "country": "FRA",
     "distance": "AUTRE",
-    "name": "Harmonie Mutuelle 20km de Paris"
+    "name": "Harmonie Mutuelle 20km de Paris",
+    "distance_m": 20000
   },
   "iu health 500 festival mini-marathon": {
     "platform": null,
@@ -646,7 +653,8 @@
     "distance": "AUTRE",
     "name": "City2Surf",
     "slug": "city2surf",
-    "event": 1
+    "event": 1,
+    "distance_m": 14000
   },
   "st. jude rock 'n' roll series nashville": {
     "platform": null,
@@ -683,7 +691,8 @@
       "2022",
       "2023",
       "2025"
-    ]
+    ],
+    "distance_m": 16093
   },
   "royal parks half marathon": {
     "platform": null,
