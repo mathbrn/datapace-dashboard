@@ -1,6 +1,6 @@
 # DataPace Dashboard — Stats à jour
 
-**Généré le** : 2026-09-19 09:57
+**Généré le** : 2026-09-21 07:51
 **Source historique** : finishers (mémoire)
 
 > **Note pour Claude** : c'est la source de vérité pour tous les chiffres DataPace.
@@ -14,11 +14,11 @@
 | Couples Race × Distance | 1937 |
 | Plage d'années effective | 2000 - 2026 |
 | Points de données 2000-2022 | 1,498 |
-| Points de données 2023-2026 | 1,029 |
-| Points de données totaux (2000 - 2026) | 2,527 |
+| Points de données 2023-2026 | 1,045 |
+| Points de données totaux (2000 - 2026) | 2,543 |
 | Finishers cumulés 2000-2022 | 22,230,851 |
-| Finishers cumulés 2023-2026 | 13,094,267 |
-| Finishers cumulés totaux (2000 - 2026) | 35,325,118 |
+| Finishers cumulés 2023-2026 | 13,453,031 |
+| Finishers cumulés totaux (2000 - 2026) | 35,683,882 |
 | Temps moyens marathon | 91 |
 | Temps moyens semi-marathon | 52 |
 | Chronos vainqueurs Homme | 49 |
@@ -58,7 +58,7 @@
 
 - **868** épreuves de course à pied trackées dans le monde
 - **1937** couples événement × distance en base
-- Plus de **2,527** points de données historiques depuis 2000
-- **35,325,118** finishers cumulés sur la période 2000 - 2026
+- Plus de **2,543** points de données historiques depuis 2000
+- **35,683,882** finishers cumulés sur la période 2000 - 2026
 - Historique depuis **2000** (27 années de données)
 - **511** sponsors trackés sur **290** événements

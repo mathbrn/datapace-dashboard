@@ -1,6 +1,126 @@
 {
   "updates": [
     {
+      "event": "Transurban Bridge to Brisbane",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 27921
+      },
+      "timestamp": "2026-09-21T07:51:03Z"
+    },
+    {
+      "event": "Royal Run",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 13543
+      },
+      "timestamp": "2026-09-21T07:51:03Z"
+    },
+    {
+      "event": "Bangsaen10",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 8491
+      },
+      "timestamp": "2026-09-21T07:51:03Z"
+    },
+    {
+      "event": "Ukrop's Monument Avenue 10K",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 20316
+      },
+      "timestamp": "2026-09-21T07:51:03Z"
+    },
+    {
+      "event": "AJ Bell Great North Run",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 48719
+      },
+      "timestamp": "2026-09-21T07:51:03Z"
+    },
+    {
+      "event": "Media Maraton de Bogota",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 20665
+      },
+      "timestamp": "2026-09-21T07:51:03Z"
+    },
+    {
+      "event": "Asics Run Melbourne",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 11462
+      },
+      "timestamp": "2026-09-21T07:51:03Z"
+    },
+    {
+      "event": "Rock 'n' Roll Running Series San Diego",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 17515
+      },
+      "timestamp": "2026-09-21T07:51:03Z"
+    },
+    {
+      "event": "IU Health 500 Festival Mini-Marathon",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 22323
+      },
+      "timestamp": "2026-09-21T07:51:03Z"
+    },
+    {
+      "event": "Hoka Runaway Sydney Half Marathon",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 24377
+      },
+      "timestamp": "2026-09-21T07:51:03Z"
+    },
+    {
+      "event": "Göteborgsvarvet",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 45578
+      },
+      "timestamp": "2026-09-21T07:51:03Z"
+    },
+    {
+      "event": "21K de Montréal",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 3790
+      },
+      "timestamp": "2026-09-21T07:51:03Z"
+    },
+    {
+      "event": "Maratón de la Ciudad de México Telcel",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 28949
+      },
+      "timestamp": "2026-09-21T07:51:03Z"
+    },
+    {
+      "event": "Sanlam Cape Town Marathon",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 18526
+      },
+      "timestamp": "2026-09-21T07:51:03Z"
+    },
+    {
+      "event": "Copenhagen Marathon",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 22472
+      },
+      "timestamp": "2026-09-21T07:51:03Z"
+    },
+    {
       "event": "Brighton Marathon Week end",
       "date": "2026-09-18",
       "data": {
