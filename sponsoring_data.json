@@ -2504,6 +2504,75 @@
       "full_name": "TREK",
       "sector": "Alimentation",
       "country": "NL"
+    },
+    "ASML": {
+      "full_name": "ASML Holding N.V.",
+      "sector": "Tech/IT",
+      "country": "NL"
+    },
+    "Ciele Athletics": {
+      "full_name": "Ciele Athletics Inc.",
+      "sector": "Equipementier sport",
+      "country": "CA"
+    },
+    "DHL": {
+      "full_name": "DHL Group (Deutsche Post)",
+      "sector": "Logistique",
+      "country": "DE"
+    },
+    "Dextro Energy": {
+      "full_name": "Dextro Energy GmbH",
+      "sector": "Nutrition sport",
+      "country": "DE"
+    },
+    "Herbalife": {
+      "full_name": "Herbalife Ltd.",
+      "sector": "Nutrition sport",
+      "country": "US"
+    },
+    "Medtronic": {
+      "full_name": "Medtronic plc",
+      "sector": "Technologie/Santé",
+      "country": "IE"
+    },
+    "Nespresso": {
+      "full_name": "Nespresso (Nestlé)",
+      "sector": "Boisson",
+      "country": "CH"
+    },
+    "Panasonic": {
+      "full_name": "Panasonic Holdings",
+      "sector": "Tech/Electronique",
+      "country": "JP"
+    },
+    "REWE Group": {
+      "full_name": "REWE Group",
+      "sector": "Grande distribution",
+      "country": "DE"
+    },
+    "Sportive": {
+      "full_name": "Sportive (Istanbul Marathon)",
+      "sector": "Distribution sport",
+      "country": "TR"
+    },
+    "Türkiye İş Bankası": {
+      "full_name": "Türkiye İş Bankası A.Ş.",
+      "sector": "Banque",
+      "country": "TR"
+    },
+    "Xact": {
+      "full_name": "XACT Nutrition",
+      "sector": "Nutrition sport",
+      "country": "CA"
+    },
+    "Züber": {
+      "full_name": "Züber",
+      "sector": "Alimentation",
+      "country": "TR"
+    },
+    "Spek": {
+      "full_name": "Spek",
+      "sector": "Services"
     }
   },
   "partnerships": [
