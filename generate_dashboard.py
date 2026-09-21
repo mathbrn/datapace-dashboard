@@ -318,7 +318,84 @@ CITY_REGION = {
     "Cape Town": "Afrique",
 }
 
-def get_region(city):
+# Continent par pays. Le rapprochement par ville ne couvrait que 268 lignes
+# sur 1934 : le dictionnaire CITY_REGION liste une centaine de villes ecrites
+# a l'identique de l'Excel, et tout le reste tombait en « Autre », rendant les
+# filtres par continent inoperants. Le pays de `event_countries.json` couvre
+# 1932 lignes sur 1934 : il passe en premier, la ville reste en secours.
+PAYS_REGION = {
+    # Europe
+    "Allemagne": "Europe", "Arménie": "Europe", "Autriche": "Europe",
+    "Belgique": "Europe", "Bosnie-Herzégovine": "Europe", "Bulgarie": "Europe",
+    "Chypre": "Europe", "Croatie": "Europe", "Danemark": "Europe",
+    "Espagne": "Europe", "Estonie": "Europe", "Finlande": "Europe",
+    "France": "Europe", "Grèce": "Europe", "Hongrie": "Europe",
+    "Irlande": "Europe", "Italie": "Europe", "Lettonie": "Europe",
+    "Lithuanie": "Europe", "Luxembourg": "Europe",
+    "Macédoine du Nord": "Europe", "Monaco": "Europe", "Norvège": "Europe",
+    "Pays-Bas": "Europe", "Pologne": "Europe", "Portugal": "Europe",
+    "Roumanie": "Europe", "Royaume-Uni": "Europe",
+    "République Tchèque": "Europe", "Serbie": "Europe", "Slovaquie": "Europe",
+    "Slovénie": "Europe", "Suisse": "Europe", "Suède": "Europe",
+    "Turquie": "Europe",
+    # Amerique du Nord (Caraibes comprises)
+    "Canada": "Amérique du Nord", "Cuba": "Amérique du Nord",
+    "Curacao": "Amérique du Nord", "Etats-Unis": "Amérique du Nord",
+    "Mexique": "Amérique du Nord",
+    # Amerique du Sud
+    "Argentine": "Amérique du Sud", "Brésil": "Amérique du Sud",
+    "Chili": "Amérique du Sud", "Colombie": "Amérique du Sud",
+    "Pérou": "Amérique du Sud",
+    # Asie
+    "Bhouthan": "Asie", "Brunei": "Asie", "Chine": "Asie",
+    "Corée du Sud": "Asie", "Hong Kong": "Asie", "Inde": "Asie",
+    "Indonésie": "Asie", "Japon": "Asie", "Kazakhstan": "Asie",
+    "Malaisie": "Asie", "Philippines": "Asie", "Singapour": "Asie",
+    "Sri Lanka": "Asie", "Taiwan": "Asie", "Taïwan": "Asie",
+    "Thailande": "Asie", "Vietnam": "Asie",
+    # Moyen-Orient
+    "Arabie Saoudite": "Moyen-Orient", "Bahreïn": "Moyen-Orient",
+    "Emirats Arabes Unis": "Moyen-Orient", "Emirats arabes unis": "Moyen-Orient",
+    "Koweït": "Moyen-Orient", "Liban": "Moyen-Orient", "Oman": "Moyen-Orient",
+    "Qatar": "Moyen-Orient",
+    # Afrique
+    "Afrique du Sud": "Afrique", "Egypte": "Afrique", "Ethiopie": "Afrique",
+    "Kenya": "Afrique", "Maroc": "Afrique", "Sénégal": "Afrique",
+    "Tunisie": "Afrique",
+    # Oceanie
+    "Australie": "Océanie", "Nouvelle-Zélande": "Océanie",
+}
+
+_PAYS_PAR_EPREUVE = None
+
+
+def _pays_par_epreuve():
+    """Nom d'epreuve normalise -> pays, depuis event_countries.json."""
+    global _PAYS_PAR_EPREUVE
+    if _PAYS_PAR_EPREUVE is None:
+        _PAYS_PAR_EPREUVE = {}
+        path = SCRIPT_DIR / "event_countries.json"
+        if path.exists():
+            with open(path, encoding="utf-8") as f:
+                for nom, info in json.load(f).items():
+                    pays = (info or {}).get("pays")
+                    if pays:
+                        _PAYS_PAR_EPREUVE[_cle_epreuve(nom)] = pays
+    return _PAYS_PAR_EPREUVE
+
+
+def _cle_epreuve(nom):
+    return re.sub(r"\s+", " ", str(nom).replace("\xa0", " ")).strip().lower()
+
+
+def get_region(city, race=None):
+    if race:
+        pays = _pays_par_epreuve().get(_cle_epreuve(race))
+        if pays:
+            region = PAYS_REGION.get(pays)
+            if region:
+                return region
+            print(f"  ATTENTION region: pays inconnu {pays!r} ({race})")
     return CITY_REGION.get(city, "Autre")
 
 def load_finishers():
@@ -352,7 +429,7 @@ def load_finishers():
         circ = compute_circuits(race, dist, city)
         rows.append({"p": str(r.get("Période", "")).strip(), "c": city,
                      "d": dist, "r": race,
-                     "rg": get_region(city),
+                     "rg": get_region(city, race),
                      "hist": hist, "fy": first_yr, "ci": circ})
     print(f"  Finishers  : {len(rows)} courses")
     return rows
@@ -375,7 +452,7 @@ def load_biggest():
             except: return None
         hist = {yr: v for yr in year_cols if (v := gv(yr)) is not None}
         city = re.sub(r"\s*\([^)]+\)\s*$", "", str(r.get("City", ""))).strip()
-        rows.append({"c": city, "r": race, "rg": get_region(city),
+        rows.append({"c": city, "r": race, "rg": get_region(city, race),
                      "hist": hist})
     print(f"  Biggest    : {len(rows)} courses")
     return rows
@@ -3295,10 +3372,10 @@ def main():
         finishers, biggest, md, sd, tdb, winners, sp_avg = load_all(_DB_PATH)
         # Add region and circuit fields to finishers and biggest
         for row in finishers:
-            row["rg"] = get_region(row.get("c", ""))
+            row["rg"] = get_region(row.get("c", ""), row.get("r", ""))
             row["ci"] = compute_circuits(row.get("r", ""), row.get("d", ""), row.get("c", ""))
         for row in biggest:
-            row["rg"] = get_region(row.get("c", ""))
+            row["rg"] = get_region(row.get("c", ""), row.get("r", ""))
             row["ci"] = compute_circuits(row.get("r", ""), row.get("d", ""), row.get("c", ""))
     else:
         print("Source : fichiers Excel (pas de BDD trouvee)")

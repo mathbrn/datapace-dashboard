@@ -4006,5 +4006,13 @@
   "marathon halb marathon rostocker": {
     "flag": "🇩🇪",
     "pays": "Allemagne"
+  },
+  "NN CPC Loop Den Haag": {
+    "flag": "🇳🇱",
+    "pays": "Pays-Bas"
+  },
+  "C&D Xiamen Marathon": {
+    "flag": "🇨🇳",
+    "pays": "Chine"
   }
 }
