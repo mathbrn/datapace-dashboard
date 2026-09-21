@@ -1,18 +1,18 @@
 {
   "updates": [
     {
+      "event": "Royal Run",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 15274
+      },
+      "timestamp": "2026-09-21T07:55:57Z"
+    },
+    {
       "event": "Transurban Bridge to Brisbane",
       "date": "2026-01-01",
       "data": {
         "finishers": 27921
-      },
-      "timestamp": "2026-09-21T07:51:03Z"
-    },
-    {
-      "event": "Royal Run",
-      "date": "2026-01-01",
-      "data": {
-        "finishers": 13543
       },
       "timestamp": "2026-09-21T07:51:03Z"
     },
