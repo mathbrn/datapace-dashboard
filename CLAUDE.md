@@ -165,11 +165,18 @@ plusieurs noms dans ALL (« NN CPC Loop Den Haag - Half Marathon »,
 mono-distance alors que la valeur de BIGGEST est un total d'evenement. C'est
 ainsi que 47 641 a failli etre ecrit sur un 5 km.
 
-### Onglets 10K / 21K / 42K : obsoletes
+### Onglets 10K / 21K / 42K : miroirs de ALL, jamais une source
 Aucun script ne les lit (`generate_dashboard.py` et `migrate_to_db.py` ne lisent
-que ALL). Seul `inject_historique.py` y ecrit encore. Ils ont derive : 49
-divergences avec ALL et 768 cellules presentes dans ALL seulement. Ne pas s'y
-fier, ne pas y ecrire. A supprimer ou regenerer depuis ALL.
+que ALL). Ils sont conserves pour offrir une vue par distance quand on ouvre le
+fichier a la main, **mais ne font jamais autorite**.
+
+Livres a eux-memes ils derivent : 49 divergences avec ALL et 768 cellules
+manquantes avaient ete constatees. Ils sont desormais regeneres depuis ALL :
+
+    python sync_onglets_distance.py
+
+**A relancer apres toute modification des finishers.** Ne jamais y ecrire
+directement, ne jamais y lire une valeur pour la reinjecter ailleurs.
 
 ## Notifications du dashboard
 
@@ -675,6 +682,7 @@ une liste reellement courte. Une page pleine sans pagination = total inconnu.
 - `add_event.py "Period" "City" "Distance" "Race Name" [YEAR COUNT ...]` : Ajoute un nouvel evenement
 - `create_chronos.py` : Genere Chronos_Vainqueurs.xlsx depuis les donnees en dur
 - `mark_first_editions.py` : Marque les cellules pre-premiere-edition avec 'x'
+- `sync_onglets_distance.py` : Regenere les onglets 10K/21K/42K depuis ALL
 - `scrape_finishers.py` : Scraper generique via Playwright (interception reseau)
 - `crawl_sporthive.py` : Crawler Sporthive par decouverte d'IDs
 - `crawl_tracx.py` : Crawler exhaustif des 860 events Tracx
