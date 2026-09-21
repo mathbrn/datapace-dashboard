@@ -146,6 +146,31 @@ api_patterns = [
 - `avg_times_sporthive.json` : Temps moyens calcules depuis APIs (Sporthive + Tracx)
 - `datapace_dashboard.html` : Dashboard genere (ouvrir dans navigateur)
 
+## L'onglet BIGGEST EVENTS n'est PLUS lu
+
+`BIGGEST EVENTS` agrege par **evenement** — la somme de toutes ses distances —
+alors que le dashboard raisonne par couple **(epreuve, distance)**. Les deux
+onglets ne sont donc pas comparables, et leurs ecarts ne sont pas des erreurs :
+Amsterdam 2025 y valait 44 578 contre 23 326 dans ALL, Run in Lyon 32 767
+(= 2^15 - 1, un artefact) contre 5 145.
+
+`load_biggest()` n'est plus appele : `biggest` vaut `[]`. Aucune regression, la
+constante `BIGGEST` etait injectee dans le HTML mais **jamais lue cote JS** —
+l'onglet Top Evenements filtre `RAW`, donc `ALL`. **ALL est la source unique.**
+
+**Piege lors d'une recuperation depuis BIGGEST EVENTS** : ne pas se fier au
+nombre de distances portees par un nom. Un meme evenement peut exister sous
+plusieurs noms dans ALL (« NN CPC Loop Den Haag - Half Marathon »,
+« ... - 10 KM Loop », « NN CPC Loop Den Haag »), si bien qu'un nom parait
+mono-distance alors que la valeur de BIGGEST est un total d'evenement. C'est
+ainsi que 47 641 a failli etre ecrit sur un 5 km.
+
+### Onglets 10K / 21K / 42K : obsoletes
+Aucun script ne les lit (`generate_dashboard.py` et `migrate_to_db.py` ne lisent
+que ALL). Seul `inject_historique.py` y ecrit encore. Ils ont derive : 49
+divergences avec ALL et 768 cellules presentes dans ALL seulement. Ne pas s'y
+fier, ne pas y ecrire. A supprimer ou regenerer depuis ALL.
+
 ## Notifications du dashboard
 
 `update_log.json` alimente les notifications affichees sur le dashboard. Il est

@@ -3271,7 +3271,11 @@ def main():
         check_files()
         print("\nLecture des donnees (Excel)...")
         finishers = load_finishers()
-        biggest = load_biggest()
+        # L'onglet BIGGEST EVENTS agrege par EVENEMENT (somme de toutes les
+        # distances) alors que le dashboard raisonne par (epreuve, distance) :
+        # ses valeurs ne sont pas comparables a celles de ALL. Il n'etait de
+        # toute facon jamais lu cote JS. On ne le charge plus.
+        biggest = []
         md = {yr: load_marathon(yr) for yr in [2024, 2025, 2026]}
         sd = load_semi()
         tdb = build_times_db(md, sd)
