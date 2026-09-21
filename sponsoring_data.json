@@ -177,7 +177,7 @@
     },
     "Valencia Trinidad Alfonso": {
       "full_name": "Fundacion Trinidad Alfonso",
-      "sector": "Fondation/Mecenat",
+      "sector": "Collectivité",
       "country": "ES"
     },
     "Lidl": {
@@ -213,11 +213,6 @@
     "BRITA": {
       "full_name": "BRITA GmbH",
       "sector": "Hydratation/Consommation",
-      "country": "DE"
-    },
-    "ERDINGER": {
-      "full_name": "Erdinger Weissbräu",
-      "sector": "Boisson/Brasserie",
       "country": "DE"
     },
     "GetPRO": {
@@ -659,11 +654,6 @@
       "full_name": "Ekosport SAS",
       "sector": "Retail/Distribution sport",
       "country": "FR"
-    },
-    "AMARON": {
-      "full_name": "AMARON (Amara Raja)",
-      "sector": "Industrie/Batteries",
-      "country": "IN"
     },
     "Snickers": {
       "full_name": "Snickers (Mars Inc.)",
@@ -2105,11 +2095,6 @@
       "sector": "Loterie",
       "country": "DE"
     },
-    "HiPRO": {
-      "full_name": "HiPRO (Danone)",
-      "sector": "Alimentation protéinée",
-      "country": "NL"
-    },
     "Apollo Reizen": {
       "full_name": "Apollo Reizen B.V.",
       "sector": "Tourisme",
@@ -2514,6 +2499,11 @@
       "full_name": "Les Mills International",
       "sector": "Fitness",
       "country": "NZ"
+    },
+    "TREK": {
+      "full_name": "TREK",
+      "sector": "Alimentation",
+      "country": "NL"
     }
   },
   "partnerships": [
@@ -2656,7 +2646,7 @@
     },
     {
       "event": "BMW Berlin Marathon",
-      "brand": "ERDINGER",
+      "brand": "Erdinger",
       "type": "partner",
       "years": [
         2023,
@@ -4933,7 +4923,7 @@
     },
     {
       "event": "Tata Mumbai Marathon",
-      "brand": "AMARON",
+      "brand": "Amaron",
       "type": "official",
       "years": [
         2026
@@ -7152,7 +7142,7 @@
     },
     {
       "event": "Manchester Half Marathon",
-      "brand": "ERDINGER",
+      "brand": "Erdinger",
       "type": "partner",
       "years": [
         2025,
@@ -12869,7 +12859,7 @@
     },
     {
       "event": "10km HOKA Paris Centre",
-      "brand": "HOKA",
+      "brand": "Hoka",
       "type": "title",
       "years": [
         2023,
@@ -13141,7 +13131,7 @@
     },
     {
       "event": "Utrecht Marathon",
-      "brand": "HiPRO",
+      "brand": "HiPro",
       "type": "title",
       "years": [
         2024,
@@ -13256,7 +13246,7 @@
     },
     {
       "event": "Hackney Half Marathon",
-      "brand": "HOKA",
+      "brand": "Hoka",
       "type": "title",
       "years": [
         2026
@@ -14029,7 +14019,7 @@
     },
     {
       "event": "Maraton de Zaragoza",
-      "brand": "HOKA",
+      "brand": "Hoka",
       "type": "partner",
       "years": [
         2026
@@ -14846,7 +14836,7 @@
     },
     {
       "event": "Zurich Marato Barcelona",
-      "brand": "HOKA",
+      "brand": "Hoka",
       "type": "title",
       "years": [
         2026,
@@ -15020,7 +15010,7 @@
     },
     {
       "event": "Schneider Electric Marathon de Paris",
-      "brand": "HiPRO",
+      "brand": "HiPro",
       "type": "official",
       "years": [
         2025,
@@ -15040,7 +15030,7 @@
     },
     {
       "event": "HOKA Semi de Paris",
-      "brand": "HOKA",
+      "brand": "Hoka",
       "type": "title",
       "years": [
         2024,

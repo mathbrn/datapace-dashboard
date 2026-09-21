@@ -637,15 +637,30 @@ var _spSectorMap={
 'Immobilier':'Immobilier & Construction','BTP/Construction':'Immobilier & Construction',
 'Medias':'Medias & Communication','Medias/Presse':'Medias & Communication','Medias/Radio':'Medias & Communication','Organisateur/Media':'Medias & Communication','Marketing sportif':'Medias & Communication',
 'Logistique':'Services','Loterie':'Services','Evenementiel sport':'Services','Running/Communaute':'Services',
-'Collectivite':'Services','Federation sportive':'Services','ONG/Charite':'Services','ONG/Sport':'Services','Fondation/Mecenat':'Services'
+'Federation sportive':'Services','ONG/Charite':'Services','ONG/Sport':'Services','Fondation/Mecenat':'Services',
+'Collectivite':'Collectivites','Transport public':'Collectivites',
+'Institutionnel':'Services',
+'Energie/Services publics':'Collectivites',
+'Alimentation':'Alimentation & Boissons','Alimentation/Boisson':'Alimentation & Boissons',
+'Agroalimentaire':'Alimentation & Boissons','Biere sans alcool':'Alimentation & Boissons',
+'Boisson sport/Pharma':'Alimentation & Boissons','Boisson/Eau':'Alimentation & Boissons',
+'Nutrition/Barres proteinees':'Alimentation & Boissons',
+'Equipement sport/Recovery':'Equipement & Mode','Mode/Sport':'Equipement & Mode','Textile':'Equipement & Mode',
+'Media/Presse':'Medias & Communication','Media/Radio':'Medias & Communication',
+'Hotellerie':'Tourisme & Hotellerie','Distribution/Commerce':'Retail & Distribution',
+'Hygiene/Sante':'Sante & Bien-etre','Sante/Assurance':'Finance & Assurance',
+'Finance/Credit':'Finance & Assurance','Automobile/Camions':'Mobilite & Transport',
+'Batterie/Energie':'Energie & Environnement','Traitement eau':'Energie & Environnement',
+'Machinerie/Agriculture':'Industrie','Tech/Automobile':'Tech & Telecoms',
+'Tech/Emploi':'Tech & Telecoms','Tech/Software':'Tech & Telecoms'
 };
 var _spCols={
 'Equipement & Mode':'#22C55E','Alimentation & Boissons':'#FF9F45','Finance & Assurance':'#38BDF8',
 'Mobilite & Transport':'#FF8A50','Sante & Bien-etre':'#2DBF7E','Tech & Telecoms':'#F472B6',
 'Energie & Environnement':'#FCDB00','Retail & Distribution':'#FB923C','Tourisme & Hotellerie':'#5CDFA0',
-'Immobilier & Construction':'#94A3B8','Medias & Communication':'#818CF8','Services':'#6B7280'
+'Immobilier & Construction':'#94A3B8','Medias & Communication':'#818CF8','Collectivites':'#A78BFA','Industrie':'#9CA3AF','Services':'#6B7280'
 };
-function _spNormSec(s){return _spSectorMap[s]||_spSectorMap[s.replace(/[éèê]/g,'e').replace(/[àâ]/g,'a')]||'Services';}
+function _spNormSec(s){if(!s)return 'Services';var n=s.normalize('NFD').replace(/[\u0300-\u036f]/g,'');return _spSectorMap[s]||_spSectorMap[n]||'Services';}
 function buildOvSponsoring(eventName,eventColor){
   if(typeof SP_PARTNERSHIPS==='undefined')return '';
   var ec=eventColor||'var(--purple)';

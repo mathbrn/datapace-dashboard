@@ -192,6 +192,29 @@ en cours. Le mois courant est volontairement traite comme deja passe : mieux
 vaut afficher un tiret sur une course a venir que masquer un trou de collecte
 derriere un « A venir ».
 
+## Onglet Sponsoring : categorisation des marques
+
+`sponsoring_data.json` porte un `sector` libre par marque ; `_spSectorMap` dans
+`generate_dashboard.py` le traduit en categorie affichee. **Tout secteur absent
+du map tombe silencieusement dans « Services »** — c'est la source de presque
+toutes les mauvaises categorisations. Verifier le seau Services apres chaque
+ajout de marque.
+
+**Normalisation des accents** : `_spNormSec()` utilise `normalize('NFD')`, qui
+retire tous les diacritiques. L'ancienne version ne remplacait que `é è ê à â`,
+si bien que « Énergie/Pétrole », « Hygiène/Santé » ou « Médias » n'etaient pas
+reconnus et finissaient en Services.
+
+**Doublons de casse** : une marque ecrite differemment dans `partnerships` et
+dans `brands` (« HOKA » vs « Hoka ») apparait deux fois, et la variante absente
+de `brands` n'a pas de secteur, donc atterrit en Services. `generate_dashboard.py`
+les signale au generation : **VALIDATION Sponsors doit afficher OK**.
+
+**Categorie Collectivites** (#A78BFA) : villes, communes, regions et entites
+publiques. Secteurs rattaches : `Collectivite`, `Transport public`,
+`Energie/Services publics`. Ne pas y mettre `Institutionnel`, qui couvre des
+associations professionnelles et non des collectivites.
+
 ## Notifications du dashboard
 
 `update_log.json` alimente les notifications affichees sur le dashboard. Il est
