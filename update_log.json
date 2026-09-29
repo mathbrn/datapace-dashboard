@@ -2,6 +2,15 @@
   "updates": [
     {
       "event": "Stockholm Marathon",
+      "date": "2026-09-28",
+      "data": {
+        "winner_men": "02:10:46",
+        "winner_women": "02:30:58"
+      },
+      "timestamp": "2026-09-29T11:49:16Z"
+    },
+    {
+      "event": "Stockholm Marathon",
       "date": "2026-09-27",
       "data": {
         "winner_men": "02:10:46",
