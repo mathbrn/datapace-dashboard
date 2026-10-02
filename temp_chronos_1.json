@@ -385,5 +385,23 @@
     "nom_homme": null,
     "temps_femme": "02:49:38",
     "nom_femme": null
+  },
+  {
+    "course": "Bank of America Chicago Marathon",
+    "distance": "MARATHON",
+    "annee": 2026,
+    "temps_homme": "07:30:00",
+    "nom_homme": null,
+    "temps_femme": "07:30:00",
+    "nom_femme": null
+  },
+  {
+    "course": "Mainova Frankfurt Marathon",
+    "distance": "MARATHON",
+    "annee": 2026,
+    "temps_homme": "02:06:16",
+    "nom_homme": null,
+    "temps_femme": "02:19:34",
+    "nom_femme": null
   }
 ]
