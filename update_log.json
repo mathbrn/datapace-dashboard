@@ -2,6 +2,33 @@
   "updates": [
     {
       "event": "Stockholm Marathon",
+      "date": "2026-10-03",
+      "data": {
+        "winner_men": "02:10:46",
+        "winner_women": "02:30:58"
+      },
+      "timestamp": "2026-10-04T11:32:17Z"
+    },
+    {
+      "event": "Mainova Frankfurt Marathon",
+      "date": "2026-10-03",
+      "data": {
+        "winner_men": "02:06:16",
+        "winner_women": "02:19:34"
+      },
+      "timestamp": "2026-10-04T11:32:16Z"
+    },
+    {
+      "event": "Bank of America Chicago Marathon",
+      "date": "2026-10-03",
+      "data": {
+        "winner_men": "07:30:00",
+        "winner_women": "07:30:00"
+      },
+      "timestamp": "2026-10-04T11:31:26Z"
+    },
+    {
+      "event": "Stockholm Marathon",
       "date": "2026-10-02",
       "data": {
         "winner_men": "02:10:46",
