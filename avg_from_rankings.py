@@ -110,23 +110,77 @@ def _chronos_de_page(html):
     return chronos
 
 
-def url_liste_mikatiming(info, year):
-    """(session, base_url, event_code) pour une epreuve mikatiming, ou None."""
-    sub = info.get("subdomain") or ""
+# Les sous-domaines du map sont ecrits de trois facons : hote complet
+# (results.chicagomarathon.com), URL complete, ou simple prefixe (« hamburg »)
+# a completer en {prefixe}.r.mikatiming.{de|com}. Ne traiter que le premier cas
+# ecartait silencieusement Hambourg, Stockholm, Athenes, Vienne et Brighton.
+TLD_DE = ("hamburg", "berlin-marathon", "vienna", "berlin-halbmarathon",
+          "berlinerhm")
+
+
+def base_mikatiming(sub):
+    """URL de base d'un site mikatiming a partir du champ `subdomain`."""
+    sub = (sub or "").strip()
     if not sub:
         return None
-    if not sub.startswith("http"):
-        if "." not in sub.split("/")[0]:
-            return None
-        sub = f"https://{sub}"
-    code = info.get("event_code")
-    if not code and info.get("event_code_pattern"):
-        code = info["event_code_pattern"].format(yyyy=year)
-    if not code:
+    if sub.startswith("http"):
+        return sub.rstrip("/")
+    if "." in sub.split("/")[0]:
+        return f"https://{sub}".rstrip("/")
+    tld = "de" if sub in TLD_DE else "com"
+    return f"https://{sub}.r.mikatiming.{tld}"
+
+
+def codes_mikatiming(sess, base, year):
+    """Codes evenement proposes par la page d'accueil d'une edition.
+
+    Les codes du map vieillissent : « MAL », « MAS », « {yyyy}_ » ne
+    correspondent plus a rien sur la plupart des sites, qui utilisent
+    desormais des identifiants comme 2026_scc_berlinmarathon ou 2026_vienna.
+    Les lire sur la page de l'edition evite de maintenir dix codes par an.
+    L'annee est privilegiee dans l'ordre d'essai.
+    """
+    try:
+        r = sess.get(f"{base}/{year}/", timeout=30)
+    except requests.RequestException:
+        return []
+    if not r.ok:
+        return []
+    codes = []
+    for c in re.findall(r"[?&]event=([A-Za-z0-9_]+)", r.text):
+        if c not in codes:
+            codes.append(c)
+    return sorted(codes, key=lambda c: (str(year) not in c, len(c)))
+
+
+def code_qui_repond(sess, base, year, candidats):
+    """Premier code dont la liste rend des lignes de classement."""
+    for c in candidats:
+        try:
+            r = sess.get(f"{base}/{year}/?pid=list&event={c}&num_results=25"
+                         f"&page=1", timeout=40)
+        except requests.RequestException:
+            continue
+        if r.ok and _chronos_de_page(r.text):
+            return c
+    return None
+
+
+def url_liste_mikatiming(info, year):
+    """(session, base_url, event_code) pour une epreuve mikatiming, ou None."""
+    sub = base_mikatiming(info.get("subdomain") or "")
+    if not sub:
         return None
     sess = requests.Session()
     sess.headers.update(NAVIGATEUR)
-    return sess, f"{sub.rstrip('/')}/{year}/", code
+    code = info.get("event_code")
+    if not code and info.get("event_code_pattern"):
+        code = info["event_code_pattern"].format(yyyy=year)
+    candidats = ([code] if code else []) + codes_mikatiming(sess, sub, year)
+    code = code_qui_repond(sess, sub, year, candidats)
+    if not code:
+        return None
+    return sess, f"{sub}/{year}/", code
 
 
 def compte_finishers_mikatiming(info, year, sess=None, base=None, code=None):
