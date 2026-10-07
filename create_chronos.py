@@ -1209,6 +1209,48 @@ data.extend(marathon_data)
 data.extend(half_marathon_data)
 data.extend(tenk_data)
 
+
+def _chronos_collectes():
+    """Chronos ecrits par auto_update_4d.py dans temp_chronos_1.json.
+
+    Ce fichier n'etait relu par personne : les chronos vainqueurs collectes
+    automatiquement n'arrivaient donc jamais dans Chronos_Vainqueurs.xlsx, ni
+    dans l'onglet Winners Times, tant qu'on ne les recopiait pas a la main
+    dans les listes ci-dessus. Ils sont desormais fusionnes, et une entree
+    deja presente en dur n'est jamais remplacee.
+    """
+    import json
+    chemin = Path(__file__).parent / "temp_chronos_1.json"
+    if not chemin.exists():
+        return []
+    try:
+        with open(chemin, encoding="utf-8") as f:
+            brut = json.load(f)
+    except (ValueError, OSError) as exc:
+        print(f"temp_chronos_1.json illisible: {exc}")
+        return []
+    etiquette = {"MARATHON": "42K", "SEMI": "21K", "10KM": "10K",
+                 "5KM": "5K", "AUTRE": "AUTRE"}
+    deja = {(c, d, a) for c, d, a, _, _ in data}
+    ajouts = []
+    for e in brut:
+        h, f_ = e.get("temps_homme"), e.get("temps_femme")
+        if not h and not f_:
+            continue
+        dist = etiquette.get(str(e.get("distance", "")).upper(),
+                             str(e.get("distance", "")).upper())
+        cle = (e.get("course"), dist, e.get("annee"))
+        if cle in deja:
+            continue
+        deja.add(cle)
+        ajouts.append((e["course"], dist, e["annee"], h or "N/A", f_ or "N/A"))
+    if ajouts:
+        print(f"temp_chronos_1.json : {len(ajouts)} chrono(s) fusionne(s)")
+    return ajouts
+
+
+data.extend(_chronos_collectes())
+
 # Sort by Distance (42K first, then 21K, then 10K), then Course, then Year
 distance_order = {"42K": 0, "21K": 1, "10K": 2}
 data.sort(key=lambda x: (distance_order.get(x[1], 9), x[0], x[2]))

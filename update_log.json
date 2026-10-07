@@ -1,6 +1,15 @@
 {
   "updates": [
     {
+      "event": "Paris-Versailles - La grande classique",
+      "date": "2026-09-27",
+      "data": {
+        "winner_men": "00:49:05",
+        "winner_women": "00:55:58"
+      },
+      "timestamp": "2026-10-07T15:08:42Z"
+    },
+    {
       "event": "Gasparilla Distance Classic",
       "date": "2026-10-07",
       "data": {

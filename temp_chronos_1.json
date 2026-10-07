@@ -421,5 +421,14 @@
     "nom_homme": null,
     "temps_femme": "00:31:48",
     "nom_femme": null
+  },
+  {
+    "course": "Paris-Versailles - La grande classique",
+    "distance": "AUTRE",
+    "annee": 2026,
+    "temps_homme": "00:49:05",
+    "nom_homme": "Baptiste Jard",
+    "temps_femme": "00:55:58",
+    "nom_femme": "Mélody Julien"
   }
 ]
