@@ -246,22 +246,10 @@ def chronos_mikatiming(info, year, verbeux=True):
     `num_results` plafonne a 100 : au-dela la page retombe silencieusement a
     25, donc on ne demande jamais plus. On s'arrete sur la premiere page vide.
     """
-    sub = info.get("subdomain") or ""
-    if not sub:
+    prepare = url_liste_mikatiming(info, year)
+    if not prepare:
         return None
-    if not sub.startswith("http"):
-        sub = f"https://{sub}" if "." in sub.split("/")[0] else None
-        if sub is None:
-            return None
-    code = info.get("event_code")
-    if not code and info.get("event_code_pattern"):
-        code = info["event_code_pattern"].format(yyyy=year)
-    if not code:
-        return None
-
-    sess = requests.Session()
-    sess.headers.update(NAVIGATEUR)
-    base = f"{sub.rstrip('/')}/{year}/"
+    sess, base, code = prepare
     chronos = []
     page = 1
     while page <= 2000:
