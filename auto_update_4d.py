@@ -1980,6 +1980,10 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
                 event_date = date_str
             log_update(our_name, event_date, logged_data, dry_run)
 
+        # `logged_data` ne contient que ce qui a franchi les protections
+        # d'ecriture. Le distinguer de ce que le fetcher a rendu evite le
+        # message trompeur du run du 7 octobre : « 14 update(s) » pour 14
+        # cellules seulement relues et zero ecriture.
         log["updates"].append({
             "event": our_name, "year": year,
             "platform": platform,
@@ -1987,11 +1991,13 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
             "avg_time": result.get("avg_time"),
             "winner_men": result.get("winner_men"),
             "winner_women": result.get("winner_women"),
+            "ecrit": sorted(logged_data) or None,
         })
 
     # 5. Regenerate dashboard (only when there are actual updates)
-    if log["updates"] and not dry_run and regenerate:
-        print(f"\n=== Regenerating dashboard ({len(log['updates'])} updates) ===")
+    ecritures = [u for u in log["updates"] if u.get("ecrit")]
+    if ecritures and not dry_run and regenerate:
+        print(f"\n=== Regenerating dashboard ({len(ecritures)} ecriture(s)) ===")
         subprocess.run(["python", "create_chronos.py"], cwd=str(SCRIPT_DIR))
         subprocess.run(["python", "generate_dashboard.py"], cwd=str(SCRIPT_DIR))
 
@@ -2002,7 +2008,8 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
     log["summary"] = {
         "wa_races": len(log["wa_races"]),
         "matched": len(matches),
-        "updated": len(log["updates"]),
+        "updated": len([u for u in log["updates"] if u.get("ecrit")]),
+        "fetched": len(log["updates"]),
         "skipped": len(log["skipped"]),
         "errors": len(log["errors"]),
         "skip_reasons": dict(reasons),
@@ -2010,12 +2017,16 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
     }
     print(f"\n  --- Recap {date_str} ---")
     print(f"  WA races={len(log['wa_races'])}  matched={len(matches)}  "
-          f"updated={len(log['updates'])}  skipped={len(log['skipped'])}  "
-          f"errors={len(log['errors'])}")
+          f"relevees={log['summary']['fetched']}  "
+          f"ecrites={log['summary']['updated']}  "
+          f"skipped={len(log['skipped'])}  errors={len(log['errors'])}")
     for r, n in reasons.most_common():
         print(f"    {n:3d}x {r}")
-    if matches and not log["updates"]:
+    if matches and not log["summary"]["fetched"]:
         print(f"  ATTENTION: {len(matches)} course(s) matchee(s), AUCUNE donnee recuperee.")
+    elif log["summary"]["fetched"] and not log["summary"]["updated"]:
+        print(f"  {log['summary']['fetched']} donnee(s) relevee(s), toutes deja "
+              f"presentes — rien d'ecrit.")
 
     # 6. Always save log + commit (even 0 updates) so every cron run is auditable
     # Un --dry-run ecrasait le log du vrai run du meme jour : suffixe distinct.
@@ -2027,10 +2038,19 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
 
     if not dry_run and commit:
         subprocess.run(["git", "add", "-A"], cwd=str(SCRIPT_DIR))
-        n = len(log["updates"])
         s = log["summary"]
+        n = s["updated"]
+        releves = s["fetched"]
         if n > 0:
-            msg = f"Auto Update 4D {date_str} — {n} update(s)"
+            msg = f"Auto Update 4D {date_str} — {n} ecriture(s)"
+            if releves > n:
+                msg += f" ({releves - n} deja remplie(s))"
+        elif releves > 0:
+            # Des donnees relevees mais toutes refusees par les protections
+            # d'ecriture : rien n'a change, et le dire evite de croire a un
+            # apport.
+            msg = (f"Auto Update 4D {date_str} — 0 ecriture / "
+                   f"{releves} deja remplie(s)")
         elif s["matched"] > 0:
             # cas le plus trompeur : des courses matchees mais rien de collecte
             msg = (f"Auto Update 4D {date_str} — 0 update / "
@@ -2087,17 +2107,27 @@ def main():
 
         print(f"\n=== BACKFILL TERMINE : {len(all_updates)} mise(s) a jour ===")
         for u in all_updates:
-            print(f"  {u['event']} {u['year']}: finishers={u.get('finishers')} "
-                  f"avg={u.get('avg_time')} H={u.get('winner_men')} F={u.get('winner_women')}")
+            etat = ",".join(u["ecrit"]) if u.get("ecrit") else "deja rempli"
+            print(f"  {u['event']} {u['year']} [{etat}]: "
+                  f"finishers={u.get('finishers')} avg={u.get('avg_time')} "
+                  f"H={u.get('winner_men')} F={u.get('winner_women')}")
 
-        if all_updates and not args.dry_run:
+        ecritures = [u for u in all_updates if u.get("ecrit")]
+        if ecritures and not args.dry_run:
             print("\n=== Regeneration du dashboard ===")
             subprocess.run(["python", "create_chronos.py"], cwd=str(SCRIPT_DIR))
             subprocess.run(["python", "generate_dashboard.py"], cwd=str(SCRIPT_DIR))
 
         if not args.dry_run:
             subprocess.run(["git", "add", "-A"], cwd=str(SCRIPT_DIR))
-            msg = f"Auto Update 4D backfill {d0} -> {d1} — {len(all_updates)} update(s)"
+            if ecritures:
+                msg = (f"Auto Update 4D backfill {d0} -> {d1} — "
+                       f"{len(ecritures)} ecriture(s)")
+                if len(all_updates) > len(ecritures):
+                    msg += f" ({len(all_updates) - len(ecritures)} deja remplie(s))"
+            else:
+                msg = (f"Auto Update 4D backfill {d0} -> {d1} — 0 ecriture / "
+                       f"{len(all_updates)} deja remplie(s)")
             _git_commit_et_pousse(msg)
         return 0
 
