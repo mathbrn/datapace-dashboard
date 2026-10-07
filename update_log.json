@@ -1,6 +1,14 @@
 {
   "updates": [
     {
+      "event": "BMW Berlin Marathon",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 50084
+      },
+      "timestamp": "2026-10-07T08:10:03Z"
+    },
+    {
       "event": "Stockholm Marathon",
       "date": "2026-10-05",
       "data": {

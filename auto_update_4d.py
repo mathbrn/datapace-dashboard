@@ -152,19 +152,29 @@ def events_due_without_calendar(our_events, target_date):
 
     Le calendrier WA ne sert qu'a savoir quelles courses ont eu lieu. On peut
     s'en passer : on prend les evenements du map dont le mois (colonne
-    « Période » de l'Excel) est deja passe dans l'annee cible et dont la
-    cellule finishers est encore vide. Un fetch sur une course pas encore
+    « Période » de l'Excel) est deja passe dans l'annee cible et dont l'une
+    des quatre donnees manque encore. Un fetch sur une course pas encore
     courue ne renvoie rien — c'est sans risque, juste logge en
     fetch_returned_nothing.
+
+    Le critere portait sur les seuls finishers : des qu'une valeur etait
+    saisie a la main, l'epreuve sortait du repli et ses chronos vainqueurs et
+    son temps moyen ne pouvaient plus jamais etre collectes (cas du BMW Berlin
+    Marathon 2026). Les trois donnees secondaires rendent donc aussi eligible.
     """
     year = target_date.year
     filled = _years_already_filled(year)
+    chronos = _chronos_deja_remplis(year)
+    moyennes = _avg_deja_remplis(year)
     due = []
     for ev in our_events:
         mois = MOIS_INDEX.get(normalize_name(ev.get("period", "")).lower())
         if not mois or mois > target_date.month:
             continue
-        if (ev["name"], ev["distance"]) in filled:
+        complet = ((ev["name"], ev["distance"]) in filled
+                   and (ev["name"], ev["distance"]) in chronos
+                   and ev["name"] in moyennes)
+        if complet:
             continue
         platform, _ = discover_platform(ev["name"], year)
         if not platform or platform not in PLATFORM_MAP:
@@ -172,6 +182,41 @@ def events_due_without_calendar(our_events, target_date):
         due.append({"wa": {"name": ev["name"], "dateRange": ""},
                     "our": ev, "score": 0})
     return due
+
+
+def _chronos_deja_remplis(year):
+    """Couples (course, distance) dont au moins un chrono vainqueur est connu."""
+    deja = set()
+    for nom, cle_d, cle_a, cle_h, cle_f in (
+            ("temp_chronos_1.json", "distance", "annee", "temps_homme", "temps_femme"),):
+        path = SCRIPT_DIR / nom
+        if not path.exists():
+            continue
+        try:
+            with open(path, encoding="utf-8") as f:
+                for e in json.load(f):
+                    if e.get(cle_a) == year and (e.get(cle_h) or e.get(cle_f)):
+                        deja.add((str(e.get("course") or "").strip(),
+                                  str(e.get(cle_d) or "").strip()))
+        except (ValueError, OSError) as exc:
+            print(f"  {nom} illisible: {exc}")
+    return deja
+
+
+def _avg_deja_remplis(year):
+    """Noms de course ayant deja un temps moyen pour l'annee."""
+    deja = set()
+    path = SCRIPT_DIR / "avg_times_sporthive.json"
+    if not path.exists():
+        return deja
+    try:
+        with open(path, encoding="utf-8") as f:
+            for e in json.load(f):
+                if e.get("year") == year and e.get("avg_time"):
+                    deja.add(str(e.get("race") or "").strip())
+    except (ValueError, OSError) as exc:
+        print(f"  avg_times_sporthive.json illisible: {exc}")
+    return deja
 
 
 def _years_already_filled(year):
