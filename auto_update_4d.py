@@ -786,6 +786,38 @@ def pick_athlinks_race(lignes, dist_code):
                                   get_title=lambda r: r["title"])
 
 
+def _athlinks_course_api(sess, event_id, dist_code):
+    """Compte exact par course, via alaska.athlinks.com.
+
+    `EventCoursesDropDown[].Value` vaut « courseId:raceId:FINISHERS:xxx » et
+    `Text` porte le nom de la course. On vise la distance demandee comme
+    partout ailleurs, et on abandonne si c'est ambigu.
+    """
+    if not event_id:
+        return None
+    try:
+        r = sess.get(f"https://alaska.athlinks.com/Events/Race/Api/"
+                     f"{event_id}/Course/0", timeout=25)
+        if not r.ok:
+            return None
+        listes = (r.json().get("Result") or {}).get("EventCoursesDropDown") or []
+    except (ValueError, requests.RequestException):
+        return None
+    courses = []
+    for o in listes:
+        morceaux = str(o.get("Value", "")).split(":")
+        if len(morceaux) < 3 or not morceaux[2].isdigit():
+            continue
+        n = int(morceaux[2])
+        if n:
+            courses.append({"title": o.get("Text") or "", "count": n})
+    if not courses:
+        return None
+    courses = sans_variantes(courses, lambda c: c["title"])
+    choisie = pick_athlinks_race(courses, dist_code)
+    return choisie["count"] if choisie else None
+
+
 def fetch_athlinks_4d(master_id_or_info, year, dist_code=None):
     """Fetch 4D from Athlinks API.
 
@@ -885,6 +917,17 @@ def fetch_athlinks_4d(master_id_or_info, year, dist_code=None):
                 get_title=lambda x: x.get("name") or x.get("description") or "")
             if r:
                 finishers = r.get("finisherCount") or r.get("participantCount")
+
+        if not finishers:
+            # Repli : l'API « Course », qui donne le compte exact par course.
+            # La description de l'edition ne porte les chiffres que pour les
+            # annees recentes ; avant, elle est vide et le tableau `races`
+            # n'a pas de compteur. Cette API-la en a un pour toutes les
+            # editions (Pittsburgh 2022 a 2024 n'etaient recuperables que par
+            # elle).
+            finishers = _athlinks_course_api(
+                sess, target_event.get("eventId") or target_event.get("id"),
+                dist_code)
 
         if not finishers:
             # Diagnostic : distinguer « mauvais master_id / edition absente »

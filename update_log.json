@@ -1,6 +1,14 @@
 {
   "updates": [
     {
+      "event": "Dick's Pittsburgh Marathon",
+      "date": "2026-05-03",
+      "data": {
+        "finishers": 5026
+      },
+      "timestamp": "2026-10-07T10:12:28Z"
+    },
+    {
       "event": "TCS London Marathon",
       "date": "2026-01-01",
       "data": {
