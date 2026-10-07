@@ -3,6 +3,13 @@ name: Auto Update 4D
 on:
   schedule:
     - cron: '0 6 * * *'  # Daily at 06:00 UTC (J+1 = yesterday's races)
+  # Declenchement par commit : la cle API de session n'a pas le droit de poster
+  # un workflow_dispatch (403 « Resource not accessible by integration »), donc
+  # un run hors planning dependait d'un clic manuel. Toucher ce fichier suffit
+  # maintenant a lancer un rattrapage, dates comprises.
+  push:
+    paths:
+      - 'update_4d_request.json'
   workflow_dispatch:
     inputs:
       date:
@@ -49,6 +56,13 @@ jobs:
           IN_FROM: ${{ github.event.inputs.date_from }}
           IN_TO: ${{ github.event.inputs.date_to }}
         run: |
+          # Sur un push de update_4d_request.json, les dates viennent du fichier
+          if [ "${{ github.event_name }}" = "push" ] && [ -f update_4d_request.json ]; then
+            IN_DATE=$(python -c "import json;print(json.load(open('update_4d_request.json')).get('date') or '')")
+            IN_FROM=$(python -c "import json;print(json.load(open('update_4d_request.json')).get('date_from') or '')")
+            IN_TO=$(python -c "import json;print(json.load(open('update_4d_request.json')).get('date_to') or '')")
+            echo "Requete par commit: date='$IN_DATE' from='$IN_FROM' to='$IN_TO'"
+          fi
           if [ -n "$IN_FROM" ]; then
             if [ -n "$IN_TO" ]; then
               python auto_update_4d.py --from "$IN_FROM" --to "$IN_TO"

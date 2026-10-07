@@ -6,7 +6,8 @@
       "Bash(gh run:*)",
       "WebFetch(domain:github.com)",
       "Bash(python -c \":*)",
-      "Bash(python inject_historique.py)"
+      "Bash(python inject_historique.py)",
+      "mcp__Claude_Code_Remote__read_documentation"
     ]
   }
 }
