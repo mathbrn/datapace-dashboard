@@ -412,5 +412,14 @@
     "nom_homme": "Guye Adola",
     "temps_femme": "02:11:04",
     "nom_femme": "Tigst Assefa"
+  },
+  {
+    "course": "Brighton Marathon Week end",
+    "distance": "MARATHON",
+    "annee": 2026,
+    "temps_homme": "02:25:04",
+    "nom_homme": null,
+    "temps_femme": "02:49:38",
+    "nom_femme": null
   }
 ]

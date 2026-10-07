@@ -1,6 +1,85 @@
 {
   "updates": [
     {
+      "event": "Brighton Marathon Week end",
+      "date": "2026-10-06",
+      "data": {
+        "winner_men": "02:25:04",
+        "winner_women": "02:49:38"
+      },
+      "timestamp": "2026-10-07T08:20:17Z"
+    },
+    {
+      "event": "Stockholm Marathon",
+      "date": "2026-10-06",
+      "data": {
+        "winner_men": "02:10:46",
+        "winner_women": "02:30:58"
+      },
+      "timestamp": "2026-10-07T08:20:11Z"
+    },
+    {
+      "event": "Mainova Frankfurt Marathon",
+      "date": "2026-10-06",
+      "data": {
+        "winner_men": "02:06:16",
+        "winner_women": "02:19:34"
+      },
+      "timestamp": "2026-10-07T08:20:10Z"
+    },
+    {
+      "event": "Haspa Marathon Hamburg",
+      "date": "2026-10-06",
+      "data": {
+        "winner_men": "02:04:24",
+        "winner_women": "02:17:05"
+      },
+      "timestamp": "2026-10-07T08:20:07Z"
+    },
+    {
+      "event": "Bank of America Chicago Marathon",
+      "date": "2026-10-06",
+      "data": {
+        "winner_men": "07:30:00",
+        "winner_women": "07:30:00"
+      },
+      "timestamp": "2026-10-07T08:17:28Z"
+    },
+    {
+      "event": "Vienna City Marathon",
+      "date": "2026-10-06",
+      "data": {
+        "winner_men": "02:06:53",
+        "winner_women": "02:20:06"
+      },
+      "timestamp": "2026-10-07T08:16:38Z"
+    },
+    {
+      "event": "London Landmarks Half Marathon",
+      "date": "2026-10-06",
+      "data": {
+        "finishers": 23420
+      },
+      "timestamp": "2026-10-07T08:16:31Z"
+    },
+    {
+      "event": "TCS London Marathon",
+      "date": "2026-10-06",
+      "data": {
+        "winner_men": "02:12:54",
+        "winner_women": "02:30:16"
+      },
+      "timestamp": "2026-10-07T08:16:29Z"
+    },
+    {
+      "event": "Standard Chartered Hong Kong Half Marathon",
+      "date": "2026-10-06",
+      "data": {
+        "finishers": 26621
+      },
+      "timestamp": "2026-10-07T08:16:01Z"
+    },
+    {
       "event": "BMW Berlin Marathon",
       "date": "2026-09-27",
       "data": {
