@@ -873,8 +873,10 @@ def fetch_mikatiming_4d(platform_info_or_year, year, dist_code=None):
             # filtre par etiquette (Finish|Netto|Net) ne voyait rien sur les
             # pages allemandes, ou l'etiquette est « Ziel » (Berlin).
             times = chronos_de_page_mikatiming(r.text)
-            if not times:
-                times = re.findall(r"(\d{2}:\d{2}:\d{2})", r.text)
+            # Pas de repli « n'importe quel HH:MM:SS de la page » : avant la
+            # course, la page n'a aucun resultat mais affiche l'heure de
+            # depart. C'est ainsi que 07:30:00 a ete ecrit comme chrono
+            # vainqueur H et F du Chicago Marathon 2026, course du 11 octobre.
             seen = set()
             for t in times:
                 if t not in seen:
@@ -1476,7 +1478,7 @@ def update_avg_time(race_name, year, distance_m, count, avg_time, speed, dry_run
                      and e.get("year") == year and e.get("dist_m") == distance_m), None)
     if existing and existing.get("avg_time"):
         print(f"  [SKIP] avg_times: {race_name} {year} deja rempli ({existing['avg_time']})")
-        return
+        return False
     data.append({
         "label": f"{race_name} {year}",
         "race": race_name,
@@ -1490,6 +1492,7 @@ def update_avg_time(race_name, year, distance_m, count, avg_time, speed, dry_run
         with open(path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
     print(f"  avg_times added: {race_name} {year} = {avg_time}")
+    return True
 
 
 from update_log import log_update  # source unique des notifications
@@ -1500,14 +1503,14 @@ def update_winners(race_name, year, distance, men_time, women_time, dry_run=Fals
     path = SCRIPT_DIR / "temp_chronos_1.json"
     if not path.exists():
         print(f"  [SKIP] temp_chronos_1.json not found")
-        return
+        return False
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
     existing = next((e for e in data if e.get("course") == race_name
                      and e.get("annee") == year and e.get("distance") == distance), None)
     if existing and (existing.get("temps_homme") or existing.get("temps_femme")):
         print(f"  [SKIP] chronos: {race_name} {year} deja rempli")
-        return
+        return False
     if existing:
         existing["temps_homme"] = men_time
         existing["temps_femme"] = women_time
@@ -1519,6 +1522,7 @@ def update_winners(race_name, year, distance, men_time, women_time, dry_run=Fals
         with open(path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
     print(f"  chronos added: {race_name} {year} H={men_time} F={women_time}")
+    return True
 
 
 # ============================================================================
@@ -1682,25 +1686,33 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
             continue
 
         # Update (track what actually changed for the log)
+        # On ne notifie que ce qui a REELLEMENT ete ecrit. Les trois fonctions
+        # d'ecriture refusent d'ecraser une donnee existante, mais le journal
+        # etait alimente des que le fetcher rendait une valeur : la meme donnee
+        # repartait en notification a chaque run, tous les jours (Chicago a
+        # ainsi produit six notifications identiques en six jours).
         logged_data = {}
         if result.get("finishers"):
             seen_counts[result["finishers"]] = (our_name, dist_code)
-            update_finishers(our_name, dist_code, year, result["finishers"], dry_run)
-            logged_data["finishers"] = result["finishers"]
+            if update_finishers(our_name, dist_code, year,
+                                result["finishers"], dry_run):
+                logged_data["finishers"] = result["finishers"]
         if result.get("avg_time") and dist_m:
             # dist_m est None pour AUTRE : distance non standard, donc pas de
             # temps moyen comparable a enregistrer.
-            update_avg_time(our_name, year, dist_m, result.get("finishers", 0),
-                            result["avg_time"], result.get("avg_speed_kmh"), dry_run)
-            logged_data["avg_time"] = result["avg_time"]
+            if update_avg_time(our_name, year, dist_m,
+                               result.get("finishers", 0), result["avg_time"],
+                               result.get("avg_speed_kmh"), dry_run):
+                logged_data["avg_time"] = result["avg_time"]
         if result.get("winner_men") or result.get("winner_women"):
             dist_label = {"MARATHON": "MARATHON", "SEMI": "SEMI", "10KM": "10KM"}.get(dist_code, dist_code)
-            update_winners(our_name, year, dist_label,
-                           result.get("winner_men"), result.get("winner_women"), dry_run)
-            if result.get("winner_men"):
-                logged_data["winner_men"] = result["winner_men"]
-            if result.get("winner_women"):
-                logged_data["winner_women"] = result["winner_women"]
+            if update_winners(our_name, year, dist_label,
+                              result.get("winner_men"),
+                              result.get("winner_women"), dry_run):
+                if result.get("winner_men"):
+                    logged_data["winner_men"] = result["winner_men"]
+                if result.get("winner_women"):
+                    logged_data["winner_women"] = result["winner_women"]
         # Log the update for dashboard notifications
         if logged_data:
             # Use WA dateRange if available, else the target date

@@ -2020,5 +2020,14 @@
     "count": 18926,
     "avg_time": "04:30:03",
     "avg_speed_kmh": 9.375
+  },
+  {
+    "label": "Generali Berlin Half Marathon 2026",
+    "race": "Generali Berlin Half Marathon",
+    "dist_m": 21097,
+    "year": 2026,
+    "count": 36642,
+    "avg_time": "02:01:10",
+    "avg_speed_kmh": 10.446
   }
 ]
