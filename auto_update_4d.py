@@ -1265,17 +1265,27 @@ def _tracx_id_par_nom(sess, nom, year):
         titre = normalize_name(str(ev.get("name") or ev.get("title") or ""))
         if not titre or not cibles.issubset(set(titre.split())):
             continue
-        millesime = str(ev.get("year") or ev.get("start_date") or ev.get("date") or "")
-        candidats.append((str(year) in millesime, ev.get("id")))
+        # Le millesime fiable est `date_from`, pas le nom : « NN Dam tot
+        # Damloop 2026 » cotoie « Pre-Run NN Dam tot Damloop 2026 » et
+        # « Dam tot Dam Wandeltocht », tous avec 2026 dans le titre, d'ou
+        # l'abandon pour ambiguite. La date tranche.
+        millesime = str(ev.get("date_from") or ev.get("date_to") or
+                        ev.get("start_date") or ev.get("date") or "")[:4]
+        # Nombre de mots en trop par rapport au nom cherche : une declinaison
+        # (« Pre-Run NN Dam tot Damloop 2026 », « Dam tot Dam Wandeltocht »)
+        # en porte davantage que l'epreuve elle-meme, qui etait choisie au
+        # hasard quand plusieurs editions de la bonne annee correspondaient.
+        surplus = len(set(titre.split()) - cibles)
+        candidats.append((millesime == str(year), surplus, ev.get("id")))
     if not candidats:
         return None
-    # priorite a l'edition de l'annee ciblee
-    candidats.sort(key=lambda x: not x[0])
+    # priorite a l'edition de l'annee ciblee, puis au nom le plus proche
+    candidats.sort(key=lambda x: (not x[0], x[1]))
     if len(candidats) > 1 and not candidats[0][0]:
         print(f"    Tracx: {len(candidats)} correspondances pour {nom!r} sans "
               f"edition {year} identifiable — abandon")
         return None
-    return candidats[0][1]
+    return candidats[0][2]
 
 
 def _tracx_annee(sess, event_id):

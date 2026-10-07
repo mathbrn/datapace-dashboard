@@ -1,6 +1,14 @@
 {
   "updates": [
     {
+      "event": "Dam tot Damloop",
+      "date": "2026-09-20",
+      "data": {
+        "finishers": 37133
+      },
+      "timestamp": "2026-10-07T14:17:39Z"
+    },
+    {
       "event": "Run in Lyon",
       "date": "2026-10-06",
       "data": {
