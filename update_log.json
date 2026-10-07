@@ -1,6 +1,30 @@
 {
   "updates": [
     {
+      "event": "Haspa Marathon Hamburg",
+      "date": "2026-01-01",
+      "data": {
+        "avg_time": "04:26:21"
+      },
+      "timestamp": "2026-10-07T09:31:55Z"
+    },
+    {
+      "event": "Brighton Marathon Week end",
+      "date": "2026-01-01",
+      "data": {
+        "avg_time": "04:35:12"
+      },
+      "timestamp": "2026-10-07T09:28:50Z"
+    },
+    {
+      "event": "Vienna City Marathon",
+      "date": "2026-01-01",
+      "data": {
+        "avg_time": "04:28:21"
+      },
+      "timestamp": "2026-10-07T09:25:43Z"
+    },
+    {
       "event": "Generali Berlin Half Marathon",
       "date": "2026-01-01",
       "data": {
@@ -247,14 +271,6 @@
         "winner_women": "02:49:38"
       },
       "timestamp": "2026-09-19T09:57:47Z"
-    },
-    {
-      "event": "Brighton Marathon Week end",
-      "date": "2026-01-01",
-      "data": {
-        "finishers": 25
-      },
-      "timestamp": "2026-09-19T09:57:46Z"
     },
     {
       "event": "Stockholm Marathon",

@@ -2029,5 +2029,32 @@
     "count": 36642,
     "avg_time": "02:01:10",
     "avg_speed_kmh": 10.446
+  },
+  {
+    "label": "Vienna City Marathon 2026",
+    "race": "Vienna City Marathon",
+    "dist_m": 42195,
+    "year": 2026,
+    "count": 8667,
+    "avg_time": "04:28:21",
+    "avg_speed_kmh": 9.435
+  },
+  {
+    "label": "Brighton Marathon Week end 2026",
+    "race": "Brighton Marathon Week end",
+    "dist_m": 42195,
+    "year": 2026,
+    "count": 14057,
+    "avg_time": "04:35:12",
+    "avg_speed_kmh": 9.2
+  },
+  {
+    "label": "Haspa Marathon Hamburg 2026",
+    "race": "Haspa Marathon Hamburg",
+    "dist_m": 42195,
+    "year": 2026,
+    "count": 15521,
+    "avg_time": "04:26:21",
+    "avg_speed_kmh": 9.505
   }
 ]
