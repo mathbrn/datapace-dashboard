@@ -1,6 +1,6 @@
 # DataPace Dashboard — Stats à jour
 
-**Généré le** : 2026-10-07 08:20
+**Généré le** : 2026-10-07 08:40
 **Source historique** : finishers (mémoire)
 
 > **Note pour Claude** : c'est la source de vérité pour tous les chiffres DataPace.
@@ -21,8 +21,8 @@
 | Finishers cumulés totaux (2000 - 2026) | 34,779,615 |
 | Temps moyens marathon | 91 |
 | Temps moyens semi-marathon | 52 |
-| Chronos vainqueurs Homme | 49 |
-| Chronos vainqueurs Femme | 49 |
+| Chronos vainqueurs Homme | 48 |
+| Chronos vainqueurs Femme | 48 |
 
 ## Sponsoring
 

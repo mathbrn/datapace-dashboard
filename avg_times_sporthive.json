@@ -2002,5 +2002,14 @@
     "count": null,
     "avg_time": "01:54:19",
     "avg_speed_kmh": null
+  },
+  {
+    "label": "BMW Berlin Marathon 2026",
+    "race": "BMW Berlin Marathon",
+    "dist_m": 42195,
+    "year": 2026,
+    "count": 50071,
+    "avg_time": "04:16:55",
+    "avg_speed_kmh": 9.854
   }
 ]
