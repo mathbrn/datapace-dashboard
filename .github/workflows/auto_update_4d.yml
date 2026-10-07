@@ -8,6 +8,7 @@ on:
   # un run hors planning dependait d'un clic manuel. Toucher ce fichier suffit
   # maintenant a lancer un rattrapage, dates comprises.
   push:
+    branches: [main]
     paths:
       - 'update_4d_request.json'
   workflow_dispatch:
