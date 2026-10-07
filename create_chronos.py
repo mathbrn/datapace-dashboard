@@ -816,6 +816,7 @@ half_marathon_data = [
     ("Generali Berlin Half Marathon", "21K", 2023, "0:59:01", "1:05:43"),
     ("Generali Berlin Half Marathon", "21K", 2024, "0:59:30", "1:06:53"),
     ("Generali Berlin Half Marathon", "21K", 2025, "0:58:43", "1:03:35"),
+    ("Generali Berlin Half Marathon", "21K", 2026, "0:59:11", "1:05:07"),
     # United Airlines NYC Half
     ("United Airlines NYC Half", "21K", 2025, "1:01:31", "1:07:04"),
     ("United Airlines NYC Half", "21K", 2026, "0:59:30", "1:06:33"),

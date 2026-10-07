@@ -1,6 +1,15 @@
 {
   "updates": [
     {
+      "event": "Generali Berlin Half Marathon",
+      "date": "2026-04-12",
+      "data": {
+        "winner_men": "00:59:11",
+        "winner_women": "01:05:07"
+      },
+      "timestamp": "2026-10-07T08:51:07Z"
+    },
+    {
       "event": "BMW Berlin Marathon",
       "date": "2026-01-01",
       "data": {
