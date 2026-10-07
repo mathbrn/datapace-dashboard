@@ -166,13 +166,14 @@
   },
   "bmw berlin marathon": {
     "platform": "mikatiming",
-    "subdomain": "berlin-marathon",
-    "event_code": "MAL",
+    "subdomain": "berlin.r.mikatiming.com",
+    "event_code": null,
     "country": "GER",
     "distance": "MARATHON",
     "name": "BMW Berlin Marathon",
     "marathonview_id": "55",
-    "event_codes_by_year": {}
+    "event_codes_by_year": {},
+    "event_code_pattern": "{yyyy}_scc_berlinmarathon"
   },
   "bank of america chicago marathon": {
     "platform": "mikatiming",
@@ -559,12 +560,13 @@
   },
   "generali berlin half marathon": {
     "platform": "mikatiming",
-    "subdomain": "berlin-halbmarathon",
-    "event_code": "HML",
+    "subdomain": "berlinerhm.r.mikatiming.de",
+    "event_code": null,
     "country": "GER",
     "distance": "SEMI",
     "name": "Generali Berlin Half Marathon",
-    "event_codes_by_year": {}
+    "event_codes_by_year": {},
+    "event_code_pattern": "{yyyy}_berlinerhm"
   },
   "nn san silvestre vallecana": {
     "platform": null,

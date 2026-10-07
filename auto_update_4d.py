@@ -799,6 +799,9 @@ def fetch_athlinks_4d(master_id_or_info, year, dist_code=None):
         return None
 
 
+from avg_from_rankings import _chronos_de_page as chronos_de_page_mikatiming
+
+
 def fetch_mikatiming_4d(platform_info_or_year, year):
     """Fetch 4D from Mikatiming (Berlin, London, Hamburg, Chicago, etc.).
 
@@ -852,7 +855,10 @@ def fetch_mikatiming_4d(platform_info_or_year, year):
                 print(f"    Mikatiming {winners_event_code} vainqueur {sex}: "
                       f"HTTP {r.status_code}")
                 return None
-            times = re.findall(r"type-time[^>]*>(?:<div[^>]*>[^<]*(?:Finish|Netto|Net)[^<]*</div>)?(\d{2}:\d{2}:\d{2})", r.text)
+            # Un chrono par ligne de classement, le dernier de la ligne : le
+            # filtre par etiquette (Finish|Netto|Net) ne voyait rien sur les
+            # pages allemandes, ou l'etiquette est « Ziel » (Berlin).
+            times = chronos_de_page_mikatiming(r.text)
             if not times:
                 times = re.findall(r"(\d{2}:\d{2}:\d{2})", r.text)
             seen = set()
@@ -872,7 +878,6 @@ def fetch_mikatiming_4d(platform_info_or_year, year):
         # toujours un multiple de 25 : elle produisait donc mecaniquement des
         # chiffres ronds, ce que la regle « zero tolerance » interdit. On compte
         # desormais exactement : (max_page - 1) * 25 + lignes de la derniere page.
-        RE_TEMPS = r"type-time[^>]*>(?:<div[^>]*>[^<]*(?:Finish|Netto|Net)[^<]*</div>)?\d{2}:\d{2}:\d{2}"
         finishers = None
         liste = f"{base}/{year}/?pid=list&event={finishers_event_code}&num_results=25"
         r_p1 = sess.get(f"{liste}&page=1", timeout=30)
@@ -884,7 +889,7 @@ def fetch_mikatiming_4d(platform_info_or_year, year):
             if max_page >= 2:
                 r_last = sess.get(f"{liste}&page={max_page}", timeout=30)
                 if r_last.ok:
-                    n_last = len(re.findall(RE_TEMPS, r_last.text))
+                    n_last = len(chronos_de_page_mikatiming(r_last.text))
                     if n_last:
                         finishers = (max_page - 1) * 25 + n_last
                     else:
@@ -897,7 +902,7 @@ def fetch_mikatiming_4d(platform_info_or_year, year):
                 # Diagnostic : distinguer « page de resultats vide » (mauvais
                 # code evenement ou edition absente) de « resultats presents
                 # mais sans pagination » (liste tenant sur une seule page).
-                n_temps = len(re.findall(RE_TEMPS, r_p1.text))
+                n_temps = len(chronos_de_page_mikatiming(r_p1.text))
                 print(f"    Mikatiming {finishers_event_code}: pagination absente "
                       f"(max_page={max_page}), {n_temps} temps sur la page 1, "
                       f"{len(r_p1.text)} octets")
