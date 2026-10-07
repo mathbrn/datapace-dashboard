@@ -117,14 +117,6 @@
       "timestamp": "2026-10-07T08:12:08Z"
     },
     {
-      "event": "Marine Corps Marathon",
-      "date": "2026-01-01",
-      "data": {
-        "finishers": 30085
-      },
-      "timestamp": "2026-10-05T13:02:08Z"
-    },
-    {
       "event": "Mainova Frankfurt Marathon",
       "date": "2026-10-01",
       "data": {
@@ -323,14 +315,6 @@
         "finishers": 5026
       },
       "timestamp": "2026-09-17T10:39:54Z"
-    },
-    {
-      "event": "Lilac Bloomsday Run",
-      "date": "2026-09-16",
-      "data": {
-        "finishers": 27883
-      },
-      "timestamp": "2026-09-17T10:39:51Z"
     },
     {
       "event": "Flying Pig Marathon",
