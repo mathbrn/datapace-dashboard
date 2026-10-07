@@ -799,10 +799,25 @@ def fetch_athlinks_4d(master_id_or_info, year, dist_code=None):
         return None
 
 
-from avg_from_rankings import _chronos_de_page as chronos_de_page_mikatiming
+from avg_from_rankings import (_chronos_de_page as chronos_de_page_mikatiming,
+                               compte_finishers_mikatiming)
 
 
-def fetch_mikatiming_4d(platform_info_or_year, year):
+# Plancher de chrono par distance et par sexe, pour ecarter les fauteuils et
+# handbikes, bien plus rapides. Il etait fixe a 1h40 / 1h56 — des valeurs de
+# marathon appliquees a toutes les distances : le vainqueur du semi de Berlin
+# 2026 (00:59:11) etait donc rejete, et chaque semi mikatiming perdait ses
+# deux chronos vainqueurs.
+PLANCHER_CHRONO = {
+    "MARATHON": {"M": 6000, "W": 7000},
+    "SEMI": {"M": 2700, "W": 3100},
+    "10KM": {"M": 1380, "W": 1600},
+    "5KM": {"M": 660, "W": 780},
+}
+PLANCHER_DEFAUT = {"M": 600, "W": 700}
+
+
+def fetch_mikatiming_4d(platform_info_or_year, year, dist_code=None):
     """Fetch 4D from Mikatiming (Berlin, London, Hamburg, Chicago, etc.).
 
     platform_info_or_year: dict with keys:
@@ -840,9 +855,8 @@ def fetch_mikatiming_4d(platform_info_or_year, year):
             "Accept-Language": "en-US,en;q=0.9,de;q=0.8,fr;q=0.7",
         })
 
-        # Skip wheelchair/para times (too fast for ambulating athletes)
-        # Men: wheelchair ~1:20-1:30 → min 1:40:00 (6000s); Women: wheelchair ~1:38 → min 1:56:40 (7000s)
-        MIN_SECS = {"M": 6000, "W": 7000}
+        MIN_SECS = PLANCHER_CHRONO.get(dist_code or info.get("distance"),
+                                       PLANCHER_DEFAUT)
 
         def time_to_secs(t):
             p = t.split(":")
@@ -914,8 +928,19 @@ def fetch_mikatiming_4d(platform_info_or_year, year):
                     finishers = n_temps
                     print(f"      -> liste courte, {n_temps} finishers")
                 elif n_temps >= 25:
-                    print(f"      -> page pleine ({n_temps}) sans pagination : "
-                          f"total inconnu, abandon")
+                    # Page pleine sans liens de pagination : le parametre
+                    # `page` fonctionne quand meme. On cherche la derniere page
+                    # non vide par dichotomie (une dizaine de requetes) au lieu
+                    # d'abandonner — c'est ce qui bloquait Berlin, Stockholm et
+                    # Brighton. Ne JAMAIS prendre la page pleine pour un total.
+                    finishers = compte_finishers_mikatiming(
+                        {"subdomain": subdomain,
+                         "event_code": finishers_event_code}, year)
+                    if finishers:
+                        print(f"      -> dichotomie: {finishers} finishers")
+                    else:
+                        print(f"      -> page pleine ({n_temps}) sans "
+                              f"pagination et dichotomie infructueuse, abandon")
 
         if not men_winner and not women_winner and not finishers:
             return None
