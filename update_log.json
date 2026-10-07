@@ -1,6 +1,102 @@
 {
   "updates": [
     {
+      "event": "Run in Lyon",
+      "date": "2026-10-07",
+      "data": {
+        "finishers": 5591
+      },
+      "timestamp": "2026-10-07T14:24:15Z"
+    },
+    {
+      "event": "Dam tot Damloop",
+      "date": "2026-10-07",
+      "data": {
+        "finishers": 37133
+      },
+      "timestamp": "2026-10-07T14:24:09Z"
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "date": "2026-10-07",
+      "data": {
+        "finishers": 4242
+      },
+      "timestamp": "2026-10-07T14:24:05Z"
+    },
+    {
+      "event": "Bay to Breakers",
+      "date": "2026-10-07",
+      "data": {
+        "finishers": 19814
+      },
+      "timestamp": "2026-10-07T14:24:02Z"
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "date": "2026-10-07",
+      "data": {
+        "finishers": 5026
+      },
+      "timestamp": "2026-10-07T14:23:58Z"
+    },
+    {
+      "event": "Flying Pig Marathon",
+      "date": "2026-10-07",
+      "data": {
+        "finishers": 5279
+      },
+      "timestamp": "2026-10-07T14:23:51Z"
+    },
+    {
+      "event": "Broad Street Run",
+      "date": "2026-10-07",
+      "data": {
+        "finishers": 34003
+      },
+      "timestamp": "2026-10-07T14:23:47Z"
+    },
+    {
+      "event": "Atlanta Journal-Constitution Peachtree Road Race",
+      "date": "2026-10-07",
+      "data": {
+        "finishers": 45299
+      },
+      "timestamp": "2026-10-07T14:23:29Z"
+    },
+    {
+      "event": "BOLDERBoulder 10K",
+      "date": "2026-10-07",
+      "data": {
+        "finishers": 47508
+      },
+      "timestamp": "2026-10-07T14:23:23Z"
+    },
+    {
+      "event": "London Landmarks Half Marathon",
+      "date": "2026-10-07",
+      "data": {
+        "finishers": 19754
+      },
+      "timestamp": "2026-10-07T14:23:14Z"
+    },
+    {
+      "event": "Cooper River Bridge Run",
+      "date": "2026-10-07",
+      "data": {
+        "finishers": 33686
+      },
+      "timestamp": "2026-10-07T14:23:10Z"
+    },
+    {
+      "event": "Standard Chartered Hong Kong Half Marathon",
+      "date": "2026-10-07",
+      "data": {
+        "finishers": 23645
+      },
+      "timestamp": "2026-10-07T14:23:06Z"
+    },
+    {
       "event": "Dam tot Damloop",
       "date": "2026-09-20",
       "data": {
