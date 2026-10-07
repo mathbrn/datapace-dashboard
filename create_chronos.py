@@ -223,6 +223,7 @@ marathon_data = [
     ("BMW Berlin Marathon", "42K", 2023, "2:02:42", "2:11:53"),
     ("BMW Berlin Marathon", "42K", 2024, "2:03:17", "2:16:42"),
     ("BMW Berlin Marathon", "42K", 2025, "2:02:16", "2:21:05"),
+    ("BMW Berlin Marathon", "42K", 2026, "2:02:50", "2:11:04"),
     # NN Maraton Warszawski
     ("NN Maraton Warszawski", "42K", 2023, "2:15:29", "2:34:41"),
     ("NN Maraton Warszawski", "42K", 2024, "2:10:43", "2:31:24"),

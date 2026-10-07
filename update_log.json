@@ -2,6 +2,15 @@
   "updates": [
     {
       "event": "BMW Berlin Marathon",
+      "date": "2026-09-27",
+      "data": {
+        "winner_men": "02:02:50",
+        "winner_women": "02:11:04"
+      },
+      "timestamp": "2026-10-07T08:12:08Z"
+    },
+    {
+      "event": "BMW Berlin Marathon",
       "date": "2026-01-01",
       "data": {
         "finishers": 50084
