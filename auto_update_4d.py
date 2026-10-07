@@ -964,6 +964,22 @@ PLANCHER_CHRONO = {
 PLANCHER_DEFAUT = {"M": 600, "W": 700}
 
 
+def _page_annualisee(sess, base, code, year):
+    """Le site distingue-t-il l'annee demandee de la precedente ?"""
+    def premiers(an):
+        try:
+            r = sess.get(f"{base}/{an}/?pid=list&event={code}"
+                         f"&num_results=25&page=1", timeout=30)
+        except requests.RequestException:
+            return None
+        return tuple(chronos_de_page_mikatiming(r.text)[:10]) if r.ok else None
+
+    a_annee = premiers(year)
+    if not a_annee:
+        return True          # rien a comparer : le reste du fetcher tranchera
+    return a_annee != premiers(year - 1)
+
+
 def fetch_mikatiming_4d(platform_info_or_year, year, dist_code=None):
     """Fetch 4D from Mikatiming (Berlin, London, Hamburg, Chicago, etc.).
 
@@ -1031,6 +1047,18 @@ def fetch_mikatiming_4d(platform_info_or_year, year, dist_code=None):
                     secs = time_to_secs(t)
                     if MIN_SECS[sex] <= secs <= 36000:
                         return t
+            return None
+
+        # Certains sites ignorent l'annee dans l'URL et servent toujours la
+        # derniere edition : live.frankfurt-marathon.com/2026/ rend exactement
+        # la page de 2025. Le run du 7 octobre a ainsi ecrit l'edition 2025
+        # (12327 arrivants, 02:06:16) dans la cellule 2026 d'une course qui se
+        # tient le 25 octobre. On compare la page de l'annee a celle de
+        # l'annee precedente : identiques, le site n'est pas annualise.
+        if not _page_annualisee(sess, base, finishers_event_code, year):
+            print(f"    Mikatiming {finishers_event_code}: {base} sert la meme "
+                  f"page pour {year} et {year - 1} — annee non distinguable, "
+                  f"abandon")
             return None
 
         men_winner = get_winner_time("M")
@@ -1250,6 +1278,18 @@ def _tracx_id_par_nom(sess, nom, year):
     return candidats[0][1]
 
 
+def _tracx_annee(sess, event_id):
+    """Millesime d'un evenement Tracx, d'apres `date_from`."""
+    try:
+        r = sess.get(f"https://api.tracx.events/v1/events/{event_id}", timeout=20)
+        if not r.ok:
+            return None
+        d = r.json().get("date_from") or r.json().get("date_to") or ""
+    except (ValueError, requests.RequestException):
+        return None
+    return int(d[:4]) if str(d)[:4].isdigit() else None
+
+
 def _tracx_arrivants(sess, event_id, race_id):
     """Nombre d'arrivants d'une course Tracx.
 
@@ -1292,6 +1332,13 @@ def fetch_tracx_4d(event_id, year, dist_code=None):
                 return None
             print(f"    Tracx: {event_id!r} -> id={resolu}")
             event_id = resolu
+        # Un id Tracx designe UNE edition, pas une serie : sans verification,
+        # le compte de l'edition 2026 partait aussi dans la cellule 2025.
+        annee_ev = _tracx_annee(sess, event_id)
+        if annee_ev and annee_ev != year:
+            print(f"    Tracx: l'evenement {event_id} est l'edition {annee_ev}, "
+                  f"pas {year} — abandon")
+            return None
         resp = sess.get(f"https://api.tracx.events/v1/events/{event_id}/races", timeout=15)
         if not resp.ok:
             print(f"    Tracx events/{event_id}/races: HTTP {resp.status_code}")
