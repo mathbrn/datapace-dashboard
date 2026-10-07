@@ -371,55 +371,133 @@ def match_wa_to_ours(wa_races, our_events):
 # ============================================================================
 # PLATFORM FETCHERS
 # ============================================================================
+def _hms_en_secondes(t):
+    p = str(t or "").strip().split(":")
+    try:
+        if len(p) == 3:
+            return int(p[0]) * 3600 + int(p[1]) * 60 + int(float(p[2]))
+        if len(p) == 2:
+            return int(p[0]) * 60 + int(float(p[1]))
+    except ValueError:
+        pass
+    return None
+
+
 def fetch_timeto_4d(event_name, year, dist_code=None):
-    """Fetch 4D from TimeTo/SportInnovation API (ASO France)."""
+    """4D depuis TimeTo / SportInnovation (ASO France).
+
+    L'API a change : les evenements n'ont plus d'`id` mais un `slug`, et
+    l'ancien code lisait `target['id']` — d'ou « TimeTo error: 'id' » sur
+    toutes les epreuves ASO. Il exigeait aussi l'annee DANS le titre, ce qui
+    excluait « Run in Lyon by Harmonie Mutuelle » : on lit `eventDate`.
+
+    Le temps moyen se calcule sur `realTimeFfaSec` (temps au chrono), jamais
+    sur `officialTimeFfaSec`, qui compte depuis le coup de pistolet du premier
+    sas : sur le 10K Paris 2026 la mediane officielle vaut 3h15 pour un 10 km.
+    """
     try:
         sess = requests.Session()
-        sess.headers.update({"Accept": "application/json", "User-Agent": "Mozilla/5.0"})
-        resp = sess.get("https://sportinnovation.fr/api/events", timeout=15)
-        events = resp.json()
-        target = None
-        norm_name = normalize_name(event_name)
+        sess.headers.update({"Accept": "application/json",
+                             "User-Agent": "Mozilla/5.0"})
+        events = sess.get("https://sportinnovation.fr/api/events",
+                          timeout=20).json()
+        vise = normalize_name(event_name)
+        candidats = []
         for ev in events:
-            # TimeTo uses 'title' (not 'name')
-            ev_title = ev.get("title", "") or ev.get("name", "")
-            ev_norm = normalize_name(ev_title)
-            # Match first 15 chars OR last word (distinguishes Marathon/Semi/10K)
-            key_words = norm_name.split()
-            name_match = norm_name[:15] in ev_norm or ev_norm[:15] in norm_name
-            # Need distinguishing keyword if multiple Paris events
-            if name_match and str(year) in ev_title:
-                # Prefer exact name match over substring
-                if ev_norm == norm_name or (key_words and key_words[0] in ev_norm and key_words[-1] in ev_norm):
-                    target = ev
-                    break
-                if not target:
-                    target = ev
-        if not target:
-            # Sans cette trace, l'echec ne laissait aucune ligne dans le log :
-            # « SKIP (fetch_returned_nothing) » sans cause visible.
+            titre = ev.get("title") or ev.get("name") or ""
+            if str(ev.get("eventDate", ""))[:4] != str(year):
+                continue
+            t = normalize_name(re.sub(r"\b(19|20)\d{2}\b", "", titre))
+            if not t:
+                continue
+            if t.startswith(vise) or vise.startswith(t) or t in vise or vise in t:
+                candidats.append(ev)
+        if not candidats:
             print(f"    TimeTo: aucun evenement {year} pour {event_name!r} "
                   f"({len(events)} au catalogue)")
             return None
-        print(f"    TimeTo: matched event id={target['id']} title={target.get('title','')[:50]}")
-        resp2 = sess.get(f"https://sportinnovation.fr/api/events/{target['id']}/races", timeout=15)
-        races = resp2.json()
-        # La course visee est celle de la distance demandee, pas la plus grosse
-        # de l'evenement (Run in Lyon = marathon + semi + 10K sous un seul id).
-        main_race = pick_race_for_distance(
-            races, dist_code,
-            get_distance_m=lambda r: r.get("distance") or r.get("distance_m"),
-            get_title=lambda r: r.get("title") or r.get("name") or "")
-        if not main_race:
-            print(f"    TimeTo: aucune course {dist_code} identifiable — abandon")
+        if len(candidats) > 1:
+            # Le titre le plus proche en longueur du nom cherche
+            candidats.sort(key=lambda e: abs(len(normalize_name(e.get("title", "")))
+                                             - len(vise)))
+        target = candidats[0]
+        slug = target.get("slug")
+        if not slug:
+            print(f"    TimeTo: {target.get('title')!r} sans slug — abandon")
             return None
-        race_id = main_race["id"]
-        print(f"    TimeTo: fetching race {race_id} ({main_race.get('title','')})")
-        resp3 = sess.get(f"https://sportinnovation.fr/api/races/{race_id}/results", timeout=180)
-        results = resp3.json()
-        return compute_4d_from_results(results, source="timeto")
+        print(f"    TimeTo: {target.get('title','')[:50]} -> {slug}")
+
+        races = sess.get(f"https://sportinnovation.fr/api/events/{slug}/races",
+                         timeout=20).json()
+        # Une ligne par couple (epreuve, distance) : viser la distance demandee,
+        # pas la plus grosse course de l'evenement.
+        course = pick_race_for_distance(
+            races, dist_code,
+            get_distance_m=lambda r: r.get("distance"),
+            get_title=lambda r: r.get("title") or "")
+        if not course:
+            print(f"    TimeTo: aucune course {dist_code} identifiable "
+                  f"({[(r.get('title'), r.get('distance')) for r in races][:6]})")
+            return None
+
+        totaux = course.get("totals") or {}
+        finishers = totaux.get("maxGeneralRanking")
+        race_slug = course.get("slug")
+        avg_time = vitesse = h_gagnant = f_gagnante = None
+        if race_slug:
+            res = sess.get(f"https://sportinnovation.fr/api/races/{race_slug}"
+                           f"/results", timeout=300).json()
+            # Deux schemas coexistent dans l'API : l'ancien (realTime,
+            # generalRanking, sex « M ») et le nouveau (realTimeFfa,
+            # generalRank, sex « H »). Le Marathon de Paris sert encore
+            # l'ancien, le 10K Paris le nouveau.
+            def _rang(r):
+                v = r.get("generalRank")
+                if v is None:
+                    v = r.get("generalRanking")
+                return str(v or "").strip()
+
+            def _rang_sexe(r):
+                v = r.get("sexRank")
+                return str(v if v is not None else r.get("sexRanking") or "")
+
+            def _chrono(r):
+                return r.get("realTimeFfa") or r.get("realTime")
+
+            def _secondes(r):
+                v = r.get("realTimeFfaSec")
+                return v if v else _hms_en_secondes(_chrono(r))
+
+            classes = [r for r in res if _rang(r).isdigit()]
+            if not finishers:
+                finishers = len(classes) or None
+            bas, haut = BORNES_CHRONO.get(dist_code, (600, 43200))
+            secs = [v for v in (_secondes(r) for r in classes)
+                    if v and bas <= v <= haut]
+            if secs:
+                moy = sum(secs) / len(secs)
+                avg_time = (f"{int(moy) // 3600:02d}:"
+                            f"{int(moy) % 3600 // 60:02d}:{int(moy) % 60:02d}")
+                dm = {"MARATHON": 42195, "SEMI": 21097,
+                      "10KM": 10000, "5KM": 5000}.get(dist_code)
+                if dm:
+                    vitesse = round(dm / 1000.0 / (moy / 3600.0), 3)
+            for r in classes:
+                if _rang_sexe(r) != "1":
+                    continue
+                if r.get("sex") in ("H", "M") and not h_gagnant:
+                    h_gagnant = _chrono(r)
+                elif r.get("sex") in ("F", "W") and not f_gagnante:
+                    f_gagnante = _chrono(r)
+
+        if not finishers and not avg_time and not h_gagnant:
+            return None
+        return {"finishers": finishers, "avg_time": avg_time,
+                "avg_speed_kmh": vitesse, "winner_men": h_gagnant,
+                "winner_women": f_gagnante, "source": "timeto",
+                "confidence": "high"}
     except Exception as e:
-        print(f"  TimeTo error for {event_name}: {e}")
+        print(f"  TimeTo error for {event_name}: {type(e).__name__}: {e}")
         return None
 
 
@@ -666,6 +744,25 @@ def parse_athlinks_description(desc):
     return out
 
 
+def sans_variantes(courses, get_titre):
+    """Ecarte les declinaisons d'une meme course au profit du titre de base.
+
+    Athlinks publie une ligne par vague ou par dispositif : « 10K Run »,
+    « 10K Run R4PACERS », « 10K Run QUAD ». Les trois matchent 10KM, et
+    pick_race_for_distance abandonnait pour ambiguite — c'est ce qui bloquait
+    Cooper River Bridge Run. On ne garde que les titres qui n'ont pas pour
+    prefixe un autre titre de la liste : une variante porte toujours le titre
+    de base en tete. Une liste sans prefixe commun ressort inchangee, donc
+    toujours ambigue, donc toujours abandonnee.
+    """
+    titres = [normalize_name(str(get_titre(c))) for c in courses]
+    gardees = []
+    for c, t in zip(courses, titres):
+        if not any(t != autre and t.startswith(autre + " ") for autre in titres):
+            gardees.append(c)
+    return gardees or courses
+
+
 def pick_athlinks_race(lignes, dist_code):
     """Choisit la course correspondant a la distance demandee.
 
@@ -677,6 +774,7 @@ def pick_athlinks_race(lignes, dist_code):
                    if not any(x in l["title"].lower() for x in ATHLINKS_SECONDAIRE)]
     if not principales:
         return None
+    principales = sans_variantes(principales, lambda l: l["title"])
     if dist_code == "AUTRE":
         if len(principales) == 1:
             return principales[0]
@@ -759,9 +857,15 @@ def fetch_athlinks_4d(master_id_or_info, year, dist_code=None):
             if ev_year == year:
                 target_event = ev
                 break
-        if not target_event and events:
-            target_event = events[0]  # most recent
         if not target_event:
+            # Pas d'edition a l'annee visee : on NE SE RABAT PAS sur la plus
+            # recente. Le chiffre d'une autre annee serait ecrit dans la
+            # cellule de l'annee demandee — Marine Corps Marathon (dernieres
+            # editions 2025 et avant, course 2026 non courue) remontait ainsi
+            # 30085 pour 2026, et Lilac Bloomsday 27883 alors que sa derniere
+            # edition connue d'Athlinks est 2024.
+            print(f"    Athlinks: aucune edition {year} "
+                  f"(disponibles {sorted(set(annees), reverse=True)[:6]}) — abandon")
             return None
         # La description liste une course par ligne : "10Km Run -43337".
         # Prendre le plus grand nombre revenait a choisir la plus grosse course
@@ -1274,6 +1378,18 @@ PLATFORM_MAP = {
 
 
 # Distance ciblee, en metres, et tolerance
+# Courses annexes a ecarter avant de viser une distance : elles portent la
+# meme distance que l'epreuve principale et rendaient le choix ambigu, donc
+# abandonne. Le Marathon de Paris expose ainsi « Marathon de Paris »,
+# « Handisport Debout » et « Handisport Fauteuil », tous a 42,195 km.
+COURSES_ANNEXES = ("handisport", "fauteuil", "wheelchair", "handbike",
+                   "handcycle", "hand cycle", "relais", "relay", "virtuel",
+                   "virtual", "junior", "kids", "enfant", "marche nordique",
+                   "walk only", "duo", "challenge entreprise")
+
+BORNES_CHRONO = {"MARATHON": (6000, 43200), "SEMI": (2700, 21600),
+                 "10KM": (1500, 10800), "5KM": (720, 7200)}
+
 DIST_TARGETS = {"MARATHON": (42195, 1200), "SEMI": (21097, 700),
                 "10KM": (10000, 450), "5KM": (5000, 300)}
 
@@ -1320,6 +1436,11 @@ def pick_race_for_distance(races, dist_code, get_distance_m=None, get_title=None
         return None
     get_distance_m = get_distance_m or (lambda r: r.get("distance"))
     get_title = get_title or (lambda r: r.get("title") or r.get("name") or "")
+
+    principales = [r for r in races
+                   if not any(x in normalize_name(str(get_title(r)))
+                              for x in COURSES_ANNEXES)]
+    races = principales or races
     by_metres = []
     for r in races:
         try:
