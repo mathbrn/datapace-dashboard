@@ -1717,7 +1717,14 @@ def update_finishers(race_name, distance, year, count, dry_run=False):
     result = subprocess.run(
         ["python", "update_finishers.py", race_name, distance, str(year), str(count)],
         cwd=str(SCRIPT_DIR), capture_output=True, text=True)
-    print(f"  update_finishers output: {result.stdout.strip()[:200]}")
+    sortie = result.stdout.strip()
+    print(f"  update_finishers output: {sortie[:200]}")
+    # update_finishers.py sort en 0 meme quand il refuse d'ecraser une cellule
+    # deja remplie : le code de retour ne dit donc rien de l'ecriture. Sans
+    # cette lecture, chaque run renotifiait les 14 cellules qu'il avait
+    # seulement relues (run du 7 octobre : 12 notifications, 0 ecriture).
+    if "[SKIP]" in sortie:
+        return False
     return result.returncode == 0
 
 
