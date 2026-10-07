@@ -1,6 +1,14 @@
 {
   "updates": [
     {
+      "event": "Gasparilla Distance Classic",
+      "date": "2026-02-22",
+      "data": {
+        "finishers": 4244
+      },
+      "timestamp": "2026-10-07T10:52:06Z"
+    },
+    {
       "event": "Dick's Pittsburgh Marathon",
       "date": "2026-05-03",
       "data": {

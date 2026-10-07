@@ -508,7 +508,7 @@
   "gasparilla distance classic": {
     "platform": "athlinks",
     "country": "USA",
-    "distance": "AUTRE",
+    "distance": "SEMI",
     "name": "Gasparilla Distance Classic",
     "platform_id": 20493
   },
