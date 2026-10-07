@@ -2011,5 +2011,14 @@
     "count": 50071,
     "avg_time": "04:16:55",
     "avg_speed_kmh": 9.854
+  },
+  {
+    "label": "Stockholm Marathon 2026",
+    "race": "Stockholm Marathon",
+    "dist_m": 42195,
+    "year": 2026,
+    "count": 18926,
+    "avg_time": "04:30:03",
+    "avg_speed_kmh": 9.375
   }
 ]
