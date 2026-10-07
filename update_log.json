@@ -1,6 +1,42 @@
 {
   "updates": [
     {
+      "event": "Harmonie Mutuelle Marathon de Tours",
+      "date": "2026-09-20",
+      "data": {
+        "avg_time": "04:09:06",
+        "winner_men": "02:25:46",
+        "winner_women": "03:11:58"
+      },
+      "timestamp": "2026-10-07T15:35:56Z"
+    },
+    {
+      "event": "Harmonie Mutuelle Marathon de Tours",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 1869
+      },
+      "timestamp": "2026-10-07T15:35:56Z"
+    },
+    {
+      "event": "Marathon des Chateaux du Médoc",
+      "date": "2026-09-12",
+      "data": {
+        "avg_time": "06:13:53",
+        "winner_men": "02:26:45",
+        "winner_women": "02:54:38"
+      },
+      "timestamp": "2026-10-07T15:35:14Z"
+    },
+    {
+      "event": "Marathon des Chateaux du Médoc",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 8051
+      },
+      "timestamp": "2026-10-07T15:35:14Z"
+    },
+    {
       "event": "Paris-Versailles - La grande classique",
       "date": "2026-09-27",
       "data": {

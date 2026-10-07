@@ -451,15 +451,21 @@ def fetch_timeto_4d(event_name, year, dist_code=None):
             # generalRanking, sex « M ») et le nouveau (realTimeFfa,
             # generalRank, sex « H »). Le Marathon de Paris sert encore
             # l'ancien, le 10K Paris le nouveau.
+            # Troisieme variante rencontree au Marathon de Tours :
+            # realGeneralRank / realSexRank.
+            def _premier(r, cles):
+                for k in cles:
+                    if r.get(k) is not None:
+                        return str(r[k]).strip()
+                return ""
+
             def _rang(r):
-                v = r.get("generalRank")
-                if v is None:
-                    v = r.get("generalRanking")
-                return str(v or "").strip()
+                return _premier(r, ("generalRank", "generalRanking",
+                                    "realGeneralRank", "officialGeneralRank"))
 
             def _rang_sexe(r):
-                v = r.get("sexRank")
-                return str(v if v is not None else r.get("sexRanking") or "")
+                return _premier(r, ("sexRank", "sexRanking",
+                                    "realSexRank", "officialSexRank"))
 
             def _chrono(r):
                 return r.get("realTimeFfa") or r.get("realTime")

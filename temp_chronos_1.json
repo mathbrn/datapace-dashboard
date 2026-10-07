@@ -430,5 +430,23 @@
     "nom_homme": "Baptiste Jard",
     "temps_femme": "00:55:58",
     "nom_femme": "Mélody Julien"
+  },
+  {
+    "course": "Marathon des Chateaux du Médoc",
+    "distance": "MARATHON",
+    "annee": 2026,
+    "temps_homme": "02:26:45",
+    "nom_homme": "Florian Laplanche",
+    "temps_femme": "02:54:38",
+    "nom_femme": "Céline Merel"
+  },
+  {
+    "course": "Harmonie Mutuelle Marathon de Tours",
+    "distance": "MARATHON",
+    "annee": 2026,
+    "temps_homme": "02:25:46",
+    "nom_homme": "Hicham El Haddad",
+    "temps_femme": "03:11:58",
+    "nom_femme": "Anne Carlat"
   }
 ]

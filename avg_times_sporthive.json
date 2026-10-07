@@ -2074,5 +2074,23 @@
     "count": 44244,
     "avg_time": "00:57:59",
     "avg_speed_kmh": 10.347
+  },
+  {
+    "label": "Marathon des Chateaux du Médoc 2026",
+    "race": "Marathon des Chateaux du Médoc",
+    "dist_m": 42195,
+    "year": 2026,
+    "count": 8051,
+    "avg_time": "06:13:53",
+    "avg_speed_kmh": 6.771
+  },
+  {
+    "label": "Harmonie Mutuelle Marathon de Tours 2026",
+    "race": "Harmonie Mutuelle Marathon de Tours",
+    "dist_m": 42195,
+    "year": 2026,
+    "count": 1869,
+    "avg_time": "04:09:06",
+    "avg_speed_kmh": 10.163
   }
 ]
