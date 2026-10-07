@@ -2065,5 +2065,14 @@
     "count": 59857,
     "avg_time": "04:36:28",
     "avg_speed_kmh": 9.157
+  },
+  {
+    "label": "Adidas 10K Paris 2026",
+    "race": "Adidas 10K Paris",
+    "dist_m": 10000,
+    "year": 2026,
+    "count": 44244,
+    "avg_time": "00:57:59",
+    "avg_speed_kmh": 10.347
   }
 ]

@@ -1,6 +1,16 @@
 {
   "updates": [
     {
+      "event": "Adidas 10K Paris",
+      "date": "2026-06-07",
+      "data": {
+        "avg_time": "00:57:59",
+        "winner_men": "00:28:11",
+        "winner_women": "00:31:48"
+      },
+      "timestamp": "2026-10-07T10:59:39Z"
+    },
+    {
       "event": "Gasparilla Distance Classic",
       "date": "2026-02-22",
       "data": {
