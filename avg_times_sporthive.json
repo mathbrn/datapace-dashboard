@@ -2056,5 +2056,14 @@
     "count": 15521,
     "avg_time": "04:26:21",
     "avg_speed_kmh": 9.505
+  },
+  {
+    "label": "TCS London Marathon 2026",
+    "race": "TCS London Marathon",
+    "dist_m": 42195,
+    "year": 2026,
+    "count": 59857,
+    "avg_time": "04:36:28",
+    "avg_speed_kmh": 9.157
   }
 ]

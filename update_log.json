@@ -1,6 +1,14 @@
 {
   "updates": [
     {
+      "event": "TCS London Marathon",
+      "date": "2026-01-01",
+      "data": {
+        "avg_time": "04:36:28"
+      },
+      "timestamp": "2026-10-07T10:01:10Z"
+    },
+    {
       "event": "Haspa Marathon Hamburg",
       "date": "2026-01-01",
       "data": {
