@@ -1250,6 +1250,30 @@ def _tracx_id_par_nom(sess, nom, year):
     return candidats[0][1]
 
 
+def _tracx_arrivants(sess, event_id, race_id):
+    """Nombre d'arrivants d'une course Tracx.
+
+    `/events/{id}/participants?race_id=X&state=finished` ne renvoie que 15
+    lignes par page, mais son bloc `meta.pagination.total` donne le compte
+    complet : une seule requete suffit.
+    """
+    if not race_id:
+        return None
+    try:
+        r = sess.get(f"https://api.tracx.events/v1/events/{event_id}/participants",
+                     params={"page": 1, "race_id": race_id, "state": "finished"},
+                     timeout=30)
+        if not r.ok:
+            print(f"    Tracx participants: HTTP {r.status_code}")
+            return None
+        total = (r.json().get("meta", {})
+                 .get("pagination", {}).get("total"))
+    except (ValueError, requests.RequestException) as e:
+        print(f"    Tracx participants: {type(e).__name__}")
+        return None
+    return total or None
+
+
 def fetch_tracx_4d(event_id, year, dist_code=None):
     """Fetch 4D from Tracx Events API."""
     try:
@@ -1288,14 +1312,21 @@ def fetch_tracx_4d(event_id, year, dist_code=None):
             print(f"    Tracx: aucune course {dist_code} identifiable — abandon")
             print(f"      courses vues={[(str(x.get('name') or x.get('title'))[:26], x.get('distance') or x.get('distance_m')) for x in races][:8]}")
             return None
-        count = main.get("participant_count", 0)
+        # `participant_count` compte les INSCRITS, pas les arrivants : sur le
+        # semi de Hong Kong 2026 il vaut 26621 quand 23645 ont fini, et sur
+        # London Landmarks 23420 contre 19754. L'ecrire comme un nombre de
+        # finishers viole la regle « participants != finishers ». Le compte
+        # d'arrivants se lit sur le total de pagination des participants
+        # filtres par etat, en une seule requete.
+        count = _tracx_arrivants(sess, event_id, main.get("id"))
         if not count:
-            print(f"    Tracx: course trouvee ({main.get('name')}) mais "
-                  f"participant_count absent — cles={sorted(main.keys())[:12]}")
+            inscrits = main.get("participant_count")
+            print(f"    Tracx: course {main.get('name')!r} — arrivants "
+                  f"indisponibles (inscrits={inscrits}), rien d'ecrit")
             return None
         return {"finishers": count, "avg_time": None, "avg_speed_kmh": None,
                 "winner_men": None, "winner_women": None,
-                "source": "tracx", "confidence": "low"}
+                "source": "tracx", "confidence": "high"}
     except Exception as e:
         print(f"  Tracx error: {e}")
     return None
