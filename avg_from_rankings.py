@@ -28,6 +28,7 @@ import time
 from pathlib import Path
 
 import requests
+from concurrent.futures import ThreadPoolExecutor
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 
@@ -240,37 +241,56 @@ def compte_finishers_mikatiming(info, year, sess=None, base=None, code=None):
     return (basse - 1) * 100 + derniere
 
 
-def chronos_mikatiming(info, year, verbeux=True):
+def chronos_mikatiming(info, year, verbeux=True, parallele=6):
     """Classement mikatiming, 100 lignes par page.
 
     `num_results` plafonne a 100 : au-dela la page retombe silencieusement a
-    25, donc on ne demande jamais plus. On s'arrete sur la premiere page vide.
+    25, donc on ne demande jamais plus.
+
+    Les pages sont telechargees en parallele. En serie, le marathon de Londres
+    (59 862 arrivants, 599 pages a ~2,5 s) depassait les 25 minutes et le
+    telechargement etait interrompu avant la fin. On determine d'abord la
+    derniere page par dichotomie, puis on va chercher les pages par petits
+    paquets. L'ordre n'importe pas : on ne calcule qu'une moyenne.
     """
     prepare = url_liste_mikatiming(info, year)
     if not prepare:
         return None
     sess, base, code = prepare
-    chronos = []
-    page = 1
-    while page <= 2000:
-        url = (f"{base}?pid=list&event={code}&num_results=100&page={page}")
+
+    def page_url(p):
+        return f"{base}?pid=list&event={code}&num_results=100&page={p}"
+
+    def lire(p):
         try:
-            r = sess.get(url, timeout=60)
-        except requests.RequestException as e:
-            print(f"  page {page}: {type(e).__name__}, arret")
-            break
-        if not r.ok:
-            print(f"  page {page}: HTTP {r.status_code}, arret")
-            break
-        lot = _chronos_de_page(r.text)
-        if not lot:
-            break
+            r = sess.get(page_url(p), timeout=60)
+        except requests.RequestException:
+            return None
+        return _chronos_de_page(r.text) if r.ok else None
+
+    total = compte_finishers_mikatiming(info, year, sess, base, code)
+    if not total:
+        return None
+    derniere = (total + 99) // 100
+    if verbeux:
+        print(f"  {total} arrivants, {derniere} page(s)")
+
+    chronos = []
+    manquantes = []
+    with ThreadPoolExecutor(max_workers=max(1, parallele)) as pool:
+        for p, lot in zip(range(1, derniere + 1),
+                          pool.map(lire, range(1, derniere + 1))):
+            if lot is None:
+                manquantes.append(p)
+            else:
+                chronos.extend(lot)
+    # Une page perdue fausserait la moyenne en silence : on retente en serie.
+    for p in manquantes:
+        lot = lire(p)
+        if lot is None:
+            print(f"  page {p} illisible — moyenne abandonnee")
+            return None
         chronos.extend(lot)
-        if verbeux and page % 25 == 0:
-            print(f"  page {page}: {len(chronos)} chronos")
-        if len(lot) < 100:          # derniere page
-            break
-        page += 1
     return chronos
 
 
