@@ -1,6 +1,16 @@
 {
   "updates": [
     {
+      "event": "Run in Lyon",
+      "date": "2026-10-07",
+      "data": {
+        "avg_time": "04:15:33",
+        "winner_men": "02:23:44",
+        "winner_women": "02:47:50"
+      },
+      "timestamp": "2026-10-08T12:30:00Z"
+    },
+    {
       "event": "Harmonie Mutuelle Marathon de Tours",
       "date": "2026-09-20",
       "data": {

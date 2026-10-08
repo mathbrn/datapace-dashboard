@@ -251,7 +251,8 @@
       "finishers": 23645,
       "avg_time": null,
       "winner_men": null,
-      "winner_women": null
+      "winner_women": null,
+      "ecrit": null
     },
     {
       "event": "Cooper River Bridge Run",
@@ -260,7 +261,8 @@
       "finishers": 33686,
       "avg_time": null,
       "winner_men": null,
-      "winner_women": null
+      "winner_women": null,
+      "ecrit": null
     },
     {
       "event": "London Landmarks Half Marathon",
@@ -269,7 +271,8 @@
       "finishers": 19754,
       "avg_time": null,
       "winner_men": null,
-      "winner_women": null
+      "winner_women": null,
+      "ecrit": null
     },
     {
       "event": "BOLDERBoulder 10K",
@@ -278,7 +281,8 @@
       "finishers": 47508,
       "avg_time": null,
       "winner_men": null,
-      "winner_women": null
+      "winner_women": null,
+      "ecrit": null
     },
     {
       "event": "Atlanta Journal-Constitution Peachtree Road Race",
@@ -287,25 +291,36 @@
       "finishers": 45299,
       "avg_time": null,
       "winner_men": null,
-      "winner_women": null
+      "winner_women": null,
+      "ecrit": null
     },
     {
       "event": "Run in Lyon",
       "year": 2026,
       "platform": "timeto",
       "finishers": 15862,
-      "avg_time": null,
-      "winner_men": null,
-      "winner_women": null
+      "avg_time": "02:04:43",
+      "winner_men": "01:03:15",
+      "winner_women": "01:13:59",
+      "ecrit": [
+        "avg_time",
+        "winner_men",
+        "winner_women"
+      ]
     },
     {
       "event": "Run in Lyon",
       "year": 2026,
       "platform": "timeto",
-      "finishers": 10051,
-      "avg_time": null,
-      "winner_men": null,
-      "winner_women": null
+      "finishers": 10050,
+      "avg_time": "01:03:09",
+      "winner_men": "00:30:11",
+      "winner_women": "00:35:31",
+      "ecrit": [
+        "avg_time",
+        "winner_men",
+        "winner_women"
+      ]
     },
     {
       "event": "Broad Street Run",
@@ -314,7 +329,8 @@
       "finishers": 34003,
       "avg_time": null,
       "winner_men": null,
-      "winner_women": null
+      "winner_women": null,
+      "ecrit": null
     },
     {
       "event": "Flying Pig Marathon",
@@ -323,7 +339,8 @@
       "finishers": 5279,
       "avg_time": null,
       "winner_men": null,
-      "winner_women": null
+      "winner_women": null,
+      "ecrit": null
     },
     {
       "event": "Dick's Pittsburgh Marathon",
@@ -332,7 +349,8 @@
       "finishers": 5026,
       "avg_time": null,
       "winner_men": null,
-      "winner_women": null
+      "winner_women": null,
+      "ecrit": null
     },
     {
       "event": "Bay to Breakers",
@@ -341,7 +359,8 @@
       "finishers": 19814,
       "avg_time": null,
       "winner_men": null,
-      "winner_women": null
+      "winner_women": null,
+      "ecrit": null
     },
     {
       "event": "Gasparilla Distance Classic",
@@ -350,7 +369,8 @@
       "finishers": 4242,
       "avg_time": null,
       "winner_men": null,
-      "winner_women": null
+      "winner_women": null,
+      "ecrit": null
     },
     {
       "event": "Dam tot Damloop",
@@ -359,16 +379,22 @@
       "finishers": 37133,
       "avg_time": null,
       "winner_men": null,
-      "winner_women": null
+      "winner_women": null,
+      "ecrit": null
     },
     {
       "event": "Run in Lyon",
       "year": 2026,
       "platform": "timeto",
       "finishers": 5591,
-      "avg_time": null,
-      "winner_men": null,
-      "winner_women": null
+      "avg_time": "04:15:33",
+      "winner_men": "02:23:44",
+      "winner_women": "02:47:50",
+      "ecrit": [
+        "avg_time",
+        "winner_men",
+        "winner_women"
+      ]
     }
   ],
   "skipped": [
@@ -553,7 +579,8 @@
   "summary": {
     "wa_races": 0,
     "matched": 48,
-    "updated": 14,
+    "updated": 3,
+    "fetched": 14,
     "skipped": 34,
     "errors": 1,
     "skip_reasons": {

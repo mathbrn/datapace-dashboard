@@ -2092,5 +2092,32 @@
     "count": 1869,
     "avg_time": "04:09:06",
     "avg_speed_kmh": 10.163
+  },
+  {
+    "label": "Run in Lyon 2026",
+    "race": "Run in Lyon",
+    "dist_m": 21097,
+    "year": 2026,
+    "count": 15862,
+    "avg_time": "02:04:43",
+    "avg_speed_kmh": 10.148
+  },
+  {
+    "label": "Run in Lyon 2026",
+    "race": "Run in Lyon",
+    "dist_m": 10000,
+    "year": 2026,
+    "count": 10050,
+    "avg_time": "01:03:09",
+    "avg_speed_kmh": 9.501
+  },
+  {
+    "label": "Run in Lyon 2026",
+    "race": "Run in Lyon",
+    "dist_m": 42195,
+    "year": 2026,
+    "count": 5591,
+    "avg_time": "04:15:33",
+    "avg_speed_kmh": 9.906
   }
 ]

@@ -448,5 +448,32 @@
     "nom_homme": "Hicham El Haddad",
     "temps_femme": "03:11:58",
     "nom_femme": "Anne Carlat"
+  },
+  {
+    "course": "Run in Lyon",
+    "distance": "SEMI",
+    "annee": 2026,
+    "temps_homme": "01:03:15",
+    "nom_homme": null,
+    "temps_femme": "01:13:59",
+    "nom_femme": null
+  },
+  {
+    "course": "Run in Lyon",
+    "distance": "10KM",
+    "annee": 2026,
+    "temps_homme": "00:30:11",
+    "nom_homme": null,
+    "temps_femme": "00:35:31",
+    "nom_femme": null
+  },
+  {
+    "course": "Run in Lyon",
+    "distance": "MARATHON",
+    "annee": 2026,
+    "temps_homme": "02:23:44",
+    "nom_homme": null,
+    "temps_femme": "02:47:50",
+    "nom_femme": null
   }
 ]
