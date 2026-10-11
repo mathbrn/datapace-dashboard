@@ -1,6 +1,24 @@
 {
   "updates": [
     {
+      "event": "Harmonie Mutuelle 20km de Paris",
+      "date": "2026-10-10",
+      "data": {
+        "finishers": 29102,
+        "winner_men": "00:57:11",
+        "winner_women": "01:04:35"
+      },
+      "timestamp": "2026-10-11T11:50:15Z"
+    },
+    {
+      "event": "Harmonie Mutuelle 20km de Paris",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 29102
+      },
+      "timestamp": "2026-10-11T11:50:15Z"
+    },
+    {
       "event": "Run in Lyon",
       "date": "2026-10-07",
       "data": {
