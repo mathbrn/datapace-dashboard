@@ -1,6 +1,24 @@
 {
   "updates": [
     {
+      "event": "Bank of America Chicago Marathon",
+      "date": "2026-10-11",
+      "data": {
+        "finishers": 54581,
+        "winner_men": "02:01:09",
+        "winner_women": "02:13:33"
+      },
+      "timestamp": "2026-10-12T13:56:37Z"
+    },
+    {
+      "event": "Bank of America Chicago Marathon",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 54581
+      },
+      "timestamp": "2026-10-12T13:56:36Z"
+    },
+    {
       "event": "Harmonie Mutuelle 20km de Paris",
       "date": "2026-10-10",
       "data": {

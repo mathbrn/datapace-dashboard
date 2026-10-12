@@ -484,5 +484,14 @@
     "nom_homme": null,
     "temps_femme": "01:04:35",
     "nom_femme": null
+  },
+  {
+    "course": "Bank of America Chicago Marathon",
+    "distance": "MARATHON",
+    "annee": 2026,
+    "temps_homme": "02:01:09",
+    "nom_homme": null,
+    "temps_femme": "02:13:33",
+    "nom_femme": null
   }
 ]
