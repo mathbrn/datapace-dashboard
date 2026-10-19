@@ -103,18 +103,8 @@
       "score": 0
     },
     {
-      "wa_name": "Bank of America Chicago Marathon",
-      "our_name": "Bank of America Chicago Marathon",
-      "score": 0
-    },
-    {
       "wa_name": "Marine Corps Marathon",
       "our_name": "Marine Corps Marathon",
-      "score": 0
-    },
-    {
-      "wa_name": "Cardiff Half Marathon",
-      "our_name": "Cardiff Half Marathon",
       "score": 0
     },
     {
@@ -188,11 +178,6 @@
       "score": 0
     },
     {
-      "wa_name": "Harmonie Mutuelle 20km de Paris",
-      "our_name": "Harmonie Mutuelle 20km de Paris",
-      "score": 0
-    },
-    {
       "wa_name": "Paris-Versailles - La grande classique",
       "our_name": "Paris-Versailles - La grande classique",
       "score": 0
@@ -240,16 +225,6 @@
       "ecrit": null
     },
     {
-      "event": "Cooper River Bridge Run",
-      "year": 2026,
-      "platform": "athlinks",
-      "finishers": 33686,
-      "avg_time": null,
-      "winner_men": null,
-      "winner_women": null,
-      "ecrit": null
-    },
-    {
       "event": "London Landmarks Half Marathon",
       "year": 2026,
       "platform": "tracx",
@@ -260,81 +235,21 @@
       "ecrit": null
     },
     {
-      "event": "BOLDERBoulder 10K",
+      "event": "TCS Amsterdam Marathon",
       "year": 2026,
-      "platform": "athlinks",
-      "finishers": 47508,
-      "avg_time": null,
+      "platform": "sporthive",
+      "finishers": 23635,
+      "avg_time": "03:51:03",
       "winner_men": null,
       "winner_women": null,
       "ecrit": null
     },
     {
-      "event": "Atlanta Journal-Constitution Peachtree Road Race",
+      "event": "TCS Mizuno Half Marathon",
       "year": 2026,
-      "platform": "athlinks",
-      "finishers": 45299,
-      "avg_time": null,
-      "winner_men": null,
-      "winner_women": null,
-      "ecrit": null
-    },
-    {
-      "event": "Bank of America Chicago Marathon",
-      "year": 2026,
-      "platform": "mikatiming",
-      "finishers": 54536,
-      "avg_time": null,
-      "winner_men": "02:01:09",
-      "winner_women": "02:13:33",
-      "ecrit": null
-    },
-    {
-      "event": "Broad Street Run",
-      "year": 2026,
-      "platform": "athlinks",
-      "finishers": 34003,
-      "avg_time": null,
-      "winner_men": null,
-      "winner_women": null,
-      "ecrit": null
-    },
-    {
-      "event": "Flying Pig Marathon",
-      "year": 2026,
-      "platform": "athlinks",
-      "finishers": 5279,
-      "avg_time": null,
-      "winner_men": null,
-      "winner_women": null,
-      "ecrit": null
-    },
-    {
-      "event": "Dick's Pittsburgh Marathon",
-      "year": 2026,
-      "platform": "athlinks",
-      "finishers": 5026,
-      "avg_time": null,
-      "winner_men": null,
-      "winner_women": null,
-      "ecrit": null
-    },
-    {
-      "event": "Bay to Breakers",
-      "year": 2026,
-      "platform": "athlinks",
-      "finishers": 19814,
-      "avg_time": null,
-      "winner_men": null,
-      "winner_women": null,
-      "ecrit": null
-    },
-    {
-      "event": "Gasparilla Distance Classic",
-      "year": 2026,
-      "platform": "athlinks",
-      "finishers": 4242,
-      "avg_time": null,
+      "platform": "sporthive",
+      "finishers": 12778,
+      "avg_time": "02:13:17",
       "winner_men": null,
       "winner_women": null,
       "ecrit": null
@@ -347,16 +262,6 @@
       "avg_time": null,
       "winner_men": null,
       "winner_women": null,
-      "ecrit": null
-    },
-    {
-      "event": "Harmonie Mutuelle 20km de Paris",
-      "year": 2026,
-      "platform": "timeto",
-      "finishers": 29116,
-      "avg_time": "01:52:35",
-      "winner_men": "00:57:11",
-      "winner_women": "01:04:35",
       "ecrit": null
     }
   ],
@@ -375,6 +280,11 @@
       "event": "EDP Lisboa Meia Maratona",
       "reason": "fetch_returned_nothing",
       "platform": "sporthive"
+    },
+    {
+      "event": "Cooper River Bridge Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
     },
     {
       "event": "NN CPC Loop Den Haag - Half Marathon",
@@ -402,6 +312,11 @@
       "platform": "chronorace"
     },
     {
+      "event": "BOLDERBoulder 10K",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
+    },
+    {
       "event": "Hoka Runaway Sydney Half Marathon",
       "reason": "fetch_returned_nothing",
       "platform": "multisport"
@@ -420,6 +335,11 @@
       "event": "AJ Bell Great Bristol Run",
       "reason": "fetch_returned_nothing",
       "platform": "rtrt"
+    },
+    {
+      "event": "Atlanta Journal-Constitution Peachtree Road Race",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
     },
     {
       "event": "TCS Sydney Marathon presented by ASICS",
@@ -442,27 +362,37 @@
       "platform": "athlinks"
     },
     {
-      "event": "Cardiff Half Marathon",
-      "reason": "fetch_returned_nothing",
-      "platform": "rtrt"
-    },
-    {
-      "event": "TCS Amsterdam Marathon",
-      "reason": "fetch_returned_nothing",
-      "platform": "sporthive"
-    },
-    {
-      "event": "TCS Mizuno Half Marathon",
-      "reason": "fetch_returned_nothing",
-      "platform": "sporthive"
-    },
-    {
       "event": "EDP Maratona de Lisboa",
       "reason": "fetch_returned_nothing",
       "platform": "sporthive"
     },
     {
+      "event": "Broad Street Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
+    },
+    {
+      "event": "Flying Pig Marathon",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
+    },
+    {
       "event": "Lilac Bloomsday Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
+    },
+    {
+      "event": "Bay to Breakers",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
+    },
+    {
+      "event": "Gasparilla Distance Classic",
       "reason": "fetch_returned_nothing",
       "platform": "athlinks"
     },
@@ -525,19 +455,19 @@
   "errors": [
     {
       "stage": "worldathletics",
-      "error": "HTTPSConnectionPool(host='graphql-prod-4860.edge.aws.worldathletics.org', port=443): Max retries exceeded with url: /graphql (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 502 Bad Gateway')))"
+      "error": "HTTPSConnectionPool(host='graphql-prod-4860.edge.aws.worldathletics.org', port=443): Max retries exceeded with url: /graphql (Caused by NameResolutionError(\"HTTPSConnection(host='graphql-prod-4860.edge.aws.worldathletics.org', port=443): Failed to resolve 'graphql-prod-4860.edge.aws.worldathletics.org' ([Errno -2] Name or service not known)\"))"
     }
   ],
   "mode": "fallback_no_calendar",
   "summary": {
     "wa_races": 0,
-    "matched": 45,
+    "matched": 42,
     "updated": 0,
-    "fetched": 13,
-    "skipped": 32,
+    "fetched": 5,
+    "skipped": 37,
     "errors": 1,
     "skip_reasons": {
-      "fetch_returned_nothing": 32
+      "fetch_returned_nothing": 37
     },
     "mode": "fallback_no_calendar"
   }
