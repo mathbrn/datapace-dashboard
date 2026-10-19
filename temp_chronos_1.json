@@ -520,5 +520,23 @@
     "nom_homme": "Gideon Kiprotich",
     "temps_femme": "01:05:39",
     "nom_femme": "Joyciline Jepkosgei"
+  },
+  {
+    "course": "Nike Melbourne Marathon",
+    "distance": "MARATHON",
+    "annee": 2026,
+    "temps_homme": "02:09:10",
+    "nom_homme": null,
+    "temps_femme": "02:28:25",
+    "nom_femme": null
+  },
+  {
+    "course": "Nike Half Marathon",
+    "distance": "SEMI",
+    "annee": 2026,
+    "temps_homme": "01:01:20",
+    "nom_homme": null,
+    "temps_femme": "01:09:24",
+    "nom_femme": null
   }
 ]

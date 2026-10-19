@@ -132,7 +132,7 @@ FIRST_EDITIONS = {
     ("Wizz Air Rome Half Marathon by Brooks", "SEMI"): 2014,
     ("Tokyo Legacy Half Marathon", "SEMI"): 2022,
     ("TCS Mizuno Half Marathon", "SEMI"): 2013,
-    ("Nike Melbourne Marathon Festival", "SEMI"): 2009,
+    ("Nike Half Marathon", "SEMI"): 2009,
     ("Vedanta Delhi Half Marathon", "SEMI"): 2005,
     ("Half Marathon Munchen by Brooks", "SEMI"): 2019,
     ("Hyundai Meia Maratona", "SEMI"): 2004,

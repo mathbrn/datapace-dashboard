@@ -916,7 +916,7 @@ half_marathon_data = [
     ("Royal Parks Half Marathon", "21K", 2025, "N/A", "N/A"),
     ("Tokyo Legacy Half Marathon", "21K", 2025, "N/A", "N/A"),
     ("TCS Mizuno Half Marathon", "21K", 2025, "N/A", "N/A"),
-    ("Nike Melbourne Marathon Festival", "21K", 2025, "N/A", "N/A"),
+    ("Nike Half Marathon", "21K", 2025, "N/A", "N/A"),
     ("Vedanta Delhi Half Marathon", "21K", 2025, "0:59:50", "1:07:20"),
     ("Half Marathon Munchen by Brooks", "21K", 2025, "N/A", "N/A"),
     ("Semi-Marathon de Boulogne-Billancourt", "21K", 2025, "N/A", "N/A"),

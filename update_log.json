@@ -1,6 +1,26 @@
 {
   "updates": [
     {
+      "event": "Nike Half Marathon",
+      "date": "2026-10-11",
+      "data": {
+        "finishers": 13905,
+        "winner_men": "01:01:20",
+        "winner_women": "01:09:24"
+      },
+      "timestamp": "2026-10-19T12:14:19Z"
+    },
+    {
+      "event": "Nike Melbourne Marathon",
+      "date": "2026-10-11",
+      "data": {
+        "finishers": 17732,
+        "winner_men": "02:09:10",
+        "winner_women": "02:28:25"
+      },
+      "timestamp": "2026-10-19T12:14:19Z"
+    },
+    {
       "event": "Royal Parks Half Marathon",
       "date": "2026-01-01",
       "data": {
