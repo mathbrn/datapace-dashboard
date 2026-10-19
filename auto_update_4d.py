@@ -1530,7 +1530,7 @@ PLATFORM_MAP = {
 COURSES_ANNEXES = ("handisport", "fauteuil", "wheelchair", "handbike",
                    "handcycle", "hand cycle", "relais", "relay", "virtuel",
                    "virtual", "junior", "kids", "enfant", "marche nordique",
-                   "business run",
+                   "business run", "elite", "elites",
                    "walk only", "duo", "challenge entreprise")
 
 BORNES_CHRONO = {"MARATHON": (6000, 43200), "SEMI": (2700, 21600),

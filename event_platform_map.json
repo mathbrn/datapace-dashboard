@@ -111,9 +111,10 @@
       "2024": "7142910812398577664",
       "2023": "7113512886511920128",
       "2022": "6983192910261964288",
-      "2021": "6854892113662505728"
+      "2021": "6854892113662505728",
+      "2026": "7391338081590568960"
     },
-    "distance": "SEMI",
+    "distance": "MARATHON",
     "country": "POR"
   },
   "edp lisboa meia maratona": {
@@ -720,5 +721,14 @@
     "slug": "runaway-sydney-half-marathon",
     "event": 1,
     "distance": "SEMI"
+  },
+  "hyundai meia maratona": {
+    "name": "Hyundai Meia Maratona",
+    "platform": "sporthive",
+    "distance": "SEMI",
+    "country": "POR",
+    "sporthive_ids_by_year": {
+      "2026": "7391339679318404864"
+    }
   }
 }

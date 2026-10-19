@@ -1,6 +1,38 @@
 {
   "updates": [
     {
+      "event": "Hyundai Meia Maratona",
+      "date": "2026-10-11",
+      "data": {
+        "avg_time": "02:06:13"
+      },
+      "timestamp": "2026-10-19T12:19:48Z"
+    },
+    {
+      "event": "EDP Maratona de Lisboa",
+      "date": "2026-10-10",
+      "data": {
+        "avg_time": "04:09:22"
+      },
+      "timestamp": "2026-10-19T12:19:48Z"
+    },
+    {
+      "event": "Hyundai Meia Maratona",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 8219
+      },
+      "timestamp": "2026-10-19T12:19:48Z"
+    },
+    {
+      "event": "EDP Maratona de Lisboa",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 8297
+      },
+      "timestamp": "2026-10-19T12:19:47Z"
+    },
+    {
       "event": "Nike Melbourne Half Marathon",
       "date": "2026-10-11",
       "data": {

@@ -2182,5 +2182,23 @@
     "count": 17289,
     "avg_time": "02:11:12",
     "avg_speed_kmh": 9.648
+  },
+  {
+    "label": "EDP Maratona de Lisboa 2026",
+    "race": "EDP Maratona de Lisboa",
+    "dist_m": 42195,
+    "year": 2026,
+    "count": 8297,
+    "avg_time": "04:09:22",
+    "avg_speed_kmh": 10.15
+  },
+  {
+    "label": "Hyundai Meia Maratona 2026",
+    "race": "Hyundai Meia Maratona",
+    "dist_m": 21097,
+    "year": 2026,
+    "count": 8219,
+    "avg_time": "02:06:13",
+    "avg_speed_kmh": 10.03
   }
 ]
