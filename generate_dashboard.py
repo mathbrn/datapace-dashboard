@@ -633,6 +633,11 @@ var LIGHT_MAP={'#38BDF8':'#0B7BC0','#FCDB00':'#A88F00','#DC2626':'#991B1B','#E30
 function lc(c){return isLight()?(LIGHT_MAP[c]||c):c;}
 function col(r){return lc('#DC2626');}
 function colDist(r){return lc(r.d==='5KM'?'#AC14D7':r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':r.d==='AUTRE'?'#F472B6':'#2563EB');}
+// Organisateur d'une epreuve, ou chaine vide. EVENT_ORGANIZERS vient de
+// event_organizers.json ; une epreuve absente du fichier reste sans
+// organisateur plutot que d'en recevoir un approximatif.
+function eventOrg(name){if(typeof EVENT_ORGANIZERS==='undefined')return '';return EVENT_ORGANIZERS[name]||'';}
+function eventOrgTxt(name){return eventOrg(name)||'\u2014';}
 function eventFlag(name){if(typeof EVENT_COUNTRIES==='undefined')return '';var info=EVENT_COUNTRIES[name];return info&&info.flag?info.flag:'';}
 function twemojify(el){try{if(typeof twemoji!=='undefined'){twemoji.parse(el||document.body,{folder:'svg',ext:'.svg'});}}catch(e){}}
 var CIRC_COLORS={WMM:'#38BDF8',ASO:'#E30613',EMC:'#F87171',L5G:'#DC2626'};
@@ -1255,7 +1260,7 @@ function ovSelect(idx){
   var html='<div class="ov-card">'
     +'<div class="ov-card-header"><div>'
     +'<div class="ov-card-title">'+ev.r+'</div>'
-    +'<div class="ov-card-meta"><span>'+(eventFlag(ev.r)?eventFlag(ev.r)+' ':'')+ev.c+' &middot; '+ev.p+'</span></div>'
+    +'<div class="ov-card-meta"><span>'+(eventFlag(ev.r)?eventFlag(ev.r)+' ':'')+ev.c+' &middot; '+ev.p+(eventOrg(ev.r)?' &middot; '+eventOrg(ev.r):'')+'</span></div>'
     +'</div>'
     +'<div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap"><span class="ov-badge" style="border:1px solid '+badgeCol+'40;color:'+badgeCol+';background:transparent;font-size:10px;padding:3px 10px;border-radius:100px;">'+dl+'</span>'+circHtml+'</div>'
     +'</div>'
@@ -1617,7 +1622,7 @@ function filterTable(){
   var frozen=globalYears.length>4;
   if(tbl){tbl.classList.toggle('tbl-frozen',frozen);if(!frozen)tbl.style.tableLayout='';tbl.querySelectorAll('.frozen-cell').forEach(function(c){c.classList.remove('frozen-cell');c.style.position='';c.style.left='';c.style.zIndex='';c.style.minWidth='';c.style.width='';c.style.boxShadow='';});}
   var yrTh=globalYears.map(function(y){return frozen?'<th style="min-width:58px;width:58px;text-align:center;padding:7px 6px">'+y+'</th>':'<th>'+y+'</th>';}).join('');
-  if(thead)thead.innerHTML='<th>Mois</th><th>Ville</th><th>Distance</th><th>Epreuve</th>'+yrTh+'<th>Tendance</th>';
+  if(thead)thead.innerHTML='<th>Mois</th><th>Ville</th><th>Organisateur</th><th>Distance</th><th>Epreuve</th>'+yrTh+'<th>Tendance</th>';
   var html='';
   f.forEach(function(r){
     var vals=globalYears.map(function(y){return(r.hist||{})[y]||null;}).filter(function(v){return v&&v>0&&!isNaN(v);});
@@ -1630,7 +1635,9 @@ function filterTable(){
     var bl=r.d==='MARATHON'?'Marathon':r.d==='SEMI'?'Semi':r.d==='AUTRE'?'Autre':r.d==='5KM'?'5 km':'10 km';
     var raceColor=colDist(r);
     var cBadges=circBadges(r);
+    var org=eventOrg(r.r);
     html+='<tr><td>'+r.p+'</td><td>'+(eventFlag(r.r)?eventFlag(r.r)+' ':'')+r.c+'</td>'
+      +'<td style="font-size:11px;'+(org?'':'color:var(--text3)')+'" title="'+(org||'')+'">'+(org||'\u2014')+'</td>'
       +'<td><span class="badge" style="background:'+raceColor+'18;color:'+raceColor+'">'+bl+'</span>'+cBadges+'</td>'
       +'<td style="color:'+raceColor+'" title="'+r.r+'">'+r.r+'</td>'
       +globalYears.map(function(y){var v=(r.hist||{})[y];var isFirst=r.fy&&y===r.fy;var starHtml=isFirst?'<span style="position:absolute;top:1px;left:2px;font-size:7px;color:'+raceColor+';opacity:0.7">\u2605</span>':'';if(v===-3)return'<td style="color:var(--text3);opacity:0.2">\u00b7</td>';if(v===-1)return'<td style="color:#FF4A6B;font-size:10px;font-style:italic;position:relative">'+starHtml+'Annul\u00e9</td>';if(v===-2)return'<td style="color:'+raceColor+';font-size:10px;font-style:italic;position:relative">'+starHtml+'Elite Only</td>';if(!v){var av=aVenir(r,y);if(av)return'<td title="Edition '+av+' '+y+'" style="color:#3B82F6;font-size:10px;font-style:italic;position:relative">'+starHtml+'\u00c0 venir</td>';}return'<td style="'+(v?'color:var(--text)':'')+';position:relative">'+starHtml+(v?fmtFull(v):'\u2014')+'</td>';}).join('')
@@ -2144,8 +2151,8 @@ function renderCompare(){
 
   var distA=a.d==='MARATHON'?'Marathon':a.d==='SEMI'?'Semi-marathon':a.d==='AUTRE'?'Autre':a.d==='5KM'?'5 km':'10 km';
   var distB=b.d==='MARATHON'?'Marathon':b.d==='SEMI'?'Semi-marathon':b.d==='AUTRE'?'Autre':b.d==='5KM'?'5 km':'10 km';
-  var statA=(a.ci||[]).length?(a.ci||[]).join(' / '):'\u2014';
-  var statB=(b.ci||[]).length?(b.ci||[]).join(' / '):'\u2014';
+  var statA=eventOrgTxt(a.r);
+  var statB=eventOrgTxt(b.r);
 
   var avgA=tdA?tdA.avg:null, avgB=tdB?tdB.avg:null;
   var menA=wrA&&wrA.men?wrA.men:(tdA?tdA.men:null);
@@ -2215,7 +2222,7 @@ function renderCompare(){
     +'<div class="cmp-mid"><div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div class="cmp-mid-label">Evolution</div>'+evoBtns+'</div></div>'
     +'<div class="cmp-cell r" style="'+ebrB+'" id="cmp-evo-b">'+edotB+'<div style="text-align:right"><div class="'+eclsB+'" '+estB+'>'+eB.str+'</div>'+(eB.sub?'<div class="cmp-sub">'+eB.sub+'</div>':'')+'</div></div>'
     +'</div>';
-  html+=cmpR(statA,statB,'Circuit',null,'','');
+  html+=cmpR(statA,statB,'Organisateur',null,'','');
 
   html+='</div>';
   // Chart
@@ -2989,7 +2996,7 @@ HTML_BODY = """
   </div>
   <div class="table-wrap">
     <table id="data-table">
-      <thead><tr id="table-head-row"><th>Mois</th><th>Ville</th><th>Distance</th><th>Epreuve</th><th>Tendance</th></tr></thead>
+      <thead><tr id="table-head-row"><th>Mois</th><th>Ville</th><th>Organisateur</th><th>Distance</th><th>Epreuve</th><th>Tendance</th></tr></thead>
       <tbody id="table-body"></tbody>
     </table>
   </div>
@@ -3113,6 +3120,15 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
         import json as jlib3
         with open(update_log_path, "r", encoding="utf-8") as f:
             update_log = jlib3.load(f).get("updates", [])
+    # Organisateur de chaque epreuve (colonne Tableau, carte d'identite,
+    # comparaison). Absent du fichier = pas d'organisateur affiche.
+    orgs_path = SCRIPT_DIR / "event_organizers.json"
+    event_organizers = {}
+    if orgs_path.exists():
+        import json as jlib5
+        with open(orgs_path, "r", encoding="utf-8") as f:
+            event_organizers = {k: v for k, v in jlib5.load(f).items()
+                                if not k.startswith("_")}
     # Load event countries / flags
     countries_path = SCRIPT_DIR / "event_countries.json"
     event_countries = {}
@@ -3130,6 +3146,7 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
                "const WINNERS=" + j(winners) + ";\n"
                "const UPDATE_LOG=" + j(update_log) + ";\n"
                "const EVENT_COUNTRIES=" + j(event_countries) + ";\n"
+               "const EVENT_ORGANIZERS=" + j(event_organizers) + ";\n"
                "const SP_BRANDS=" + j(spdata.get("brands", {})) + ";\n"
                "const SP_PARTNERSHIPS=" + j(spdata.get("partnerships", [])) + ";\n")
     body = HTML_BODY.format(now=now)
