@@ -7201,8 +7201,7 @@
       "type": "title",
       "years": [
         2024,
-        2025,
-        2026
+        2025
       ]
     },
     {
@@ -14981,6 +14980,14 @@
       "type": "official",
       "years": [
         2025,
+        2026
+      ]
+    },
+    {
+      "brand": "ASICS",
+      "event": "Manchester Half Marathon",
+      "type": "title",
+      "years": [
         2026
       ]
     }

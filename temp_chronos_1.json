@@ -493,5 +493,32 @@
     "nom_homme": null,
     "temps_femme": "02:13:33",
     "nom_femme": null
+  },
+  {
+    "course": "Royal Parks Half Marathon",
+    "distance": "SEMI",
+    "annee": 2026,
+    "temps_homme": "01:09:30",
+    "nom_homme": null,
+    "temps_femme": "01:14:10",
+    "nom_femme": null
+  },
+  {
+    "course": "Manchester Half Marathon",
+    "distance": "SEMI",
+    "annee": 2026,
+    "temps_homme": "01:02:50",
+    "nom_homme": "Alex Durant",
+    "temps_femme": "01:11:39",
+    "nom_femme": "Molly Smith"
+  },
+  {
+    "course": "Cardiff Half Marathon",
+    "distance": "SEMI",
+    "annee": 2026,
+    "temps_homme": "00:59:34",
+    "nom_homme": "Gideon Kiprotich",
+    "temps_femme": "01:05:39",
+    "nom_femme": "Joyciline Jepkosgei"
   }
 ]

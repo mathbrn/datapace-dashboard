@@ -521,21 +521,29 @@ def fetch_sporthive_4d(event_id, year, dist_code=None):
             print(f"    Sporthive events/{event_id}: aucune course renvoyee")
             return None
         # Viser la distance demandee, pas la plus grosse course de l'evenement
-        r = pick_race_for_distance(
-            races, dist_code,
-            get_distance_m=lambda x: x.get("distance"),
-            get_title=lambda x: x.get("name") or x.get("title") or "")
+        # L'API a renomme ses champs : `distanceInMeter` et `raceName` sur les
+        # editions recentes, `distance` et `name` sur les anciennes. Ne lire
+        # que les anciens rendait « aucune course identifiable » sur toutes
+        # les editions 2026, dont TCS Amsterdam.
+        def _dist(x):
+            return x.get("distance") or x.get("distanceInMeter")
+
+        def _titre(x):
+            return x.get("name") or x.get("title") or x.get("raceName") or ""
+
+        r = pick_race_for_distance(races, dist_code,
+                                   get_distance_m=_dist, get_title=_titre)
         if not r:
             print(f"    Sporthive: aucune course {dist_code} identifiable — abandon")
-            print(f"      courses vues={[(str(x.get('name') or x.get('title'))[:26], x.get('distance')) for x in races][:8]}")
+            print(f"      courses vues={[(str(_titre(x))[:26], _dist(x)) for x in races][:8]}")
             return None
         count = r.get("classificationsCount", 0)
         if not count:
-            print(f"    Sporthive: course trouvee ({r.get('name')}) mais "
+            print(f"    Sporthive: course trouvee ({_titre(r)}) mais "
                   f"classificationsCount absent — cles={sorted(r.keys())[:12]}")
             return None
         speed = r.get("raceStatistics", {}).get("averageSpeedInKmh", 0)
-        distance = r.get("distance", 0) / 1000  # meters → km
+        distance = (_dist(r) or 0) / 1000  # metres -> km
         avg_time = None
         if speed and distance:
             hours = distance / speed
@@ -546,7 +554,7 @@ def fetch_sporthive_4d(event_id, year, dist_code=None):
             # Sans vitesse moyenne on perdait AUSSI les finishers : la fonction
             # tombait jusqu'au `return None` final. Les finishers sont la
             # donnee principale, on les renvoie meme sans temps moyen.
-            print(f"    Sporthive: pas de vitesse moyenne pour {r.get('name')}, "
+            print(f"    Sporthive: pas de vitesse moyenne pour {_titre(r)}, "
                   f"finishers seuls")
         return {"finishers": count, "avg_time": avg_time,
                 "avg_speed_kmh": round(speed, 2) if speed else None,
@@ -1522,6 +1530,7 @@ PLATFORM_MAP = {
 COURSES_ANNEXES = ("handisport", "fauteuil", "wheelchair", "handbike",
                    "handcycle", "hand cycle", "relais", "relay", "virtuel",
                    "virtual", "junior", "kids", "enfant", "marche nordique",
+                   "business run",
                    "walk only", "duo", "challenge entreprise")
 
 BORNES_CHRONO = {"MARATHON": (6000, 43200), "SEMI": (2700, 21600),

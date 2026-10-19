@@ -1,6 +1,91 @@
 {
   "updates": [
     {
+      "event": "Cardiff Half Marathon",
+      "date": "2026-10-04",
+      "data": {
+        "avg_time": "02:10:27",
+        "winner_men": "00:59:34",
+        "winner_women": "01:05:39"
+      },
+      "timestamp": "2026-10-19T10:06:10Z"
+    },
+    {
+      "event": "Manchester Half Marathon",
+      "date": "2026-10-04",
+      "data": {
+        "avg_time": "02:03:45",
+        "winner_men": "01:02:50",
+        "winner_women": "01:11:39"
+      },
+      "timestamp": "2026-10-19T10:06:10Z"
+    },
+    {
+      "event": "Cardiff Half Marathon",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 24038
+      },
+      "timestamp": "2026-10-19T10:06:10Z"
+    },
+    {
+      "event": "Manchester Half Marathon",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 22918
+      },
+      "timestamp": "2026-10-19T10:06:09Z"
+    },
+    {
+      "event": "Royal Parks Half Marathon",
+      "date": "2026-10-12",
+      "data": {
+        "winner_men": "01:09:30",
+        "winner_women": "01:14:10"
+      },
+      "timestamp": "2026-10-19T10:03:42Z"
+    },
+    {
+      "event": "Royal Parks Half Marathon",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 17289
+      },
+      "timestamp": "2026-10-19T10:03:42Z"
+    },
+    {
+      "event": "TCS Mizuno Half Marathon",
+      "date": "2026-10-18",
+      "data": {
+        "avg_time": "02:13:17"
+      },
+      "timestamp": "2026-10-19T10:03:04Z"
+    },
+    {
+      "event": "TCS Amsterdam Marathon",
+      "date": "2026-10-18",
+      "data": {
+        "avg_time": "03:51:03"
+      },
+      "timestamp": "2026-10-19T10:03:04Z"
+    },
+    {
+      "event": "TCS Mizuno Half Marathon",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 12778
+      },
+      "timestamp": "2026-10-19T10:03:04Z"
+    },
+    {
+      "event": "TCS Amsterdam Marathon",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 23635
+      },
+      "timestamp": "2026-10-19T10:03:03Z"
+    },
+    {
       "event": "Harmonie Mutuelle 20km de Paris",
       "date": "2026-10-11",
       "data": {

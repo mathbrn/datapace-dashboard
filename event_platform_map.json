@@ -97,7 +97,8 @@
       "2024": "7250456063290378496",
       "2022": "6981282006063051264",
       "2021": "6853741552290238720",
-      "2019": "6589788263981649920"
+      "2019": "6589788263981649920",
+      "2026": "e5066f0f-f66c-405f-9983-15fbf286ec7d"
     },
     "distance": "MARATHON",
     "country": "NED"
@@ -136,7 +137,8 @@
       "2024": "7250456063290378496",
       "2022": "6981282006063051264",
       "2021": "6853741552290238720",
-      "2019": "6589788263981649920"
+      "2019": "6589788263981649920",
+      "2026": "e5066f0f-f66c-405f-9983-15fbf286ec7d"
     },
     "distance": "SEMI",
     "country": "NED"
@@ -697,7 +699,10 @@
     "distance_m": 16093
   },
   "royal parks half marathon": {
-    "platform": null,
+    "platform": "mikatiming",
+    "subdomain": "royalparks-half.r.mikatiming.com",
+    "event_code": null,
+    "event_code_pattern": "{yyyy}_royalparks_half",
     "country": "GBR",
     "distance": "SEMI",
     "name": "Royal Parks Half Marathon"
