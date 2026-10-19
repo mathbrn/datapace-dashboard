@@ -1,6 +1,22 @@
 {
   "updates": [
     {
+      "event": "EDP Meia Maratona de Lisboa - Vodafone 10K",
+      "date": "2026-03-08",
+      "data": {
+        "avg_time": "01:08:55"
+      },
+      "timestamp": "2026-10-19T12:22:34Z"
+    },
+    {
+      "event": "EDP Lisboa Meia Maratona",
+      "date": "2026-03-08",
+      "data": {
+        "avg_time": "01:57:19"
+      },
+      "timestamp": "2026-10-19T12:22:34Z"
+    },
+    {
       "event": "Hyundai Meia Maratona",
       "date": "2026-10-11",
       "data": {

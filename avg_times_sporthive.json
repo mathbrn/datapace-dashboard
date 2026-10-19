@@ -2200,5 +2200,23 @@
     "count": 8219,
     "avg_time": "02:06:13",
     "avg_speed_kmh": 10.03
+  },
+  {
+    "label": "EDP Lisboa Meia Maratona 2026",
+    "race": "EDP Lisboa Meia Maratona",
+    "dist_m": 21097,
+    "year": 2026,
+    "count": 16185,
+    "avg_time": "01:57:19",
+    "avg_speed_kmh": 10.79
+  },
+  {
+    "label": "EDP Meia Maratona de Lisboa - Vodafone 10K 2026",
+    "race": "EDP Meia Maratona de Lisboa - Vodafone 10K",
+    "dist_m": 10000,
+    "year": 2026,
+    "count": 7968,
+    "avg_time": "01:08:55",
+    "avg_speed_kmh": 8.7
   }
 ]

@@ -1531,6 +1531,9 @@ COURSES_ANNEXES = ("handisport", "fauteuil", "wheelchair", "handbike",
                    "handcycle", "hand cycle", "relais", "relay", "virtuel",
                    "virtual", "junior", "kids", "enfant", "marche nordique",
                    "business run", "elite", "elites",
+                   # Championnats nationaux courus dans l'epreuve, meme
+                   # distance que la course principale (Lisbonne, Dam tot Dam)
+                   "championnat", "championship", "campeonato", "kampioenschap",
                    "walk only", "duo", "challenge entreprise")
 
 BORNES_CHRONO = {"MARATHON": (6000, 43200), "SEMI": (2700, 21600),

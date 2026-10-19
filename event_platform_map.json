@@ -125,7 +125,8 @@
       "2024": "7142907578304137472",
       "2023": "7034597458377179392",
       "2022": "6907012645799442176",
-      "2021": "6641699407497361920"
+      "2021": "6641699407497361920",
+      "2026": "1555368b-34b0-4964-9cff-b798f3212bf0"
     },
     "distance": "SEMI",
     "country": "POR"
@@ -729,6 +730,15 @@
     "country": "POR",
     "sporthive_ids_by_year": {
       "2026": "7391339679318404864"
+    }
+  },
+  "edp meia maratona de lisboa - vodafone 10k": {
+    "name": "EDP Meia Maratona de Lisboa - Vodafone 10K",
+    "platform": "sporthive",
+    "distance": "10KM",
+    "country": "POR",
+    "sporthive_ids_by_year": {
+      "2026": "1555368b-34b0-4964-9cff-b798f3212bf0"
     }
   }
 }
