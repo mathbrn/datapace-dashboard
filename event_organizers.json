@@ -1,7 +1,7 @@
 {
   "_commentaire": "Organisateur de chaque epreuve. Cle = nom exact de l'epreuve dans l'onglet ALL. Une epreuve absente de ce fichier s'affiche avec un tiret. Les valeurs issues d'une API (Sporthive expose le champ 'organization') sont preferables a une saisie manuelle.",
-  "Schneider Electric Marathon de Paris": "Amaury Sport Organisation",
-  "HOKA Semi de Paris": "Amaury Sport Organisation",
+  "ASICS Marathon de Paris": "Cadence Running United",
+  "HOKA Semi de Paris": "Cadence Running United",
   "Adidas 10K Paris": "Amaury Sport Organisation",
   "10K Montmartre": "Amaury Sport Organisation",
   "Run in Lyon": "Amaury Sport Organisation",

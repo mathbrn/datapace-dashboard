@@ -1,6 +1,6 @@
 # DataPace Dashboard — Stats à jour
 
-**Généré le** : 2026-10-19 12:54
+**Généré le** : 2026-10-19 13:27
 **Source historique** : finishers (mémoire)
 
 > **Note pour Claude** : c'est la source de vérité pour tous les chiffres DataPace.
@@ -21,7 +21,7 @@
 | Finishers cumulés totaux (2000 - 2026) | 34,807,708 |
 | Temps moyens marathon | 91 |
 | Temps moyens semi-marathon | 52 |
-| Chronos vainqueurs Homme | 44 |
+| Chronos vainqueurs Homme | 45 |
 | Chronos vainqueurs Femme | 44 |
 
 ## Sponsoring
@@ -29,21 +29,21 @@
 | Métrique | Valeur |
 |---|---|
 | Événements avec données sponsoring | 290 |
-| Sponsors uniques trackés | 507 |
-| Relations sponsor-événement totales | 1043 |
+| Sponsors uniques trackés | 510 |
+| Relations sponsor-événement totales | 1048 |
 | Sources | sponsoring_data.json, scraped_partners.json |
 
 **Répartition par type :**
 
-  - official: 435
+  - official: 436
   - title: 263
   - partner: 209
   - sponsor: 44
   - premium: 36
   - major: 21
   - presenting: 9
+  - media: 9
   - gold: 6
-  - media: 5
   - retail: 3
   - powered_by: 2
   - associate: 2
@@ -61,4 +61,4 @@
 - Plus de **2,470** points de données historiques depuis 2000
 - **34,807,708** finishers cumulés sur la période 2000 - 2026
 - Historique depuis **2000** (27 années de données)
-- **507** sponsors trackés sur **290** événements
+- **510** sponsors trackés sur **290** événements

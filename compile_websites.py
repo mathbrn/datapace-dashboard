@@ -149,7 +149,7 @@ add("Run in Lyon", "https://www.runinlyon.com/en/", "https://www.runinlyon.com/e
 add("San Antonio Marathon", "https://sanantoniomarathon.com/", "https://sanantoniomarathon.com/sponsors/")
 add("San Francisco Marathon", "https://www.thesfmarathon.com/", "https://www.thesfmarathon.com/partners/")
 add("Sanlam Cape Town Marathon", "https://capetownmarathon.com/")
-add("Schneider Electric Marathon de Paris", "https://www.schneiderelectricparismarathon.com/", "https://www.schneiderelectricparismarathon.com/fr/l-evenement/partenaires")
+add("ASICS Marathon de Paris", "https://www.schneiderelectricparismarathon.com/", "https://www.schneiderelectricparismarathon.com/fr/l-evenement/partenaires")
 add("Seoul Marathon", "http://en.seoul-marathon.com/")
 add("Shamrock Marathon", "https://www.shamrockmarathon.com/", "https://www.shamrockmarathon.com/sponsors/become-a-sponsor/")
 add("Shamrock Run Portland", "https://www.shamrockrun.com/")

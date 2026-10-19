@@ -6,7 +6,7 @@ FIRST_EDITIONS = {
     # MARATHONS
     ("Tokyo Marathon", "MARATHON"): 2007,
     ("TCS London Marathon", "MARATHON"): 1981,
-    ("Schneider Electric Marathon de Paris", "MARATHON"): 1976,
+    ("ASICS Marathon de Paris", "MARATHON"): 1976,
     ("Boston Marathon", "MARATHON"): 1897,
     ("Adidas Manchester Marathon", "MARATHON"): 2012,
     ("NN Marathon Rotterdam", "MARATHON"): 1981,

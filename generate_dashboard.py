@@ -41,8 +41,10 @@ WMM_KEYWORDS = [
     "bank of america chicago marathon", "tokyo marathon",
 ]
 
+# Le Marathon et le Semi de Paris ne sont plus organises par ASO depuis la
+# reprise par Cadence Running United : ils ne portent plus le badge.
 ASO_KEYWORDS = [
-    "marathon de paris", "semi de paris", "run in lyon",
+    "run in lyon",
     "10k paris", "montmartre", "london winter run", "manchester marathon",
     "manchester half", "ldnx",
 ]
@@ -86,7 +88,7 @@ TEMPS_NAME_MAP = {
     "berlin marathon": "BMW Berlin Marathon",
     "boston marathon": "Boston Marathon",
     "tokyo marathon": "Tokyo Marathon",
-    "marathon de paris": "Schneider Electric Marathon de Paris",
+    "marathon de paris": "ASICS Marathon de Paris",
     "manchester marathon": "Adidas Manchester Marathon",
     "sydney marathon": "TCS Sydney Marathon presented by ASICS",
     "chicago marathon": "Bank of America Chicago Marathon",
@@ -753,21 +755,23 @@ function buildOvSponsoring(eventName,eventColor){
     parts=SP_PARTNERSHIPS.filter(function(p){return p.years&&p.years.indexOf(now)>=0&&(p.event.toLowerCase().indexOf(ln.substring(0,15))>=0||ln.indexOf(p.event.toLowerCase().substring(0,15))>=0);});
   }
   if(!parts.length)return '';
-  var byType={title:[],presenting:[],premium:[],major:[],official:[],partner:[]};
+  var byType={title:[],presenting:[],principal:[],premium:[],major:[],official:[],partner:[],media:[]};
   parts.forEach(function(p){(byType[p.type]||byType.partner).push(p);});
   var lt=isLight();
   var ecLight=lightenHex(ec,0.3);
   var tConf={
     title:{label:'TITRE',border:ec,text:lt?ec:'#fff',bg:ec+(lt?'1F':'26')},
     presenting:{label:'PRESENTING',border:ec+'CC',text:lt?ec:'#fff',bg:ec+(lt?'1A':'21')},
+    principal:{label:'PRINCIPAL',border:ec+'C0',text:lt?ec:'#fff',bg:ec+(lt?'18':'20')},
     premium:{label:'PREMIUM',border:ec+'B3',text:lt?ec:ecLight,bg:ec+(lt?'14':'1F')},
     major:{label:'MAJEUR',border:ec+'B3',text:lt?ec:ecLight,bg:ec+(lt?'14':'1F')},
     official:{label:'OFFICIEL',border:ec+(lt?'66':'80'),text:ec,bg:ec+(lt?'0F':'14')},
-    partner:{label:'FOURNISSEUR',border:lt?'rgba(0,0,0,0.15)':'#ffffff25',text:lt?'#666':'#888',bg:'transparent'}
+    partner:{label:'FOURNISSEUR',border:lt?'rgba(0,0,0,0.15)':'#ffffff25',text:lt?'#666':'#888',bg:'transparent'},
+    media:{label:'MEDIA',border:lt?'rgba(0,0,0,0.15)':'#ffffff25',text:lt?'#666':'#888',bg:'transparent'}
   };
   var h='<div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)">'
     +'<div class="ov-chart-label" style="margin-bottom:10px">Partenaires '+now+'</div>';
-  ['title','presenting','premium','major','official','partner'].forEach(function(t){
+  ['title','presenting','principal','premium','major','official','partner','media'].forEach(function(t){
     var items=byType[t];if(!items.length)return;
     var tc=tConf[t];
     var names=items.map(function(p){return'<span style="font-size:12px;color:var(--text);" title="'+p.brand+' ('+p.years[0]+'-'+p.years[p.years.length-1]+')">'+p.brand+'</span>';}).join('<span style="color:var(--text3);margin:0 2px;">,</span> ');
@@ -1996,22 +2000,24 @@ function spSelect(brandId){
   var tConf={
     title:{label:'Partenaire Titre',bg:col,text:'#fff'},
     presenting:{label:'Partenaire Presenting',bg:col+'B0',text:'#fff'},
+    principal:{label:'Partenaire Principal',bg:col+'A0',text:'#fff'},
     premium:{label:'Partenaire Premium',bg:col+'90',text:'#fff'},
     major:{label:'Partenaire Majeur',bg:col+'60',text:'#fff'},
     official:{label:'Partenaire Officiel',bg:col+'30',text:col},
-    partner:{label:'Fournisseur Officiel',bg:'var(--bg3)',text:'var(--text2)'}
+    partner:{label:'Fournisseur Officiel',bg:'var(--bg3)',text:'var(--text2)'},
+    media:{label:'Partenaire Media',bg:'var(--bg3)',text:'var(--text2)'}
   };
   // Group partnerships by type, filtered by active period
   var now=new Date().getFullYear();
   var pMinYr=_spPeriod==='5'?now-4:_spPeriod==='3'?now-2:parseInt(_spPeriod)||now;
   var pMaxYr=_spPeriod==='5'||_spPeriod==='3'?now:pMinYr;
-  var byType={title:[],presenting:[],premium:[],major:[],official:[],partner:[]};
+  var byType={title:[],presenting:[],principal:[],premium:[],major:[],official:[],partner:[],media:[]};
   bs.partnerships.forEach(function(pp){
     var active=pp.years.some(function(y){return y>=pMinYr&&y<=pMaxYr;});
     if(active)(byType[pp.type]||byType.partner).push(pp);
   });
   var evHtml='';
-  ['title','presenting','premium','major','official','partner'].forEach(function(t){
+  ['title','presenting','principal','premium','major','official','partner','media'].forEach(function(t){
     var items=byType[t]||[];if(!items.length)return;
     var tc=tConf[t];
     evHtml+='<div style="margin-bottom:8px">'
@@ -2915,7 +2921,7 @@ HTML_BODY = """
       <select id="sp-rank" onchange="spChangePeriod(document.getElementById('sp-period').value)" style="font-size:11px;padding:4px 8px;">
         <option value="ALL">Tous rangs</option>
         <option value="title">Partenaire Titre</option>
-        <option value="premium">Partenaire Premium</option>
+        <option value="principal">Partenaire Principal</option><option value="premium">Partenaire Premium</option>
         <option value="major">Partenaire Majeur</option>
         <option value="official">Partenaire Officiel</option>
         <option value="partner">Fournisseur Officiel</option>

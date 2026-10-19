@@ -2573,6 +2573,21 @@
     "Spek": {
       "full_name": "Spek",
       "sector": "Services"
+    },
+    "Nutripure": {
+      "full_name": "Nutripure",
+      "sector": "Alimentation",
+      "country": "FR"
+    },
+    "RMC": {
+      "full_name": "RMC",
+      "sector": "Médias",
+      "country": "FR"
+    },
+    "RMC Running": {
+      "full_name": "RMC Running",
+      "sector": "Médias",
+      "country": "FR"
     }
   },
   "partnerships": [
@@ -3063,7 +3078,7 @@
       ]
     },
     {
-      "event": "Schneider Electric Marathon de Paris",
+      "event": "ASICS Marathon de Paris",
       "brand": "Schneider Electric",
       "type": "title",
       "years": [
@@ -3080,14 +3095,11 @@
         2023,
         2024,
         2025,
-        2026,
-        2027,
-        2028,
-        2029
+        2026
       ]
     },
     {
-      "event": "Schneider Electric Marathon de Paris",
+      "event": "ASICS Marathon de Paris",
       "brand": "ASICS",
       "type": "premium",
       "years": [
@@ -3112,7 +3124,7 @@
       ]
     },
     {
-      "event": "Schneider Electric Marathon de Paris",
+      "event": "ASICS Marathon de Paris",
       "brand": "TCS",
       "type": "official",
       "years": [
@@ -3122,7 +3134,7 @@
       ]
     },
     {
-      "event": "Schneider Electric Marathon de Paris",
+      "event": "ASICS Marathon de Paris",
       "brand": "Turkish Airlines",
       "type": "official",
       "years": [
@@ -3927,7 +3939,7 @@
       ]
     },
     {
-      "event": "Schneider Electric Marathon de Paris",
+      "event": "ASICS Marathon de Paris",
       "brand": "Intersport",
       "type": "official",
       "years": [
@@ -3937,7 +3949,7 @@
       ]
     },
     {
-      "event": "Schneider Electric Marathon de Paris",
+      "event": "ASICS Marathon de Paris",
       "brand": "RATP",
       "type": "official",
       "years": [
@@ -7544,7 +7556,7 @@
       ]
     },
     {
-      "event": "Schneider Electric Marathon de Paris",
+      "event": "ASICS Marathon de Paris",
       "brand": "BMW",
       "type": "official",
       "years": [
@@ -7559,7 +7571,7 @@
       ]
     },
     {
-      "event": "Schneider Electric Marathon de Paris",
+      "event": "ASICS Marathon de Paris",
       "brand": "Garmin",
       "type": "official",
       "years": [
@@ -7568,7 +7580,7 @@
       ]
     },
     {
-      "event": "Schneider Electric Marathon de Paris",
+      "event": "ASICS Marathon de Paris",
       "brand": "Orange",
       "type": "official",
       "years": [
@@ -7577,7 +7589,7 @@
       ]
     },
     {
-      "event": "Schneider Electric Marathon de Paris",
+      "event": "ASICS Marathon de Paris",
       "brand": "HiPro",
       "type": "official",
       "years": [
@@ -7587,7 +7599,7 @@
       ]
     },
     {
-      "event": "Schneider Electric Marathon de Paris",
+      "event": "ASICS Marathon de Paris",
       "brand": "Banane Guadeloupe",
       "type": "partner",
       "years": [
@@ -7596,7 +7608,7 @@
       ]
     },
     {
-      "event": "Schneider Electric Marathon de Paris",
+      "event": "ASICS Marathon de Paris",
       "brand": "Shokz",
       "type": "partner",
       "years": [
@@ -7605,7 +7617,7 @@
       ]
     },
     {
-      "event": "Schneider Electric Marathon de Paris",
+      "event": "ASICS Marathon de Paris",
       "brand": "Compex",
       "type": "partner",
       "years": [
@@ -7614,7 +7626,7 @@
       ]
     },
     {
-      "event": "Schneider Electric Marathon de Paris",
+      "event": "ASICS Marathon de Paris",
       "brand": "TA Energy",
       "type": "official",
       "years": [
@@ -7623,7 +7635,7 @@
       ]
     },
     {
-      "event": "Schneider Electric Marathon de Paris",
+      "event": "ASICS Marathon de Paris",
       "brand": "Baume du Tigre",
       "type": "partner",
       "years": [
@@ -7632,7 +7644,7 @@
       ]
     },
     {
-      "event": "Schneider Electric Marathon de Paris",
+      "event": "ASICS Marathon de Paris",
       "brand": "Campus",
       "type": "partner",
       "years": [
@@ -7641,7 +7653,7 @@
       ]
     },
     {
-      "event": "Schneider Electric Marathon de Paris",
+      "event": "ASICS Marathon de Paris",
       "brand": "Hyundai",
       "type": "official",
       "years": [
@@ -7651,7 +7663,7 @@
       ]
     },
     {
-      "event": "Schneider Electric Marathon de Paris",
+      "event": "ASICS Marathon de Paris",
       "brand": "Can-Am",
       "type": "partner",
       "years": [
@@ -7660,7 +7672,7 @@
       ]
     },
     {
-      "event": "Schneider Electric Marathon de Paris",
+      "event": "ASICS Marathon de Paris",
       "brand": "Culligan",
       "type": "partner",
       "years": [
@@ -7669,7 +7681,7 @@
       ]
     },
     {
-      "event": "Schneider Electric Marathon de Paris",
+      "event": "ASICS Marathon de Paris",
       "brand": "Garnier",
       "type": "partner",
       "years": [
@@ -8599,7 +8611,8 @@
         2023,
         2024,
         2025,
-        2026
+        2026,
+        2027
       ]
     },
     {
@@ -14928,9 +14941,9 @@
       ]
     },
     {
-      "event": "Schneider Electric Marathon de Paris",
+      "event": "ASICS Marathon de Paris",
       "brand": "ASICS",
-      "type": "official",
+      "type": "title",
       "years": [
         2027,
         2028,
@@ -14989,6 +15002,64 @@
       "type": "title",
       "years": [
         2026
+      ]
+    },
+    {
+      "event": "ASICS Marathon de Paris",
+      "brand": "Schneider Electric",
+      "type": "major",
+      "years": [
+        2027,
+        2028,
+        2029
+      ]
+    },
+    {
+      "event": "ASICS Marathon de Paris",
+      "brand": "Nutripure",
+      "type": "official",
+      "years": [
+        2027
+      ]
+    },
+    {
+      "event": "ASICS Marathon de Paris",
+      "brand": "RMC",
+      "type": "media",
+      "years": [
+        2027
+      ]
+    },
+    {
+      "event": "ASICS Marathon de Paris",
+      "brand": "RMC Running",
+      "type": "media",
+      "years": [
+        2027
+      ]
+    },
+    {
+      "event": "HOKA Semi de Paris",
+      "brand": "AG2R",
+      "type": "principal",
+      "years": [
+        2027
+      ]
+    },
+    {
+      "event": "HOKA Semi de Paris",
+      "brand": "RMC",
+      "type": "media",
+      "years": [
+        2027
+      ]
+    },
+    {
+      "event": "HOKA Semi de Paris",
+      "brand": "RMC Running",
+      "type": "media",
+      "years": [
+        2027
       ]
     }
   ]

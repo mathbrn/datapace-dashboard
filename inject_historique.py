@@ -93,7 +93,7 @@ HISTORICAL_DATA = {
 
     # ── SCHNEIDER ELECTRIC MARATHON DE PARIS ──────────────────────────────────
     # Sources : arrs.run (2018-2019) + Wikipedia FR (2017) + Wikipedia FR (2024)
-    "Schneider Electric Marathon de Paris": {
+    "ASICS Marathon de Paris": {
         2017: 43754,  # Wikipedia FR ("L'édition 2017 a totalisé 43 754 arrivants")
         2018: 42091,  # arrs.run
         2019: 48073,  # arrs.run
