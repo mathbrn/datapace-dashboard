@@ -2119,5 +2119,14 @@
     "count": 5591,
     "avg_time": "04:15:33",
     "avg_speed_kmh": 9.906
+  },
+  {
+    "label": "Bank of America Chicago Marathon 2026",
+    "race": "Bank of America Chicago Marathon",
+    "dist_m": 42195,
+    "year": 2026,
+    "count": 54541,
+    "avg_time": "04:30:00",
+    "avg_speed_kmh": 9.376
   }
 ]
