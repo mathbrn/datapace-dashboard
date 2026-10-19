@@ -1,6 +1,14 @@
 {
   "updates": [
     {
+      "event": "Harmonie Mutuelle 20km de Paris",
+      "date": "2026-10-11",
+      "data": {
+        "avg_time": "01:52:35"
+      },
+      "timestamp": "2026-10-19T09:46:48Z"
+    },
+    {
       "event": "Bank of America Chicago Marathon",
       "date": "2026-01-01",
       "data": {

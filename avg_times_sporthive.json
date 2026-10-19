@@ -2128,5 +2128,14 @@
     "count": 54541,
     "avg_time": "04:30:00",
     "avg_speed_kmh": 9.376
+  },
+  {
+    "label": "Harmonie Mutuelle 20km de Paris 2026",
+    "race": "Harmonie Mutuelle 20km de Paris",
+    "dist_m": 20000,
+    "year": 2026,
+    "count": 29116,
+    "avg_time": "01:52:35",
+    "avg_speed_kmh": 10.657
   }
 ]
