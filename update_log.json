@@ -1,6 +1,14 @@
 {
   "updates": [
     {
+      "event": "Royal Parks Half Marathon",
+      "date": "2026-01-01",
+      "data": {
+        "avg_time": "02:11:12"
+      },
+      "timestamp": "2026-10-19T10:08:14Z"
+    },
+    {
       "event": "Cardiff Half Marathon",
       "date": "2026-10-04",
       "data": {
@@ -42,14 +50,6 @@
       "data": {
         "winner_men": "01:09:30",
         "winner_women": "01:14:10"
-      },
-      "timestamp": "2026-10-19T10:03:42Z"
-    },
-    {
-      "event": "Royal Parks Half Marathon",
-      "date": "2026-01-01",
-      "data": {
-        "finishers": 17289
       },
       "timestamp": "2026-10-19T10:03:42Z"
     },

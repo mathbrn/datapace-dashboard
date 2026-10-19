@@ -2173,5 +2173,14 @@
     "count": 24038,
     "avg_time": "02:10:27",
     "avg_speed_kmh": 9.703
+  },
+  {
+    "label": "Royal Parks Half Marathon 2026",
+    "race": "Royal Parks Half Marathon",
+    "dist_m": 21097,
+    "year": 2026,
+    "count": 17289,
+    "avg_time": "02:11:12",
+    "avg_speed_kmh": 9.648
   }
 ]
