@@ -1,6 +1,5 @@
 {
   "_commentaire": "Organisateur de chaque epreuve. Cle = nom exact de l'epreuve dans l'onglet ALL. Une epreuve absente de ce fichier s'affiche avec un tiret. Les valeurs issues d'une API (Sporthive expose le champ 'organization') sont preferables a une saisie manuelle.",
-
   "Schneider Electric Marathon de Paris": "Amaury Sport Organisation",
   "HOKA Semi de Paris": "Amaury Sport Organisation",
   "Adidas 10K Paris": "Amaury Sport Organisation",
@@ -11,28 +10,22 @@
   "Manchester Half Marathon": "Amaury Sport Organisation",
   "Cancer Research UK London Winter Run": "Amaury Sport Organisation",
   "ASICS LDNX": "Amaury Sport Organisation",
-
   "BMW Berlin Marathon": "SCC EVENTS",
   "Generali Berlin Half Marathon": "SCC EVENTS",
-
   "TCS London Marathon": "London Marathon Events",
   "TCS New York City Marathon": "New York Road Runners",
   "Boston Marathon": "Boston Athletic Association",
   "Bank of America Chicago Marathon": "Chicago Event Management",
-
   "TCS Amsterdam Marathon": "Le Champion",
   "TCS Mizuno Half Marathon": "Le Champion",
   "Dam tot Damloop": "Le Champion",
-
   "EDP Maratona de Lisboa": "Maratona Clube de Portugal",
   "Hyundai Meia Maratona": "Maratona Clube de Portugal",
   "EDP Lisboa Meia Maratona": "Maratona Clube de Portugal",
   "EDP Meia Maratona de Lisboa - Vodafone 10K": "Maratona Clube de Portugal",
-
   "NN CPC Loop Den Haag - Half Marathon": "Golazo Sports",
   "NN CPC Loop Den Haag - 10 KM Loop": "Golazo Sports",
   "NN CPC Loop Den Haag": "Golazo Sports",
-
   "AJ Bell Great North Run": "The Great Run Company",
   "AJ Bell Great North 10K": "The Great Run Company",
   "AJ Bell Great Manchester Run": "The Great Run Company",
@@ -43,9 +36,7 @@
   "AJ Bell Great South Run": "The Great Run Company",
   "Great Scottish Run": "The Great Run Company",
   "Great Scottish Run 10K": "The Great Run Company",
-
   "Cardiff Half Marathon": "Run 4 Wales",
-
   "NN Marathon Rotterdam": "Golazo Sports",
   "Mainova Frankfurt Marathon": "Motio",
   "Haspa Marathon Hamburg": "Hamburg Marathon Veranstaltungs",
@@ -54,7 +45,6 @@
   "Brighton Marathon Week end": "London Marathon Events",
   "Royal Parks Half Marathon": "Limelight Sports Club",
   "London Landmarks Half Marathon": "Tommy's",
-
   "Atlanta Journal-Constitution Peachtree Road Race": "Atlanta Track Club",
   "BOLDERBoulder 10K": "BOLDERBoulder",
   "Marine Corps Marathon": "Marine Corps Marathon Organization",
@@ -65,22 +55,36 @@
   "Dick's Pittsburgh Marathon": "P3R",
   "Flying Pig Marathon": "Pig Works",
   "Gasparilla Distance Classic": "Gasparilla Distance Classic Association",
-
   "Marathon des Chateaux du Médoc": "Marathon du Médoc",
   "Harmonie Mutuelle Marathon de Tours": "Tours Métropole Marathon",
   "Paris-Versailles - La grande classique": "Paris-Versailles",
   "20KM de Bruxelles": "Bruxelles Environnement",
-
   "TCS Sydney Marathon presented by ASICS": "Sydney Marathon",
   "City2Surf": "IRONMAN Oceania",
   "Nike Melbourne Marathon": "IRONMAN Oceania",
   "Nike Melbourne Half Marathon": "IRONMAN Oceania",
   "Hoka Runaway Sydney Half Marathon": "Runaway Events",
   "Transurban Bridge to Brisbane": "IRONMAN Oceania",
-
   "Copenhagen Marathon": "Sparta Atletik & Løb",
   "Copenhagen Half Marathon": "Sparta Atletik & Løb",
   "Irish Life Dublin Marathon": "Dublin Marathon",
   "Standard Chartered Hong Kong Half Marathon": "Hong Kong Amateur Athletic Association",
-  "NN Maraton Warszawski": "Fundacja Maraton Warszawski"
+  "NN Maraton Warszawski": "Fundacja Maraton Warszawski",
+  "Tokyo Marathon": "Tokyo Marathon Foundation",
+  "NYRR RBC Brooklyn Half": "New York Road Runners",
+  "United Airlines NYC Half": "New York Road Runners",
+  "NYCRUNS Brooklyn Experience Half Marathon": "NYCRUNS",
+  "Honolulu Marathon": "Honolulu Marathon Association",
+  "Ukrop's Monument Avenue 10K": "Sports Backers",
+  "Rock 'n' Roll Running Series Las Vegas": "The IRONMAN Group",
+  "St. Jude Rock 'n' Roll Series Nashville": "The IRONMAN Group",
+  "Warsaw Half Marathon": "Fundacja Maraton Warszawski",
+  "Mitja Marato Barcelona by Brooks": "RPM Racing",
+  "Zurich Marató de Barcelona": "RPM Racing",
+  "Standard Chartered Hong Kong Marathon": "Hong Kong Amateur Athletic Association",
+  "Valencia Marathon Trinidad Alfonso Zurich": "SD Correcaminos Valencia",
+  "Valencia Half Marathon Trinidad Alfonso Zurich": "SD Correcaminos Valencia",
+  "Osaka Marathon": "Osaka Marathon Foundation",
+  "Acea Run Rome The Marathon": "Infont & Rome Marathon Runners",
+  "Statesman Capitol 10K": "Austin American-Statesman"
 }
