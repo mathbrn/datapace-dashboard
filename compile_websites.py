@@ -130,7 +130,7 @@ add("NN CPC Loop Den Haag - 10 KM Loop", "https://nncpcloopdenhaag.nl/en/", "htt
 add("NN Marathon Rotterdam", "https://nnmarathonrotterdam.nl/en/", "https://nnmarathonrotterdam.nl/en/sponsors/")
 add("NN Maraton Warszawski", "https://nnmaratonwarszawski.com/en/", "https://nnmaratonwarszawski.com/en/partners/")
 add("NN San Silvestre Vallecana", "https://sansilvestrevallecana.com/")
-add("Nike Half Marathon", "https://melbournemarathon.com.au/", "https://melbournemarathon.com.au/partners/")
+add("Nike Melbourne Half Marathon", "https://melbournemarathon.com.au/", "https://melbournemarathon.com.au/partners/")
 add("Oklahoma City Memorial Marathon", "https://okcmarathon.com/", "https://okcmarathon.com/get-involved/sponsors/")
 add("Osaka Marathon", "https://www.osaka-marathon.com/2026/en/")
 add("Portland Marathon", "https://www.portlandmarathon.com/", "https://www.portlandmarathon.com/sponsors")

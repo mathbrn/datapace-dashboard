@@ -125,13 +125,13 @@ new_partnerships = [
     {"event": "TCS Sydney Marathon presented by ASICS", "brand": "RBC Capital Markets", "type": "partner", "years": [2025]},
     {"event": "TCS Sydney Marathon presented by ASICS", "brand": "YoPRO", "type": "partner", "years": [2025]},
     # Melbourne
-    {"event": "Nike Half Marathon", "brand": "SriLankan Airlines", "type": "official", "years": [2025]},
-    {"event": "Nike Half Marathon", "brand": "Coinbase", "type": "partner", "years": [2024, 2025]},
-    {"event": "Nike Half Marathon", "brand": "Gatorade", "type": "official", "years": [2025]},
-    {"event": "Nike Half Marathon", "brand": "Bupa", "type": "partner", "years": [2025]},
-    {"event": "Nike Half Marathon", "brand": "Garmin", "type": "partner", "years": [2025]},
-    {"event": "Nike Half Marathon", "brand": "Chemist Warehouse", "type": "partner", "years": [2025]},
-    {"event": "Nike Half Marathon", "brand": "Chobani", "type": "partner", "years": [2025]},
+    {"event": "Nike Melbourne Half Marathon", "brand": "SriLankan Airlines", "type": "official", "years": [2025]},
+    {"event": "Nike Melbourne Half Marathon", "brand": "Coinbase", "type": "partner", "years": [2024, 2025]},
+    {"event": "Nike Melbourne Half Marathon", "brand": "Gatorade", "type": "official", "years": [2025]},
+    {"event": "Nike Melbourne Half Marathon", "brand": "Bupa", "type": "partner", "years": [2025]},
+    {"event": "Nike Melbourne Half Marathon", "brand": "Garmin", "type": "partner", "years": [2025]},
+    {"event": "Nike Melbourne Half Marathon", "brand": "Chemist Warehouse", "type": "partner", "years": [2025]},
+    {"event": "Nike Melbourne Half Marathon", "brand": "Chobani", "type": "partner", "years": [2025]},
 ]
 
 data['partnerships'].extend(new_partnerships)
