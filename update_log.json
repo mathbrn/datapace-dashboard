@@ -1,6 +1,30 @@
 {
   "updates": [
     {
+      "event": "Hallwilerseelauf",
+      "date": "2025-10-12",
+      "data": {
+        "finishers": 4301
+      },
+      "timestamp": "2026-10-20T11:44:07Z"
+    },
+    {
+      "event": "Zürcher Silvesterlauf",
+      "date": "2025-12-14",
+      "data": {
+        "finishers": 7079
+      },
+      "timestamp": "2026-10-20T11:44:07Z"
+    },
+    {
+      "event": "Kerzerslauf",
+      "date": "2025-03-16",
+      "data": {
+        "finishers": 2945
+      },
+      "timestamp": "2026-10-20T11:44:07Z"
+    },
+    {
       "event": "Course de l'escalade",
       "date": "2024-12-07",
       "data": {
