@@ -1,6 +1,14 @@
 {
   "updates": [
     {
+      "event": "Course de l'escalade",
+      "date": "2023-12-02",
+      "data": {
+        "finishers": 46369
+      },
+      "timestamp": "2026-10-20T13:29:16Z"
+    },
+    {
       "event": "Hallwilerseelauf",
       "date": "2025-10-12",
       "data": {

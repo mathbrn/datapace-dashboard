@@ -366,6 +366,46 @@ decompte est dans le JSON `__NEXT_DATA__` de la page, en une seule requete :
 `count.finished`. Resultat : 50 371 toutes categories, **50 103 hors relais**,
 dont 15 380 de courses enfants (31 %).
 
+**Deux pieges, decouverts en traitant l'edition 2023 :**
+
+1. **La liste de categories du leaderboard est incomplete.** Elle n'affiche
+   que celles ayant un podium : 69 categories sur les 84 reelles pour
+   l'escalade 2023. Manquaient la Marmite, le Walking, les Parents-Enfants et
+   le FlexiMix, soit 15 577 arrivants — le premier total calcule, 30 602,
+   etait faux de 34 %. **Toujours prendre la liste officielle** :
+   `POST /live/ajax/getKatlist` avec `{q:"", racenr:N}` sur l'ancien site,
+   ou `response.contests[]` sur le nouveau.
+2. **Les classements par affiliation** — Inter-Ecoles, Inter-Clubs,
+   Inter-Entreprises, Inter-Familles, Sante Escalade, Groupements divers —
+   reclassent des coureurs deja comptes dans leur course. L'API les marque
+   `isTeam: true` : **ecarter sur ce drapeau**, pas au jugé. Pour l'escalade
+   2023 ils renvoyaient zero ligne, mais le drapeau reste le bon critere.
+
+**Controle de coherence systematique** : pour chaque course ayant a la fois un
+classement overall et des categories d'age, verifier que les deux sommes
+coincident. Sur l'escalade 2023 les trois courses tombent a zero d'ecart
+(7,3 km 7031, 4,8 km 4634, Course du Duc 6278), ce qui a permis d'etablir que
+les 184 « Hors categorie » formaient une classification autonome et devaient
+donc etre ajoutes.
+
+**Serie reconstituee** : 2023 = 46 369, 2024 = 47 476, 2025 = 50 103, hors
+relais dans les trois cas. Le programme change d'une annee a l'autre (le 4,8 km
+et la Course du Duc de 2023 disparaissent ensuite), les totaux restent
+comparables mais pas leur composition.
+
+**Ancien site datasport (editions anterieures a 2024)** : les editions plus
+anciennes ne sont pas sur `/fr/course/{slug}/ranking` mais sur
+`/live/ranking/?racenr=N`. Les donnees y transitent par
+`POST /live/ajax/ranking` avec un payload chiffre en AES-CBC ; la cle, l'IV,
+le token et le mappID sont publies en clair dans le HTML de la page
+(`CryptoJS.enc.Base64.parse(...)`). C'est de l'obscurcissement, pas une
+authentification. `maxrows=9999` rend toute une categorie en une requete,
+`len(data)` donne son nombre d'arrivants.
+
+**robots.txt** : datasport autorise explicitement ClaudeBot, interdit `/api/`
+et demande `Crawl-delay: 10`. Les pages de classement et `/live/ajax/` ne sont
+pas sous `/api/`, mais espacer les requetes de 10 s.
+
 La valeur precedente, 50 702, venait de `Benchmark_Courses_Monde.xlsx`
 (import du 15 avril) dont la colonne « Finisher » ne documente aucune source
 primaire. **Un chiffre de ce fichier n'est pas verifie** : il distingue bien
