@@ -1,6 +1,14 @@
 {
   "updates": [
     {
+      "event": "Course de l'escalade",
+      "date": "2025-12-06",
+      "data": {
+        "finishers": 50103
+      },
+      "timestamp": "2026-10-20T09:50:27Z"
+    },
+    {
       "event": "EDP Meia Maratona de Lisboa - Vodafone 10K",
       "date": "2026-03-08",
       "data": {
