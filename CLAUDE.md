@@ -337,6 +337,41 @@ declarent un parametre `dist_code` (detection par inspection de signature).
 - **Sources fiables** : pages de resultats officiels (chronometrage), APIs de timing (Sporthive, ChronoRace, NYRR), `services.datasport.com/{year}/lauf/{event}/` (somme des "classés" par categorie).
 - **Sources NON fiables pour finishers** : articles de presse ("40 000 participants"), communiques d'inscription, Wikipedia (souvent imprecis sur les counts).
 
+## Epreuves a categories multiples : sommer sans compter deux fois
+
+Quelques epreuves n'ont **pas de classement general unique** : elles publient
+une liste par categorie de course. Le dashboard tient une ligne par couple
+(epreuve, distance), et pour ces cas-la **le total de l'epreuve est la somme
+de ses categories** — c'est une exception assumee, a n'appliquer que sur
+arbitrage explicite de l'utilisateur, jamais par defaut.
+
+**Methode, dans cet ordre :**
+1. Categorie qui publie un **classement general** (`type: overall` chez
+   datasport) -> prendre ce total, et lui seul.
+2. Categorie qui n'en publie pas -> sommer ses **classements par categorie
+   d'age** (`type: agegroup`), qui partitionnent la categorie sans
+   recouvrement.
+3. **Ne jamais additionner les classements par genre** (`type: gender`) d'une
+   categorie qui a deja un classement general : ce sont les memes coureurs.
+
+**Ce qu'on retire :** les **relais**, qui comptent des equipes et non des
+coureurs, comme partout ailleurs dans le dashboard.
+**Ce qu'on garde :** les courses enfants, quand l'epreuve les integre a son
+programme — a confirmer au cas par cas, leur poids peut etre considerable.
+
+**Cas traite : Course de l'escalade 2025 (Geneve, AUTRE 7,3 km)**
+`datasport.com/fr/course/escalade-2025/ranking` — 15 categories. Tout le
+decompte est dans le JSON `__NEXT_DATA__` de la page, en une seule requete :
+`props.pageProps.response.contests[].lists[]` porte `count.started` et
+`count.finished`. Resultat : 50 371 toutes categories, **50 103 hors relais**,
+dont 15 380 de courses enfants (31 %).
+
+La valeur precedente, 50 702, venait de `Benchmark_Courses_Monde.xlsx`
+(import du 15 avril) dont la colonne « Finisher » ne documente aucune source
+primaire. **Un chiffre de ce fichier n'est pas verifie** : il distingue bien
+« Part. » de « Finisher », donc il ne confond pas inscrits et arrivants, mais
+il ne dit pas d'ou il tient ses comptes.
+
 ## Regles strictes
 
 ### Validation permanente (onglet Temps moyen)
@@ -397,8 +432,44 @@ ils sont desormais renvoyes meme sans temps moyen.
 - **API** : `https://eventresults-api.speedhive.com/sporthive/events/{eventId}/races`
 - **Auth** : Aucune
 - **Donnees** : `classificationsCount` = finishers, `raceStatistics.averageSpeedInKmh` = vitesse moyenne reelle
-- **Decouverte IDs** : `site:results.sporthive.com` sur Google, ou Playwright
 - **Calcul temps moyen** : `temps = distance / vitesse`
+
+**Le schema a change en 2026, et le fetcher ne le voyait pas.** Les
+identifiants d'evenement sont passes des entiers de 19 chiffres
+(`7383449171605338624`) aux **UUID** (`e5066f0f-f66c-...`), et les champs des
+courses ont ete renommes : `distanceInMeter` et `raceName` au lieu de
+`distance` et `name`. Le fetcher ne lisait que les anciens noms et rendait
+« aucune course identifiable » sur **toutes** les editions 2026 — Amsterdam,
+Mizuno, les deux Lisbonne. Il lit desormais les deux ecritures. Les deux
+formats d'identifiant restent acceptes par l'API.
+
+**Decouverte des identifiants : par organisateur.**
+`GET /sporthive/organizations/{organizationId}/events?count=100` liste
+**toutes les editions d'un organisateur**, et `organizationId` se lit dans le
+payload de n'importe quelle edition deja connue
+(`GET /sporthive/events/{id}`). C'est le mecanisme qui manquait : une seule
+edition connue suffit desormais a retrouver toutes les suivantes, au lieu de
+devoir fournir un identifiant par an. Le payload porte aussi `organization`,
+le **nom** de l'organisateur — source directe pour `event_organizers.json`.
+Attention : certains organisateurs ont `organizationId: null` (Golazo), leur
+catalogue est alors inaccessible.
+
+**Courses annexes a ecarter** : « (Elites) », « Business Run » et les
+championnats nationaux courent la **meme distance** que l'epreuve principale
+et rendaient le ciblage ambigu, donc abandonne. Ils sont dans
+`COURSES_ANNEXES`.
+
+### 1b. Datasport (Suisse) — epreuves a categories multiples
+- **URL** : `https://datasport.com/fr/course/{slug}/ranking`
+- **Auth** : Aucune
+- **Donnees** : tout est dans le JSON `__NEXT_DATA__` de la page, en **une
+  seule requete**, sans pagination :
+  `props.pageProps.response.contests[].lists[]` porte `type`
+  (`overall` / `gender` / `agegroup`), `count.started` et `count.finished`.
+- **Usage** : cf. « Epreuves a categories multiples » plus haut. Course de
+  l'escalade 2025 = 15 categories, 50 103 arrivants hors relais.
+- **Couverture potentielle** : les epreuves suisses du dashboard
+  (Greifenseelauf, Lausanne, Swiss City Marathon, Grand Prix von Bern).
 
 ### 2. Tracx Events
 **L'identifiant se resout tout seul.** Sans `platform_id`, `discover_platform`
