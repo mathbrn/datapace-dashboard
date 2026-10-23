@@ -2,6 +2,60 @@
   "updates": [
     {
       "event": "Baloise Antwerp 10 miles",
+      "date": "2023-01-01",
+      "data": {
+        "finishers": 26686
+      },
+      "timestamp": "2026-10-23T13:28:47Z"
+    },
+    {
+      "event": "Baloise Antwerp 10 miles",
+      "date": "2022-01-01",
+      "data": {
+        "finishers": 19977
+      },
+      "timestamp": "2026-10-23T13:28:47Z"
+    },
+    {
+      "event": "Baloise Antwerp 10 miles",
+      "date": "2024-01-01",
+      "data": {
+        "finishers": 29233
+      },
+      "timestamp": "2026-10-23T13:28:33Z"
+    },
+    {
+      "event": "Baloise Antwerp 10 miles",
+      "date": "2024-04-24",
+      "data": {
+        "avg_time": "1:33:59",
+        "winner_men": "0:47:21",
+        "winner_women": "0:57:25"
+      },
+      "timestamp": "2026-10-23T13:28:14Z"
+    },
+    {
+      "event": "Baloise Antwerp 10 miles",
+      "date": "2023-04-24",
+      "data": {
+        "avg_time": "1:32:00",
+        "winner_men": "0:47:50",
+        "winner_women": "0:56:11"
+      },
+      "timestamp": "2026-10-23T13:28:14Z"
+    },
+    {
+      "event": "Baloise Antwerp 10 miles",
+      "date": "2022-04-24",
+      "data": {
+        "avg_time": "1:34:52",
+        "winner_men": "0:48:48",
+        "winner_women": "0:57:14"
+      },
+      "timestamp": "2026-10-23T13:28:14Z"
+    },
+    {
+      "event": "Baloise Antwerp 10 miles",
       "date": "2026-04-25",
       "data": {
         "avg_time": "1:35:23",

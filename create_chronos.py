@@ -1147,9 +1147,9 @@ autre_data = [
     ("Grand Prix Von Bern", "AUTRE", 2026, "0:46:58", "0:55:50"),
 
     # Baloise Antwerp 10 miles (16.09 km)
-    ("Baloise Antwerp 10 miles", "AUTRE", 2022, "0:48:48", "N/A"),
-    ("Baloise Antwerp 10 miles", "AUTRE", 2023, "0:47:50", "N/A"),
-    ("Baloise Antwerp 10 miles", "AUTRE", 2024, "0:47:21", "N/A"),
+    ("Baloise Antwerp 10 miles", "AUTRE", 2022, "0:48:48", "0:57:14"),
+    ("Baloise Antwerp 10 miles", "AUTRE", 2023, "0:47:50", "0:56:11"),
+    ("Baloise Antwerp 10 miles", "AUTRE", 2024, "0:47:21", "0:57:25"),
     ("Baloise Antwerp 10 miles", "AUTRE", 2026, "0:46:43", "0:53:07"),
     # 20km de Bruxelles
     ("20KM de Bruxelles", "AUTRE", 2013, "0:59:21", "N/A"),

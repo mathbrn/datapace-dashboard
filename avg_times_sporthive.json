@@ -2227,5 +2227,32 @@
     "count": 35949,
     "avg_time": "01:35:23",
     "avg_speed_kmh": 10.12
+  },
+  {
+    "label": "Baloise Antwerp 10 miles 2022",
+    "race": "Baloise Antwerp 10 miles",
+    "dist_m": 16093,
+    "year": 2022,
+    "count": 19977,
+    "avg_time": "01:34:52",
+    "avg_speed_kmh": 10.18
+  },
+  {
+    "label": "Baloise Antwerp 10 miles 2023",
+    "race": "Baloise Antwerp 10 miles",
+    "dist_m": 16093,
+    "year": 2023,
+    "count": 26686,
+    "avg_time": "01:32:00",
+    "avg_speed_kmh": 10.5
+  },
+  {
+    "label": "Baloise Antwerp 10 miles 2024",
+    "race": "Baloise Antwerp 10 miles",
+    "dist_m": 16093,
+    "year": 2024,
+    "count": 29233,
+    "avg_time": "01:33:59",
+    "avg_speed_kmh": 10.27
   }
 ]
