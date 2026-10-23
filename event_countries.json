@@ -1555,10 +1555,6 @@
     "flag": "🇺🇸",
     "pays": "Etats-Unis"
   },
-  "Hot Chocolate Run": {
-    "flag": "🇺🇸",
-    "pays": "Etats-Unis"
-  },
   "Hull 10K": {
     "flag": "🇬🇧",
     "pays": "Royaume-Uni"
@@ -4018,5 +4014,9 @@
   "TCS World 10K Bengaluru": {
     "flag": "🇮🇳",
     "pays": "Inde"
+  },
+  "SKECHERS Hot Chocolate Run - Philadelphia": {
+    "flag": "🇺🇸",
+    "pays": "Etats-Unis"
   }
 }
