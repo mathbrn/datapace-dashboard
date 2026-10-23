@@ -1,6 +1,24 @@
 {
   "updates": [
     {
+      "event": "Baloise Antwerp 10 miles",
+      "date": "2026-04-25",
+      "data": {
+        "avg_time": "1:35:23",
+        "winner_men": "0:46:43",
+        "winner_women": "0:53:07"
+      },
+      "timestamp": "2026-10-23T13:14:22Z"
+    },
+    {
+      "event": "Baloise Antwerp 10 miles",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 35949
+      },
+      "timestamp": "2026-10-23T13:14:18Z"
+    },
+    {
       "event": "TCS World 10K Bengaluru",
       "date": "2026-04-26",
       "data": {

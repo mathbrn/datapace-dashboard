@@ -2218,5 +2218,14 @@
     "count": 7968,
     "avg_time": "01:08:55",
     "avg_speed_kmh": 8.7
+  },
+  {
+    "label": "Baloise Antwerp 10 miles 2026",
+    "race": "Baloise Antwerp 10 miles",
+    "dist_m": 16093,
+    "year": 2026,
+    "count": 35949,
+    "avg_time": "01:35:23",
+    "avg_speed_kmh": 10.12
   }
 ]

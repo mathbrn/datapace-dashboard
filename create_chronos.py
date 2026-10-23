@@ -1150,6 +1150,7 @@ autre_data = [
     ("Baloise Antwerp 10 miles", "AUTRE", 2022, "0:48:48", "N/A"),
     ("Baloise Antwerp 10 miles", "AUTRE", 2023, "0:47:50", "N/A"),
     ("Baloise Antwerp 10 miles", "AUTRE", 2024, "0:47:21", "N/A"),
+    ("Baloise Antwerp 10 miles", "AUTRE", 2026, "0:46:43", "0:53:07"),
     # 20km de Bruxelles
     ("20KM de Bruxelles", "AUTRE", 2013, "0:59:21", "N/A"),
     ("20KM de Bruxelles", "AUTRE", 2014, "0:59:05", "N/A"),
