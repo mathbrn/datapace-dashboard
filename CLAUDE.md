@@ -412,6 +412,36 @@ primaire. **Un chiffre de ce fichier n'est pas verifie** : il distingue bien
 « Part. » de « Finisher », donc il ne confond pas inscrits et arrivants, mais
 il ne dit pas d'ou il tient ses comptes.
 
+## Benchmark_Courses_Monde.xlsx : le motif « participants moins 17 % »
+
+**Une partie de la colonne « Finisher » n'est pas un comptage mais une
+estimation.** La cellule contient alors une formule de la forme
+`=O{n}-O{n}*0.17` : le nombre d'INSCRITS diminue d'un taux d'abandon
+forfaitaire de 17 %. Exemple : Great Ethiopan Run, 55 000 inscrits annonces,
+« finishers » = 45 650. Aucune source de resultats derriere.
+
+Trois raisons de refuser ces valeurs : le point de depart est un nombre
+d'inscrits, c'est presque toujours un chiffre rond (55 000, 20 000, 10 000...),
+et le taux de 17 % est applique en bloc sans rapport avec l'epreuve. Le
+doublon le plus parlant : Kobe Marathon et Hokkaido Marathon portaient tous
+deux 16 600, parce que tous deux partaient de 20 000 inscrits.
+
+**Audit du 23 octobre** : 248 lignes du fichier utilisent ce motif, dont 26
+avaient atterri dans le dashboard. Les 26 cellules ont ete videes (Great
+Ethiopan Run 45 650, Beijing Marathon 26 560, Guangzhou 21 580, Nocturna del
+Guadalquivir 19 090, Kobe et Hokkaido 16 600, The Music Run 14 110, et 19
+autres de 12 450 a 830).
+
+**A ne PAS confondre avec les autres formules du fichier**, qui sont
+legitimes : ce sont des **sommes de comptes reels** par distance, du type
+`=23328+13341+272+2161+7969` pour Amsterdam ou `=SUM(J8:M8)` pour Rio. Seul
+le motif `*0.17` est une invention.
+
+**Controle avant toute reprise de ce fichier** : ouvrir avec
+`openpyxl.load_workbook(..., read_only=True)` — les valeurs lues sont alors
+les formules, pas leur resultat — et rejeter toute cellule « Finisher » dont
+la formule contient `*0.17`.
+
 ## Regles strictes
 
 ### Validation permanente (onglet Temps moyen)
