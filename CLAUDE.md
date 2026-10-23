@@ -811,7 +811,31 @@ une liste reellement courte. Une page pleine sans pagination = total inconnu.
 - **Donnees** : `totalItems` = total finishers ; `items[]` avec `gender` ("M"/"W"), `overallPlace`, `overallTime`, `firstName`, `lastName`
 - **Filtre F/M** : ajouter `"gender":"M"` ou `"W"` dans body pour winner par sexe
 - **Sort** : `"sortColumn":"overallPlace","sortDescending":false` pour ordre officiel
-- **Codes events** : `{YY}{CODE}` (ex: `24BKH` pour 2024 Brooklyn Half, `23BKH` pour 2023, `22BKH` pour 2022)
+- **Catalogue** : `POST /api/v2/events/search` avec `{"pageNum":1,"pageSize":100}`
+  → 500 entrees (chacune repetee 5 fois), champs `eventCode`, `eventName`,
+  `startDateTime`, `distanceName`. **Il ne couvre que 2025-2026** : les codes
+  des annees anterieures se devinent, ils n'y figurent pas.
+- **Deux familles de codes, et il faut essayer les deux** :
+  `{LETTRE}{YYYY}` (`M2025` marathon, `B2025` Brooklyn, `H2025` NYC Half) et
+  `{YY}{CODE}` (`24BKH`). Brooklyn bascule d'une forme a l'autre selon
+  l'annee : `B2014`-`B2017`, puis `19BKH`, `22BKH`, `23BKH`, `24BKH`, puis
+  `B2025`, `B2026`. Un code inexistant renvoie **200 avec `totalItems: 0`**,
+  pas une erreur.
+- **Couverture reelle : 2014 et apres.** Aucun code ne repond avant 2014
+  (teste sur 2006-2013, huit motifs par annee). Manquent aussi Brooklyn 2018
+  et 2021, et les editions annulees (2020).
+- **`pageSize` plafonne a 100** — et vaut 100 meme quand on demande plus :
+  5000 renvoie 100 items sans erreur. 500 et 1000 renvoient 400. Un temps
+  moyen coute donc `totalItems / 100` requetes (285 pour Brooklyn 2024).
+- **Le tri n'est pas fiable sur les anciens contextes** : `sortColumn` est
+  ignore par `19BKH`, dont la premiere femme renvoyee courait en 4:32:42.
+  **Toujours prendre le minimum sur une page de 100**, jamais le premier
+  element.
+- **Ecarts avec nos cellules deja remplies** : l'API rend systematiquement
+  50 a 150 finishers de moins que nos valeurs sur le marathon (2025 : 59 122
+  contre 59 124 ; 2015 : 49 460 contre 49 330). Sur le NYC Half en revanche
+  les onze annees coincident au coureur pres, signe que ces cellules
+  viennent deja de cette API. Ne pas ecraser l'existant pour si peu.
 - **Couverture** : tous les events NYRR (Brooklyn Half, NYC Half United Airlines, etc.)
 
 ### 26. ChronoRace moderne (table/search API)
@@ -1030,6 +1054,60 @@ Modifier le nom dans TOUS les emplacements listes dans "Ou sont stockes les noms
 5. **Top Evenements** : Barres horizontales des plus gros evenements
 6. **Temps moyen** : Comparaison des temps moyens par distance et annee
 7. **Winners Times** : Graphique des temps vainqueurs H/F par distance
+
+## ARBITRAGES EN ATTENTE (a rappeler a l'utilisateur en debut de session)
+
+Trois points mis au jour par l'audit du rapprochement des noms d'epreuve
+(23 octobre), que l'utilisateur a choisi de traiter plus tard :
+
+1. **Doublon d'epreuve** : `Kuala Lampur Standard Chartered Marathon` et
+   `Standard Chartered KL Marathon` sont deux lignes de l'onglet ALL pour la
+   meme course. A fusionner ? Seule la seconde porte des partenaires.
+2. **`Nike Melbourne Marathon` sans partenaires** : lors du decoupage du
+   « Nike Melbourne Marathon Festival » en marathon + semi, les partenariats
+   sont restes sur `Nike Melbourne Half Marathon`. Les dupliquer sur le
+   marathon ?
+3. **Deux rapprochements imparfaits qui subsistent** : `Maratona do Porto`
+   prend les partenaires du `Hyundai Meia Maratona do Porto` (meme
+   organisateur, course differente), et `Halve Marathon` — nom generique sans
+   ville dans l'Excel — attrape Egmond et Zwolle.
+
+## Rapprochement des noms d'epreuve : par suite de mots
+
+`memeEpreuve(a,b)` dans `generate_dashboard.py` est le seul critere utilise
+pour rapprocher un nom d'epreuve d'une entree de `TIMES_DB`, `WINNERS`,
+`TEMPS_*` ou `SP_PARTNERSHIPS`. Deux noms designent la meme epreuve si, une
+fois accents et ponctuation retires, **la suite de mots du plus court se
+retrouve telle quelle dans le plus long** (et pese au moins 12 caracteres).
+
+L'ancien critere comparait les **10 a 15 premiers caracteres**, ce qui
+rapprochait des epreuves sans rapport. Degats constates le 23 octobre :
+- `Chester marathon` prenait les temps du `Adidas Manchester Marathon`
+  (« chestermarathon » est contenu dans « adidasmanchestermarathon ») ;
+- les partenaires du `Semi-Marathon de Boulogne-Billancourt` s'affichaient
+  sur cinq autres semi-marathons francais ;
+- un seul `Standard Chartered` servait huit epreuves de villes differentes ;
+- `Media Maraton de Bogota` alimentait six epreuves espagnoles.
+
+**Deuxieme regle, aussi importante** : quand la distance de la fiche est
+connue, le repli par nom seul est interdit. Sans lui, la fiche du 5 km
+recuperait la moyenne du semi (Vedanta Delhi Half, Madrid Medio Maraton,
+NN CPC Loop Den Haag) et un chrono de 42K s'affichait sur une ligne de semi.
+`TIMES_DB` est donc indexe **`nom|DISTANCE`**, les cles par nom seul ne
+servant qu'aux epreuves dont aucune entree ne porte de distance.
+
+Apres correction : 84 fiches portent un temps moyen (223 avant), 134 des
+chronos vainqueurs (152), 289 epreuves des partenaires (305). Les 139
+valeurs retirees venaient toutes d'une autre epreuve ou d'une autre
+distance.
+
+**Corollaire** : un nom mal orthographie dans un fichier annexe ne « passe »
+plus. Trois epreuves ont du etre realignees sur l'onglet ALL dans
+`sponsoring_data.json` (`City-Bay Fun Run` -> `City-Bay`,
+`Wizz Air Venicemarathon` -> `Wizz Air Venice Marathon`,
+`Tranquilidade Meia Maratona dos Descobrimentos` ->
+`Generali Tranquilidade Meia Maratona Descobrimentos`). **Toujours ecrire le
+nom exact de l'onglet ALL.**
 
 ## Etat actuel
 

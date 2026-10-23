@@ -1,6 +1,75 @@
 {
   "updates": [
     {
+      "event": "United Airlines NYC Half",
+      "date": "2026-03-15",
+      "data": {
+        "avg_time": "2:07:56",
+        "winner_men": "0:59:30",
+        "winner_women": "1:06:33"
+      },
+      "timestamp": "2026-10-23T15:20:21Z"
+    },
+    {
+      "event": "NYRR RBC Brooklyn Half",
+      "date": "2026-05-16",
+      "data": {
+        "finishers": 30341,
+        "avg_time": "2:08:50",
+        "winner_men": "1:04:32",
+        "winner_women": "1:13:11"
+      },
+      "timestamp": "2026-10-23T15:20:21Z"
+    },
+    {
+      "event": "NYRR RBC Brooklyn Half",
+      "date": "2024-01-01",
+      "data": {
+        "finishers": 28442
+      },
+      "timestamp": "2026-10-23T14:58:35Z"
+    },
+    {
+      "event": "NYRR RBC Brooklyn Half",
+      "date": "2023-01-01",
+      "data": {
+        "finishers": 25418
+      },
+      "timestamp": "2026-10-23T14:58:34Z"
+    },
+    {
+      "event": "NYRR RBC Brooklyn Half",
+      "date": "2022-01-01",
+      "data": {
+        "finishers": 18827
+      },
+      "timestamp": "2026-10-23T14:58:33Z"
+    },
+    {
+      "event": "NYRR RBC Brooklyn Half",
+      "date": "2017-01-01",
+      "data": {
+        "finishers": 27445
+      },
+      "timestamp": "2026-10-23T14:58:33Z"
+    },
+    {
+      "event": "NYRR RBC Brooklyn Half",
+      "date": "2016-01-01",
+      "data": {
+        "finishers": 27444
+      },
+      "timestamp": "2026-10-23T14:58:32Z"
+    },
+    {
+      "event": "NYRR RBC Brooklyn Half",
+      "date": "2014-01-01",
+      "data": {
+        "finishers": 25639
+      },
+      "timestamp": "2026-10-23T14:58:31Z"
+    },
+    {
       "event": "SKECHERS Hot Chocolate Run - Philadelphia",
       "date": "2026-04-04",
       "data": {
