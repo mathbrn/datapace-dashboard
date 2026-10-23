@@ -1174,7 +1174,10 @@ function ovSearch(){
   var q=document.getElementById('ov-search').value.toLowerCase().trim();
   var box=document.getElementById('ov-results');
   if(q.length<2){box.innerHTML='<div class="ov-placeholder">Tapez au moins 2 caracteres</div>';return;}
-  var matches=RAW.filter(function(r){return r.r.toLowerCase().indexOf(q)>=0||r.c.toLowerCase().indexOf(q)>=0;});
+  // Comme dans l'onglet Tableau, la recherche porte sur l'epreuve, la
+  // ville ET l'organisateur.
+  var matches=RAW.filter(function(r){return r.r.toLowerCase().indexOf(q)>=0
+    ||r.c.toLowerCase().indexOf(q)>=0||eventOrg(r.r).toLowerCase().indexOf(q)>=0;});
   if(!matches.length){box.innerHTML='<div class="ov-placeholder">Aucun resultat</div>';return;}
   var dc={MARATHON:'#60A5FA18',SEMI:'#FF8A5018','10KM':'#5CDFA018'};
   var dt={MARATHON:'#60A5FA',SEMI:'#FF8A50','10KM':'#5CDFA0'};
@@ -1185,7 +1188,8 @@ function ovSearch(){
     html+='<div class="ov-result-item" data-idx="'+idx+'" onclick="ovSelect('+idx+')">'
       +'<span class="ov-result-dist" style="background:'+dc[r.d]+';color:'+dt[r.d]+'">'+dl+'</span>'
       +'<span style="flex:1">'+r.r+'</span>'
-      +'<span style="font-size:11px;color:var(--text3)">'+r.c+' - '+r.p+'</span>'
+      +'<span style="font-size:11px;color:var(--text3)">'+r.c+' - '+r.p
+        +(eventOrg(r.r)?' &middot; '+eventOrg(r.r):'')+'</span>'
       +'</div>';
   });
   box.innerHTML=html;twemojify(box);
@@ -2750,7 +2754,7 @@ HTML_BODY = """
 <!-- Insights panel removed (ASO version) -->
 <div id="panel-overview" class="panel">
   <div class="ov-search-wrap"><span class="ov-search-icon">&#x2315;</span>
-    <input type="text" id="ov-search" placeholder="Rechercher un evenement..." oninput="ovSearch()" autocomplete="off">
+    <input type="text" id="ov-search" placeholder="Rechercher une epreuve, une ville, un organisateur..." oninput="ovSearch()" autocomplete="off">
   </div>
   <div id="ov-results" class="ov-results"><div class="ov-placeholder">Tapez le nom d'un evenement pour commencer</div></div>
   <div id="ov-card-wrap"></div>
