@@ -1,6 +1,14 @@
 {
   "updates": [
     {
+      "event": "Vancouver Sun Run",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 45408
+      },
+      "timestamp": "2026-10-23T12:13:03Z"
+    },
+    {
       "event": "20KM de Bruxelles",
       "date": "2024-01-01",
       "data": {
