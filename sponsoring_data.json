@@ -2588,6 +2588,66 @@
       "full_name": "RMC Running",
       "sector": "Médias",
       "country": "FR"
+    },
+    "UNICEF": {
+      "full_name": "United Nations Children's Fund",
+      "sector": "ONG/Charite",
+      "country": "INT"
+    },
+    "Ethio Telecom": {
+      "full_name": "Ethio Telecom",
+      "sector": "Telecom",
+      "country": "ET"
+    },
+    "Telebirr": {
+      "full_name": "telebirr",
+      "sector": "Fintech/Paiement",
+      "country": "ET"
+    },
+    "Sofi Malt": {
+      "full_name": "Sofi Malt",
+      "sector": "Boisson",
+      "country": "ET"
+    },
+    "Ethiopia Land of Origins": {
+      "full_name": "Ethiopia - Land of Origins",
+      "sector": "Tourisme",
+      "country": "ET"
+    },
+    "Sossi": {
+      "full_name": "Sossi",
+      "sector": "Alimentaire",
+      "country": "ET"
+    },
+    "Fab": {
+      "full_name": "Fab Bathing & Beauty",
+      "sector": "Hygiene/Cosmetique",
+      "country": "ET"
+    },
+    "Hyatt Regency": {
+      "full_name": "Hyatt Regency Addis Ababa",
+      "sector": "Hotellerie",
+      "country": "US"
+    },
+    "TOP": {
+      "full_name": "TOP Purified Natural Water",
+      "sector": "Eau minerale",
+      "country": "ET"
+    },
+    "EBC": {
+      "full_name": "Ethiopian Broadcasting Corporation",
+      "sector": "Medias",
+      "country": "ET"
+    },
+    "Afran Hospital": {
+      "full_name": "Afran Hospital",
+      "sector": "Sante",
+      "country": "ET"
+    },
+    "European Union": {
+      "full_name": "European Union",
+      "sector": "Institutionnel",
+      "country": "EU"
     }
   },
   "partnerships": [
@@ -15060,6 +15120,110 @@
       "type": "media",
       "years": [
         2027
+      ]
+    },
+    {
+      "event": "Great Ethiopan Run",
+      "brand": "UNICEF",
+      "type": "major",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Great Ethiopan Run",
+      "brand": "Ethiopian Airlines",
+      "type": "major",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Great Ethiopan Run",
+      "brand": "Ethio Telecom",
+      "type": "major",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Great Ethiopan Run",
+      "brand": "Telebirr",
+      "type": "major",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Great Ethiopan Run",
+      "brand": "Sofi Malt",
+      "type": "major",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Great Ethiopan Run",
+      "brand": "Ethiopia Land of Origins",
+      "type": "major",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Great Ethiopan Run",
+      "brand": "Sossi",
+      "type": "major",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Great Ethiopan Run",
+      "brand": "Fab",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Great Ethiopan Run",
+      "brand": "Hyatt Regency",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Great Ethiopan Run",
+      "brand": "TOP",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Great Ethiopan Run",
+      "brand": "EBC",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Great Ethiopan Run",
+      "brand": "Afran Hospital",
+      "type": "official",
+      "years": [
+        2026
+      ]
+    },
+    {
+      "event": "Great Ethiopan Run",
+      "brand": "European Union",
+      "type": "official",
+      "years": [
+        2026
       ]
     }
   ]
