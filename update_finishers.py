@@ -6,7 +6,7 @@ Usage:
     python update_finishers.py "Race Name" DISTANCE YEAR COUNT
     python update_finishers.py "TCS London Marathon" MARATHON 2012 36000
 
-DISTANCE must be one of: MARATHON, SEMI, 10KM, AUTRE
+DISTANCE must be one of: MARATHON, SEMI, 10KM, 5KM, AUTRE
 """
 import sys
 import openpyxl
@@ -93,8 +93,8 @@ if __name__ == "__main__":
     year = sys.argv[3]
     count = sys.argv[4]
 
-    if dist not in ("MARATHON", "SEMI", "10KM", "AUTRE"):
-        print(f"ERREUR: Distance '{dist}' invalide. Utiliser MARATHON, SEMI ou 10KM.")
+    if dist not in ("MARATHON", "SEMI", "10KM", "5KM", "AUTRE"):
+        print(f"ERREUR: Distance '{dist}' invalide. Utiliser MARATHON, SEMI, 10KM, 5KM ou AUTRE.")
         sys.exit(1)
 
     # Pass count as string to allow special values (x, -, Elite)

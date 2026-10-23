@@ -1151,6 +1151,11 @@ autre_data = [
     ("Baloise Antwerp 10 miles", "AUTRE", 2023, "0:47:50", "0:56:11"),
     ("Baloise Antwerp 10 miles", "AUTRE", 2024, "0:47:21", "0:57:25"),
     ("Baloise Antwerp 10 miles", "AUTRE", 2026, "0:46:43", "0:53:07"),
+
+    # SKECHERS Hot Chocolate Run - Philadelphia (15 km / 10 km / 5 km)
+    ("SKECHERS Hot Chocolate Run - Philadelphia", "AUTRE", 2026, "0:50:32", "0:55:49"),
+    ("SKECHERS Hot Chocolate Run - Philadelphia", "10KM", 2026, "0:32:42", "0:40:01"),
+    ("SKECHERS Hot Chocolate Run - Philadelphia", "5KM", 2026, "0:16:14", "0:19:46"),
     # 20km de Bruxelles
     ("20KM de Bruxelles", "AUTRE", 2013, "0:59:21", "N/A"),
     ("20KM de Bruxelles", "AUTRE", 2014, "0:59:05", "N/A"),

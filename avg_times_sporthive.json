@@ -2254,5 +2254,32 @@
     "count": 29233,
     "avg_time": "01:33:59",
     "avg_speed_kmh": 10.27
+  },
+  {
+    "label": "SKECHERS Hot Chocolate Run - Philadelphia 15K 2026",
+    "race": "SKECHERS Hot Chocolate Run - Philadelphia",
+    "dist_m": 15000,
+    "year": 2026,
+    "count": 1260,
+    "avg_time": "01:39:03",
+    "avg_speed_kmh": 9.09
+  },
+  {
+    "label": "SKECHERS Hot Chocolate Run - Philadelphia 10K 2026",
+    "race": "SKECHERS Hot Chocolate Run - Philadelphia",
+    "dist_m": 10000,
+    "year": 2026,
+    "count": 1936,
+    "avg_time": "01:10:50",
+    "avg_speed_kmh": 8.47
+  },
+  {
+    "label": "SKECHERS Hot Chocolate Run - Philadelphia 5K 2026",
+    "race": "SKECHERS Hot Chocolate Run - Philadelphia",
+    "dist_m": 5000,
+    "year": 2026,
+    "count": 4714,
+    "avg_time": "00:42:08",
+    "avg_speed_kmh": 7.12
   }
 ]

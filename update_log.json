@@ -1,6 +1,24 @@
 {
   "updates": [
     {
+      "event": "SKECHERS Hot Chocolate Run - Philadelphia",
+      "date": "2026-04-04",
+      "data": {
+        "avg_time": "1:39:03",
+        "winner_men": "0:50:32",
+        "winner_women": "0:55:49"
+      },
+      "timestamp": "2026-10-23T13:41:39Z"
+    },
+    {
+      "event": "SKECHERS Hot Chocolate Run - Philadelphia",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 4714
+      },
+      "timestamp": "2026-10-23T13:41:19Z"
+    },
+    {
       "event": "Baloise Antwerp 10 miles",
       "date": "2023-01-01",
       "data": {
