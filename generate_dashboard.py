@@ -720,6 +720,26 @@ var TICK=mkTICK();TICK.maxRotation=0;TICK.minRotation=0;TICK.autoSkip=true;TICK.
 var TT=mkTT();
 
 
+// Deux noms designent la meme epreuve si, accents et ponctuation retires,
+// ils sont egaux ou si l'un contient l'autre en entier. L'ancien critere
+// comparait les 10 a 15 premiers caracteres, ce qui rapprochait des epreuves
+// sans rapport : « Marathon de Lille » prenait la moyenne du Marathon de
+// Paris, « Half Marathon Delhi » celle du TCS Mizuno, et un seul
+// « Media Maraton de Bogota » alimentait six epreuves espagnoles.
+function motsEp(s){return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').split(/[^a-z0-9]+/).filter(function(w){return w;});}
+// Meme epreuve si les deux noms sont identiques, ou si la suite de mots du
+// plus court se retrouve telle quelle dans le plus long : « Vedanta Delhi
+// Half » et « Vedanta Delhi Half Marathon » sont la meme course, alors que
+// « Chester marathon » et « Adidas Manchester Marathon » ne le sont pas —
+// la comparaison par caracteres les confondait, « chestermarathon » etant
+// contenu dans « adidasmanchestermarathon ».
+function memeEpreuve(a,b){var A=motsEp(a),B=motsEp(b);
+  if(!A.length||!B.length)return false;
+  if(A.join(' ')===B.join(' '))return true;
+  var c=A.length<=B.length?A:B,l=A.length<=B.length?B:A;
+  if(c.join('').length<12)return false;
+  for(var i=0;i+c.length<=l.length;i++){if(l.slice(i,i+c.length).join(' ')===c.join(' '))return true;}
+  return false;}
 // Etiquette de distance utilisee par Chronos_Vainqueurs (WINNERS.d) a partir
 // du code de distance de RAW.
 function distLabel(d){return d==='MARATHON'?'42K':d==='SEMI'?'21K':d==='10KM'?'10K':d==='5KM'?'5K':'AUTRE';}
@@ -739,9 +759,15 @@ function getTimeData(rn,dist){
       if(kd.indexOf('|')<0)continue;
       var parts=kd.split('|');
       if(parts[1]!==dist)continue;
-      if(l.indexOf(parts[0])>=0||parts[0].indexOf(l.substring(0,12))>=0)return TIMES_DB[kd];}
+      if(memeEpreuve(rn,parts[0]))return TIMES_DB[kd];}
   }
-  for(var i=0;i<keys.length;i++){var k=keys[i];if(k.indexOf('|')>=0)continue;if(l.indexOf(k)>=0||k.indexOf(l.substring(0,12))>=0)return TIMES_DB[k];}
+  // Repli par nom seul : reserve aux epreuves dont aucune entree ne porte de
+  // distance. Sinon la fiche du 5 km recuperait la moyenne du semi, ce que le
+  // filtre par distance venait precisement d'ecarter.
+  for(var i=0;i<keys.length;i++){var k=keys[i];
+    if(k.indexOf('|')>=0)continue;
+    if(dist&&keys.some(function(o){return o.indexOf('|')>=0&&o.split('|')[0]===k;}))continue;
+    if(memeEpreuve(rn,k))return TIMES_DB[k];}
   return null;
 }
 var _spSectorMap={
@@ -840,13 +866,9 @@ function getWinnersRecords(rn,dist){
   var entries=WINNERS.filter(function(w){return w.r===rn;});
   if(!entries.length){
     var l=rn.toLowerCase();
-    entries=WINNERS.filter(function(w){return w.r.toLowerCase().indexOf(l.substring(0,15))>=0||l.indexOf(w.r.toLowerCase().substring(0,15))>=0;});
+    entries=WINNERS.filter(function(w){return memeEpreuve(rn,w.r);});
   }
-  if(dist){
-    var dl=distLabel(dist);
-    var surDist=entries.filter(function(w){return w.d===dl;});
-    if(surDist.length)entries=surDist;
-  }
+  if(dist)entries=entries.filter(function(w){return w.d===distLabel(dist);});
   if(!entries.length)return null;
   var bestM=null,bestMyr=null,bestW=null,bestWyr=null;
   entries.forEach(function(w){
@@ -865,27 +887,26 @@ function buildTimeHistory(rn,dist){
     Object.keys(src).forEach(function(yr){
       if(seen[yr])return;
       var rows=src[yr]||[];
-      for(var i=0;i<rows.length;i++){var rl=rows[i].race.toLowerCase();
-        if(l.indexOf(rl.substring(0,10))>=0||rl.indexOf(l.substring(0,10))>=0){
+      for(var i=0;i<rows.length;i++){
+        if(memeEpreuve(rn,rows[i].race)){
           if(toMin(rows[i].avg)){hist.push({yr:yr,min:toMin(rows[i].avg)});seen[yr]=1;}break;}}
     });
     if(typeof TEMPS_AVG!=='undefined'){TEMPS_AVG.forEach(function(ta){
       if(seen[ta.yr]||ta.d!==dist)return;
-      var rl=ta.race.toLowerCase();
-      if(l.indexOf(rl.substring(0,10))>=0||rl.indexOf(l.substring(0,10))>=0){
+      if(memeEpreuve(rn,ta.race)){
         if(toMin(ta.avg)){hist.push({yr:String(ta.yr),min:toMin(ta.avg)});seen[ta.yr]=1;}}
     });}
-    if(hist.length){hist.sort(function(a,b){return parseInt(a.yr)-parseInt(b.yr);});return hist;}
+    hist.sort(function(a,b){return parseInt(a.yr)-parseInt(b.yr);});return hist;
   }
   // 1. Search TEMPS_MARATHON
   [2024,2025,2026].forEach(function(yr){
     var rows=TEMPS_MARATHON[String(yr)]||[];
-    for(var i=0;i<rows.length;i++){var rl=rows[i].race.toLowerCase();if(l.indexOf(rl.substring(0,10))>=0||rl.indexOf(l.substring(0,10))>=0){if(toMin(rows[i].avg)){hist.push({yr:String(yr),min:toMin(rows[i].avg)});seen[yr]=1;}break;}}
+    for(var i=0;i<rows.length;i++){if(memeEpreuve(rn,rows[i].race)){if(toMin(rows[i].avg)){hist.push({yr:String(yr),min:toMin(rows[i].avg)});seen[yr]=1;}break;}}
   });
   // 2. Search TEMPS_SEMI
-  var sKeys=Object.keys(TEMPS_SEMI);sKeys.forEach(function(syr){if(seen[syr])return;var srows=TEMPS_SEMI[syr]||[];for(var i=0;i<srows.length;i++){var rl=srows[i].race.toLowerCase();if(l.indexOf(rl.substring(0,10))>=0||rl.indexOf(l.substring(0,10))>=0){if(toMin(srows[i].avg)){hist.push({yr:syr,min:toMin(srows[i].avg)});seen[syr]=1;}break;}}});
+  var sKeys=Object.keys(TEMPS_SEMI);sKeys.forEach(function(syr){if(seen[syr])return;var srows=TEMPS_SEMI[syr]||[];for(var i=0;i<srows.length;i++){if(memeEpreuve(rn,srows[i].race)){if(toMin(srows[i].avg)){hist.push({yr:syr,min:toMin(srows[i].avg)});seen[syr]=1;}break;}}});
   // 3. Search TEMPS_AVG (Sporthive computed averages)
-  if(typeof TEMPS_AVG!=='undefined'){TEMPS_AVG.forEach(function(ta){if(seen[ta.yr])return;var rl=ta.race.toLowerCase();if(l.indexOf(rl.substring(0,10))>=0||rl.indexOf(l.substring(0,10))>=0){if(toMin(ta.avg)){hist.push({yr:String(ta.yr),min:toMin(ta.avg)});seen[ta.yr]=1;}}});}
+  if(typeof TEMPS_AVG!=='undefined'){TEMPS_AVG.forEach(function(ta){if(seen[ta.yr])return;if(memeEpreuve(rn,ta.race)){if(toMin(ta.avg)){hist.push({yr:String(ta.yr),min:toMin(ta.avg)});seen[ta.yr]=1;}}});}
   hist.sort(function(a,b){return parseInt(a.yr)-parseInt(b.yr);});
   return hist;
 }
@@ -893,12 +914,8 @@ var cT=null,ovChartF=null,ovChartT=null,ovChartM=null,ovChartW=null;
 function buildWinnerHistory(rn,dist){
   var l=rn.toLowerCase();
   var entries=WINNERS.filter(function(w){return w.r===rn;});
-  if(!entries.length){entries=WINNERS.filter(function(w){return w.r.toLowerCase().indexOf(l.substring(0,15))>=0||l.indexOf(w.r.toLowerCase().substring(0,15))>=0;});}
-  if(dist){
-    var dl=distLabel(dist);
-    var surDist=entries.filter(function(w){return w.d===dl;});
-    if(surDist.length)entries=surDist;
-  }
+  if(!entries.length){entries=WINNERS.filter(function(w){return memeEpreuve(rn,w.r);});}
+  if(dist)entries=entries.filter(function(w){return w.d===distLabel(dist);});
   if(!entries.length)return{men:[],women:[]};
   entries.sort(function(a,b){return a.y-b.y;});
   var men=[],women=[];
