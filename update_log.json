@@ -1,6 +1,14 @@
 {
   "updates": [
     {
+      "event": "20KM de Bruxelles",
+      "date": "2024-01-01",
+      "data": {
+        "finishers": 43811
+      },
+      "timestamp": "2026-10-23T12:10:36Z"
+    },
+    {
       "event": "Course de l'escalade",
       "date": "2023-12-02",
       "data": {
