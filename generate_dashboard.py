@@ -830,9 +830,13 @@ function buildOvSponsoring(eventName,eventColor){
   var ec=eventColor||'var(--purple)';
   var now=new Date().getFullYear();
   var parts=SP_PARTNERSHIPS.filter(function(p){return p.event===eventName&&p.years&&p.years.indexOf(now)>=0;});
+  // Repli sur une variante d'ecriture du nom, suite de mots a l'identique.
+  // L'ancien critere comparait les 15 premiers caracteres : les partenaires
+  // du Semi-Marathon de Boulogne-Billancourt s'affichaient sur cinq autres
+  // semi-marathons francais, et un seul Standard Chartered servait huit
+  // epreuves de villes differentes.
   if(!parts.length){
-    var ln=eventName.toLowerCase();
-    parts=SP_PARTNERSHIPS.filter(function(p){return p.years&&p.years.indexOf(now)>=0&&(p.event.toLowerCase().indexOf(ln.substring(0,15))>=0||ln.indexOf(p.event.toLowerCase().substring(0,15))>=0);});
+    parts=SP_PARTNERSHIPS.filter(function(p){return p.years&&p.years.indexOf(now)>=0&&memeEpreuve(eventName,p.event);});
   }
   if(!parts.length)return '';
   var byType={title:[],presenting:[],principal:[],premium:[],major:[],official:[],partner:[],media:[]};
