@@ -2064,7 +2064,9 @@ function cmpSearch(side){
   var q=document.getElementById(inputId).value.toLowerCase().trim();
   var drop=document.getElementById(dropId);
   if(q.length<2){drop.style.display='none';return;}
-  var matches=RAW.filter(function(r){return r.r.toLowerCase().indexOf(q)>=0||r.c.toLowerCase().indexOf(q)>=0;});
+  // Comme dans Tableau et Vue d'ensemble : epreuve, ville ET organisateur.
+  var matches=RAW.filter(function(r){return r.r.toLowerCase().indexOf(q)>=0
+    ||r.c.toLowerCase().indexOf(q)>=0||eventOrg(r.r).toLowerCase().indexOf(q)>=0;});
   if(!matches.length){drop.style.display='none';return;}
   var dc={MARATHON:'#60A5FA18',SEMI:'#FF8A5018','10KM':'#5CDFA018'};
   var dt={MARATHON:'#60A5FA',SEMI:'#FF8A50','10KM':'#5CDFA0'};
@@ -2075,7 +2077,9 @@ function cmpSearch(side){
     var dl=r.d==='10KM'?'10 km':r.d==='5KM'?'5 km':r.d==='SEMI'?'Semi':r.d==='AUTRE'?'Autre':'Marathon';
     var item=document.createElement('div');
     item.className='cmp-drop-item';
-    item.innerHTML='<span class="cmp-dist-pill" style="background:'+dc[r.d]+';color:'+dt[r.d]+'">'+dl+'</span>'+r.r;
+    var meta=r.c+(eventOrg(r.r)?' \u00b7 '+eventOrg(r.r):'');
+    item.innerHTML='<span class="cmp-dist-pill" style="background:'+dc[r.d]+';color:'+dt[r.d]+'">'+dl+'</span>'+r.r
+      +'<span style="font-size:10px;color:var(--text3);margin-left:6px">'+meta+'</span>';
     item.addEventListener('click',(function(i,s){return function(){cmpSelect(i,s);};})(rawIdx,side));
     drop.appendChild(item);
   });
@@ -2763,13 +2767,13 @@ HTML_BODY = """
   <div class="cmp-search-row">
     <div class="cmp-search-box">
       <span class="cmp-search-icon">&#x2315;</span>
-      <input type="text" id="cmp-input-a" class="cmp-input" placeholder="Rechercher evenement A..." oninput="cmpSearch('a')" autocomplete="off">
+      <input type="text" id="cmp-input-a" class="cmp-input" placeholder="Epreuve, ville ou organisateur (A)..." oninput="cmpSearch('a')" autocomplete="off">
       <div id="cmp-drop-a" class="cmp-dropdown" style="display:none"></div>
     </div>
     <div class="cmp-vs">VS</div>
     <div class="cmp-search-box">
       <span class="cmp-search-icon">&#x2315;</span>
-      <input type="text" id="cmp-input-b" class="cmp-input" placeholder="Rechercher evenement B..." oninput="cmpSearch('b')" autocomplete="off">
+      <input type="text" id="cmp-input-b" class="cmp-input" placeholder="Epreuve, ville ou organisateur (B)..." oninput="cmpSearch('b')" autocomplete="off">
       <div id="cmp-drop-b" class="cmp-dropdown" style="display:none"></div>
     </div>
   </div>
