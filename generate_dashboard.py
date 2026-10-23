@@ -1595,7 +1595,10 @@ function filterTable(){
     if(dist!=='ALL'&&r.d!==dist)return false;
     if(month!=='ALL'&&r.p!==month)return false;
     if(region!=='ALL'&&r.rg!==region)return false;
-    if(q&&r.r.toLowerCase().indexOf(q)<0&&r.c.toLowerCase().indexOf(q)<0)return false;
+    // La recherche porte sur l'epreuve, la ville ET l'organisateur :
+    // taper « Amaury » sort les courses d'Amaury Sport Organisation.
+    if(q&&r.r.toLowerCase().indexOf(q)<0&&r.c.toLowerCase().indexOf(q)<0
+        &&eventOrg(r.r).toLowerCase().indexOf(q)<0)return false;
     // Circuit filter
     if(badge!=='ALL'){
       var ci=r.ci||[];
@@ -2952,7 +2955,7 @@ HTML_BODY = """
 <div id="panel-data" class="panel active">
   <div class="controls">
     <div class="search-wrap"><span class="search-icon">&#x2315;</span>
-      <input type="text" id="search-data" placeholder="Rechercher... (Ctrl+K)" oninput="filterTable()">
+      <input type="text" id="search-data" placeholder="Rechercher une epreuve, une ville, un organisateur... (Ctrl+K)" oninput="filterTable()">
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Distance</span>
       <select id="dist-data" onchange="filterTable()">
