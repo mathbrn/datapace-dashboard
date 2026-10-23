@@ -1154,8 +1154,8 @@ autre_data = [
 
     # SKECHERS Hot Chocolate Run - Philadelphia (15 km / 10 km / 5 km)
     ("SKECHERS Hot Chocolate Run - Philadelphia", "AUTRE", 2026, "0:50:32", "0:55:49"),
-    ("SKECHERS Hot Chocolate Run - Philadelphia", "10KM", 2026, "0:32:42", "0:40:01"),
-    ("SKECHERS Hot Chocolate Run - Philadelphia", "5KM", 2026, "0:16:14", "0:19:46"),
+    ("SKECHERS Hot Chocolate Run - Philadelphia", "10K", 2026, "0:32:42", "0:40:01"),
+    ("SKECHERS Hot Chocolate Run - Philadelphia", "5K", 2026, "0:16:14", "0:19:46"),
     # 20km de Bruxelles
     ("20KM de Bruxelles", "AUTRE", 2013, "0:59:21", "N/A"),
     ("20KM de Bruxelles", "AUTRE", 2014, "0:59:05", "N/A"),

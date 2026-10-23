@@ -554,6 +554,26 @@ def load_winners():
     return rows
 
 
+def dist_code_from_m(metres):
+    """Code de distance du dashboard a partir d'une distance en metres.
+
+    Sert a rattacher un temps moyen a la bonne ligne (epreuve, distance) :
+    une epreuve qui court trois distances a trois temps moyens, et les
+    confondre revenait a afficher la moyenne du 15 km sur la fiche du 5 km.
+    """
+    if not metres:
+        return ""
+    if 40000 <= metres <= 43000:
+        return "MARATHON"
+    if 20000 <= metres <= 22000:
+        return "SEMI"
+    if 9000 <= metres <= 11000:
+        return "10KM"
+    if 4000 <= metres <= 6000:
+        return "5KM"
+    return "AUTRE"
+
+
 def load_sporthive_avg():
     """Load average times computed from Sporthive API."""
     path = SCRIPT_DIR / "avg_times_sporthive.json"
@@ -607,25 +627,41 @@ def load_sporthive_avg():
         if avg and _re2.match(r"^\d:\d{2}:\d{2}$", str(avg)):
             avg = "0" + avg
         rows.append({"race": mapped, "year": item["year"],
-                     "avg": avg, "men": "", "women": ""})
+                     "avg": avg, "men": "", "women": "",
+                     "dist": dist_code_from_m(item.get("dist_m"))})
     validate_data(rows, "Sporthive avg")
     print(f"  Sporthive avg: {len(rows)} temps moyens")
     return rows
 
 
 def build_times_db(md, sd):
+    """Temps moyens par epreuve, et par couple (epreuve, distance).
+
+    La cle etait le seul nom d'epreuve : sur une epreuve a plusieurs
+    distances la derniere lue ecrasait les autres, et la fiche du 5 km
+    affichait la moyenne du 15 km. Les cles « nom|DISTANCE » sont
+    desormais ecrites a cote des cles par nom, conservees en repli pour
+    les epreuves dont la distance n'est pas connue.
+    """
     db = {}; all_e = []
-    for rows in md.values(): all_e.extend(rows)
-    for rows in sd.values(): all_e.extend(rows)
+    for rows in md.values():
+        for r in rows:
+            all_e.append(dict(r, dist=r.get("dist") or "MARATHON"))
+    for rows in sd.values():
+        for r in rows:
+            all_e.append(dict(r, dist=r.get("dist") or "SEMI"))
     # Add Sporthive average times
     sp_avg = load_sporthive_avg()
     all_e.extend(sp_avg)
     all_e.sort(key=lambda x: x.get("year", 0))
     for row in all_e:
         if row.get("avg") or row.get("men"):
-            db[row["race"].lower()] = {
+            entree = {
                 "men": row.get("men") or "", "women": row.get("women") or "",
                 "avg": row.get("avg") or "", "yr": row.get("year")}
+            db[row["race"].lower()] = entree
+            if row.get("dist"):
+                db[row["race"].lower() + "|" + row["dist"]] = entree
     return db
 
 
@@ -684,10 +720,28 @@ var TICK=mkTICK();TICK.maxRotation=0;TICK.minRotation=0;TICK.autoSkip=true;TICK.
 var TT=mkTT();
 
 
-function getTimeData(rn){
+// Etiquette de distance utilisee par Chronos_Vainqueurs (WINNERS.d) a partir
+// du code de distance de RAW.
+function distLabel(d){return d==='MARATHON'?'42K':d==='SEMI'?'21K':d==='10KM'?'10K':d==='5KM'?'5K':'AUTRE';}
+// Une epreuve qui court plusieurs distances a un jeu de temps par distance.
+// Les recherches ci-dessous filtrent donc sur la distance de la fiche, mais
+// retombent sur la recherche par nom seul quand ce filtre ne rend rien : les
+// epreuves dont la distance n'est pas renseignee gardent leurs temps.
+function getTimeData(rn,dist){
   var l=rn.toLowerCase();
+  if(dist){
+    var exact=TIMES_DB[l+'|'+dist];
+    if(exact)return exact;
+  }
   var keys=Object.keys(TIMES_DB);
-  for(var i=0;i<keys.length;i++){var k=keys[i];if(l.indexOf(k)>=0||k.indexOf(l.substring(0,12))>=0)return TIMES_DB[k];}
+  if(dist){
+    for(var j=0;j<keys.length;j++){var kd=keys[j];
+      if(kd.indexOf('|')<0)continue;
+      var parts=kd.split('|');
+      if(parts[1]!==dist)continue;
+      if(l.indexOf(parts[0])>=0||parts[0].indexOf(l.substring(0,12))>=0)return TIMES_DB[kd];}
+  }
+  for(var i=0;i<keys.length;i++){var k=keys[i];if(k.indexOf('|')>=0)continue;if(l.indexOf(k)>=0||k.indexOf(l.substring(0,12))>=0)return TIMES_DB[k];}
   return null;
 }
 var _spSectorMap={
@@ -782,11 +836,16 @@ function buildOvSponsoring(eventName,eventColor){
   h+='</div>';
   return h;
 }
-function getWinnersRecords(rn){
+function getWinnersRecords(rn,dist){
   var entries=WINNERS.filter(function(w){return w.r===rn;});
   if(!entries.length){
     var l=rn.toLowerCase();
     entries=WINNERS.filter(function(w){return w.r.toLowerCase().indexOf(l.substring(0,15))>=0||l.indexOf(w.r.toLowerCase().substring(0,15))>=0;});
+  }
+  if(dist){
+    var dl=distLabel(dist);
+    var surDist=entries.filter(function(w){return w.d===dl;});
+    if(surDist.length)entries=surDist;
   }
   if(!entries.length)return null;
   var bestM=null,bestMyr=null,bestW=null,bestWyr=null;
@@ -797,8 +856,27 @@ function getWinnersRecords(rn){
   });
   return{men:bestM?secToTime(bestM):'',menYr:bestMyr,women:bestW?secToTime(bestW):'',womenYr:bestWyr};
 }
-function buildTimeHistory(rn){
+function buildTimeHistory(rn,dist){
   var l=rn.toLowerCase(),hist=[],seen={};
+  // Fiche d'une distance connue : ne lire que la source de cette distance,
+  // sinon la courbe melange le 15 km, le 10 km et le 5 km d'une meme epreuve.
+  if(dist){
+    var src=tempsSource(dist);
+    Object.keys(src).forEach(function(yr){
+      if(seen[yr])return;
+      var rows=src[yr]||[];
+      for(var i=0;i<rows.length;i++){var rl=rows[i].race.toLowerCase();
+        if(l.indexOf(rl.substring(0,10))>=0||rl.indexOf(l.substring(0,10))>=0){
+          if(toMin(rows[i].avg)){hist.push({yr:yr,min:toMin(rows[i].avg)});seen[yr]=1;}break;}}
+    });
+    if(typeof TEMPS_AVG!=='undefined'){TEMPS_AVG.forEach(function(ta){
+      if(seen[ta.yr]||ta.d!==dist)return;
+      var rl=ta.race.toLowerCase();
+      if(l.indexOf(rl.substring(0,10))>=0||rl.indexOf(l.substring(0,10))>=0){
+        if(toMin(ta.avg)){hist.push({yr:String(ta.yr),min:toMin(ta.avg)});seen[ta.yr]=1;}}
+    });}
+    if(hist.length){hist.sort(function(a,b){return parseInt(a.yr)-parseInt(b.yr);});return hist;}
+  }
   // 1. Search TEMPS_MARATHON
   [2024,2025,2026].forEach(function(yr){
     var rows=TEMPS_MARATHON[String(yr)]||[];
@@ -812,10 +890,15 @@ function buildTimeHistory(rn){
   return hist;
 }
 var cT=null,ovChartF=null,ovChartT=null,ovChartM=null,ovChartW=null;
-function buildWinnerHistory(rn){
+function buildWinnerHistory(rn,dist){
   var l=rn.toLowerCase();
   var entries=WINNERS.filter(function(w){return w.r===rn;});
   if(!entries.length){entries=WINNERS.filter(function(w){return w.r.toLowerCase().indexOf(l.substring(0,15))>=0||l.indexOf(w.r.toLowerCase().substring(0,15))>=0;});}
+  if(dist){
+    var dl=distLabel(dist);
+    var surDist=entries.filter(function(w){return w.d===dl;});
+    if(surDist.length)entries=surDist;
+  }
   if(!entries.length)return{men:[],women:[]};
   entries.sort(function(a,b){return a.y-b.y;});
   var men=[],women=[];
@@ -1206,10 +1289,10 @@ function ovSelect(idx){
   var positiveHistory=histKeys.map(function(yr){return{yr:yr,v:(ev.hist||{})[yr]};}).filter(function(e){return e.v&&e.v>0;});
   var lastEd=positiveHistory.length?positiveHistory[positiveHistory.length-1]:null;
   var prevEd=positiveHistory.length>=2?positiveHistory[positiveHistory.length-2]:null;
-  var td=getTimeData(ev.r);
-  var wr=getWinnersRecords(ev.r);
-  var wh=buildWinnerHistory(ev.r);
-  var th=buildTimeHistory(ev.r);
+  var td=getTimeData(ev.r,ev.d);
+  var wr=getWinnersRecords(ev.r,ev.d);
+  var wh=buildWinnerHistory(ev.r,ev.d);
+  var th=buildTimeHistory(ev.r,ev.d);
   var nYears=positiveHistory.length;
   var firstYr=positiveHistory.length?positiveHistory[0].yr:null;
 
@@ -1496,7 +1579,7 @@ function biggestClick(idx){
   setTimeout(function(){ovSelect(idx);},100);
 }
 
-function tempsSource(dist){return dist==='SEMI'?TEMPS_SEMI:dist==='10KM'?TEMPS_10K:dist==='AUTRE'?TEMPS_AUTRE:TEMPS_MARATHON;}
+function tempsSource(dist){return dist==='SEMI'?TEMPS_SEMI:dist==='10KM'?TEMPS_10K:dist==='5KM'?TEMPS_5K:dist==='AUTRE'?TEMPS_AUTRE:TEMPS_MARATHON;}
 function updateTempsYears(){
   var dist=document.getElementById('dist-temps').value;
   var sel=document.getElementById('year-temps');
@@ -2155,8 +2238,8 @@ function calcEvo(r,win){
 function renderCompare(){
   var a = cmpSelectedA, b = cmpSelectedB;
   var colA=colDist(a), colB=colDist(b);
-  var tdA=getTimeData(a.r), tdB=getTimeData(b.r);
-  var wrA=getWinnersRecords(a.r), wrB=getWinnersRecords(b.r);
+  var tdA=getTimeData(a.r,a.d), tdB=getTimeData(b.r,b.d);
+  var wrA=getWinnersRecords(a.r,a.d), wrB=getWinnersRecords(b.r,b.d);
 
   var lfA=lastFin(a),lfB=lastFin(b);
   var fA=lfA?lfA.v:null,fB=lfB?lfB.v:null;
@@ -3061,11 +3144,13 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
     tsjs = {str(yr): [{"race": r["race"], "city": r["city"], "finishers": r["finishers"] or 0, "avg": r["avg"] or ""}
                        for r in rows if r.get("avg")] for yr, rows in sd.items()}
     t10js = {}  # 10K avg times
+    t5js = {}   # 5K avg times
     tajs = {}   # Autre (non-standard distances) avg times
     tdbjs = {k: {"men": v["men"], "women": v["women"], "avg": v["avg"], "yr": v["yr"]} for k, v in tdb.items()}
     # Load Sporthive average times
     sp_avg = load_sporthive_avg()
-    sp_avg_js = [{"race": r["race"], "yr": r["year"], "avg": r["avg"]} for r in sp_avg]
+    sp_avg_js = [{"race": r["race"], "yr": r["year"], "avg": r["avg"],
+                  "d": r.get("dist") or ""} for r in sp_avg]
     # Merge Sporthive avg into TEMPS_MARATHON / TEMPS_SEMI when not already in Excel
     sp_raw_path = SCRIPT_DIR / "avg_times_sporthive.json"
     if sp_raw_path.exists():
@@ -3082,6 +3167,8 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
                 target = tsjs
             elif dist and 9000 <= dist <= 11000:
                 target = t10js
+            elif dist and 4000 <= dist <= 6000:
+                target = t5js
             elif dist and dist > 0:
                 target = tajs
             elif dist == 0 or not dist:
@@ -3155,7 +3242,8 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
             event_countries = jlib4.load(f)
     js_data = ("const RAW=" + j(finishers) + ";\nconst BIGGEST=" + j(biggest) + ";\n"
                "const TEMPS_MARATHON=" + j(tmjs) + ";\nconst TEMPS_SEMI=" + j(tsjs) + ";\n"
-               "const TEMPS_10K=" + j(t10js) + ";\nconst TEMPS_AUTRE=" + j(tajs) + ";\n"
+               "const TEMPS_10K=" + j(t10js) + ";\nconst TEMPS_5K=" + j(t5js) +
+               ";\nconst TEMPS_AUTRE=" + j(tajs) + ";\n"
                "const TEMPS_AVG=" + j(sp_avg_js) + ";\n"
                "const TIMES_DB=" + j(tdbjs) + ";\n"
                "const WMM_KEYWORDS=" + j(WMM_KEYWORDS) + ";\n"
