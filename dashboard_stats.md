@@ -1,6 +1,6 @@
 # DataPace Dashboard — Stats à jour
 
-**Généré le** : 2026-10-23 12:45
+**Généré le** : 2026-10-23 12:49
 **Source historique** : finishers (mémoire)
 
 > **Note pour Claude** : c'est la source de vérité pour tous les chiffres DataPace.
@@ -35,7 +35,7 @@
 
 **Répartition par type :**
 
-  - official: 442
+  - official: 443
   - title: 263
   - partner: 209
   - sponsor: 44
@@ -46,9 +46,9 @@
   - gold: 6
   - retail: 3
   - powered_by: 2
-  - associate: 2
   - charity: 2
   - label: 2
+  - associate: 1
   - silver: 1
   - bronze: 1
   - diamond: 1

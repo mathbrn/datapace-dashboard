@@ -1025,7 +1025,7 @@ half_marathon_data = [
 tenk_data = [
     # --- Ajouts 2026 : 10 km (sources presse croisees) ---
     ("Ukrop's Monument Avenue 10K", "10K", 2026, "0:30:04", "0:33:54"),
-    ("World 10K bengaluru", "10K", 2026, "0:27:29", "N/A"),
+    ("TCS World 10K Bengaluru", "10K", 2026, "0:27:29", "N/A"),
     ("10km Fulfil des Champs Elysées", "10K", 2026, "0:28:34", "0:33:24"),
 
     # 10K Valencia Ibercaja by Kiprun

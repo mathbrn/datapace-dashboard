@@ -3923,10 +3923,6 @@
     "flag": "🇧🇪",
     "pays": "Belgique"
   },
-  "World 10K bengaluru": {
-    "flag": "🇮🇳",
-    "pays": "Inde"
-  },
   "World 25K Kolkata": {
     "flag": "🇮🇳",
     "pays": "Inde"
@@ -4018,5 +4014,9 @@
   "Nike Melbourne Marathon": {
     "flag": "🇦🇺",
     "pays": "Australie"
+  },
+  "TCS World 10K Bengaluru": {
+    "flag": "🇮🇳",
+    "pays": "Inde"
   }
 }
