@@ -846,6 +846,12 @@ half_marathon_data = [
     # Marathon de Lille 2026, ChronoRace ctx 20261025_lille
     ("Marathon de Lille", "42K", 2026, "2:07:52", "2:22:30"),
     ("Marathon de Lille", "21K", 2026, "1:00:23", "1:10:12"),
+    # Mainova Frankfurt Marathon 2026, raceresult 376548
+    ("Mainova Frankfurt Marathon", "42K", 2026, "2:05:25", "2:19:45"),
+    # Lausanne Marathon 2026, datasport (temps nets arrondis a la seconde)
+    ("Lausanne Marathon", "42K", 2026, "2:25:27", "2:50:35"),
+    ("Lausanne Marathon", "21K", 2026, "1:03:53", "1:18:50"),
+    ("Lausanne Marathon", "10K", 2026, "0:30:27", "0:35:30"),
     # Göteborgsvarvet
     ("Göteborgsvarvet", "21K", 2024, "N/A", "N/A"),
     ("Göteborgsvarvet", "21K", 2025, "N/A", "N/A"),

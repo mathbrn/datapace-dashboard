@@ -4,9 +4,28 @@
       "event": "Lausanne Marathon",
       "date": "2026-10-25",
       "data": {
-        "finishers": 4917
+        "winner_men": "2:25:27",
+        "winner_women": "2:50:35"
       },
-      "timestamp": "2026-10-26T16:10:15Z"
+      "timestamp": "2026-10-26T16:20:16Z"
+    },
+    {
+      "event": "Mainova Frankfurt Marathon",
+      "date": "2026-10-25",
+      "data": {
+        "avg_time": "3:56:03",
+        "winner_men": "2:05:25",
+        "winner_women": "2:19:45"
+      },
+      "timestamp": "2026-10-26T16:20:16Z"
+    },
+    {
+      "event": "Mainova Frankfurt Marathon",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 13331
+      },
+      "timestamp": "2026-10-26T16:20:08Z"
     },
     {
       "event": "Lausanne Marathon",

@@ -2572,5 +2572,14 @@
     "count": 12260,
     "avg_time": "01:57:51",
     "avg_speed_kmh": 10.74
+  },
+  {
+    "label": "Mainova Frankfurt Marathon 2026",
+    "race": "Mainova Frankfurt Marathon",
+    "dist_m": 42195,
+    "year": 2026,
+    "count": 13331,
+    "avg_time": "03:56:03",
+    "avg_speed_kmh": 10.73
   }
 ]
