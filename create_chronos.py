@@ -842,6 +842,10 @@ half_marathon_data = [
     ("AJ Bell Great North Run", "21K", 2026, "0:59:47", "1:06:15"),
     # Valencia Half Marathon Trinidad Alfonso Zurich
     ("Valencia Half Marathon Trinidad Alfonso Zurich", "21K", 2025, "0:58:02", "1:03:08"),
+    ("Valencia Half Marathon Trinidad Alfonso Zurich", "21K", 2026, "0:58:03", "1:03:51"),
+    # Marathon de Lille 2026, ChronoRace ctx 20261025_lille
+    ("Marathon de Lille", "42K", 2026, "2:07:52", "2:22:30"),
+    ("Marathon de Lille", "21K", 2026, "1:00:23", "1:10:12"),
     # Göteborgsvarvet
     ("Göteborgsvarvet", "21K", 2024, "N/A", "N/A"),
     ("Göteborgsvarvet", "21K", 2025, "N/A", "N/A"),

@@ -1,6 +1,58 @@
 {
   "updates": [
     {
+      "event": "Lausanne Marathon",
+      "date": "2026-10-25",
+      "data": {
+        "finishers": 4917
+      },
+      "timestamp": "2026-10-26T16:10:15Z"
+    },
+    {
+      "event": "Lausanne Marathon",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 3928
+      },
+      "timestamp": "2026-10-26T16:09:33Z"
+    },
+    {
+      "event": "Marathon de Lille",
+      "date": "2026-10-25",
+      "data": {
+        "avg_time": "4:05:12",
+        "winner_men": "2:07:52",
+        "winner_women": "2:22:30"
+      },
+      "timestamp": "2026-10-26T16:08:42Z"
+    },
+    {
+      "event": "Valencia Half Marathon Trinidad Alfonso Zurich",
+      "date": "2026-10-25",
+      "data": {
+        "avg_time": "1:58:17",
+        "winner_men": "0:58:03",
+        "winner_women": "1:03:51"
+      },
+      "timestamp": "2026-10-26T16:08:42Z"
+    },
+    {
+      "event": "Marathon de Lille",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 12260
+      },
+      "timestamp": "2026-10-26T16:08:03Z"
+    },
+    {
+      "event": "Valencia Half Marathon Trinidad Alfonso Zurich",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 25498
+      },
+      "timestamp": "2026-10-26T16:08:01Z"
+    },
+    {
       "event": "United Airlines NYC Half",
       "date": "2026-03-15",
       "data": {
