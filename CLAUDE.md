@@ -838,6 +838,41 @@ une liste reellement courte. Une page pleine sans pagination = total inconnu.
   viennent deja de cette API. Ne pas ecraser l'existant pour si peu.
 - **Couverture** : tous les events NYRR (Brooklyn Half, NYC Half United Airlines, etc.)
 
+**L'echec muet du 3 novembre 2026, a ne pas reproduire.** Le marathon de
+New York 2026 n'a pas ete collecte par le cron alors que celui-ci tournait
+et reussissait chaque jour : l'epreuve etait bien selectionnee par le mode
+repli, mais ressortait en `fetch_returned_nothing` **sans une ligne de
+diagnostic**. Trois causes cumulees :
+
+1. `platform_id` valait `'54'` dans `event_platform_map.json` — c'est
+   l'identifiant **MarathonView**, pas un code NYRR. `discover_platform` le
+   passait comme code d'epreuve et le repli `M{yyyy}` du fetcher ne
+   s'appliquait jamais, la valeur n'etant pas vide. **Ne jamais mettre un
+   identifiant d'une autre plateforme sous `platform_id`.**
+2. Les en-tetes `Origin` et `Referer` manquaient : sans elles l'API repond
+   **200 avec `totalItems: 0`**, indiscernable d'une epreuve inconnue.
+3. Le payload envoyait `raceIds` / `eventId` au lieu de `eventCode`, et
+   `sortBy` au lieu de `sortColumn`.
+
+`discover_platform` passe desormais la config nyrr au fetcher (comme pour
+multisport et mikatiming), les codes sont decrits par `code_patterns` dans
+la carte, et **chaque sortie du fetcher est journalisee**. Lecon generale :
+un fetcher qui renvoie `None` sans rien ecrire rend la panne invisible dans
+les logs du cron.
+
+**Temps moyen : le plafond de 500 se contourne a trois niveaux.** Les
+cellules (age, sexe) partitionnent le classement, les deux sens de tri en
+couvrent 1000, et au-dela — une vingtaine de cellules sur le marathon, dont
+1256 hommes de 30 ans — `searchString` (filtre sur le nom, une lettre a la
+fois) decoupe le reste. Couverture du marathon 2026 : 84,3 % sans ce
+troisieme niveau, **99,7 % avec**, en 250 s. Une moyenne n'est ecrite
+qu'au-dela de 99,5 % : les coureurs manquants ne sont pas repartis au
+hasard, ce sont les tranches d'age les plus peuplees.
+
+**Le mode repli est auto-reparateur** : une epreuve reste eligible tant que
+l'une des quatre donnees manque. Un temps moyen ou un chrono absent est
+donc repris au passage suivant du cron, sans intervention.
+
 ### 26. ChronoRace moderne (table/search API)
 - **API** : `GET https://results.chronorace.be/api/results/table/search/{ctx}/{report}?srch=&pageSize=1&fromRecord=0`
 - **ctx** : format `{YYYYMMDD}_{eventslug}` (ex: `20240421_10miles` pour Baloise Antwerp 2024)
@@ -878,7 +913,7 @@ une liste reellement courte. Une page pleine sans pagination = total inconnu.
 | BAA | NON | 1 event (Boston) | HTML scraper |
 | Mararun | NON | 1 event (Beijing) | Plateforme chinoise |
 | MyRunResults | NON | 1 event (Dublin) | |
-| NYRR | NON | 1 event (NYC) | API POST identifiee |
+| NYRR | OK | 3 (NYC Marathon, Brooklyn Half, NYC Half) | Corrige le 3 novembre, cf. section 25 |
 | PSE | NON | 1 event (Honolulu) | |
 | RunCzech | NON | 1 event (Prague) | |
 | RunSignup | NON | 1 event US | |
