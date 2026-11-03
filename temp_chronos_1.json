@@ -565,5 +565,50 @@
     "nom_homme": null,
     "temps_femme": "2:24:36",
     "nom_femme": null
+  },
+  {
+    "course": "Haspa Marathon Hamburg",
+    "distance": "MARATHON",
+    "annee": 2019,
+    "temps_homme": "02:08:25",
+    "nom_homme": null,
+    "temps_femme": "02:24:41",
+    "nom_femme": null
+  },
+  {
+    "course": "Vienna City Marathon",
+    "distance": "MARATHON",
+    "annee": 2019,
+    "temps_homme": "02:06:56",
+    "nom_homme": null,
+    "temps_femme": "02:22:12",
+    "nom_femme": null
+  },
+  {
+    "course": "Brighton Marathon Week end",
+    "distance": "MARATHON",
+    "annee": 2024,
+    "temps_homme": "02:32:27",
+    "nom_homme": null,
+    "temps_femme": "02:55:00",
+    "nom_femme": null
+  },
+  {
+    "course": "Brighton Marathon Week end",
+    "distance": "MARATHON",
+    "annee": 2025,
+    "temps_homme": "02:26:48",
+    "nom_homme": null,
+    "temps_femme": "02:53:00",
+    "nom_femme": null
+  },
+  {
+    "course": "Royal Parks Half Marathon",
+    "distance": "SEMI",
+    "annee": 2024,
+    "temps_homme": "01:05:12",
+    "nom_homme": null,
+    "temps_femme": "01:18:15",
+    "nom_femme": null
   }
 ]

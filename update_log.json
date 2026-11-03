@@ -1,6 +1,54 @@
 {
   "updates": [
     {
+      "event": "Royal Parks Half Marathon",
+      "date": "2024-01-01",
+      "data": {
+        "finishers": 16814
+      },
+      "timestamp": "2026-11-03T13:38:38Z"
+    },
+    {
+      "event": "Brighton Marathon Week end",
+      "date": "2025-01-01",
+      "data": {
+        "finishers": 12582
+      },
+      "timestamp": "2026-11-03T13:36:50Z"
+    },
+    {
+      "event": "Brighton Marathon Week end",
+      "date": "2024-01-01",
+      "data": {
+        "finishers": 11315
+      },
+      "timestamp": "2026-11-03T13:36:23Z"
+    },
+    {
+      "event": "Vienna City Marathon",
+      "date": "2019-01-01",
+      "data": {
+        "finishers": 5733
+      },
+      "timestamp": "2026-11-03T13:35:17Z"
+    },
+    {
+      "event": "Haspa Marathon Hamburg",
+      "date": "2019-01-01",
+      "data": {
+        "finishers": 10101
+      },
+      "timestamp": "2026-11-03T13:34:16Z"
+    },
+    {
+      "event": "EDP Maratona de Lisboa",
+      "date": "2025-01-01",
+      "data": {
+        "finishers": 9567
+      },
+      "timestamp": "2026-11-03T13:31:27Z"
+    },
+    {
       "event": "Gasparilla Distance Classic",
       "date": "2004-01-01",
       "data": {
