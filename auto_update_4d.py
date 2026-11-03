@@ -832,6 +832,120 @@ def _athlinks_course_api(sess, event_id, dist_code):
     return choisie["count"] if choisie else None
 
 
+ATHLINKS_HEADERS = {"User-Agent": "Mozilla/5.0", "Accept": "application/json",
+                    "Origin": "https://www.athlinks.com",
+                    "Referer": "https://www.athlinks.com/"}
+
+
+def _athlinks_editions(sess, race_id, master_id=None):
+    """Toutes les editions d'une epreuve, par l'hote alaska.
+
+    `reignite-api.athlinks.com` repond **403 depuis les runners GitHub** — et
+    seulement de la : les memes requetes avec les memes en-tetes passent
+    ailleurs, et curl echoue comme requests, donc c'est l'adresse de sortie qui
+    est filtree, pas l'empreinte du client. Sonde du 3 novembre 2026 depuis un
+    runner : reignite 403, `alaska.athlinks.com` 200, `www.athlinks.com` 200.
+
+    Or `alaska.athlinks.com/Events/Race/Api/{raceId}/Course/0` renvoie
+    `Result.MasterEvent.EventRaces`, c'est-a-dire **l'historique complet** de
+    l'epreuve — 47 editions pour BOLDERBoulder, depuis 1980 — avec pour chacune
+    sa date, son `ResultCount` et le detail de ses courses. Un seul raceId
+    d'entree suffit donc, n'importe lequel : celui de 1980 rend aussi
+    l'edition 2026. Il est stocke une fois pour toutes sous `race_id` dans
+    event_platform_map.json et n'a jamais besoin d'etre rafraichi.
+
+    **Garde-fou indispensable** : les identifiants de master et de course
+    partagent le meme espace de nommage. Appeler cette API avec le master_id
+    6172 (BOLDERBoulder) repond `Success: true` mais pour le master 35763, une
+    tout autre epreuve. On verifie donc que le master renvoye est bien celui
+    attendu.
+    """
+    # alaska renvoie par intermittence des 500 sur des raceId valides
+    # (Cooper River et Gasparilla en ont rendu un chacun pendant la mise au
+    # point, et repondaient correctement a l'essai suivant). Trois tentatives.
+    import time as _t
+    r = None
+    for essai, attente in enumerate((5, 15, 0)):
+        r = sess.get(
+            f"https://alaska.athlinks.com/Events/Race/Api/{race_id}/Course/0",
+            timeout=30)
+        if r.ok:
+            break
+        if attente:
+            print(f"    Athlinks alaska race/{race_id}: HTTP {r.status_code}, "
+                  f"nouvelle tentative dans {attente} s")
+            _t.sleep(attente)
+    if not r.ok:
+        print(f"    Athlinks alaska race/{race_id}: HTTP {r.status_code}")
+        return None
+    try:
+        me = ((r.json() or {}).get("Result") or {}).get("MasterEvent") or {}
+    except ValueError:
+        print(f"    Athlinks alaska race/{race_id}: reponse non-JSON")
+        return None
+    rendu = str(me.get("MasterEventID") or "")
+    if master_id and rendu and rendu != str(master_id):
+        print(f"    Athlinks: race_id {race_id} appartient au master {rendu}, "
+              f"pas a {master_id} — entree a corriger dans "
+              f"event_platform_map.json")
+        return None
+    editions = me.get("EventRaces") or []
+    if not editions:
+        print(f"    Athlinks alaska race/{race_id}: aucune edition")
+        return None
+    return editions
+
+
+def _athlinks_finishers_alaska(sess, race_id, master_id, year, dist_code):
+    """Finishers de la course visee, pour l'annee visee, via alaska."""
+    editions = _athlinks_editions(sess, race_id, master_id)
+    if not editions:
+        return None
+    annees = sorted({(e.get("RaceDate") or "")[:4] for e in editions if e.get("RaceDate")},
+                    reverse=True)
+    cible = [e for e in editions if (e.get("RaceDate") or "").startswith(str(year))]
+    if not cible:
+        # Jamais de repli sur une autre annee : c'est ce qui avait ecrit la
+        # valeur 2025 du Marine Corps Marathon dans la cellule 2026.
+        print(f"    Athlinks: aucune edition {year} (disponibles {annees[:6]}) — abandon")
+        return None
+    courses = []
+    for e in cible:
+        for c in (e.get("EventCourses") or []):
+            if c.get("IsVirtual"):
+                continue
+            nom = (c.get("CourseName") or "")
+            if any(mot in nom.lower() for mot in COURSES_ANNEXES):
+                continue
+            # Athlinks tague parfois une course enfant a la distance de
+            # l'epreuve principale : « Pittsburgh Toddler Trot » y figure a
+            # 42 164 m avec UN seul resultat, et rendait le marathon ambigu.
+            # Une course a moins de dix resultats n'est pas l'epreuve visee.
+            if (c.get("ResultCount") or 0) < 10:
+                continue
+            courses.append(c)
+    if not courses:
+        print(f"    Athlinks: edition {year} sans course exploitable")
+        return None
+    courses = sans_variantes(courses, lambda c: c.get("CourseName") or "")
+    choisie = pick_race_for_distance(
+        courses, dist_code,
+        get_distance_m=lambda c: c.get("DistUnit"),
+        get_title=lambda c: c.get("CourseName") or "")
+    if not choisie:
+        print(f"    Athlinks: aucune course {dist_code} identifiable dans "
+              f"l'edition {year} — courses vues "
+              f"{[(c.get('CourseName'), c.get('DistUnit')) for c in courses][:8]}")
+        return None
+    n = choisie.get("ResultCount") or 0
+    if not n:
+        print(f"    Athlinks: {choisie.get('CourseName')!r} {year} sans resultats publies")
+        return None
+    print(f"    Athlinks alaska: {choisie.get('CourseName')!r} "
+          f"({choisie.get('DistUnit')} m) {year} -> {n} finishers")
+    return n
+
+
 def fetch_athlinks_4d(master_id_or_info, year, dist_code=None):
     """Fetch 4D from Athlinks API.
 
@@ -852,10 +966,22 @@ def fetch_athlinks_4d(master_id_or_info, year, dist_code=None):
                   f"entree a completer dans event_platform_map.json")
             return None
         sess = requests.Session()
-        sess.headers.update({
-            "User-Agent": "Mozilla/5.0", "Accept": "application/json",
-            "Origin": "https://www.athlinks.com", "Referer": "https://www.athlinks.com/",
-        })
+        sess.headers.update(ATHLINKS_HEADERS)
+        # Voie principale : alaska, le seul hote Athlinks joignable depuis les
+        # runners GitHub. reignite-api ne sert plus que de repli.
+        race_id = None
+        if isinstance(master_id_or_info, dict):
+            race_id = master_id_or_info.get("race_id")
+        if race_id:
+            n = _athlinks_finishers_alaska(sess, race_id, master_id, year, dist_code)
+            if n:
+                return {"finishers": n,
+                        "avg_time": None, "avg_speed_kmh": None,
+                        "winner_men": None, "winner_women": None,
+                        "source": "athlinks", "confidence": "high"}
+            return None
+        print(f"    Athlinks: pas de race_id pour le master {master_id} — repli "
+              f"sur reignite-api, qui repond 403 depuis les runners GitHub")
         url = f"https://reignite-api.athlinks.com/master/{master_id}/metadata"
         # Athlinks limite le debit : apres quelques dizaines de requetes
         # rapprochees, il renvoie 403 sur des master_id parfaitement valides
@@ -1869,6 +1995,13 @@ def discover_platform(event_name, year, date_str=None):
                     if not pid_info["event_code"] and "event_code_pattern" in info:
                         pid_info["event_code"] = info["event_code_pattern"].format(yyyy=year)
                     return platform, pid_info
+                # Athlinks : le fetcher a besoin du raceId d'entree, seul
+                # moyen d'interroger l'hote alaska (reignite-api est filtre
+                # depuis les runners GitHub).
+                if platform == "athlinks":
+                    return platform, {
+                        "master_id": info.get("platform_id") or info.get("master_id"),
+                        "race_id": info.get("race_id")}
                 # NYRR : le fetcher a besoin des motifs de code d'epreuve.
                 # `platform_id` valait '54' (l'identifiant MarathonView), qui
                 # partait comme code NYRR et ne correspondait a rien.

@@ -408,14 +408,16 @@
     "country": "USA",
     "distance": "10KM",
     "name": "Atlanta Journal-Constitution Peachtree Road Race",
-    "platform_id": 115192
+    "platform_id": 115192,
+    "race_id": 1145027
   },
   "bolderboulder 10k": {
     "platform": "athlinks",
     "country": "USA",
     "distance": "10KM",
     "name": "BOLDERBoulder 10K",
-    "platform_id": 6172
+    "platform_id": 6172,
+    "race_id": 1144365
   },
   "bay to breakers": {
     "platform": "athlinks",
@@ -423,7 +425,8 @@
     "distance": "AUTRE",
     "name": "Bay to Breakers",
     "platform_id": 18246,
-    "distance_m": 12000
+    "distance_m": 12000,
+    "race_id": 1140434
   },
   "broad street run": {
     "platform": "athlinks",
@@ -431,14 +434,16 @@
     "distance": "AUTRE",
     "name": "Broad Street Run",
     "platform_id": 168976,
-    "distance_m": 16093
+    "distance_m": 16093,
+    "race_id": 1139326
   },
   "cooper river bridge run": {
     "platform": "athlinks",
     "country": "USA",
     "distance": "10KM",
     "name": "Cooper River Bridge Run",
-    "platform_id": 9036
+    "platform_id": 9036,
+    "race_id": 1142563
   },
   "ukrop's monument avenue 10k": {
     "platform": "runsignup",
@@ -481,21 +486,24 @@
     "country": "USA",
     "distance": "MARATHON",
     "name": "Marine Corps Marathon",
-    "platform_id": 3281
+    "platform_id": 3281,
+    "race_id": 1132821
   },
   "dick's pittsburgh marathon": {
     "platform": "athlinks",
     "country": "USA",
     "distance": "MARATHON",
     "name": "Dick's Pittsburgh Marathon",
-    "platform_id": 6620
+    "platform_id": 6620,
+    "race_id": 1144267
   },
   "flying pig marathon": {
     "platform": "athlinks",
     "country": "USA",
     "distance": "MARATHON",
     "name": "Flying Pig Marathon",
-    "platform_id": 137505
+    "platform_id": 137505,
+    "race_id": 1143846
   },
   "osaka marathon": {
     "platform": null,
@@ -527,7 +535,8 @@
     "country": "USA",
     "distance": "SEMI",
     "name": "Gasparilla Distance Classic",
-    "platform_id": 20493
+    "platform_id": 20493,
+    "race_id": 1134940
   },
   "lilac bloomsday run": {
     "platform": "athlinks",
@@ -535,7 +544,8 @@
     "distance": "AUTRE",
     "name": "Lilac Bloomsday Run",
     "platform_id": 8432,
-    "distance_m": 12000
+    "distance_m": 12000,
+    "race_id": 1145709
   },
   "vancouver sun run": {
     "platform": null,
