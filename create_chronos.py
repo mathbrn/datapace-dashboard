@@ -891,8 +891,8 @@ half_marathon_data = [
     ("Coelmo Napoli City Half Marathon", "21K", 2026, "N/A", "N/A"),
     ("Kagawa Marugame International Half Marathon", "21K", 2026, "N/A", "N/A"),
     ("Movistar Madrid Medio Maraton", "21K", 2025, "N/A", "N/A"),
-    ("NN CPC Loop Den Haag - Half Marathon", "21K", 2025, "N/A", "N/A"),
-    ("NN CPC Loop Den Haag - Half Marathon", "21K", 2026, "N/A", "N/A"),
+    ("NN CPC Loop Den Haag", "21K", 2025, "N/A", "N/A"),
+    ("NN CPC Loop Den Haag", "21K", 2026, "N/A", "N/A"),
     ("Disney Princess Half Marathon", "21K", 2025, "N/A", "N/A"),
     ("Disney Princess Half Marathon", "21K", 2026, "N/A", "N/A"),
     ("St. Jude Rock 'n' Roll Running Series Washington DC", "21K", 2025, "N/A", "N/A"),
@@ -1038,8 +1038,8 @@ half_marathon_data = [
     ("TCS Mizuno Half Marathon", "21K", 2025, "1:04:21", "1:10:02"),
     ("NN Marathon Rotterdam", "42K", 2021, "2:03:34", "2:22:05"),
     ("Dam tot Damloop", "AUTRE", 2022, "0:49:00", "0:55:44"),
-    ("NN CPC Loop Den Haag - Half Marathon", "21K", 2025, "0:59:36", "1:08:16"),
-    ("NN CPC Loop Den Haag - Half Marathon", "21K", 2026, "0:59:48", "1:07:34"),
+    ("NN CPC Loop Den Haag", "21K", 2025, "0:59:36", "1:08:16"),
+    ("NN CPC Loop Den Haag", "21K", 2026, "0:59:48", "1:07:34"),
 ]
 
 # ============================================================
@@ -1133,21 +1133,21 @@ tenk_data = [
     ("NN San Silvestre Vallecana", "10K", 2023, "N/A", "N/A"),  # Aregawi / Garcia - temps exacts non trouvés
     ("NN San Silvestre Vallecana", "10K", 2024, "N/A", "0:31:18"),
     ("NN San Silvestre Vallecana", "10K", 2025, "0:27:41", "0:31:11"),
-    # NN CPC Loop Den Haag - 10 KM Loop
-    ("NN CPC Loop Den Haag - 10 KM Loop", "10K", 2026, "N/A", "N/A"),
+    # NN CPC Loop Den Haag
+    ("NN CPC Loop Den Haag", "10K", 2026, "N/A", "N/A"),
     # BOLDERBoulder 10K
     ("BOLDERBoulder 10K", "10K", 2025, "0:28:36", "0:31:51"),
     # Cooper River Bridge Run
     ("Cooper River Bridge Run", "10K", 2025, "N/A", "N/A"),
     # Standard Chartered KL 10K
     ("Standard Chartered KL 10K", "10K", 2025, "0:32:26", "0:39:23"),
-    # Great Scottish Run 10K
-    ("Great Scottish Run 10K", "10K", 2025, "N/A", "N/A"),
-    # AJ Bell Great Bristol Run 10K
-    ("AJ Bell Great Bristol Run 10K", "10K", 2025, "N/A", "N/A"),
-    ("AJ Bell Great Bristol Run 10K", "10K", 2026, "0:30:55", "0:36:50"),
-    # AJ Bell Great Birmingham Run 10K
-    ("AJ Bell Great Birmingham Run 10K", "10K", 2025, "N/A", "N/A"),
+    # AJ Bell AJ Bell Great Scottish Run
+    ("AJ Bell AJ Bell Great Scottish Run", "10K", 2025, "N/A", "N/A"),
+    # AJ Bell Great Bristol Run
+    ("AJ Bell Great Bristol Run", "10K", 2025, "N/A", "N/A"),
+    ("AJ Bell Great Bristol Run", "10K", 2026, "0:30:55", "0:36:50"),
+    # AJ Bell Great Birmingham Run
+    ("AJ Bell Great Birmingham Run", "10K", 2025, "N/A", "N/A"),
     # AJ Bell Great North 10K
     ("AJ Bell Great North 10K", "10K", 2025, "N/A", "N/A"),
     # AJ Bell Great Manchester Run 10K
@@ -1227,8 +1227,8 @@ autre_data = [
     ("Manchester Road Race", "AUTRE", 2024, "N/A", "N/A"),
     # Army Ten Miler
     ("Army Ten Miler", "AUTRE", 2025, "N/A", "N/A"),
-    # Great Scottish Run HM
-    ("Great Scottish Run", "SEMI", 2025, "N/A", "N/A"),
+    # AJ Bell Great Scottish Run HM
+    ("AJ Bell Great Scottish Run", "SEMI", 2025, "N/A", "N/A"),
     # AJ Bell Great Birmingham Run HM
     ("AJ Bell Great Birmingham Run", "SEMI", 2025, "N/A", "N/A"),
 ]

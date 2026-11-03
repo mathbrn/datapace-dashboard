@@ -3299,25 +3299,6 @@
       ]
     },
     {
-      "event": "NN CPC Loop Den Haag - Half Marathon",
-      "brand": "NN",
-      "type": "title",
-      "years": [
-        2015,
-        2016,
-        2017,
-        2018,
-        2019,
-        2020,
-        2021,
-        2022,
-        2023,
-        2024,
-        2025,
-        2026
-      ]
-    },
-    {
       "event": "Standard Chartered Hong Kong Marathon",
       "brand": "Standard Chartered",
       "type": "title",
@@ -6552,25 +6533,6 @@
       ]
     },
     {
-      "event": "NN CPC Loop Den Haag - 10 KM Loop",
-      "brand": "NN",
-      "type": "title",
-      "years": [
-        2015,
-        2016,
-        2017,
-        2018,
-        2019,
-        2020,
-        2021,
-        2022,
-        2023,
-        2024,
-        2025,
-        2026
-      ]
-    },
-    {
       "event": "Vienna City Marathon",
       "brand": "Wiener Stadtische",
       "type": "official",
@@ -6687,7 +6649,7 @@
       ]
     },
     {
-      "event": "AJ Bell Great Bristol Run",
+      "event": "AJ Bell Great Scottish Run",
       "brand": "AJ Bell",
       "type": "title",
       "years": [
@@ -6698,51 +6660,7 @@
       ]
     },
     {
-      "event": "AJ Bell Great Bristol Run 10K",
-      "brand": "AJ Bell",
-      "type": "title",
-      "years": [
-        2023,
-        2024,
-        2025,
-        2026
-      ]
-    },
-    {
-      "event": "AJ Bell Great Birmingham Run",
-      "brand": "AJ Bell",
-      "type": "title",
-      "years": [
-        2023,
-        2024,
-        2025,
-        2026
-      ]
-    },
-    {
-      "event": "AJ Bell Great Birmingham Run 10K",
-      "brand": "AJ Bell",
-      "type": "title",
-      "years": [
-        2023,
-        2024,
-        2025,
-        2026
-      ]
-    },
-    {
-      "event": "Great Scottish Run",
-      "brand": "AJ Bell",
-      "type": "title",
-      "years": [
-        2023,
-        2024,
-        2025,
-        2026
-      ]
-    },
-    {
-      "event": "Great Scottish Run 10K",
+      "event": "AJ Bell AJ Bell Great Scottish Run",
       "brand": "AJ Bell",
       "type": "title",
       "years": [
@@ -7822,7 +7740,7 @@
       ]
     },
     {
-      "event": "Great Scottish Run",
+      "event": "AJ Bell Great Scottish Run",
       "brand": "Mitchum",
       "type": "partner",
       "years": [
@@ -9363,7 +9281,7 @@
       ]
     },
     {
-      "event": "NN CPC Loop Den Haag - Half Marathon",
+      "event": "NN CPC Loop Den Haag",
       "brand": "Brooks",
       "type": "official",
       "years": [
@@ -9371,7 +9289,7 @@
       ]
     },
     {
-      "event": "NN CPC Loop Den Haag - Half Marathon",
+      "event": "NN CPC Loop Den Haag",
       "brand": "AA Drink",
       "type": "official",
       "years": [

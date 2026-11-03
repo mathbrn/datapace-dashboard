@@ -262,7 +262,7 @@
   },
   {
     "label": "CPC 2018",
-    "race": "NN CPC Loop Den Haag - Half Marathon",
+    "race": "NN CPC Loop Den Haag",
     "dist_m": 21100,
     "year": 2018,
     "count": 9493,
@@ -271,7 +271,7 @@
   },
   {
     "label": "CPC 2018",
-    "race": "NN CPC Loop Den Haag - 10 KM Loop",
+    "race": "NN CPC Loop Den Haag",
     "dist_m": 10000,
     "year": 2018,
     "count": 8134,
@@ -280,7 +280,7 @@
   },
   {
     "label": "CPC 2022",
-    "race": "NN CPC Loop Den Haag - Half Marathon",
+    "race": "NN CPC Loop Den Haag",
     "dist_m": 21097,
     "year": 2022,
     "count": 6510,
@@ -289,7 +289,7 @@
   },
   {
     "label": "CPC 2022",
-    "race": "NN CPC Loop Den Haag - 10 KM Loop",
+    "race": "NN CPC Loop Den Haag",
     "dist_m": 10000,
     "year": 2022,
     "count": 4850,
@@ -298,7 +298,7 @@
   },
   {
     "label": "CPC 2023",
-    "race": "NN CPC Loop Den Haag - Half Marathon",
+    "race": "NN CPC Loop Den Haag",
     "dist_m": 21097,
     "year": 2023,
     "count": 8567,
@@ -307,7 +307,7 @@
   },
   {
     "label": "CPC 2023",
-    "race": "NN CPC Loop Den Haag - 10 KM Loop",
+    "race": "NN CPC Loop Den Haag",
     "dist_m": 10000,
     "year": 2023,
     "count": 5777,
@@ -316,7 +316,7 @@
   },
   {
     "label": "CPC 2024",
-    "race": "NN CPC Loop Den Haag - Half Marathon",
+    "race": "NN CPC Loop Den Haag",
     "dist_m": 21097,
     "year": 2024,
     "count": 13569,
@@ -325,7 +325,7 @@
   },
   {
     "label": "CPC 2024",
-    "race": "NN CPC Loop Den Haag - 10 KM Loop",
+    "race": "NN CPC Loop Den Haag",
     "dist_m": 10000,
     "year": 2024,
     "count": 7501,
@@ -885,7 +885,7 @@
   },
   {
     "label": "Bristol 2021",
-    "race": "AJ Bell Great Bristol Run 10K",
+    "race": "AJ Bell Great Bristol Run",
     "dist_m": 10000,
     "year": 2021,
     "count": 3725,
@@ -965,7 +965,7 @@
   },
   {
     "label": "tracx_2025",
-    "race": "NN CPC Loop Den Haag - Half Marathon",
+    "race": "NN CPC Loop Den Haag",
     "dist_m": 0,
     "year": 2025,
     "count": 0,
@@ -985,7 +985,7 @@
   },
   {
     "label": "tracx_computed_2026",
-    "race": "NN CPC Loop Den Haag - Half Marathon",
+    "race": "NN CPC Loop Den Haag",
     "dist_m": 0,
     "year": 2026,
     "count": 0,
@@ -1055,7 +1055,7 @@
   },
   {
     "label": "crawl_2021",
-    "race": "NN CPC Loop Den Haag - 10 KM Loop",
+    "race": "NN CPC Loop Den Haag",
     "dist_m": 10000,
     "year": 2021,
     "count": 2903,
@@ -1095,7 +1095,7 @@
   },
   {
     "label": "crawl_2022",
-    "race": "AJ Bell Great Birmingham Run 10K",
+    "race": "AJ Bell Great Birmingham Run",
     "dist_m": 10000,
     "year": 2022,
     "count": 1206,
@@ -1145,7 +1145,7 @@
   },
   {
     "label": "crawl_2023",
-    "race": "AJ Bell Great Birmingham Run 10K",
+    "race": "AJ Bell Great Birmingham Run",
     "dist_m": 10000,
     "year": 2023,
     "count": 6513,
@@ -1205,7 +1205,7 @@
   },
   {
     "label": "crawl_2024",
-    "race": "AJ Bell Great Birmingham Run 10K",
+    "race": "AJ Bell Great Birmingham Run",
     "dist_m": 10000,
     "year": 2024,
     "count": 7207,
@@ -1235,7 +1235,7 @@
   },
   {
     "label": "crawl_2025",
-    "race": "AJ Bell Great Birmingham Run 10K",
+    "race": "AJ Bell Great Birmingham Run",
     "dist_m": 10000,
     "year": 2025,
     "count": 7194,

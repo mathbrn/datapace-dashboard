@@ -187,15 +187,7 @@
     "flag": "🇬🇧",
     "pays": "Royaume-Uni"
   },
-  "AJ Bell Great Birmingham Run 10K": {
-    "flag": "🇬🇧",
-    "pays": "Royaume-Uni"
-  },
   "AJ Bell Great Bristol Run": {
-    "flag": "🇬🇧",
-    "pays": "Royaume-Uni"
-  },
-  "AJ Bell Great Bristol Run 10K": {
     "flag": "🇬🇧",
     "pays": "Royaume-Uni"
   },
@@ -1359,11 +1351,11 @@
     "flag": "🇬🇧",
     "pays": "Royaume-Uni"
   },
-  "Great Scottish Run": {
+  "AJ Bell Great Scottish Run": {
     "flag": "🇬🇧",
     "pays": "Royaume-Uni"
   },
-  "Great Scottish Run 10K": {
+  "AJ Bell AJ Bell Great Scottish Run": {
     "flag": "🇬🇧",
     "pays": "Royaume-Uni"
   },
@@ -1762,10 +1754,6 @@
   "Konya Half Marathon": {
     "flag": "🇹🇷",
     "pays": "Turquie"
-  },
-  "Kuala Lampur Standard Chartered Marathon": {
-    "flag": "🇲🇾",
-    "pays": "Malaisie"
   },
   "LDN X": {
     "flag": "🇬🇧",
@@ -2571,11 +2559,7 @@
     "flag": "🇮🇳",
     "pays": "Inde"
   },
-  "NN CPC Loop Den Haag - 10 KM Loop": {
-    "flag": "🇳🇱",
-    "pays": "Pays-Bas"
-  },
-  "NN CPC Loop Den Haag - Half Marathon": {
+  "NN CPC Loop Den Haag": {
     "flag": "🇳🇱",
     "pays": "Pays-Bas"
   },
@@ -3979,10 +3963,6 @@
     "flag": "🇪🇸",
     "pays": "Espagne"
   },
-  "Zurich Rock 'n' Roll Running Series Madrid 10K": {
-    "flag": "🇪🇸",
-    "pays": "Espagne"
-  },
   "Zydus Pinkathon Mumbai": {
     "flag": "🇮🇳",
     "pays": "Inde"
@@ -3998,10 +3978,6 @@
   "marathon halb marathon rostocker": {
     "flag": "🇩🇪",
     "pays": "Allemagne"
-  },
-  "NN CPC Loop Den Haag": {
-    "flag": "🇳🇱",
-    "pays": "Pays-Bas"
   },
   "C&D Xiamen Marathon": {
     "flag": "🇨🇳",
