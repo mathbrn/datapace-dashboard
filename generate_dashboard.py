@@ -724,10 +724,15 @@ function peuplePays(){
     var el=document.getElementById(id);
     if(!el)return;
     var avant=el.value;
+    // Pas de drapeau dans les options : un <select> natif ne peut pas porter
+    // d'image, et le navigateur rend l'emoji avec la police du systeme. Sous
+    // Windows et Linux, faute de police drapeau, le couple d'indicateurs
+    // s'affiche « FR » — les deux lettres de l'indicateur regional. Les
+    // drapeaux restent visibles dans la colonne Ville, ou twemoji les remplace
+    // par des images.
     var html='<option value="ALL">Tous</option>';
     noms.forEach(function(p){
-      html+='<option value="'+p.replace(/"/g,'&quot;')+'">'
-           +(drapeaux[p]?drapeaux[p]+' ':'')+p+'</option>';
+      html+='<option value="'+p.replace(/"/g,'&quot;')+'">'+p+'</option>';
     });
     el.innerHTML=html;
     if(avant)el.value=avant;

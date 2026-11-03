@@ -36,7 +36,7 @@
     "pays": "Espagne"
   },
   "10Km de Dakar": {
-    "flag": "🏳",
+    "flag": "🇸🇳",
     "pays": "Sénégal"
   },
   "10km CMB": {
@@ -232,8 +232,8 @@
     "pays": "France"
   },
   "Abu Dhabi Marathon": {
-    "flag": "🏳",
-    "pays": "Emirats arabes unis"
+    "flag": "🇦🇪",
+    "pays": "Emirats Arabes Unis"
   },
   "Accomplish 10K": {
     "flag": "🇮🇳",
@@ -276,7 +276,7 @@
     "pays": "Portugal"
   },
   "Alexandria Marathon": {
-    "flag": "🏳",
+    "flag": "🇪🇬",
     "pays": "Egypte"
   },
   "Alliance Bank Borneo International Marathon": {
@@ -360,7 +360,7 @@
     "pays": "Etats-Unis"
   },
   "BWM Brunei International Half Marathon": {
-    "flag": "🏳",
+    "flag": "🇧🇳",
     "pays": "Brunei"
   },
   "Bacala Night": {
@@ -1048,12 +1048,12 @@
     "pays": "Allemagne"
   },
   "Dubai Creek Striders Half Marathon": {
-    "flag": "🏳",
-    "pays": "Emirats arabes unis"
+    "flag": "🇦🇪",
+    "pays": "Emirats Arabes Unis"
   },
   "Dubai Marathon": {
-    "flag": "🏳",
-    "pays": "Emirats arabes unis"
+    "flag": "🇦🇪",
+    "pays": "Emirats Arabes Unis"
   },
   "Dwars Door Bruges": {
     "flag": "🇧🇪",
@@ -1172,8 +1172,8 @@
     "pays": "Italie"
   },
   "Eva Air Marathon": {
-    "flag": "🏳",
-    "pays": "Taiwan"
+    "flag": "🇹🇼",
+    "pays": "Taïwan"
   },
   "Expo City Dubai Half Marathon": {
     "flag": "🇦🇪",
@@ -1692,7 +1692,7 @@
     "pays": "Inde"
   },
   "KLM Curacao Marathon": {
-    "flag": "🏳",
+    "flag": "🇨🇼",
     "pays": "Curacao"
   },
   "KPMG Lentermarathon": {
@@ -2028,7 +2028,7 @@
     "pays": "France"
   },
   "Marathon Comar Tunis-Carthage": {
-    "flag": "🏳",
+    "flag": "🇹🇳",
     "pays": "Tunisie"
   },
   "Marathon Golfe de Saint-Tropez": {
@@ -2480,7 +2480,7 @@
     "pays": "Royaume-Uni"
   },
   "Monaco Run": {
-    "flag": "🏳",
+    "flag": "🇲🇨",
     "pays": "Monaco"
   },
   "Montepio Meia Maratona Cascais": {
@@ -2836,7 +2836,7 @@
     "pays": "Inde"
   },
   "Pyramids Half Marathon": {
-    "flag": "🏳",
+    "flag": "🇪🇬",
     "pays": "Egypte"
   },
   "QOC Half Martahon": {
@@ -3000,8 +3000,8 @@
     "pays": "Inde"
   },
   "Run in Dubai": {
-    "flag": "🏳",
-    "pays": "Emirats arabes unis"
+    "flag": "🇦🇪",
+    "pays": "Emirats Arabes Unis"
   },
   "Run in Lyon": {
     "flag": "🇫🇷",
@@ -3160,7 +3160,7 @@
     "pays": "Inde"
   },
   "Sarajevo Half Marathon": {
-    "flag": "🏳",
+    "flag": "🇧🇦",
     "pays": "Bosnie-Herzégovine"
   },
   "Sarmang Dehradun Marathon": {
@@ -3612,7 +3612,7 @@
     "pays": "Vietnam"
   },
   "Thimphu Marathon": {
-    "flag": "🏳",
+    "flag": "🇧🇹",
     "pays": "Bhouthan"
   },
   "Tjejmilen": {
@@ -3784,7 +3784,7 @@
     "pays": "Autriche"
   },
   "Vilniaus Maratonas": {
-    "flag": "🏳",
+    "flag": "🇱🇹",
     "pays": "Lithuanie"
   },
   "Vitality London 10,000": {
@@ -3868,7 +3868,7 @@
     "pays": "Italie"
   },
   "Wizz Air Skopje Marathon": {
-    "flag": "🏳",
+    "flag": "🇲🇰",
     "pays": "Macédoine du Nord"
   },
   "Wizz Air Sofia Marathon": {
