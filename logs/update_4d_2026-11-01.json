@@ -28,6 +28,11 @@
       "score": 0
     },
     {
+      "wa_name": "United Airlines NYC Half",
+      "our_name": "United Airlines NYC Half",
+      "score": 0
+    },
+    {
       "wa_name": "NN CPC Loop Den Haag - Half Marathon",
       "our_name": "NN CPC Loop Den Haag - Half Marathon",
       "score": 0
@@ -65,6 +70,11 @@
     {
       "wa_name": "BOLDERBoulder 10K",
       "our_name": "BOLDERBoulder 10K",
+      "score": 0
+    },
+    {
+      "wa_name": "NYRR RBC Brooklyn Half",
+      "our_name": "NYRR RBC Brooklyn Half",
       "score": 0
     },
     {
@@ -280,6 +290,29 @@
       "ecrit": null
     },
     {
+      "event": "Cooper River Bridge Run",
+      "year": 2026,
+      "platform": "athlinks",
+      "finishers": 33686,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "United Airlines NYC Half",
+      "year": 2026,
+      "platform": "nyrr",
+      "finishers": 30240,
+      "avg_time": null,
+      "winner_men": "0:59:30",
+      "winner_women": "1:06:33",
+      "ecrit": [
+        "winner_men",
+        "winner_women"
+      ]
+    },
+    {
       "event": "EDP Meia Maratona de Lisboa - Vodafone 10K",
       "year": 2026,
       "platform": "sporthive",
@@ -294,6 +327,39 @@
       "year": 2026,
       "platform": "tracx",
       "finishers": 19754,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "BOLDERBoulder 10K",
+      "year": 2026,
+      "platform": "athlinks",
+      "finishers": 47508,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "NYRR RBC Brooklyn Half",
+      "year": 2026,
+      "platform": "nyrr",
+      "finishers": 30405,
+      "avg_time": null,
+      "winner_men": "1:04:32",
+      "winner_women": "1:13:11",
+      "ecrit": [
+        "winner_men",
+        "winner_women"
+      ]
+    },
+    {
+      "event": "Atlanta Journal-Constitution Peachtree Road Race",
+      "year": 2026,
+      "platform": "athlinks",
+      "finishers": 45299,
       "avg_time": null,
       "winner_men": null,
       "winner_women": null,
@@ -340,6 +406,70 @@
       "ecrit": null
     },
     {
+      "event": "TCS New York City Marathon",
+      "year": 2026,
+      "platform": "nyrr",
+      "finishers": 61066,
+      "avg_time": null,
+      "winner_men": "2:06:01",
+      "winner_women": "2:24:36",
+      "ecrit": [
+        "finishers",
+        "winner_men",
+        "winner_women"
+      ]
+    },
+    {
+      "event": "Broad Street Run",
+      "year": 2026,
+      "platform": "athlinks",
+      "finishers": 34003,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "Flying Pig Marathon",
+      "year": 2026,
+      "platform": "athlinks",
+      "finishers": 5279,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "year": 2026,
+      "platform": "athlinks",
+      "finishers": 5026,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "Bay to Breakers",
+      "year": 2026,
+      "platform": "athlinks",
+      "finishers": 19814,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "year": 2026,
+      "platform": "athlinks",
+      "finishers": 4242,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
       "event": "Dam tot Damloop",
       "year": 2026,
       "platform": "tracx",
@@ -360,11 +490,6 @@
       "event": "HOKA Semi de Paris",
       "reason": "fetch_returned_nothing",
       "platform": "timeto"
-    },
-    {
-      "event": "Cooper River Bridge Run",
-      "reason": "fetch_returned_nothing",
-      "platform": "athlinks"
     },
     {
       "event": "NN CPC Loop Den Haag - Half Marathon",
@@ -392,11 +517,6 @@
       "platform": "chronorace"
     },
     {
-      "event": "BOLDERBoulder 10K",
-      "reason": "fetch_returned_nothing",
-      "platform": "athlinks"
-    },
-    {
       "event": "Hoka Runaway Sydney Half Marathon",
       "reason": "fetch_returned_nothing",
       "platform": "multisport"
@@ -415,11 +535,6 @@
       "event": "AJ Bell Great Bristol Run",
       "reason": "fetch_returned_nothing",
       "platform": "rtrt"
-    },
-    {
-      "event": "Atlanta Journal-Constitution Peachtree Road Race",
-      "reason": "fetch_returned_nothing",
-      "platform": "athlinks"
     },
     {
       "event": "TCS Sydney Marathon presented by ASICS",
@@ -442,37 +557,7 @@
       "platform": "athlinks"
     },
     {
-      "event": "TCS New York City Marathon",
-      "reason": "fetch_returned_nothing",
-      "platform": "nyrr"
-    },
-    {
-      "event": "Broad Street Run",
-      "reason": "fetch_returned_nothing",
-      "platform": "athlinks"
-    },
-    {
-      "event": "Flying Pig Marathon",
-      "reason": "fetch_returned_nothing",
-      "platform": "athlinks"
-    },
-    {
       "event": "Lilac Bloomsday Run",
-      "reason": "fetch_returned_nothing",
-      "platform": "athlinks"
-    },
-    {
-      "event": "Dick's Pittsburgh Marathon",
-      "reason": "fetch_returned_nothing",
-      "platform": "athlinks"
-    },
-    {
-      "event": "Bay to Breakers",
-      "reason": "fetch_returned_nothing",
-      "platform": "athlinks"
-    },
-    {
-      "event": "Gasparilla Distance Classic",
       "reason": "fetch_returned_nothing",
       "platform": "athlinks"
     },
@@ -565,19 +650,19 @@
   "errors": [
     {
       "stage": "worldathletics",
-      "error": "HTTPSConnectionPool(host='graphql-prod-4860.edge.aws.worldathletics.org', port=443): Max retries exceeded with url: /graphql (Caused by NameResolutionError(\"HTTPSConnection(host='graphql-prod-4860.edge.aws.worldathletics.org', port=443): Failed to resolve 'graphql-prod-4860.edge.aws.worldathletics.org' ([Errno -2] Name or service not known)\"))"
+      "error": "HTTPSConnectionPool(host='graphql-prod-4860.edge.aws.worldathletics.org', port=443): Max retries exceeded with url: /graphql (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 502 Bad Gateway')))"
     }
   ],
   "mode": "fallback_no_calendar",
   "summary": {
     "wa_races": 0,
-    "matched": 51,
-    "updated": 0,
-    "fetched": 9,
-    "skipped": 42,
+    "matched": 53,
+    "updated": 3,
+    "fetched": 20,
+    "skipped": 33,
     "errors": 1,
     "skip_reasons": {
-      "fetch_returned_nothing": 42
+      "fetch_returned_nothing": 33
     },
     "mode": "fallback_no_calendar"
   }

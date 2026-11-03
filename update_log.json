@@ -1,6 +1,42 @@
 {
   "updates": [
     {
+      "event": "TCS New York City Marathon",
+      "date": "2026-11-01",
+      "data": {
+        "finishers": 61066,
+        "winner_men": "2:06:01",
+        "winner_women": "2:24:36"
+      },
+      "timestamp": "2026-11-03T09:17:12Z"
+    },
+    {
+      "event": "TCS New York City Marathon",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 61066
+      },
+      "timestamp": "2026-11-03T09:17:12Z"
+    },
+    {
+      "event": "NYRR RBC Brooklyn Half",
+      "date": "2026-11-01",
+      "data": {
+        "winner_men": "1:04:32",
+        "winner_women": "1:13:11"
+      },
+      "timestamp": "2026-11-03T09:14:49Z"
+    },
+    {
+      "event": "United Airlines NYC Half",
+      "date": "2026-11-01",
+      "data": {
+        "winner_men": "0:59:30",
+        "winner_women": "1:06:33"
+      },
+      "timestamp": "2026-11-03T09:12:37Z"
+    },
+    {
       "event": "Lausanne Marathon",
       "date": "2026-10-25",
       "data": {

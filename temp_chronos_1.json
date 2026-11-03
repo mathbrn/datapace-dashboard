@@ -538,5 +538,32 @@
     "nom_homme": null,
     "temps_femme": "01:09:24",
     "nom_femme": null
+  },
+  {
+    "course": "United Airlines NYC Half",
+    "distance": "SEMI",
+    "annee": 2026,
+    "temps_homme": "0:59:30",
+    "nom_homme": null,
+    "temps_femme": "1:06:33",
+    "nom_femme": null
+  },
+  {
+    "course": "NYRR RBC Brooklyn Half",
+    "distance": "SEMI",
+    "annee": 2026,
+    "temps_homme": "1:04:32",
+    "nom_homme": null,
+    "temps_femme": "1:13:11",
+    "nom_femme": null
+  },
+  {
+    "course": "TCS New York City Marathon",
+    "distance": "MARATHON",
+    "annee": 2026,
+    "temps_homme": "2:06:01",
+    "nom_homme": null,
+    "temps_femme": "2:24:36",
+    "nom_femme": null
   }
 ]
