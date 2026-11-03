@@ -610,5 +610,68 @@
     "nom_homme": null,
     "temps_femme": "01:18:15",
     "nom_femme": null
+  },
+  {
+    "course": "NN Maraton Warszawski",
+    "distance": "MARATHON",
+    "annee": 2018,
+    "temps_homme": "02:12:44",
+    "nom_homme": null,
+    "temps_femme": "02:35:22",
+    "nom_femme": null
+  },
+  {
+    "course": "NN Maraton Warszawski",
+    "distance": "MARATHON",
+    "annee": 2019,
+    "temps_homme": "02:11:39",
+    "nom_homme": null,
+    "temps_femme": "02:29:04",
+    "nom_femme": null
+  },
+  {
+    "course": "NN Maraton Warszawski",
+    "distance": "MARATHON",
+    "annee": 2021,
+    "temps_homme": "02:14:38",
+    "nom_homme": null,
+    "temps_femme": "02:31:11",
+    "nom_femme": null
+  },
+  {
+    "course": "NN Maraton Warszawski",
+    "distance": "MARATHON",
+    "annee": 2022,
+    "temps_homme": "02:10:07",
+    "nom_homme": null,
+    "temps_femme": "02:28:35",
+    "nom_femme": null
+  },
+  {
+    "course": "NN Maraton Warszawski",
+    "distance": "MARATHON",
+    "annee": 2023,
+    "temps_homme": "02:15:29",
+    "nom_homme": null,
+    "temps_femme": "02:34:41",
+    "nom_femme": null
+  },
+  {
+    "course": "NN Maraton Warszawski",
+    "distance": "MARATHON",
+    "annee": 2024,
+    "temps_homme": "02:10:43",
+    "nom_homme": null,
+    "temps_femme": "02:31:24",
+    "nom_femme": null
+  },
+  {
+    "course": "NN Maraton Warszawski",
+    "distance": "MARATHON",
+    "annee": 2025,
+    "temps_homme": "02:11:21",
+    "nom_homme": null,
+    "temps_femme": "02:33:41",
+    "nom_femme": null
   }
 ]

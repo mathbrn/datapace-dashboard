@@ -2590,5 +2590,68 @@
     "count": 61066,
     "avg_time": "04:37:36",
     "avg_speed_kmh": null
+  },
+  {
+    "label": "NN Maraton Warszawski 2018",
+    "race": "NN Maraton Warszawski",
+    "dist_m": 42195,
+    "year": 2018,
+    "count": 7529,
+    "avg_time": "04:16:42",
+    "avg_speed_kmh": null
+  },
+  {
+    "label": "NN Maraton Warszawski 2019",
+    "race": "NN Maraton Warszawski",
+    "dist_m": 42195,
+    "year": 2019,
+    "count": 4547,
+    "avg_time": "04:14:56",
+    "avg_speed_kmh": null
+  },
+  {
+    "label": "NN Maraton Warszawski 2021",
+    "race": "NN Maraton Warszawski",
+    "dist_m": 42195,
+    "year": 2021,
+    "count": 2736,
+    "avg_time": "04:06:36",
+    "avg_speed_kmh": null
+  },
+  {
+    "label": "NN Maraton Warszawski 2022",
+    "race": "NN Maraton Warszawski",
+    "dist_m": 42195,
+    "year": 2022,
+    "count": 3711,
+    "avg_time": "04:11:57",
+    "avg_speed_kmh": null
+  },
+  {
+    "label": "NN Maraton Warszawski 2023",
+    "race": "NN Maraton Warszawski",
+    "dist_m": 42195,
+    "year": 2023,
+    "count": 5556,
+    "avg_time": "04:12:48",
+    "avg_speed_kmh": null
+  },
+  {
+    "label": "NN Maraton Warszawski 2024",
+    "race": "NN Maraton Warszawski",
+    "dist_m": 42195,
+    "year": 2024,
+    "count": 7079,
+    "avg_time": "04:09:55",
+    "avg_speed_kmh": null
+  },
+  {
+    "label": "NN Maraton Warszawski 2025",
+    "race": "NN Maraton Warszawski",
+    "dist_m": 42195,
+    "year": 2025,
+    "count": 9543,
+    "avg_time": "04:05:52",
+    "avg_speed_kmh": null
   }
 ]

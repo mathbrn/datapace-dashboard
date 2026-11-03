@@ -1,6 +1,16 @@
 {
   "updates": [
     {
+      "event": "NN Maraton Warszawski",
+      "date": "2025-09-28",
+      "data": {
+        "avg_time": "4:05:52",
+        "winner_men": "2:11:21",
+        "winner_women": "2:33:41"
+      },
+      "timestamp": "2026-11-03T14:10:23Z"
+    },
+    {
       "event": "Royal Parks Half Marathon",
       "date": "2024-01-01",
       "data": {
