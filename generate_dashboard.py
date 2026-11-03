@@ -676,6 +676,34 @@ function colDist(r){return lc(r.d==='5KM'?'#AC14D7':r.d==='10KM'?'#5CDFA0':r.d==
 // organisateur plutot que d'en recevoir un approximatif.
 function eventOrg(name){if(typeof EVENT_ORGANIZERS==='undefined')return '';return EVENT_ORGANIZERS[name]||'';}
 function eventOrgTxt(name){return eventOrg(name)||'\u2014';}
+// Pays d'une epreuve, depuis event_countries.json. Une epreuve absente du
+// fichier n'a pas de pays : elle sort des listes et n'est gardee que par
+// « Tous », jamais attribuee a un pays par defaut.
+function eventPays(name){if(typeof EVENT_COUNTRIES==='undefined')return '';var i=EVENT_COUNTRIES[name];return (i&&i.pays)?i.pays:'';}
+// Les trois listes de pays sont construites a partir des epreuves presentes
+// dans RAW, pas des 79 pays du fichier : proposer un pays sans epreuve
+// affichable donnerait un tableau vide.
+function peuplePays(){
+  var drapeaux={};
+  RAW.forEach(function(r){
+    var p=eventPays(r.r);
+    if(!p)return;
+    if(!(p in drapeaux))drapeaux[p]=eventFlag(r.r)||'';
+  });
+  var noms=Object.keys(drapeaux).sort(function(a,b){return a.localeCompare(b,'fr');});
+  ['pays-data','pays-trends','pays-biggest'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(!el)return;
+    var avant=el.value;
+    var html='<option value="ALL">Tous</option>';
+    noms.forEach(function(p){
+      html+='<option value="'+p.replace(/"/g,'&quot;')+'">'
+           +(drapeaux[p]?drapeaux[p]+' ':'')+p+'</option>';
+    });
+    el.innerHTML=html;
+    if(avant)el.value=avant;
+  });
+}
 function eventFlag(name){if(typeof EVENT_COUNTRIES==='undefined')return '';var info=EVENT_COUNTRIES[name];return info&&info.flag?info.flag:'';}
 function twemojify(el){try{if(typeof twemoji!=='undefined'){twemoji.parse(el||document.body,{folder:'svg',ext:'.svg'});}}catch(e){}}
 var CIRC_COLORS={WMM:'#38BDF8',ASO:'#E30613',EMC:'#F87171',L5G:'#DC2626'};
@@ -1143,13 +1171,13 @@ function getFilterParts(tabId){
   var parts=[];
   function add(id){var el=document.getElementById(id);if(el&&el.value&&el.value!=='ALL')parts.push(safeFn(el.value));}
   if(tabId==='data'){
-    add('dist-data');add('region-data');add('size-data');
+    add('dist-data');add('region-data');add('pays-data');add('size-data');
     var s=document.getElementById('search-data');if(s&&s.value)parts.push(safeFn(s.value));
   }else if(tabId==='trends'){
-    add('dist-trends');add('region-trends');
+    add('dist-trends');add('region-trends');add('pays-trends');
     var n=document.getElementById('topn-trends');if(n)parts.push('top'+n.value);
   }else if(tabId==='biggest'){
-    add('dist-biggest');add('region-biggest');
+    add('dist-biggest');add('region-biggest');add('pays-biggest');
     var nb=document.getElementById('topn-biggest');if(nb)parts.push('top'+nb.value);
     add('year-biggest');
   }else if(tabId==='temps'){
@@ -1464,7 +1492,8 @@ function updateTrends(){
   var dist=document.getElementById('dist-trends').value;
   var topn=parseInt(document.getElementById('topn-trends').value);
   var region=document.getElementById('region-trends').value;
-  var src=RAW.filter(function(r){if(dist!=='ALL'&&r.d!==dist)return false;if(region!=='ALL'&&r.rg!==region)return false;return true;});
+  var pays=(document.getElementById('pays-trends')||{}).value||'ALL';
+  var src=RAW.filter(function(r){if(dist!=='ALL'&&r.d!==dist)return false;if(region!=='ALL'&&r.rg!==region)return false;if(pays!=='ALL'&&eventPays(r.r)!==pays)return false;return true;});
   if(cT)cT.destroy();
   var sorted=src.slice().sort(function(a,b){
     var ka=Object.keys(a.hist||{}).map(Number).sort(function(x,y){return y-x;});
@@ -1547,7 +1576,8 @@ function trendLegClick(idx){biggestClick(idx);}
 function getBiggestSrc(){
   var dist=document.getElementById('dist-biggest').value;
   var region=document.getElementById('region-biggest').value;
-  return RAW.filter(function(r){if(dist!=='ALL'&&r.d!==dist)return false;if(region!=='ALL'&&r.rg!==region)return false;return true;});
+  var pays=(document.getElementById('pays-biggest')||{}).value||'ALL';
+  return RAW.filter(function(r){if(dist!=='ALL'&&r.d!==dist)return false;if(region!=='ALL'&&r.rg!==region)return false;if(pays!=='ALL'&&eventPays(r.r)!==pays)return false;return true;});
 }
 
 function initBiggestYears(){
@@ -1689,6 +1719,7 @@ function filterTable(){
   var sizeFilter=document.getElementById('size-data').value;
   var periode=document.getElementById('afficher-data').value;
   var region=document.getElementById('region-data').value;
+  var pays=(document.getElementById('pays-data')||{}).value||'ALL';
   var thead=document.getElementById('table-head-row');
   var tbl=document.getElementById('data-table');
   // Determine year range
@@ -1703,6 +1734,7 @@ function filterTable(){
     if(dist!=='ALL'&&r.d!==dist)return false;
     if(month!=='ALL'&&r.p!==month)return false;
     if(region!=='ALL'&&r.rg!==region)return false;
+    if(pays!=='ALL'&&eventPays(r.r)!==pays)return false;
     // La recherche porte sur l'epreuve, la ville ET l'organisateur :
     // taper « Amaury » sort les courses d'Amaury Sport Organisation.
     if(q&&r.r.toLowerCase().indexOf(q)<0&&r.c.toLowerCase().indexOf(q)<0
@@ -1768,6 +1800,8 @@ function filterTable(){
   if(month!=='ALL')activeFilters++;
   if(badge!=='ALL')activeFilters++;
   if(sizeFilter!=='ALL')activeFilters++;
+  if(region!=='ALL')activeFilters++;
+  if(pays!=='ALL')activeFilters++;
   if(periode!=='all'&&periode!=='3')activeFilters++;
   var resetBtn=document.getElementById('reset-filters');
   if(resetBtn)resetBtn.style.display=activeFilters>0?'inline-flex':'none';
@@ -1782,6 +1816,8 @@ function resetFilters(){
   document.getElementById('month-data').value='ALL';
   document.getElementById('badge-data').value='ALL';
   document.getElementById('size-data').value='ALL';
+  document.getElementById('region-data').value='ALL';
+  var pd=document.getElementById('pays-data');if(pd)pd.value='ALL';
   document.getElementById('sort-data').value='finishers';
   document.getElementById('afficher-data').value='3';
   filterTable();
@@ -2155,6 +2191,7 @@ function spSelect(brandId){
   det.style.display='flex';
 }
 
+try{peuplePays();}catch(e){console.error('peuplePays error:',e);}
 try{initBiggestYears();}catch(e){console.error('initBiggestYears error:',e);}
 try{filterTable();}catch(e){console.error('filterTable error:',e);}
 
@@ -2896,6 +2933,11 @@ HTML_BODY = """
         <option value="ALL">Toutes</option><option>Europe</option><option>Am&eacute;rique du Nord</option><option>Asie</option><option>Oc&eacute;anie</option><option>Moyen-Orient</option><option>Am&eacute;rique du Sud</option><option>Afrique</option>
       </select>
     </div>
+    <div class="ctrl-group"><span class="ctrl-label">Pays</span>
+      <select id="pays-trends" onchange="updateTrends()">
+        <option value="ALL">Tous</option>
+      </select>
+    </div>
     <div class="ctrl-group"><span class="ctrl-label">Top evenements</span>
       <select id="topn-trends" onchange="updateTrends()">
         <option value="8">Top 8</option><option value="12">Top 12</option><option value="16">Top 16</option><option value="20">Top 20</option>
@@ -2922,6 +2964,11 @@ HTML_BODY = """
     <div class="ctrl-group"><span class="ctrl-label">R&eacute;gion</span>
       <select id="region-biggest" onchange="initBiggestYears();updateBiggest()">
         <option value="ALL">Toutes</option><option>Europe</option><option>Am&eacute;rique du Nord</option><option>Asie</option><option>Oc&eacute;anie</option><option>Moyen-Orient</option><option>Am&eacute;rique du Sud</option><option>Afrique</option>
+      </select>
+    </div>
+    <div class="ctrl-group"><span class="ctrl-label">Pays</span>
+      <select id="pays-biggest" onchange="initBiggestYears();updateBiggest()">
+        <option value="ALL">Tous</option>
       </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Top N</span>
@@ -3085,6 +3132,11 @@ HTML_BODY = """
     <div class="ctrl-group"><span class="ctrl-label">R&eacute;gion</span>
       <select id="region-data" onchange="filterTable()">
         <option value="ALL">Toutes</option><option>Europe</option><option>Am&eacute;rique du Nord</option><option>Asie</option><option>Oc&eacute;anie</option><option>Moyen-Orient</option><option>Am&eacute;rique du Sud</option><option>Afrique</option>
+      </select>
+    </div>
+    <div class="ctrl-group"><span class="ctrl-label">Pays</span>
+      <select id="pays-data" onchange="filterTable()">
+        <option value="ALL">Tous</option>
       </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Circuit</span>
