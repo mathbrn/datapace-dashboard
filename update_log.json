@@ -1,6 +1,302 @@
 {
   "updates": [
     {
+      "event": "Gasparilla Distance Classic",
+      "date": "2004-01-01",
+      "data": {
+        "finishers": 1141
+      },
+      "timestamp": "2026-11-03T10:37:13Z"
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "date": "2020-01-01",
+      "data": {
+        "finishers": 4186
+      },
+      "timestamp": "2026-11-03T10:36:55Z"
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "date": "2019-01-01",
+      "data": {
+        "finishers": 4873
+      },
+      "timestamp": "2026-11-03T10:36:54Z"
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "date": "2018-01-01",
+      "data": {
+        "finishers": 5290
+      },
+      "timestamp": "2026-11-03T10:36:54Z"
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "date": "2017-01-01",
+      "data": {
+        "finishers": 5475
+      },
+      "timestamp": "2026-11-03T10:36:53Z"
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "date": "2016-01-01",
+      "data": {
+        "finishers": 5736
+      },
+      "timestamp": "2026-11-03T10:36:52Z"
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "date": "2015-01-01",
+      "data": {
+        "finishers": 5635
+      },
+      "timestamp": "2026-11-03T10:36:51Z"
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "date": "2014-01-01",
+      "data": {
+        "finishers": 5353
+      },
+      "timestamp": "2026-11-03T10:36:51Z"
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "date": "2013-01-01",
+      "data": {
+        "finishers": 4438
+      },
+      "timestamp": "2026-11-03T10:36:50Z"
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "date": "2012-01-01",
+      "data": {
+        "finishers": 4772
+      },
+      "timestamp": "2026-11-03T10:36:49Z"
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "date": "2011-01-01",
+      "data": {
+        "finishers": 4826
+      },
+      "timestamp": "2026-11-03T10:36:48Z"
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "date": "2010-01-01",
+      "data": {
+        "finishers": 3902
+      },
+      "timestamp": "2026-11-03T10:36:47Z"
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "date": "2009-01-01",
+      "data": {
+        "finishers": 3449
+      },
+      "timestamp": "2026-11-03T10:36:46Z"
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "date": "2008-01-01",
+      "data": {
+        "finishers": 2300
+      },
+      "timestamp": "2026-11-03T10:36:46Z"
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "date": "2007-01-01",
+      "data": {
+        "finishers": 2075
+      },
+      "timestamp": "2026-11-03T10:36:45Z"
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "date": "2006-01-01",
+      "data": {
+        "finishers": 1771
+      },
+      "timestamp": "2026-11-03T10:36:44Z"
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "date": "2005-01-01",
+      "data": {
+        "finishers": 1593
+      },
+      "timestamp": "2026-11-03T10:36:43Z"
+    },
+    {
+      "event": "Flying Pig Marathon",
+      "date": "2019-01-01",
+      "data": {
+        "finishers": 3887
+      },
+      "timestamp": "2026-11-03T10:36:40Z"
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "date": "2019-01-01",
+      "data": {
+        "finishers": 3422
+      },
+      "timestamp": "2026-11-03T10:36:37Z"
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "date": "2018-01-01",
+      "data": {
+        "finishers": 3572
+      },
+      "timestamp": "2026-11-03T10:36:36Z"
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "date": "2017-01-01",
+      "data": {
+        "finishers": 3439
+      },
+      "timestamp": "2026-11-03T10:36:35Z"
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "date": "2016-01-01",
+      "data": {
+        "finishers": 3662
+      },
+      "timestamp": "2026-11-03T10:36:35Z"
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "date": "2015-01-01",
+      "data": {
+        "finishers": 4214
+      },
+      "timestamp": "2026-11-03T10:36:34Z"
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "date": "2014-01-01",
+      "data": {
+        "finishers": 4559
+      },
+      "timestamp": "2026-11-03T10:36:33Z"
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "date": "2013-01-01",
+      "data": {
+        "finishers": 4674
+      },
+      "timestamp": "2026-11-03T10:36:32Z"
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "date": "2012-01-01",
+      "data": {
+        "finishers": 5548
+      },
+      "timestamp": "2026-11-03T10:36:32Z"
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "date": "2011-01-01",
+      "data": {
+        "finishers": 4282
+      },
+      "timestamp": "2026-11-03T10:36:31Z"
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "date": "2010-01-01",
+      "data": {
+        "finishers": 4038
+      },
+      "timestamp": "2026-11-03T10:36:30Z"
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "date": "2009-01-01",
+      "data": {
+        "finishers": 3464
+      },
+      "timestamp": "2026-11-03T10:36:29Z"
+    },
+    {
+      "event": "Cooper River Bridge Run",
+      "date": "2001-01-01",
+      "data": {
+        "finishers": 13723
+      },
+      "timestamp": "2026-11-03T10:36:24Z"
+    },
+    {
+      "event": "Cooper River Bridge Run",
+      "date": "2000-01-01",
+      "data": {
+        "finishers": 14051
+      },
+      "timestamp": "2026-11-03T10:36:23Z"
+    },
+    {
+      "event": "Broad Street Run",
+      "date": "2001-01-01",
+      "data": {
+        "finishers": 7106
+      },
+      "timestamp": "2026-11-03T10:36:20Z"
+    },
+    {
+      "event": "Broad Street Run",
+      "date": "2000-01-01",
+      "data": {
+        "finishers": 6692
+      },
+      "timestamp": "2026-11-03T10:36:19Z"
+    },
+    {
+      "event": "Bay to Breakers",
+      "date": "2001-01-01",
+      "data": {
+        "finishers": 32655
+      },
+      "timestamp": "2026-11-03T10:36:16Z"
+    },
+    {
+      "event": "Bay to Breakers",
+      "date": "2000-01-01",
+      "data": {
+        "finishers": 39456
+      },
+      "timestamp": "2026-11-03T10:36:15Z"
+    },
+    {
+      "event": "BOLDERBoulder 10K",
+      "date": "2001-01-01",
+      "data": {
+        "finishers": 40742
+      },
+      "timestamp": "2026-11-03T10:36:13Z"
+    },
+    {
+      "event": "BOLDERBoulder 10K",
+      "date": "2000-01-01",
+      "data": {
+        "finishers": 30706
+      },
+      "timestamp": "2026-11-03T10:36:12Z"
+    },
+    {
       "event": "TCS New York City Marathon",
       "date": "2026-11-01",
       "data": {
