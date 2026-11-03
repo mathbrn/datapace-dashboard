@@ -1090,11 +1090,72 @@ Modifier le nom dans TOUS les emplacements listes dans "Ou sont stockes les noms
 6. **Temps moyen** : Comparaison des temps moyens par distance et annee
 7. **Winners Times** : Graphique des temps vainqueurs H/F par distance
 
+## Backfill d'historique : ce qui marche, et les sept impasses mesurees
+
+**Le constat structurel, a lire avant de reprendre un backfill.** Les cellules
+vides du dashboard sont massivement **anterieures a 2010**, et les plateformes
+de chronometrage **ne sont pas des archives** : elles servent la ou les deux
+dernieres editions et laissent tomber le reste. Seul un agregateur conserve
+l'historique. C'est pourquoi Athlinks a rendu 37 cellules (jusqu'a 54 editions
+par epreuve) et pourquoi les sept pistes suivantes en ont rendu zero.
+
+Scripts en place, relancables :
+- `backfill_athlinks.py` — une requete par epreuve, tout l'historique d'un bloc
+- `backfill_toutes_annees.py --plateformes x,y` — une requete par annee, pour
+  les plateformes qui n'ont pas d'equivalent
+- `backfill_warszawski.py` — les PDF officiels de Varsovie
+
+### Rendement mesure du 3 novembre 2026
+| Source | Cellules visees | Rendu | Motif |
+|---|---|---|---|
+| Athlinks | 67 | **37** | archive, jusqu'a 54 editions par epreuve |
+| mikatiming + sporthive | 303 annees tentees | **6** | catalogues recents |
+| STS-Timing (Varsovie) | 19 | 0 finisher, **11 autres donnees** | PDF officiels 2018-2025, mais les trous sont 2000-2010 |
+| Sporthive | 84 | 1 | catalogue par organisateur limite a **2021-2026**, 16 editions ; Le Champion et Golazo ont `organizationId: null` donc aucun catalogue |
+| Tracx | 43 | 0 | rien avant 2021, pas meme Hong Kong 2022-2024 |
+| NYRR | 4 | 0 | aucun code avant 2014, Brooklyn 2018 introuvable apres 10 motifs |
+| RunSignup | 16 | 0 | Ukrop's n'y est que depuis **2021** (trous : 2000-2009, 2016) et NYCRUNS n'y est pas du tout |
+| Ultimate (Copenhague) | 11 | 0 | `mode=results` ne rend rien, et l'archive officielle de copenhagenmarathon.dk ne remonte qu'a **2022** (trous : 2000-2007, 2015-2019) |
+| ENDU (Rome, Milan) | 11 | 0 | `/events/{slug}/results` repond 404 |
+| Mararun (Pekin) | 20 | 0 | resultats derriere un **captcha** et une recherche par dossard ; `/v1/match/lists` ne porte aucun compteur (`realCnt: "0"`) |
+| Splittime (Istanbul) | 11 | 0 | maraton.istanbul derriere un challenge Cloudflare (403) |
+
+### Trois sources fermees par leur robots.txt — ne pas les crawler
+- **marathonview.net** : `Disallow: /` pour `ClaudeBot`, `Claude-Web` et
+  `anthropic-ai`. C'etait la piste la plus large (500+ series avec historique
+  annuel complet, le tableau se lit par Playwright). Elle est explicitement
+  interdite : ne pas l'exploiter, meme si la page repond.
+- **sportmaniacs.com** : `Disallow: /races/*/*/results` pour tout agent. Les 49
+  cellules des quatre epreuves espagnoles sont hors d'atteinte.
+- **smartchip.co.kr** (Seoul, 21 cellules) : `Disallow: /` pour `ClaudeBot`.
+
+**Verifier robots.txt AVANT d'ecrire un scraper** : trois des pistes les plus
+prometteuses se sont revelees interdites apres coup. Et lire le fichier
+decompresse (sportmaniacs le sert en gzip, un `curl` sans `--compressed` rend
+du binaire illisible).
+
+### Le garde-fou de vraisemblance, a reutiliser
+`vraisemblable()` dans `backfill_athlinks.py` compare un candidat a la mediane
+des trois annees connues les plus proches et refuse en dessous de 40 % ou
+au-dela de 300 %. Il existe parce que `ResultCount` chez Athlinks est le nombre
+de resultats **detenus**, pas le nombre d'arrivants : 4 582 pour la Peachtree
+Road Race 2000, qui en compte 50 000, et 703 pour Lilac Bloomsday 2002, qui en
+compte 48 000. Seize valeurs de ce type ont ete refusees. **Tout backfill
+d'historique doit passer par ce controle** : un import partiel ressemble
+exactement a une petite edition ancienne.
+
+Relancer un backfill deux fois est utile : une valeur acceptee devient
+reference pour ses voisines (c'est ce qui a debloque Gasparilla 2004).
+
 ## ARBITRAGES EN ATTENTE (a rappeler a l'utilisateur en debut de session)
 
 Trois points mis au jour par l'audit du rapprochement des noms d'epreuve
 (23 octobre), que l'utilisateur a choisi de traiter plus tard :
 
+0. **Maraton Warszawski 2020** : la cellule porte « - » (annulee), mais le PDF
+   officiel de l'edition existe et donne **853 arrivants** — elle a eu lieu en
+   format reduit. Rien n'a ete ecrit. Completer la serie avec 853, ou laisser
+   « annulee » ?
 1. **Doublon d'epreuve** : `Kuala Lampur Standard Chartered Marathon` et
    `Standard Chartered KL Marathon` sont deux lignes de l'onglet ALL pour la
    meme course. A fusionner ? Seule la seconde porte des partenaires.
