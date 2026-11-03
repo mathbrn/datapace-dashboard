@@ -328,8 +328,8 @@
       "event": "TCS Amsterdam Marathon",
       "year": 2026,
       "platform": "sporthive",
-      "finishers": 23669,
-      "avg_time": "03:55:15",
+      "finishers": 23670,
+      "avg_time": "03:52:38",
       "winner_men": null,
       "winner_women": null,
       "ecrit": null
@@ -338,8 +338,8 @@
       "event": "TCS Mizuno Half Marathon",
       "year": 2026,
       "platform": "sporthive",
-      "finishers": 12780,
-      "avg_time": "01:59:33",
+      "finishers": 12781,
+      "avg_time": "02:02:09",
       "winner_men": null,
       "winner_women": null,
       "ecrit": null
@@ -595,7 +595,7 @@
   "errors": [
     {
       "stage": "worldathletics",
-      "error": "HTTPSConnectionPool(host='graphql-prod-4860.edge.aws.worldathletics.org', port=443): Max retries exceeded with url: /graphql (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 502 Bad Gateway')))"
+      "error": "HTTPSConnectionPool(host='graphql-prod-4860.edge.aws.worldathletics.org', port=443): Max retries exceeded with url: /graphql (Caused by NameResolutionError(\"HTTPSConnection(host='graphql-prod-4860.edge.aws.worldathletics.org', port=443): Failed to resolve 'graphql-prod-4860.edge.aws.worldathletics.org' ([Errno -2] Name or service not known)\"))"
     }
   ],
   "mode": "fallback_no_calendar",
