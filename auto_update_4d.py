@@ -1218,52 +1218,93 @@ def _nyrr_vainqueur(sess, code, genre):
     return min(lignes, key=lambda x: _nyrr_sec(x["overallTime"])).get("overallTime")
 
 
-def _nyrr_moyenne(sess, code, total, plafond=70000):
+def _nyrr_cellule(sess, code, age, genre, budget):
+    """Tous les arrivants d'un age et d'un sexe, malgre le plafond de 500.
+
+    Une requete ne rend jamais plus de 500 lignes : au-dela de pageIndex 5
+    avec pageSize 100, l'API repond 400 (« Please use the advanced filter to
+    find more »). Les deux sens de tri donnent donc 1000 au plus. Les
+    cellules plus peuplees — une vingtaine sur le marathon de New York, qui
+    monte a 1256 pour les hommes de 30 ans — sont completees par
+    `searchString`, filtre sur le nom : une lettre rend un sous-ensemble
+    assez petit pour tenir sous le plafond. Les sous-ensembles se recouvrent,
+    la deduplication par runnerId s'en charge, et on s'arrete des que la
+    cellule est complete.
+    """
+    base = {"eventCode": code, "pageSize": 100, "ageFrom": age, "ageTo": age,
+            "gender": genre}
+    j = _nyrr_post(sess, dict(base, pageIndex=1, sortColumn="overallTime",
+                              sortDescending=False))
+    budget[0] -= 1
+    if not j:
+        return {}, 0
+    cell = j.get("totalItems") or 0
+    if not cell:
+        return {}, 0
+    vus = {x.get("runnerId"): x.get("overallTime") for x in (j.get("items") or [])}
+    for descendant in (False, True):
+        for page in range(2, 6):
+            if len(vus) >= cell or budget[0] <= 0:
+                break
+            k = _nyrr_post(sess, dict(base, pageIndex=page,
+                                      sortColumn="overallTime",
+                                      sortDescending=descendant))
+            budget[0] -= 1
+            if not k:
+                break
+            for x in (k.get("items") or []):
+                vus[x.get("runnerId")] = x.get("overallTime")
+    for lettre in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+        if len(vus) >= cell or budget[0] <= 0:
+            break
+        for page in range(1, 6):
+            if budget[0] <= 0:
+                break
+            k = _nyrr_post(sess, dict(base, pageIndex=page, searchString=lettre,
+                                      sortColumn="overallTime",
+                                      sortDescending=False))
+            budget[0] -= 1
+            if not k:
+                break
+            lignes = k.get("items") or []
+            for x in lignes:
+                vus[x.get("runnerId")] = x.get("overallTime")
+            if len(lignes) < 100:
+                break
+    return vus, cell
+
+
+def _nyrr_moyenne(sess, code, total, plafond=70000, budget_requetes=4000):
     """Temps moyen du classement entier, par cellules (age, sexe).
 
-    L'API plafonne a 500 resultats par requete (« Please use the advanced
-    filter to find more ») : au-dela de pageIndex 5 avec pageSize 100 elle
-    repond 400. Les couples (age, sexe) partitionnent le classement, et les
-    cellules de plus de 500 coureurs sont lues dans les deux sens de tri, ce
-    qui couvre jusqu'a 1000. La moyenne n'est rendue qu'au-dela de 99,5 % du
-    total annonce ; sinon on prefere ne rien ecrire.
+    La moyenne n'est rendue qu'au-dela de 99,5 % du total annonce : en
+    dessous, mieux vaut pas de temps moyen qu'un temps moyen fausse par les
+    coureurs manquants, qui ne sont pas repartis au hasard (ce sont les
+    tranches d'age les plus peuplees).
     """
     if not total or total > plafond:
         print(f"    NYRR {code}: temps moyen non calcule ({total} arrivants, plafond {plafond})")
         return None, 0
-    vus = {}
+    budget = [budget_requetes]
+    vus, somme_cellules = {}, 0
     for age in range(0, 100):
         for genre in ("M", "W"):
-            base = {"eventCode": code, "pageSize": 100, "ageFrom": age,
-                    "ageTo": age, "gender": genre}
-            j = _nyrr_post(sess, dict(base, pageIndex=1,
-                                      sortColumn="overallTime", sortDescending=False))
-            if not j:
-                continue
-            cell = j.get("totalItems") or 0
-            if not cell:
-                continue
-            for x in (j.get("items") or []):
-                vus[x.get("runnerId")] = x.get("overallTime")
-            for descendant in (False, True):
-                page = 2
-                while len(vus) < total and page <= 5:
-                    k = _nyrr_post(sess, dict(base, pageIndex=page,
-                                              sortColumn="overallTime",
-                                              sortDescending=descendant))
-                    if not k:
-                        break
-                    for x in (k.get("items") or []):
-                        vus[x.get("runnerId")] = x.get("overallTime")
-                    page += 1
-                page = 2
-    chronos = [_nyrr_sec(t) for t in vus.values() if _nyrr_sec(t)]
+            if budget[0] <= 0:
+                break
+            cellule, cell = _nyrr_cellule(sess, code, age, genre, budget)
+            vus.update(cellule)
+            somme_cellules += cell
+        if budget[0] <= 0:
+            print(f"    NYRR {code}: budget de requetes epuise a l'age {age}")
+            break
+    chronos = [_nyrr_sec(x) for x in vus.values() if _nyrr_sec(x)]
     couverture = len(vus) / total if total else 0
     if couverture < 0.995 or not chronos:
         print(f"    NYRR {code}: temps moyen ecarte, couverture {couverture:.1%} "
               f"({len(vus)}/{total})")
         return None, len(chronos)
     a = sum(chronos) / len(chronos)
+    print(f"    NYRR {code}: couverture {couverture:.1%} sur {total} arrivants")
     return "%02d:%02d:%02d" % (a // 3600, a % 3600 // 60, a % 60), len(chronos)
 
 
