@@ -1206,7 +1206,7 @@ function getFilterParts(tabId){
     add('dist-trends');add('region-trends');add('pays-trends');
     var n=document.getElementById('topn-trends');if(n)parts.push('top'+n.value);
   }else if(tabId==='biggest'){
-    add('dist-biggest');add('region-biggest');add('pays-biggest');
+    add('dist-biggest');add('region-biggest');add('pays-biggest');add('vue-biggest');
     var nb=document.getElementById('topn-biggest');if(nb)parts.push('top'+nb.value);
     add('year-biggest');
   }else if(tabId==='temps'){
@@ -1606,7 +1606,20 @@ function getBiggestSrc(){
   var dist=document.getElementById('dist-biggest').value;
   var region=document.getElementById('region-biggest').value;
   var pays=(document.getElementById('pays-biggest')||{}).value||'ALL';
-  return RAW.filter(function(r){if(dist!=='ALL'&&r.d!==dist)return false;if(region!=='ALL'&&r.rg!==region)return false;if(pays!=='ALL'&&eventPays(r.r)!==pays)return false;return true;});
+  var vue=(document.getElementById('vue-biggest')||{}).value||'event';
+  // En vue par evenement la distance est appliquee APRES regroupement : la
+  // filtrer avant retirerait les autres distances de l'evenement et son total
+  // deviendrait partiel sans le dire.
+  var src=RAW.filter(function(r){
+    if(vue!=='event'&&dist!=='ALL'&&r.d!==dist)return false;
+    if(region!=='ALL'&&r.rg!==region)return false;
+    if(pays!=='ALL'&&eventPays(r.r)!==pays)return false;
+    return true;});
+  if(vue!=='event')return src;
+  src=grouperEvenements(src);
+  if(dist!=='ALL')src=src.filter(function(r){
+    return r.lignes?r.lignes.some(function(x){return x.d===dist;}):r.d===dist;});
+  return src;
 }
 
 function initBiggestYears(){
@@ -1622,6 +1635,17 @@ function initBiggestYears(){
 }
 
 function colDistOnly(r){return lc(r.d==='5KM'?'#AC14D7':r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':r.d==='AUTRE'?'#F472B6':'#2563EB');}
+// Un evenement n'a pas de distance propre : il prend la couleur de celle qui
+// pese le plus lourd l'annee affichee, et le clic ouvre la Vue d'ensemble sur
+// cette meme ligne, cet onglet raisonnant par couple (epreuve, distance).
+function plusGrosse(r,yr){
+  if(!r.lignes)return r;
+  var g=null,mx=-1;
+  r.lignes.forEach(function(x){var v=(x.hist||{})[yr]||0;if(v>mx){mx=v;g=x;}});
+  return g||r.lignes[0];
+}
+function colEvt(r,yr){return colDistOnly(plusGrosse(r,yr));}
+function idxEvt(r,yr){return RAW.indexOf(plusGrosse(r,yr));}
 function updateBiggest(){
   var n=parseInt(document.getElementById('topn-biggest').value);
   var yr=parseInt(document.getElementById('year-biggest').value);
@@ -1632,14 +1656,22 @@ function updateBiggest(){
   sorted.forEach(function(r,i){
     var v=(r.hist||{})[yr];
     var pct=(v/maxVal*80+5).toFixed(1);
-    var barCol=colDistOnly(r);
+    var barCol=colEvt(r,yr);
     var rank=String(i+1).padStart(2,'0');
     var valInside=pct>25;
-    var valLabel=fmtFull(v);
-    var idx=RAW.indexOf(r);
-    var cBdg=circBadges(r);
-    html+='<div class="time-bar-row bt-row" data-name="'+r.r.replace(/"/g,'&quot;')+'" data-city="'+(r.c||'').replace(/"/g,'&quot;')+'" data-val="'+valLabel+' finishers" data-idx="'+idx+'" onclick="biggestClick('+idx+')">'
-      +'<div class="time-bar-label" title="'+r.r+'"><span class="time-bar-rank">'+rank+'</span> \u00b7 '+r.r+cBdg+'</div>'
+    var abs=r.lignes?((r.manque||{})[yr]||[]):[];
+    var valLabel=fmtFull(v)+(abs.length?'<span style="color:#3B82F6">*</span>':'');
+    var idx=idxEvt(r,yr);
+    var cBdg=(r.lignes?evtChips(r.lignes):'')+circBadges(r);
+    var lblMq='';
+    if(abs.length){
+      var nbp=r.lignes.length-abs.length;
+      var lb={MARATHON:'marathon',SEMI:'semi','10KM':'10 km','5KM':'5 km',AUTRE:'autre'};
+      lblMq=' \u2014 somme de '+nbp+' distance'+(nbp>1?'s':'')+' sur '+r.lignes.length
+        +', manque : '+abs.map(function(d){return lb[d]||d;}).join(', ');
+    }
+    html+='<div class="time-bar-row bt-row" data-name="'+r.r.replace(/"/g,'&quot;')+'" data-city="'+(r.c||'').replace(/"/g,'&quot;')+'" data-val="'+fmtFull(v)+' finishers" data-idx="'+idx+'" onclick="biggestClick('+idx+')">'
+      +'<div class="time-bar-label" title="'+r.r+lblMq+'"><span class="time-bar-rank">'+rank+'</span> \u00b7 '+r.r+cBdg+'</div>'
       +'<div class="time-bar-track"><div class="time-bar-fill" style="width:'+pct+'%;background:'+barCol+'cc">'+(valInside?valLabel:'')+'</div></div>'
       +'<div class="time-bar-val">'+(valInside?'':valLabel)+'</div></div>';
   });
@@ -3128,6 +3160,12 @@ HTML_BODY = """
 </div>
 <div id="panel-biggest" class="panel">
   <div class="controls">
+    <div class="ctrl-group"><span class="ctrl-label">Vue</span>
+      <select id="vue-biggest" onchange="initBiggestYears();updateBiggest()">
+        <option value="event" selected>Par &eacute;v&eacute;nement</option>
+        <option value="race">Par course</option>
+      </select>
+    </div>
     <div class="ctrl-group"><span class="ctrl-label">Distance</span>
       <select id="dist-biggest" onchange="initBiggestYears();updateBiggest()">
         <option value="ALL">Toutes distances</option>
@@ -3153,7 +3191,7 @@ HTML_BODY = """
       <select id="year-biggest" onchange="updateBiggest()"></select>
     </div>
   </div>
-  <div class="section-title">Top evenements par nombre de finishers</div>
+  <div class="section-title" id="biggest-title">Top evenements par nombre de finishers</div>
   <div class="legend">
     <span class="leg-item"><span class="leg-dot" style="background:#2563EB"></span>Marathon</span>
     <span class="leg-item"><span class="leg-dot" style="background:#FF8A50"></span>Semi-marathon</span>
