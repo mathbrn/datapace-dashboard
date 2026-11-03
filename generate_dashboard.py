@@ -1711,6 +1711,73 @@ function applyFrozen(tbl){
   }
 }
 
+// ── VUE PAR EVENEMENT ────────────────────────────────────────────────────────
+// Le dashboard tient une ligne par couple (epreuve, distance), mais 539 des
+// 859 epreuves courent plusieurs distances : sans total d'evenement on ne
+// peut comparer que des courses, jamais des evenements.
+//
+// Trois regles decidees avec l'utilisateur :
+// 1. un total incomplet — une distance sans valeur cette annee-la — est
+//    affiche mais MARQUE, avec le detail en infobulle. 58 % des couples
+//    (evenement, annee) sont dans ce cas, et un classement qui les melange
+//    aux totaux complets est faux sans le dire ;
+// 2. les ekidens et relais ne sont jamais agreges : ils comptent des equipes,
+//    pas des coureurs. Leurs lignes restent affichees une par une ;
+// 3. un evenement sans aucune donnee n'apparait pas en vue par evenement.
+var EVT_RELAIS=/ekiden|relais|relay/i;
+var evtOuverts={};
+function evtCle(nom){return 'evt_'+nom.replace(/[^A-Za-z0-9]/g,'_');}
+function evtBascule(cle){
+  evtOuverts[cle]=!evtOuverts[cle];
+  var ch=document.getElementById(cle+'_chev');
+  if(ch)ch.textContent=evtOuverts[cle]?'\u25BE':'\u25B8';
+  document.querySelectorAll('tr[data-parent="'+cle+'"]').forEach(function(tr){
+    tr.style.display=evtOuverts[cle]?'':'none';
+  });
+}
+// Chips de distance d'un evenement, dans l'ordre des distances.
+function evtChips(lignes){
+  var ordre={MARATHON:1,SEMI:2,'10KM':3,'5KM':4,AUTRE:5};
+  var lbl={MARATHON:'42K',SEMI:'21K','10KM':'10K','5KM':'5K',AUTRE:'Autre'};
+  return lignes.slice().sort(function(a,b){return(ordre[a.d]||9)-(ordre[b.d]||9);})
+    .map(function(r){var c=colDist(r);
+      return '<span class="badge" style="background:'+c+'18;color:'+c+';margin-right:3px">'
+             +(lbl[r.d]||r.d)+'</span>';}).join('');
+}
+// Regroupe les lignes par nom d'epreuve. Rend un tableau mele : pseudo-lignes
+// d'evenement (champ `lignes`) et lignes simples laissees telles quelles.
+function grouperEvenements(lignes){
+  var par={},ordre=[];
+  lignes.forEach(function(r){
+    if(!(r.r in par)){par[r.r]=[];ordre.push(r.r);}
+    par[r.r].push(r);
+  });
+  var out=[];
+  ordre.forEach(function(nom){
+    var g=par[nom];
+    if(g.length<2||EVT_RELAIS.test(nom)){out=out.concat(g);return;}
+    var hist={},manque={};
+    var annees={};
+    g.forEach(function(r){Object.keys(r.hist||{}).forEach(function(y){annees[y]=1;});});
+    Object.keys(annees).forEach(function(y){
+      var somme=0,vus=0,abs=[];
+      g.forEach(function(r){
+        var v=(r.hist||{})[y];
+        if(typeof v==='number'&&v>0){somme+=v;vus++;}
+        else if(v===undefined||v===null)abs.push(r.d);
+        // -1 annulee, -2 elite, -3 n'existait pas : ni somme ni manque
+      });
+      if(vus){hist[y]=somme;if(abs.length)manque[y]=abs;}
+    });
+    if(!Object.keys(hist).length)return;   // evenement sans aucune donnee
+    var ci={};g.forEach(function(r){(r.ci||[]).forEach(function(c){ci[c]=1;});});
+    out.push({r:nom,c:g[0].c,p:g[0].p,rg:g[0].rg,d:'EVENT',ci:Object.keys(ci),
+              fy:Math.min.apply(null,g.map(function(r){return r.fy||9999;})),
+              hist:hist,manque:manque,lignes:g});
+  });
+  return out;
+}
+
 function filterTable(){
   var q=(document.getElementById('search-data').value||'').toLowerCase();
   var dist=document.getElementById('dist-data').value;
@@ -1720,6 +1787,7 @@ function filterTable(){
   var periode=document.getElementById('afficher-data').value;
   var region=document.getElementById('region-data').value;
   var pays=(document.getElementById('pays-data')||{}).value||'ALL';
+  var vue=(document.getElementById('vue-data')||{}).value||'event';
   var thead=document.getElementById('table-head-row');
   var tbl=document.getElementById('data-table');
   // Determine year range
@@ -1731,7 +1799,10 @@ function filterTable(){
   globalYears.sort(function(a,b){return a-b;});
   // Filter races
   var f=RAW.filter(function(r){
-    if(dist!=='ALL'&&r.d!==dist)return false;
+    // En vue par evenement la distance est appliquee apres regroupement :
+    // filtrer ici retirerait les autres distances de l'evenement et le total
+    // deviendrait silencieusement partiel.
+    if(vue!=='event'&&dist!=='ALL'&&r.d!==dist)return false;
     if(month!=='ALL'&&r.p!==month)return false;
     if(region!=='ALL'&&r.rg!==region)return false;
     if(pays!=='ALL'&&eventPays(r.r)!==pays)return false;
@@ -1746,7 +1817,7 @@ function filterTable(){
       else{if(ci.indexOf(badge)<0)return false;}
     }
     // Size filter (based on peak finishers across visible years)
-    if(sizeFilter!=='ALL'){
+    if(sizeFilter!=='ALL'&&vue!=='event'){
       var peak=0;
       globalYears.forEach(function(y){var v=(r.hist||{})[y];if(v&&v>0&&v>peak)peak=v;});
       var sz=parseInt(sizeFilter);
@@ -1757,6 +1828,20 @@ function filterTable(){
     }
     return true;
   });
+  if(vue==='event'){
+    f=grouperEvenements(f);
+    if(dist!=='ALL')f=f.filter(function(r){
+      return r.lignes?r.lignes.some(function(x){return x.d===dist;}):r.d===dist;});
+    if(sizeFilter!=='ALL'){
+      var szE=parseInt(sizeFilter);
+      f=f.filter(function(r){
+        var peak=0;globalYears.forEach(function(y){var v=(r.hist||{})[y];if(v&&v>peak)peak=v;});
+        if(szE===20000)return peak>=20000;
+        if(szE===10000)return peak>=10000&&peak<20000;
+        if(szE===5000)return peak>=5000&&peak<10000;
+        return peak<5000;});
+    }
+  }
   // Sort
   var sortMode=document.getElementById('sort-data').value;
   var monthOrder={Janvier:1,Fevrier:2,Février:2,Mars:3,Avril:4,Mai:5,Juin:6,Juillet:7,Aout:8,Août:8,Septembre:9,Octobre:10,Novembre:11,Decembre:12,Décembre:12};
@@ -1769,9 +1854,14 @@ function filterTable(){
   var frozen=globalYears.length>4;
   if(tbl){tbl.classList.toggle('tbl-frozen',frozen);if(!frozen)tbl.style.tableLayout='';tbl.querySelectorAll('.frozen-cell').forEach(function(c){c.classList.remove('frozen-cell');c.style.position='';c.style.left='';c.style.zIndex='';c.style.minWidth='';c.style.width='';c.style.boxShadow='';});}
   var yrTh=globalYears.map(function(y){return frozen?'<th style="min-width:58px;width:58px;text-align:center;padding:7px 6px">'+y+'</th>':'<th>'+y+'</th>';}).join('');
-  if(thead)thead.innerHTML='<th>Mois</th><th>Ville</th><th>Organisateur</th><th>Distance</th><th>Epreuve</th>'+yrTh+'<th>Tendance</th>';
+  if(thead)thead.innerHTML='<th>Mois</th><th>Ville</th><th>Organisateur</th><th>'
+    +(vue==='event'?'Distances':'Distance')+'</th><th>'
+    +(vue==='event'?'Ev\u00e9nement':'Epreuve')+'</th>'+yrTh+'<th>Tendance</th>';
   var html='';
-  f.forEach(function(r){
+  // Rendu d'une ligne de course. `attrs` sert aux lignes filles d'un
+  // evenement (data-parent + display:none), `indent` les decale.
+  function ligneCourseHtml(r,attrs,indent){
+    attrs=attrs||'';indent=indent||0;
     var vals=globalYears.map(function(y){return(r.hist||{})[y]||null;}).filter(function(v){return v&&v>0&&!isNaN(v);});
     var t=vals.length>=2?delta(vals[0],vals[vals.length-1]):null;
     var tc=t===null?csVar('--text3'):t>=0?lc('#22C55E'):lc('#FF4A6B');
@@ -1783,12 +1873,64 @@ function filterTable(){
     var raceColor=colDist(r);
     var cBadges=circBadges(r);
     var org=eventOrg(r.r);
-    html+='<tr><td>'+r.p+'</td><td>'+(eventFlag(r.r)?eventFlag(r.r)+' ':'')+r.c+'</td>'
+    var h='<tr'+attrs+'><td>'+r.p+'</td><td>'+(eventFlag(r.r)?eventFlag(r.r)+' ':'')+r.c+'</td>'
       +'<td style="font-size:11px;'+(org?'':'color:var(--text3)')+'" title="'+(org||'')+'">'+(org||'\u2014')+'</td>'
       +'<td><span class="badge" style="background:'+raceColor+'18;color:'+raceColor+'">'+bl+'</span>'+cBadges+'</td>'
-      +'<td style="color:'+raceColor+'" title="'+r.r+'">'+r.r+'</td>'
+      +'<td style="color:'+raceColor+(indent?';padding-left:'+(10+indent*14)+'px':'')
+        +'" title="'+r.r+'">'+(indent?'\u21B3 ':'')+r.r+'</td>'
       +globalYears.map(function(y){var v=(r.hist||{})[y];var isFirst=r.fy&&y===r.fy;var starHtml=isFirst?'<span style="position:absolute;top:1px;left:2px;font-size:7px;color:'+raceColor+';opacity:0.7">\u2605</span>':'';if(v===-3)return'<td style="color:var(--text3);opacity:0.2">\u00b7</td>';if(v===-1)return'<td style="color:#FF4A6B;font-size:10px;font-style:italic;position:relative">'+starHtml+'Annul\u00e9</td>';if(v===-2)return'<td style="color:'+raceColor+';font-size:10px;font-style:italic;position:relative">'+starHtml+'Elite Only</td>';if(!v){var av=aVenir(r,y);if(av)return'<td title="Edition '+av+' '+y+'" style="color:#3B82F6;font-size:10px;font-style:italic;position:relative">'+starHtml+'\u00c0 venir</td>';}return'<td style="'+(v?'color:var(--text)':'')+';position:relative">'+starHtml+(v?fmtFull(v):'\u2014')+'</td>';}).join('')
       +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
+    return h;
+  }
+  // Rendu d'une ligne d'evenement : total par annee, marque quand une
+  // distance manque, et les lignes de distance pliees dessous.
+  function ligneEvenementHtml(r){
+    var cle=evtCle(r.r),ouvert=!!evtOuverts[cle];
+    var vals=globalYears.map(function(y){return(r.hist||{})[y]||null;})
+                        .filter(function(v){return v&&v>0;});
+    var tr=vals.length>=2?delta(vals[0],vals[vals.length-1]):null;
+    var tc=tr===null?csVar('--text3'):tr>=0?lc('#22C55E'):lc('#FF4A6B');
+    var tStr=tr===null?'-':(tr>=0?'+':'')+tr.toFixed(1)+'%';
+    var org=eventOrg(r.r);
+    var h='<tr style="cursor:pointer;font-weight:600" onclick="evtBascule(\\''+cle+'\\')">'
+      +'<td>'+r.p+'</td><td>'+(eventFlag(r.r)?eventFlag(r.r)+' ':'')+r.c+'</td>'
+      +'<td style="font-size:11px;'+(org?'':'color:var(--text3)')+'" title="'+(org||'')+'">'
+      +(org||'\u2014')+'</td>'
+      +'<td>'+evtChips(r.lignes)+circBadges(r)+'</td>'
+      +'<td title="'+r.r+' \u2014 '+r.lignes.length+' distances">'
+      +'<span id="'+cle+'_chev" style="display:inline-block;width:11px;color:var(--text3)">'
+      +(ouvert?'\u25BE':'\u25B8')+'</span> '+r.r+'</td>'
+      +globalYears.map(function(y){
+        var v=(r.hist||{})[y];
+        if(v){
+          var abs=(r.manque||{})[y];
+          if(abs&&abs.length){
+            var lbl={MARATHON:'marathon',SEMI:'semi','10KM':'10 km','5KM':'5 km',AUTRE:'autre'};
+            var quoi=abs.map(function(d){return lbl[d]||d;}).join(', ');
+            var nb=r.lignes.length-abs.length;
+            return '<td style="position:relative"><span title="Somme de '
+              +nb+' distance'+(nb>1?'s':'')+' sur '+r.lignes.length
+              +' \u2014 manque : '+quoi+'" style="border-bottom:1px dotted '
+              +csVar('--text3')+'">'+fmtFull(v)+'<span style="color:#3B82F6">*</span></span></td>';
+          }
+          return '<td style="color:var(--text)">'+fmtFull(v)+'</td>';
+        }
+        var ann=r.lignes.every(function(x){return(x.hist||{})[y]===-1;});
+        if(ann)return'<td style="color:#FF4A6B;font-size:10px;font-style:italic">Annul\u00e9</td>';
+        var av=aVenir(r.lignes[0],y);
+        if(av)return'<td title="Edition '+av+' '+y+'" style="color:#3B82F6;font-size:10px;font-style:italic">\u00c0 venir</td>';
+        return'<td>\u2014</td>';
+      }).join('')
+      +'<td style="color:'+tc+'">'+tStr+'</td></tr>';
+    var ordre={MARATHON:1,SEMI:2,'10KM':3,'5KM':4,AUTRE:5};
+    r.lignes.slice().sort(function(a,b){return(ordre[a.d]||9)-(ordre[b.d]||9);})
+      .forEach(function(x){
+        h+=ligneCourseHtml(x,' data-parent="'+cle+'"'+(ouvert?'':' style="display:none"'),1);
+      });
+    return h;
+  }
+  f.forEach(function(r){
+    html+=r.lignes?ligneEvenementHtml(r):ligneCourseHtml(r);
   });
   document.getElementById('table-body').innerHTML=html;twemojify(document.getElementById('table-body'));
   if(frozen)applyFrozen(tbl);
@@ -1808,7 +1950,8 @@ function filterTable(){
   var dataCount=0,totalCells=0;
   f.forEach(function(r){globalYears.forEach(function(y){totalCells++;var v=(r.hist||{})[y];if(v&&v>0&&!isNaN(v))dataCount++;});});
   var pct=totalCells>0?Math.round(100*dataCount/totalCells):0;
-  document.getElementById('table-count').textContent=cnt+' epreuve'+(cnt>1?'s':'')+' affichee'+(cnt>1?'s':'')+' \u2022 '+dataCount.toLocaleString('fr-FR')+' donnees'+(activeFilters>0?' \u2022 '+activeFilters+' filtre'+(activeFilters>1?'s':'')+' actif'+(activeFilters>1?'s':''):'');
+  var mot=vue==='event'?'\u00e9v\u00e9nement':'epreuve';
+  document.getElementById('table-count').textContent=cnt+' '+mot+(cnt>1?'s':'')+' affich'+(vue==='event'?'\u00e9':'ee')+(cnt>1?'s':'')+' \u2022 '+dataCount.toLocaleString('fr-FR')+' donnees'+(activeFilters>0?' \u2022 '+activeFilters+' filtre'+(activeFilters>1?'s':'')+' actif'+(activeFilters>1?'s':''):'');
 }
 function resetFilters(){
   document.getElementById('search-data').value='';
@@ -1818,6 +1961,7 @@ function resetFilters(){
   document.getElementById('size-data').value='ALL';
   document.getElementById('region-data').value='ALL';
   var pd=document.getElementById('pays-data');if(pd)pd.value='ALL';
+  var vd=document.getElementById('vue-data');if(vd)vd.value='event';
   document.getElementById('sort-data').value='finishers';
   document.getElementById('afficher-data').value='3';
   filterTable();
@@ -3115,6 +3259,12 @@ HTML_BODY = """
   <div class="controls">
     <div class="search-wrap"><span class="search-icon">&#x2315;</span>
       <input type="text" id="search-data" placeholder="Rechercher une epreuve, une ville, un organisateur... (Ctrl+K)" oninput="filterTable()">
+    </div>
+    <div class="ctrl-group"><span class="ctrl-label">Vue</span>
+      <select id="vue-data" onchange="filterTable()">
+        <option value="event" selected>Par &eacute;v&eacute;nement</option>
+        <option value="race">Par course</option>
+      </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Distance</span>
       <select id="dist-data" onchange="filterTable()">
