@@ -2653,5 +2653,35 @@
     "count": 9543,
     "avg_time": "04:05:52",
     "avg_speed_kmh": null
+  },
+  {
+    "label": "Harmonie Mutuelle Toulouse Metropole Run Experience 42K 2026",
+    "race": "Harmonie Mutuelle Toulouse Metropole Run Experience",
+    "dist_m": 42195,
+    "year": 2026,
+    "count": 4487,
+    "avg_time": "04:04:21",
+    "avg_speed_kmh": 10.36,
+    "source": "timing4you"
+  },
+  {
+    "label": "Harmonie Mutuelle Toulouse Metropole Run Experience 21K 2026",
+    "race": "Harmonie Mutuelle Toulouse Metropole Run Experience",
+    "dist_m": 21097,
+    "year": 2026,
+    "count": 13410,
+    "avg_time": "02:01:07",
+    "avg_speed_kmh": 10.45,
+    "source": "timing4you"
+  },
+  {
+    "label": "Harmonie Mutuelle Toulouse Metropole Run Experience 10K 2026",
+    "race": "Harmonie Mutuelle Toulouse Metropole Run Experience",
+    "dist_m": 10000,
+    "year": 2026,
+    "count": 7216,
+    "avg_time": "00:59:30",
+    "avg_speed_kmh": 10.08,
+    "source": "timing4you"
   }
 ]

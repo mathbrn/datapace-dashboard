@@ -1175,6 +1175,11 @@ autre_data = [
     ("Baloise Antwerp 10 miles", "AUTRE", 2023, "0:47:50", "0:56:11"),
     ("Baloise Antwerp 10 miles", "AUTRE", 2024, "0:47:21", "0:57:25"),
     ("Baloise Antwerp 10 miles", "AUTRE", 2026, "0:46:43", "0:53:07"),
+    # Harmonie Mutuelle Toulouse Metropole Run Experience 2026
+    # timing4you, fichier ToulouseMRE_2026.clax
+    ("Harmonie Mutuelle Toulouse Metropole Run Experience", "42K", 2026, "2:24:56", "2:52:33"),
+    ("Harmonie Mutuelle Toulouse Metropole Run Experience", "21K", 2026, "1:02:52", "1:18:50"),
+    ("Harmonie Mutuelle Toulouse Metropole Run Experience", "10K", 2026, "0:31:05", "0:34:10"),
 
     # SKECHERS Hot Chocolate Run - Philadelphia (15 km / 10 km / 5 km)
     ("SKECHERS Hot Chocolate Run - Philadelphia", "AUTRE", 2026, "0:50:32", "0:55:49"),

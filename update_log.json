@@ -1,6 +1,25 @@
 {
   "updates": [
     {
+      "event": "Harmonie Mutuelle Toulouse Metropole Run Experience",
+      "date": "2026-11-01",
+      "data": {
+        "finishers": 13410,
+        "avg_time": "2:01:07",
+        "winner_men": "1:02:52",
+        "winner_women": "1:18:50"
+      },
+      "timestamp": "2026-11-03T16:36:47Z"
+    },
+    {
+      "event": "Harmonie Mutuelle Toulouse Metropole Run Experience",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 7216
+      },
+      "timestamp": "2026-11-03T16:36:37Z"
+    },
+    {
       "event": "NN Maraton Warszawski",
       "date": "2025-09-28",
       "data": {

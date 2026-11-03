@@ -554,6 +554,35 @@ def load_winners():
     return rows
 
 
+def mots_epreuve(s):
+    """Mots significatifs d'un nom d'epreuve, accents et ponctuation retires."""
+    import unicodedata
+    s = unicodedata.normalize("NFD", (s or "").lower())
+    s = "".join(c for c in s if unicodedata.category(c) != "Mn")
+    return [m for m in re.split(r"[^a-z0-9]+", s) if m]
+
+
+def meme_epreuve(a, b):
+    """Miroir en Python de `memeEpreuve()` cote JS.
+
+    Deux noms designent la meme epreuve si la suite de mots du plus court se
+    retrouve telle quelle dans le plus long. Le critere precedent comparait les
+    15 premiers caracteres, ce qui faisait collisionner les trois « Harmonie
+    Mutuelle ... » entre elles : le temps moyen du marathon de Toulouse 2026
+    etait ecarte comme doublon de celui du Marathon de Tours.
+    """
+    A, B = mots_epreuve(a), mots_epreuve(b)
+    if not A or not B:
+        return False
+    if A == B:
+        return True
+    court, long_ = (A, B) if len(A) <= len(B) else (B, A)
+    if len("".join(court)) < 12:
+        return False
+    return any(long_[i:i + len(court)] == court
+               for i in range(len(long_) - len(court) + 1))
+
+
 def dist_code_from_m(metres):
     """Code de distance du dashboard a partir d'une distance en metres.
 
@@ -3419,9 +3448,10 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
                     mapped_name = fix_encoding(sp_row["race"])
                     break
             mapped_name = normalize_race_name(mapped_name)
-            # Skip if a similar race already exists (fuzzy match on first 15 chars)
+            # Deja presente ? Rapprochement par suite de mots, pas par
+            # prefixe de 15 caracteres (cf. meme_epreuve).
             mn_l = mapped_name.lower()
-            already = any(mn_l[:15] in ex or ex[:15] in mn_l for ex in existing_races if len(ex) > 10)
+            already = any(meme_epreuve(mapped_name, ex) for ex in existing_races)
             if already:
                 continue
             # Skip generic/truncated race names
