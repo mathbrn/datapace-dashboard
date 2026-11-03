@@ -194,11 +194,15 @@
     "platform": "nyrr",
     "country": "USA",
     "distance": "MARATHON",
-    "notes": "POST /runners/finishers-filter - requires event ID discovery",
+    "notes": "POST /runners/finishers-filter, en-tetes Origin+Referer results.nyrr.org obligatoires",
     "name": "TCS New York City Marathon",
     "marathonview_id": "54",
-    "platform_id": "54",
-    "api_base": "https://rmsprodapi.nyrr.org/api/v2"
+    "api_base": "https://rmsprodapi.nyrr.org/api/v2",
+    "code_patterns": [
+      "M{yyyy}",
+      "{yy}M",
+      "{yy}TCSM"
+    ]
   },
   "boston marathon": {
     "platform": "baa",
@@ -444,18 +448,27 @@
     "race_id": 53948
   },
   "united airlines nyc half": {
-    "platform": null,
+    "platform": "nyrr",
     "country": "USA",
     "distance": "SEMI",
-    "notes": "NYRR custom",
-    "name": "United Airlines NYC Half"
+    "name": "United Airlines NYC Half",
+    "code_patterns": [
+      "H{yyyy}",
+      "{yy}NYCH"
+    ],
+    "api_base": "https://rmsprodapi.nyrr.org/api/v2"
   },
   "nyrr rbc brooklyn half": {
-    "platform": null,
+    "platform": "nyrr",
     "country": "USA",
     "distance": "SEMI",
-    "notes": "NYRR custom",
-    "name": "NYRR RBC Brooklyn Half"
+    "name": "NYRR RBC Brooklyn Half",
+    "code_patterns": [
+      "B{yyyy}",
+      "{yy}BKH"
+    ],
+    "api_base": "https://rmsprodapi.nyrr.org/api/v2",
+    "notes": "Bascule entre B{yyyy} et {yy}BKH selon l annee"
   },
   "nycruns brooklyn experience half marathon": {
     "platform": "runsignup",

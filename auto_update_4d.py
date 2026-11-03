@@ -1145,44 +1145,170 @@ def fetch_mikatiming_4d(platform_info_or_year, year, dist_code=None):
         return None
 
 
-def fetch_nyrr_4d(event_code, year):
-    """Fetch 4D from NYRR API (TCS NYC Marathon).
+NYRR_API = "https://rmsprodapi.nyrr.org/api/v2/runners/finishers-filter"
+# Les deux en-tetes sont obligatoires : sans elles l'API repond 200 avec
+# totalItems a 0, ce qui ressemble a « epreuve inconnue ».
+NYRR_HEADERS = {"User-Agent": "Mozilla/5.0", "Content-Type": "application/json",
+                "Origin": "https://results.nyrr.org",
+                "Referer": "https://results.nyrr.org/"}
 
-    `event_code` example: 'M2026'. Default to 'M{yyyy}' if not provided.
+
+def _nyrr_post(sess, corps, essais=3):
+    """Un appel a finishers-filter. 400 = refus definitif (page hors plafond)."""
+    import time as _t
+    for i in range(essais):
+        try:
+            r = sess.post(NYRR_API, json=corps, timeout=60)
+            if r.status_code == 200:
+                return r.json()
+            if r.status_code == 400:
+                return None
+        except requests.RequestException:
+            pass
+        _t.sleep(1.5 * (i + 1))
+    return None
+
+
+def _nyrr_codes(info, year, dist_code):
+    """Codes d'epreuve a essayer, du plus sur au moins sur.
+
+    NYRR melange deux familles : « {LETTRE}{YYYY} » (M2025 marathon, B2025
+    Brooklyn, H2025 NYC Half) et « {YY}{CODE} » (24BKH). Une meme course
+    bascule d'une forme a l'autre selon l'annee, et un code inexistant
+    repond 200 avec totalItems a 0 — jamais une erreur. On essaie donc
+    plusieurs motifs et on garde celui qui renvoie des arrivants.
+    """
+    yy = str(year)[2:]
+    motifs = list(info.get("code_patterns") or [])
+    if info.get("event_code"):
+        motifs.insert(0, info["event_code"])
+    if not motifs and (dist_code or "") == "MARATHON":
+        motifs = ["M{yyyy}"]
+    vus, codes = set(), []
+    for m in motifs:
+        try:
+            c = m.format(yyyy=year, yy=yy)
+        except (KeyError, IndexError):
+            c = m
+        if c and c not in vus:
+            vus.add(c)
+            codes.append(c)
+    return codes
+
+
+def _nyrr_sec(t):
+    m = re.match(r"^(\d+):(\d{2}):(\d{2})", (t or "").strip())
+    if not m:
+        return None
+    return int(m.group(1)) * 3600 + int(m.group(2)) * 60 + int(m.group(3))
+
+
+def _nyrr_vainqueur(sess, code, genre):
+    """Premier temps d'un sexe, tri par chrono croissant.
+
+    Le tri n'est pas honore par tous les contextes (19BKH renvoyait une
+    femme en 4:32:42 en tete), donc on prend le minimum sur la page.
+    """
+    j = _nyrr_post(sess, {"eventCode": code, "pageIndex": 1, "pageSize": 100,
+                          "gender": genre, "sortColumn": "overallTime",
+                          "sortDescending": False})
+    lignes = [x for x in ((j or {}).get("items") or []) if _nyrr_sec(x.get("overallTime"))]
+    if not lignes:
+        return None
+    return min(lignes, key=lambda x: _nyrr_sec(x["overallTime"])).get("overallTime")
+
+
+def _nyrr_moyenne(sess, code, total, plafond=70000):
+    """Temps moyen du classement entier, par cellules (age, sexe).
+
+    L'API plafonne a 500 resultats par requete (« Please use the advanced
+    filter to find more ») : au-dela de pageIndex 5 avec pageSize 100 elle
+    repond 400. Les couples (age, sexe) partitionnent le classement, et les
+    cellules de plus de 500 coureurs sont lues dans les deux sens de tri, ce
+    qui couvre jusqu'a 1000. La moyenne n'est rendue qu'au-dela de 99,5 % du
+    total annonce ; sinon on prefere ne rien ecrire.
+    """
+    if not total or total > plafond:
+        print(f"    NYRR {code}: temps moyen non calcule ({total} arrivants, plafond {plafond})")
+        return None, 0
+    vus = {}
+    for age in range(0, 100):
+        for genre in ("M", "W"):
+            base = {"eventCode": code, "pageSize": 100, "ageFrom": age,
+                    "ageTo": age, "gender": genre}
+            j = _nyrr_post(sess, dict(base, pageIndex=1,
+                                      sortColumn="overallTime", sortDescending=False))
+            if not j:
+                continue
+            cell = j.get("totalItems") or 0
+            if not cell:
+                continue
+            for x in (j.get("items") or []):
+                vus[x.get("runnerId")] = x.get("overallTime")
+            for descendant in (False, True):
+                page = 2
+                while len(vus) < total and page <= 5:
+                    k = _nyrr_post(sess, dict(base, pageIndex=page,
+                                              sortColumn="overallTime",
+                                              sortDescending=descendant))
+                    if not k:
+                        break
+                    for x in (k.get("items") or []):
+                        vus[x.get("runnerId")] = x.get("overallTime")
+                    page += 1
+                page = 2
+    chronos = [_nyrr_sec(t) for t in vus.values() if _nyrr_sec(t)]
+    couverture = len(vus) / total if total else 0
+    if couverture < 0.995 or not chronos:
+        print(f"    NYRR {code}: temps moyen ecarte, couverture {couverture:.1%} "
+              f"({len(vus)}/{total})")
+        return None, len(chronos)
+    a = sum(chronos) / len(chronos)
+    return "%02d:%02d:%02d" % (a // 3600, a % 3600 // 60, a % 60), len(chronos)
+
+
+def fetch_nyrr_4d(info, year, dist_code=None):
+    """4D d'une course NYRR (marathon de New York, Brooklyn Half, NYC Half).
+
+    L'ancienne version envoyait `raceIds` / `eventId`, sans les en-tetes
+    Origin et Referer, et recevait l'identifiant MarathonView ('54') du map
+    comme code d'epreuve. Elle ne journalisait rien : le marathon de New York
+    2026 ressortait en `fetch_returned_nothing` muet.
     """
     try:
-        if not event_code:
-            event_code = f"M{year}"
+        if isinstance(info, dict):
+            conf = info
+        else:
+            conf = {"event_code": info} if info and not str(info).isdigit() else {}
+        codes = _nyrr_codes(conf, year, dist_code)
+        if not codes:
+            print(f"  NYRR: aucun code d'epreuve a essayer pour {year} "
+                  f"({dist_code or 'distance inconnue'}) — completer code_patterns "
+                  f"dans event_platform_map.json")
+            return None
         sess = requests.Session()
-        sess.headers.update({"User-Agent": "Mozilla/5.0", "Content-Type": "application/json"})
-        # Try several filter shapes (NYRR API is opaque)
-        for body in [
-            {"pageIndex": 1, "pageSize": 1, "raceIds": [event_code]},
-            {"pageIndex": 1, "pageSize": 1, "eventId": event_code},
-            {"pageIndex": 1, "pageSize": 1, "eventCode": event_code},
-        ]:
-            r = sess.post("https://rmsprodapi.nyrr.org/api/v2/runners/finishers-filter",
-                          json=body, timeout=30)
-            if not r.ok:
-                continue
-            data = r.json()
-            total = data.get("totalItems", 0)
-            # Reject sentinel values (full-DB count)
-            if 100 < total < 100000 and data.get("items"):
-                # Get winner: first item ordered by overallPlace
-                first = data["items"][0]
-                # Need to fetch sorted to get actual winner
-                r2 = sess.post("https://rmsprodapi.nyrr.org/api/v2/runners/finishers-filter",
-                               json=dict(body, pageSize=5, sortBy="overallPlace"), timeout=30)
-                items = r2.json().get("items", []) if r2.ok else [first]
-                men = next((i for i in items if i.get("gender") == "M"), None)
-                women = next((i for i in items if i.get("gender") == "W"), None)
-                return {"finishers": total,
-                        "avg_time": None, "avg_speed_kmh": None,
-                        "winner_men": men.get("overallTime") if men else None,
-                        "winner_women": women.get("overallTime") if women else None,
-                        "source": "nyrr", "confidence": "low"}  # low until filter validated
-        return None
+        sess.headers.update(NYRR_HEADERS)
+        code, total = None, 0
+        for c in codes:
+            j = _nyrr_post(sess, {"eventCode": c, "pageIndex": 1, "pageSize": 1})
+            n = (j or {}).get("totalItems") or 0
+            print(f"    NYRR {c}: totalItems={n}")
+            if n:
+                code, total = c, n
+                break
+        if not code:
+            print(f"  NYRR: aucun des codes {codes} ne renvoie d'arrivants pour {year}")
+            return None
+        hommes = _nyrr_vainqueur(sess, code, "M")
+        femmes = _nyrr_vainqueur(sess, code, "W")
+        moyenne, lus = _nyrr_moyenne(sess, code, total)
+        print(f"    NYRR {code}: {total} finishers, H={hommes}, F={femmes}, "
+              f"moyenne={moyenne} (sur {lus} chronos)")
+        return {"finishers": total,
+                "avg_time": moyenne, "avg_speed_kmh": None,
+                "winner_men": hommes, "winner_women": femmes,
+                "source": "nyrr",
+                "confidence": "high" if moyenne else "medium"}
     except Exception as e:
         print(f"  NYRR error: {e}")
         return None
@@ -1702,6 +1828,12 @@ def discover_platform(event_name, year, date_str=None):
                     if not pid_info["event_code"] and "event_code_pattern" in info:
                         pid_info["event_code"] = info["event_code_pattern"].format(yyyy=year)
                     return platform, pid_info
+                # NYRR : le fetcher a besoin des motifs de code d'epreuve.
+                # `platform_id` valait '54' (l'identifiant MarathonView), qui
+                # partait comme code NYRR et ne correspondait a rien.
+                if platform == "nyrr":
+                    return platform, {"event_code": info.get("event_code"),
+                                      "code_patterns": info.get("code_patterns")}
                 # `master_id` accepte en synonyme de `platform_id` : les entrees
                 # athlinks documentent naturellement l'identifiant sous ce nom,
                 # et n'en lire qu'un seul faisait silencieusement retomber sur
