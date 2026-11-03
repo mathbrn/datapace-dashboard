@@ -4,11 +4,9 @@
       "event": "TCS New York City Marathon",
       "date": "2026-11-01",
       "data": {
-        "finishers": 61066,
-        "winner_men": "2:06:01",
-        "winner_women": "2:24:36"
+        "avg_time": "04:37:36"
       },
-      "timestamp": "2026-11-03T09:17:12Z"
+      "timestamp": "2026-11-03T09:29:07Z"
     },
     {
       "event": "TCS New York City Marathon",

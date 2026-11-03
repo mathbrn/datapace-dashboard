@@ -2581,5 +2581,14 @@
     "count": 13331,
     "avg_time": "03:56:03",
     "avg_speed_kmh": 10.73
+  },
+  {
+    "label": "TCS New York City Marathon 2026",
+    "race": "TCS New York City Marathon",
+    "dist_m": 42195,
+    "year": 2026,
+    "count": 61066,
+    "avg_time": "04:37:36",
+    "avg_speed_kmh": null
   }
 ]

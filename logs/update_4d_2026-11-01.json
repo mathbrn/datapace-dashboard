@@ -28,11 +28,6 @@
       "score": 0
     },
     {
-      "wa_name": "United Airlines NYC Half",
-      "our_name": "United Airlines NYC Half",
-      "score": 0
-    },
-    {
       "wa_name": "NN CPC Loop Den Haag - Half Marathon",
       "our_name": "NN CPC Loop Den Haag - Half Marathon",
       "score": 0
@@ -70,11 +65,6 @@
     {
       "wa_name": "BOLDERBoulder 10K",
       "our_name": "BOLDERBoulder 10K",
-      "score": 0
-    },
-    {
-      "wa_name": "NYRR RBC Brooklyn Half",
-      "our_name": "NYRR RBC Brooklyn Half",
       "score": 0
     },
     {
@@ -300,19 +290,6 @@
       "ecrit": null
     },
     {
-      "event": "United Airlines NYC Half",
-      "year": 2026,
-      "platform": "nyrr",
-      "finishers": 30240,
-      "avg_time": null,
-      "winner_men": "0:59:30",
-      "winner_women": "1:06:33",
-      "ecrit": [
-        "winner_men",
-        "winner_women"
-      ]
-    },
-    {
       "event": "EDP Meia Maratona de Lisboa - Vodafone 10K",
       "year": 2026,
       "platform": "sporthive",
@@ -341,19 +318,6 @@
       "winner_men": null,
       "winner_women": null,
       "ecrit": null
-    },
-    {
-      "event": "NYRR RBC Brooklyn Half",
-      "year": 2026,
-      "platform": "nyrr",
-      "finishers": 30405,
-      "avg_time": null,
-      "winner_men": "1:04:32",
-      "winner_women": "1:13:11",
-      "ecrit": [
-        "winner_men",
-        "winner_women"
-      ]
     },
     {
       "event": "Atlanta Journal-Constitution Peachtree Road Race",
@@ -410,13 +374,11 @@
       "year": 2026,
       "platform": "nyrr",
       "finishers": 61066,
-      "avg_time": null,
+      "avg_time": "04:37:36",
       "winner_men": "2:06:01",
       "winner_women": "2:24:36",
       "ecrit": [
-        "finishers",
-        "winner_men",
-        "winner_women"
+        "avg_time"
       ]
     },
     {
@@ -656,9 +618,9 @@
   "mode": "fallback_no_calendar",
   "summary": {
     "wa_races": 0,
-    "matched": 53,
-    "updated": 3,
-    "fetched": 20,
+    "matched": 51,
+    "updated": 1,
+    "fetched": 18,
     "skipped": 33,
     "errors": 1,
     "skip_reasons": {
