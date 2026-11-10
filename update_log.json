@@ -1,6 +1,23 @@
 {
   "updates": [
     {
+      "event": "Allwyn Athens Marathon",
+      "date": "2026-11-08",
+      "data": {
+        "winner_men": "2:10:03",
+        "winner_women": "2:30:04"
+      },
+      "timestamp": "2026-11-10T16:10:40Z"
+    },
+    {
+      "event": "Allwyn Athens Marathon",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 20752
+      },
+      "timestamp": "2026-11-10T16:10:35Z"
+    },
+    {
       "event": "Marathon de Bordeaux AG2R LA MONDIALE",
       "date": "2026-11-08",
       "data": {

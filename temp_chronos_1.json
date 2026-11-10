@@ -700,5 +700,32 @@
   "nom_homme": null,
   "temps_femme": "00:31:36",
   "nom_femme": null
+ },
+ {
+  "course": "Allwyn Athens Marathon",
+  "distance": "MARATHON",
+  "annee": 2026,
+  "temps_homme": "02:10:03",
+  "nom_homme": null,
+  "temps_femme": "02:30:04",
+  "nom_femme": null
+ },
+ {
+  "course": "Allwyn Athens Marathon",
+  "distance": "10KM",
+  "annee": 2026,
+  "temps_homme": "00:29:40",
+  "nom_homme": null,
+  "temps_femme": "00:33:09",
+  "nom_femme": null
+ },
+ {
+  "course": "Allwyn Athens Marathon",
+  "distance": "5KM",
+  "annee": 2026,
+  "temps_homme": "00:14:37",
+  "nom_homme": null,
+  "temps_femme": "00:16:16",
+  "nom_femme": null
  }
 ]
