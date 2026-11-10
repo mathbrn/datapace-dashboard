@@ -3211,10 +3211,6 @@
     "flag": "🇮🇳",
     "pays": "Inde"
   },
-  "Semi & 10km de Bordeaux": {
-    "flag": "🇫🇷",
-    "pays": "France"
-  },
   "Semi Marathon de Cabourg": {
     "flag": "🇫🇷",
     "pays": "France"
@@ -3990,5 +3986,9 @@
   "SKECHERS Hot Chocolate Run - Philadelphia": {
     "flag": "🇺🇸",
     "pays": "Etats-Unis"
+  },
+  "Marathon de Bordeaux AG2R LA MONDIALE": {
+    "flag": "🇫🇷",
+    "pays": "France"
   }
 }
