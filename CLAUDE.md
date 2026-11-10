@@ -673,6 +673,27 @@ une liste reellement courte. Une page pleine sans pagination = total inconnu.
 - **Auth** : Aucune
 - **Couverture** : Berlin Marathon + Half, London Marathon, Hamburg, Stockholm, Athens, Vienna, Brighton, Frankfurt, Chicago Marathon
 
+**« La meme page pour 2026 et 2025 » n'est pas une raison d'abandonner.**
+Certains hotes (athens, frankfurt) ignorent l'annee de l'URL et servent
+**toujours la derniere edition**. Le fetcher y voyait une ambiguite et
+renoncait, alors que la page contenait bien les resultats frais. L'annee ne se
+lit pas dans l'URL : elle se tranche en comparant le chrono vainqueur a la
+cellule de l'annee precedente. Athenes 2026 affichait 2:10:03 contre 2:20:10
+en 2025 — donc 2026. Si le vainqueur coincide avec l'annee precedente, et
+seulement alors, l'edition demandee n'est pas servie.
+
+**Pagination des listes** (etabli sur Athenes 2026) : la liste ne pagine
+qu'avec `search%5Bage_class%5D=%25` **et** `num_results=100` ; sans le filtre
+par categorie la page rend 25 lignes et aucun lien de pagination, et
+`num_results=1000` est ignore. Les codes d'epreuve se lisent dans
+`?pid=startlist`. Total = `(derniere page - 1) x 100 + lignes de la derniere`,
+en comptant les `idp=` distincts, et **en verifiant la borne des deux cotes**.
+Un code inexistant ne renvoie pas d'erreur mais la vue **« All »**, c'est-a-dire
+le total de l'epreuve toutes distances : de quoi ecrire un total d'evenement
+dans une cellule de distance. Toujours lire le `<h2>Results: ...</h2>` pour
+confirmer la course servie. Les suffixes `H` (`42KH`, `10KH`) sont les
+**championnats nationaux** : des coureurs deja comptes, a ecarter.
+
 ### 8. MarathonView.net (scraping)
 - **URL** : `https://marathonview.net/series/{id}`
 - **Donnees** : finishers par annee dans le JSON embarque
@@ -1120,7 +1141,7 @@ Scripts en place, relancables :
 | Mararun (Pekin) | 20 | 0 | resultats derriere un **captcha** et une recherche par dossard ; `/v1/match/lists` ne porte aucun compteur (`realCnt: "0"`) |
 | Splittime (Istanbul) | 11 | 0 | maraton.istanbul derriere un challenge Cloudflare (403) |
 
-### Trois sources fermees par leur robots.txt — ne pas les crawler
+### Quatre sources fermees par leur robots.txt — ne pas les crawler
 - **marathonview.net** : `Disallow: /` pour `ClaudeBot`, `Claude-Web` et
   `anthropic-ai`. C'etait la piste la plus large (500+ series avec historique
   annuel complet, le tableau se lit par Playwright). Elle est explicitement
@@ -1128,6 +1149,13 @@ Scripts en place, relancables :
 - **sportmaniacs.com** : `Disallow: /races/*/*/results` pour tout agent. Les 49
   cellules des quatre epreuves espagnoles sont hors d'atteinte.
 - **smartchip.co.kr** (Seoul, 21 cellules) : `Disallow: /` pour `ClaudeBot`.
+- **vdoto2.com** : `Disallow: /` pour `ClaudeBot`, `Claude-Web` et
+  `anthropic-ai`. C'est le chronometreur de l'Indianapolis Monumental
+  Marathon, et le seul endroit ou ses resultats sont publies —
+  beyondmonumental.org n'a pas de page de classement. Meme chose pour la
+  **Maratona do Porto** : runporto.com ne publie aucun resultat, la presse ne
+  donne que des inscrits (chiffres ronds). Ces deux epreuves sont donc hors
+  d'atteinte et leurs cellules restent vides.
 
 **Verifier robots.txt AVANT d'ecrire un scraper** : trois des pistes les plus
 prometteuses se sont revelees interdites apres coup. Et lire le fichier
