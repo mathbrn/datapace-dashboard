@@ -349,7 +349,7 @@
       "year": 2026,
       "platform": "sporthive",
       "finishers": 23670,
-      "avg_time": "03:52:38",
+      "avg_time": "03:52:59",
       "winner_men": null,
       "winner_women": null,
       "ecrit": null
@@ -635,7 +635,7 @@
   "errors": [
     {
       "stage": "worldathletics",
-      "error": "HTTPSConnectionPool(host='graphql-prod-4860.edge.aws.worldathletics.org', port=443): Max retries exceeded with url: /graphql (Caused by NameResolutionError(\"HTTPSConnection(host='graphql-prod-4860.edge.aws.worldathletics.org', port=443): Failed to resolve 'graphql-prod-4860.edge.aws.worldathletics.org' ([Errno -2] Name or service not known)\"))"
+      "error": "HTTPSConnectionPool(host='graphql-prod-4860.edge.aws.worldathletics.org', port=443): Max retries exceeded with url: /graphql (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 502 Bad Gateway')))"
     }
   ],
   "mode": "fallback_no_calendar",
