@@ -2713,5 +2713,35 @@
   "avg_time": "00:56:53",
   "avg_speed_kmh": 10.55,
   "source": "timeto"
+ },
+ {
+  "label": "Allwyn Athens Marathon 42K 2026",
+  "race": "Allwyn Athens Marathon",
+  "dist_m": 42195,
+  "year": 2026,
+  "count": 20200,
+  "avg_time": "04:35:02",
+  "avg_speed_kmh": 9.21,
+  "source": "mikatiming"
+ },
+ {
+  "label": "Allwyn Athens Marathon 10K 2026",
+  "race": "Allwyn Athens Marathon",
+  "dist_m": 10000,
+  "year": 2026,
+  "count": 13790,
+  "avg_time": "01:02:45",
+  "avg_speed_kmh": 9.56,
+  "source": "mikatiming"
+ },
+ {
+  "label": "Allwyn Athens Marathon 5K 2026",
+  "race": "Allwyn Athens Marathon",
+  "dist_m": 5000,
+  "year": 2026,
+  "count": 20752,
+  "avg_time": "00:37:44",
+  "avg_speed_kmh": 7.95,
+  "source": "mikatiming"
  }
 ]
