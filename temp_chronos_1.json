@@ -745,5 +745,257 @@
   "nom_homme": null,
   "temps_femme": "00:35:13",
   "nom_femme": null
+ },
+ {
+  "course": "Meishan Renshou Half Marathon",
+  "distance": "SEMI",
+  "annee": 2026,
+  "temps_homme": "0:59:51",
+  "nom_homme": null,
+  "temps_femme": "1:08:04",
+  "nom_femme": null
+ },
+ {
+  "course": "Yangzhou Half Marathon",
+  "distance": "SEMI",
+  "annee": 2026,
+  "temps_homme": "0:59:11",
+  "nom_homme": null,
+  "temps_femme": "1:06:27",
+  "nom_femme": null
+ },
+ {
+  "course": "Chang'an Automobile Chongqing Marathon",
+  "distance": "MARATHON",
+  "annee": 2026,
+  "temps_homme": "2:08:28",
+  "nom_homme": null,
+  "temps_femme": "2:24:48",
+  "nom_femme": null
+ },
+ {
+  "course": "Access Bank Lagos City Marathon",
+  "distance": "MARATHON",
+  "annee": 2026,
+  "temps_homme": "2:11:55",
+  "nom_homme": null,
+  "temps_femme": "2:37:36",
+  "nom_femme": null
+ },
+ {
+  "course": "Daegu Marathon",
+  "distance": "MARATHON",
+  "annee": 2026,
+  "temps_homme": "2:08:11",
+  "nom_homme": null,
+  "temps_femme": "2:19:35",
+  "nom_femme": null
+ },
+ {
+  "course": "Lanzhou Marathon",
+  "distance": "MARATHON",
+  "annee": 2026,
+  "temps_homme": "2:11:52",
+  "nom_homme": null,
+  "temps_femme": "2:29:54",
+  "nom_femme": null
+ },
+ {
+  "course": "Taiyuan Marathon",
+  "distance": "MARATHON",
+  "annee": 2026,
+  "temps_homme": "2:10:11",
+  "nom_homme": null,
+  "temps_femme": "2:24:11",
+  "nom_femme": null
+ },
+ {
+  "course": "Yellow River Estuary Dongying Marathon",
+  "distance": "MARATHON",
+  "annee": 2026,
+  "temps_homme": "2:10:59",
+  "nom_homme": null,
+  "temps_femme": "2:27:48",
+  "nom_femme": null
+ },
+ {
+  "course": "Hangzhou Marathon",
+  "distance": "MARATHON",
+  "annee": 2026,
+  "temps_homme": "2:11:16",
+  "nom_homme": null,
+  "temps_femme": "2:26:03",
+  "nom_femme": null
+ },
+ {
+  "course": "Beppu-Oita Mainichi Marathon",
+  "distance": "MARATHON",
+  "annee": 2026,
+  "temps_homme": "2:06:49",
+  "nom_homme": null,
+  "temps_femme": "2:43:45",
+  "nom_femme": null
+ },
+ {
+  "course": "Ras Al Khaimah Half Marathon",
+  "distance": "SEMI",
+  "annee": 2026,
+  "temps_homme": "0:58:14",
+  "nom_homme": null,
+  "temps_femme": "1:07:22",
+  "nom_femme": null
+ },
+ {
+  "course": "Frankfurter Mainova Half Marathon",
+  "distance": "SEMI",
+  "annee": 2026,
+  "temps_homme": "1:03:26",
+  "nom_homme": null,
+  "temps_femme": "1:10:39",
+  "nom_femme": null
+ },
+ {
+  "course": "Istanbul Half Marathon",
+  "distance": "SEMI",
+  "annee": 2026,
+  "temps_homme": "1:00:01",
+  "nom_homme": null,
+  "temps_femme": "1:06:50",
+  "nom_femme": null
+ },
+ {
+  "course": "Haier Qingdao Marathon",
+  "distance": "MARATHON",
+  "annee": 2026,
+  "temps_homme": "2:13:50",
+  "nom_homme": null,
+  "temps_femme": "2:33:53",
+  "nom_femme": null
+ },
+ {
+  "course": "PKO Gdynia Half Marathon",
+  "distance": "SEMI",
+  "annee": 2026,
+  "temps_homme": "1:03:35",
+  "nom_homme": null,
+  "temps_femme": "1:13:19",
+  "nom_femme": null
+ },
+ {
+  "course": "Gifu Half Marathon",
+  "distance": "SEMI",
+  "annee": 2026,
+  "temps_homme": "1:00:35",
+  "nom_homme": null,
+  "temps_femme": "1:07:04",
+  "nom_femme": null
+ },
+ {
+  "course": "Maraton de Cali",
+  "distance": "MARATHON",
+  "annee": 2026,
+  "temps_homme": "2:11:49",
+  "nom_homme": null,
+  "temps_femme": "2:29:55",
+  "nom_femme": null
+ },
+ {
+  "course": "Marathon International de Rabat",
+  "distance": "MARATHON",
+  "annee": 2026,
+  "temps_homme": "2:07:52",
+  "nom_homme": null,
+  "temps_femme": "2:25:03",
+  "nom_femme": null
+ },
+ {
+  "course": "Okpekpe 10KM Road Race",
+  "distance": "10KM",
+  "annee": 2026,
+  "temps_homme": null,
+  "nom_homme": null,
+  "temps_femme": "0:34:18",
+  "nom_femme": null
+ },
+ {
+  "course": "Jilin City Marathon",
+  "distance": "MARATHON",
+  "annee": 2026,
+  "temps_homme": "2:13:37",
+  "nom_homme": null,
+  "temps_femme": "2:33:27",
+  "nom_femme": null
+ },
+ {
+  "course": "Kigali International Peace Marathon",
+  "distance": "MARATHON",
+  "annee": 2026,
+  "temps_homme": "2:14:19",
+  "nom_homme": null,
+  "temps_femme": "2:35:35",
+  "nom_femme": null
+ },
+ {
+  "course": "10KM Port Gentil",
+  "distance": "10KM",
+  "annee": 2026,
+  "temps_homme": "0:27:49",
+  "nom_homme": null,
+  "temps_femme": "0:30:52",
+  "nom_femme": null
+ },
+ {
+  "course": "Maybank Marathon",
+  "distance": "MARATHON",
+  "annee": 2026,
+  "temps_homme": "2:16:10",
+  "nom_homme": null,
+  "temps_femme": "2:37:22",
+  "nom_femme": null
+ },
+ {
+  "course": "Shenyang Marathon",
+  "distance": "MARATHON",
+  "annee": 2026,
+  "temps_homme": "2:12:12",
+  "nom_homme": null,
+  "temps_femme": "2:30:21",
+  "nom_femme": null
+ },
+ {
+  "course": "Harbin Marathon",
+  "distance": "MARATHON",
+  "annee": 2026,
+  "temps_homme": "2:12:41",
+  "nom_homme": null,
+  "temps_femme": "2:30:19",
+  "nom_femme": null
+ },
+ {
+  "course": "Gyeongju International Marathon",
+  "distance": "MARATHON",
+  "annee": 2026,
+  "temps_homme": "2:06:56",
+  "nom_homme": null,
+  "temps_femme": "2:41:07",
+  "nom_femme": null
+ },
+ {
+  "course": "Samarkand Marathon",
+  "distance": "MARATHON",
+  "annee": 2026,
+  "temps_homme": "2:15:44",
+  "nom_homme": null,
+  "temps_femme": "2:39:25",
+  "nom_femme": null
+ },
+ {
+  "course": "Riyadh Marathon",
+  "distance": "MARATHON",
+  "annee": 2026,
+  "temps_homme": "2:09:31",
+  "nom_homme": null,
+  "temps_femme": "2:25:56",
+  "nom_femme": null
  }
 ]

@@ -1,6 +1,257 @@
 {
   "updates": [
     {
+      "event": "Riyadh Marathon",
+      "date": "2026-01-31",
+      "data": {
+        "winner_men": "2:09:31",
+        "winner_women": "2:25:56"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Samarkand Marathon",
+      "date": "2026-11-08",
+      "data": {
+        "winner_men": "2:15:44",
+        "winner_women": "2:39:25"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Gyeongju International Marathon",
+      "date": "2026-10-17",
+      "data": {
+        "winner_men": "2:06:56",
+        "winner_women": "2:41:07"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Harbin Marathon",
+      "date": "2026-09-13",
+      "data": {
+        "winner_men": "2:12:41",
+        "winner_women": "2:30:19"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Shenyang Marathon",
+      "date": "2026-09-06",
+      "data": {
+        "winner_men": "2:12:12",
+        "winner_women": "2:30:21"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Maybank Marathon",
+      "date": "2026-08-23",
+      "data": {
+        "winner_men": "2:16:10",
+        "winner_women": "2:37:22"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "10KM Port Gentil",
+      "date": "2026-06-28",
+      "data": {
+        "winner_men": "0:27:49",
+        "winner_women": "0:30:52"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Kigali International Peace Marathon",
+      "date": "2026-06-14",
+      "data": {
+        "winner_men": "2:14:19",
+        "winner_women": "2:35:35"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Jilin City Marathon",
+      "date": "2026-05-31",
+      "data": {
+        "winner_men": "2:13:37",
+        "winner_women": "2:33:27"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Okpekpe 10KM Road Race",
+      "date": "2026-05-30",
+      "data": {
+        "winner_women": "0:34:18"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Marathon International de Rabat",
+      "date": "2026-05-10",
+      "data": {
+        "winner_men": "2:07:52",
+        "winner_women": "2:25:03"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Maraton de Cali",
+      "date": "2026-05-03",
+      "data": {
+        "winner_men": "2:11:49",
+        "winner_women": "2:29:55"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Gifu Half Marathon",
+      "date": "2026-04-26",
+      "data": {
+        "winner_men": "1:00:35",
+        "winner_women": "1:07:04"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "PKO Gdynia Half Marathon",
+      "date": "2026-04-25",
+      "data": {
+        "winner_men": "1:03:35",
+        "winner_women": "1:13:19"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Haier Qingdao Marathon",
+      "date": "2026-04-19",
+      "data": {
+        "winner_men": "2:13:50",
+        "winner_women": "2:33:53"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Istanbul Half Marathon",
+      "date": "2026-04-19",
+      "data": {
+        "winner_men": "1:00:01",
+        "winner_women": "1:06:50"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Frankfurter Mainova Half Marathon",
+      "date": "2026-03-22",
+      "data": {
+        "winner_men": "1:03:26",
+        "winner_women": "1:10:39"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Ras Al Khaimah Half Marathon",
+      "date": "2026-02-14",
+      "data": {
+        "winner_men": "0:58:14",
+        "winner_women": "1:07:22"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Beppu-Oita Mainichi Marathon",
+      "date": "2026-02-01",
+      "data": {
+        "winner_men": "2:06:49",
+        "winner_women": "2:43:45"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Hangzhou Marathon",
+      "date": "2026-11-01",
+      "data": {
+        "winner_men": "2:11:16",
+        "winner_women": "2:26:03"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Yellow River Estuary Dongying Marathon",
+      "date": "2026-10-18",
+      "data": {
+        "winner_men": "2:10:59",
+        "winner_women": "2:27:48"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Taiyuan Marathon",
+      "date": "2026-09-27",
+      "data": {
+        "winner_men": "2:10:11",
+        "winner_women": "2:24:11"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Lanzhou Marathon",
+      "date": "2026-05-24",
+      "data": {
+        "winner_men": "2:11:52",
+        "winner_women": "2:29:54"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Daegu Marathon",
+      "date": "2026-02-22",
+      "data": {
+        "winner_men": "2:08:11",
+        "winner_women": "2:19:35"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Access Bank Lagos City Marathon",
+      "date": "2026-02-14",
+      "data": {
+        "winner_men": "2:11:55",
+        "winner_women": "2:37:36"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Chang'an Automobile Chongqing Marathon",
+      "date": "2026-01-18",
+      "data": {
+        "winner_men": "2:08:28",
+        "winner_women": "2:24:48"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Yangzhou Half Marathon",
+      "date": "2026-03-29",
+      "data": {
+        "winner_men": "0:59:11",
+        "winner_women": "1:06:27"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
+      "event": "Meishan Renshou Half Marathon",
+      "date": "2026-03-15",
+      "data": {
+        "winner_men": "0:59:51",
+        "winner_women": "1:08:04"
+      },
+      "timestamp": "2026-11-13T14:47:50Z"
+    },
+    {
       "event": "EDP Maratona de Lisboa",
       "date": "2026-11-12",
       "data": {
@@ -1443,144 +1694,6 @@
         "winner_women": "2:18:31"
       },
       "timestamp": "2026-09-17T12:48:40Z"
-    },
-    {
-      "event": "Bay to Breakers",
-      "date": "2026-09-16",
-      "data": {
-        "finishers": 19814
-      },
-      "timestamp": "2026-09-17T10:39:57Z"
-    },
-    {
-      "event": "Dick's Pittsburgh Marathon",
-      "date": "2026-09-16",
-      "data": {
-        "finishers": 5026
-      },
-      "timestamp": "2026-09-17T10:39:54Z"
-    },
-    {
-      "event": "Flying Pig Marathon",
-      "date": "2026-09-16",
-      "data": {
-        "finishers": 5279
-      },
-      "timestamp": "2026-09-17T10:39:47Z"
-    },
-    {
-      "event": "Broad Street Run",
-      "date": "2026-09-16",
-      "data": {
-        "finishers": 34003
-      },
-      "timestamp": "2026-09-17T10:39:43Z"
-    },
-    {
-      "event": "BOLDERBoulder 10K",
-      "date": "2026-06-21",
-      "data": {
-        "finishers": 47508
-      },
-      "timestamp": "2026-09-17T07:59:08Z"
-    },
-    {
-      "event": "Atlanta Journal-Constitution Peachtree Road Race",
-      "date": "2026-09-16",
-      "data": {
-        "finishers": 45299
-      },
-      "timestamp": "2026-09-17T07:37:50Z"
-    },
-    {
-      "event": "Cooper River Bridge Run",
-      "date": "2026-06-21",
-      "data": {
-        "finishers": 33686
-      },
-      "timestamp": "2026-09-17T07:37:39Z"
-    },
-    {
-      "event": "AJ Bell Great North 10K",
-      "date": "2026-09-16",
-      "data": {
-        "finishers": 48705
-      },
-      "timestamp": "2026-09-17T07:24:18Z"
-    },
-    {
-      "event": "AJ Bell Great North Run",
-      "date": "2026-09-16",
-      "data": {
-        "finishers": 48705
-      },
-      "timestamp": "2026-09-17T07:24:15Z"
-    },
-    {
-      "event": "AJ Bell Great Bristol Run",
-      "date": "2026-06-21",
-      "data": {
-        "finishers": 19256
-      },
-      "timestamp": "2026-09-17T07:24:09Z"
-    },
-    {
-      "event": "AJ Bell Great Birmingham Run",
-      "date": "2026-06-21",
-      "data": {
-        "finishers": 19256
-      },
-      "timestamp": "2026-09-17T07:24:08Z"
-    },
-    {
-      "event": "AJ Bell Great Bristol Run",
-      "date": "2026-06-21",
-      "data": {
-        "finishers": 19256
-      },
-      "timestamp": "2026-09-17T07:24:05Z"
-    },
-    {
-      "event": "AJ Bell Great Manchester Run",
-      "date": "31MAY2026",
-      "data": {
-        "finishers": 31340
-      },
-      "timestamp": "2026-06-02T09:59:33Z"
-    },
-    {
-      "event": "AJ Bell Great Birmingham Run",
-      "date": "13MAY2026",
-      "data": {
-        "finishers": 19256
-      },
-      "timestamp": "2026-05-15T08:37:02Z"
-    },
-    {
-      "event": "Haspa Marathon Hamburg",
-      "date": "26APR2026",
-      "data": {
-        "winner_men": "02:04:24",
-        "winner_women": "02:17:05"
-      },
-      "timestamp": "2026-04-28T08:03:31Z"
-    },
-    {
-      "event": "Atlanta Journal-Constitution Peachtree Road Race",
-      "date": "21APR2026",
-      "data": {
-        "finishers": 43337
-      },
-      "timestamp": "2026-04-23T07:20:59Z"
-    },
-    {
-      "event": "Vienna City Marathon",
-      "date": "19APR2026",
-      "data": {
-        "winner_men": "02:06:53",
-        "winner_women": "02:20:06"
-      },
-      "timestamp": "2026-04-21T07:20:42Z"
     }
   ]
 }
