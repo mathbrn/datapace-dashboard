@@ -192,6 +192,21 @@ en cours. Le mois courant est volontairement traite comme deja passe : mieux
 vaut afficher un tiret sur une course a venir que masquer un trou de collecte
 derriere un « A venir ».
 
+**Date exacte quand elle est connue** (`event_dates.json`, genere par
+`maj_dates_editions.py`, rafraichi chaque semaine par le cron) : la cellule
+affiche « 29 nov. » au lieu de « A venir », et la date tranche le mois en
+cours. Une edition deja courue sans donnee garde son tiret, avec l'infobulle
+« Courue le … — donnees a collecter ». Sans date, retour a la regle du mois.
+Sources : calendrier World Athletics (route, annee entiere), puis flux AIMS
+(seuil 0,70), rapproches par `rapprochement.py`. **Garde-fou** : une date a
+plus d'un mois de la Periode est refusee (liste `rejets` du fichier : c'est
+la que se lisent les faux rapprochements). Une course non rapprochee herite de
+la date d'une autre course de son evenement si le mois coincide
+(`source: evenement`). 13 novembre : 500 lignes datees sur 1 938 (299 WA,
+7 AIMS, 194 par heritage), 43 rejets. Une date fausse se corrige dans
+`event_aliases.json` — un alias `{"evenement": null}` declare une course
+exterieure **non suivie** (JTBC Seoul Marathon, adidas Stockholm Half...).
+
 ## Onglet Sponsoring : categorisation des marques
 
 `sponsoring_data.json` porte un `sector` libre par marque ; `_spSectorMap` dans
@@ -1373,7 +1388,7 @@ Dans l'ordre :
 
 **Mesure** : `python rapprochement.py --eval` sur `rapprochement_gold.json`
 (66 cas, dont tous les pieges rencontres). Le 13 novembre :
-**97,6 % de precision, 97,6 % de rappel**, contre 77 % de precision pour la
+**97,6 % de precision, 97,6 % de rappel** (71 cas et **100 % / 100 %** apres l'ajout des dates d'edition et des alias negatifs), contre 77 % de precision pour la
 premiere version et un ancien score qui confondait Boston Half et Boston
 Marathon. Reglages choisis par balayage sur ce jeu : avec 66 cas, le risque
 de sur-ajustement est reel, **enrichir le jeu a chaque erreur constatee**.

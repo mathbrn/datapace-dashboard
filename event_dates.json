@@ -1,0 +1,2922 @@
+{
+ "_commentaire": "Genere par maj_dates_editions.py : date de l'edition de l'annee par ligne 'Evenement|DISTANCE'. Ne pas editer a la main ; corriger un rapprochement dans event_aliases.json.",
+ "annee": 2026,
+ "maj_le": "2026-11-13",
+ "dates": {
+  "10K Night Race Prague|10KM": {
+   "date": "2026-09-05",
+   "source": "WA",
+   "nom_ext": "Prague 10K Night Race",
+   "score": 1.0
+  },
+  "10K Valencia Ibercaja by Kiprun|10KM": {
+   "date": "2026-01-11",
+   "source": "WA",
+   "nom_ext": "10K Valencia Ibercaja by Kiprun",
+   "score": 1.0
+  },
+  "20Km de Lausanne|10KM": {
+   "date": "2026-04-25",
+   "source": "evenement"
+  },
+  "20Km de Lausanne|5KM": {
+   "date": "2026-04-25",
+   "source": "WA",
+   "nom_ext": "20 km de Lausanne - 5km",
+   "score": 1.0
+  },
+  "20Km de Lausanne|AUTRE": {
+   "date": "2026-04-25",
+   "source": "evenement"
+  },
+  "20km de Genève|10KM": {
+   "date": "2026-11-01",
+   "source": "evenement"
+  },
+  "20km de Genève|AUTRE": {
+   "date": "2026-11-01",
+   "source": "WA",
+   "nom_ext": "Balexert 20km de Genève",
+   "score": 0.922
+  },
+  "ADAC Marathon de Hannover|10KM": {
+   "date": "2026-04-12",
+   "source": "evenement"
+  },
+  "ADAC Marathon de Hannover|MARATHON": {
+   "date": "2026-04-12",
+   "source": "evenement"
+  },
+  "ADAC Marathon de Hannover|SEMI": {
+   "date": "2026-04-12",
+   "source": "WA",
+   "nom_ext": "ADAC Marathon Hannover Half Marathon & 10K & R5K",
+   "score": 0.588
+  },
+  "ADNOC Abu Dhabi Marathon|10KM": {
+   "date": "2026-12-12",
+   "source": "evenement"
+  },
+  "ADNOC Abu Dhabi Marathon|5KM": {
+   "date": "2026-12-12",
+   "source": "evenement"
+  },
+  "ADNOC Abu Dhabi Marathon|AUTRE": {
+   "date": "2026-12-12",
+   "source": "evenement"
+  },
+  "ADNOC Abu Dhabi Marathon|MARATHON": {
+   "date": "2026-12-12",
+   "source": "WA",
+   "nom_ext": "ADNOC Abu Dhabi Marathon",
+   "score": 1.0
+  },
+  "AJ Bell Great Manchester Run|10KM": {
+   "date": "2026-05-31",
+   "source": "WA",
+   "nom_ext": "Great Manchester Run",
+   "score": 1.0
+  },
+  "AJ Bell Great Manchester Run|SEMI": {
+   "date": "2026-05-31",
+   "source": "evenement"
+  },
+  "ASICS Los Angeles Marathon|MARATHON": {
+   "date": "2026-03-07",
+   "source": "WA",
+   "nom_ext": "Los Angeles Marathon",
+   "score": 0.696
+  },
+  "ASICS Marathon de Paris|MARATHON": {
+   "date": "2026-04-12",
+   "source": "WA",
+   "nom_ext": "Schneider Electric Marathon de Paris",
+   "score": 1.0
+  },
+  "ASML Marathon Eindhoven|5KM": {
+   "date": "2026-10-11",
+   "source": "evenement"
+  },
+  "ASML Marathon Eindhoven|AUTRE": {
+   "date": "2026-10-11",
+   "source": "evenement"
+  },
+  "ASML Marathon Eindhoven|MARATHON": {
+   "date": "2026-10-11",
+   "source": "WA",
+   "nom_ext": "ASML Eindhoven Marathon",
+   "score": 1.0
+  },
+  "ASML Marathon Eindhoven|SEMI": {
+   "date": "2026-10-11",
+   "source": "WA",
+   "nom_ext": "ASML Eindhoven Half Marathon",
+   "score": 1.0
+  },
+  "Access Bank Lagos City Marathon|MARATHON": {
+   "date": "2026-02-14",
+   "source": "WA",
+   "nom_ext": "Access Bank Lagos City Marathon",
+   "score": 1.0
+  },
+  "Acea Run Rome The Marathon|5KM": {
+   "date": "2026-03-22",
+   "source": "evenement"
+  },
+  "Acea Run Rome The Marathon|AUTRE": {
+   "date": "2026-03-22",
+   "source": "evenement"
+  },
+  "Acea Run Rome The Marathon|MARATHON": {
+   "date": "2026-03-22",
+   "source": "WA",
+   "nom_ext": "Acea Run Rome The Marathon",
+   "score": 1.0
+  },
+  "Adani Ahmedabad Marathon|10KM": {
+   "date": "2026-11-29",
+   "source": "evenement"
+  },
+  "Adani Ahmedabad Marathon|5KM": {
+   "date": "2026-11-29",
+   "source": "evenement"
+  },
+  "Adani Ahmedabad Marathon|MARATHON": {
+   "date": "2026-11-29",
+   "source": "WA",
+   "nom_ext": "Adani Ahmedabad Marathon",
+   "score": 1.0
+  },
+  "Adani Ahmedabad Marathon|SEMI": {
+   "date": "2026-11-29",
+   "source": "evenement"
+  },
+  "Adidas Runners city night|10KM": {
+   "date": "2026-08-01",
+   "source": "WA",
+   "nom_ext": "adidas Runners City Night",
+   "score": 0.65
+  },
+  "Adidas Runners city night|5KM": {
+   "date": "2026-08-01",
+   "source": "evenement"
+  },
+  "Allwyn Athens Marathon|10KM": {
+   "date": "2026-11-07",
+   "source": "WA",
+   "nom_ext": "Athens Marathon the Authentic 5 & 10km",
+   "score": 0.552
+  },
+  "Allwyn Athens Marathon|MARATHON": {
+   "date": "2026-11-08",
+   "source": "WA",
+   "nom_ext": "Athens Marathon. The Authentic",
+   "score": 1.0
+  },
+  "Atlanta Journal-Constitution Peachtree Road Race|10KM": {
+   "date": "2026-07-04",
+   "source": "WA",
+   "nom_ext": "Northside Hospital Peachtree Road Race",
+   "score": 1.0
+  },
+  "BMW Berlin Marathon|MARATHON": {
+   "date": "2026-09-27",
+   "source": "WA",
+   "nom_ext": "BMW Berlin Marathon",
+   "score": 1.0
+  },
+  "BOLDERBoulder 10K|10KM": {
+   "date": "2026-05-25",
+   "source": "WA",
+   "nom_ext": "BOLDERBoulder",
+   "score": 1.0
+  },
+  "Bajaj Pune Marathon|10KM": {
+   "date": "2026-12-13",
+   "source": "evenement"
+  },
+  "Bajaj Pune Marathon|5KM": {
+   "date": "2026-12-13",
+   "source": "evenement"
+  },
+  "Bajaj Pune Marathon|MARATHON": {
+   "date": "2026-12-13",
+   "source": "WA",
+   "nom_ext": "Bajaj Pune Marathon",
+   "score": 1.0
+  },
+  "Bajaj Pune Marathon|SEMI": {
+   "date": "2026-12-13",
+   "source": "evenement"
+  },
+  "Bangsaen21|SEMI": {
+   "date": "2026-12-20",
+   "source": "WA",
+   "nom_ext": "Bangsaen21",
+   "score": 1.0
+  },
+  "Bangsaen42 Chonburi Marathon|MARATHON": {
+   "date": "2026-11-15",
+   "source": "WA",
+   "nom_ext": "Bangsaen42 Chonburi Marathon",
+   "score": 1.0
+  },
+  "Bank Jateng Borobudur Marathon|MARATHON": {
+   "date": "2026-11-15",
+   "source": "WA",
+   "nom_ext": "Bank Jateng Borobudur Marathon",
+   "score": 1.0
+  },
+  "Bank of America Chicago Marathon|MARATHON": {
+   "date": "2026-10-11",
+   "source": "WA",
+   "nom_ext": "Bank of America Chicago Marathon",
+   "score": 1.0
+  },
+  "Bank of China Beijing Half Marathon|SEMI": {
+   "date": "2026-04-12",
+   "source": "WA",
+   "nom_ext": "Beijing Half Marathon",
+   "score": 1.0
+  },
+  "Beijing Marathon|MARATHON": {
+   "date": "2026-10-18",
+   "source": "WA",
+   "nom_ext": "Bank of China Beijing Marathon",
+   "score": 1.0
+  },
+  "Belgrade Marathon|10KM": {
+   "date": "2026-04-18",
+   "source": "WA",
+   "nom_ext": "Belgrade Marathon - 10km",
+   "score": 1.0
+  },
+  "Belgrade Marathon|MARATHON": {
+   "date": "2026-04-19",
+   "source": "WA",
+   "nom_ext": "39th Powerade Belgrade Marathon",
+   "score": 1.0
+  },
+  "Beneva Montréal Marathon|10KM": {
+   "date": "2026-10-11",
+   "source": "evenement"
+  },
+  "Beneva Montréal Marathon|5KM": {
+   "date": "2026-10-11",
+   "source": "evenement"
+  },
+  "Beneva Montréal Marathon|MARATHON": {
+   "date": "2026-10-11",
+   "source": "WA",
+   "nom_ext": "Marathon Beneva de Montréal",
+   "score": 1.0
+  },
+  "Beneva Montréal Marathon|SEMI": {
+   "date": "2026-10-11",
+   "source": "evenement"
+  },
+  "Beneva Vancouver Half Marathon|10KM": {
+   "date": "2026-06-28",
+   "source": "evenement"
+  },
+  "Beneva Vancouver Half Marathon|5KM": {
+   "date": "2026-06-28",
+   "source": "evenement"
+  },
+  "Beneva Vancouver Half Marathon|SEMI": {
+   "date": "2026-06-28",
+   "source": "WA",
+   "nom_ext": "Vancouver Half Marathon",
+   "score": 0.875
+  },
+  "Beppu-Oita Mainichi Marathon|MARATHON": {
+   "date": "2026-02-01",
+   "source": "WA",
+   "nom_ext": "74th Beppu-Oita Mainichi Marathon",
+   "score": 1.0
+  },
+  "Bergamo21|10KM": {
+   "date": "2026-02-08",
+   "source": "evenement"
+  },
+  "Bergamo21|SEMI": {
+   "date": "2026-02-08",
+   "source": "WA",
+   "nom_ext": "Bergamo21",
+   "score": 0.65
+  },
+  "Bilbao Night Running Fest|10KM": {
+   "date": "2026-10-17",
+   "source": "evenement"
+  },
+  "Bilbao Night Running Fest|SEMI": {
+   "date": "2026-10-17",
+   "source": "WA",
+   "nom_ext": "Bilbao Night Half Marathon",
+   "score": 0.731
+  },
+  "Boilermaker Road Race|AUTRE": {
+   "date": "2026-07-12",
+   "source": "WA",
+   "nom_ext": "Boilermaker Road Race",
+   "score": 1.0
+  },
+  "Boston Marathon|MARATHON": {
+   "date": "2026-04-20",
+   "source": "WA",
+   "nom_ext": "Boston Marathon",
+   "score": 1.0
+  },
+  "Bratislava Marathon|AUTRE": {
+   "date": "2026-04-12",
+   "source": "evenement"
+  },
+  "Bratislava Marathon|MARATHON": {
+   "date": "2026-04-12",
+   "source": "WA",
+   "nom_ext": "ČSOB Bratislava Marathon",
+   "score": 1.0
+  },
+  "Bratislava Marathon|SEMI": {
+   "date": "2026-04-12",
+   "source": "WA",
+   "nom_ext": "ČSOB Bratislava Half Marathon",
+   "score": 1.0
+  },
+  "Brisbane marathon festival|10KM": {
+   "date": "2026-06-07",
+   "source": "evenement"
+  },
+  "Brisbane marathon festival|5KM": {
+   "date": "2026-06-07",
+   "source": "evenement"
+  },
+  "Brisbane marathon festival|MARATHON": {
+   "date": "2026-06-07",
+   "source": "WA",
+   "nom_ext": "Brisbane Marathon Festival - Marathon",
+   "score": 1.0
+  },
+  "Brisbane marathon festival|SEMI": {
+   "date": "2026-06-07",
+   "source": "WA",
+   "nom_ext": "Brisbane Marathon Festival - Half Marathon, 10K, 5K",
+   "score": 1.0
+  },
+  "Bucharest international half marathon|10KM": {
+   "date": "2026-04-26",
+   "source": "evenement"
+  },
+  "Bucharest international half marathon|SEMI": {
+   "date": "2026-04-26",
+   "source": "WA",
+   "nom_ext": "Bucharest International Half Marathon - 10km",
+   "score": 1.0
+  },
+  "Burj2Burj Half Marathon|SEMI": {
+   "date": "2026-02-08",
+   "source": "WA",
+   "nom_ext": "Burj2Burj Half Marathon",
+   "score": 1.0
+  },
+  "C&D Xiamen Marathon|MARATHON": {
+   "date": "2026-01-11",
+   "source": "WA",
+   "nom_ext": "C&D Xiamen Marathon",
+   "score": 1.0
+  },
+  "Cairns Marathon Festival|10KM": {
+   "date": "2026-07-12",
+   "source": "evenement"
+  },
+  "Cairns Marathon Festival|5KM": {
+   "date": "2026-07-12",
+   "source": "evenement"
+  },
+  "Cairns Marathon Festival|MARATHON": {
+   "date": "2026-07-12",
+   "source": "WA",
+   "nom_ext": "Cairns Marathon Festival - Marathon",
+   "score": 1.0
+  },
+  "Cairns Marathon Festival|SEMI": {
+   "date": "2026-07-12",
+   "source": "WA",
+   "nom_ext": "Cairns Marathon Festival - Half Marathon, 10K, 5K",
+   "score": 1.0
+  },
+  "California International Marathon|MARATHON": {
+   "date": "2026-12-06",
+   "source": "WA",
+   "nom_ext": "California International Marathon",
+   "score": 1.0
+  },
+  "Cardiff Half Marathon|SEMI": {
+   "date": "2026-10-04",
+   "source": "WA",
+   "nom_ext": "Cardiff Half Marathon",
+   "score": 1.0
+  },
+  "Casablanca Marathon|AUTRE": {
+   "date": "2026-10-25",
+   "source": "evenement"
+  },
+  "Casablanca Marathon|MARATHON": {
+   "date": "2026-10-25",
+   "source": "WA",
+   "nom_ext": "Casablanca Marathon",
+   "score": 1.0
+  },
+  "Casablanca Marathon|SEMI": {
+   "date": "2026-10-25",
+   "source": "WA",
+   "nom_ext": "Casablanca Half Marathon",
+   "score": 1.0
+  },
+  "Chang'an Automobile Chongqing Marathon|MARATHON": {
+   "date": "2026-01-18",
+   "source": "WA",
+   "nom_ext": "Chang'an Automobile Chongqing Marathon",
+   "score": 1.0
+  },
+  "Chengdu Marathon|MARATHON": {
+   "date": "2026-10-25",
+   "source": "WA",
+   "nom_ext": "Chengdu Marathon",
+   "score": 1.0
+  },
+  "Chester marathon|10KM": {
+   "date": "2026-10-11",
+   "source": "evenement"
+  },
+  "Chester marathon|MARATHON": {
+   "date": "2026-10-11",
+   "source": "WA",
+   "nom_ext": "Top Flight by RunThrough MBNA Chester Marathon",
+   "score": 0.735
+  },
+  "Chester marathon|SEMI": {
+   "date": "2026-10-11",
+   "source": "evenement"
+  },
+  "Chevron Houston Marathon|MARATHON": {
+   "date": "2026-01-11",
+   "source": "WA",
+   "nom_ext": "Chevron Houston Marathon",
+   "score": 1.0
+  },
+  "Chevron Houston Marathon|SEMI": {
+   "date": "2026-01-11",
+   "source": "WA",
+   "nom_ext": "Aramco Houston Half Marathon",
+   "score": 1.0
+  },
+  "Coelmo Napoli City Half Marathon|SEMI": {
+   "date": "2026-02-22",
+   "source": "WA",
+   "nom_ext": "Coelmo Napoli City Half Marathon",
+   "score": 1.0
+  },
+  "Columbus Marathon|MARATHON": {
+   "date": "2026-10-18",
+   "source": "WA",
+   "nom_ext": "Nationwide Children's Hospital Columbus Marathon",
+   "score": 0.938
+  },
+  "Copenhagen Marathon|MARATHON": {
+   "date": "2026-05-10",
+   "source": "WA",
+   "nom_ext": "Copenhagen Marathon",
+   "score": 1.0
+  },
+  "Corrida de Houilles|10KM": {
+   "date": "2026-12-27",
+   "source": "WA",
+   "nom_ext": "54ème Corrida de Houilles",
+   "score": 1.0
+  },
+  "Course de l'escalade|AUTRE": {
+   "date": "2026-12-06",
+   "source": "WA",
+   "nom_ext": "Course de l'Escalade",
+   "score": 1.0
+  },
+  "Credit Union Cherry Blossom|AUTRE": {
+   "date": "2026-04-12",
+   "source": "WA",
+   "nom_ext": "Credit Union Cherry Blossom 10 Mile",
+   "score": 0.7
+  },
+  "Cursa dels Nassos|10KM": {
+   "date": "2026-12-31",
+   "source": "WA",
+   "nom_ext": "B100 Cursa dels Nassos",
+   "score": 1.0
+  },
+  "Cursa dels Nassos|5KM": {
+   "date": "2026-12-31",
+   "source": "evenement"
+  },
+  "Daegu Marathon|MARATHON": {
+   "date": "2026-02-22",
+   "source": "WA",
+   "nom_ext": "Daegu Marathon",
+   "score": 1.0
+  },
+  "Dalian Marathon|10KM": {
+   "date": "2026-04-26",
+   "source": "evenement"
+  },
+  "Dalian Marathon|MARATHON": {
+   "date": "2026-04-26",
+   "source": "WA",
+   "nom_ext": "The 36th Dalian Marathon",
+   "score": 1.0
+  },
+  "Dalian Marathon|SEMI": {
+   "date": "2026-04-26",
+   "source": "evenement"
+  },
+  "Dam tot Damloop|AUTRE": {
+   "date": "2026-09-20",
+   "source": "WA",
+   "nom_ext": "Dam tot Damloop",
+   "score": 1.0
+  },
+  "Doha Marathon|10KM": {
+   "date": "2026-01-16",
+   "source": "evenement"
+  },
+  "Doha Marathon|5KM": {
+   "date": "2026-01-16",
+   "source": "evenement"
+  },
+  "Doha Marathon|AUTRE": {
+   "date": "2026-01-16",
+   "source": "evenement"
+  },
+  "Doha Marathon|MARATHON": {
+   "date": "2026-01-16",
+   "source": "WA",
+   "nom_ext": "Doha Marathon by Ooredoo",
+   "score": 0.875
+  },
+  "Doha Marathon|SEMI": {
+   "date": "2026-01-16",
+   "source": "evenement"
+  },
+  "Dresden Marathon|SEMI": {
+   "date": "2026-09-06",
+   "source": "WA",
+   "nom_ext": "Dresden HALF",
+   "score": 1.0
+  },
+  "EDP Lisboa Meia Maratona|10KM": {
+   "date": "2026-03-08",
+   "source": "evenement"
+  },
+  "EDP Lisboa Meia Maratona|SEMI": {
+   "date": "2026-03-08",
+   "source": "WA",
+   "nom_ext": "EDP Lisbon Half Marathon",
+   "score": 1.0
+  },
+  "EDP Maratona de Lisboa|MARATHON": {
+   "date": "2026-10-10",
+   "source": "WA",
+   "nom_ext": "EDP Lisbon Marathon",
+   "score": 1.0
+  },
+  "EDP Maratona de Lisboa|SEMI": {
+   "date": "2026-10-11",
+   "source": "WA",
+   "nom_ext": "Hyundai Half Marathon",
+   "score": 1.0
+  },
+  "Enschede Marathon|10KM": {
+   "date": "2026-04-12",
+   "source": "evenement"
+  },
+  "Enschede Marathon|5KM": {
+   "date": "2026-04-12",
+   "source": "evenement"
+  },
+  "Enschede Marathon|MARATHON": {
+   "date": "2026-04-12",
+   "source": "WA",
+   "nom_ext": "Enschede Marathon",
+   "score": 1.0
+  },
+  "Enschede Marathon|SEMI": {
+   "date": "2026-04-12",
+   "source": "WA",
+   "nom_ext": "Enschede Half Marathon",
+   "score": 1.0
+  },
+  "Estra Firenze Marathon|10KM": {
+   "date": "2026-11-29",
+   "source": "WA",
+   "nom_ext": "10k Firenze Marathon",
+   "score": 0.664
+  },
+  "Estra Firenze Marathon|AUTRE": {
+   "date": "2026-11-29",
+   "source": "evenement"
+  },
+  "Estra Firenze Marathon|MARATHON": {
+   "date": "2026-11-29",
+   "source": "WA",
+   "nom_ext": "42th Estra Firenze Marathon",
+   "score": 1.0
+  },
+  "Eugene Marathon|MARATHON": {
+   "date": "2026-04-26",
+   "source": "WA",
+   "nom_ext": "Eugene Marathon",
+   "score": 1.0
+  },
+  "Eurospin RomaOstia Half Marathon|SEMI": {
+   "date": "2026-03-01",
+   "source": "WA",
+   "nom_ext": "Eurospin RomaOstia Half Marathon",
+   "score": 1.0
+  },
+  "Falmouth Road Race|AUTRE": {
+   "date": "2026-08-16",
+   "source": "WA",
+   "nom_ext": "ASICS Falmouth Road Race",
+   "score": 1.0
+  },
+  "Federal Bank Pune Marathon|MARATHON": {
+   "date": "2026-12-06",
+   "source": "AIMS",
+   "nom_ext": "Pune International Marathon",
+   "score": 1.0
+  },
+  "Frankfurter Mainova Half Marathon|SEMI": {
+   "date": "2026-03-22",
+   "source": "WA",
+   "nom_ext": "Frankfurter Mainova Half Marathon",
+   "score": 1.0
+  },
+  "Fukuoka Marathon|MARATHON": {
+   "date": "2026-12-06",
+   "source": "WA",
+   "nom_ext": "Fukuoka International Marathon",
+   "score": 1.0
+  },
+  "Fuzhou Marathon|MARATHON": {
+   "date": "2026-12-27",
+   "source": "WA",
+   "nom_ext": "Fuzhou Marathona",
+   "score": 1.0
+  },
+  "Gate River Run|AUTRE": {
+   "date": "2026-03-07",
+   "source": "WA",
+   "nom_ext": "Gate River Run 15K",
+   "score": 1.0
+  },
+  "Generali Berlin Half Marathon|SEMI": {
+   "date": "2026-03-29",
+   "source": "WA",
+   "nom_ext": "Generali Berliner Halbmarathon",
+   "score": 1.0
+  },
+  "Generali Köln Marathon|AUTRE": {
+   "date": "2026-10-04",
+   "source": "evenement"
+  },
+  "Generali Köln Marathon|MARATHON": {
+   "date": "2026-10-04",
+   "source": "WA",
+   "nom_ext": "Generali Köln Marathon",
+   "score": 1.0
+  },
+  "Generali Köln Marathon|SEMI": {
+   "date": "2026-10-04",
+   "source": "WA",
+   "nom_ext": "Generali Köln Half Marathon",
+   "score": 1.0
+  },
+  "Generali Maraton Malaga|MARATHON": {
+   "date": "2026-11-08",
+   "source": "WA",
+   "nom_ext": "Generali Maratón de Málaga",
+   "score": 1.0
+  },
+  "Generali Maraton Malaga|SEMI": {
+   "date": "2026-11-08",
+   "source": "evenement"
+  },
+  "Generali Prague Half Marathon|SEMI": {
+   "date": "2026-03-28",
+   "source": "WA",
+   "nom_ext": "Generali Prague Half Marathon",
+   "score": 1.0
+  },
+  "Gifu Half Marathon|SEMI": {
+   "date": "2026-04-26",
+   "source": "WA",
+   "nom_ext": "Gifu Half Marathon",
+   "score": 1.0
+  },
+  "Gold Coast Marathon|MARATHON": {
+   "date": "2026-07-05",
+   "source": "WA",
+   "nom_ext": "ASICS Gold Coast Marathon",
+   "score": 1.0
+  },
+  "Grand Prix Von Bern|AUTRE": {
+   "date": "2026-05-09",
+   "source": "WA",
+   "nom_ext": "Grand-Prix von Bern",
+   "score": 1.0
+  },
+  "Grandma's Marathon|MARATHON": {
+   "date": "2026-06-20",
+   "source": "WA",
+   "nom_ext": "Grandma's Marathon",
+   "score": 1.0
+  },
+  "Graz Marathon|10KM": {
+   "date": "2026-10-11",
+   "source": "evenement"
+  },
+  "Graz Marathon|5KM": {
+   "date": "2026-10-11",
+   "source": "evenement"
+  },
+  "Graz Marathon|AUTRE": {
+   "date": "2026-10-11",
+   "source": "evenement"
+  },
+  "Graz Marathon|MARATHON": {
+   "date": "2026-10-11",
+   "source": "WA",
+   "nom_ext": "Graz Marathon",
+   "score": 1.0
+  },
+  "Graz Marathon|SEMI": {
+   "date": "2026-10-11",
+   "source": "WA",
+   "nom_ext": "Graz Half Marathon",
+   "score": 1.0
+  },
+  "Great 10K|10KM": {
+   "date": "2026-10-11",
+   "source": "WA",
+   "nom_ext": "The Great 10K",
+   "score": 1.0
+  },
+  "Great Ethiopan Run|10KM": {
+   "date": "2026-11-22",
+   "source": "WA",
+   "nom_ext": "Great Ethiopian Run 10km Presented by Bank of America",
+   "score": 0.675
+  },
+  "Guadalajara Half Marathon|SEMI": {
+   "date": "2026-02-22",
+   "source": "WA",
+   "nom_ext": "XL Medio Maratón Internacional Guadalajara Electrolit",
+   "score": 1.0
+  },
+  "Guadalajara Marathon|MARATHON": {
+   "date": "2026-11-08",
+   "source": "WA",
+   "nom_ext": "XLI Maratón Internacional Guadalajara Hidratado por Electrolit",
+   "score": 0.822
+  },
+  "Guangzhou Marathon|MARATHON": {
+   "date": "2026-12-20",
+   "source": "WA",
+   "nom_ext": "Guangzhou Marathon",
+   "score": 1.0
+  },
+  "Guiyang Marathon|10KM": {
+   "date": "2026-06-14",
+   "source": "evenement"
+  },
+  "Guiyang Marathon|MARATHON": {
+   "date": "2026-06-14",
+   "source": "WA",
+   "nom_ext": "Guiyang Marathon",
+   "score": 1.0
+  },
+  "Guiyang Marathon|SEMI": {
+   "date": "2026-06-14",
+   "source": "evenement"
+  },
+  "Gulf Bank 642 Marathon|10KM": {
+   "date": "2026-11-28",
+   "source": "evenement"
+  },
+  "Gulf Bank 642 Marathon|5KM": {
+   "date": "2026-11-28",
+   "source": "evenement"
+  },
+  "Gulf Bank 642 Marathon|MARATHON": {
+   "date": "2026-11-28",
+   "source": "AIMS",
+   "nom_ext": "Gulf Bank 642 Marathon",
+   "score": 1.0
+  },
+  "Gulf Bank 642 Marathon|SEMI": {
+   "date": "2026-11-28",
+   "source": "evenement"
+  },
+  "Gutenberg Halbmarathon Mainz|10KM": {
+   "date": "2026-05-10",
+   "source": "evenement"
+  },
+  "Gutenberg Halbmarathon Mainz|SEMI": {
+   "date": "2026-05-10",
+   "source": "WA",
+   "nom_ext": "Gutenberg Halbmarathon Mainz",
+   "score": 1.0
+  },
+  "Gyeongju International Marathon|MARATHON": {
+   "date": "2026-10-17",
+   "source": "WA",
+   "nom_ext": "Gyeongju International Marathon",
+   "score": 1.0
+  },
+  "Göteborgsvarvet|SEMI": {
+   "date": "2026-05-23",
+   "source": "WA",
+   "nom_ext": "Göteborgsvarvet",
+   "score": 0.65
+  },
+  "HOKA Semi de Paris|SEMI": {
+   "date": "2026-03-08",
+   "source": "WA",
+   "nom_ext": "HOKA Semi de Paris",
+   "score": 1.0
+  },
+  "Haier Qingdao Marathon|MARATHON": {
+   "date": "2026-04-19",
+   "source": "WA",
+   "nom_ext": "Haier Qingdao Marathon",
+   "score": 1.0
+  },
+  "Half Marathon Munchen by Brooks|SEMI": {
+   "date": "2026-10-11",
+   "source": "WA",
+   "nom_ext": "München Half Marathon & 10K",
+   "score": 1.0
+  },
+  "Halong Bay Heritage Marathon|10KM": {
+   "date": "2026-11-22",
+   "source": "evenement"
+  },
+  "Halong Bay Heritage Marathon|5KM": {
+   "date": "2026-11-22",
+   "source": "evenement"
+  },
+  "Halong Bay Heritage Marathon|MARATHON": {
+   "date": "2026-11-22",
+   "source": "WA",
+   "nom_ext": "Halong Bay Heritage",
+   "score": 1.0
+  },
+  "Halong Bay Heritage Marathon|SEMI": {
+   "date": "2026-11-22",
+   "source": "evenement"
+  },
+  "Halve Marathon Zwolle|SEMI": {
+   "date": "2026-06-13",
+   "source": "WA",
+   "nom_ext": "Scania Halve Marathon Zwolle",
+   "score": 1.0
+  },
+  "Hangzhou Marathon|MARATHON": {
+   "date": "2026-11-01",
+   "source": "WA",
+   "nom_ext": "Hangzhou Marathon",
+   "score": 1.0
+  },
+  "Harbin Marathon|MARATHON": {
+   "date": "2026-09-13",
+   "source": "WA",
+   "nom_ext": "Harbin Marathon",
+   "score": 1.0
+  },
+  "Harmonie Mutuelle 20km de Paris|AUTRE": {
+   "date": "2026-10-11",
+   "source": "WA",
+   "nom_ext": "Harmonie Mutuelle 20km de Paris",
+   "score": 1.0
+  },
+  "Harmonie Mutuelle Marathon de Tours|10KM": {
+   "date": "2026-09-27",
+   "source": "evenement"
+  },
+  "Harmonie Mutuelle Marathon de Tours|AUTRE": {
+   "date": "2026-09-27",
+   "source": "WA",
+   "nom_ext": "Harmonie Mutuelle Marathon 10-20K Tours",
+   "score": 1.0
+  },
+  "Harmonie Mutuelle Marathon de Tours|MARATHON": {
+   "date": "2026-09-27",
+   "source": "evenement"
+  },
+  "Haspa Marathon Hamburg|MARATHON": {
+   "date": "2026-04-26",
+   "source": "WA",
+   "nom_ext": "40. Haspa Marathon Hamburg",
+   "score": 1.0
+  },
+  "Helsinki City run|5KM": {
+   "date": "2026-05-16",
+   "source": "evenement"
+  },
+  "Helsinki City run|AUTRE": {
+   "date": "2026-05-16",
+   "source": "evenement"
+  },
+  "Helsinki City run|MARATHON": {
+   "date": "2026-05-16",
+   "source": "WA",
+   "nom_ext": "Helsinki City Run - Marathon",
+   "score": 1.0
+  },
+  "Helsinki City run|SEMI": {
+   "date": "2026-05-16",
+   "source": "evenement"
+  },
+  "Ho Chi Minh city marathon|MARATHON": {
+   "date": "2026-12-05",
+   "source": "WA",
+   "nom_ext": "Techcombank Ho Chi Minh International Marathon",
+   "score": 1.0
+  },
+  "Hofu Yomiuri Marathon|MARATHON": {
+   "date": "2026-12-06",
+   "source": "WA",
+   "nom_ext": "57th Hofu Yomiuri Marathon",
+   "score": 1.0
+  },
+  "Hokkaido Marathon|MARATHON": {
+   "date": "2026-08-30",
+   "source": "WA",
+   "nom_ext": "Hokkaido Marathon",
+   "score": 1.0
+  },
+  "Honolulu Marathon|MARATHON": {
+   "date": "2026-12-13",
+   "source": "WA",
+   "nom_ext": "JAL Honolulu Marathon",
+   "score": 1.0
+  },
+  "IndianOil WNC Navy Half|10KM": {
+   "date": "2026-11-22",
+   "source": "evenement"
+  },
+  "IndianOil WNC Navy Half|5KM": {
+   "date": "2026-11-22",
+   "source": "evenement"
+  },
+  "IndianOil WNC Navy Half|SEMI": {
+   "date": "2026-11-22",
+   "source": "WA",
+   "nom_ext": "IndianOil WNC Navy Half Marathon",
+   "score": 1.0
+  },
+  "Indianapolis Monumental Marathon|5KM": {
+   "date": "2026-11-07",
+   "source": "evenement"
+  },
+  "Indianapolis Monumental Marathon|MARATHON": {
+   "date": "2026-11-07",
+   "source": "evenement"
+  },
+  "Indianapolis Monumental Marathon|SEMI": {
+   "date": "2026-11-07",
+   "source": "WA",
+   "nom_ext": "CNO Financial Indianapolis Monumental Marathon, Half Marathon, & 5K",
+   "score": 1.0
+  },
+  "International Mersin Marathon|MARATHON": {
+   "date": "2026-12-13",
+   "source": "WA",
+   "nom_ext": "8th International Mersin Marathon",
+   "score": 1.0
+  },
+  "Irish Life Dublin Marathon|MARATHON": {
+   "date": "2026-10-25",
+   "source": "WA",
+   "nom_ext": "Irish Life Dublin Marathon",
+   "score": 1.0
+  },
+  "Istanbul Half Marathon|SEMI": {
+   "date": "2026-04-19",
+   "source": "WA",
+   "nom_ext": "Istanbul Half Marathon",
+   "score": 1.0
+  },
+  "Istanbul Marathon|MARATHON": {
+   "date": "2026-11-01",
+   "source": "WA",
+   "nom_ext": "Istanbul Marathon",
+   "score": 1.0
+  },
+  "Jakarta Running Festival|MARATHON": {
+   "date": "2026-10-25",
+   "source": "WA",
+   "nom_ext": "Jakarta Running Festival - Marathon",
+   "score": 1.0
+  },
+  "Jakarta Running Festival|SEMI": {
+   "date": "2026-10-24",
+   "source": "WA",
+   "nom_ext": "Jakarta Running Festival - Half Marathon",
+   "score": 1.0
+  },
+  "Jilin City Marathon|MARATHON": {
+   "date": "2026-05-31",
+   "source": "WA",
+   "nom_ext": "Jilin City Marathon",
+   "score": 1.0
+  },
+  "Jonkoping Marathon|MARATHON": {
+   "date": "2026-08-29",
+   "source": "WA",
+   "nom_ext": "Jönköping Marathon",
+   "score": 1.0
+  },
+  "Jonkoping Marathon|SEMI": {
+   "date": "2026-08-29",
+   "source": "WA",
+   "nom_ext": "Jönköping Half Marathon",
+   "score": 1.0
+  },
+  "KPMG Lentermarathon|10KM": {
+   "date": "2026-03-15",
+   "source": "evenement"
+  },
+  "KPMG Lentermarathon|5KM": {
+   "date": "2026-03-15",
+   "source": "evenement"
+  },
+  "KPMG Lentermarathon|MARATHON": {
+   "date": "2026-03-15",
+   "source": "WA",
+   "nom_ext": "KPMG Lentemarathon Amstelveen",
+   "score": 0.833
+  },
+  "KPMG Lentermarathon|SEMI": {
+   "date": "2026-03-15",
+   "source": "evenement"
+  },
+  "Kagawa Marugame International Half Marathon|SEMI": {
+   "date": "2026-02-01",
+   "source": "WA",
+   "nom_ext": "78th Kagawa Marugame International Half Marathon",
+   "score": 1.0
+  },
+  "Kigali International Peace Marathon|MARATHON": {
+   "date": "2026-06-14",
+   "source": "WA",
+   "nom_ext": "Kigali International Peace Marathon",
+   "score": 1.0
+  },
+  "Kobe Marathon|MARATHON": {
+   "date": "2026-11-15",
+   "source": "WA",
+   "nom_ext": "Kobe Marathon",
+   "score": 1.0
+  },
+  "La route du vin|SEMI": {
+   "date": "2026-09-27",
+   "source": "WA",
+   "nom_ext": "Route du Vin Semi-Marathon",
+   "score": 1.0
+  },
+  "Lanzhou Marathon|MARATHON": {
+   "date": "2026-05-24",
+   "source": "WA",
+   "nom_ext": "Lanzhou Marathon",
+   "score": 1.0
+  },
+  "Lausanne Marathon|10KM": {
+   "date": "2026-10-25",
+   "source": "evenement"
+  },
+  "Lausanne Marathon|MARATHON": {
+   "date": "2026-10-25",
+   "source": "WA",
+   "nom_ext": "Lausanne Marathon",
+   "score": 1.0
+  },
+  "Lausanne Marathon|SEMI": {
+   "date": "2026-10-25",
+   "source": "evenement"
+  },
+  "Leiden Marathon|MARATHON": {
+   "date": "2026-05-10",
+   "source": "WA",
+   "nom_ext": "35e Leiden Marathon",
+   "score": 1.0
+  },
+  "Leiden Marathon|SEMI": {
+   "date": "2026-05-10",
+   "source": "WA",
+   "nom_ext": "35e Leiden Marathon - Half marathon",
+   "score": 1.0
+  },
+  "Les foulées Valenciennoises|10KM": {
+   "date": "2026-04-12",
+   "source": "WA",
+   "nom_ext": "Les Foulées Valenciennoises",
+   "score": 1.0
+  },
+  "Les foulées Valenciennoises|5KM": {
+   "date": "2026-04-12",
+   "source": "evenement"
+  },
+  "Les foulées Valenciennoises|AUTRE": {
+   "date": "2026-04-12",
+   "source": "evenement"
+  },
+  "Lilac Bloomsday Run|AUTRE": {
+   "date": "2026-05-03",
+   "source": "WA",
+   "nom_ext": "Lilac Bloomsday Run",
+   "score": 1.0
+  },
+  "Limassol Marathon|10KM": {
+   "date": "2026-03-22",
+   "source": "evenement"
+  },
+  "Limassol Marathon|5KM": {
+   "date": "2026-03-22",
+   "source": "evenement"
+  },
+  "Limassol Marathon|MARATHON": {
+   "date": "2026-03-22",
+   "source": "WA",
+   "nom_ext": "XM Limassol Marathon",
+   "score": 1.0
+  },
+  "Limassol Marathon|SEMI": {
+   "date": "2026-03-22",
+   "source": "evenement"
+  },
+  "Linz Donau Marathon|10KM": {
+   "date": "2026-04-12",
+   "source": "evenement"
+  },
+  "Linz Donau Marathon|5KM": {
+   "date": "2026-04-12",
+   "source": "evenement"
+  },
+  "Linz Donau Marathon|AUTRE": {
+   "date": "2026-04-12",
+   "source": "evenement"
+  },
+  "Linz Donau Marathon|MARATHON": {
+   "date": "2026-04-12",
+   "source": "WA",
+   "nom_ext": "Linz Donau Marathon",
+   "score": 1.0
+  },
+  "Linz Donau Marathon|SEMI": {
+   "date": "2026-04-12",
+   "source": "WA",
+   "nom_ext": "Linz Donau Marathon - Half Marathon, 5K",
+   "score": 1.0
+  },
+  "Ljubljana Marathon|MARATHON": {
+   "date": "2026-10-18",
+   "source": "WA",
+   "nom_ext": "NLB Ljubljana Marathon",
+   "score": 1.0
+  },
+  "Ljubljana Marathon|SEMI": {
+   "date": "2026-10-17",
+   "source": "WA",
+   "nom_ext": "Ljubljana Generali Halfmarathon & Garmin 10 km",
+   "score": 0.859
+  },
+  "MAIF Ekiden de Paris|AUTRE": {
+   "date": "2026-11-01",
+   "source": "WA",
+   "nom_ext": "MAIF Ekiden de Paris",
+   "score": 1.0
+  },
+  "Mainova Frankfurt Marathon|MARATHON": {
+   "date": "2026-10-25",
+   "source": "WA",
+   "nom_ext": "Mainova Frankfurt Marathon",
+   "score": 1.0
+  },
+  "Marathon Comar Tunis-Carthage|MARATHON": {
+   "date": "2026-12-06",
+   "source": "WA",
+   "nom_ext": "Marathon COMAR de Tunis-Carthage",
+   "score": 1.0
+  },
+  "Marathon Golfe de Saint-Tropez|5KM": {
+   "date": "2026-03-29",
+   "source": "evenement"
+  },
+  "Marathon Golfe de Saint-Tropez|AUTRE": {
+   "date": "2026-03-29",
+   "source": "evenement"
+  },
+  "Marathon Golfe de Saint-Tropez|MARATHON": {
+   "date": "2026-03-29",
+   "source": "WA",
+   "nom_ext": "Marathon du Golfe de Saint-Tropez",
+   "score": 0.7
+  },
+  "Marathon International de Rabat|MARATHON": {
+   "date": "2026-05-10",
+   "source": "WA",
+   "nom_ext": "Marathon International de Rabat",
+   "score": 1.0
+  },
+  "Marathon International de la Côte d’Amour Amarris|10KM": {
+   "date": "2026-11-08",
+   "source": "evenement"
+  },
+  "Marathon International de la Côte d’Amour Amarris|5KM": {
+   "date": "2026-11-08",
+   "source": "evenement"
+  },
+  "Marathon International de la Côte d’Amour Amarris|MARATHON": {
+   "date": "2026-11-08",
+   "source": "WA",
+   "nom_ext": "Marathon de la Côte d'Amour",
+   "score": 0.744
+  },
+  "Marathon International de la Côte d’Amour Amarris|SEMI": {
+   "date": "2026-11-08",
+   "source": "evenement"
+  },
+  "Marathon Vert|10KM": {
+   "date": "2026-10-18",
+   "source": "evenement"
+  },
+  "Marathon Vert|AUTRE": {
+   "date": "2026-10-18",
+   "source": "evenement"
+  },
+  "Marathon Vert|MARATHON": {
+   "date": "2026-10-18",
+   "source": "WA",
+   "nom_ext": "Le Marathon Vert Rennes School of Business",
+   "score": 0.747
+  },
+  "Marathon de Bordeaux AG2R LA MONDIALE|10KM": {
+   "date": "2026-11-08",
+   "source": "evenement"
+  },
+  "Marathon de Bordeaux AG2R LA MONDIALE|MARATHON": {
+   "date": "2026-11-08",
+   "source": "evenement"
+  },
+  "Marathon de Bordeaux AG2R LA MONDIALE|SEMI": {
+   "date": "2026-11-08",
+   "source": "WA",
+   "nom_ext": "Marathon de Bordeaux AG2R La Mondiale - Semi & 10km",
+   "score": 1.0
+  },
+  "Marathon de Funchal|AUTRE": {
+   "date": "2026-01-17",
+   "source": "evenement"
+  },
+  "Marathon de Funchal|MARATHON": {
+   "date": "2026-01-17",
+   "source": "WA",
+   "nom_ext": "Maratona do Funchal",
+   "score": 1.0
+  },
+  "Marathon de Funchal|SEMI": {
+   "date": "2026-01-17",
+   "source": "evenement"
+  },
+  "Marathon de La Rochelle Serge Vigot|10KM": {
+   "date": "2026-11-29",
+   "source": "evenement"
+  },
+  "Marathon de La Rochelle Serge Vigot|AUTRE": {
+   "date": "2026-11-29",
+   "source": "evenement"
+  },
+  "Marathon de La Rochelle Serge Vigot|MARATHON": {
+   "date": "2026-11-29",
+   "source": "WA",
+   "nom_ext": "Marathon de la Rochelle Serge Vigot",
+   "score": 1.0
+  },
+  "Marathon de Lille|10KM": {
+   "date": "2026-10-25",
+   "source": "evenement"
+  },
+  "Marathon de Lille|5KM": {
+   "date": "2026-10-25",
+   "source": "evenement"
+  },
+  "Marathon de Lille|AUTRE": {
+   "date": "2026-10-25",
+   "source": "evenement"
+  },
+  "Marathon de Lille|MARATHON": {
+   "date": "2026-10-25",
+   "source": "WA",
+   "nom_ext": "TREK Marathon de Lille",
+   "score": 1.0
+  },
+  "Marathon de Lille|SEMI": {
+   "date": "2026-10-25",
+   "source": "WA",
+   "nom_ext": "TREK Marathon de Lille - Half Marathon",
+   "score": 1.0
+  },
+  "Marathon des Alpes-Maritimes Nice-Cannes by Kiprun|AUTRE": {
+   "date": "2026-11-08",
+   "source": "evenement"
+  },
+  "Marathon des Alpes-Maritimes Nice-Cannes by Kiprun|MARATHON": {
+   "date": "2026-11-08",
+   "source": "WA",
+   "nom_ext": "Marathon des Alpes-Maritimes Nice-Cannes",
+   "score": 1.0
+  },
+  "Marathon international de Marrakech|MARATHON": {
+   "date": "2026-01-25",
+   "source": "WA",
+   "nom_ext": "Marrakesh International Marathon",
+   "score": 1.0
+  },
+  "Marathon international de Marrakech|SEMI": {
+   "date": "2026-01-25",
+   "source": "WA",
+   "nom_ext": "Marrakesh International Half Marathon",
+   "score": 1.0
+  },
+  "Maraton Lima 42K|10KM": {
+   "date": "2026-05-24",
+   "source": "evenement"
+  },
+  "Maraton Lima 42K|MARATHON": {
+   "date": "2026-05-24",
+   "source": "WA",
+   "nom_ext": "Lima Marathon",
+   "score": 1.0
+  },
+  "Maraton Lima 42K|SEMI": {
+   "date": "2026-05-24",
+   "source": "WA",
+   "nom_ext": "Lima Half Marathon",
+   "score": 1.0
+  },
+  "Maraton Murcia Costa Calida|MARATHON": {
+   "date": "2026-02-01",
+   "source": "WA",
+   "nom_ext": "TotalEnergies Media Maratón Murcia Costa Cálida",
+   "score": 1.0
+  },
+  "Maraton Murcia Costa Calida|SEMI": {
+   "date": "2026-02-01",
+   "source": "evenement"
+  },
+  "Maraton Powerade Monterrey|MARATHON": {
+   "date": "2026-12-13",
+   "source": "WA",
+   "nom_ext": "Maraton Powerade Monterrey",
+   "score": 1.0
+  },
+  "Maraton de Cali|MARATHON": {
+   "date": "2026-05-03",
+   "source": "WA",
+   "nom_ext": "Maraton de Cali",
+   "score": 1.0
+  },
+  "Maraton de Santiago|10KM": {
+   "date": "2026-04-26",
+   "source": "evenement"
+  },
+  "Maraton de Santiago|MARATHON": {
+   "date": "2026-04-26",
+   "source": "WA",
+   "nom_ext": "Maratón de Santiago",
+   "score": 1.0
+  },
+  "Maraton de Santiago|SEMI": {
+   "date": "2026-04-26",
+   "source": "WA",
+   "nom_ext": "Medio Maratón de Santiago",
+   "score": 1.0
+  },
+  "Maratona Di Ravenna|10KM": {
+   "date": "2026-11-08",
+   "source": "evenement"
+  },
+  "Maratona Di Ravenna|MARATHON": {
+   "date": "2026-11-08",
+   "source": "WA",
+   "nom_ext": "Maratona Di Ravenna Cittá D'Arte",
+   "score": 0.778
+  },
+  "Maratona Di Ravenna|SEMI": {
+   "date": "2026-11-08",
+   "source": "evenement"
+  },
+  "Maratona Do Rio|10KM": {
+   "date": "2026-06-07",
+   "source": "evenement"
+  },
+  "Maratona Do Rio|5KM": {
+   "date": "2026-06-07",
+   "source": "evenement"
+  },
+  "Maratona Do Rio|MARATHON": {
+   "date": "2026-06-07",
+   "source": "WA",
+   "nom_ext": "Maratona da Cidade do Rio de Janeiro",
+   "score": 0.74
+  },
+  "Maratona Do Rio|SEMI": {
+   "date": "2026-06-07",
+   "source": "evenement"
+  },
+  "Maratona Internacional de Sao Paulo|10KM": {
+   "date": "2026-04-12",
+   "source": "evenement"
+  },
+  "Maratona Internacional de Sao Paulo|5KM": {
+   "date": "2026-04-12",
+   "source": "evenement"
+  },
+  "Maratona Internacional de Sao Paulo|MARATHON": {
+   "date": "2026-04-12",
+   "source": "WA",
+   "nom_ext": "30ª Maratona Internacional de Sao Paulo",
+   "score": 1.0
+  },
+  "Maratona Internacional de Sao Paulo|SEMI": {
+   "date": "2026-04-12",
+   "source": "evenement"
+  },
+  "Maratona Maga Circe|AUTRE": {
+   "date": "2026-02-01",
+   "source": "evenement"
+  },
+  "Maratona Maga Circe|MARATHON": {
+   "date": "2026-02-01",
+   "source": "WA",
+   "nom_ext": "Maratona Maga Circe",
+   "score": 0.7
+  },
+  "Maratona do Porto|10KM": {
+   "date": "2026-11-08",
+   "source": "evenement"
+  },
+  "Maratona do Porto|AUTRE": {
+   "date": "2026-11-08",
+   "source": "evenement"
+  },
+  "Maratona do Porto|MARATHON": {
+   "date": "2026-11-08",
+   "source": "WA",
+   "nom_ext": "EDP Porto Marathon",
+   "score": 1.0
+  },
+  "Maratón de la Ciudad de México Telcel|MARATHON": {
+   "date": "2026-08-30",
+   "source": "WA",
+   "nom_ext": "Mexico City Marathon Telcel",
+   "score": 0.686
+  },
+  "Marine Corps Marathon|MARATHON": {
+   "date": "2026-10-25",
+   "source": "WA",
+   "nom_ext": "Marine Corps Marathon",
+   "score": 0.7
+  },
+  "Mattoni Running Festival Ceské Budejovice|10KM": {
+   "date": "2026-05-30",
+   "source": "evenement"
+  },
+  "Mattoni Running Festival Ceské Budejovice|AUTRE": {
+   "date": "2026-05-30",
+   "source": "evenement"
+  },
+  "Mattoni Running Festival Ceské Budejovice|SEMI": {
+   "date": "2026-05-30",
+   "source": "WA",
+   "nom_ext": "Mattoni Half Marathon České Budějovice",
+   "score": 1.0
+  },
+  "Mattoni Running Festival Olomouc|5KM": {
+   "date": "2026-06-13",
+   "source": "evenement"
+  },
+  "Mattoni Running Festival Olomouc|SEMI": {
+   "date": "2026-06-13",
+   "source": "WA",
+   "nom_ext": "Mattoni Half Marathon Olomouc",
+   "score": 1.0
+  },
+  "Mattoni Running Festival Usti Nad Labem|10KM": {
+   "date": "2026-09-19",
+   "source": "evenement"
+  },
+  "Mattoni Running Festival Usti Nad Labem|SEMI": {
+   "date": "2026-09-19",
+   "source": "WA",
+   "nom_ext": "Mattoni Half Marathon Ústí nad Labem",
+   "score": 1.0
+  },
+  "Maybank Marathon|MARATHON": {
+   "date": "2026-08-23",
+   "source": "WA",
+   "nom_ext": "Maybank Marathon",
+   "score": 1.0
+  },
+  "Medio Maraton de Sevilla|SEMI": {
+   "date": "2026-12-13",
+   "source": "WA",
+   "nom_ext": "Medio Maraton Sevilla",
+   "score": 1.0
+  },
+  "Medtronic Twin Cities Marathon|MARATHON": {
+   "date": "2026-10-04",
+   "source": "WA",
+   "nom_ext": "Medtronic Twin Cities Marathon",
+   "score": 1.0
+  },
+  "Meia Maratona do Porto|SEMI": {
+   "date": "2026-09-13",
+   "source": "WA",
+   "nom_ext": "Hyundai Porto Half Marathon",
+   "score": 1.0
+  },
+  "Meia Maratona internacional Do Rio de Janeiro|10KM": {
+   "date": "2026-08-16",
+   "source": "evenement"
+  },
+  "Meia Maratona internacional Do Rio de Janeiro|5KM": {
+   "date": "2026-08-16",
+   "source": "evenement"
+  },
+  "Meia Maratona internacional Do Rio de Janeiro|SEMI": {
+   "date": "2026-08-16",
+   "source": "WA",
+   "nom_ext": "Meia Maratona Internacional do Rio de Janeiro - 10km",
+   "score": 1.0
+  },
+  "Meishan Renshou Half Marathon|SEMI": {
+   "date": "2026-03-15",
+   "source": "WA",
+   "nom_ext": "Meishan Renshou Half Marathon",
+   "score": 1.0
+  },
+  "Milano Marathon|MARATHON": {
+   "date": "2026-04-12",
+   "source": "WA",
+   "nom_ext": "Wizz Air Milano Marathon",
+   "score": 1.0
+  },
+  "Mitja Marato Barcelona by Brooks|SEMI": {
+   "date": "2026-02-15",
+   "source": "WA",
+   "nom_ext": "Hyundai Mitja Marató de Barcelona by Brooks",
+   "score": 1.0
+  },
+  "Monaco Run|10KM": {
+   "date": "2026-02-15",
+   "source": "evenement"
+  },
+  "Monaco Run|AUTRE": {
+   "date": "2026-02-15",
+   "source": "evenement"
+  },
+  "Monaco Run|SEMI": {
+   "date": "2026-02-15",
+   "source": "WA",
+   "nom_ext": "MONACO RUN",
+   "score": 1.0
+  },
+  "Montepio Meia Maratona Cascais|10KM": {
+   "date": "2026-02-01",
+   "source": "WA",
+   "nom_ext": "10K de Cascais",
+   "score": 0.672
+  },
+  "Montepio Meia Maratona Cascais|5KM": {
+   "date": "2026-02-01",
+   "source": "evenement"
+  },
+  "Montepio Meia Maratona Cascais|SEMI": {
+   "date": "2026-02-01",
+   "source": "WA",
+   "nom_ext": "Meia Maratona de Cascais",
+   "score": 0.672
+  },
+  "Movistar Madrid Medio Maraton|5KM": {
+   "date": "2026-03-22",
+   "source": "evenement"
+  },
+  "Movistar Madrid Medio Maraton|SEMI": {
+   "date": "2026-03-22",
+   "source": "WA",
+   "nom_ext": "Movistar Madrid Medio Maratón",
+   "score": 1.0
+  },
+  "Münster Marathon|10KM": {
+   "date": "2026-09-13",
+   "source": "evenement"
+  },
+  "Münster Marathon|MARATHON": {
+   "date": "2026-09-13",
+   "source": "WA",
+   "nom_ext": "24. Volksbank-Münster-Marathon",
+   "score": 0.928
+  },
+  "Münster Marathon|SEMI": {
+   "date": "2026-09-13",
+   "source": "evenement"
+  },
+  "NMDC Hyderabad Marathon|10KM": {
+   "date": "2026-08-30",
+   "source": "evenement"
+  },
+  "NMDC Hyderabad Marathon|5KM": {
+   "date": "2026-08-30",
+   "source": "evenement"
+  },
+  "NMDC Hyderabad Marathon|MARATHON": {
+   "date": "2026-08-30",
+   "source": "WA",
+   "nom_ext": "NMDC Hyderabad Marathon",
+   "score": 1.0
+  },
+  "NMDC Hyderabad Marathon|SEMI": {
+   "date": "2026-08-30",
+   "source": "evenement"
+  },
+  "NN CPC Loop Den Haag|10KM": {
+   "date": "2026-03-15",
+   "source": "evenement"
+  },
+  "NN CPC Loop Den Haag|5KM": {
+   "date": "2026-03-15",
+   "source": "evenement"
+  },
+  "NN CPC Loop Den Haag|SEMI": {
+   "date": "2026-03-15",
+   "source": "WA",
+   "nom_ext": "NN CPC Loop Den Haag Halve Marathon",
+   "score": 0.7
+  },
+  "NN Marathon Rotterdam|MARATHON": {
+   "date": "2026-04-12",
+   "source": "WA",
+   "nom_ext": "NN Marathon Rotterdam",
+   "score": 1.0
+  },
+  "NN Maraton Warszawski|MARATHON": {
+   "date": "2026-09-27",
+   "source": "WA",
+   "nom_ext": "48th Warsaw Marathon",
+   "score": 1.0
+  },
+  "Nagoya Women's Marathon|MARATHON": {
+   "date": "2026-03-08",
+   "source": "WA",
+   "nom_ext": "Nagoya Women's Marathon",
+   "score": 1.0
+  },
+  "Nanjing Marathon|MARATHON": {
+   "date": "2026-11-22",
+   "source": "WA",
+   "nom_ext": "Nanjing Marathon",
+   "score": 1.0
+  },
+  "Nanning Marathon|MARATHON": {
+   "date": "2026-12-20",
+   "source": "WA",
+   "nom_ext": "Nanning Marathon",
+   "score": 1.0
+  },
+  "Neapolis marathon|AUTRE": {
+   "date": "2026-10-18",
+   "source": "evenement"
+  },
+  "Neapolis marathon|MARATHON": {
+   "date": "2026-10-18",
+   "source": "WA",
+   "nom_ext": "Neapolis Marathon",
+   "score": 1.0
+  },
+  "Neapolis marathon|SEMI": {
+   "date": "2026-10-18",
+   "source": "evenement"
+  },
+  "New Delhi Marathon|10KM": {
+   "date": "2026-02-22",
+   "source": "evenement"
+  },
+  "New Delhi Marathon|5KM": {
+   "date": "2026-02-22",
+   "source": "evenement"
+  },
+  "New Delhi Marathon|MARATHON": {
+   "date": "2026-02-22",
+   "source": "WA",
+   "nom_ext": "Cognizant New Delhi Marathon",
+   "score": 0.846
+  },
+  "New Delhi Marathon|SEMI": {
+   "date": "2026-02-22",
+   "source": "evenement"
+  },
+  "Nice Semi-Marathon International|10KM": {
+   "date": "2026-04-19",
+   "source": "evenement"
+  },
+  "Nice Semi-Marathon International|5KM": {
+   "date": "2026-04-19",
+   "source": "evenement"
+  },
+  "Nice Semi-Marathon International|SEMI": {
+   "date": "2026-04-19",
+   "source": "WA",
+   "nom_ext": "Semi-marathon International de Nice",
+   "score": 1.0
+  },
+  "Nike Melbourne Marathon|MARATHON": {
+   "date": "2026-10-11",
+   "source": "WA",
+   "nom_ext": "Nike Melbourne Marathon Festival - Marathon",
+   "score": 1.0
+  },
+  "Nike Melbourne Marathon|SEMI": {
+   "date": "2026-10-11",
+   "source": "evenement"
+  },
+  "Osaka Marathon|MARATHON": {
+   "date": "2026-02-22",
+   "source": "WA",
+   "nom_ext": "Osaka Marathon",
+   "score": 1.0
+  },
+  "Osterreichischer Frauenlauf|10KM": {
+   "date": "2026-05-31",
+   "source": "WA",
+   "nom_ext": "ASICS Österreichischer Frauenlauf",
+   "score": 0.645
+  },
+  "Osterreichischer Frauenlauf|5KM": {
+   "date": "2026-05-31",
+   "source": "evenement"
+  },
+  "PKO Gdynia Half Marathon|SEMI": {
+   "date": "2026-04-25",
+   "source": "WA",
+   "nom_ext": "PKO Gdynia Half Marathlon",
+   "score": 1.0
+  },
+  "Paderborner Osterlauf|10KM": {
+   "date": "2026-04-04",
+   "source": "evenement"
+  },
+  "Paderborner Osterlauf|5KM": {
+   "date": "2026-04-04",
+   "source": "evenement"
+  },
+  "Paderborner Osterlauf|SEMI": {
+   "date": "2026-04-04",
+   "source": "WA",
+   "nom_ext": "Paderborner Osterlauf",
+   "score": 0.65
+  },
+  "Padova marathon|10KM": {
+   "date": "2026-04-26",
+   "source": "evenement"
+  },
+  "Padova marathon|MARATHON": {
+   "date": "2026-04-26",
+   "source": "WA",
+   "nom_ext": "Padova Marathon",
+   "score": 1.0
+  },
+  "Padova marathon|SEMI": {
+   "date": "2026-04-26",
+   "source": "WA",
+   "nom_ext": "Padova Half Marathon",
+   "score": 1.0
+  },
+  "Placentia half marathon|SEMI": {
+   "date": "2026-05-10",
+   "source": "WA",
+   "nom_ext": "29^ Placentia Half Marathon",
+   "score": 0.7
+  },
+  "Poseidon Athens Half Marathon|SEMI": {
+   "date": "2026-03-08",
+   "source": "WA",
+   "nom_ext": "Athens Half Marathon",
+   "score": 0.661
+  },
+  "Prague International Marathon|MARATHON": {
+   "date": "2026-05-03",
+   "source": "WA",
+   "nom_ext": "Vodafone Prague Marathon",
+   "score": 1.0
+  },
+  "Prom'Classique|10KM": {
+   "date": "2026-01-04",
+   "source": "WA",
+   "nom_ext": "Prom'Classic",
+   "score": 0.631
+  },
+  "Pyramids Half Marathon|10KM": {
+   "date": "2026-12-11",
+   "source": "evenement"
+  },
+  "Pyramids Half Marathon|5KM": {
+   "date": "2026-12-11",
+   "source": "evenement"
+  },
+  "Pyramids Half Marathon|SEMI": {
+   "date": "2026-12-11",
+   "source": "AIMS",
+   "nom_ext": "Marakez Pyramids Half Marathon",
+   "score": 0.778
+  },
+  "Quebec City Marathon|10KM": {
+   "date": "2026-10-04",
+   "source": "evenement"
+  },
+  "Quebec City Marathon|5KM": {
+   "date": "2026-10-04",
+   "source": "evenement"
+  },
+  "Quebec City Marathon|MARATHON": {
+   "date": "2026-10-04",
+   "source": "WA",
+   "nom_ext": "Marathon Beneva de Québec",
+   "score": 1.0
+  },
+  "Quebec City Marathon|SEMI": {
+   "date": "2026-10-04",
+   "source": "evenement"
+  },
+  "Ras Al Khaimah Half Marathon|SEMI": {
+   "date": "2026-02-14",
+   "source": "WA",
+   "nom_ext": "Ras Al Khaimah Half Marathon",
+   "score": 1.0
+  },
+  "Renascenca Fatima Half Marathon|10KM": {
+   "date": "2026-03-29",
+   "source": "evenement"
+  },
+  "Renascenca Fatima Half Marathon|SEMI": {
+   "date": "2026-03-29",
+   "source": "WA",
+   "nom_ext": "Fátima Half Marathon",
+   "score": 0.672
+  },
+  "Riyadh Marathon|MARATHON": {
+   "date": "2026-01-31",
+   "source": "WA",
+   "nom_ext": "Riyadh Marathon",
+   "score": 1.0
+  },
+  "Riyadh Marathon|SEMI": {
+   "date": "2026-01-31",
+   "source": "WA",
+   "nom_ext": "Riyadh Half Marathon",
+   "score": 1.0
+  },
+  "Romeo & Giuletta Run Half marathon|AUTRE": {
+   "date": "2026-02-15",
+   "source": "evenement"
+  },
+  "Romeo & Giuletta Run Half marathon|SEMI": {
+   "date": "2026-02-15",
+   "source": "WA",
+   "nom_ext": "Romeo & Giulietta Run Half Marathon",
+   "score": 0.7
+  },
+  "Royal Victoria Marathon|5KM": {
+   "date": "2026-10-11",
+   "source": "evenement"
+  },
+  "Royal Victoria Marathon|AUTRE": {
+   "date": "2026-10-11",
+   "source": "evenement"
+  },
+  "Royal Victoria Marathon|MARATHON": {
+   "date": "2026-10-11",
+   "source": "WA",
+   "nom_ext": "Royal Victoria Marathon",
+   "score": 1.0
+  },
+  "Royal Victoria Marathon|SEMI": {
+   "date": "2026-10-11",
+   "source": "WA",
+   "nom_ext": "Royal Victoria Marathon - Half Marathon",
+   "score": 1.0
+  },
+  "SCO Kunming Marathon|MARATHON": {
+   "date": "2026-12-06",
+   "source": "WA",
+   "nom_ext": "SCO Kunming Marathon",
+   "score": 1.0
+  },
+  "SKF Goa River Marathon|10KM": {
+   "date": "2026-12-13",
+   "source": "evenement"
+  },
+  "SKF Goa River Marathon|5KM": {
+   "date": "2026-12-13",
+   "source": "evenement"
+  },
+  "SKF Goa River Marathon|AUTRE": {
+   "date": "2026-12-13",
+   "source": "evenement"
+  },
+  "SKF Goa River Marathon|MARATHON": {
+   "date": "2026-12-13",
+   "source": "AIMS",
+   "nom_ext": "SKF Goa River Marathon",
+   "score": 1.0
+  },
+  "SKF Goa River Marathon|SEMI": {
+   "date": "2026-12-13",
+   "source": "evenement"
+  },
+  "Samarkand Marathon|MARATHON": {
+   "date": "2026-11-08",
+   "source": "WA",
+   "nom_ext": "Samarkand Marathon",
+   "score": 1.0
+  },
+  "Sanlam Cape Town Marathon|MARATHON": {
+   "date": "2026-05-24",
+   "source": "WA",
+   "nom_ext": "Cape Town City Marathon",
+   "score": 0.696
+  },
+  "Sao Silvestre de Lisboa|10KM": {
+   "date": "2026-12-26",
+   "source": "WA",
+   "nom_ext": "São Silvestre de Lisboa",
+   "score": 1.0
+  },
+  "Saquib Rizvi Memorial Cancer Awareness Half|SEMI": {
+   "date": "2026-11-15",
+   "source": "AIMS",
+   "nom_ext": "Saquib Rizvi Memorial Cancer Awareness Half Marathon",
+   "score": 1.0
+  },
+  "Semi-Marathon de Boulogne-Billancourt|SEMI": {
+   "date": "2026-11-15",
+   "source": "WA",
+   "nom_ext": "Semi-Marathon de Boulogne-Billancourt",
+   "score": 1.0
+  },
+  "Seoul Marathon|MARATHON": {
+   "date": "2026-03-15",
+   "source": "WA",
+   "nom_ext": "Seoul Marathon",
+   "score": 1.0
+  },
+  "Shanghai Marathon|MARATHON": {
+   "date": "2026-12-06",
+   "source": "WA",
+   "nom_ext": "Shanghai Marathon",
+   "score": 1.0
+  },
+  "Shanghai Yangtze River Half Marathon|SEMI": {
+   "date": "2026-03-15",
+   "source": "WA",
+   "nom_ext": "Shanghai Half Marathon",
+   "score": 0.598
+  },
+  "Sharqiyah International Race|5KM": {
+   "date": "2026-12-12",
+   "source": "WA",
+   "nom_ext": "Sharqiyah International Race - 5km",
+   "score": 0.7
+  },
+  "Sharqiyah International Race|AUTRE": {
+   "date": "2026-12-12",
+   "source": "evenement"
+  },
+  "Sharqiyah International Race|SEMI": {
+   "date": "2026-12-12",
+   "source": "WA",
+   "nom_ext": "Sharqiyah International Race - Half Marathon",
+   "score": 0.7
+  },
+  "Shenyang Marathon|MARATHON": {
+   "date": "2026-09-06",
+   "source": "WA",
+   "nom_ext": "Shenyang Marathon",
+   "score": 1.0
+  },
+  "Shenzhen Marathon|MARATHON": {
+   "date": "2026-12-06",
+   "source": "WA",
+   "nom_ext": "Shenzhen Marathon",
+   "score": 1.0
+  },
+  "Split Marathon|10KM": {
+   "date": "2026-02-14",
+   "source": "evenement"
+  },
+  "Split Marathon|MARATHON": {
+   "date": "2026-02-14",
+   "source": "WA",
+   "nom_ext": "Split Marathon",
+   "score": 1.0
+  },
+  "Split Marathon|SEMI": {
+   "date": "2026-02-14",
+   "source": "WA",
+   "nom_ext": "Split Half Marathon & 10km & 5km",
+   "score": 1.0
+  },
+  "Standard Chartered Dubai Marathon|MARATHON": {
+   "date": "2026-02-01",
+   "source": "WA",
+   "nom_ext": "Dubai Marathon",
+   "score": 1.0
+  },
+  "Standard Chartered Hong Kong Marathon|10KM": {
+   "date": "2026-01-18",
+   "source": "evenement"
+  },
+  "Standard Chartered Hong Kong Marathon|MARATHON": {
+   "date": "2026-01-18",
+   "source": "WA",
+   "nom_ext": "Standard Chartered Hong Kong Marathon",
+   "score": 1.0
+  },
+  "Standard Chartered Hong Kong Marathon|SEMI": {
+   "date": "2026-01-18",
+   "source": "WA",
+   "nom_ext": "Standard Chartered Hong Kong Marathon 10km & Half Marathon",
+   "score": 1.0
+  },
+  "Standard Chartered KL Marathon|10KM": {
+   "date": "2026-10-04",
+   "source": "evenement"
+  },
+  "Standard Chartered KL Marathon|MARATHON": {
+   "date": "2026-10-04",
+   "source": "WA",
+   "nom_ext": "Kuala Lumpur Standard Chartered Marathon",
+   "score": 0.571
+  },
+  "Standard Chartered KL Marathon|SEMI": {
+   "date": "2026-10-04",
+   "source": "WA",
+   "nom_ext": "Kuala Lumpur Standard Chartered Marathon - Half Marathon & 10K",
+   "score": 0.571
+  },
+  "Standard Chartered Singapore Marathon|MARATHON": {
+   "date": "2026-12-06",
+   "source": "WA",
+   "nom_ext": "BYD Singapore International Marathon presented by Adidas",
+   "score": 1.0
+  },
+  "Standard Chartered Singapore Marathon|SEMI": {
+   "date": "2026-12-06",
+   "source": "evenement"
+  },
+  "Stockholm Marathon|MARATHON": {
+   "date": "2026-05-30",
+   "source": "WA",
+   "nom_ext": "adidas Stockholm Marathon",
+   "score": 1.0
+  },
+  "Stramilano|10KM": {
+   "date": "2026-05-03",
+   "source": "evenement"
+  },
+  "Stramilano|5KM": {
+   "date": "2026-05-03",
+   "source": "evenement"
+  },
+  "Stramilano|SEMI": {
+   "date": "2026-05-03",
+   "source": "WA",
+   "nom_ext": "Stramilano Half Marathon",
+   "score": 1.0
+  },
+  "Sunshine coast Marathon Festival|10KM": {
+   "date": "2026-08-02",
+   "source": "WA",
+   "nom_ext": "Sunshine Coast Marathon Festival - 10K & 5K",
+   "score": 0.7
+  },
+  "Sunshine coast Marathon Festival|5KM": {
+   "date": "2026-08-02",
+   "source": "evenement"
+  },
+  "Sunshine coast Marathon Festival|SEMI": {
+   "date": "2026-08-02",
+   "source": "evenement"
+  },
+  "Swedbank Tallinna maraton|10KM": {
+   "date": "2026-09-12",
+   "source": "WA",
+   "nom_ext": "Tallinn Marathon 10 km",
+   "score": 1.0
+  },
+  "Swedbank Tallinna maraton|MARATHON": {
+   "date": "2026-09-13",
+   "source": "WA",
+   "nom_ext": "Tallinn Marathon",
+   "score": 1.0
+  },
+  "Swedbank Tallinna maraton|SEMI": {
+   "date": "2026-09-12",
+   "source": "WA",
+   "nom_ext": "Tallinn Half Marathon",
+   "score": 1.0
+  },
+  "TCS Amsterdam Marathon|MARATHON": {
+   "date": "2026-10-18",
+   "source": "WA",
+   "nom_ext": "TCS Amsterdam Marathon",
+   "score": 1.0
+  },
+  "TCS Amsterdam Marathon|SEMI": {
+   "date": "2026-10-18",
+   "source": "WA",
+   "nom_ext": "Mizuno Amsterdam Half Marathon",
+   "score": 1.0
+  },
+  "TCS London Marathon|MARATHON": {
+   "date": "2026-04-26",
+   "source": "WA",
+   "nom_ext": "TCS London Marathon",
+   "score": 1.0
+  },
+  "TCS New York City Marathon|MARATHON": {
+   "date": "2026-11-01",
+   "source": "WA",
+   "nom_ext": "TCS New York City Marathon",
+   "score": 1.0
+  },
+  "TCS Sydney Marathon presented by ASICS|MARATHON": {
+   "date": "2026-08-30",
+   "source": "WA",
+   "nom_ext": "TCS Sydney Marathon Presented by ASICS",
+   "score": 1.0
+  },
+  "TCS Toronto Waterfront Marathon|MARATHON": {
+   "date": "2026-10-18",
+   "source": "WA",
+   "nom_ext": "TCS Toronto Waterfront Marathon",
+   "score": 1.0
+  },
+  "TCS Toronto Waterfront Marathon|SEMI": {
+   "date": "2026-10-18",
+   "source": "WA",
+   "nom_ext": "TCS Toronto Waterfront Half Marathon",
+   "score": 1.0
+  },
+  "TCS World 10K Bengaluru|10KM": {
+   "date": "2026-04-26",
+   "source": "WA",
+   "nom_ext": "TCS World 10K Bengaluru",
+   "score": 1.0
+  },
+  "Taipei Marathon|MARATHON": {
+   "date": "2026-12-20",
+   "source": "WA",
+   "nom_ext": "Taipei Marathon",
+   "score": 1.0
+  },
+  "Taipei Marathon|SEMI": {
+   "date": "2026-12-20",
+   "source": "evenement"
+  },
+  "Taiyuan Marathon|MARATHON": {
+   "date": "2026-09-27",
+   "source": "WA",
+   "nom_ext": "Taiyuan Marathon",
+   "score": 1.0
+  },
+  "Tamarack Ottawa Race week end|10KM": {
+   "date": "2026-05-23",
+   "source": "WA",
+   "nom_ext": "Ottawa 10K",
+   "score": 1.0
+  },
+  "Tamarack Ottawa Race week end|MARATHON": {
+   "date": "2026-05-24",
+   "source": "WA",
+   "nom_ext": "Tartan Ottawa International Marathon",
+   "score": 0.913
+  },
+  "Tata Mumbai Marathon|MARATHON": {
+   "date": "2026-01-18",
+   "source": "WA",
+   "nom_ext": "Tata Mumbai Marathon",
+   "score": 1.0
+  },
+  "Tata Mumbai Marathon|SEMI": {
+   "date": "2026-01-18",
+   "source": "evenement"
+  },
+  "Termal Bologna Marathon|5KM": {
+   "date": "2026-03-01",
+   "source": "evenement"
+  },
+  "Termal Bologna Marathon|AUTRE": {
+   "date": "2026-03-01",
+   "source": "evenement"
+  },
+  "Termal Bologna Marathon|MARATHON": {
+   "date": "2026-03-01",
+   "source": "WA",
+   "nom_ext": "Bologna Marathon",
+   "score": 0.672
+  },
+  "Termal Bologna Marathon|SEMI": {
+   "date": "2026-03-01",
+   "source": "evenement"
+  },
+  "Tjejmilen|10KM": {
+   "date": "2026-09-05",
+   "source": "WA",
+   "nom_ext": "Tjejmilen",
+   "score": 1.0
+  },
+  "Tjejmilen|AUTRE": {
+   "date": "2026-09-05",
+   "source": "evenement"
+  },
+  "Tokyo Legacy Half Marathon|SEMI": {
+   "date": "2026-10-18",
+   "source": "WA",
+   "nom_ext": "Tokyo Legacy Half Marathon 2026",
+   "score": 1.0
+  },
+  "Tokyo Marathon|MARATHON": {
+   "date": "2026-03-01",
+   "source": "WA",
+   "nom_ext": "Tokyo Marathon",
+   "score": 1.0
+  },
+  "Toronto Marathon|10KM": {
+   "date": "2026-04-18",
+   "source": "WA",
+   "nom_ext": "Under Armour Toronto 10K",
+   "score": 1.0
+  },
+  "Toyota Amazing Thailand Bangkok Marathon|10KM": {
+   "date": "2026-11-29",
+   "source": "WA",
+   "nom_ext": "Amazing Thailand Marathon Bangkok 10k - Official Bangkok Capital City Marathon",
+   "score": 1.0
+  },
+  "Toyota Amazing Thailand Bangkok Marathon|MARATHON": {
+   "date": "2026-11-29",
+   "source": "WA",
+   "nom_ext": "Amazing Thailand Marathon Bangkok - Official Bangkok Capital City Marathon",
+   "score": 1.0
+  },
+  "Toyota Amazing Thailand Bangkok Marathon|SEMI": {
+   "date": "2026-11-28",
+   "source": "WA",
+   "nom_ext": "Amazing Thailand Marathon Bangkok 21k - Official Bangkok Capital City Marathon",
+   "score": 1.0
+  },
+  "Trento Running Festival|10KM": {
+   "date": "2026-09-27",
+   "source": "evenement"
+  },
+  "Trento Running Festival|SEMI": {
+   "date": "2026-09-27",
+   "source": "WA",
+   "nom_ext": "Trento Half Marathon",
+   "score": 0.7
+  },
+  "UST Trivandrum Marathon|10KM": {
+   "date": "2026-11-15",
+   "source": "evenement"
+  },
+  "UST Trivandrum Marathon|5KM": {
+   "date": "2026-11-15",
+   "source": "evenement"
+  },
+  "UST Trivandrum Marathon|MARATHON": {
+   "date": "2026-11-15",
+   "source": "AIMS",
+   "nom_ext": "Ust Trivandrum Marathon",
+   "score": 1.0
+  },
+  "UST Trivandrum Marathon|SEMI": {
+   "date": "2026-11-15",
+   "source": "evenement"
+  },
+  "Uniper Marathon de Düsseldorf|MARATHON": {
+   "date": "2026-04-26",
+   "source": "WA",
+   "nom_ext": "Uniper Düsseldorf Marathon",
+   "score": 1.0
+  },
+  "Uniper Marathon de Düsseldorf|SEMI": {
+   "date": "2026-04-26",
+   "source": "WA",
+   "nom_ext": "Uniper Düsseldorf Half Marathon",
+   "score": 1.0
+  },
+  "United Airlines NYC Half|SEMI": {
+   "date": "2026-03-15",
+   "source": "WA",
+   "nom_ext": "United Airlines NYC Half",
+   "score": 1.0
+  },
+  "Utrecht Marathon|10KM": {
+   "date": "2026-05-31",
+   "source": "evenement"
+  },
+  "Utrecht Marathon|MARATHON": {
+   "date": "2026-05-31",
+   "source": "WA",
+   "nom_ext": "Hipro Utrecht Marathon",
+   "score": 1.0
+  },
+  "Utrecht Marathon|SEMI": {
+   "date": "2026-05-31",
+   "source": "WA",
+   "nom_ext": "Hipro Utrecht Half Marathon & 10km",
+   "score": 1.0
+  },
+  "Valencia Half Marathon Trinidad Alfonso Zurich|SEMI": {
+   "date": "2026-10-25",
+   "source": "WA",
+   "nom_ext": "Medio Marathon Valencia Trinidad Alfonso Zurich",
+   "score": 1.0
+  },
+  "Valencia Marathon Trinidad Alfonso Zurich|MARATHON": {
+   "date": "2026-12-06",
+   "source": "WA",
+   "nom_ext": "Maratón Valencia Trinidad Alfonso Zurich",
+   "score": 1.0
+  },
+  "Vancouver Sun Run|10KM": {
+   "date": "2026-04-19",
+   "source": "WA",
+   "nom_ext": "Vancouver Sun Run",
+   "score": 1.0
+  },
+  "Vedanta Delhi Half|SEMI": {
+   "date": "2026-10-18",
+   "source": "WA",
+   "nom_ext": "Vedanta Delhi Half Marathon",
+   "score": 1.0
+  },
+  "Vedanta Pink City Half|10KM": {
+   "date": "2026-11-29",
+   "source": "evenement"
+  },
+  "Vedanta Pink City Half|5KM": {
+   "date": "2026-11-29",
+   "source": "evenement"
+  },
+  "Vedanta Pink City Half|SEMI": {
+   "date": "2026-11-29",
+   "source": "AIMS",
+   "nom_ext": "Vedanta Pink City Half Marathon â Jaipur",
+   "score": 0.9
+  },
+  "Vienna City Marathon|MARATHON": {
+   "date": "2026-04-19",
+   "source": "WA",
+   "nom_ext": "Vienna City Marathon",
+   "score": 1.0
+  },
+  "Vienna City Marathon|SEMI": {
+   "date": "2026-04-19",
+   "source": "WA",
+   "nom_ext": "Vienna City Marathon Wiener Städtische Halbmarathon",
+   "score": 1.0
+  },
+  "Vilniaus Maratonas|10KM": {
+   "date": "2026-09-13",
+   "source": "evenement"
+  },
+  "Vilniaus Maratonas|5KM": {
+   "date": "2026-09-13",
+   "source": "evenement"
+  },
+  "Vilniaus Maratonas|MARATHON": {
+   "date": "2026-09-13",
+   "source": "WA",
+   "nom_ext": "Swedbank Vilnius Marathon",
+   "score": 0.667
+  },
+  "Vilniaus Maratonas|SEMI": {
+   "date": "2026-09-13",
+   "source": "WA",
+   "nom_ext": "Swedbank Vilnius Marathon - Half Marathon, 10K & 5K",
+   "score": 0.667
+  },
+  "Warsaw Half Marathon|SEMI": {
+   "date": "2026-03-22",
+   "source": "WA",
+   "nom_ext": "20th Warsaw Half Marathon",
+   "score": 1.0
+  },
+  "White marble marathon|AUTRE": {
+   "date": "2026-02-15",
+   "source": "evenement"
+  },
+  "White marble marathon|MARATHON": {
+   "date": "2026-02-15",
+   "source": "WA",
+   "nom_ext": "White Marble Marathon",
+   "score": 0.7
+  },
+  "White marble marathon|SEMI": {
+   "date": "2026-02-15",
+   "source": "WA",
+   "nom_ext": "White Marble Half Marathon & 10km",
+   "score": 0.7
+  },
+  "Wizz Air Rome Half Marathon by Brooks|SEMI": {
+   "date": "2026-10-18",
+   "source": "WA",
+   "nom_ext": "Wizz Air Rome Half Marathon",
+   "score": 1.0
+  },
+  "Wizz Air Sofia Marathon|10KM": {
+   "date": "2026-10-11",
+   "source": "evenement"
+  },
+  "Wizz Air Sofia Marathon|5KM": {
+   "date": "2026-10-11",
+   "source": "evenement"
+  },
+  "Wizz Air Sofia Marathon|MARATHON": {
+   "date": "2026-10-11",
+   "source": "WA",
+   "nom_ext": "Wizz Air Sofia Marathon",
+   "score": 1.0
+  },
+  "Wizz Air Sofia Marathon|SEMI": {
+   "date": "2026-10-11",
+   "source": "WA",
+   "nom_ext": "Wizz Air Sofia Half Marathon",
+   "score": 1.0
+  },
+  "Wizz Air Venice Marathon|10KM": {
+   "date": "2026-10-25",
+   "source": "evenement"
+  },
+  "Wizz Air Venice Marathon|MARATHON": {
+   "date": "2026-10-25",
+   "source": "evenement"
+  },
+  "Wizz Air Venice Marathon|SEMI": {
+   "date": "2026-10-25",
+   "source": "WA",
+   "nom_ext": "Venice Half Marathon",
+   "score": 1.0
+  },
+  "World 25K Kolkata|10KM": {
+   "date": "2026-12-20",
+   "source": "evenement"
+  },
+  "World 25K Kolkata|AUTRE": {
+   "date": "2026-12-20",
+   "source": "WA",
+   "nom_ext": "Tata Steel World 25K Kolkata",
+   "score": 1.0
+  },
+  "Wuhan Marathon|MARATHON": {
+   "date": "2026-03-22",
+   "source": "WA",
+   "nom_ext": "Bank of China Wuhan Marathon",
+   "score": 1.0
+  },
+  "Wuhan Marathon|SEMI": {
+   "date": "2026-03-22",
+   "source": "evenement"
+  },
+  "Wuxi Marathon|MARATHON": {
+   "date": "2026-03-22",
+   "source": "WA",
+   "nom_ext": "Wuxi Marathon",
+   "score": 1.0
+  },
+  "Wuxi Marathon|SEMI": {
+   "date": "2026-03-22",
+   "source": "evenement"
+  },
+  "Xinyu Fairy Lake Marathon|10KM": {
+   "date": "2026-11-08",
+   "source": "evenement"
+  },
+  "Xinyu Fairy Lake Marathon|5KM": {
+   "date": "2026-11-08",
+   "source": "evenement"
+  },
+  "Xinyu Fairy Lake Marathon|MARATHON": {
+   "date": "2026-11-08",
+   "source": "WA",
+   "nom_ext": "Xinyu fairy lake marathon",
+   "score": 1.0
+  },
+  "Xinyu Fairy Lake Marathon|SEMI": {
+   "date": "2026-11-08",
+   "source": "evenement"
+  },
+  "Yangzhou Half Marathon|SEMI": {
+   "date": "2026-03-29",
+   "source": "WA",
+   "nom_ext": "Yangzhou Half Marathon",
+   "score": 1.0
+  },
+  "Yellow River Estuary Dongying Marathon|MARATHON": {
+   "date": "2026-10-18",
+   "source": "WA",
+   "nom_ext": "Yellow River Estuary Dongying Marathon",
+   "score": 1.0
+  },
+  "Zagreb Marathon|10KM": {
+   "date": "2026-10-11",
+   "source": "evenement"
+  },
+  "Zagreb Marathon|MARATHON": {
+   "date": "2026-10-11",
+   "source": "WA",
+   "nom_ext": "34th Zagreb Powerade Marathon",
+   "score": 1.0
+  },
+  "Zagreb Marathon|SEMI": {
+   "date": "2026-10-11",
+   "source": "WA",
+   "nom_ext": "Zagreb Half Marathon & Garmin 10K",
+   "score": 1.0
+  },
+  "Zevenheuvelenloop|AUTRE": {
+   "date": "2026-11-15",
+   "source": "WA",
+   "nom_ext": "Garmin Zevenheuvelenloop",
+   "score": 1.0
+  },
+  "Zurich Marathon|10KM": {
+   "date": "2026-04-12",
+   "source": "evenement"
+  },
+  "Zurich Marathon|MARATHON": {
+   "date": "2026-04-12",
+   "source": "WA",
+   "nom_ext": "Zürich Marathon",
+   "score": 1.0
+  },
+  "Zurich Marathon|SEMI": {
+   "date": "2026-04-12",
+   "source": "WA",
+   "nom_ext": "Zürich Marathon - Half Marathon & 10K",
+   "score": 1.0
+  },
+  "Zurich Marató de Barcelona|MARATHON": {
+   "date": "2026-03-15",
+   "source": "WA",
+   "nom_ext": "Zurich Marató de Barcelona",
+   "score": 1.0
+  },
+  "Zurich Maratón de Sevilla|MARATHON": {
+   "date": "2026-02-15",
+   "source": "WA",
+   "nom_ext": "Zurich Maratón Sevilla",
+   "score": 1.0
+  },
+  "Zurich Rock 'n' Roll Running Series Madrid|10KM": {
+   "date": "2026-04-26",
+   "source": "evenement"
+  },
+  "Zurich Rock 'n' Roll Running Series Madrid|MARATHON": {
+   "date": "2026-04-26",
+   "source": "WA",
+   "nom_ext": "Zurich Rock 'n' Roll Running Series Madrid Maraton",
+   "score": 1.0
+  },
+  "Zurich Rock 'n' Roll Running Series Madrid|SEMI": {
+   "date": "2026-04-26",
+   "source": "WA",
+   "nom_ext": "Zurich Rock 'n' Roll Running Series Madrid Half Marathon",
+   "score": 1.0
+  }
+ },
+ "rejets": [
+  {
+   "ligne": "Kolkata Full Marathon|MARATHON",
+   "nom_ext": "JBG Kolkata Marathon",
+   "date": "2026-11-29",
+   "source": "WA",
+   "motif": "mois 11 incompatible avec la Periode (2)"
+  },
+  {
+   "ligne": "Belgrade Marathon|SEMI",
+   "nom_ext": "7th Sava osiguranje Belgrade Half Marathon",
+   "date": "2026-11-22",
+   "source": "WA",
+   "motif": "mois 11 incompatible avec la Periode (4)"
+  },
+  {
+   "ligne": "Hamburg Halbmarathon|SEMI",
+   "nom_ext": "32. hella Hamburg Half Marathon",
+   "date": "2026-10-25",
+   "source": "WA",
+   "motif": "mois 10 incompatible avec la Periode (6)"
+  },
+  {
+   "ligne": "Nairobi City Marathon|MARATHON",
+   "nom_ext": "Standard Chartered Nairobi Marathon",
+   "date": "2026-10-25",
+   "source": "WA",
+   "motif": "mois 10 incompatible avec la Periode (6)"
+  },
+  {
+   "ligne": "Coelmo Napoli City Half Marathon|SEMI",
+   "nom_ext": "Neapolis Half Marathon",
+   "date": "2026-10-18",
+   "source": "WA",
+   "motif": "mois 10 incompatible avec la Periode (2)"
+  },
+  {
+   "ligne": "21K de Montréal|SEMI",
+   "nom_ext": "Marathon Beneva de Montréal - Half Marathon",
+   "date": "2026-10-11",
+   "source": "WA",
+   "motif": "mois 10 incompatible avec la Periode (4)"
+  },
+  {
+   "ligne": "Asics Run Melbourne|SEMI",
+   "nom_ext": "Nike Melbourne Marathon Festival - Half Marathon, 10K & 5k",
+   "date": "2026-10-10",
+   "source": "WA",
+   "motif": "mois 10 incompatible avec la Periode (7)"
+  },
+  {
+   "ligne": "Tokyo East Run 30K|AUTRE",
+   "nom_ext": "Tokyo 1 Mile",
+   "date": "2026-10-03",
+   "source": "WA",
+   "motif": "mois 10 incompatible avec la Periode (5)"
+  },
+  {
+   "ligne": "Hamburg Halbmarathon|SEMI",
+   "nom_ext": "12. PSD Bank Half Marathon Hamburg",
+   "date": "2026-09-20",
+   "source": "WA",
+   "motif": "mois 09 incompatible avec la Periode (6)"
+  },
+  {
+   "ligne": "Hoka Runaway Sydney Half Marathon|SEMI",
+   "nom_ext": "Sydney Half",
+   "date": "2026-09-13",
+   "source": "WA",
+   "motif": "mois 09 incompatible avec la Periode (5)"
+  },
+  {
+   "ligne": "Bangsaen10|10KM",
+   "nom_ext": "Bangsaen10",
+   "date": "2026-09-13",
+   "source": "WA",
+   "motif": "mois 09 incompatible avec la Periode (5)"
+  },
+  {
+   "ligne": "Hamburg Halbmarathon|SEMI",
+   "nom_ext": "37. CURREX Alsterlauf Hamburg",
+   "date": "2026-09-06",
+   "source": "WA",
+   "motif": "mois 09 incompatible avec la Periode (6)"
+  },
+  {
+   "ligne": "Belgrade Marathon|10KM",
+   "nom_ext": "10K Belgrade Nike Run",
+   "date": "2026-09-05",
+   "source": "WA",
+   "motif": "mois 09 incompatible avec la Periode (4)"
+  },
+  {
+   "ligne": "Maraton de Santiago|SEMI",
+   "nom_ext": "Medio Maratón de Santiago",
+   "date": "2026-08-30",
+   "source": "WA",
+   "motif": "mois 08 incompatible avec la Periode (4)"
+  },
+  {
+   "ligne": "Maraton Lima 42K|SEMI",
+   "nom_ext": "Lima Half Marathon",
+   "date": "2026-08-23",
+   "source": "WA",
+   "motif": "mois 08 incompatible avec la Periode (5)"
+  },
+  {
+   "ligne": "Maratona Monumental Brasilia|SEMI",
+   "nom_ext": "LIVE!42K XP – Brasília - Half Marathon",
+   "date": "2026-08-02",
+   "source": "WA",
+   "motif": "mois 08 incompatible avec la Periode (11)"
+  },
+  {
+   "ligne": "Münster Marathon|MARATHON",
+   "nom_ext": "ZFS Münster CityRun",
+   "date": "2026-07-05",
+   "source": "WA",
+   "motif": "mois 07 incompatible avec la Periode (9)"
+  },
+  {
+   "ligne": "Jakarta Running Festival|MARATHON",
+   "nom_ext": "BTN Jakarta International Marathon",
+   "date": "2026-06-14",
+   "source": "WA",
+   "motif": "mois 06 incompatible avec la Periode (10)"
+  },
+  {
+   "ligne": "Jakarta Running Festival|SEMI",
+   "nom_ext": "BTN Jakarta International Marathon - Half Marathon, 10K & 5K",
+   "date": "2026-06-13",
+   "source": "WA",
+   "motif": "mois 06 incompatible avec la Periode (10)"
+  },
+  {
+   "ligne": "Maratona di Palermo|MARATHON",
+   "nom_ext": "Trofeo Della Legalita '' Giro pod. Int.le Città di Palermo''",
+   "date": "2026-06-07",
+   "source": "WA",
+   "motif": "mois 06 incompatible avec la Periode (11)"
+  },
+  {
+   "ligne": "Life Time Chicago Half Marathon & 5K|SEMI",
+   "nom_ext": "Bank of America Chicago 13.1",
+   "date": "2026-06-07",
+   "source": "WA",
+   "motif": "mois 06 incompatible avec la Periode (9)"
+  },
+  {
+   "ligne": "Meia Maratona internacional Do Rio de Janeiro|SEMI",
+   "nom_ext": "Meia Maratona da Cidade do Rio de Janeiro",
+   "date": "2026-06-06",
+   "source": "WA",
+   "motif": "mois 06 incompatible avec la Periode (8)"
+  },
+  {
+   "ligne": "Meia Maratona internacional Do Rio de Janeiro|10KM",
+   "nom_ext": "10K da Cidade do Rio de Janeiro",
+   "date": "2026-06-05",
+   "source": "WA",
+   "motif": "mois 06 incompatible avec la Periode (8)"
+  },
+  {
+   "ligne": "Movistar Madrid Medio Maraton|5KM",
+   "nom_ext": "Madrid Vintage Run by Total Energies",
+   "date": "2026-05-31",
+   "source": "WA",
+   "motif": "mois 05 incompatible avec la Periode (3)"
+  },
+  {
+   "ligne": "Rimi Riga Marathon|MARATHON",
+   "nom_ext": "Rimi Riga Marathon",
+   "date": "2026-05-17",
+   "source": "WA",
+   "motif": "mois 05 incompatible avec la Periode (9)"
+  },
+  {
+   "ligne": "TCS Sydney Marathon presented by ASICS|MARATHON",
+   "nom_ext": "Sydney 10",
+   "date": "2026-05-17",
+   "source": "WA",
+   "motif": "mois 05 incompatible avec la Periode (8)"
+  },
+  {
+   "ligne": "Rimi Riga Marathon|10KM",
+   "nom_ext": "Rimi Riga Marathon - 10km",
+   "date": "2026-05-17",
+   "source": "WA",
+   "motif": "mois 05 incompatible avec la Periode (9)"
+  },
+  {
+   "ligne": "Rimi Riga Marathon|SEMI",
+   "nom_ext": "Rimi Riga Half Marathon",
+   "date": "2026-05-17",
+   "source": "WA",
+   "motif": "mois 05 incompatible avec la Periode (9)"
+  },
+  {
+   "ligne": "Tokyo Marathon|MARATHON",
+   "nom_ext": "Tokyo : Speed : Race",
+   "date": "2026-05-04",
+   "source": "WA",
+   "motif": "mois 05 incompatible avec la Periode (3)"
+  },
+  {
+   "ligne": "Hamburg Halbmarathon|SEMI",
+   "nom_ext": "Haspa Half Marathon Hamburg",
+   "date": "2026-04-26",
+   "source": "WA",
+   "motif": "mois 04 incompatible avec la Periode (6)"
+  },
+  {
+   "ligne": "Torino city marathon|SEMI",
+   "nom_ext": "La Mezza di Torino - La Dieci di Torino",
+   "date": "2026-04-19",
+   "source": "WA",
+   "motif": "mois 04 incompatible avec la Periode (11)"
+  },
+  {
+   "ligne": "Wizz Air Sofia Marathon|SEMI",
+   "nom_ext": "Sofia Half Marathon",
+   "date": "2026-04-05",
+   "source": "WA",
+   "motif": "mois 04 incompatible avec la Periode (10)"
+  },
+  {
+   "ligne": "Dresden Marathon|MARATHON",
+   "nom_ext": "Novaled Citylauf Dresden",
+   "date": "2026-03-22",
+   "source": "WA",
+   "motif": "mois 03 incompatible avec la Periode (10)"
+  },
+  {
+   "ligne": "Taipei Marathon|MARATHON",
+   "nom_ext": "New Taipei City Wan Jin Shi Marathon",
+   "date": "2026-03-15",
+   "source": "WA",
+   "motif": "mois 03 incompatible avec la Periode (12)"
+  },
+  {
+   "ligne": "Generali Maraton Malaga|SEMI",
+   "nom_ext": "TotalEnergies Medio Maratón de Málaga",
+   "date": "2026-03-15",
+   "source": "WA",
+   "motif": "mois 03 incompatible avec la Periode (11)"
+  },
+  {
+   "ligne": "Fukuoka Marathon|MARATHON",
+   "nom_ext": "Fukuoka Ohori Road Runnig",
+   "date": "2026-03-14",
+   "source": "WA",
+   "motif": "mois 03 incompatible avec la Periode (11)"
+  },
+  {
+   "ligne": "Nanjing Marathon|MARATHON",
+   "nom_ext": "NanJing Pukou Marathon",
+   "date": "2026-03-08",
+   "source": "WA",
+   "motif": "mois 03 incompatible avec la Periode (11)"
+  },
+  {
+   "ligne": "Zurich Marathon|MARATHON",
+   "nom_ext": "Neujahrsmarathon Zürich",
+   "date": "2026-01-01",
+   "source": "WA",
+   "motif": "mois 01 incompatible avec la Periode (4)"
+  },
+  {
+   "ligne": "Zurich Marathon|SEMI",
+   "nom_ext": "Neujahrsmarathon Zürich - Half Marathon",
+   "date": "2026-01-01",
+   "source": "WA",
+   "motif": "mois 01 incompatible avec la Periode (4)"
+  },
+  {
+   "ligne": "Kolkata Full Marathon|MARATHON",
+   "nom_ext": "JBG Kolkata Marathon",
+   "date": "2026-11-29",
+   "source": "AIMS",
+   "motif": "mois 11 incompatible avec la Periode (2)"
+  },
+  {
+   "ligne": "Midnight sun Marathon|MARATHON",
+   "nom_ext": "Bharat Midnight Marathon",
+   "date": "2026-12-05",
+   "source": "AIMS",
+   "motif": "mois 12 incompatible avec la Periode (6)"
+  },
+  {
+   "ligne": "Midnight sun Marathon|MARATHON",
+   "nom_ext": "Bangkok Midnight Marathon",
+   "date": "2026-12-20",
+   "source": "AIMS",
+   "motif": "mois 12 incompatible avec la Periode (6)"
+  },
+  {
+   "ligne": "EDP Lisboa Meia Maratona|SEMI",
+   "nom_ext": "Lidl SÃ£o Silvestre de Lisboa",
+   "date": "2026-12-26",
+   "source": "AIMS",
+   "motif": "mois 12 incompatible avec la Periode (3)"
+  }
+ ]
+}

@@ -2352,6 +2352,9 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True, repli=True
     if not dry_run and regenerate:
         import maj_labels_wa
         labels_changes = maj_labels_wa.maj_si_ancien()
+        # Dates exactes des editions (affichees a la place de « A venir »)
+        import maj_dates_editions
+        labels_changes = maj_dates_editions.maj_si_ancien() or labels_changes
 
     # 5. Regenerate dashboard (only when there are actual updates)
     ecritures = [u for u in log["updates"] if u.get("ecrit")]

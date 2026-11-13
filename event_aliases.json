@@ -165,6 +165,18 @@
     "northside hospital peachtree road race": {
       "evenement": "Atlanta Journal-Constitution Peachtree Road Race",
       "distance": "10KM"
+    },
+    "adidas stockholm half marathon": {
+      "evenement": null
+    },
+    "36. internationaler wurzburger residenzlauf": {
+      "evenement": null
+    },
+    "tunnelløpet bergen": {
+      "evenement": null
+    },
+    "jtbc seoul marathon": {
+      "evenement": null
     }
   }
 }

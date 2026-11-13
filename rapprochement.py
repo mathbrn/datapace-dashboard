@@ -367,6 +367,8 @@ def rapprocher(nom_ext, ville_ext="", pays_ext=None, distance_ext=None, seuil=SE
     Rend (ligne, score, motif). `ligne` est un dict {evenement, distance, ...}.
     """
     a = alias().get(sans_accents(nom_ext).strip())
+    if a and a.get("evenement") is None:
+        return None, 0.0, "alias : course non suivie"
     if a:
         lignes = [ep for ep in epreuves() if ep["evenement"] == a["evenement"]]
         voulue = a.get("distance") or distance_ext or classe_distance(nom_ext)

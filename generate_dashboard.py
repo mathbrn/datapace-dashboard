@@ -814,10 +814,33 @@ function moisDe(p){
 // Une cellule vide de l'annee en cours dont le mois n'est pas encore passe
 // n'est pas un trou de collecte : l'epreuve n'a simplement pas eu lieu.
 var _now=new Date(), ANNEE_COUR=_now.getFullYear(), MOIS_COUR=_now.getMonth()+1;
+// Date exacte de l'edition (event_dates.json) quand elle est connue : elle
+// remplace le mois de la Periode et tranche le mois en cours.
+var AUJ=_now.getFullYear()+'-'+String(_now.getMonth()+1).padStart(2,'0')+'-'+String(_now.getDate()).padStart(2,'0');
+var MOIS_COURTS=['janv.','f\u00e9vr.','mars','avr.','mai','juin','juil.','ao\u00fbt','sept.','oct.','nov.','d\u00e9c.'];
+function dateEdition(r,y){
+  if(typeof EVENT_DATES==='undefined'||EVENT_DATES.annee!==parseInt(y))return null;
+  return EVENT_DATES.dates[r.r+'|'+r.d]||null;
+}
+function fmtDateCourte(iso){return parseInt(iso.slice(8,10),10)+' '+MOIS_COURTS[parseInt(iso.slice(5,7),10)-1];}
+// Rend {txt, title} pour une cellule vide d'une edition pas encore courue, sinon null.
 function aVenir(r,y){
   if(parseInt(y)!==ANNEE_COUR)return null;
+  var de=dateEdition(r,y);
+  if(de)return de>=AUJ?{txt:fmtDateCourte(de),title:'Edition du '+fmtDateCourte(de)+' '+y}:null;
   var m=moisDe(r.p);
-  return (m&&m>MOIS_COUR)?r.p:null;
+  return (m&&m>MOIS_COUR)?{txt:'\u00c0 venir',title:'Edition '+r.p+' '+y}:null;
+}
+// Edition deja courue dont la donnee manque : infobulle sur le tiret.
+function courueLe(r,y){
+  var de=dateEdition(r,y);
+  return(de&&de<AUJ)?' title="Courue le '+fmtDateCourte(de)+' '+y+' \u2014 donn\u00e9es \u00e0 collecter"':'';
+}
+// Evenement : la plus proche des dates a venir de ses courses.
+function aVenirEv(lignes,y){
+  var avs=lignes.map(function(x){return{a:aVenir(x,y),d:dateEdition(x,y)||'9999'};})
+    .filter(function(o){return o.a;}).sort(function(a,b){return a.d<b.d?-1:1;});
+  return avs.length?avs[0].a:null;
 }
 function fmt(n){if(n===-1)return'Annul\u00e9';if(n===-2)return'Elite';if(n===-3)return'';if(!n||isNaN(n))return'\u2014';return n>=1000?(n/1000).toFixed(1)+'k':n.toString();}
 function fmtFull(n){if(n===-1)return'Annul\u00e9';if(n===-2)return'Elite Only';if(n===-3)return'';if(!n||isNaN(n))return'\u2014';return Math.round(n).toLocaleString('fr-FR');}
@@ -2015,7 +2038,7 @@ function filterTable(){
       +'<td><span class="badge" style="background:'+raceColor+'18;color:'+raceColor+'">'+bl+'</span>'+cBadges+'</td>'
       +'<td style="color:'+raceColor+(indent?';padding-left:'+(10+indent*14)+'px':'')
         +'" title="'+nomR(r)+'">'+(indent?'\u21B3 ':'')+nomR(r)+'</td>'
-      +globalYears.map(function(y){var v=(r.hist||{})[y];var isFirst=r.fy&&y===r.fy;var starHtml=isFirst?'<span style="position:absolute;top:1px;left:2px;font-size:7px;color:'+raceColor+';opacity:0.7">\u2605</span>':'';if(v===-3)return'<td style="color:var(--text3);opacity:0.2">\u00b7</td>';if(v===-1)return'<td style="color:#FF4A6B;font-size:10px;font-style:italic;position:relative">'+starHtml+'Annul\u00e9</td>';if(v===-2)return'<td style="color:'+raceColor+';font-size:10px;font-style:italic;position:relative">'+starHtml+'Elite Only</td>';if(!v){var av=aVenir(r,y);if(av)return'<td title="Edition '+av+' '+y+'" style="color:#3B82F6;font-size:10px;font-style:italic;position:relative">'+starHtml+'\u00c0 venir</td>';}return'<td style="'+(v?'color:var(--text)':'')+';position:relative">'+starHtml+(v?fmtFull(v):'\u2014')+'</td>';}).join('')
+      +globalYears.map(function(y){var v=(r.hist||{})[y];var isFirst=r.fy&&y===r.fy;var starHtml=isFirst?'<span style="position:absolute;top:1px;left:2px;font-size:7px;color:'+raceColor+';opacity:0.7">\u2605</span>':'';if(v===-3)return'<td style="color:var(--text3);opacity:0.2">\u00b7</td>';if(v===-1)return'<td style="color:#FF4A6B;font-size:10px;font-style:italic;position:relative">'+starHtml+'Annul\u00e9</td>';if(v===-2)return'<td style="color:'+raceColor+';font-size:10px;font-style:italic;position:relative">'+starHtml+'Elite Only</td>';if(!v){var av=aVenir(r,y);if(av)return'<td title="'+av.title+'" style="color:#3B82F6;font-size:10px;font-style:italic;position:relative">'+starHtml+av.txt+'</td>';}return'<td'+(v?'':courueLe(r,y))+' style="'+(v?'color:var(--text)':'')+';position:relative">'+starHtml+(v?fmtFull(v):'\u2014')+'</td>';}).join('')
       +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
     return h;
   }
@@ -2054,8 +2077,8 @@ function filterTable(){
         }
         var ann=r.lignes.every(function(x){return(x.hist||{})[y]===-1;});
         if(ann)return'<td style="color:#FF4A6B;font-size:10px;font-style:italic">Annul\u00e9</td>';
-        var av=aVenir(r.lignes[0],y);
-        if(av)return'<td title="Edition '+av+' '+y+'" style="color:#3B82F6;font-size:10px;font-style:italic">\u00c0 venir</td>';
+        var av=aVenirEv(r.lignes,y);
+        if(av)return'<td title="'+av.title+'" style="color:#3B82F6;font-size:10px;font-style:italic">'+av.txt+'</td>';
         return'<td>\u2014</td>';
       }).join('')
       +'<td style="color:'+tc+'">'+tStr+'</td></tr>';
@@ -3643,8 +3666,16 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
                 _tdb2[k2] = v
         tdbjs = _tdb2
     course_names_js = {k: v["nom"] for k, v in _cn.items()}
+    # Dates exactes des editions de l'annee (event_dates.json, maj_dates_editions.py)
+    try:
+        _ed = json.loads((Path(__file__).parent / "event_dates.json").read_text(encoding="utf-8"))
+        event_dates_js = {"annee": _ed.get("annee"),
+                          "dates": {k: v["date"] for k, v in _ed.get("dates", {}).items()}}
+    except (OSError, ValueError):
+        event_dates_js = {"annee": None, "dates": {}}
     js_data = ("const RAW=" + j(finishers) + ";\nconst BIGGEST=" + j(biggest) + ";\n"
                "const COURSE_NAMES=" + j(course_names_js) + ";\n"
+               "const EVENT_DATES=" + j(event_dates_js) + ";\n"
                "const TEMPS_MARATHON=" + j(tmjs) + ";\nconst TEMPS_SEMI=" + j(tsjs) + ";\n"
                "const TEMPS_10K=" + j(t10js) + ";\nconst TEMPS_5K=" + j(t5js) +
                ";\nconst TEMPS_AUTRE=" + j(tajs) + ";\n"
