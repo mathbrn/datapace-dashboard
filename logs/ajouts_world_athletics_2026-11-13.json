@@ -1,0 +1,294 @@
+{
+ "date": "2026-11-13",
+ "source": "World Athletics getCalendarEvents 2026, categories GL/A/B, route",
+ "ajouts": [
+  {
+   "event": "Meishan Renshou Half Marathon",
+   "distance": "SEMI",
+   "ville": "Meishan",
+   "date_2026": "2026-03-15",
+   "categorie_wa": "GL",
+   "nom_wa": "Meishan Renshou Half Marathon"
+  },
+  {
+   "event": "Yangzhou Half Marathon",
+   "distance": "SEMI",
+   "ville": "Yangzhou",
+   "date_2026": "2026-03-29",
+   "categorie_wa": "GL",
+   "nom_wa": "Yangzhou Half Marathon"
+  },
+  {
+   "event": "Chang'an Automobile Chongqing Marathon",
+   "distance": "MARATHON",
+   "ville": "Chongqing",
+   "date_2026": "2026-01-18",
+   "categorie_wa": "A",
+   "nom_wa": "Chang'an Automobile Chongqing Marathon"
+  },
+  {
+   "event": "Access Bank Lagos City Marathon",
+   "distance": "MARATHON",
+   "ville": "Lagos",
+   "date_2026": "2026-02-14",
+   "categorie_wa": "A",
+   "nom_wa": "Access Bank Lagos City Marathon"
+  },
+  {
+   "event": "Daegu Marathon",
+   "distance": "MARATHON",
+   "ville": "Daegu",
+   "date_2026": "2026-02-22",
+   "categorie_wa": "A",
+   "nom_wa": "Daegu Marathon"
+  },
+  {
+   "event": "Lanzhou Marathon",
+   "distance": "MARATHON",
+   "ville": "Lanzhou",
+   "date_2026": "2026-05-24",
+   "categorie_wa": "A",
+   "nom_wa": "Lanzhou Marathon"
+  },
+  {
+   "event": "Taiyuan Marathon",
+   "distance": "MARATHON",
+   "ville": "Taiyuan",
+   "date_2026": "2026-09-27",
+   "categorie_wa": "A",
+   "nom_wa": "Taiyuan Marathon"
+  },
+  {
+   "event": "Yellow River Estuary Dongying Marathon",
+   "distance": "MARATHON",
+   "ville": "Dongying",
+   "date_2026": "2026-10-18",
+   "categorie_wa": "A",
+   "nom_wa": "Yellow River Estuary Dongying Marathon"
+  },
+  {
+   "event": "Hangzhou Marathon",
+   "distance": "MARATHON",
+   "ville": "Hangzhou",
+   "date_2026": "2026-11-01",
+   "categorie_wa": "A",
+   "nom_wa": "Hangzhou Marathon"
+  },
+  {
+   "event": "Shenzhen Marathon",
+   "distance": "MARATHON",
+   "ville": "Shenzhen",
+   "date_2026": "2026-12-06",
+   "categorie_wa": "A",
+   "nom_wa": "Shenzhen Marathon"
+  },
+  {
+   "event": "Beppu-Oita Mainichi Marathon",
+   "distance": "MARATHON",
+   "ville": "Oita",
+   "date_2026": "2026-02-01",
+   "categorie_wa": "B",
+   "nom_wa": "74th Beppu-Oita Mainichi Marathon"
+  },
+  {
+   "event": "Ras Al Khaimah Half Marathon",
+   "distance": "SEMI",
+   "ville": "Ras Al Khaimah",
+   "date_2026": "2026-02-14",
+   "categorie_wa": "B",
+   "nom_wa": "Ras Al Khaimah Half Marathon"
+  },
+  {
+   "event": "Frankfurter Mainova Half Marathon",
+   "distance": "SEMI",
+   "ville": "Francfort",
+   "date_2026": "2026-03-22",
+   "categorie_wa": "B",
+   "nom_wa": "Frankfurter Mainova Half Marathon"
+  },
+  {
+   "event": "Istanbul Half Marathon",
+   "distance": "SEMI",
+   "ville": "Istanbul",
+   "date_2026": "2026-04-19",
+   "categorie_wa": "B",
+   "nom_wa": "Istanbul Half Marathon"
+  },
+  {
+   "event": "Haier Qingdao Marathon",
+   "distance": "MARATHON",
+   "ville": "Qingdao",
+   "date_2026": "2026-04-19",
+   "categorie_wa": "B",
+   "nom_wa": "Haier Qingdao Marathon"
+  },
+  {
+   "event": "PKO Gdynia Half Marathon",
+   "distance": "SEMI",
+   "ville": "Gdynia",
+   "date_2026": "2026-04-25",
+   "categorie_wa": "B",
+   "nom_wa": "PKO Gdynia Half Marathlon"
+  },
+  {
+   "event": "Gifu Half Marathon",
+   "distance": "SEMI",
+   "ville": "Gifu",
+   "date_2026": "2026-04-26",
+   "categorie_wa": "B",
+   "nom_wa": "Gifu Half Marathon"
+  },
+  {
+   "event": "Maraton de Cali",
+   "distance": "MARATHON",
+   "ville": "Cali",
+   "date_2026": "2026-05-03",
+   "categorie_wa": "B",
+   "nom_wa": "Maraton de Cali"
+  },
+  {
+   "event": "Marathon International de Rabat",
+   "distance": "MARATHON",
+   "ville": "Rabat",
+   "date_2026": "2026-05-10",
+   "categorie_wa": "B",
+   "nom_wa": "Marathon International de Rabat"
+  },
+  {
+   "event": "Okpekpe 10KM Road Race",
+   "distance": "10KM",
+   "ville": "Okpekpe",
+   "date_2026": "2026-05-30",
+   "categorie_wa": "B",
+   "nom_wa": "Okpekpe 10KM Road Race"
+  },
+  {
+   "event": "Jilin City Marathon",
+   "distance": "MARATHON",
+   "ville": "Jilin",
+   "date_2026": "2026-05-31",
+   "categorie_wa": "B",
+   "nom_wa": "Jilin City Marathon"
+  },
+  {
+   "event": "Kigali International Peace Marathon",
+   "distance": "MARATHON",
+   "ville": "Kigali",
+   "date_2026": "2026-06-14",
+   "categorie_wa": "B",
+   "nom_wa": "Kigali International Peace Marathon"
+  },
+  {
+   "event": "10KM Port Gentil",
+   "distance": "10KM",
+   "ville": "Port-Gentil",
+   "date_2026": "2026-06-28",
+   "categorie_wa": "B",
+   "nom_wa": "10KM Port Gentil"
+  },
+  {
+   "event": "Maybank Marathon",
+   "distance": "MARATHON",
+   "ville": "Bali",
+   "date_2026": "2026-08-23",
+   "categorie_wa": "B",
+   "nom_wa": "Maybank Marathon"
+  },
+  {
+   "event": "Shenyang Marathon",
+   "distance": "MARATHON",
+   "ville": "Shenyang",
+   "date_2026": "2026-09-06",
+   "categorie_wa": "B",
+   "nom_wa": "Shenyang Marathon"
+  },
+  {
+   "event": "Harbin Marathon",
+   "distance": "MARATHON",
+   "ville": "Harbin",
+   "date_2026": "2026-09-13",
+   "categorie_wa": "B",
+   "nom_wa": "Harbin Marathon"
+  },
+  {
+   "event": "Gyeongju International Marathon",
+   "distance": "MARATHON",
+   "ville": "Gyeongju",
+   "date_2026": "2026-10-17",
+   "categorie_wa": "B",
+   "nom_wa": "Gyeongju International Marathon"
+  },
+  {
+   "event": "Samarkand Marathon",
+   "distance": "MARATHON",
+   "ville": "Samarcande",
+   "date_2026": "2026-11-08",
+   "categorie_wa": "B",
+   "nom_wa": "Samarkand Marathon"
+  },
+  {
+   "event": "Bank Jateng Borobudur Marathon",
+   "distance": "MARATHON",
+   "ville": "Magelang",
+   "date_2026": "2026-11-15",
+   "categorie_wa": "B",
+   "nom_wa": "Bank Jateng Borobudur Marathon"
+  },
+  {
+   "event": "Nanjing Marathon",
+   "distance": "MARATHON",
+   "ville": "Nankin",
+   "date_2026": "2026-11-22",
+   "categorie_wa": "B",
+   "nom_wa": "Nanjing Marathon"
+  },
+  {
+   "event": "SCO Kunming Marathon",
+   "distance": "MARATHON",
+   "ville": "Kunming",
+   "date_2026": "2026-12-06",
+   "categorie_wa": "B",
+   "nom_wa": "SCO Kunming Marathon"
+  },
+  {
+   "event": "Hofu Yomiuri Marathon",
+   "distance": "MARATHON",
+   "ville": "Hofu",
+   "date_2026": "2026-12-06",
+   "categorie_wa": "B",
+   "nom_wa": "57th Hofu Yomiuri Marathon"
+  },
+  {
+   "event": "International Mersin Marathon",
+   "distance": "MARATHON",
+   "ville": "Mersin",
+   "date_2026": "2026-12-13",
+   "categorie_wa": "B",
+   "nom_wa": "8th International Mersin Marathon"
+  },
+  {
+   "event": "Nanning Marathon",
+   "distance": "MARATHON",
+   "ville": "Nanning",
+   "date_2026": "2026-12-20",
+   "categorie_wa": "B",
+   "nom_wa": "Nanning Marathon"
+  },
+  {
+   "event": "Fuzhou Marathon",
+   "distance": "MARATHON",
+   "ville": "Fuzhou",
+   "date_2026": "2026-12-27",
+   "categorie_wa": "B",
+   "nom_wa": "Fuzhou Marathona"
+  },
+  {
+   "event": "Riyadh Marathon",
+   "distance": "MARATHON",
+   "ville": "Riyadh",
+   "date_2026": "2026-01-31",
+   "categorie_wa": "B",
+   "nom_wa": "Riyadh Marathon"
+  }
+ ]
+}
