@@ -1,0 +1,2055 @@
+{
+ "_commentaire": "Genere par maj_labels_wa.py : niveau de label World Athletics (Platinum, Gold, Elite, Label) par ligne 'Evenement|DISTANCE'. Ne pas editer a la main ; corriger un rapprochement dans event_aliases.json.",
+ "annee": 2026,
+ "maj_le": "2026-11-13",
+ "labels": {
+  "10K Night Race Prague|10KM": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Prague 10K Night Race",
+   "wa_id": 7236035,
+   "score": 1.0
+  },
+  "10K Valencia Ibercaja by Kiprun|10KM": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "10K Valencia Ibercaja by Kiprun",
+   "wa_id": 7235984,
+   "score": 1.0
+  },
+  "ADNOC Abu Dhabi Marathon|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "ADNOC Abu Dhabi Marathon",
+   "wa_id": 7235587,
+   "score": 1.0
+  },
+  "AJ Bell Great Manchester Run|10KM": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Great Manchester Run",
+   "wa_id": 7243517,
+   "score": 1.0
+  },
+  "ASICS Marathon de Paris|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Schneider Electric Marathon de Paris",
+   "wa_id": 7235597,
+   "score": 1.0
+  },
+  "Access Bank Lagos City Marathon|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Access Bank Lagos City Marathon",
+   "wa_id": 7235572,
+   "score": 1.0
+  },
+  "Acea Run Rome The Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Acea Run Rome The Marathon",
+   "wa_id": 7238218,
+   "score": 1.0
+  },
+  "Adani Ahmedabad Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Adani Ahmedabad Marathon",
+   "wa_id": 7247057,
+   "score": 1.0
+  },
+  "Allwyn Athens Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Athens Marathon. The Authentic",
+   "wa_id": 7241511,
+   "score": 1.0
+  },
+  "Atlanta Journal-Constitution Peachtree Road Race|10KM": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Northside Hospital Peachtree Road Race",
+   "wa_id": 7240978,
+   "score": 1.0
+  },
+  "BMW Berlin Marathon|MARATHON": {
+   "label": "Platinum",
+   "annee": 2026,
+   "nom_wa": "BMW Berlin Marathon",
+   "wa_id": 7235580,
+   "score": 1.0
+  },
+  "BOLDERBoulder 10K|10KM": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "BOLDERBoulder",
+   "wa_id": 7238420,
+   "score": 1.0
+  },
+  "Bajaj Pune Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Bajaj Pune Marathon",
+   "wa_id": 7248471,
+   "score": 1.0
+  },
+  "Bangsaen10|10KM": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Bangsaen10",
+   "wa_id": 7238743,
+   "score": 1.0
+  },
+  "Bangsaen21|SEMI": {
+   "label": "Platinum",
+   "annee": 2026,
+   "nom_wa": "Bangsaen21",
+   "wa_id": 7238772,
+   "score": 1.0
+  },
+  "Bangsaen42 Chonburi Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Bangsaen42 Chonburi Marathon",
+   "wa_id": 7238763,
+   "score": 1.0
+  },
+  "Bank Jateng Borobudur Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Bank Jateng Borobudur Marathon",
+   "wa_id": 7244665,
+   "score": 1.0
+  },
+  "Bank of America Chicago Marathon|MARATHON": {
+   "label": "Platinum",
+   "annee": 2026,
+   "nom_wa": "Bank of America Chicago Marathon",
+   "wa_id": 7235563,
+   "score": 1.0
+  },
+  "Bank of China Beijing Half Marathon|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Beijing Half Marathon",
+   "wa_id": 7236075,
+   "score": 1.0
+  },
+  "Beijing Marathon|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Bank of China Beijing Marathon",
+   "wa_id": 7235591,
+   "score": 1.0
+  },
+  "Belgrade Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "39th Powerade Belgrade Marathon",
+   "wa_id": 7236078,
+   "score": 1.0
+  },
+  "Beneva Montréal Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Marathon Beneva de Montréal",
+   "wa_id": 7236102,
+   "score": 1.0
+  },
+  "Beppu-Oita Mainichi Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "74th Beppu-Oita Mainichi Marathon",
+   "wa_id": 7236070,
+   "score": 1.0
+  },
+  "Bilbao Night Running Fest|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Bilbao Night Half Marathon",
+   "wa_id": 7236025,
+   "score": 0.731
+  },
+  "Boston Marathon|MARATHON": {
+   "label": "Platinum",
+   "annee": 2026,
+   "nom_wa": "Boston Marathon",
+   "wa_id": 7235561,
+   "score": 1.0
+  },
+  "Bratislava Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "ČSOB Bratislava Marathon",
+   "wa_id": 7236036,
+   "score": 1.0
+  },
+  "Bucharest international half marathon|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Bucharest International Half Marathon by Constantina Dita presented by Decathlon",
+   "wa_id": 7237314,
+   "score": 0.822
+  },
+  "Burj2Burj Half Marathon|SEMI": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Burj2Burj Half Marathon",
+   "wa_id": 7237869,
+   "score": 1.0
+  },
+  "C&D Xiamen Marathon|MARATHON": {
+   "label": "Platinum",
+   "annee": 2026,
+   "nom_wa": "C&D Xiamen Marathon",
+   "wa_id": 7235565,
+   "score": 1.0
+  },
+  "Cardiff Half Marathon|SEMI": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Cardiff Half Marathon",
+   "wa_id": 7240793,
+   "score": 1.0
+  },
+  "Casablanca Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Casablanca Marathon",
+   "wa_id": 7245003,
+   "score": 1.0
+  },
+  "Casablanca Marathon|SEMI": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Casablanca Half Marathon",
+   "wa_id": 7244496,
+   "score": 1.0
+  },
+  "Chang'an Automobile Chongqing Marathon|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Chang'an Automobile Chongqing Marathon",
+   "wa_id": 7235935,
+   "score": 1.0
+  },
+  "Chengdu Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Chengdu Marathon",
+   "wa_id": 7244018,
+   "score": 1.0
+  },
+  "Chevron Houston Marathon|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Chevron Houston Marathon",
+   "wa_id": 7235560,
+   "score": 1.0
+  },
+  "Chevron Houston Marathon|SEMI": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Aramco Houston Half Marathon",
+   "wa_id": 7236794,
+   "score": 1.0
+  },
+  "Coelmo Napoli City Half Marathon|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Coelmo Napoli City Half Marathon",
+   "wa_id": 7235982,
+   "score": 1.0
+  },
+  "Copenhagen Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Copenhagen Marathon",
+   "wa_id": 7236125,
+   "score": 1.0
+  },
+  "Corrida de Houilles|10KM": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "54ème Corrida de Houilles",
+   "wa_id": 7245292,
+   "score": 1.0
+  },
+  "Course de l'escalade|AUTRE": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Course de l'Escalade",
+   "wa_id": 7237511,
+   "score": 1.0
+  },
+  "Cursa dels Nassos|10KM": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "B100 Cursa dels Nassos",
+   "wa_id": 7244650,
+   "score": 1.0
+  },
+  "Daegu Marathon|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Daegu Marathon",
+   "wa_id": 7235573,
+   "score": 1.0
+  },
+  "Dalian Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "The 36th Dalian Marathon",
+   "wa_id": 7236080,
+   "score": 1.0
+  },
+  "Doha Marathon|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Doha Marathon by Ooredoo",
+   "wa_id": 7235566,
+   "score": 0.875
+  },
+  "Dresden Marathon|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Dresden HALF",
+   "wa_id": 7245390,
+   "score": 1.0
+  },
+  "EDP Lisboa Meia Maratona|SEMI": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "EDP Lisbon Half Marathon",
+   "wa_id": 7236103,
+   "score": 1.0
+  },
+  "EDP Maratona de Lisboa|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "EDP Lisbon Marathon",
+   "wa_id": 7236105,
+   "score": 1.0
+  },
+  "EDP Maratona de Lisboa|SEMI": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Hyundai Half Marathon",
+   "wa_id": 7236104,
+   "score": 1.0
+  },
+  "Enschede Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Enschede Marathon",
+   "wa_id": 7236034,
+   "score": 1.0
+  },
+  "Eurospin RomaOstia Half Marathon|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Eurospin RomaOstia Half Marathon",
+   "wa_id": 7238425,
+   "score": 1.0
+  },
+  "Falmouth Road Race|AUTRE": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "ASICS Falmouth Road Race",
+   "wa_id": 7242300,
+   "score": 1.0
+  },
+  "Fukuoka Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Fukuoka International Marathon",
+   "wa_id": 7236406,
+   "score": 1.0
+  },
+  "Fuzhou Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Fuzhou Marathona",
+   "wa_id": 7244081,
+   "score": 1.0
+  },
+  "Generali Berlin Half Marathon|SEMI": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Generali Berliner Halbmarathon",
+   "wa_id": 7237042,
+   "score": 1.0
+  },
+  "Generali Köln Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Generali Köln Marathon",
+   "wa_id": 7236087,
+   "score": 1.0
+  },
+  "Generali Köln Marathon|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Generali Köln Half Marathon",
+   "wa_id": 7236088,
+   "score": 1.0
+  },
+  "Generali Maraton Malaga|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Generali Maratón de Málaga",
+   "wa_id": 7244448,
+   "score": 1.0
+  },
+  "Generali Maraton Malaga|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "TotalEnergies Medio Maratón de Málaga",
+   "wa_id": 7236008,
+   "score": 1.0
+  },
+  "Generali Prague Half Marathon|SEMI": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Generali Prague Half Marathon",
+   "wa_id": 7236038,
+   "score": 1.0
+  },
+  "Gifu Half Marathon|SEMI": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Gifu Half Marathon",
+   "wa_id": 7236081,
+   "score": 1.0
+  },
+  "Gold Coast Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "ASICS Gold Coast Marathon",
+   "wa_id": 7239889,
+   "score": 1.0
+  },
+  "Great Ethiopan Run|10KM": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Great Ethiopian Run 10km Presented by Bank of America",
+   "wa_id": 7244363,
+   "score": 0.675
+  },
+  "Guadalajara Half Marathon|SEMI": {
+   "label": "Platinum",
+   "annee": 2026,
+   "nom_wa": "XL Medio Maratón Internacional Guadalajara Electrolit",
+   "wa_id": 7237360,
+   "score": 1.0
+  },
+  "Guadalajara Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "XLI Maratón Internacional Guadalajara Hidratado por Electrolit",
+   "wa_id": 7244084,
+   "score": 0.822
+  },
+  "Guangzhou Marathon|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Guangzhou Marathon",
+   "wa_id": 7235586,
+   "score": 1.0
+  },
+  "Guiyang Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Guiyang Marathon",
+   "wa_id": 7236083,
+   "score": 1.0
+  },
+  "Gyeongju International Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Gyeongju International Marathon",
+   "wa_id": 7236603,
+   "score": 1.0
+  },
+  "HOKA Semi de Paris|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "HOKA Semi de Paris",
+   "wa_id": 7236007,
+   "score": 1.0
+  },
+  "Haier Qingdao Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Haier Qingdao Marathon",
+   "wa_id": 7236400,
+   "score": 1.0
+  },
+  "Halong Bay Heritage Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Halong Bay Heritage",
+   "wa_id": 7246554,
+   "score": 1.0
+  },
+  "Hamburg Halbmarathon|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "32. hella Hamburg Half Marathon",
+   "wa_id": 7238156,
+   "score": 1.0
+  },
+  "Hangzhou Marathon|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Hangzhou Marathon",
+   "wa_id": 7235594,
+   "score": 1.0
+  },
+  "Harbin Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Harbin Marathon",
+   "wa_id": 7240795,
+   "score": 1.0
+  },
+  "Harmonie Mutuelle 20km de Paris|AUTRE": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Harmonie Mutuelle 20km de Paris",
+   "wa_id": 7245952,
+   "score": 1.0
+  },
+  "Ho Chi Minh city marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Techcombank Ho Chi Minh International Marathon",
+   "wa_id": 7248494,
+   "score": 1.0
+  },
+  "Hofu Yomiuri Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "57th Hofu Yomiuri Marathon",
+   "wa_id": 7236405,
+   "score": 1.0
+  },
+  "Hokkaido Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Hokkaido Marathon",
+   "wa_id": 7236086,
+   "score": 1.0
+  },
+  "Honolulu Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "JAL Honolulu Marathon",
+   "wa_id": 7246124,
+   "score": 1.0
+  },
+  "IndianOil WNC Navy Half|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "IndianOil WNC Navy Half Marathon",
+   "wa_id": 7247654,
+   "score": 1.0
+  },
+  "International Mersin Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "8th International Mersin Marathon",
+   "wa_id": 7242348,
+   "score": 1.0
+  },
+  "Irish Life Dublin Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Irish Life Dublin Marathon",
+   "wa_id": 7238744,
+   "score": 1.0
+  },
+  "Istanbul Half Marathon|SEMI": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Istanbul Half Marathon",
+   "wa_id": 7236079,
+   "score": 1.0
+  },
+  "Istanbul Marathon|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Istanbul Marathon",
+   "wa_id": 7235596,
+   "score": 1.0
+  },
+  "Jakarta Running Festival|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "BTN Jakarta International Marathon",
+   "wa_id": 7236425,
+   "score": 0.922
+  },
+  "Jakarta Running Festival|SEMI": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Jakarta Running Festival - Half Marathon",
+   "wa_id": 7236427,
+   "score": 1.0
+  },
+  "Jilin City Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Jilin City Marathon",
+   "wa_id": 7238441,
+   "score": 1.0
+  },
+  "Kagawa Marugame International Half Marathon|SEMI": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "78th Kagawa Marugame International Half Marathon",
+   "wa_id": 7236069,
+   "score": 1.0
+  },
+  "Kigali International Peace Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Kigali International Peace Marathon",
+   "wa_id": 7239888,
+   "score": 1.0
+  },
+  "Kobe Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Kobe Marathon",
+   "wa_id": 7238740,
+   "score": 1.0
+  },
+  "Kolkata Full Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "JBG Kolkata Marathon",
+   "wa_id": 7245296,
+   "score": 0.861
+  },
+  "Lanzhou Marathon|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Lanzhou Marathon",
+   "wa_id": 7235588,
+   "score": 1.0
+  },
+  "Life Time Chicago Half Marathon & 5K|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Bank of America Chicago 13.1",
+   "wa_id": 7238745,
+   "score": 1.0
+  },
+  "Ljubljana Marathon|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "NLB Ljubljana Marathon",
+   "wa_id": 7235593,
+   "score": 1.0
+  },
+  "Mainova Frankfurt Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Mainova Frankfurt Marathon",
+   "wa_id": 7246125,
+   "score": 1.0
+  },
+  "Marathon International de Rabat|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Marathon International de Rabat",
+   "wa_id": 7232567,
+   "score": 1.0
+  },
+  "Marathon international de Marrakech|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Marrakesh International Marathon",
+   "wa_id": 7237507,
+   "score": 1.0
+  },
+  "Maraton Lima 42K|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Lima Marathon",
+   "wa_id": 7238056,
+   "score": 1.0
+  },
+  "Maraton Lima 42K|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Lima Half Marathon",
+   "wa_id": 7238055,
+   "score": 1.0
+  },
+  "Maraton Murcia Costa Calida|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "TotalEnergies Media Maratón Murcia Costa Cálida",
+   "wa_id": 7237038,
+   "score": 1.0
+  },
+  "Maraton de Cali|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Maraton de Cali",
+   "wa_id": 7238443,
+   "score": 1.0
+  },
+  "Maratona Di Ravenna|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Maratona Di Ravenna Cittá D'Arte",
+   "wa_id": 7237514,
+   "score": 0.778
+  },
+  "Maratona Do Rio|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Maratona da Cidade do Rio de Janeiro",
+   "wa_id": 7239891,
+   "score": 0.74
+  },
+  "Maratona Internacional de Sao Paulo|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "30ª Maratona Internacional de Sao Paulo",
+   "wa_id": 7236015,
+   "score": 1.0
+  },
+  "Maratona do Porto|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "EDP Porto Marathon",
+   "wa_id": 7236106,
+   "score": 1.0
+  },
+  "Maratón de la Ciudad de México Telcel|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Mexico City Marathon Telcel",
+   "wa_id": 7235589,
+   "score": 0.686
+  },
+  "Mattoni Running Festival Ceské Budejovice|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Mattoni Half Marathon České Budějovice",
+   "wa_id": 7236030,
+   "score": 1.0
+  },
+  "Mattoni Running Festival Olomouc|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Mattoni Half Marathon Olomouc",
+   "wa_id": 7236029,
+   "score": 1.0
+  },
+  "Mattoni Running Festival Usti Nad Labem|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Mattoni Half Marathon Ústí nad Labem",
+   "wa_id": 7242693,
+   "score": 1.0
+  },
+  "Maybank Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Maybank Marathon",
+   "wa_id": 7238457,
+   "score": 1.0
+  },
+  "Medio Maraton de Sevilla|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Medio Maraton Sevilla",
+   "wa_id": 7244016,
+   "score": 1.0
+  },
+  "Medtronic Twin Cities Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Medtronic Twin Cities Marathon",
+   "wa_id": 7242301,
+   "score": 1.0
+  },
+  "Meia Maratona do Porto|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Hyundai Porto Half Marathon",
+   "wa_id": 7236402,
+   "score": 1.0
+  },
+  "Meia Maratona internacional Do Rio de Janeiro|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "28ª Meia Maratona Internacional do Rio de Janeiro",
+   "wa_id": 7236024,
+   "score": 1.0
+  },
+  "Meishan Renshou Half Marathon|SEMI": {
+   "label": "Platinum",
+   "annee": 2026,
+   "nom_wa": "Meishan Renshou Half Marathon",
+   "wa_id": 7235697,
+   "score": 1.0
+  },
+  "Midnattsloppet Stockholm|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "adidas Stockholm Half Marathon",
+   "wa_id": 7236393,
+   "score": 0.646
+  },
+  "Milano Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Wizz Air Milano Marathon",
+   "wa_id": 7236394,
+   "score": 1.0
+  },
+  "Mitja Marato Barcelona by Brooks|SEMI": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Hyundai Mitja Marató de Barcelona by Brooks",
+   "wa_id": 7237513,
+   "score": 1.0
+  },
+  "Montepio Meia Maratona Cascais|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Meia Maratona de Cascais",
+   "wa_id": 7237524,
+   "score": 0.672
+  },
+  "Movistar Madrid Medio Maraton|5KM": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Madrid Vintage Run by Total Energies",
+   "wa_id": 7243787,
+   "score": 0.685
+  },
+  "Movistar Madrid Medio Maraton|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Movistar Madrid Medio Maratón",
+   "wa_id": 7236012,
+   "score": 1.0
+  },
+  "NMDC Hyderabad Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "NMDC Hyderabad Marathon",
+   "wa_id": 7238761,
+   "score": 1.0
+  },
+  "NN Marathon Rotterdam|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "NN Marathon Rotterdam",
+   "wa_id": 7235576,
+   "score": 1.0
+  },
+  "NN Maraton Warszawski|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "48th Warsaw Marathon",
+   "wa_id": 7236127,
+   "score": 1.0
+  },
+  "Nagoya Women's Marathon|MARATHON": {
+   "label": "Platinum",
+   "annee": 2026,
+   "nom_wa": "Nagoya Women's Marathon",
+   "wa_id": 7236072,
+   "score": 1.0
+  },
+  "Nairobi City Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Standard Chartered Nairobi Marathon",
+   "wa_id": 7246457,
+   "score": 1.0
+  },
+  "Nanjing Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Nanjing Marathon",
+   "wa_id": 7238737,
+   "score": 1.0
+  },
+  "Nanning Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Nanning Marathon",
+   "wa_id": 7242302,
+   "score": 1.0
+  },
+  "New Delhi Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Cognizant New Delhi Marathon",
+   "wa_id": 7238742,
+   "score": 0.846
+  },
+  "Osaka Marathon|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Osaka Marathon",
+   "wa_id": 7235570,
+   "score": 1.0
+  },
+  "Prague International Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Vodafone Prague Marathon",
+   "wa_id": 7236039,
+   "score": 1.0
+  },
+  "Ras Al Khaimah Half Marathon|SEMI": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Ras Al Khaimah Half Marathon",
+   "wa_id": 7237781,
+   "score": 1.0
+  },
+  "Rimi Riga Marathon|10KM": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Rimi Riga Marathon - 10km",
+   "wa_id": 7238051,
+   "score": 1.0
+  },
+  "Rimi Riga Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Rimi Riga Marathon",
+   "wa_id": 7238049,
+   "score": 1.0
+  },
+  "Rimi Riga Marathon|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Rimi Riga Half Marathon",
+   "wa_id": 7238050,
+   "score": 1.0
+  },
+  "Riyadh Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Riyadh Marathon",
+   "wa_id": 7236536,
+   "score": 1.0
+  },
+  "Riyadh Marathon|SEMI": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Riyadh Half Marathon",
+   "wa_id": 7236749,
+   "score": 1.0
+  },
+  "SCO Kunming Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "SCO Kunming Marathon",
+   "wa_id": 7248477,
+   "score": 1.0
+  },
+  "Samarkand Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Samarkand Marathon",
+   "wa_id": 7244979,
+   "score": 1.0
+  },
+  "Sanlam Cape Town Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Cape Town City Marathon",
+   "wa_id": 7237458,
+   "score": 0.696
+  },
+  "Seoul Marathon|MARATHON": {
+   "label": "Platinum",
+   "annee": 2026,
+   "nom_wa": "Seoul Marathon",
+   "wa_id": 7235569,
+   "score": 1.0
+  },
+  "Shanghai Marathon|MARATHON": {
+   "label": "Platinum",
+   "annee": 2026,
+   "nom_wa": "Shanghai Marathon",
+   "wa_id": 7235577,
+   "score": 1.0
+  },
+  "Shanghai Yangtze River Half Marathon|SEMI": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Shanghai Half Marathon",
+   "wa_id": 7236073,
+   "score": 0.598
+  },
+  "Sharqiyah International Race|5KM": {
+   "label": "Platinum",
+   "annee": 2026,
+   "nom_wa": "Sharqiyah International Race - 5km",
+   "wa_id": 7244308,
+   "score": 0.7
+  },
+  "Sharqiyah International Race|SEMI": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Sharqiyah International Race - Half Marathon",
+   "wa_id": 7243579,
+   "score": 0.7
+  },
+  "Shenyang Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Shenyang Marathon",
+   "wa_id": 7238739,
+   "score": 1.0
+  },
+  "Shenzhen Marathon|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Shenzhen Marathon",
+   "wa_id": 7235585,
+   "score": 1.0
+  },
+  "Standard Chartered Dubai Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Dubai Marathon",
+   "wa_id": 7237510,
+   "score": 1.0
+  },
+  "Standard Chartered Hong Kong Marathon|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Standard Chartered Hong Kong Marathon",
+   "wa_id": 7235568,
+   "score": 1.0
+  },
+  "Standard Chartered KL Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Kuala Lumpur Standard Chartered Marathon",
+   "wa_id": 7239890,
+   "score": 0.571
+  },
+  "Standard Chartered Singapore Marathon|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "BYD Singapore International Marathon presented by Adidas",
+   "wa_id": 7235595,
+   "score": 1.0
+  },
+  "Stockholm Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "adidas Stockholm Marathon",
+   "wa_id": 7238741,
+   "score": 1.0
+  },
+  "Stramilano|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Stramilano Half Marathon",
+   "wa_id": 7236031,
+   "score": 1.0
+  },
+  "Swedbank Tallinna maraton|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Tallinn Marathon",
+   "wa_id": 7234777,
+   "score": 1.0
+  },
+  "Swedbank Tallinna maraton|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Tallinn Half Marathon",
+   "wa_id": 7236126,
+   "score": 1.0
+  },
+  "TCS Amsterdam Marathon|MARATHON": {
+   "label": "Platinum",
+   "annee": 2026,
+   "nom_wa": "TCS Amsterdam Marathon",
+   "wa_id": 7235581,
+   "score": 1.0
+  },
+  "TCS London Marathon|MARATHON": {
+   "label": "Platinum",
+   "annee": 2026,
+   "nom_wa": "TCS London Marathon",
+   "wa_id": 7235562,
+   "score": 1.0
+  },
+  "TCS New York City Marathon|MARATHON": {
+   "label": "Platinum",
+   "annee": 2026,
+   "nom_wa": "TCS New York City Marathon",
+   "wa_id": 7235564,
+   "score": 1.0
+  },
+  "TCS Sydney Marathon presented by ASICS|MARATHON": {
+   "label": "Platinum",
+   "annee": 2026,
+   "nom_wa": "TCS Sydney Marathon Presented by ASICS",
+   "wa_id": 7235579,
+   "score": 1.0
+  },
+  "TCS Toronto Waterfront Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "TCS Toronto Waterfront Marathon",
+   "wa_id": 7238226,
+   "score": 1.0
+  },
+  "TCS World 10K Bengaluru|10KM": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "TCS World 10K Bengaluru",
+   "wa_id": 7236016,
+   "score": 1.0
+  },
+  "Taipei Marathon|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Taipei Marathon",
+   "wa_id": 7235584,
+   "score": 1.0
+  },
+  "Taiyuan Marathon|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Taiyuan Marathon",
+   "wa_id": 7235590,
+   "score": 1.0
+  },
+  "Tamarack Ottawa Race week end|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Tartan Ottawa International Marathon",
+   "wa_id": 7236100,
+   "score": 0.913
+  },
+  "Tata Mumbai Marathon|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Tata Mumbai Marathon",
+   "wa_id": 7235567,
+   "score": 1.0
+  },
+  "Tokyo Legacy Half Marathon|SEMI": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Tokyo Legacy Half Marathon 2026",
+   "wa_id": 7242303,
+   "score": 1.0
+  },
+  "Tokyo Marathon|MARATHON": {
+   "label": "Platinum",
+   "annee": 2026,
+   "nom_wa": "Tokyo Marathon",
+   "wa_id": 7236397,
+   "score": 1.0
+  },
+  "Toyota Amazing Thailand Bangkok Marathon|10KM": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Amazing Thailand Marathon Bangkok 10k - Official Bangkok Capital City Marathon",
+   "wa_id": 7244428,
+   "score": 1.0
+  },
+  "Toyota Amazing Thailand Bangkok Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Amazing Thailand Marathon Bangkok - Official Bangkok Capital City Marathon",
+   "wa_id": 7244429,
+   "score": 1.0
+  },
+  "Toyota Amazing Thailand Bangkok Marathon|SEMI": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Amazing Thailand Marathon Bangkok 21k - Official Bangkok Capital City Marathon",
+   "wa_id": 7244427,
+   "score": 1.0
+  },
+  "United Airlines NYC Half|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "United Airlines NYC Half",
+   "wa_id": 7237506,
+   "score": 1.0
+  },
+  "Valencia Half Marathon Trinidad Alfonso Zurich|SEMI": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Medio Marathon Valencia Trinidad Alfonso Zurich",
+   "wa_id": 7236005,
+   "score": 1.0
+  },
+  "Valencia Marathon Trinidad Alfonso Zurich|MARATHON": {
+   "label": "Platinum",
+   "annee": 2026,
+   "nom_wa": "Maratón Valencia Trinidad Alfonso Zurich",
+   "wa_id": 7235578,
+   "score": 1.0
+  },
+  "Vedanta Delhi Half|SEMI": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Vedanta Delhi Half Marathon",
+   "wa_id": 7236424,
+   "score": 1.0
+  },
+  "Vienna City Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Vienna City Marathon",
+   "wa_id": 7236128,
+   "score": 1.0
+  },
+  "Vilniaus Maratonas|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Swedbank Vilnius Marathon",
+   "wa_id": 7239220,
+   "score": 0.667
+  },
+  "Warsaw Half Marathon|SEMI": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "20th Warsaw Half Marathon",
+   "wa_id": 7236391,
+   "score": 1.0
+  },
+  "Wizz Air Rome Half Marathon by Brooks|SEMI": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Wizz Air Rome Half Marathon",
+   "wa_id": 7245167,
+   "score": 1.0
+  },
+  "World 25K Kolkata|AUTRE": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Tata Steel World 25K Kolkata",
+   "wa_id": 7238774,
+   "score": 1.0
+  },
+  "Wuhan Marathon|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Bank of China Wuhan Marathon",
+   "wa_id": 7238456,
+   "score": 1.0
+  },
+  "Wuxi Marathon|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Wuxi Marathon",
+   "wa_id": 7235574,
+   "score": 1.0
+  },
+  "Xinyu Fairy Lake Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Xinyu fairy lake marathon",
+   "wa_id": 7236090,
+   "score": 1.0
+  },
+  "Yangzhou Half Marathon|SEMI": {
+   "label": "Platinum",
+   "annee": 2026,
+   "nom_wa": "Yangzhou Half Marathon",
+   "wa_id": 7235575,
+   "score": 1.0
+  },
+  "Yellow River Estuary Dongying Marathon|MARATHON": {
+   "label": "Gold",
+   "annee": 2026,
+   "nom_wa": "Yellow River Estuary Dongying Marathon",
+   "wa_id": 7235592,
+   "score": 1.0
+  },
+  "Zagreb Marathon|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "34th Zagreb Powerade Marathon",
+   "wa_id": 7237778,
+   "score": 1.0
+  },
+  "Zurich Marató de Barcelona|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Zurich Marató de Barcelona",
+   "wa_id": 7236009,
+   "score": 1.0
+  },
+  "Zurich Maratón de Sevilla|MARATHON": {
+   "label": "Elite",
+   "annee": 2026,
+   "nom_wa": "Zurich Maratón Sevilla",
+   "wa_id": 7236004,
+   "score": 1.0
+  },
+  "Zurich Rock 'n' Roll Running Series Madrid|MARATHON": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Zurich Rock 'n' Roll Running Series Madrid Maraton",
+   "wa_id": 7237367,
+   "score": 1.0
+  },
+  "Zurich Rock 'n' Roll Running Series Madrid|SEMI": {
+   "label": "Label",
+   "annee": 2026,
+   "nom_wa": "Zurich Rock 'n' Roll Running Series Madrid Half Marathon",
+   "wa_id": 7237368,
+   "score": 1.0
+  }
+ },
+ "labellisees_non_suivies": [
+  {
+   "nom": "BOclassic Alto Adige",
+   "label": "Label",
+   "lieu": "Bolzano (ITA)"
+  },
+  {
+   "nom": "BOclassic Alto Adige - 10km",
+   "label": "Label",
+   "lieu": "Bolzano (ITA)"
+  },
+  {
+   "nom": "Shanghai Elite 10K Race",
+   "label": "Gold",
+   "lieu": "Shanghai (CHN)"
+  },
+  {
+   "nom": "Shenzhen Nanshan Half Marathon",
+   "label": "Elite",
+   "lieu": "Shenzhen (CHN)"
+  },
+  {
+   "nom": "3rd Lok Sahaita Marathon",
+   "label": "Label",
+   "lieu": "Sukkur (PAK)"
+  },
+  {
+   "nom": "3rd Lok Sahaita 10K Women's Run",
+   "label": "Label",
+   "lieu": "Sukkur (PAK)"
+  },
+  {
+   "nom": "Scenic Half Marathon Nakhon Phanom",
+   "label": "Label",
+   "lieu": "Nakhon Phanom (THA)"
+  },
+  {
+   "nom": "Kalakaua Merrie Mile",
+   "label": "Label",
+   "lieu": "Honolulu, HI (USA)"
+  },
+  {
+   "nom": "Langkawi International Half Marathon",
+   "label": "Label",
+   "lieu": "Langkawi (MAS)"
+  },
+  {
+   "nom": "Pertamina ECO Runfest",
+   "label": "Elite",
+   "lieu": "Jakarta (INA)"
+  },
+  {
+   "nom": "Semi Marathon International Tamansourt",
+   "label": "Label",
+   "lieu": "Tamansourt (MAR)"
+  },
+  {
+   "nom": "Brunei International Half Marathon",
+   "label": "Label",
+   "lieu": "B.S.Begawan (BRU)"
+  },
+  {
+   "nom": "Pampulha Round- 27ª Volta Internacional da Pampulha",
+   "label": "Label",
+   "lieu": "Belo Horizonte (BRA)"
+  },
+  {
+   "nom": "Xiamen Haicang Half Marathon",
+   "label": "Label",
+   "lieu": "Xiamen (CHN)"
+  },
+  {
+   "nom": "Galaxy Entertainment Macao International Marathon",
+   "label": "Label",
+   "lieu": "Macao (MAC)"
+  },
+  {
+   "nom": "Galaxy Entertainment Macao International Half Marathon",
+   "label": "Label",
+   "lieu": "Macao (MAC)"
+  },
+  {
+   "nom": "Red Sea Half Marathon",
+   "label": "Label",
+   "lieu": "Aqaba (JOR)"
+  },
+  {
+   "nom": "Venus Womens Half Marathon",
+   "label": "Label",
+   "lieu": "São Paulo (BRA)"
+  },
+  {
+   "nom": "Beirut Marathon",
+   "label": "Label",
+   "lieu": "Beirut (LBN)"
+  },
+  {
+   "nom": "Guang'an Marathon",
+   "label": "Label",
+   "lieu": "Guang'an (CHN)"
+  },
+  {
+   "nom": "Manchester Road Race",
+   "label": "Label",
+   "lieu": "Manchester, CT (USA)"
+  },
+  {
+   "nom": "Milano Half Marathon",
+   "label": "Label",
+   "lieu": "Milano (ITA)"
+  },
+  {
+   "nom": "China-Asean Marathon",
+   "label": "Label",
+   "lieu": "Fangchenggang (CHN)"
+  },
+  {
+   "nom": "Korat Marathon",
+   "label": "Label",
+   "lieu": "Nakhon Ratchasima (THA)"
+  },
+  {
+   "nom": "Huangshi Half Marathon",
+   "label": "Elite",
+   "lieu": "Huangshi (CHN)"
+  },
+  {
+   "nom": "TIAA Philadelphia Marathon",
+   "label": "Label",
+   "lieu": "Philadelphia, PA (USA)"
+  },
+  {
+   "nom": "Yiwu Half Marathon",
+   "label": "Label",
+   "lieu": "Yiwu (CHN)"
+  },
+  {
+   "nom": "Maraton Monumental",
+   "label": "Label",
+   "lieu": "Santiago de los Caballeros (DOM)"
+  },
+  {
+   "nom": "Maratona de Curitiba",
+   "label": "Label",
+   "lieu": "Curitiba (BRA)"
+  },
+  {
+   "nom": "Guilin Marathon",
+   "label": "Label",
+   "lieu": "Guilin (CHN)"
+  },
+  {
+   "nom": "Bank of China Hong Kong-Zhuhai-Macao Bridge Half Marathon",
+   "label": "Platinum",
+   "lieu": "Hong Kong (HKG)"
+  },
+  {
+   "nom": "November Run, 5 km - 10 km",
+   "label": "Label",
+   "lieu": "Gevgelija (MKD)"
+  },
+  {
+   "nom": "Nanchang Marathon",
+   "label": "Label",
+   "lieu": "Nanchang (CHN)"
+  },
+  {
+   "nom": "Abuja Premium Trust Half Marathon",
+   "label": "Label",
+   "lieu": "Abuja (NGR)"
+  },
+  {
+   "nom": "PLN Electric Run",
+   "label": "Label",
+   "lieu": "South Tangerang (INA)"
+  },
+  {
+   "nom": "Boston Half",
+   "label": "Label",
+   "lieu": "Boston, MA (USA)"
+  },
+  {
+   "nom": "Hangzhou Qiantang Women's Half Marathon",
+   "label": "Label",
+   "lieu": "Hangzhou (CHN)"
+  },
+  {
+   "nom": "Gaochun Marathon",
+   "label": "Label",
+   "lieu": "Gaochun (CHN)"
+  },
+  {
+   "nom": "Xichang Lake Qionghai Wetlands Marathon",
+   "label": "Label",
+   "lieu": "Xichang (CHN)"
+  },
+  {
+   "nom": "Yichang Marathon",
+   "label": "Label",
+   "lieu": "Yichang (CHN)"
+  },
+  {
+   "nom": "ChangZhou West Taihu Lake Half Marathon",
+   "label": "Elite",
+   "lieu": "Changzhou (CHN)"
+  },
+  {
+   "nom": "Round Lihu Lake Half Marathon",
+   "label": "Label",
+   "lieu": "Wuxi (CHN)"
+  },
+  {
+   "nom": "Abbott Dash to the Finish Line 5K",
+   "label": "Label",
+   "lieu": "New York, NY (USA)"
+  },
+  {
+   "nom": "Venicemarathon",
+   "label": "Label",
+   "lieu": "Venezia (ITA)"
+  },
+  {
+   "nom": "Media Maratón del Callao",
+   "label": "Label",
+   "lieu": "Callao (PER)"
+  },
+  {
+   "nom": "Mae Moh Half Marathon",
+   "label": "Label",
+   "lieu": "Lampang (THA)"
+  },
+  {
+   "nom": "Xi'an Marathon",
+   "label": "Label",
+   "lieu": "Xi'an (CHN)"
+  },
+  {
+   "nom": "Marathon München by Brooks",
+   "label": "Label",
+   "lieu": "München (GER)"
+  },
+  {
+   "nom": "Perth Running Festival - WA State Marathon Championships",
+   "label": "Label",
+   "lieu": "Perth (AUS)"
+  },
+  {
+   "nom": "Canadian 5 km Road Championship",
+   "label": "Label",
+   "lieu": "Montréal (CAN)"
+  },
+  {
+   "nom": "tRUNsylvania International 10K Brasov",
+   "label": "Elite",
+   "lieu": "Brasov (ROU)"
+  },
+  {
+   "nom": "Košice Peace Marathon",
+   "label": "Label",
+   "lieu": "Košice (SVK)"
+  },
+  {
+   "nom": "TC 10K",
+   "label": "Label",
+   "lieu": "Minneapolis, MN (USA)"
+  },
+  {
+   "nom": "Amman Marathon",
+   "label": "Label",
+   "lieu": "Amman (JOR)"
+  },
+  {
+   "nom": "Heart to Heart 5k Presented by BCH",
+   "label": "Label",
+   "lieu": "Boulder, CO (USA)"
+  },
+  {
+   "nom": "Garoto 10 Miles - 35ª Dez Milhas Garoto",
+   "label": "Label",
+   "lieu": "Vitoria (BRA)"
+  },
+  {
+   "nom": "Maratona Salvador",
+   "label": "Label",
+   "lieu": "Salvador (BRA)"
+  },
+  {
+   "nom": "Absa Marathon",
+   "label": "Label",
+   "lieu": "Lusaka (ZAM)"
+  },
+  {
+   "nom": "Meia Maratona do Sol Sicredi",
+   "label": "Label",
+   "lieu": "Natal (BRA)"
+  },
+  {
+   "nom": "Maratón Ciudad de Buenos Aires",
+   "label": "Label",
+   "lieu": "Buenos Aires (ARG)"
+  },
+  {
+   "nom": "Scenic Half Marathon Krabi",
+   "label": "Label",
+   "lieu": "Krabi (THA)"
+  },
+  {
+   "nom": "New Balance 5th Avenue Mile",
+   "label": "Label",
+   "lieu": "New York, NY (USA)"
+  },
+  {
+   "nom": "Izmir Half Marathon",
+   "label": "Label",
+   "lieu": "Izmir (TUR)"
+  },
+  {
+   "nom": "Brose Night Run Prievidza",
+   "label": "Label",
+   "lieu": "Prievidza (SVK)"
+  },
+  {
+   "nom": "New Balance Kö Meile",
+   "label": "Label",
+   "lieu": "Düsseldorf (GER)"
+  },
+  {
+   "nom": "Telekom Night Run Bratislava",
+   "label": "Label",
+   "lieu": "Bratislava (SVK)"
+  },
+  {
+   "nom": "11. Wizz Air Warsaw Praski Night Half Marathon",
+   "label": "Label",
+   "lieu": "Warszawa (POL)"
+  },
+  {
+   "nom": "Maratona Internacional de Floripa Fibra",
+   "label": "Label",
+   "lieu": "Florianópolis (BRA)"
+  },
+  {
+   "nom": "Media Maratón Ciudad de Buenos Aires",
+   "label": "Label",
+   "lieu": "Buenos Aires (ARG)"
+  },
+  {
+   "nom": "Songkhla Marathon",
+   "label": "Label",
+   "lieu": "Songkhla (THA)"
+  },
+  {
+   "nom": "XXII 10 km Internacional Guadalajara Bomberos",
+   "label": "Label",
+   "lieu": "Guadalajara (MEX)"
+  },
+  {
+   "nom": "Antrim Coast 5k",
+   "label": "Label",
+   "lieu": "Larne (GBR)"
+  },
+  {
+   "nom": "Antrim Coast Half Marathon",
+   "label": "Elite",
+   "lieu": "Larne (GBR)"
+  },
+  {
+   "nom": "Tusker Lite Mount Rwenzori Marathon",
+   "label": "Label",
+   "lieu": "Kasese (UGA)"
+  },
+  {
+   "nom": "ASICS META : Time : Trials Thailand",
+   "label": "Label",
+   "lieu": "Bangkok (THA)"
+  },
+  {
+   "nom": "La Carrera del Pacifico Cali 10K",
+   "label": "Label",
+   "lieu": "Cali (COL)"
+  },
+  {
+   "nom": "Sunshine Coast Marathon Festival",
+   "label": "Label",
+   "lieu": "Sunshine Coast (AUS)"
+  },
+  {
+   "nom": "Scenic Half Marathon Rayong",
+   "label": "Label",
+   "lieu": "Rayong (THA)"
+  },
+  {
+   "nom": "Sunshine Coast Marathon Festival",
+   "label": "Label",
+   "lieu": "Alexandra Headland, Sunshine Coast (AUS)"
+  },
+  {
+   "nom": "TD Beach to Beacon 10K Road Race",
+   "label": "Elite",
+   "lieu": "1000 Shore Road, Cape Elizabeth, ME (USA)"
+  },
+  {
+   "nom": "Media Maraton de Bogota",
+   "label": "Elite",
+   "lieu": "Bogotá (COL)"
+  },
+  {
+   "nom": "Yala Marathon",
+   "label": "Label",
+   "lieu": "Yala (THA)"
+  },
+  {
+   "nom": "SP City Marathon",
+   "label": "Label",
+   "lieu": "São Paulo (BRA)"
+  },
+  {
+   "nom": "Giro Podistico Internazionale di Castelbuono",
+   "label": "Label",
+   "lieu": "Castelbuono (ITA)"
+  },
+  {
+   "nom": "SCORE Marathon",
+   "label": "Label",
+   "lieu": "Putrajaya (MAS)"
+  },
+  {
+   "nom": "New Balance 42k Porto Alegre - Half Marathon",
+   "label": "Label",
+   "lieu": "Porto Alegre (BRA)"
+  },
+  {
+   "nom": "New Balance 42k Porto Alegre",
+   "label": "Elite",
+   "lieu": "Porto Alegre (BRA)"
+  },
+  {
+   "nom": "Gold Coast Half Marathon",
+   "label": "Label",
+   "lieu": "Gold Coast (AUS)"
+  },
+  {
+   "nom": "Guizhou Zhenning Huangguoshu Half Marathon",
+   "label": "Elite",
+   "lieu": "Zhenning (CHN)"
+  },
+  {
+   "nom": "10KM Port Gentil",
+   "label": "Gold",
+   "lieu": "Port Gentil (GAB)"
+  },
+  {
+   "nom": "tRUNsylvania International 10K Cluj",
+   "label": "Label",
+   "lieu": "Cluj-Napoca (ROU)"
+  },
+  {
+   "nom": "B.A.A. 10K",
+   "label": "Label",
+   "lieu": "Boston, MA (USA)"
+  },
+  {
+   "nom": "Corrida International de Langueux",
+   "label": "Label",
+   "lieu": "Langueux (FRA)"
+  },
+  {
+   "nom": "Karlovački cener 10K - Karlovac 10K",
+   "label": "Label",
+   "lieu": "Karlovac (CRO)"
+  },
+  {
+   "nom": "Scenic Half Marathon Chanthaburi",
+   "label": "Label",
+   "lieu": "Chanthaburi (THA)"
+  },
+  {
+   "nom": "Mastercard New York Mini 10K - Women's Race",
+   "label": "Label",
+   "lieu": "New York, NY (USA)"
+  },
+  {
+   "nom": "McGrath Launceston Running Festival - Peppers Silo Half Marathon",
+   "label": "Elite",
+   "lieu": "Riverbend Park, Launceston (AUS)"
+  },
+  {
+   "nom": "10K SP challenge",
+   "label": "Label",
+   "lieu": "São Paulo (BRA)"
+  },
+  {
+   "nom": "41º Maratona Internacional de Porto Alegre",
+   "label": "Label",
+   "lieu": "Porto Alegre (BRA)"
+  },
+  {
+   "nom": "Okpekpe 10KM Road Race",
+   "label": "Gold",
+   "lieu": "Okpekpe (NGR)"
+  },
+  {
+   "nom": "Wecasablanca International Challenge",
+   "label": "Label",
+   "lieu": "Casablanca (MAR)"
+  },
+  {
+   "nom": "Telkomsel Digiland Run Half Marathon & 10km",
+   "label": "Label",
+   "lieu": "Jakarta (INA)"
+  },
+  {
+   "nom": "Rimi Riga Marathon - DPD Mile",
+   "label": "Label",
+   "lieu": "Riga (LAT)"
+  },
+  {
+   "nom": "Mattoni Half Marathon Karlovy Vary",
+   "label": "Label",
+   "lieu": "Karlovy Vary (CZE)"
+  },
+  {
+   "nom": "HATYAi21",
+   "label": "Label",
+   "lieu": "Songkhla (THA)"
+  },
+  {
+   "nom": "Generali Genève Marathon",
+   "label": "Label",
+   "lieu": "Genève (SUI)"
+  },
+  {
+   "nom": "Phoenix Energy Belfast City Marathon",
+   "label": "Label",
+   "lieu": "Belfast (GBR)"
+  },
+  {
+   "nom": "Durban International Marathon",
+   "label": "Label",
+   "lieu": "Durban (RSA)"
+  },
+  {
+   "nom": "Meia Maratona Internacional de Florianópolis Oakberry",
+   "label": "Label",
+   "lieu": "Florianópolis (BRA)"
+  },
+  {
+   "nom": "UPMC Health Plan Pittsburgh Half Marathon",
+   "label": "Label",
+   "lieu": "Pittsburgh, PA (USA)"
+  },
+  {
+   "nom": "Issyk-Kul SCO Run the Silk Road marathon",
+   "label": "Label",
+   "lieu": "Cholpon-Ata (KGZ)"
+  },
+  {
+   "nom": "International Road Race - 29-th Trofeo Opitergium 5km Female",
+   "label": "Label",
+   "lieu": "Oderzo (ITA)"
+  },
+  {
+   "nom": "Europe Marathon",
+   "label": "Label",
+   "lieu": "Aveiro (POR)"
+  },
+  {
+   "nom": "Miyun Marathon",
+   "label": "Elite",
+   "lieu": "Beijing (CHN)"
+  },
+  {
+   "nom": "10 km en Ruta Villa de Laredo",
+   "label": "Label",
+   "lieu": "Laredo (ESP)"
+  },
+  {
+   "nom": "B.A.A. Invitational Mile",
+   "label": "Label",
+   "lieu": "Boston, MA (USA)"
+  },
+  {
+   "nom": "Boston 5K",
+   "label": "Label",
+   "lieu": "Boston, MA (USA)"
+  },
+  {
+   "nom": "Huai'an Marathon",
+   "label": "Label",
+   "lieu": "Huai'an (CHN)"
+  },
+  {
+   "nom": "Yangling Marathon",
+   "label": "Label",
+   "lieu": "Yangling (CHN)"
+  },
+  {
+   "nom": "Hannover Marathon",
+   "label": "Label",
+   "lieu": "Friedrichswall, Hannover (GER)"
+  },
+  {
+   "nom": "DOZ Maraton Łódź",
+   "label": "Label",
+   "lieu": "Łódź (POL)"
+  },
+  {
+   "nom": "Nanjing Xianlin Half Marathon",
+   "label": "Elite",
+   "lieu": "Nanjing (CHN)"
+  },
+  {
+   "nom": "Gunsan Saemangeum Marathon",
+   "label": "Label",
+   "lieu": "Gunsan (KOR)"
+  },
+  {
+   "nom": "Tashkent Marathon",
+   "label": "Label",
+   "lieu": "Tashkent (UZB)"
+  },
+  {
+   "nom": "Shijiazhuang Marathon",
+   "label": "Label",
+   "lieu": "Shijiazhuang (CHN)"
+  },
+  {
+   "nom": "Yancheng Marathon",
+   "label": "Label",
+   "lieu": "Yancheng (CHN)"
+  },
+  {
+   "nom": "Maratón Cúcuta Metropolitana",
+   "label": "Label",
+   "lieu": "San José de Cúcuta (COL)"
+  },
+  {
+   "nom": "33 Azkoitia-Azpeitia international Half marathon, Diego Garcia Memorial",
+   "label": "Label",
+   "lieu": "Azpeitia (ESP)"
+  },
+  {
+   "nom": "Sands China Macao International 10K",
+   "label": "Label",
+   "lieu": "Macao (MAC)"
+  },
+  {
+   "nom": "Recordowa Dziesiatka",
+   "label": "Label",
+   "lieu": "Tor regatowy Malta, Poznan (POL)"
+  },
+  {
+   "nom": "XVIII Medio Maraton a Coruña 21",
+   "label": "Label",
+   "lieu": "La Coruña (ESP)"
+  },
+  {
+   "nom": "Publix Atlanta Half Marathon",
+   "label": "Label",
+   "lieu": "Home Depot Backyard, Atlanta, GA (USA)"
+  },
+  {
+   "nom": "Tel Aviv Bank Leumi Marathon",
+   "label": "Label",
+   "lieu": "Tel Aviv (ISR)"
+  },
+  {
+   "nom": "Maratón BP Castellón",
+   "label": "Label",
+   "lieu": "Castellón (ESP)"
+  },
+  {
+   "nom": "10K Facsa Castellón",
+   "label": "Label",
+   "lieu": "Castellón (ESP)"
+  },
+  {
+   "nom": "Scenic Half Marathon Pranburi",
+   "label": "Label",
+   "lieu": "Prachuap Khiri Khan (THA)"
+  },
+  {
+   "nom": "Semi Marathon International",
+   "label": "Label",
+   "lieu": "Tamesna (MAR)"
+  },
+  {
+   "nom": "5K Breakfast Run Zurich Maratón Sevilla",
+   "label": "Label",
+   "lieu": "Sevilla (ESP)"
+  },
+  {
+   "nom": "10K Gimnastica de Ulla",
+   "label": "Label",
+   "lieu": "San Sebastián (ESP)"
+  },
+  {
+   "nom": "TotalEnergies 10k Murcia Costa Cálida",
+   "label": "Label",
+   "lieu": "Murcia (ESP)"
+  },
+  {
+   "nom": "AXA Raheny 5",
+   "label": "Label",
+   "lieu": "Dublin (IRL)"
+  },
+  {
+   "nom": "Osaka Women's Marathon",
+   "label": "Platinum",
+   "lieu": "Osaka (JPN)"
+  },
+  {
+   "nom": "Buriram Marathon Presented by Chang Mineral",
+   "label": "Label",
+   "lieu": "Buri Ram (THA)"
+  },
+  {
+   "nom": "Semi Marathon International de Djibouti Telecom",
+   "label": "Label",
+   "lieu": "Djibouti (DJI)"
+  },
+  {
+   "nom": "34ª Mitja Marató Internacional Vila de Santa Pola",
+   "label": "Label",
+   "lieu": "Santa Pola (ESP)"
+  },
+  {
+   "nom": "40. OPTIMA Dreikönigslauf in Schwäbisch Hall",
+   "label": "Label",
+   "lieu": "Schwäbisch Hall (GER)"
+  }
+ ]
+}

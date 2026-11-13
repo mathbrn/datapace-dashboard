@@ -66,6 +66,25 @@ CIRCUIT_COLORS = {
     "L5G": "#DC2626",
 }
 
+# Labels World Athletics (event_labels.json, genere par maj_labels_wa.py).
+# Codes de badge par niveau, du plus eleve au plus bas.
+LABELS_WA = {"Platinum": "WA PLATINUM", "Gold": "WA GOLD", "Elite": "WA ELITE",
+             "Label": "WA LABEL"}
+_LABELS_CACHE = None
+
+
+def label_wa(race_name, distance):
+    """Code de badge du label World Athletics de la ligne, ou None."""
+    global _LABELS_CACHE
+    if _LABELS_CACHE is None:
+        try:
+            d = json.loads((Path(__file__).parent / "event_labels.json").read_text(encoding="utf-8"))
+            _LABELS_CACHE = {k: v["label"] for k, v in d.get("labels", {}).items()}
+        except (OSError, ValueError):
+            _LABELS_CACHE = {}
+    n = _LABELS_CACHE.get(f"{str(race_name).strip()}|{str(distance).strip()}")
+    return LABELS_WA.get(n)
+
 # --- Name normalization for Temps_moyen Excel files ---
 # Maps informal/short names from Temps_moyen_par_marathon_*.xlsx
 # to official names used in Suivi_Finishers (RAW).
@@ -251,6 +270,10 @@ def compute_circuits(race_name, distance, city):
     # L5G — marathon distance, Spanish cities
     if distance == "MARATHON" and cl in L5G_CITIES:
         circuits.append("L5G")
+    # Label World Athletics de la course (Platinum, Gold, Elite, Label)
+    lab = label_wa(race_name, distance)
+    if lab:
+        circuits.append(lab)
     return circuits
 
 
@@ -725,7 +748,7 @@ def build_times_db(md, sd):
 
 JS_LOGIC = '''function isWmm(r){var l=r.toLowerCase();return WMM_KEYWORDS.some(function(k){return l.indexOf(k)>=0;});}
 function isLight(){return document.documentElement.hasAttribute('data-theme');}
-var LIGHT_MAP={'#38BDF8':'#0B7BC0','#FCDB00':'#A88F00','#DC2626':'#991B1B','#E30613':'#B80510','#EF4444':'#B91C1C','#FF8A50':'#CC5A20','#5CDFA0':'#2BA368','#F472B6':'#C04080','#FF4A6B':'#CC2040','#22C55E':'#1A8A42','#2DBF7E':'#1F8A5A','#FF6B9D':'#CC3870','#F87171':'#B91C1C','#2563EB':'#1D4ED8','#60A5FA':'#2563EB','#3B82F6':'#1D4ED8','#BFDBFE':'#93C5FD','#1E3A8A':'#172554','#1D4ED8':'#1E3A8A','#1E40AF':'#1E3A8A','#93C5FD':'#60A5FA'};
+var LIGHT_MAP={'#9AA8BA':'#5B6B80','#D4A017':'#9A7400','#B87333':'#8A4F1D','#7C8A9E':'#556274','#38BDF8':'#0B7BC0','#FCDB00':'#A88F00','#DC2626':'#991B1B','#E30613':'#B80510','#EF4444':'#B91C1C','#FF8A50':'#CC5A20','#5CDFA0':'#2BA368','#F472B6':'#C04080','#FF4A6B':'#CC2040','#22C55E':'#1A8A42','#2DBF7E':'#1F8A5A','#FF6B9D':'#CC3870','#F87171':'#B91C1C','#2563EB':'#1D4ED8','#60A5FA':'#2563EB','#3B82F6':'#1D4ED8','#BFDBFE':'#93C5FD','#1E3A8A':'#172554','#1D4ED8':'#1E3A8A','#1E40AF':'#1E3A8A','#93C5FD':'#60A5FA'};
 function lc(c){return isLight()?(LIGHT_MAP[c]||c):c;}
 function col(r){return lc('#DC2626');}
 function colDist(r){return lc(r.d==='5KM'?'#AC14D7':r.d==='10KM'?'#5CDFA0':r.d==='SEMI'?'#FF8A50':r.d==='AUTRE'?'#F472B6':'#2563EB');}
@@ -769,7 +792,10 @@ function peuplePays(){
 }
 function eventFlag(name){if(typeof EVENT_COUNTRIES==='undefined')return '';var info=EVENT_COUNTRIES[name];return info&&info.flag?info.flag:'';}
 function twemojify(el){try{if(typeof twemoji!=='undefined'){twemoji.parse(el||document.body,{folder:'svg',ext:'.svg'});}}catch(e){}}
-var CIRC_COLORS={WMM:'#38BDF8',ASO:'#E30613',EMC:'#F87171',L5G:'#DC2626'};
+var CIRC_COLORS={WMM:'#38BDF8',ASO:'#E30613',EMC:'#F87171',L5G:'#DC2626','WA PLATINUM':'#9AA8BA','WA GOLD':'#D4A017','WA ELITE':'#B87333','WA LABEL':'#7C8A9E'};
+// Labels World Athletics : badges de niveau, filtrables ensemble (« WA ») ou un par un.
+var LABELS_WA=['WA PLATINUM','WA GOLD','WA ELITE','WA LABEL'];
+function estLabel(c){return LABELS_WA.indexOf(c)>=0;}
 var CIRC_DIST_SEC={MARATHON:'#F87171',SEMI:'#FFB088','10KM':'#88EEBB','5KM':'#C966E8',AUTRE:'#FF99CC'};
 function circColor(code,dist){if(code==='RNR')return lc(CIRC_DIST_SEC[dist]||'#F87171');return lc(CIRC_COLORS[code]||'#F87171');}
 function circBadges(r){var ci=r.ci||[];if(!ci.length)return'';return ci.map(function(c){var col=circColor(c,r.d);return'<span class="circ-badge" style="border:1px solid '+col+'40;color:'+col+';background:transparent;font-size:9px;padding:1px 6px;border-radius:100px;text-transform:uppercase;margin-left:4px;white-space:nowrap">'+c+'</span>';}).join('');}
@@ -1921,7 +1947,10 @@ function filterTable(){
     // Circuit filter
     if(badge!=='ALL'){
       var ci=r.ci||[];
-      if(badge==='NONE'){if(ci.length>0)return false;}
+      // « Sans circuit » ignore les labels WA, qui ne sont pas des circuits.
+      var circ=ci.filter(function(c){return !estLabel(c);});
+      if(badge==='NONE'){if(circ.length>0)return false;}
+      else if(badge==='WA'){if(!ci.some(estLabel))return false;}
       else{if(ci.indexOf(badge)<0)return false;}
     }
     // Size filter (based on peak finishers across visible years)
@@ -3405,7 +3434,7 @@ HTML_BODY = """
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Circuit</span>
       <select id="badge-data" onchange="filterTable()">
-        <option value="ALL">Tous</option><option value="WMM">WMM</option><option value="ASO">ASO</option><option value="EMC">EMC</option><option value="RNR">RNR</option><option value="L5G">L5G</option><option value="NONE">Sans circuit</option>
+        <option value="ALL">Tous</option><option value="WMM">WMM</option><option value="ASO">ASO</option><option value="EMC">EMC</option><option value="RNR">RNR</option><option value="L5G">L5G</option><option value="NONE">Sans circuit</option><optgroup label="Label World Athletics"><option value="WA">Tous les labels WA</option><option value="WA PLATINUM">WA Platinum</option><option value="WA GOLD">WA Gold</option><option value="WA ELITE">WA Elite</option><option value="WA LABEL">WA Label</option></optgroup>
       </select>
     </div>
     <div class="ctrl-group"><span class="ctrl-label">Taille</span>

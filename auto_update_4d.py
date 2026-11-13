@@ -2346,9 +2346,16 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True, repli=True
             "ecrit": sorted(logged_data) or None,
         })
 
+    # 4b. Labels World Athletics (badge et filtre « Label WA ») : rafraichis
+    # une fois par semaine ; un changement suffit a regenerer le dashboard.
+    labels_changes = False
+    if not dry_run and regenerate:
+        import maj_labels_wa
+        labels_changes = maj_labels_wa.maj_si_ancien()
+
     # 5. Regenerate dashboard (only when there are actual updates)
     ecritures = [u for u in log["updates"] if u.get("ecrit")]
-    if ecritures and not dry_run and regenerate:
+    if (ecritures or labels_changes) and not dry_run and regenerate:
         print(f"\n=== Regenerating dashboard ({len(ecritures)} ecriture(s)) ===")
         subprocess.run(["python", "create_chronos.py"], cwd=str(SCRIPT_DIR))
         subprocess.run(["python", "generate_dashboard.py"], cwd=str(SCRIPT_DIR))

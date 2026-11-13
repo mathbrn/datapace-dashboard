@@ -265,6 +265,17 @@ Pas de recapitulatif de contexte, pas de reformulation de ce qui vient d'etre
 dit, pas de tableau quand une ligne suffit. Economiser les tokens : la session
 a une limite de 5 h.
 
+## PRIORITE DE COLLECTE : les courses labellisees World Athletics
+
+Demande de l'utilisateur (13 novembre 2026), a garder en tete : le reglement
+des labels (C1.6, regle 17.2) **oblige chaque course labellisee a publier ses
+resultats officiels sur son site**, en anglais pour les Gold et Platinum.
+Leurs resultats sont donc publics par principe : ce sont les cibles
+prioritaires de l'Update 4D, du backfill et des fetchers a ecrire, et la
+liste de reference pour choisir les evenements a ajouter
+(`labellisees_non_suivies` dans `event_labels.json`). Un echec de collecte
+sur une course labellisee merite d'etre creuse plus loin qu'ailleurs.
+
 ## PRIORITE ABSOLUE : les finishers
 
 Le nombre de finishers est **la donnee principale du dashboard**. Les trois
@@ -518,6 +529,17 @@ a confusion avec 10KM/SEMI. Le critere est la distance reelle en km.
   depuis. Seul gain legitime : le Marathon de Bordeaux AG2R LA MONDIALE
   (3 distances).
 - `Autre` (violet #9B6FFF) : Tous les autres
+- **Labels World Athletics** (`WA PLATINUM` #9AA8BA, `WA GOLD` #D4A017,
+  `WA ELITE` #B87333, `WA LABEL` #7C8A9E) : niveau du programme « Label Road
+  Races » de la course, par ligne (evenement, distance). Lu dans
+  `event_labels.json`, genere par `maj_labels_wa.py` depuis le calendrier
+  World Athletics (champ `competitionGroup`) et `rapprochement.py`, rafraichi
+  chaque semaine par le cron. Filtre « Circuit » : « Tous les labels WA » ou un
+  niveau. « Sans circuit » ignore les labels. 13 novembre 2026 : 339 courses
+  labellisees, 188 lignes du dashboard (18 Platinum, 37 Gold, 56 Elite, 77
+  Label), 146 labellisees non suivies (liste dans `event_labels.json`).
+  Un label errone se corrige dans `event_aliases.json`, jamais a la main
+  dans `event_labels.json`.
 
 ### Premiere edition
 - Marquer `x` dans le Excel pour toutes les annees AVANT la premiere edition d'un evenement
