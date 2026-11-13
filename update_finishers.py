@@ -46,6 +46,18 @@ def update(race_name, distance, year, count):
         print(f"Colonnes disponibles: {[int(h) for h in header if isinstance(h, (int, float))]}")
         return False
 
+    # Un nom de course ou un ancien nom (course_names.json) designe la ligne
+    # de son evenement : « TCS Mizuno Half Marathon » SEMI ecrit dans la
+    # ligne SEMI du « TCS Amsterdam Marathon ».
+    try:
+        from noms_courses import evenement_de
+        ev = evenement_de(race_name, distance)
+        if ev and ev != race_name:
+            print(f"  {race_name} ({distance}) -> ligne de l'evenement « {ev} »")
+            race_name = ev
+    except ImportError:
+        pass
+
     # Find race row
     found = False
     for row in ws.iter_rows(min_row=2):

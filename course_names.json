@@ -1,0 +1,19 @@
+{
+  "_commentaire": "Nom propre de chaque course d'un evenement. Cle = 'Race de l'onglet ALL|DISTANCE'. 'nom' est affiche sur la ligne de la course (Tableau deplie, vue par course, Vue d'ensemble, Comparer, Evolution, Top Evenements) ; l'evenement garde le nom de la colonne Race. 'anciens_noms' : nom sous lequel les fichiers annexes (temps moyens, chronos, sponsors, event_platform_map) connaissent encore la course. Une distance absente garde le nom de l'evenement. Voir noms_courses.py.",
+  "courses": {
+    "BTR Liverpool Half Marathon & 10 Mile|SEMI": {
+      "nom": "BTR Liverpool Half Marathon",
+      "anciens_noms": ["Liverpool Half Marathon"]
+    },
+    "BTR Liverpool Half Marathon & 10 Mile|AUTRE": {
+      "nom": "BTR Liverpool 10 Mile"
+    },
+    "TCS Amsterdam Marathon|MARATHON": {
+      "nom": "TCS Amsterdam Marathon"
+    },
+    "TCS Amsterdam Marathon|SEMI": {
+      "nom": "Mizuno Half Marathon",
+      "anciens_noms": ["TCS Mizuno Half Marathon"]
+    }
+  }
+}

@@ -25,6 +25,7 @@ Usage :
 """
 import argparse
 import inspect
+from noms_courses import evenement_de
 import sys
 import time
 
@@ -56,7 +57,10 @@ def main():
             continue
         if voulues and plat not in voulues:
             continue
-        nom, dist = ev.get("name"), ev.get("distance")
+        nom_carte, dist = ev.get("name"), ev.get("distance")
+        # La carte peut connaitre une course sous un ancien nom
+        # (course_names.json) : les cellules sont celles de son evenement.
+        nom = evenement_de(nom_carte, dist) or nom_carte
         annees = vides.get((nom, dist), [])
         if not annees:
             continue
@@ -65,10 +69,10 @@ def main():
         prend_dist = "dist_code" in inspect.signature(fetcher).parameters
         for annee in annees:
             a.__dict__["_CIBLE_AUTRE_M"] = ev.get("distance_m")
-            _, info = a.discover_platform(nom, annee)
+            _, info = a.discover_platform(nom_carte, annee)
             try:
-                r = (fetcher(info or nom, annee, dist_code=dist) if prend_dist
-                     else fetcher(info or nom, annee))
+                r = (fetcher(info or nom_carte, annee, dist_code=dist) if prend_dist
+                     else fetcher(info or nom_carte, annee))
             except Exception as e:
                 print(f"   {annee} : erreur {type(e).__name__}: {str(e)[:80]}")
                 continue

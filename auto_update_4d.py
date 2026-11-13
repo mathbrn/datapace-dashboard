@@ -19,6 +19,7 @@ import argparse
 import datetime
 import inspect
 import json
+from noms_courses import nom_plateforme
 import re
 import subprocess
 import sys
@@ -131,8 +132,13 @@ def load_our_events():
         d = dict(zip(headers, row))
         race = str(d.get("Race", "") or "").strip()
         if race:
+            dist_ = str(d.get("Distance", "") or "").strip()
             rows.append({
                 "name": race,
+                # Nom sous lequel event_platform_map.json connait la course,
+                # quand elle a ete rattachee a un autre evenement
+                # (course_names.json) ; sinon le nom de l'evenement.
+                "platform_name": nom_plateforme(race, dist_),
                 "city": str(d.get("City", "") or "").strip(),
                 "distance": str(d.get("Distance", "") or "").strip(),
                 "period": str(d.get("Période", "") or "").strip(),
@@ -176,7 +182,7 @@ def events_due_without_calendar(our_events, target_date):
                    and ev["name"] in moyennes)
         if complet:
             continue
-        platform, _ = discover_platform(ev["name"], year)
+        platform, _ = discover_platform(ev.get("platform_name") or ev["name"], year)
         if not platform or platform not in PLATFORM_MAP:
             continue
         due.append({"wa": {"name": ev["name"], "dateRange": ""},
@@ -2203,7 +2209,8 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
                                    "platform": platform})
             print(f"    SKIP ({reason})")
 
-        platform, platform_id = discover_platform(our_name, year, date_str)
+        platform, platform_id = discover_platform(
+            match["our"].get("platform_name") or our_name, year, date_str)
         if not platform:
             skip("no_platform_mapped")
             continue

@@ -1,6 +1,6 @@
 # DataPace Dashboard — Stats à jour
 
-**Généré le** : 2026-11-13 09:28
+**Généré le** : 2026-11-13 09:39
 **Source historique** : finishers (mémoire)
 
 > **Note pour Claude** : c'est la source de vérité pour tous les chiffres DataPace.
@@ -10,7 +10,7 @@
 
 | Métrique | Valeur |
 |---|---|
-| Épreuves uniques (noms distincts) | 858 |
+| Épreuves uniques (noms distincts) | 857 |
 | Couples Race × Distance | 1920 |
 | Plage d'années effective | 2000 - 2026 |
 | Points de données 2000-2022 | 1,528 |
@@ -56,7 +56,7 @@
 
 ## Chiffres à utiliser en communication externe
 
-- **858** épreuves de course à pied trackées dans le monde
+- **857** épreuves de course à pied trackées dans le monde
 - **1920** couples événement × distance en base
 - Plus de **2,511** points de données historiques depuis 2000
 - **35,374,489** finishers cumulés sur la période 2000 - 2026

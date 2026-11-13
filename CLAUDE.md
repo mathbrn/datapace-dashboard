@@ -1237,6 +1237,36 @@ Trois points mis au jour par l'audit du rapprochement des noms d'epreuve
    organisateur, course differente), et `Halve Marathon` — nom generique sans
    ville dans l'Excel — attrape Egmond et Zwolle.
 
+## Evenement vs nom de course : `course_names.json`
+
+La colonne Race de l'onglet ALL est le **nom de l'evenement** : toutes les
+lignes d'un meme Race forment un evenement dans la vue par evenement. Quand
+un evenement nomme chaque distance differemment, le nom propre de la course
+vit dans `course_names.json`, cle `Race|DISTANCE` :
+
+    "TCS Amsterdam Marathon|SEMI": {"nom": "Mizuno Half Marathon",
+                                    "anciens_noms": ["TCS Mizuno Half Marathon"]}
+
+- **Affichage** : la ligne de course (Tableau deplie, vue par course, Vue
+  d'ensemble, Comparer, Evolution, Top Evenements) montre `nom` ; l'en-tete
+  d'evenement garde le Race. Cote JS, la ligne porte `r.r` (evenement) et
+  `r.n` (course) ; `nomR(r)` rend le nom a afficher.
+- **Recherches** : temps moyen, chronos, sponsors et organisateur essaient le
+  nom de la course, puis celui de l'evenement (`nomsCherches()`).
+- **`anciens_noms`** : quand une course est rattachee a un autre evenement,
+  les fichiers annexes (`avg_times_sporthive.json`, `sponsoring_data.json`,
+  `create_chronos.py`, `event_platform_map.json`, `event_organizers.json`)
+  gardent l'ancien nom. **Ne pas les renommer** : `generate_dashboard.py`
+  realigne a la generation, `update_finishers.py` accepte l'ancien nom et
+  ecrit dans la ligne de l'evenement, et l'auto-update cherche la plateforme
+  sous l'ancien nom (`nom_plateforme()`). Module commun : `noms_courses.py`.
+- **Pourquoi pas une colonne dans l'Excel** : `update_finishers.py`,
+  `add_event.py` et `migrate_to_db.py` lisent ALL par position.
+
+Rattacher une course a un evenement = renommer son Race dans ALL **et**
+declarer `anciens_noms` dans `course_names.json`, sinon ses temps, chronos et
+sponsors ne la retrouvent plus.
+
 ## Rapprochement des noms d'epreuve : par suite de mots
 
 `memeEpreuve(a,b)` dans `generate_dashboard.py` est le seul critere utilise

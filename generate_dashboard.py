@@ -732,8 +732,8 @@ function colDist(r){return lc(r.d==='5KM'?'#AC14D7':r.d==='10KM'?'#5CDFA0':r.d==
 // Organisateur d'une epreuve, ou chaine vide. EVENT_ORGANIZERS vient de
 // event_organizers.json ; une epreuve absente du fichier reste sans
 // organisateur plutot que d'en recevoir un approximatif.
-function eventOrg(name){if(typeof EVENT_ORGANIZERS==='undefined')return '';return EVENT_ORGANIZERS[name]||'';}
-function eventOrgTxt(name){return eventOrg(name)||'\u2014';}
+function eventOrg(name,dist){if(typeof EVENT_ORGANIZERS==='undefined')return '';var c=dist?nomCourse(name,dist):name;return EVENT_ORGANIZERS[c]||EVENT_ORGANIZERS[name]||'';}
+function eventOrgTxt(name,dist){return eventOrg(name,dist)||'\u2014';}
 // Pays d'une epreuve, depuis event_countries.json. Une epreuve absente du
 // fichier n'a pas de pays : elle sort des listes et n'est gardee que par
 // « Tous », jamais attribuee a un pays par defaut.
@@ -834,11 +834,20 @@ function memeEpreuve(a,b){var A=motsEp(a),B=motsEp(b);
 // Etiquette de distance utilisee par Chronos_Vainqueurs (WINNERS.d) a partir
 // du code de distance de RAW.
 function distLabel(d){return d==='MARATHON'?'42K':d==='SEMI'?'21K':d==='10KM'?'10K':d==='5KM'?'5K':'AUTRE';}
+// Nom propre d'une course (course_names.json). La ligne garde son evenement
+// dans r.r — cle de regroupement et de l'organisateur — et son nom de course
+// dans r.n. Les recherches de temps, chronos et sponsors essaient d'abord le
+// nom de la course, puis celui de l'evenement.
+function nomCourse(rn,dist){if(typeof COURSE_NAMES==='undefined'||!dist)return rn;return COURSE_NAMES[rn+'|'+dist]||rn;}
+function nomsCherches(rn,dist){var a=nomCourse(rn,dist);return a!==rn?[a,rn]:[rn];}
+function nomR(r){return r.n||r.r;}
+function _premier(rn,dist,fn,vide){var n=nomsCherches(rn,dist),v=null;for(var i=0;i<n.length;i++){v=fn(n[i],dist);if(!vide(v))return v;}return v;}
 // Une epreuve qui court plusieurs distances a un jeu de temps par distance.
 // Les recherches ci-dessous filtrent donc sur la distance de la fiche, mais
 // retombent sur la recherche par nom seul quand ce filtre ne rend rien : les
 // epreuves dont la distance n'est pas renseignee gardent leurs temps.
-function getTimeData(rn,dist){
+function getTimeData(rn,dist){return _premier(rn,dist,_getTimeData,function(v){return !v;});}
+function _getTimeData(rn,dist){
   var l=rn.toLowerCase();
   if(dist){
     var exact=TIMES_DB[l+'|'+dist];
@@ -916,7 +925,8 @@ var _spCols={
 'Immobilier & Construction':'#94A3B8','Medias & Communication':'#818CF8','Collectivites':'#A78BFA','Industrie':'#9CA3AF','Services':'#6B7280'
 };
 function _spNormSec(s){if(!s)return 'Services';var n=s.normalize('NFD').replace(/[\u0300-\u036f]/g,'');return _spSectorMap[s]||_spSectorMap[n]||'Services';}
-function buildOvSponsoring(eventName,eventColor){
+function buildOvSponsoring(rn,eventColor,dist){return _premier(rn,dist,function(n){return _buildOvSponsoring(n,eventColor);},function(v){return !v;});}
+function _buildOvSponsoring(eventName,eventColor){
   if(typeof SP_PARTNERSHIPS==='undefined')return '';
   var ec=eventColor||'var(--purple)';
   var now=new Date().getFullYear();
@@ -957,7 +967,8 @@ function buildOvSponsoring(eventName,eventColor){
   h+='</div>';
   return h;
 }
-function getWinnersRecords(rn,dist){
+function getWinnersRecords(rn,dist){return _premier(rn,dist,_getWinnersRecords,function(v){return !v;});}
+function _getWinnersRecords(rn,dist){
   var entries=WINNERS.filter(function(w){return w.r===rn;});
   if(!entries.length){
     var l=rn.toLowerCase();
@@ -973,7 +984,8 @@ function getWinnersRecords(rn,dist){
   });
   return{men:bestM?secToTime(bestM):'',menYr:bestMyr,women:bestW?secToTime(bestW):'',womenYr:bestWyr};
 }
-function buildTimeHistory(rn,dist){
+function buildTimeHistory(rn,dist){return _premier(rn,dist,_buildTimeHistory,function(v){return !v||!v.length;});}
+function _buildTimeHistory(rn,dist){
   var l=rn.toLowerCase(),hist=[],seen={};
   // Fiche d'une distance connue : ne lire que la source de cette distance,
   // sinon la courbe melange le 15 km, le 10 km et le 5 km d'une meme epreuve.
@@ -1006,7 +1018,8 @@ function buildTimeHistory(rn,dist){
   return hist;
 }
 var cT=null,ovChartF=null,ovChartT=null,ovChartM=null,ovChartW=null;
-function buildWinnerHistory(rn,dist){
+function buildWinnerHistory(rn,dist){return _premier(rn,dist,_buildWinnerHistory,function(v){return !v||(!v.men.length&&!v.women.length);});}
+function _buildWinnerHistory(rn,dist){
   var l=rn.toLowerCase();
   var entries=WINNERS.filter(function(w){return w.r===rn;});
   if(!entries.length){entries=WINNERS.filter(function(w){return memeEpreuve(rn,w.r);});}
@@ -1371,8 +1384,8 @@ function ovSearch(){
   if(q.length<2){box.innerHTML='<div class="ov-placeholder">Tapez au moins 2 caracteres</div>';return;}
   // Comme dans l'onglet Tableau, la recherche porte sur l'epreuve, la
   // ville ET l'organisateur.
-  var matches=RAW.filter(function(r){return r.r.toLowerCase().indexOf(q)>=0
-    ||r.c.toLowerCase().indexOf(q)>=0||eventOrg(r.r).toLowerCase().indexOf(q)>=0;});
+  var matches=RAW.filter(function(r){return nomR(r).toLowerCase().indexOf(q)>=0||r.r.toLowerCase().indexOf(q)>=0
+    ||r.c.toLowerCase().indexOf(q)>=0||eventOrg(r.r,r.d).toLowerCase().indexOf(q)>=0;});
   if(!matches.length){box.innerHTML='<div class="ov-placeholder">Aucun resultat</div>';return;}
   var dc={MARATHON:'#60A5FA18',SEMI:'#FF8A5018','10KM':'#5CDFA018'};
   var dt={MARATHON:'#60A5FA',SEMI:'#FF8A50','10KM':'#5CDFA0'};
@@ -1382,9 +1395,9 @@ function ovSearch(){
     var dl=r.d==='10KM'?'10 km':r.d==='5KM'?'5 km':r.d==='SEMI'?'Semi':r.d==='AUTRE'?'Autre':'Marathon';
     html+='<div class="ov-result-item" data-idx="'+idx+'" onclick="ovSelect('+idx+')">'
       +'<span class="ov-result-dist" style="background:'+dc[r.d]+';color:'+dt[r.d]+'">'+dl+'</span>'
-      +'<span style="flex:1">'+r.r+'</span>'
+      +'<span style="flex:1">'+nomR(r)+'</span>'
       +'<span style="font-size:11px;color:var(--text3)">'+r.c+' - '+r.p
-        +(eventOrg(r.r)?' &middot; '+eventOrg(r.r):'')+'</span>'
+        +(eventOrg(r.r,r.d)?' &middot; '+eventOrg(r.r,r.d):'')+'</span>'
       +'</div>';
   });
   box.innerHTML=html;twemojify(box);
@@ -1462,8 +1475,8 @@ function ovSelect(idx){
   var circHtml=circBadges(ev);
   var html='<div class="ov-card">'
     +'<div class="ov-card-header"><div>'
-    +'<div class="ov-card-title">'+ev.r+'</div>'
-    +'<div class="ov-card-meta"><span>'+(eventFlag(ev.r)?eventFlag(ev.r)+' ':'')+ev.c+' &middot; '+ev.p+(eventOrg(ev.r)?' &middot; '+eventOrg(ev.r):'')+'</span></div>'
+    +'<div class="ov-card-title">'+nomR(ev)+(ev.n?'<div style="font-size:12px;font-weight:500;color:var(--text3);margin-top:2px">'+ev.r+'</div>':'')+'</div>'
+    +'<div class="ov-card-meta"><span>'+(eventFlag(ev.r)?eventFlag(ev.r)+' ':'')+ev.c+' &middot; '+ev.p+(eventOrg(ev.r,ev.d)?' &middot; '+eventOrg(ev.r,ev.d):'')+'</span></div>'
     +'</div>'
     +'<div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap"><span class="ov-badge" style="border:1px solid '+badgeCol+'40;color:'+badgeCol+';background:transparent;font-size:10px;padding:3px 10px;border-radius:100px;">'+dl+'</span>'+circHtml+'</div>'
     +'</div>'
@@ -1471,7 +1484,7 @@ function ovSelect(idx){
     +stats
     +(chartsHtml?'<div class="ov-charts">'+chartsHtml+'</div>':'')
     +(charts2Html?'<div class="ov-charts">'+charts2Html+'</div>':'')
-    +buildOvSponsoring(ev.r,ac)
+    +buildOvSponsoring(ev.r,ac,ev.d)
     +'</div>';
   document.getElementById('ov-card-wrap').innerHTML=html;twemojify(document.getElementById('ov-card-wrap'));
 
@@ -1569,7 +1582,7 @@ function updateTrends(){
   allYears.sort(function(a,b){return a-b;});
   var datasets=sorted.map(function(r,i){
     var c=trendColor(r,i,dist,sorted.length);
-    return{label:r.r,data:allYears.map(function(yr){var v=(r.hist||{})[yr];return v&&v>0?v:null;}),borderColor:c,backgroundColor:'transparent',tension:0.35,fill:false,pointRadius:3,pointHoverRadius:7,spanGaps:true,borderWidth:2,pointBackgroundColor:c,_rawIdx:RAW.indexOf(r),_dist:r.d};
+    return{label:nomR(r),data:allYears.map(function(yr){var v=(r.hist||{})[yr];return v&&v>0?v:null;}),borderColor:c,backgroundColor:'transparent',tension:0.35,fill:false,pointRadius:3,pointHoverRadius:7,spanGaps:true,borderWidth:2,pointBackgroundColor:c,_rawIdx:RAW.indexOf(r),_dist:r.d};
   });
   var minYr=allYears.length?allYears[0]:'';var maxYr=allYears.length?allYears[allYears.length-1]:'';
   var distNames={MARATHON:'MARATHON',SEMI:'SEMI-MARATHON','10KM':'10 KM','5KM':'5 KM',AUTRE:'AUTRE'};
@@ -1591,7 +1604,7 @@ function updateTrends(){
       sorted.forEach(function(r,i){
         var c=trendColor(r,i,dist,sorted.length);
         var idx=RAW.indexOf(r);
-        legHtml+='<span class="leg-item leg-clickable" data-tidx="'+idx+'" onclick="trendLegClick('+idx+')" style="cursor:pointer"><span class="leg-dot" style="background:'+c+'"></span>'+r.r+'</span>';
+        legHtml+='<span class="leg-item leg-clickable" data-tidx="'+idx+'" onclick="trendLegClick('+idx+')" style="cursor:pointer"><span class="leg-dot" style="background:'+c+'"></span>'+nomR(r)+'</span>';
       });
     }
     legEl.innerHTML=legHtml;
@@ -1704,8 +1717,8 @@ function updateBiggest(){
       lblMq=' \u2014 somme de '+nbp+' distance'+(nbp>1?'s':'')+' sur '+r.lignes.length
         +', manque : '+abs.map(function(d){return lb[d]||d;}).join(', ');
     }
-    html+='<div class="time-bar-row bt-row" data-name="'+r.r.replace(/"/g,'&quot;')+'" data-city="'+(r.c||'').replace(/"/g,'&quot;')+'" data-val="'+fmtFull(v)+' finishers" data-idx="'+idx+'" onclick="biggestClick('+idx+')">'
-      +'<div class="time-bar-label" title="'+r.r+lblMq+'"><span class="time-bar-rank">'+rank+'</span> \u00b7 '+r.r+cBdg+'</div>'
+    html+='<div class="time-bar-row bt-row" data-name="'+nomR(r).replace(/"/g,'&quot;')+'" data-city="'+(r.c||'').replace(/"/g,'&quot;')+'" data-val="'+fmtFull(v)+' finishers" data-idx="'+idx+'" onclick="biggestClick('+idx+')">'
+      +'<div class="time-bar-label" title="'+nomR(r)+lblMq+'"><span class="time-bar-rank">'+rank+'</span> \u00b7 '+nomR(r)+cBdg+'</div>'
       +'<div class="time-bar-track"><div class="time-bar-fill" style="width:'+pct+'%;background:'+barCol+'cc">'+(valInside?valLabel:'')+'</div></div>'
       +'<div class="time-bar-val">'+(valInside?'':valLabel)+'</div></div>';
   });
@@ -1903,8 +1916,8 @@ function filterTable(){
     if(pays!=='ALL'&&eventPays(r.r)!==pays)return false;
     // La recherche porte sur l'epreuve, la ville ET l'organisateur :
     // taper « Amaury » sort les courses d'Amaury Sport Organisation.
-    if(q&&r.r.toLowerCase().indexOf(q)<0&&r.c.toLowerCase().indexOf(q)<0
-        &&eventOrg(r.r).toLowerCase().indexOf(q)<0)return false;
+    if(q&&r.r.toLowerCase().indexOf(q)<0&&nomR(r).toLowerCase().indexOf(q)<0&&r.c.toLowerCase().indexOf(q)<0
+        &&eventOrg(r.r,r.d).toLowerCase().indexOf(q)<0)return false;
     // Circuit filter
     if(badge!=='ALL'){
       var ci=r.ci||[];
@@ -1967,12 +1980,12 @@ function filterTable(){
     var bl=r.d==='MARATHON'?'Marathon':r.d==='SEMI'?'Semi':r.d==='AUTRE'?'Autre':r.d==='5KM'?'5 km':'10 km';
     var raceColor=colDist(r);
     var cBadges=circBadges(r);
-    var org=eventOrg(r.r);
+    var org=eventOrg(r.r,r.d);
     var h='<tr'+attrs+'><td>'+r.p+'</td><td>'+(eventFlag(r.r)?eventFlag(r.r)+' ':'')+r.c+'</td>'
       +'<td style="font-size:11px;'+(org?'':'color:var(--text3)')+'" title="'+(org||'')+'">'+(org||'\u2014')+'</td>'
       +'<td><span class="badge" style="background:'+raceColor+'18;color:'+raceColor+'">'+bl+'</span>'+cBadges+'</td>'
       +'<td style="color:'+raceColor+(indent?';padding-left:'+(10+indent*14)+'px':'')
-        +'" title="'+r.r+'">'+(indent?'\u21B3 ':'')+r.r+'</td>'
+        +'" title="'+nomR(r)+'">'+(indent?'\u21B3 ':'')+nomR(r)+'</td>'
       +globalYears.map(function(y){var v=(r.hist||{})[y];var isFirst=r.fy&&y===r.fy;var starHtml=isFirst?'<span style="position:absolute;top:1px;left:2px;font-size:7px;color:'+raceColor+';opacity:0.7">\u2605</span>':'';if(v===-3)return'<td style="color:var(--text3);opacity:0.2">\u00b7</td>';if(v===-1)return'<td style="color:#FF4A6B;font-size:10px;font-style:italic;position:relative">'+starHtml+'Annul\u00e9</td>';if(v===-2)return'<td style="color:'+raceColor+';font-size:10px;font-style:italic;position:relative">'+starHtml+'Elite Only</td>';if(!v){var av=aVenir(r,y);if(av)return'<td title="Edition '+av+' '+y+'" style="color:#3B82F6;font-size:10px;font-style:italic;position:relative">'+starHtml+'\u00c0 venir</td>';}return'<td style="'+(v?'color:var(--text)':'')+';position:relative">'+starHtml+(v?fmtFull(v):'\u2014')+'</td>';}).join('')
       +'<td style="color:'+tc+'">'+tStr+tSub+'</td></tr>';
     return h;
@@ -1986,7 +1999,7 @@ function filterTable(){
     var tr=vals.length>=2?delta(vals[0],vals[vals.length-1]):null;
     var tc=tr===null?csVar('--text3'):tr>=0?lc('#22C55E'):lc('#FF4A6B');
     var tStr=tr===null?'-':(tr>=0?'+':'')+tr.toFixed(1)+'%';
-    var org=eventOrg(r.r);
+    var org=eventOrg(r.r,r.d);
     var h='<tr style="cursor:pointer;font-weight:600" onclick="evtBascule(\\''+cle+'\\')">'
       +'<td>'+r.p+'</td><td>'+(eventFlag(r.r)?eventFlag(r.r)+' ':'')+r.c+'</td>'
       +'<td style="font-size:11px;'+(org?'':'color:var(--text3)')+'" title="'+(org||'')+'">'
@@ -2445,8 +2458,8 @@ function cmpSearch(side){
   var drop=document.getElementById(dropId);
   if(q.length<2){drop.style.display='none';return;}
   // Comme dans Tableau et Vue d'ensemble : epreuve, ville ET organisateur.
-  var matches=RAW.filter(function(r){return r.r.toLowerCase().indexOf(q)>=0
-    ||r.c.toLowerCase().indexOf(q)>=0||eventOrg(r.r).toLowerCase().indexOf(q)>=0;});
+  var matches=RAW.filter(function(r){return nomR(r).toLowerCase().indexOf(q)>=0||r.r.toLowerCase().indexOf(q)>=0
+    ||r.c.toLowerCase().indexOf(q)>=0||eventOrg(r.r,r.d).toLowerCase().indexOf(q)>=0;});
   if(!matches.length){drop.style.display='none';return;}
   var dc={MARATHON:'#60A5FA18',SEMI:'#FF8A5018','10KM':'#5CDFA018'};
   var dt={MARATHON:'#60A5FA',SEMI:'#FF8A50','10KM':'#5CDFA0'};
@@ -2457,8 +2470,8 @@ function cmpSearch(side){
     var dl=r.d==='10KM'?'10 km':r.d==='5KM'?'5 km':r.d==='SEMI'?'Semi':r.d==='AUTRE'?'Autre':'Marathon';
     var item=document.createElement('div');
     item.className='cmp-drop-item';
-    var meta=r.c+(eventOrg(r.r)?' \u00b7 '+eventOrg(r.r):'');
-    item.innerHTML='<span class="cmp-dist-pill" style="background:'+dc[r.d]+';color:'+dt[r.d]+'">'+dl+'</span>'+r.r
+    var meta=r.c+(eventOrg(r.r,r.d)?' \u00b7 '+eventOrg(r.r,r.d):'');
+    item.innerHTML='<span class="cmp-dist-pill" style="background:'+dc[r.d]+';color:'+dt[r.d]+'">'+dl+'</span>'+nomR(r)
       +'<span style="font-size:10px;color:var(--text3);margin-left:6px">'+meta+'</span>';
     item.addEventListener('click',(function(i,s){return function(){cmpSelect(i,s);};})(rawIdx,side));
     drop.appendChild(item);
@@ -2548,8 +2561,8 @@ function renderCompare(){
 
   var distA=a.d==='MARATHON'?'Marathon':a.d==='SEMI'?'Semi-marathon':a.d==='AUTRE'?'Autre':a.d==='5KM'?'5 km':'10 km';
   var distB=b.d==='MARATHON'?'Marathon':b.d==='SEMI'?'Semi-marathon':b.d==='AUTRE'?'Autre':b.d==='5KM'?'5 km':'10 km';
-  var statA=eventOrgTxt(a.r);
-  var statB=eventOrgTxt(b.r);
+  var statA=eventOrgTxt(a.r,a.d);
+  var statB=eventOrgTxt(b.r,b.d);
 
   var avgA=tdA?tdA.avg:null, avgB=tdB?tdB.avg:null;
   var menA=wrA&&wrA.men?wrA.men:(tdA?tdA.men:null);
@@ -2587,9 +2600,9 @@ function renderCompare(){
 
   var html='<div class="cmp-wrap" style="--cmp-col-a:'+colA+';--cmp-col-b:'+colB+';">'
     +'<div class="cmp-header">'
-    +'<div class="cmp-header-cell"><div class="cmp-race-name" style="color:'+colA+'">'+a.r+'</div><div class="cmp-race-meta">'+(eventFlag(a.r)?eventFlag(a.r)+' ':'')+a.c+' &middot; '+a.p+' &middot; '+distA+circBadges(a)+'</div></div>'
+    +'<div class="cmp-header-cell"><div class="cmp-race-name" style="color:'+colA+'">'+nomR(a)+'</div><div class="cmp-race-meta">'+(eventFlag(a.r)?eventFlag(a.r)+' ':'')+a.c+' &middot; '+a.p+' &middot; '+distA+circBadges(a)+'</div></div>'
     +'<div class="cmp-header-cell ctr"><div class="cmp-mid-label">Course</div></div>'
-    +'<div class="cmp-header-cell" style="text-align:right"><div class="cmp-race-name" style="color:'+colB+'">'+b.r+'</div><div class="cmp-race-meta">'+(eventFlag(b.r)?eventFlag(b.r)+' ':'')+b.c+' &middot; '+b.p+' &middot; '+distB+circBadges(b)+'</div></div>'
+    +'<div class="cmp-header-cell" style="text-align:right"><div class="cmp-race-name" style="color:'+colB+'">'+nomR(b)+'</div><div class="cmp-race-meta">'+(eventFlag(b.r)?eventFlag(b.r)+' ':'')+b.c+' &middot; '+b.p+' &middot; '+distB+circBadges(b)+'</div></div>'
     +'</div>';
 
   html+=cmpR(finLblA,finLblB,'Finishers',winFin,'','');
@@ -3565,7 +3578,44 @@ def generate_html(finishers, biggest, md, sd, tdb, winners):
         import json as jlib4
         with open(countries_path, "r", encoding="utf-8") as f:
             event_countries = jlib4.load(f)
+    # Nom propre de chaque course (course_names.json) : la ligne garde son
+    # evenement dans « r », et porte son nom de course dans « n ». Les fichiers
+    # annexes qui connaissent une course sous un ancien nom (une course
+    # rattachee a un autre evenement) sont realignes sur le nom de course,
+    # pour que les recherches cote JS les retrouvent sans renommer ces
+    # fichiers.
+    from noms_courses import courses as _courses, renommage_annexes
+    _cn = _courses()
+    for row in finishers:
+        c = _cn.get(str(row.get("r", "")).strip() + "|" + str(row.get("d", "")).strip())
+        if c and c["nom"] != row.get("r"):
+            row["n"] = c["nom"]
+    _ren = renommage_annexes()
+    if _ren:
+        _ren_l = {k.lower(): v for k, v in _ren.items()}
+        for bloc in (tmjs, tsjs, t10js, t5js, tajs):
+            for rows_ in bloc.values():
+                for x in rows_:
+                    x["race"] = _ren.get(x.get("race"), x.get("race"))
+        for x in sp_avg_js:
+            x["race"] = _ren.get(x.get("race"), x.get("race"))
+        for x in winners:
+            x["r"] = _ren.get(x.get("r"), x.get("r"))
+        for x in spdata.get("partnerships", []):
+            x["event"] = _ren.get(x.get("event"), x.get("event"))
+        _tdb2 = {}
+        for k, v in tdbjs.items():
+            base, sep, dist = k.partition("|")
+            nb = _ren_l.get(base)
+            k2 = (nb.lower() + sep + dist) if nb else k
+            # Deux entrees pour la meme course (ancien et nouveau nom) : garder
+            # la plus recente, comme build_times_db le fait par ordre d'annee.
+            if k2 not in _tdb2 or (v.get("yr") or 0) >= (_tdb2[k2].get("yr") or 0):
+                _tdb2[k2] = v
+        tdbjs = _tdb2
+    course_names_js = {k: v["nom"] for k, v in _cn.items()}
     js_data = ("const RAW=" + j(finishers) + ";\nconst BIGGEST=" + j(biggest) + ";\n"
+               "const COURSE_NAMES=" + j(course_names_js) + ";\n"
                "const TEMPS_MARATHON=" + j(tmjs) + ";\nconst TEMPS_SEMI=" + j(tsjs) + ";\n"
                "const TEMPS_10K=" + j(t10js) + ";\nconst TEMPS_5K=" + j(t5js) +
                ";\nconst TEMPS_AUTRE=" + j(tajs) + ";\n"
