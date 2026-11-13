@@ -764,5 +764,19 @@
     "sporthive_ids_by_year": {
       "2026": "1555368b-34b0-4964-9cff-b798f3212bf0"
     }
+  },
+  "pko gdynia half marathon": {
+    "name": "PKO Gdynia Half Marathon",
+    "platform": "b4sport",
+    "distance": "SEMI",
+    "country": "POL",
+    "b4sport": {
+      "listes": [
+        "/pko-gdynia-polmaraton/e7240.html",
+        "/pko-gdynia-polmaraton-zawodnicy-anonimowi/e7242.html",
+        "/35-mistrzostwa-polski-w-polmaratonie/e7243.html"
+      ],
+      "note": "2026 : somme des trois listes disjointes (general, anonymes, championnat de Pologne elite), compteur « Ukończyło » de chaque page ; relais exclus. Fetcher non implemente."
+    }
   }
 }

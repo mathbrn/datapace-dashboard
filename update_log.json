@@ -1,6 +1,14 @@
 {
   "updates": [
     {
+      "event": "PKO Gdynia Half Marathon",
+      "date": "2026-01-01",
+      "data": {
+        "finishers": 8827
+      },
+      "timestamp": "2026-11-13T14:49:40Z"
+    },
+    {
       "event": "Riyadh Marathon",
       "date": "2026-01-31",
       "data": {
@@ -1684,16 +1692,6 @@
         "winner_women": "02:30:58"
       },
       "timestamp": "2026-09-18T10:15:41Z"
-    },
-    {
-      "event": "TCS Sydney Marathon presented by ASICS",
-      "date": "2026-08-30",
-      "data": {
-        "finishers": 36259,
-        "winner_men": "2:04:42",
-        "winner_women": "2:18:31"
-      },
-      "timestamp": "2026-09-17T12:48:40Z"
     }
   ]
 }
