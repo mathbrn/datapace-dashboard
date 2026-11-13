@@ -2,6 +2,17 @@
   "updates": [
     {
       "event": "Standard Chartered Hong Kong Marathon",
+      "date": "2024-01-21",
+      "data": {
+        "finishers": 28780,
+        "avg_time": "04:21:17",
+        "winner_men": "1:08:05",
+        "winner_women": "1:21:01"
+      },
+      "timestamp": "2026-11-13T13:31:55Z"
+    },
+    {
+      "event": "Standard Chartered Hong Kong Marathon",
       "date": "2021-10-24",
       "data": {
         "finishers": 3154,

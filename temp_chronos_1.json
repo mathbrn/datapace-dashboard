@@ -727,5 +727,23 @@
   "nom_homme": null,
   "temps_femme": "00:16:16",
   "nom_femme": null
+ },
+ {
+  "course": "Standard Chartered Hong Kong Marathon",
+  "distance": "10KM",
+  "annee": 2024,
+  "temps_homme": "00:30:58",
+  "nom_homme": null,
+  "temps_femme": "00:36:46",
+  "nom_femme": null
+ },
+ {
+  "course": "Standard Chartered Hong Kong Marathon",
+  "distance": "10KM",
+  "annee": 2025,
+  "temps_homme": "00:30:15",
+  "nom_homme": null,
+  "temps_femme": "00:35:13",
+  "nom_femme": null
  }
 ]

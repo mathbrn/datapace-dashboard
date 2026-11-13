@@ -2863,5 +2863,35 @@
   "avg_time": "01:09:25",
   "avg_speed_kmh": 8.64,
   "source": "sporthive (somme des vagues)"
+ },
+ {
+  "label": "Standard Chartered Hong Kong Marathon MARATHON 2024",
+  "race": "Standard Chartered Hong Kong Marathon",
+  "dist_m": 42195,
+  "year": 2024,
+  "count": 11474,
+  "avg_time": "04:21:17",
+  "avg_speed_kmh": 9.69,
+  "source": "sporthive (somme des vagues)"
+ },
+ {
+  "label": "Standard Chartered Hong Kong Half Marathon SEMI 2024",
+  "race": "Standard Chartered Hong Kong Half Marathon",
+  "dist_m": 21097,
+  "year": 2024,
+  "count": 20378,
+  "avg_time": "02:13:20",
+  "avg_speed_kmh": 9.49,
+  "source": "sporthive (somme des vagues)"
+ },
+ {
+  "label": "Standard Chartered Hong Kong Marathon 10KM 2024",
+  "race": "Standard Chartered Hong Kong Marathon",
+  "dist_m": 10000,
+  "year": 2024,
+  "count": 28780,
+  "avg_time": "01:09:45",
+  "avg_speed_kmh": 8.6,
+  "source": "sporthive (somme des vagues)"
  }
 ]

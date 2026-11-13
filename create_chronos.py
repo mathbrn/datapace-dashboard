@@ -791,7 +791,8 @@ half_marathon_data = [
     ("Medio Maraton de Sevilla", "21K", 2025, "0:59:33", "1:07:18"),
     ("Medio Maraton de Sevilla", "21K", 2026, "1:00:24", "1:06:33"),
     # Standard Chartered Hong Kong Half Marathon
-    ("Standard Chartered Hong Kong Half Marathon", "21K", 2025, "N/A", "N/A"),
+    ("Standard Chartered Hong Kong Half Marathon", "21K", 2025, "1:07:36", "1:15:08"),  # mevents.org.hk
+    ("Standard Chartered Hong Kong Half Marathon", "21K", 2024, "1:08:05", "1:21:01"),  # mevents.org.hk
     # Walt Disney World Marathon Weekend (Half)
     ("Walt Disney World Marathon Weekend", "21K", 2025, "N/A", "N/A"),
     ("Walt Disney World Marathon Weekend", "21K", 2026, "N/A", "N/A"),
