@@ -114,6 +114,24 @@
       "anciens_noms": [
         "Madrid Medio Maraton"
       ]
+    },
+    "Tout Rennes Court|SEMI": {
+      "nom": "S'MI Ouest-France Semi",
+      "anciens_noms": [
+        "S'MI Ouest-France Semi"
+      ]
+    },
+    "Tout Rennes Court|10KM": {
+      "nom": "10km CMB",
+      "anciens_noms": [
+        "10km CMB"
+      ]
+    },
+    "Tout Rennes Court|AUTRE": {
+      "nom": "5km Harmonie Mutuelle",
+      "anciens_noms": [
+        "5km Harmonie Mutuelle"
+      ]
     }
   }
 }

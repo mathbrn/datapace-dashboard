@@ -15104,6 +15104,109 @@
       "years": [
         2026
       ]
+    },
+    {
+      "event": "Nike Melbourne Marathon",
+      "brand": "Nike",
+      "type": "title",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Nike Melbourne Marathon",
+      "brand": "SriLankan Airlines",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Nike Melbourne Marathon",
+      "brand": "Coinbase",
+      "type": "partner",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Nike Melbourne Marathon",
+      "brand": "Gatorade",
+      "type": "official",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Nike Melbourne Marathon",
+      "brand": "Bupa",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Nike Melbourne Marathon",
+      "brand": "Garmin",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Nike Melbourne Marathon",
+      "brand": "Chemist Warehouse",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Nike Melbourne Marathon",
+      "brand": "Chobani",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Nike Melbourne Marathon",
+      "brand": "Snap Fitness",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Nike Melbourne Marathon",
+      "brand": "Dairy Farmers",
+      "type": "partner",
+      "years": [
+        2025,
+        2026
+      ]
+    },
+    {
+      "event": "Nike Melbourne Marathon",
+      "brand": "BMW",
+      "type": "official",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
     }
   ]
 }
