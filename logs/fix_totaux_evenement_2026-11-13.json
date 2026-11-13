@@ -1,0 +1,292 @@
+{
+ "date": "2026-11-13",
+ "motif": "total d'evenement du benchmark ecrit dans une cellule de distance",
+ "cellules": [
+  {
+   "event": "World 25K Kolkata",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 23326,
+   "action": "cellule videe"
+  },
+  {
+   "event": "Rimi Riga Marathon",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 21252,
+   "action": "ligne supprimee"
+  },
+  {
+   "event": "City-Bay",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 16841,
+   "action": "cellule videe"
+  },
+  {
+   "event": "Runaway Auckland Marathon",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 15122,
+   "action": "ligne supprimee"
+  },
+  {
+   "event": "Saitama Marathon",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 13732,
+   "action": "ligne supprimee"
+  },
+  {
+   "event": "Brusells airport marathon",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 13313,
+   "action": "cellule videe (reste [2005])"
+  },
+  {
+   "event": "Dresden Marathon",
+   "dist": "10KM",
+   "annee": 2025,
+   "valeur": 11963,
+   "action": "cellule videe"
+  },
+  {
+   "event": "Route du Louvre",
+   "dist": "MARATHON",
+   "annee": 2025,
+   "valeur": 7597,
+   "action": "cellule videe"
+  },
+  {
+   "event": "Les foulées Valenciennoises",
+   "dist": "5KM",
+   "annee": 2025,
+   "valeur": 6178,
+   "action": "cellule videe"
+  },
+  {
+   "event": "Marathon de la mer",
+   "dist": "10KM",
+   "annee": 2025,
+   "valeur": 5085,
+   "action": "cellule videe"
+  },
+  {
+   "event": "Great 10K",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 4566,
+   "action": "ligne supprimee"
+  },
+  {
+   "event": "Bengaluru Midnight Marathon",
+   "dist": "MARATHON",
+   "annee": 2025,
+   "valeur": 2659,
+   "action": "cellule videe"
+  },
+  {
+   "event": "Kolkata Full Marathon",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 2377,
+   "action": "ligne supprimee"
+  },
+  {
+   "event": "Agra Taj Half Marathon",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 1343,
+   "action": "ligne supprimee"
+  }
+ ],
+ "en_attente_arbitrage": [
+  {
+   "event": "Marathon Vert",
+   "dist": "10KM",
+   "annee": 2025,
+   "valeur": 13524
+  },
+  {
+   "event": "Royal Victoria Marathon",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 12174
+  },
+  {
+   "event": "Perth running festival",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 11727
+  },
+  {
+   "event": "Liverpool Half Marathon",
+   "dist": "SEMI",
+   "annee": 2025,
+   "valeur": 10393
+  },
+  {
+   "event": "Greifenseelauf",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 9972
+  },
+  {
+   "event": "Tjejmilen",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 9073
+  },
+  {
+   "event": "Leipzig Marathon",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 8069
+  },
+  {
+   "event": "Maratona do Porto",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 7700
+  },
+  {
+   "event": "Maraton de Mendoza",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 6680
+  },
+  {
+   "event": "Dwars Door Bruges",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 6552
+  },
+  {
+   "event": "SportScheck Run Nuremberg",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 6335
+  },
+  {
+   "event": "Wizz Air Napoca Marathon",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 5504
+  },
+  {
+   "event": "Bruells Ekiden",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 5226
+  },
+  {
+   "event": "S25",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 4700
+  },
+  {
+   "event": "Bengaluru 10K Challenge",
+   "dist": "10KM",
+   "annee": 2025,
+   "valeur": 4630
+  },
+  {
+   "event": "Semi-Marathon de la Vente des Vins",
+   "dist": "SEMI",
+   "annee": 2025,
+   "valeur": 4456
+  },
+  {
+   "event": "Termal Bologna Marathon",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 4284
+  },
+  {
+   "event": "Corrida de Santo Antonio",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 3983
+  },
+  {
+   "event": "Mezza di Genova",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 3497
+  },
+  {
+   "event": "Monza21",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 3409
+  },
+  {
+   "event": "Half marathon Firenze",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 3206
+  },
+  {
+   "event": "Salto 15K Donostia San Sebastian",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 3018
+  },
+  {
+   "event": "Marathon Poitiers-Futuroscope",
+   "dist": "SEMI",
+   "annee": 2025,
+   "valeur": 2779
+  },
+  {
+   "event": "Halbmaratho Altötting",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 2012
+  },
+  {
+   "event": "Marathon di Parma",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 1909
+  },
+  {
+   "event": "White marble marathon",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 1742
+  },
+  {
+   "event": "Maratona di san valentino",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 1734
+  },
+  {
+   "event": "SanRemo Marathon",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 1600
+  },
+  {
+   "event": "15K Formentera Sunset Run",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 1404
+  },
+  {
+   "event": "Marato Vies Verdes",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 1290
+  },
+  {
+   "event": "Marathon de Funchal",
+   "dist": "AUTRE",
+   "annee": 2025,
+   "valeur": 1192
+  }
+ ]
+}

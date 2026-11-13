@@ -437,6 +437,30 @@ legitimes : ce sont des **sommes de comptes reels** par distance, du type
 `=23328+13341+272+2161+7969` pour Amsterdam ou `=SUM(J8:M8)` pour Rio. Seul
 le motif `*0.17` est une invention.
 
+**Second defaut de l'import du 15 avril : le total d'evenement ecrit dans
+une cellule de distance.** `_benchmark_candidates.json` porte par epreuve un
+`finishers_2025` qui est un **total d'evenement**, et une liste `distances`
+dont la valeur est tantot un compte, tantot une distance en km (`AUTRE: 2`
+pour un 2 km, `15` pour un 15 km), tantot une jauge ronde (`5000`). L'import
+a ecrit ce total dans une cellule de distance, la ou la distance n'avait pas
+de compte. Signature : la valeur egale `finishers_2025` et depasse la somme
+des autres distances de la famille. Kolkata Full Marathon (2377 = 304 + 604 +
+1469) et Agra Taj (1343 = 251 + 532 + 560) en sont la preuve arithmetique.
+
+**Audit du 13 novembre** : 46 cellules 2025 portent encore ce total. Les
+**15 dont la famille a d'autres distances renseignees** ont ete videes
+(lignes AUTRE devenues vides supprimees), journal dans
+`logs/fix_totaux_evenement_2026-11-13.json` : Tamarack Ottawa 29 641,
+World 25K Kolkata 23 326, Rimi Riga 21 252, City-Bay 16 841, Runaway
+Auckland 15 122, Saitama 13 732, Brussels Airport 13 313, Dresden 10KM
+11 963, Route du Louvre MARATHON 7 597, Valenciennoises 5KM 6 178, Marathon
+de la mer 10KM 5 085, Great 10K 4 566, Bengaluru Midnight MARATHON 2 659,
+Kolkata Full 2 377, Agra Taj 1 343. Elles doublaient le total de l'evenement
+dans la vue par evenement (Tamarack 56 052 au lieu de 26 411, 4e du top 2025).
+Les **31 restantes sont seules dans leur famille** : le total y est la seule
+donnee, impossible de prouver qu'il deborde la distance — en attente
+d'arbitrage (cf. ARBITRAGES EN ATTENTE).
+
 **Controle avant toute reprise de ce fichier** : ouvrir avec
 `openpyxl.load_workbook(..., read_only=True)` — les valeurs lues sont alors
 les formules, pas leur resultat — et rejeter toute cellule « Finisher » dont
@@ -487,9 +511,10 @@ a confusion avec 10KM/SEMI. Le critere est la distance reelle en km.
   epreuve dont l'organisateur, dans `event_organizers.json`, vaut exactement
   `Amaury Sport Organisation` — en plus des mots-cles de `ASO_KEYWORDS`,
   conserves pour ne rien retirer. Ajouter une epreuve ASO revient donc a
-  renseigner son organisateur. Ont gagne le badge a la mise en place :
-  Harmonie Mutuelle 20km de Paris et le Marathon de Bordeaux AG2R LA
-  MONDIALE (3 distances).
+  renseigner son organisateur — **le bon** : le 20km de Paris portait a tort
+  « Amaury Sport Organisation » et a recu le badge a la mise en place, retire
+  depuis. Seul gain legitime : le Marathon de Bordeaux AG2R LA MONDIALE
+  (3 distances).
 - `Autre` (violet #9B6FFF) : Tous les autres
 
 ### Premiere edition
@@ -1198,6 +1223,15 @@ Trois points mis au jour par l'audit du rapprochement des noms d'epreuve
    « Nike Melbourne Marathon Festival » en marathon + semi, les partenariats
    sont restes sur `Nike Melbourne Half Marathon`. Les dupliquer sur le
    marathon ?
+4. **31 cellules 2025 « total d'evenement » seules dans leur famille**
+   (import benchmark du 15 avril, cf. section Benchmark) : Liverpool Half
+   SEMI 10 393, Leipzig AUTRE 8 069, Maratona do Porto AUTRE 7 700,
+   Greifenseelauf AUTRE 9 972, etc. Liste complete sous
+   `en_attente_arbitrage` dans `logs/fix_totaux_evenement_2026-11-13.json`. Vider, ou garder
+   faute de mieux ?
+5. **Organisateur du Harmonie Mutuelle 20km de Paris** : la valeur « Amaury
+   Sport Organisation » etait fausse (signale par l'utilisateur), retiree.
+   Organisateur reel a renseigner.
 3. **Deux rapprochements imparfaits qui subsistent** : `Maratona do Porto`
    prend les partenaires du `Hyundai Meia Maratona do Porto` (meme
    organisateur, course differente), et `Halve Marathon` — nom generique sans
