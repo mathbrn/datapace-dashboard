@@ -3,7 +3,9 @@
   "courses": {
     "BTR Liverpool Half Marathon & 10 Mile|SEMI": {
       "nom": "BTR Liverpool Half Marathon",
-      "anciens_noms": ["Liverpool Half Marathon"]
+      "anciens_noms": [
+        "Liverpool Half Marathon"
+      ]
     },
     "BTR Liverpool Half Marathon & 10 Mile|AUTRE": {
       "nom": "BTR Liverpool 10 Mile"
@@ -13,7 +15,105 @@
     },
     "TCS Amsterdam Marathon|SEMI": {
       "nom": "Mizuno Half Marathon",
-      "anciens_noms": ["TCS Mizuno Half Marathon"]
+      "anciens_noms": [
+        "TCS Mizuno Half Marathon"
+      ]
+    },
+    "Standard Chartered KL Marathon|SEMI": {
+      "nom": "Standard Chartered KL Half Marathon",
+      "anciens_noms": [
+        "Standard Chartered KL Half Marathon"
+      ]
+    },
+    "Standard Chartered KL Marathon|10KM": {
+      "nom": "Standard Chartered KL 10K",
+      "anciens_noms": [
+        "Standard Chartered KL 10K"
+      ]
+    },
+    "Harmonie Mutuelle Marathon de Tours|AUTRE": {
+      "nom": "Harmonie Mutuelle 20k de Tours",
+      "anciens_noms": [
+        "Harmonie Mutuelle 20k de Tours"
+      ]
+    },
+    "Harmonie Mutuelle Marathon de Tours|10KM": {
+      "nom": "Harmonie Mutuelle 10km de Tours",
+      "anciens_noms": [
+        "Harmonie Mutuelle 10km de Tours"
+      ]
+    },
+    "EDP Lisboa Meia Maratona|10KM": {
+      "nom": "EDP Meia Maratona de Lisboa - Vodafone 10K",
+      "anciens_noms": [
+        "EDP Meia Maratona de Lisboa - Vodafone 10K"
+      ]
+    },
+    "EDP Maratona de Lisboa|SEMI": {
+      "nom": "Hyundai Meia Maratona",
+      "anciens_noms": [
+        "Hyundai Meia Maratona"
+      ]
+    },
+    "Standard Chartered Hong Kong Marathon|SEMI": {
+      "nom": "Standard Chartered Hong Kong Half Marathon",
+      "anciens_noms": [
+        "Standard Chartered Hong Kong Half Marathon"
+      ]
+    },
+    "Standard Chartered Singapore Marathon|SEMI": {
+      "nom": "Standard Chartered Singapore Half Marathon",
+      "anciens_noms": [
+        "Standard Chartered Singapore Half Marathon"
+      ]
+    },
+    "Chevron Houston Marathon|SEMI": {
+      "nom": "Aramco Houston Half Marathon",
+      "anciens_noms": [
+        "Aramco Houston Half Marathon"
+      ]
+    },
+    "Vienna City Marathon|SEMI": {
+      "nom": "Vienna City Half Marathon",
+      "anciens_noms": [
+        "Vienna City Half Marathon"
+      ]
+    },
+    "Taipei Marathon|SEMI": {
+      "nom": "Taipei Half Marathon",
+      "anciens_noms": [
+        "Taipei Half Marathon"
+      ]
+    },
+    "Nike Melbourne Marathon|SEMI": {
+      "nom": "Nike Melbourne Half Marathon",
+      "anciens_noms": [
+        "Nike Melbourne Half Marathon"
+      ]
+    },
+    "Ljubljana Marathon|10KM": {
+      "nom": "NLB Ljubljana Marathon 10K",
+      "anciens_noms": [
+        "NLB Ljubljana Marathon 10K"
+      ]
+    },
+    "Acea Run Rome The Marathon|5KM": {
+      "nom": "Run Rome Marathon",
+      "anciens_noms": [
+        "Run Rome Marathon"
+      ]
+    },
+    "Acea Run Rome The Marathon|AUTRE": {
+      "nom": "Run Rome Marathon",
+      "anciens_noms": [
+        "Run Rome Marathon"
+      ]
+    },
+    "Movistar Madrid Medio Maraton|5KM": {
+      "nom": "Madrid Medio Maraton",
+      "anciens_noms": [
+        "Madrid Medio Maraton"
+      ]
     }
   }
 }

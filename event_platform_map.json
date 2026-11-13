@@ -563,8 +563,9 @@
   "bank of america shamrock shuffle": {
     "platform": null,
     "country": "USA",
-    "distance": "10KM",
-    "name": "Bank of America Shamrock Shuffle"
+    "distance": "AUTRE",
+    "name": "Bank of America Shamrock Shuffle",
+    "distance_m": 8000
   },
   "statesman capitol 10k": {
     "platform": "athlinks",

@@ -498,6 +498,7 @@ la formule contient `*0.17`.
 - Lilac Bloomsday Run : 12km -> AUTRE
 - Bay to Breakers : 12km -> AUTRE
 - Bolder Boulder 10K : 10km -> 10KM
+- Bank of America Shamrock Shuffle (Chicago) : 8km -> AUTRE
 - Paris-Versailles La Grande Classique : 16.2km -> AUTRE
 - City-Bay Fun Run (Adelaide) : 12km -> AUTRE
 
@@ -1217,13 +1218,12 @@ Trois points mis au jour par l'audit du rapprochement des noms d'epreuve
    officiel de l'edition existe et donne **853 arrivants** — elle a eu lieu en
    format reduit. Rien n'a ete ecrit. Completer la serie avec 853, ou laisser
    « annulee » ?
-1. **Doublon d'epreuve** : `Kuala Lampur Standard Chartered Marathon` et
-   `Standard Chartered KL Marathon` sont deux lignes de l'onglet ALL pour la
-   meme course. A fusionner ? Seule la seconde porte des partenaires.
 2. **`Nike Melbourne Marathon` sans partenaires** : lors du decoupage du
    « Nike Melbourne Marathon Festival » en marathon + semi, les partenariats
-   sont restes sur `Nike Melbourne Half Marathon`. Les dupliquer sur le
-   marathon ?
+   sont restes sur `Nike Melbourne Half Marathon`. Les deux courses sont
+   regroupees depuis le 13 novembre sous l'evenement « Nike Melbourne
+   Marathon », mais la fiche du marathon n'affiche toujours aucun partenaire.
+   Les dupliquer sur le marathon ?
 4. **30 cellules 2025 « total d'evenement » seules dans leur famille**
    (import benchmark du 15 avril, cf. section Benchmark) : Leipzig AUTRE 8 069, Maratona do Porto AUTRE 7 700,
    Greifenseelauf AUTRE 9 972, etc. Liste complete sous
@@ -1262,6 +1262,21 @@ vit dans `course_names.json`, cle `Race|DISTANCE` :
   sous l'ancien nom (`nom_plateforme()`). Module commun : `noms_courses.py`.
 - **Pourquoi pas une colonne dans l'Excel** : `update_finishers.py`,
   `add_event.py` et `migrate_to_db.py` lisent ALL par position.
+
+**Regroupements du 13 novembre** (nom d'evenement = celui de la plus grande
+distance, chaque distance garde son nom) : Liverpool, Amsterdam, KL,
+Tours, les deux Lisbonne, Hong Kong, Singapour, Houston, Vienne, Taipei,
+Melbourne, Ljubljana, Rome, Madrid Medio Maraton. Controle de non-regression
+en comparant les deux generations ligne par ligne (temps moyen, chronos,
+sponsors, organisateur, finishers) : aucune perte ; seuls gains, les courses
+qui heritent de l'organisateur ou des partenaires de leur evenement.
+Doublons supprimes le meme jour (lignes sans aucune donnee) : Tout Rennes
+Court (doublon de S'MI / 10km CMB / 5km Harmonie Mutuelle), Lucknow Half,
+Dehradun Half Marathon, Dubai Marathon (fevrier, et son partenariat
+Standard Chartered, deja porte par Standard Chartered Dubai Marathon).
+Shamrock Shuffle (AUTRE) ne portait que 2025 = 23 733, valeur identique a
+Bank of America Shamrock Shuffle : supprime, et le Bank of America
+reclasse 10KM -> AUTRE (8 km).
 
 Rattacher une course a un evenement = renommer son Race dans ALL **et**
 declarer `anciens_noms` dans `course_names.json`, sinon ses temps, chronos et
