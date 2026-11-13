@@ -1,6 +1,14 @@
 {
   "updates": [
     {
+      "event": "BTR Liverpool Half Marathon & 10 Mile",
+      "date": "2026-11-13",
+      "data": {
+        "finishers": 9959
+      },
+      "timestamp": "2026-11-13T09:28:10Z"
+    },
+    {
       "event": "Allwyn Athens Marathon",
       "date": "2026-11-08",
       "data": {

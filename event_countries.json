@@ -1915,10 +1915,6 @@
     "flag": "🇺🇸",
     "pays": "Etats-Unis"
   },
-  "Liverpool Half Marathon": {
-    "flag": "🇬🇧",
-    "pays": "Royaume-Uni"
-  },
   "Ljubljana Marathon": {
     "flag": "🇸🇮",
     "pays": "Slovénie"
@@ -3990,5 +3986,9 @@
   "Marathon de Bordeaux AG2R LA MONDIALE": {
     "flag": "🇫🇷",
     "pays": "France"
+  },
+  "BTR Liverpool Half Marathon & 10 Mile": {
+    "flag": "🇬🇧",
+    "pays": "Royaume-Uni"
   }
 }

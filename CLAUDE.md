@@ -457,7 +457,8 @@ Auckland 15 122, Saitama 13 732, Brussels Airport 13 313, Dresden 10KM
 de la mer 10KM 5 085, Great 10K 4 566, Bengaluru Midnight MARATHON 2 659,
 Kolkata Full 2 377, Agra Taj 1 343. Elles doublaient le total de l'evenement
 dans la vue par evenement (Tamarack 56 052 au lieu de 26 411, 4e du top 2025).
-Les **31 restantes sont seules dans leur famille** : le total y est la seule
+Les **31 restantes sont seules dans leur famille** (30 apres l'arbitrage de
+Liverpool : SEMI 2025 = 9 959 et non 10 393, le total incluait le 10 Mile) : le total y est la seule
 donnee, impossible de prouver qu'il deborde la distance — en attente
 d'arbitrage (cf. ARBITRAGES EN ATTENTE).
 
@@ -1223,9 +1224,8 @@ Trois points mis au jour par l'audit du rapprochement des noms d'epreuve
    « Nike Melbourne Marathon Festival » en marathon + semi, les partenariats
    sont restes sur `Nike Melbourne Half Marathon`. Les dupliquer sur le
    marathon ?
-4. **31 cellules 2025 « total d'evenement » seules dans leur famille**
-   (import benchmark du 15 avril, cf. section Benchmark) : Liverpool Half
-   SEMI 10 393, Leipzig AUTRE 8 069, Maratona do Porto AUTRE 7 700,
+4. **30 cellules 2025 « total d'evenement » seules dans leur famille**
+   (import benchmark du 15 avril, cf. section Benchmark) : Leipzig AUTRE 8 069, Maratona do Porto AUTRE 7 700,
    Greifenseelauf AUTRE 9 972, etc. Liste complete sous
    `en_attente_arbitrage` dans `logs/fix_totaux_evenement_2026-11-13.json`. Vider, ou garder
    faute de mieux ?

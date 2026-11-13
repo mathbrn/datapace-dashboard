@@ -121,12 +121,6 @@
    "valeur": 11727
   },
   {
-   "event": "Liverpool Half Marathon",
-   "dist": "SEMI",
-   "annee": 2025,
-   "valeur": 10393
-  },
-  {
    "event": "Greifenseelauf",
    "dist": "AUTRE",
    "annee": 2025,
@@ -287,6 +281,16 @@
    "dist": "AUTRE",
    "annee": 2025,
    "valeur": 1192
+  }
+ ],
+ "arbitres": [
+  {
+   "event": "BTR Liverpool Half Marathon & 10 Mile",
+   "dist": "SEMI",
+   "annee": 2025,
+   "avant": 10393,
+   "apres": 9959,
+   "source": "utilisateur"
   }
  ]
 }
