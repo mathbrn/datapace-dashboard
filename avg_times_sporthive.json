@@ -2743,5 +2743,95 @@
   "avg_time": "00:37:44",
   "avg_speed_kmh": 7.95,
   "source": "mikatiming"
+ },
+ {
+  "label": "Standard Chartered Hong Kong Marathon 10KM 2018",
+  "race": "Standard Chartered Hong Kong Marathon",
+  "dist_m": 10000,
+  "year": 2018,
+  "count": 27505,
+  "avg_time": "01:10:58",
+  "avg_speed_kmh": 8.45,
+  "source": "sporthive (somme des vagues)"
+ },
+ {
+  "label": "Standard Chartered Hong Kong Marathon MARATHON 2018",
+  "race": "Standard Chartered Hong Kong Marathon",
+  "dist_m": 42195,
+  "year": 2018,
+  "count": 15435,
+  "avg_time": "04:38:15",
+  "avg_speed_kmh": 9.1,
+  "source": "sporthive (somme des vagues)"
+ },
+ {
+  "label": "Standard Chartered Hong Kong Half Marathon SEMI 2018",
+  "race": "Standard Chartered Hong Kong Half Marathon",
+  "dist_m": 21097,
+  "year": 2018,
+  "count": 16873,
+  "avg_time": "02:19:05",
+  "avg_speed_kmh": 9.1,
+  "source": "sporthive (somme des vagues)"
+ },
+ {
+  "label": "Standard Chartered Hong Kong Marathon 10KM 2019",
+  "race": "Standard Chartered Hong Kong Marathon",
+  "dist_m": 10000,
+  "year": 2019,
+  "count": 27048,
+  "avg_time": "01:10:45",
+  "avg_speed_kmh": 8.48,
+  "source": "sporthive (somme des vagues)"
+ },
+ {
+  "label": "Standard Chartered Hong Kong Marathon MARATHON 2019",
+  "race": "Standard Chartered Hong Kong Marathon",
+  "dist_m": 42195,
+  "year": 2019,
+  "count": 18892,
+  "avg_time": "04:35:52",
+  "avg_speed_kmh": 9.18,
+  "source": "sporthive (somme des vagues)"
+ },
+ {
+  "label": "Standard Chartered Hong Kong Half Marathon SEMI 2019",
+  "race": "Standard Chartered Hong Kong Half Marathon",
+  "dist_m": 21097,
+  "year": 2019,
+  "count": 16370,
+  "avg_time": "02:16:44",
+  "avg_speed_kmh": 9.26,
+  "source": "sporthive (somme des vagues)"
+ },
+ {
+  "label": "Standard Chartered Hong Kong Marathon 10KM 2023",
+  "race": "Standard Chartered Hong Kong Marathon",
+  "dist_m": 10000,
+  "year": 2023,
+  "count": 17654,
+  "avg_time": "01:09:36",
+  "avg_speed_kmh": 8.62,
+  "source": "sporthive (somme des vagues)"
+ },
+ {
+  "label": "Standard Chartered Hong Kong Marathon MARATHON 2023",
+  "race": "Standard Chartered Hong Kong Marathon",
+  "dist_m": 42195,
+  "year": 2023,
+  "count": 4998,
+  "avg_time": "04:24:17",
+  "avg_speed_kmh": 9.58,
+  "source": "sporthive (somme des vagues)"
+ },
+ {
+  "label": "Standard Chartered Hong Kong Half Marathon SEMI 2023",
+  "race": "Standard Chartered Hong Kong Half Marathon",
+  "dist_m": 21097,
+  "year": 2023,
+  "count": 10473,
+  "avg_time": "02:13:05",
+  "avg_speed_kmh": 9.51,
+  "source": "sporthive (somme des vagues)"
  }
 ]

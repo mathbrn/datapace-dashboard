@@ -1,6 +1,38 @@
 {
   "updates": [
     {
+      "event": "Standard Chartered Hong Kong Marathon",
+      "date": "2026-11-13",
+      "data": {
+        "avg_time": "4:24:17"
+      },
+      "timestamp": "2026-11-13T13:10:34Z"
+    },
+    {
+      "event": "Standard Chartered Hong Kong Marathon",
+      "date": "2023-01-01",
+      "data": {
+        "finishers": 17654
+      },
+      "timestamp": "2026-11-13T13:10:26Z"
+    },
+    {
+      "event": "Standard Chartered Hong Kong Marathon",
+      "date": "2019-01-01",
+      "data": {
+        "finishers": 27048
+      },
+      "timestamp": "2026-11-13T13:10:25Z"
+    },
+    {
+      "event": "Standard Chartered Hong Kong Marathon",
+      "date": "2018-01-01",
+      "data": {
+        "finishers": 27505
+      },
+      "timestamp": "2026-11-13T13:10:24Z"
+    },
+    {
       "event": "Indianapolis Monumental Marathon",
       "date": "2025-01-01",
       "data": {
