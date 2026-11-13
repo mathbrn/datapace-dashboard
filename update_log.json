@@ -2,6 +2,14 @@
   "updates": [
     {
       "event": "Standard Chartered Hong Kong Marathon",
+      "date": "2025-01-01",
+      "data": {
+        "finishers": 26655
+      },
+      "timestamp": "2026-11-13T13:37:02Z"
+    },
+    {
+      "event": "Standard Chartered Hong Kong Marathon",
       "date": "2024-01-21",
       "data": {
         "finishers": 28780,
