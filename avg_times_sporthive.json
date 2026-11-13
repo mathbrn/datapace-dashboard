@@ -2833,5 +2833,35 @@
   "avg_time": "02:13:05",
   "avg_speed_kmh": 9.51,
   "source": "sporthive (somme des vagues)"
+ },
+ {
+  "label": "Standard Chartered Hong Kong Marathon MARATHON 2021",
+  "race": "Standard Chartered Hong Kong Marathon",
+  "dist_m": 42195,
+  "year": 2021,
+  "count": 3154,
+  "avg_time": "04:29:56",
+  "avg_speed_kmh": 9.38,
+  "source": "sporthive (somme des vagues)"
+ },
+ {
+  "label": "Standard Chartered Hong Kong Half Marathon SEMI 2021",
+  "race": "Standard Chartered Hong Kong Half Marathon",
+  "dist_m": 21097,
+  "year": 2021,
+  "count": 5270,
+  "avg_time": "02:12:48",
+  "avg_speed_kmh": 9.53,
+  "source": "sporthive (somme des vagues)"
+ },
+ {
+  "label": "Standard Chartered Hong Kong Marathon 10KM 2021",
+  "race": "Standard Chartered Hong Kong Marathon",
+  "dist_m": 10000,
+  "year": 2021,
+  "count": 6615,
+  "avg_time": "01:09:25",
+  "avg_speed_kmh": 8.64,
+  "source": "sporthive (somme des vagues)"
  }
 ]
