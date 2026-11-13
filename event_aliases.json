@@ -1,0 +1,166 @@
+{
+  "_commentaire": "Noms exterieurs (catalogue World Athletics surtout) deja rapproches a la main d'une epreuve du dashboard. Cle = nom exterieur ; 'evenement' = Race de l'onglet ALL ; 'distance' facultative (sinon deduite du nom). Prioritaire sur le score de rapprochement.py. A completer quand un rapprochement est confirme ou corrige.",
+  "alias": {
+    "tcs london marathon": {
+      "evenement": "TCS London Marathon"
+    },
+    "london marathon": {
+      "evenement": "TCS London Marathon"
+    },
+    "virgin money london marathon": {
+      "evenement": "TCS London Marathon"
+    },
+    "haspa marathon hamburg": {
+      "evenement": "Haspa Marathon Hamburg"
+    },
+    "hamburg marathon": {
+      "evenement": "Haspa Marathon Hamburg"
+    },
+    "haspa marathon": {
+      "evenement": "Haspa Marathon Hamburg"
+    },
+    "vienna city marathon": {
+      "evenement": "Vienna City Marathon"
+    },
+    "wien marathon": {
+      "evenement": "Vienna City Marathon"
+    },
+    "vienna marathon": {
+      "evenement": "Vienna City Marathon"
+    },
+    "volkswagen prague marathon": {
+      "evenement": "Prague International Marathon"
+    },
+    "orlen prague marathon": {
+      "evenement": "Prague International Marathon"
+    },
+    "prague marathon": {
+      "evenement": "Prague International Marathon"
+    },
+    "bmw berlin marathon": {
+      "evenement": "BMW Berlin Marathon"
+    },
+    "berlin marathon": {
+      "evenement": "BMW Berlin Marathon"
+    },
+    "bank of america chicago marathon": {
+      "evenement": "Bank of America Chicago Marathon"
+    },
+    "chicago marathon": {
+      "evenement": "Bank of America Chicago Marathon"
+    },
+    "tcs new york city marathon": {
+      "evenement": "TCS New York City Marathon"
+    },
+    "new york city marathon": {
+      "evenement": "TCS New York City Marathon"
+    },
+    "tokyo marathon": {
+      "evenement": "Tokyo Marathon"
+    },
+    "nn marathon rotterdam": {
+      "evenement": "NN Marathon Rotterdam"
+    },
+    "rotterdam marathon": {
+      "evenement": "NN Marathon Rotterdam"
+    },
+    "boston marathon": {
+      "evenement": "Boston Marathon"
+    },
+    "schneider electric marathon de paris": {
+      "evenement": "ASICS Marathon de Paris"
+    },
+    "marathon de paris": {
+      "evenement": "ASICS Marathon de Paris"
+    },
+    "edp maratona de lisboa": {
+      "evenement": "EDP Maratona de Lisboa"
+    },
+    "maratona de lisboa": {
+      "evenement": "EDP Maratona de Lisboa"
+    },
+    "tcs amsterdam marathon": {
+      "evenement": "TCS Amsterdam Marathon"
+    },
+    "amsterdam marathon": {
+      "evenement": "TCS Amsterdam Marathon"
+    },
+    "stockholm marathon": {
+      "evenement": "Stockholm Marathon"
+    },
+    "athens classic marathon": {
+      "evenement": "Allwyn Athens Marathon"
+    },
+    "athens marathon": {
+      "evenement": "Allwyn Athens Marathon"
+    },
+    "athens marathon. the authentic": {
+      "evenement": "Allwyn Athens Marathon"
+    },
+    "generali berlin half marathon": {
+      "evenement": "Generali Berlin Half Marathon"
+    },
+    "berlin half marathon": {
+      "evenement": "Generali Berlin Half Marathon"
+    },
+    "mainova frankfurt marathon": {
+      "evenement": "Mainova Frankfurt Marathon"
+    },
+    "frankfurt marathon": {
+      "evenement": "Mainova Frankfurt Marathon"
+    },
+    "adidas manchester marathon": {
+      "evenement": "Adidas Manchester Marathon"
+    },
+    "manchester marathon": {
+      "evenement": "Adidas Manchester Marathon"
+    },
+    "great north run": {
+      "evenement": "AJ Bell Great North Run"
+    },
+    "aj bell great north run": {
+      "evenement": "AJ Bell Great North Run"
+    },
+    "great manchester run": {
+      "evenement": "AJ Bell Great Manchester Run"
+    },
+    "aj bell great manchester run": {
+      "evenement": "AJ Bell Great Manchester Run"
+    },
+    "great bristol run": {
+      "evenement": "AJ Bell Great Bristol Run"
+    },
+    "aj bell great bristol run": {
+      "evenement": "AJ Bell Great Bristol Run"
+    },
+    "hoka semi de paris": {
+      "evenement": "HOKA Semi de Paris"
+    },
+    "semi de paris": {
+      "evenement": "HOKA Semi de Paris"
+    },
+    "paris half marathon": {
+      "evenement": "HOKA Semi de Paris"
+    },
+    "edp lisboa meia maratona": {
+      "evenement": "EDP Lisboa Meia Maratona"
+    },
+    "lisboa half marathon": {
+      "evenement": "EDP Lisboa Meia Maratona"
+    },
+    "the half": {
+      "evenement": "The Big Half"
+    },
+    "big half": {
+      "evenement": "The Big Half"
+    },
+    "brighton marathon": {
+      "evenement": "Brighton Marathon Week end",
+      "distance": "MARATHON"
+    },
+    "nn cpc loop den haag": {
+      "evenement": "NN CPC Loop Den Haag",
+      "distance": "SEMI"
+    }
+  }
+}

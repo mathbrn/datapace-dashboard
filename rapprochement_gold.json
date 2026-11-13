@@ -1,0 +1,335 @@
+{
+ "_commentaire": "Jeu de reference du rapprochement des noms : nom exterieur (catalogue World Athletics), lieu, ligne attendue du dashboard ('Evenement|DISTANCE') ou null si l'epreuve n'est pas suivie. Pieges inclus : sponsors renommes, villes traduites, courses differentes dans la meme ville, distances incompatibles. Evaluation : python rapprochement.py --eval",
+ "cas": [
+  {
+   "nom": "Schneider Electric Marathon de Paris",
+   "venue": "Paris (FRA)",
+   "attendu": "ASICS Marathon de Paris|MARATHON"
+  },
+  {
+   "nom": "48th Warsaw Marathon",
+   "venue": "Warszawa (POL)",
+   "attendu": "NN Maraton Warszawski|MARATHON"
+  },
+  {
+   "nom": "Bangsaen21",
+   "venue": "Chon Buri (THA)",
+   "attendu": "Bangsaen21|SEMI"
+  },
+  {
+   "nom": "Bangsaen10",
+   "venue": "Chon Buri (THA)",
+   "attendu": "Bangsaen10|10KM"
+  },
+  {
+   "nom": "Athens Marathon. The Authentic",
+   "venue": "Athina (GRE)",
+   "attendu": "Allwyn Athens Marathon|MARATHON"
+  },
+  {
+   "nom": "Vodafone Prague Marathon",
+   "venue": "Praha (CZE)",
+   "attendu": "Prague International Marathon|MARATHON"
+  },
+  {
+   "nom": "Aramco Houston Half Marathon",
+   "venue": "Houston, TX (USA)",
+   "attendu": "Chevron Houston Marathon|SEMI"
+  },
+  {
+   "nom": "BYD Singapore International Marathon presented by Adidas",
+   "venue": "Singapore (SGP)",
+   "attendu": "Standard Chartered Singapore Marathon|MARATHON"
+  },
+  {
+   "nom": "Hyundai Half Marathon",
+   "venue": "Lisboa (POR)",
+   "attendu": "EDP Maratona de Lisboa|SEMI"
+  },
+  {
+   "nom": "Generali Berliner Halbmarathon",
+   "venue": "Berlin (GER)",
+   "attendu": "Generali Berlin Half Marathon|SEMI"
+  },
+  {
+   "nom": "35e Leiden Marathon",
+   "venue": "Leiden (NED)",
+   "attendu": "Leiden Marathon|MARATHON"
+  },
+  {
+   "nom": "Ottawa 10K",
+   "venue": "Ottawa (CAN)",
+   "attendu": "Tamarack Ottawa Race week end|10KM"
+  },
+  {
+   "nom": "Marine Corps Marathon",
+   "venue": "Arlington, VA (USA)",
+   "attendu": "Marine Corps Marathon|MARATHON"
+  },
+  {
+   "nom": "Los Angeles Marathon",
+   "venue": "Dodger Stadium, Los Angeles, CA (USA)",
+   "attendu": "ASICS Los Angeles Marathon|MARATHON"
+  },
+  {
+   "nom": "Göteborgsvarvet",
+   "venue": "Slottsskogsvallen, Göteborg (SWE)",
+   "attendu": "Göteborgsvarvet|SEMI"
+  },
+  {
+   "nom": "Northside Hospital Peachtree Road Race",
+   "venue": "Atlanta, GA (USA)",
+   "attendu": "Atlanta Journal-Constitution Peachtree Road Race|10KM"
+  },
+  {
+   "nom": "Marathon de la Côte d'Amour",
+   "venue": "La Baule (FRA)",
+   "attendu": "Marathon International de la Côte d’Amour Amarris|MARATHON"
+  },
+  {
+   "nom": "Paderborner Osterlauf",
+   "venue": "Sportzentrum am Maspernplatz, Paderborn (GER)",
+   "attendu": "Paderborner Osterlauf|SEMI"
+  },
+  {
+   "nom": "Romeo & Giulietta Run Half Marathon",
+   "venue": "Verona (ITA)",
+   "attendu": "Romeo & Giuletta Run Half marathon|SEMI"
+  },
+  {
+   "nom": "Grand-Prix von Bern",
+   "venue": "Bern (SUI)",
+   "attendu": "Grand Prix Von Bern|AUTRE"
+  },
+  {
+   "nom": "Burj2Burj Half Marathon",
+   "venue": "Dubai (UAE)",
+   "attendu": "Burj2Burj Half Marathon|SEMI"
+  },
+  {
+   "nom": "Maraton Powerade Monterrey",
+   "venue": "Monterrey (MEX)",
+   "attendu": "Maraton Powerade Monterrey|MARATHON"
+  },
+  {
+   "nom": "KPMG Lentemarathon Amstelveen",
+   "venue": "Amstelveen (NED)",
+   "attendu": "KPMG Lentermarathon|MARATHON"
+  },
+  {
+   "nom": "Boston Marathon",
+   "venue": "Boston, MA (USA)",
+   "attendu": "Boston Marathon|MARATHON"
+  },
+  {
+   "nom": "TCS London Marathon",
+   "venue": "London (GBR)",
+   "attendu": "TCS London Marathon|MARATHON"
+  },
+  {
+   "nom": "Indianapolis Monumental Marathon",
+   "venue": "Indianapolis, IN (USA)",
+   "attendu": "Indianapolis Monumental Marathon|MARATHON"
+  },
+  {
+   "nom": "Fátima Half Marathon",
+   "venue": "Fátima (POR)",
+   "attendu": "Renascenca Fatima Half Marathon|SEMI"
+  },
+  {
+   "nom": "JBG Kolkata Marathon",
+   "venue": "Kolkata (IND)",
+   "attendu": "Kolkata Full Marathon|MARATHON"
+  },
+  {
+   "nom": "Adidas Manchester Marathon",
+   "venue": "Manchester (GBR)",
+   "attendu": "Adidas Manchester Marathon|MARATHON"
+  },
+  {
+   "nom": "Shenzhen Marathon",
+   "venue": "Shenzhen (CHN)",
+   "attendu": "Shenzhen Marathon|MARATHON"
+  },
+  {
+   "nom": "Nanjing Marathon",
+   "venue": "Nanjing (CHN)",
+   "attendu": "Nanjing Marathon|MARATHON"
+  },
+  {
+   "nom": "Samarkand Marathon",
+   "venue": "Samarkand (UZB)",
+   "attendu": "Samarkand Marathon|MARATHON"
+  },
+  {
+   "nom": "TCS Amsterdam Marathon",
+   "venue": "Amsterdam (NED)",
+   "attendu": "TCS Amsterdam Marathon|MARATHON"
+  },
+  {
+   "nom": "Mizuno Half Marathon",
+   "venue": "Amsterdam (NED)",
+   "attendu": "TCS Amsterdam Marathon|SEMI"
+  },
+  {
+   "nom": "BMW Berlin-Marathon",
+   "venue": "Berlin (GER)",
+   "attendu": "BMW Berlin Marathon|MARATHON"
+  },
+  {
+   "nom": "Bank of America Chicago Marathon",
+   "venue": "Chicago, IL (USA)",
+   "attendu": "Bank of America Chicago Marathon|MARATHON"
+  },
+  {
+   "nom": "NN Marathon Rotterdam",
+   "venue": "Rotterdam (NED)",
+   "attendu": "NN Marathon Rotterdam|MARATHON"
+  },
+  {
+   "nom": "Tokyo Marathon",
+   "venue": "Tokyo (JPN)",
+   "attendu": "Tokyo Marathon|MARATHON"
+  },
+  {
+   "nom": "Chengdu Marathon",
+   "venue": "Chengdu (CHN)",
+   "attendu": "Chengdu Marathon|MARATHON"
+  },
+  {
+   "nom": "Boston Half",
+   "venue": "Boston, MA (USA)",
+   "attendu": null
+  },
+  {
+   "nom": "Bank of China Hong Kong-Zhuhai-Macao Bridge Half Marathon",
+   "venue": "Hong Kong (HKG)",
+   "attendu": null
+  },
+  {
+   "nom": "ASICS Hong Kong Half Marathon Championships",
+   "venue": "Hong Kong (HKG)",
+   "attendu": null
+  },
+  {
+   "nom": "Garmin Run Marathon Series – Hong Kong",
+   "venue": "Sha Tin, Hong Kong (HKG)",
+   "attendu": null
+  },
+  {
+   "nom": "Saucony Hong Kong 10km Road Running Championships",
+   "venue": "Tin Shui Wai, Hong Kong (HKG)",
+   "attendu": null
+  },
+  {
+   "nom": "adidas Stockholm Half Marathon",
+   "venue": "Stockholm (SWE)",
+   "attendu": null
+  },
+  {
+   "nom": "Philadelphia Distance Run",
+   "venue": "Philadelphia, PA (USA)",
+   "attendu": null
+  },
+  {
+   "nom": "Lake Garda 42 Half Marathon",
+   "venue": "Limone sul Garda (ITA)",
+   "attendu": null
+  },
+  {
+   "nom": "B.A.A. 10K",
+   "venue": "Boston, MA (USA)",
+   "attendu": null
+  },
+  {
+   "nom": "Servus Edmonton Marathon - Half Marathon",
+   "venue": "Edmonton (CAN)",
+   "attendu": null
+  },
+  {
+   "nom": "Under Armour Eastside 10K",
+   "venue": "Vancouver (CAN)",
+   "attendu": null
+  },
+  {
+   "nom": "Run The Bridge 10km",
+   "venue": "Hobart (AUS)",
+   "attendu": null
+  },
+  {
+   "nom": "Marsala Half Marathon \"Città Garibaldina\"",
+   "venue": "Marsala (ITA)",
+   "attendu": null
+  },
+  {
+   "nom": "Mezza Maratona “Città di Foligno” + FastTen 10K",
+   "venue": "Foligno (ITA)",
+   "attendu": null
+  },
+  {
+   "nom": "13° Trofeo del mare",
+   "venue": "Bagheria (ITA)",
+   "attendu": null
+  },
+  {
+   "nom": "Dubuque Main Street Mile",
+   "venue": "Main Street, Dubuque, IA (USA)",
+   "attendu": null
+  },
+  {
+   "nom": "29ª São Silvestre de Santo Tirso",
+   "venue": "Santo Tirso (POR)",
+   "attendu": null
+  },
+  {
+   "nom": "São Silvestre de Vila Real de Santo António",
+   "venue": "Vila Real de Santo António (POR)",
+   "attendu": null
+  },
+  {
+   "nom": "Al Dhannah Flat Out Abu Dhabi",
+   "venue": "Al Dhannah City (UAE)",
+   "attendu": null
+  },
+  {
+   "nom": "Stramilano SottoZero",
+   "venue": "CityLife, Milano (ITA)",
+   "attendu": null
+  },
+  {
+   "nom": "Osaka Women's Marathon",
+   "venue": "Osaka (JPN)",
+   "attendu": null
+  },
+  {
+   "nom": "Chester Marathon",
+   "venue": "Chester (GBR)",
+   "attendu": "Chester marathon|MARATHON"
+  },
+  {
+   "nom": "Cardiff Cross Challenge",
+   "venue": "Llandaff Fields, Cardiff (GBR)",
+   "attendu": null
+  },
+  {
+   "nom": "Boston 10K for Women",
+   "venue": "Boston, MA (USA)",
+   "attendu": null
+  },
+  {
+   "nom": "Lisbon Half Marathon Women Run",
+   "venue": "Lisboa (POR)",
+   "attendu": null
+  },
+  {
+   "nom": "Valencia Marathon Trinidad Alfonso",
+   "venue": "Valencia (ESP)",
+   "attendu": "Valencia Marathon Trinidad Alfonso Zurich|MARATHON"
+  },
+  {
+   "nom": "Medio Maratón Valencia Trinidad Alfonso",
+   "venue": "Valencia (ESP)",
+   "attendu": "Valencia Half Marathon Trinidad Alfonso Zurich|SEMI"
+  }
+ ]
+}

@@ -349,131 +349,33 @@ def extract_country_code(venue):
 
 
 def match_wa_to_ours(wa_races, our_events):
-    """Match WA races to our dashboard events by best name+city+country score."""
-    # Aliases: normalized WA name → our event name (exact, score=100)
-    ALIASES = {
-        "tcs london marathon": "TCS London Marathon",
-        "london marathon": "TCS London Marathon",
-        "virgin money london marathon": "TCS London Marathon",
-        "haspa marathon hamburg": "Haspa Marathon Hamburg",
-        "hamburg marathon": "Haspa Marathon Hamburg",
-        "haspa marathon": "Haspa Marathon Hamburg",
-        "vienna city marathon": "Vienna City Marathon",
-        "wien marathon": "Vienna City Marathon",
-        "vienna marathon": "Vienna City Marathon",
-        "volkswagen prague marathon": "Prague International Marathon",
-        "orlen prague marathon": "Prague International Marathon",
-        "prague marathon": "Prague International Marathon",
-        "bmw berlin marathon": "BMW Berlin Marathon",
-        "berlin marathon": "BMW Berlin Marathon",
-        "bank of america chicago marathon": "Bank of America Chicago Marathon",
-        "chicago marathon": "Bank of America Chicago Marathon",
-        "tcs new york city marathon": "TCS New York City Marathon",
-        "new york city marathon": "TCS New York City Marathon",
-        "tokyo marathon": "Tokyo Marathon",
-        "nn marathon rotterdam": "NN Marathon Rotterdam",
-        "rotterdam marathon": "NN Marathon Rotterdam",
-        "boston marathon": "Boston Marathon",
-        "schneider electric marathon de paris": "ASICS Marathon de Paris",
-        "marathon de paris": "ASICS Marathon de Paris",
-        "edp maratona de lisboa": "EDP Maratona de Lisboa",
-        "maratona de lisboa": "EDP Maratona de Lisboa",
-        "tcs amsterdam marathon": "TCS Amsterdam Marathon",
-        "amsterdam marathon": "TCS Amsterdam Marathon",
-        "stockholm marathon": "Stockholm Marathon",
-        "athens classic marathon": "Allwyn Athens Marathon",
-        "athens marathon": "Allwyn Athens Marathon",
-        "athens marathon. the authentic": "Allwyn Athens Marathon",
-        "generali berlin half marathon": "Generali Berlin Half Marathon",
-        "berlin half marathon": "Generali Berlin Half Marathon",
-        "brighton marathon": "Brighton Marathon",
-        "mainova frankfurt marathon": "Mainova Frankfurt Marathon",
-        "frankfurt marathon": "Mainova Frankfurt Marathon",
-        "adidas manchester marathon": "Adidas Manchester Marathon",
-        "manchester marathon": "Adidas Manchester Marathon",
-        "great north run": "AJ Bell Great North Run",
-        "aj bell great north run": "AJ Bell Great North Run",
-        "great manchester run": "AJ Bell Great Manchester Run",
-        "aj bell great manchester run": "AJ Bell Great Manchester Run",
-        "great bristol run": "AJ Bell Great Bristol Run",
-        "aj bell great bristol run": "AJ Bell Great Bristol Run",
-        "hoka semi de paris": "HOKA Semi de Paris",
-        "semi de paris": "HOKA Semi de Paris",
-        "paris half marathon": "HOKA Semi de Paris",
-        "edp lisboa meia maratona": "EDP Lisboa Meia Maratona",
-        "lisboa half marathon": "EDP Lisboa Meia Maratona",
-        "nn cpc loop den haag": "NN CPC Loop Den Haag - Half Marathon",
-        "the half": "The Big Half",
-        "big half": "The Big Half",
-    }
-    # Build lookup: normalized our_name → event dict
-    our_by_norm = {normalize_name(ev["name"]): ev for ev in our_events}
+    """Rapproche les courses du catalogue World Athletics des lignes du dashboard.
 
-    matches = []
-    STOPWORDS = {"the", "de", "la", "le", "les", "du", "of", "a", "and", "et",
-                 "marathon", "semi", "half", "run", "race", "runs", "races",
-                 "10k", "21k", "42k", "10km", "city", "international"}
+    Delegue a `rapprochement.py` (alias confirmes de event_aliases.json, puis
+    score pondere par la rarete des mots, avec controle du pays, de la
+    distance, de la ville et des qualificatifs). Mesure sur
+    rapprochement_gold.json : 97,6 % de precision et 97,6 % de rappel, contre
+    un score « mots communs x 10 » qui prenait « Boston Half » pour le Boston
+    Marathon et ratait les epreuves rebaptisees par un nouveau sponsor.
+    """
+    import rapprochement
     # Le catalogue melange piste, cross et route : seules les courses sur
     # route peuvent etre nos epreuves. Le 8 novembre 2026, le « Cardiff Cross
     # Challenge » (cross-country) se rapprochait du Cardiff Half Marathon.
     wa_races = [w for w in wa_races
                 if "road" in (w.get("disciplines") or "").lower()
                 or not w.get("disciplines")]
+    par_ligne = {(ev["name"], ev.get("distance")): ev for ev in our_events}
+    matches = []
     for wa in wa_races:
-        wa_name = normalize_name(wa.get("name", ""))
-        wa_venue_raw = wa.get("venue", "") or ""
-        wa_venue = normalize_name(wa_venue_raw)
-        wa_country = extract_country_code(wa_venue_raw)
-
-        # Check aliases first (exact match → score = 100, bypasses fuzzy)
-        alias_target = ALIASES.get(wa_name)
-        if alias_target:
-            our_ev = our_by_norm.get(normalize_name(alias_target))
-            if our_ev:
-                matches.append({"wa": wa, "our": our_ev, "score": 100})
-                continue
-
-        wa_words = set(wa_name.split()) - STOPWORDS
-        best = None
-        best_score = 0
-        for ev in our_events:
-            our_name = normalize_name(ev["name"])
-            our_city = normalize_name(ev["city"])
-            our_country = ev.get("country")
-            our_words = set(our_name.split()) - STOPWORDS
-            common = wa_words & our_words
-            score = len(common) * 10
-            # City match bonus
-            if our_city and wa_venue:
-                if our_city == wa_venue or our_city in wa_venue or wa_venue in our_city:
-                    score += 5
-                elif not common:
-                    continue
-            # Country match (bonus/penalty)
-            if our_country and wa_country:
-                if our_country == wa_country:
-                    score += 5
-                else:
-                    score -= 10  # strong penalty for country mismatch
-            # Distance incompatible : « Boston Half » n'est pas le Boston
-            # Marathon (faux positif du 8 novembre 2026). Un nom WA qui
-            # annonce un semi ne peut pas designer une ligne MARATHON.
-            wa_semi = any(m in wa_name.split() for m in
-                          ("half", "semi", "meia", "medio", "mezza", "halb", "halbmarathon", "21k", "21km"))
-            if wa_semi and ev.get("distance") == "MARATHON":
-                score -= 15
-            # Distance type match
-            if "half" in wa_name and ev.get("distance") == "SEMI":
-                score += 3
-            elif "half" not in wa_name and "marathon" in wa_name and ev.get("distance") == "MARATHON":
-                score += 3
-            elif "10k" in wa_name and ev.get("distance") == "10KM":
-                score += 3
-            if score > best_score:
-                best_score = score
-                best = ev
-        if best and best_score >= 20:
-            matches.append({"wa": wa, "our": best, "score": best_score})
+        ville, pays = rapprochement.depuis_venue(wa.get("venue", ""))
+        ep, sc, motif = rapprochement.rapprocher(wa.get("name", ""), ville, pays)
+        if not ep:
+            continue
+        ev = par_ligne.get((ep["evenement"], ep["distance"]))
+        if ev:
+            matches.append({"wa": wa, "our": ev, "score": round(sc * 100),
+                            "motif": motif})
     print(f"  Matched: {len(matches)} events")
     return matches
 

@@ -1315,6 +1315,44 @@ Rattacher une course a un evenement = renommer son Race dans ALL **et**
 declarer `anciens_noms` dans `course_names.json`, sinon ses temps, chronos et
 sponsors ne la retrouvent plus.
 
+## Rapprochement des noms EXTERIEURS : `rapprochement.py`
+
+A ne pas confondre avec `memeEpreuve` (section suivante), qui rapproche les
+noms des fichiers internes entre eux. `rapprochement.py` rapproche un nom
+venu d'un catalogue exterieur (World Athletics, AIMS...) d'une ligne
+(evenement, distance) de l'onglet ALL. Utilise par `match_wa_to_ours()` dans
+`auto_update_4d.py`.
+
+Dans l'ordre :
+1. **Alias confirmes** (`event_aliases.json`) : nom exterieur -> evenement
+   (+ distance facultative). Prioritaire. Y ajouter tout rapprochement
+   corrige a la main.
+2. **Filtres durs** : pays (code WA du lieu contre `event_countries.json`) et
+   distance annoncee par le nom (half, medio, mezza, meia, halb, 10k...).
+3. **Score de nom** : couverture ponderee dans les deux sens. Poids = rarete
+   du mot dans le dashboard (IDF) ; marques de `sponsoring_data.json` et mots
+   d'entreprise a 0,15 (un sponsor change : Schneider Electric -> ASICS) ;
+   mot inconnu a 60 % du poids maximal. Fautes de saisie tolerees sur les
+   mots longs (Giulietta / Giuletta), jamais sur les chiffres (Bangsaen10 /
+   Bangsaen21).
+4. **Corrections** : meme ville +0,15 (villes francaises de l'Excel
+   traduites : Varsovie = Warszawa = Warszawski) ; villes differentes x0,65 ;
+   mot propre au dashboard absent du nom exterieur x0,7 (« Midnattsloppet
+   Stockholm » contre « adidas Stockholm Half ») ; qualificatif d'un seul
+   cote x0,4 (women, cross, night, bridge, championships, sottozero...).
+   Seuil 0,55.
+
+**Mesure** : `python rapprochement.py --eval` sur `rapprochement_gold.json`
+(66 cas, dont tous les pieges rencontres). Le 13 novembre :
+**97,6 % de precision, 97,6 % de rappel**, contre 77 % de precision pour la
+premiere version et un ancien score qui confondait Boston Half et Boston
+Marathon. Reglages choisis par balayage sur ce jeu : avec 66 cas, le risque
+de sur-ajustement est reel, **enrichir le jeu a chaque erreur constatee**.
+Erreurs restantes connues : « Northside Hospital Peachtree Road Race » (le
+sponsor de l'ancien nom, l'AJC, n'est pas un partenaire connu : ajouter un
+alias), « adidas Stockholm Half » rapproche de la ligne SEMI, vide, de
+Midnattsloppet.
+
 ## Rapprochement des noms d'epreuve : par suite de mots
 
 `memeEpreuve(a,b)` dans `generate_dashboard.py` est le seul critere utilise
