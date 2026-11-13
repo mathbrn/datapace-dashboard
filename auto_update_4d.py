@@ -42,8 +42,15 @@ LOGS_DIR.mkdir(exist_ok=True)
 # ============================================================================
 # WORLD ATHLETICS CALENDAR
 # ============================================================================
-WA_ENDPOINT = "https://graphql-prod-4860.edge.aws.worldathletics.org/graphql"
-WA_API_KEY = "da2-5eqvkoavsnhjxfqd47jvjteray"
+# Valeurs par defaut, decouvertes le 13 novembre 2026 dans les scripts de
+# worldathletics.org. L'identifiant numerique de l'hote AppSync (4860, puis
+# 4897) et la cle changent sans preavis : c'est ce qui a tue le catalogue en
+# juin 2026. Ils sont donc redecouverts automatiquement (cf. _wa_decouvrir)
+# des que l'appel echoue, et le couple qui marche est garde dans
+# wa_endpoint.json, commite par le cron.
+WA_ENDPOINT = "https://graphql-prod-4897.edge.aws.worldathletics.org/graphql"
+WA_API_KEY = "da2-rg637liqmjat5azoaaxfbpd7iq"
+WA_CACHE = SCRIPT_DIR / "wa_endpoint.json"
 
 WA_QUERY = """
 query getCalendarEvents($startDate: String, $endDate: String, $regionType: String, $limit: Int, $offset: Int) {
@@ -59,10 +66,93 @@ class WorldAthleticsUnavailable(RuntimeError):
     ce jour-la. A distinguer d'un jour sans course."""
 
 
+def _wa_essai(endpoint, cle):
+    """Le couple (endpoint, cle) repond-il a une requete minimale ?"""
+    # Requete jamais vue du CDN : devant l'API, CloudFront met les reponses en
+    # cache sans tenir compte de la cle, si bien qu'une requete deja servie
+    # « marche » avec n'importe quelle cle. Une plage de dates et une taille
+    # tirees au hasard forcent un vrai appel, qui lui rend 503 si la cle est
+    # mauvaise.
+    import random
+    j0 = datetime.date(2020, 1, 1) + datetime.timedelta(days=random.randint(0, 2500))
+    try:
+        r = requests.post(endpoint, json={
+            "query": WA_QUERY,
+            "variables": {"startDate": j0.isoformat(),
+                          "endDate": (j0 + datetime.timedelta(days=1)).isoformat(),
+                          "regionType": "world", "limit": random.randint(2, 99),
+                          "offset": 0}},
+            headers={"x-api-key": cle, "Content-Type": "application/json",
+                     "User-Agent": "Mozilla/5.0"}, timeout=30)
+        return r.ok and "getCalendarEvents" in (r.json().get("data") or {})
+    except Exception:
+        return False
+
+
+def _wa_decouvrir():
+    """Retrouve l'endpoint GraphQL et sa cle dans les scripts du site.
+
+    La page calendrier de worldathletics.org charge ses chunks Next.js ; l'un
+    d'eux porte l'URL `graphql-prod-NNNN.edge.aws.worldathletics.org` et
+    plusieurs cles `da2-...` (une par service). On teste chaque cle contre
+    chaque endpoint trouve et on garde le premier couple qui repond.
+    """
+    import re
+    base = "https://worldathletics.org"
+    h = {"User-Agent": "Mozilla/5.0"}
+    page = requests.get(base + "/competition/calendar-results", headers=h, timeout=40).text
+    chunks = sorted(set(re.findall(r'"(/_next/static/[^"]+\.js)"', page)))
+    texte = ""
+    for c in chunks:
+        try:
+            texte += requests.get(base + c, headers=h, timeout=30).text
+        except Exception:
+            continue
+    endpoints = sorted(set(re.findall(
+        r"https://graphql-prod-\d+\.edge\.aws\.worldathletics\.org/graphql", texte)))
+    cles = sorted(set(re.findall(r"da2-[a-z0-9]{26}", texte)))
+    print(f"  WA decouverte : {len(chunks)} scripts, {len(endpoints)} endpoint(s), {len(cles)} cle(s)")
+    for ep in endpoints:
+        for k in cles:
+            if _wa_essai(ep, k):
+                return ep, k
+    return None
+
+
+def _wa_config():
+    """(endpoint, cle) utilisables : cache, puis valeurs par defaut, puis
+    redecouverte. Leve WorldAthleticsUnavailable si rien ne repond."""
+    candidats = []
+    if WA_CACHE.exists():
+        try:
+            c = json.loads(WA_CACHE.read_text(encoding="utf-8"))
+            candidats.append((c["endpoint"], c["api_key"]))
+        except Exception:
+            pass
+    candidats.append((WA_ENDPOINT, WA_API_KEY))
+    for ep, k in candidats:
+        if _wa_essai(ep, k):
+            return ep, k
+    print("  WA : endpoint ou cle perime, redecouverte depuis worldathletics.org")
+    try:
+        trouve = _wa_decouvrir()
+    except Exception as e:
+        raise WorldAthleticsUnavailable(f"decouverte impossible : {e}") from e
+    if not trouve:
+        raise WorldAthleticsUnavailable("aucun couple endpoint/cle ne repond")
+    ep, k = trouve
+    WA_CACHE.write_text(json.dumps({"endpoint": ep, "api_key": k,
+                                    "decouvert_le": datetime.date.today().isoformat()},
+                                   indent=2), encoding="utf-8")
+    print(f"  WA : nouvel endpoint {ep}")
+    return ep, k
+
+
 def fetch_worldathletics_races(date_str, window_days=1):
     """Fetch road races with ±window_days around the given date."""
+    endpoint, cle = _wa_config()
     sess = requests.Session()
-    sess.headers.update({"x-api-key": WA_API_KEY, "Content-Type": "application/json"})
+    sess.headers.update({"x-api-key": cle, "Content-Type": "application/json"})
     target = datetime.date.fromisoformat(date_str)
     start = (target - datetime.timedelta(days=window_days)).isoformat()
     end = (target + datetime.timedelta(days=window_days)).isoformat()
@@ -72,7 +162,7 @@ def fetch_worldathletics_races(date_str, window_days=1):
         # Une exception non rattrapee ici faisait planter tout le run : ni log
         # ecrit, ni commit, donc aucune trace du jour manque.
         try:
-            resp = sess.post(WA_ENDPOINT, json={
+            resp = sess.post(endpoint, json={
                 "query": WA_QUERY,
                 "variables": {"startDate": start, "endDate": end,
                               "regionType": "world", "limit": 100, "offset": offset}
@@ -291,8 +381,9 @@ def match_wa_to_ours(wa_races, our_events):
         "tcs amsterdam marathon": "TCS Amsterdam Marathon",
         "amsterdam marathon": "TCS Amsterdam Marathon",
         "stockholm marathon": "Stockholm Marathon",
-        "athens classic marathon": "Athens Classic Marathon",
-        "athens marathon": "Athens Classic Marathon",
+        "athens classic marathon": "Allwyn Athens Marathon",
+        "athens marathon": "Allwyn Athens Marathon",
+        "athens marathon. the authentic": "Allwyn Athens Marathon",
         "generali berlin half marathon": "Generali Berlin Half Marathon",
         "berlin half marathon": "Generali Berlin Half Marathon",
         "brighton marathon": "Brighton Marathon",
@@ -322,6 +413,12 @@ def match_wa_to_ours(wa_races, our_events):
     STOPWORDS = {"the", "de", "la", "le", "les", "du", "of", "a", "and", "et",
                  "marathon", "semi", "half", "run", "race", "runs", "races",
                  "10k", "21k", "42k", "10km", "city", "international"}
+    # Le catalogue melange piste, cross et route : seules les courses sur
+    # route peuvent etre nos epreuves. Le 8 novembre 2026, le « Cardiff Cross
+    # Challenge » (cross-country) se rapprochait du Cardiff Half Marathon.
+    wa_races = [w for w in wa_races
+                if "road" in (w.get("disciplines") or "").lower()
+                or not w.get("disciplines")]
     for wa in wa_races:
         wa_name = normalize_name(wa.get("name", ""))
         wa_venue_raw = wa.get("venue", "") or ""
@@ -358,6 +455,13 @@ def match_wa_to_ours(wa_races, our_events):
                     score += 5
                 else:
                     score -= 10  # strong penalty for country mismatch
+            # Distance incompatible : « Boston Half » n'est pas le Boston
+            # Marathon (faux positif du 8 novembre 2026). Un nom WA qui
+            # annonce un semi ne peut pas designer une ligne MARATHON.
+            wa_semi = any(m in wa_name.split() for m in
+                          ("half", "semi", "meia", "medio", "mezza", "halb", "halbmarathon", "21k", "21km"))
+            if wa_semi and ev.get("distance") == "MARATHON":
+                score -= 15
             # Distance type match
             if "half" in wa_name and ev.get("distance") == "SEMI":
                 score += 3
@@ -2150,7 +2254,7 @@ def _git_commit_et_pousse(msg):
     return False
 
 
-def run_one(target_date, dry_run=False, regenerate=True, commit=True):
+def run_one(target_date, dry_run=False, regenerate=True, commit=True, repli=True):
     """Traite une seule date. Retourne le log de la journee."""
     date_str = target_date.isoformat()
     print(f"=== Auto Update 4D for {date_str} ===")
@@ -2191,6 +2295,21 @@ def run_one(target_date, dry_run=False, regenerate=True, commit=True):
                 best_per_event[k] = m
         matches = list(best_per_event.values())
         print(f"  After dedup: {len(matches)} unique events")
+        # Le calendrier ne liste que les courses du jour (±1). Le balayage par
+        # mois, qui reprend toute epreuve passee dont une donnee manque encore,
+        # ne tournait qu'en cas de panne du catalogue : reparer World
+        # Athletics aurait donc fait perdre les rattrapages (New York 2026,
+        # chronos et temps moyens repris au passage suivant). Les deux sont
+        # desormais cumules, sans doublon (epreuve, distance).
+        if repli:
+            deja = {(m["our"]["name"], m["our"].get("distance")) for m in matches}
+            en_plus = [m for m in events_due_without_calendar(our_events, target_date)
+                       if (m["our"]["name"], m["our"].get("distance")) not in deja]
+            matches += en_plus
+            log["mode"] = "calendar+fallback"
+            print(f"  + balayage par mois : {len(en_plus)} epreuve(s) en plus")
+        else:
+            log["mode"] = "calendar"
     log["matched"] = [{"wa_name": m["wa"]["name"], "our_name": m["our"]["name"],
                        "score": m.get("score")} for m in matches]
 
@@ -2418,7 +2537,10 @@ def main():
             day = d0 + datetime.timedelta(days=i)
             try:
                 # un seul regen + un seul commit a la fin de la plage
-                log = run_one(day, dry_run=args.dry_run, regenerate=False, commit=False)
+                # Le balayage par mois ne depend pas du jour : une seule
+                # passe, sur le dernier jour de la plage.
+                log = run_one(day, dry_run=args.dry_run, regenerate=False,
+                              commit=False, repli=(day == d1))
                 all_updates.extend(log["updates"])
                 if log.get("mode") == "fallback_no_calendar":
                     # Sans calendrier le balayage ne depend plus du jour mais du

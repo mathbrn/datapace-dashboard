@@ -751,17 +751,53 @@ confirmer la course servie. Les suffixes `H` (`42KH`, `10KH`) sont les
   fini, lit les totaux et retient le plus grand (le general). Epreuves mappees :
   sydney-marathon, city2surf, runaway-sydney-half-marathon, bridge-to-brisbane.
 
-### 9. World Athletics GraphQL (catalogue) — ENDPOINT MORT depuis juin 2026
-- **Endpoint** : `https://graphql-prod-4860.edge.aws.worldathletics.org/graphql`
-  → **ne resout plus en DNS** (`Name or service not known`). L'identifiant
-  numerique (`4860`) de cet hote AWS AppSync est tournant : il faut le
-  re-decouvrir dans les requetes reseau de worldathletics.org et mettre a jour
-  `WA_ENDPOINT` (et probablement `WA_API_KEY`) dans `auto_update_4d.py`.
-  En attendant, `auto_update_4d.py` bascule automatiquement en **mode repli**
-  (voir plus bas) : le catalogue n'est plus un point de panne unique.
-- **API Key** : `da2-5eqvkoavsnhjxfqd47jvjteray`
-- **Operation** : `getCalendarEvents` avec variables startDate/endDate/regionType/limit/offset
-- **Donnees** : Catalogue de 807 road races/an (pas de resultats de masse)
+### 9. World Athletics GraphQL (catalogue) — retabli le 13 novembre 2026
+- **Endpoint** : `https://graphql-prod-4897.edge.aws.worldathletics.org/graphql`
+  (etait `4860` jusqu'a juin 2026). **L'identifiant numerique de l'hote
+  tourne sans preavis**, et la cle avec : c'est ce qui a tue le catalogue en
+  juin.
+- **Redecouverte automatique** (`_wa_config()` dans `auto_update_4d.py`) :
+  cache `wa_endpoint.json`, puis valeurs par defaut, puis lecture des scripts
+  Next.js de `worldathletics.org/competition/calendar-results`, qui portent
+  l'URL `graphql-prod-NNNN...` et 8 cles `da2-...` (une seule sert le
+  calendrier : `da2-rg637liqmjat5azoaaxfbpd7iq` au 13 novembre). Le couple
+  qui repond est ecrit dans `wa_endpoint.json`, commite par le cron.
+- **Piege du test de cle** : CloudFront met les reponses en cache **sans
+  tenir compte de la cle**. Une requete deja servie « marche » avec n'importe
+  quelle cle, alors qu'une vraie requete avec une mauvaise cle rend 503.
+  `_wa_essai()` tire donc une plage de dates et une taille au hasard pour
+  forcer un appel reel.
+- **Operation** : `getCalendarEvents` (startDate, endDate, regionType,
+  limit, offset). Champs utiles : `id name venue area startDate dateRange
+  disciplines rankingCategory hasResults`.
+- **Contenu** : 9 291 evenements en 2026, dont **1 255 sur route** (le reste :
+  piste, cross, marche). Seule la route nous concerne : `match_wa_to_ours()`
+  ecarte le reste (le « Cardiff Cross Challenge » se rapprochait du Cardiff
+  Half Marathon). Rapprochement grossier mesure : ~35 % des noms d'epreuve
+  du dashboard se retrouvent dans le catalogue route 2026.
+- **Faux positifs de distance** : un nom WA qui annonce un semi (half, semi,
+  meia, medio, mezza, halb, 21k) prend -15 contre une ligne MARATHON
+  (« Boston Half » n'est pas le Boston Marathon).
+- **Calendrier ET balayage par mois, cumules.** Le balayage
+  (`events_due_without_calendar`) ne tournait qu'en cas de panne du
+  catalogue : reparer World Athletics aurait fait perdre les rattrapages
+  (New York 2026, chronos et moyennes repris au passage suivant). Les deux
+  sont desormais cumules, sans doublon (epreuve, distance) ; log
+  `mode: calendar+fallback`. En backfill, le balayage ne tourne que sur le
+  dernier jour de la plage.
+
+### 9b. Autres catalogues evalues le 13 novembre 2026
+- **AIMS** (`https://aims-worldrunning.org/events.ics`) : flux iCalendar
+  public, ~430 courses membres (marathons et courses sur route du monde
+  entier), **a venir uniquement** (de M a M+15). Chaque entree porte date,
+  pays, URL du site et **nom du directeur de course**. Source candidate pour
+  les dates « A venir » et les organisateurs.
+- **RunSignup** (`https://runsignup.com/Rest/races?format=json`) : API
+  publique sans cle, epreuves americaines, catalogue enorme mais domine par
+  de petites courses.
+- **ahotu.com, worldsmarathons.com** : 403 (protection anti-robot).
+- **marathon-index.com** : chiffres affiches comme estimations (« ≈ »),
+  inutilisables.
 
 ### 10. SportTimingSolutions (Inde)
 - **API** : `https://sportstimingsolutions.in/frontend/api/`
