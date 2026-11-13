@@ -909,15 +909,6 @@
   "nom_femme": null
  },
  {
-  "course": "Okpekpe 10KM Road Race",
-  "distance": "10KM",
-  "annee": 2026,
-  "temps_homme": null,
-  "nom_homme": null,
-  "temps_femme": "0:34:18",
-  "nom_femme": null
- },
- {
   "course": "Jilin City Marathon",
   "distance": "MARATHON",
   "annee": 2026,
@@ -933,15 +924,6 @@
   "temps_homme": "2:14:19",
   "nom_homme": null,
   "temps_femme": "2:35:35",
-  "nom_femme": null
- },
- {
-  "course": "10KM Port Gentil",
-  "distance": "10KM",
-  "annee": 2026,
-  "temps_homme": "0:27:49",
-  "nom_homme": null,
-  "temps_femme": "0:30:52",
   "nom_femme": null
  },
  {

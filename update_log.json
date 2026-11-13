@@ -63,15 +63,6 @@
       "timestamp": "2026-11-13T14:47:50Z"
     },
     {
-      "event": "10KM Port Gentil",
-      "date": "2026-06-28",
-      "data": {
-        "winner_men": "0:27:49",
-        "winner_women": "0:30:52"
-      },
-      "timestamp": "2026-11-13T14:47:50Z"
-    },
-    {
       "event": "Kigali International Peace Marathon",
       "date": "2026-06-14",
       "data": {
@@ -86,14 +77,6 @@
       "data": {
         "winner_men": "2:13:37",
         "winner_women": "2:33:27"
-      },
-      "timestamp": "2026-11-13T14:47:50Z"
-    },
-    {
-      "event": "Okpekpe 10KM Road Race",
-      "date": "2026-05-30",
-      "data": {
-        "winner_women": "0:34:18"
       },
       "timestamp": "2026-11-13T14:47:50Z"
     },
