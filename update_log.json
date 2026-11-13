@@ -1,6 +1,30 @@
 {
   "updates": [
     {
+      "event": "EDP Maratona de Lisboa",
+      "date": "2026-11-12",
+      "data": {
+        "avg_time": "02:02:47"
+      },
+      "timestamp": "2026-11-13T13:39:35Z"
+    },
+    {
+      "event": "TCS Amsterdam Marathon",
+      "date": "2026-11-12",
+      "data": {
+        "avg_time": "02:00:32"
+      },
+      "timestamp": "2026-11-13T13:39:33Z"
+    },
+    {
+      "event": "EDP Lisboa Meia Maratona",
+      "date": "2026-11-12",
+      "data": {
+        "avg_time": "01:08:55"
+      },
+      "timestamp": "2026-11-13T13:39:03Z"
+    },
+    {
       "event": "Standard Chartered Hong Kong Marathon",
       "date": "2025-01-01",
       "data": {
