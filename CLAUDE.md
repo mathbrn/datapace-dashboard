@@ -1348,10 +1348,25 @@ Dans l'ordre :
 premiere version et un ancien score qui confondait Boston Half et Boston
 Marathon. Reglages choisis par balayage sur ce jeu : avec 66 cas, le risque
 de sur-ajustement est reel, **enrichir le jeu a chaque erreur constatee**.
-Erreurs restantes connues : « Northside Hospital Peachtree Road Race » (le
-sponsor de l'ancien nom, l'AJC, n'est pas un partenaire connu : ajouter un
-alias), « adidas Stockholm Half » rapproche de la ligne SEMI, vide, de
-Midnattsloppet.
+Erreur restante connue : « adidas Stockholm Half » rapproche de la ligne
+SEMI, vide, de Midnattsloppet. (« Northside Hospital Peachtree Road Race »,
+dont l'ancien sponsor AJC n'est pas un partenaire connu, est regle par alias.)
+
+**REGLE PERMANENTE — enrichir le module au fil du dashboard.** Le module ne
+vaut que par ses cas. A chaque fois que le dashboard bouge :
+- **renommage, regroupement ou nouvel evenement** : rien a faire pour les
+  noms internes (lus dans ALL et `course_names.json`), mais ajouter dans
+  `event_aliases.json` le nom sous lequel le catalogue exterieur connait
+  l'epreuve s'il differe (nouveau sponsor, nom local) ;
+- **rapprochement errone constate** (faux positif ou course ratee, dans un
+  log du cron ou en Update 4D manuelle) : l'ajouter a
+  `rapprochement_gold.json` avec la ligne attendue (ou `null`), puis corriger
+  par alias ou par la regle en cause ;
+- **nouvelle ville en francais dans l'Excel** : l'ajouter a `VILLES` avec sa
+  forme locale ;
+- **toujours relancer `python rapprochement.py --eval`** apres une
+  modification du module et noter ici la precision et le rappel s'ils
+  changent. Ne jamais accepter une regle qui fait baisser l'un des deux.
 
 ## Rapprochement des noms d'epreuve : par suite de mots
 

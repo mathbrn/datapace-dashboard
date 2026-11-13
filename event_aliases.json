@@ -161,6 +161,10 @@
     "nn cpc loop den haag": {
       "evenement": "NN CPC Loop Den Haag",
       "distance": "SEMI"
+    },
+    "northside hospital peachtree road race": {
+      "evenement": "Atlanta Journal-Constitution Peachtree Road Race",
+      "distance": "10KM"
     }
   }
 }
