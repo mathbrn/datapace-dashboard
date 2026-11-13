@@ -202,6 +202,32 @@ def validate_data(rows, source_name):
     return issues
 
 
+ORGANISATEUR_ASO = "Amaury Sport Organisation"
+_ORGANISATEURS = None
+
+
+def organisateur(race_name):
+    """Organisateur de l'epreuve d'apres event_organizers.json, ou ''.
+
+    Le fichier est lu une fois par generation. La cle est le nom exact de
+    l'onglet ALL, espaces parasites retires des deux cotes.
+    """
+    global _ORGANISATEURS
+    if _ORGANISATEURS is None:
+        _ORGANISATEURS = {}
+        chemin = Path(__file__).parent / "event_organizers.json"
+        try:
+            with open(chemin, encoding="utf-8") as f:
+                brut = json.load(f)
+            _ORGANISATEURS = {
+                str(k).replace("\xa0", " ").strip(): v
+                for k, v in brut.items()
+                if not str(k).startswith("_") and isinstance(v, str)}
+        except (OSError, ValueError) as exc:
+            print(f"  event_organizers.json illisible : {exc}")
+    return _ORGANISATEURS.get(str(race_name).replace("\xa0", " ").strip(), "")
+
+
 def compute_circuits(race_name, distance, city):
     """Return list of circuit codes for a given event."""
     circuits = []
@@ -210,8 +236,11 @@ def compute_circuits(race_name, distance, city):
     # WMM
     if any(k in rl for k in WMM_KEYWORDS):
         circuits.append("WMM")
-    # ASO
-    if any(k in rl for k in ASO_KEYWORDS):
+    # ASO : par mot-cle du nom, ou par l'organisateur declare. Le second
+    # critere rend le badge automatique : renseigner « Amaury Sport
+    # Organisation » dans event_organizers.json suffit.
+    if (any(k in rl for k in ASO_KEYWORDS)
+            or organisateur(race_name) == ORGANISATEUR_ASO):
         circuits.append("ASO")
     # EMC — marathon distance, European cities
     if distance == "MARATHON" and cl in EMC_CITIES:

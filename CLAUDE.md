@@ -483,6 +483,13 @@ a confusion avec 10KM/SEMI. Le critere est la distance reelle en km.
 ### Badges evenements
 - `WMM` (bleu #38BDF8) : World Marathon Majors (NYC, London, Boston, Sydney, Berlin, Chicago, Tokyo)
 - `ASO` (jaune #FCDB00) : Evenements ASO (Paris, Lyon, 10K Paris, Montmartre, Manchester, London Winter Run, ASICS LDNX)
+  **Attribution automatique** : `compute_circuits()` donne le badge a toute
+  epreuve dont l'organisateur, dans `event_organizers.json`, vaut exactement
+  `Amaury Sport Organisation` — en plus des mots-cles de `ASO_KEYWORDS`,
+  conserves pour ne rien retirer. Ajouter une epreuve ASO revient donc a
+  renseigner son organisateur. Ont gagne le badge a la mise en place :
+  Harmonie Mutuelle 20km de Paris et le Marathon de Bordeaux AG2R LA
+  MONDIALE (3 distances).
 - `Autre` (violet #9B6FFF) : Tous les autres
 
 ### Premiere edition
