@@ -1019,6 +1019,13 @@ donc repris au passage suivant du cron, sans intervention.
 
 ## Scripts utilitaires
 
+**PIEGE (survenu deux fois) : ne jamais tronquer la sortie de
+`update_finishers.py`** avec `| head` : le SIGPIPE tue le script avant
+`wb.save()`, il affiche « [NOUVEAU] » mais **rien n'est ecrit**. Rediriger la
+sortie vers un fichier, puis relire la cellule dans l'Excel avant de
+commiter.
+
+
 - `update_finishers.py "Race Name" DISTANCE YEAR COUNT` : Met a jour une cellule (avec protection SKIP)
 - `add_event.py "Period" "City" "Distance" "Race Name" [YEAR COUNT ...]` : Ajoute un nouvel evenement
 - `create_chronos.py` : Genere Chronos_Vainqueurs.xlsx depuis les donnees en dur
