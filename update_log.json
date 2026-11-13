@@ -2,6 +2,14 @@
   "updates": [
     {
       "event": "Indianapolis Monumental Marathon",
+      "date": "2025-01-01",
+      "data": {
+        "finishers": 1117
+      },
+      "timestamp": "2026-11-13T13:02:12Z"
+    },
+    {
+      "event": "Indianapolis Monumental Marathon",
       "date": "2026-01-01",
       "data": {
         "finishers": 728
