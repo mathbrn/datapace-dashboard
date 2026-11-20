@@ -1,7 +1,7 @@
 {
  "_commentaire": "Genere par maj_labels_wa.py : niveau de label World Athletics (Platinum, Gold, Elite, Label) par ligne 'Evenement|DISTANCE'. Ne pas editer a la main ; corriger un rapprochement dans event_aliases.json.",
  "annee": 2026,
- "maj_le": "2026-11-13",
+ "maj_le": "2026-11-20",
  "labels": {
   "10K Night Race Prague|10KM": {
    "label": "Label",
@@ -801,13 +801,6 @@
    "wa_id": 7235697,
    "score": 1.0
   },
-  "Midnattsloppet Stockholm|SEMI": {
-   "label": "Label",
-   "annee": 2026,
-   "nom_wa": "adidas Stockholm Half Marathon",
-   "wa_id": 7236393,
-   "score": 0.646
-  },
   "Milano Marathon|MARATHON": {
    "label": "Label",
    "annee": 2026,
@@ -1337,17 +1330,17 @@
    "lieu": "Shanghai (CHN)"
   },
   {
+   "nom": "3rd Lok Sahaita 10K Women's Run",
+   "label": "Label",
+   "lieu": "Sukkur (PAK)"
+  },
+  {
    "nom": "Shenzhen Nanshan Half Marathon",
    "label": "Elite",
    "lieu": "Shenzhen (CHN)"
   },
   {
    "nom": "3rd Lok Sahaita Marathon",
-   "label": "Label",
-   "lieu": "Sukkur (PAK)"
-  },
-  {
-   "nom": "3rd Lok Sahaita 10K Women's Run",
    "label": "Label",
    "lieu": "Sukkur (PAK)"
   },
@@ -1367,24 +1360,14 @@
    "lieu": "Langkawi (MAS)"
   },
   {
+   "nom": "Galaxy Entertainment Macao International Half Marathon",
+   "label": "Label",
+   "lieu": "Macao (MAC)"
+  },
+  {
    "nom": "Pertamina ECO Runfest",
    "label": "Elite",
    "lieu": "Jakarta (INA)"
-  },
-  {
-   "nom": "Semi Marathon International Tamansourt",
-   "label": "Label",
-   "lieu": "Tamansourt (MAR)"
-  },
-  {
-   "nom": "Brunei International Half Marathon",
-   "label": "Label",
-   "lieu": "B.S.Begawan (BRU)"
-  },
-  {
-   "nom": "Pampulha Round- 27ª Volta Internacional da Pampulha",
-   "label": "Label",
-   "lieu": "Belo Horizonte (BRA)"
   },
   {
    "nom": "Xiamen Haicang Half Marathon",
@@ -1392,14 +1375,24 @@
    "lieu": "Xiamen (CHN)"
   },
   {
+   "nom": "Semi Marathon International Tamansourt",
+   "label": "Label",
+   "lieu": "Tamansourt (MAR)"
+  },
+  {
    "nom": "Galaxy Entertainment Macao International Marathon",
    "label": "Label",
    "lieu": "Macao (MAC)"
   },
   {
-   "nom": "Galaxy Entertainment Macao International Half Marathon",
+   "nom": "Pampulha Round- 27ª Volta Internacional da Pampulha",
    "label": "Label",
-   "lieu": "Macao (MAC)"
+   "lieu": "Belo Horizonte (BRA)"
+  },
+  {
+   "nom": "Brunei International Half Marathon",
+   "label": "Label",
+   "lieu": "B.S.Begawan (BRU)"
   },
   {
    "nom": "Red Sea Half Marathon",
@@ -1407,9 +1400,9 @@
    "lieu": "Aqaba (JOR)"
   },
   {
-   "nom": "Venus Womens Half Marathon",
+   "nom": "Guang'an Marathon",
    "label": "Label",
-   "lieu": "São Paulo (BRA)"
+   "lieu": "Guang'an (CHN)"
   },
   {
    "nom": "Beirut Marathon",
@@ -1417,9 +1410,9 @@
    "lieu": "Beirut (LBN)"
   },
   {
-   "nom": "Guang'an Marathon",
+   "nom": "Venus Womens Half Marathon",
    "label": "Label",
-   "lieu": "Guang'an (CHN)"
+   "lieu": "São Paulo (BRA)"
   },
   {
    "nom": "Manchester Road Race",
@@ -1427,29 +1420,9 @@
    "lieu": "Manchester, CT (USA)"
   },
   {
-   "nom": "Milano Half Marathon",
-   "label": "Label",
-   "lieu": "Milano (ITA)"
-  },
-  {
    "nom": "China-Asean Marathon",
    "label": "Label",
    "lieu": "Fangchenggang (CHN)"
-  },
-  {
-   "nom": "Korat Marathon",
-   "label": "Label",
-   "lieu": "Nakhon Ratchasima (THA)"
-  },
-  {
-   "nom": "Huangshi Half Marathon",
-   "label": "Elite",
-   "lieu": "Huangshi (CHN)"
-  },
-  {
-   "nom": "TIAA Philadelphia Marathon",
-   "label": "Label",
-   "lieu": "Philadelphia, PA (USA)"
   },
   {
    "nom": "Yiwu Half Marathon",
@@ -1457,19 +1430,19 @@
    "lieu": "Yiwu (CHN)"
   },
   {
-   "nom": "Maraton Monumental",
+   "nom": "Milano Half Marathon",
    "label": "Label",
-   "lieu": "Santiago de los Caballeros (DOM)"
+   "lieu": "Milano (ITA)"
   },
   {
-   "nom": "Maratona de Curitiba",
+   "nom": "TIAA Philadelphia Marathon",
    "label": "Label",
-   "lieu": "Curitiba (BRA)"
+   "lieu": "Philadelphia, PA (USA)"
   },
   {
-   "nom": "Guilin Marathon",
-   "label": "Label",
-   "lieu": "Guilin (CHN)"
+   "nom": "Huangshi Half Marathon",
+   "label": "Elite",
+   "lieu": "Huangshi (CHN)"
   },
   {
    "nom": "Bank of China Hong Kong-Zhuhai-Macao Bridge Half Marathon",
@@ -1477,9 +1450,9 @@
    "lieu": "Hong Kong (HKG)"
   },
   {
-   "nom": "November Run, 5 km - 10 km",
+   "nom": "Guilin Marathon",
    "label": "Label",
-   "lieu": "Gevgelija (MKD)"
+   "lieu": "Guilin (CHN)"
   },
   {
    "nom": "Nanchang Marathon",
@@ -1487,19 +1460,34 @@
    "lieu": "Nanchang (CHN)"
   },
   {
+   "nom": "November Run, 5 km - 10 km",
+   "label": "Label",
+   "lieu": "Gevgelija (MKD)"
+  },
+  {
+   "nom": "Maratona de Curitiba",
+   "label": "Label",
+   "lieu": "Curitiba (BRA)"
+  },
+  {
    "nom": "Abuja Premium Trust Half Marathon",
    "label": "Label",
    "lieu": "Abuja (NGR)"
   },
   {
-   "nom": "PLN Electric Run",
-   "label": "Label",
-   "lieu": "South Tangerang (INA)"
-  },
-  {
    "nom": "Boston Half",
    "label": "Label",
    "lieu": "Boston, MA (USA)"
+  },
+  {
+   "nom": "Korat Marathon",
+   "label": "Label",
+   "lieu": "Nakhon Ratchasima (THA)"
+  },
+  {
+   "nom": "PLN Electric Run",
+   "label": "Label",
+   "lieu": "South Tangerang (INA)"
   },
   {
    "nom": "Hangzhou Qiantang Women's Half Marathon",
@@ -1517,14 +1505,14 @@
    "lieu": "Xichang (CHN)"
   },
   {
-   "nom": "Yichang Marathon",
-   "label": "Label",
-   "lieu": "Yichang (CHN)"
-  },
-  {
    "nom": "ChangZhou West Taihu Lake Half Marathon",
    "label": "Elite",
    "lieu": "Changzhou (CHN)"
+  },
+  {
+   "nom": "Yichang Marathon",
+   "label": "Label",
+   "lieu": "Yichang (CHN)"
   },
   {
    "nom": "Round Lihu Lake Half Marathon",
@@ -1537,14 +1525,14 @@
    "lieu": "New York, NY (USA)"
   },
   {
-   "nom": "Venicemarathon",
-   "label": "Label",
-   "lieu": "Venezia (ITA)"
-  },
-  {
    "nom": "Media Maratón del Callao",
    "label": "Label",
    "lieu": "Callao (PER)"
+  },
+  {
+   "nom": "Venicemarathon",
+   "label": "Label",
+   "lieu": "Venezia (ITA)"
   },
   {
    "nom": "Mae Moh Half Marathon",
@@ -1557,14 +1545,14 @@
    "lieu": "Xi'an (CHN)"
   },
   {
-   "nom": "Marathon München by Brooks",
-   "label": "Label",
-   "lieu": "München (GER)"
-  },
-  {
    "nom": "Perth Running Festival - WA State Marathon Championships",
    "label": "Label",
    "lieu": "Perth (AUS)"
+  },
+  {
+   "nom": "Marathon München by Brooks",
+   "label": "Label",
+   "lieu": "München (GER)"
   },
   {
    "nom": "Canadian 5 km Road Championship",
@@ -1572,14 +1560,14 @@
    "lieu": "Montréal (CAN)"
   },
   {
-   "nom": "tRUNsylvania International 10K Brasov",
-   "label": "Elite",
-   "lieu": "Brasov (ROU)"
-  },
-  {
    "nom": "Košice Peace Marathon",
    "label": "Label",
    "lieu": "Košice (SVK)"
+  },
+  {
+   "nom": "tRUNsylvania International 10K Brasov",
+   "label": "Elite",
+   "lieu": "Brasov (ROU)"
   },
   {
    "nom": "TC 10K",
@@ -1612,19 +1600,19 @@
    "lieu": "Lusaka (ZAM)"
   },
   {
-   "nom": "Meia Maratona do Sol Sicredi",
-   "label": "Label",
-   "lieu": "Natal (BRA)"
-  },
-  {
    "nom": "Maratón Ciudad de Buenos Aires",
    "label": "Label",
    "lieu": "Buenos Aires (ARG)"
   },
   {
-   "nom": "Scenic Half Marathon Krabi",
+   "nom": "Meia Maratona do Sol Sicredi",
    "label": "Label",
-   "lieu": "Krabi (THA)"
+   "lieu": "Natal (BRA)"
+  },
+  {
+   "nom": "Izmir Half Marathon",
+   "label": "Label",
+   "lieu": "Izmir (TUR)"
   },
   {
    "nom": "New Balance 5th Avenue Mile",
@@ -1632,9 +1620,9 @@
    "lieu": "New York, NY (USA)"
   },
   {
-   "nom": "Izmir Half Marathon",
+   "nom": "Scenic Half Marathon Krabi",
    "label": "Label",
-   "lieu": "Izmir (TUR)"
+   "lieu": "Krabi (THA)"
   },
   {
    "nom": "Brose Night Run Prievidza",
@@ -1647,14 +1635,14 @@
    "lieu": "Düsseldorf (GER)"
   },
   {
-   "nom": "Telekom Night Run Bratislava",
-   "label": "Label",
-   "lieu": "Bratislava (SVK)"
-  },
-  {
    "nom": "11. Wizz Air Warsaw Praski Night Half Marathon",
    "label": "Label",
    "lieu": "Warszawa (POL)"
+  },
+  {
+   "nom": "Telekom Night Run Bratislava",
+   "label": "Label",
+   "lieu": "Bratislava (SVK)"
   },
   {
    "nom": "Maratona Internacional de Floripa Fibra",
@@ -1662,14 +1650,9 @@
    "lieu": "Florianópolis (BRA)"
   },
   {
-   "nom": "Media Maratón Ciudad de Buenos Aires",
+   "nom": "adidas Stockholm Half Marathon",
    "label": "Label",
-   "lieu": "Buenos Aires (ARG)"
-  },
-  {
-   "nom": "Songkhla Marathon",
-   "label": "Label",
-   "lieu": "Songkhla (THA)"
+   "lieu": "Stockholm (SWE)"
   },
   {
    "nom": "XXII 10 km Internacional Guadalajara Bomberos",
@@ -1677,13 +1660,23 @@
    "lieu": "Guadalajara (MEX)"
   },
   {
-   "nom": "Antrim Coast 5k",
+   "nom": "Songkhla Marathon",
    "label": "Label",
-   "lieu": "Larne (GBR)"
+   "lieu": "Songkhla (THA)"
+  },
+  {
+   "nom": "Media Maratón Ciudad de Buenos Aires",
+   "label": "Label",
+   "lieu": "Buenos Aires (ARG)"
   },
   {
    "nom": "Antrim Coast Half Marathon",
    "label": "Elite",
+   "lieu": "Larne (GBR)"
+  },
+  {
+   "nom": "Antrim Coast 5k",
+   "label": "Label",
    "lieu": "Larne (GBR)"
   },
   {
@@ -1722,6 +1715,11 @@
    "lieu": "1000 Shore Road, Cape Elizabeth, ME (USA)"
   },
   {
+   "nom": "SP City Marathon",
+   "label": "Label",
+   "lieu": "São Paulo (BRA)"
+  },
+  {
    "nom": "Media Maraton de Bogota",
    "label": "Elite",
    "lieu": "Bogotá (COL)"
@@ -1730,11 +1728,6 @@
    "nom": "Yala Marathon",
    "label": "Label",
    "lieu": "Yala (THA)"
-  },
-  {
-   "nom": "SP City Marathon",
-   "label": "Label",
-   "lieu": "São Paulo (BRA)"
   },
   {
    "nom": "Giro Podistico Internazionale di Castelbuono",
@@ -1807,14 +1800,14 @@
    "lieu": "Riverbend Park, Launceston (AUS)"
   },
   {
-   "nom": "10K SP challenge",
-   "label": "Label",
-   "lieu": "São Paulo (BRA)"
-  },
-  {
    "nom": "41º Maratona Internacional de Porto Alegre",
    "label": "Label",
    "lieu": "Porto Alegre (BRA)"
+  },
+  {
+   "nom": "10K SP challenge",
+   "label": "Label",
+   "lieu": "São Paulo (BRA)"
   },
   {
    "nom": "Okpekpe 10KM Road Race",
@@ -1842,24 +1835,14 @@
    "lieu": "Karlovy Vary (CZE)"
   },
   {
-   "nom": "HATYAi21",
-   "label": "Label",
-   "lieu": "Songkhla (THA)"
-  },
-  {
    "nom": "Generali Genève Marathon",
    "label": "Label",
    "lieu": "Genève (SUI)"
   },
   {
-   "nom": "Phoenix Energy Belfast City Marathon",
+   "nom": "HATYAi21",
    "label": "Label",
-   "lieu": "Belfast (GBR)"
-  },
-  {
-   "nom": "Durban International Marathon",
-   "label": "Label",
-   "lieu": "Durban (RSA)"
+   "lieu": "Songkhla (THA)"
   },
   {
    "nom": "Meia Maratona Internacional de Florianópolis Oakberry",
@@ -1872,6 +1855,16 @@
    "lieu": "Pittsburgh, PA (USA)"
   },
   {
+   "nom": "Phoenix Energy Belfast City Marathon",
+   "label": "Label",
+   "lieu": "Belfast (GBR)"
+  },
+  {
+   "nom": "Durban International Marathon",
+   "label": "Label",
+   "lieu": "Durban (RSA)"
+  },
+  {
    "nom": "Issyk-Kul SCO Run the Silk Road marathon",
    "label": "Label",
    "lieu": "Cholpon-Ata (KGZ)"
@@ -1882,14 +1875,14 @@
    "lieu": "Oderzo (ITA)"
   },
   {
-   "nom": "Europe Marathon",
-   "label": "Label",
-   "lieu": "Aveiro (POR)"
-  },
-  {
    "nom": "Miyun Marathon",
    "label": "Elite",
    "lieu": "Beijing (CHN)"
+  },
+  {
+   "nom": "Europe Marathon",
+   "label": "Label",
+   "lieu": "Aveiro (POR)"
   },
   {
    "nom": "10 km en Ruta Villa de Laredo",
@@ -1905,6 +1898,11 @@
    "nom": "Boston 5K",
    "label": "Label",
    "lieu": "Boston, MA (USA)"
+  },
+  {
+   "nom": "Nanjing Xianlin Half Marathon",
+   "label": "Elite",
+   "lieu": "Nanjing (CHN)"
   },
   {
    "nom": "Huai'an Marathon",
@@ -1927,11 +1925,6 @@
    "lieu": "Łódź (POL)"
   },
   {
-   "nom": "Nanjing Xianlin Half Marathon",
-   "label": "Elite",
-   "lieu": "Nanjing (CHN)"
-  },
-  {
    "nom": "Gunsan Saemangeum Marathon",
    "label": "Label",
    "lieu": "Gunsan (KOR)"
@@ -1942,14 +1935,14 @@
    "lieu": "Tashkent (UZB)"
   },
   {
-   "nom": "Shijiazhuang Marathon",
-   "label": "Label",
-   "lieu": "Shijiazhuang (CHN)"
-  },
-  {
    "nom": "Yancheng Marathon",
    "label": "Label",
    "lieu": "Yancheng (CHN)"
+  },
+  {
+   "nom": "Shijiazhuang Marathon",
+   "label": "Label",
+   "lieu": "Shijiazhuang (CHN)"
   },
   {
    "nom": "Maratón Cúcuta Metropolitana",
@@ -1972,14 +1965,14 @@
    "lieu": "Tor regatowy Malta, Poznan (POL)"
   },
   {
-   "nom": "XVIII Medio Maraton a Coruña 21",
-   "label": "Label",
-   "lieu": "La Coruña (ESP)"
-  },
-  {
    "nom": "Publix Atlanta Half Marathon",
    "label": "Label",
    "lieu": "Home Depot Backyard, Atlanta, GA (USA)"
+  },
+  {
+   "nom": "XVIII Medio Maraton a Coruña 21",
+   "label": "Label",
+   "lieu": "La Coruña (ESP)"
   },
   {
    "nom": "Tel Aviv Bank Leumi Marathon",
@@ -1987,12 +1980,12 @@
    "lieu": "Tel Aviv (ISR)"
   },
   {
-   "nom": "Maratón BP Castellón",
+   "nom": "10K Facsa Castellón",
    "label": "Label",
    "lieu": "Castellón (ESP)"
   },
   {
-   "nom": "10K Facsa Castellón",
+   "nom": "Maratón BP Castellón",
    "label": "Label",
    "lieu": "Castellón (ESP)"
   },

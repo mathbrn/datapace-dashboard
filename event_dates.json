@@ -1,7 +1,7 @@
 {
  "_commentaire": "Genere par maj_dates_editions.py : date de l'edition de l'annee par ligne 'Evenement|DISTANCE'. Ne pas editer a la main ; corriger un rapprochement dans event_aliases.json.",
  "annee": 2026,
- "maj_le": "2026-11-13",
+ "maj_le": "2026-11-20",
  "dates": {
   "10K Night Race Prague|10KM": {
    "date": "2026-09-05",
@@ -1471,6 +1471,24 @@
    "nom_ext": "Maratona Maga Circe",
    "score": 0.7
   },
+  "Maratona Monumental Brasilia|10KM": {
+   "date": "2026-11-22",
+   "source": "evenement"
+  },
+  "Maratona Monumental Brasilia|5KM": {
+   "date": "2026-11-22",
+   "source": "evenement"
+  },
+  "Maratona Monumental Brasilia|MARATHON": {
+   "date": "2026-11-22",
+   "source": "WA",
+   "nom_ext": "Maratona Monumental de Brasília",
+   "score": 1.0
+  },
+  "Maratona Monumental Brasilia|SEMI": {
+   "date": "2026-11-22",
+   "source": "evenement"
+  },
   "Maratona do Porto|10KM": {
    "date": "2026-11-08",
    "source": "evenement"
@@ -1566,7 +1584,7 @@
   "Meia Maratona internacional Do Rio de Janeiro|SEMI": {
    "date": "2026-08-16",
    "source": "WA",
-   "nom_ext": "Meia Maratona Internacional do Rio de Janeiro - 10km",
+   "nom_ext": "28ª Meia Maratona Internacional do Rio de Janeiro",
    "score": 1.0
   },
   "Meishan Renshou Half Marathon|SEMI": {
@@ -1971,12 +1989,6 @@
    "nom_ext": "São Silvestre de Lisboa",
    "score": 1.0
   },
-  "Saquib Rizvi Memorial Cancer Awareness Half|SEMI": {
-   "date": "2026-11-15",
-   "source": "AIMS",
-   "nom_ext": "Saquib Rizvi Memorial Cancer Awareness Half Marathon",
-   "score": 1.0
-  },
   "Semi-Marathon de Boulogne-Billancourt|SEMI": {
    "date": "2026-11-15",
    "source": "WA",
@@ -2304,24 +2316,6 @@
    "source": "WA",
    "nom_ext": "Trento Half Marathon",
    "score": 0.7
-  },
-  "UST Trivandrum Marathon|10KM": {
-   "date": "2026-11-15",
-   "source": "evenement"
-  },
-  "UST Trivandrum Marathon|5KM": {
-   "date": "2026-11-15",
-   "source": "evenement"
-  },
-  "UST Trivandrum Marathon|MARATHON": {
-   "date": "2026-11-15",
-   "source": "AIMS",
-   "nom_ext": "Ust Trivandrum Marathon",
-   "score": 1.0
-  },
-  "UST Trivandrum Marathon|SEMI": {
-   "date": "2026-11-15",
-   "source": "evenement"
   },
   "Uniper Marathon de Düsseldorf|MARATHON": {
    "date": "2026-04-26",
@@ -2681,15 +2675,15 @@
    "motif": "mois 09 incompatible avec la Periode (6)"
   },
   {
-   "ligne": "Hoka Runaway Sydney Half Marathon|SEMI",
-   "nom_ext": "Sydney Half",
+   "ligne": "Bangsaen10|10KM",
+   "nom_ext": "Bangsaen10",
    "date": "2026-09-13",
    "source": "WA",
    "motif": "mois 09 incompatible avec la Periode (5)"
   },
   {
-   "ligne": "Bangsaen10|10KM",
-   "nom_ext": "Bangsaen10",
+   "ligne": "Hoka Runaway Sydney Half Marathon|SEMI",
+   "nom_ext": "Sydney Half",
    "date": "2026-09-13",
    "source": "WA",
    "motif": "mois 09 incompatible avec la Periode (5)"
@@ -2786,8 +2780,8 @@
    "motif": "mois 05 incompatible avec la Periode (3)"
   },
   {
-   "ligne": "Rimi Riga Marathon|MARATHON",
-   "nom_ext": "Rimi Riga Marathon",
+   "ligne": "Rimi Riga Marathon|SEMI",
+   "nom_ext": "Rimi Riga Half Marathon",
    "date": "2026-05-17",
    "source": "WA",
    "motif": "mois 05 incompatible avec la Periode (9)"
@@ -2800,15 +2794,15 @@
    "motif": "mois 05 incompatible avec la Periode (8)"
   },
   {
-   "ligne": "Rimi Riga Marathon|10KM",
-   "nom_ext": "Rimi Riga Marathon - 10km",
+   "ligne": "Rimi Riga Marathon|MARATHON",
+   "nom_ext": "Rimi Riga Marathon",
    "date": "2026-05-17",
    "source": "WA",
    "motif": "mois 05 incompatible avec la Periode (9)"
   },
   {
-   "ligne": "Rimi Riga Marathon|SEMI",
-   "nom_ext": "Rimi Riga Half Marathon",
+   "ligne": "Rimi Riga Marathon|10KM",
+   "nom_ext": "Rimi Riga Marathon - 10km",
    "date": "2026-05-17",
    "source": "WA",
    "motif": "mois 05 incompatible avec la Periode (9)"
@@ -2877,15 +2871,15 @@
    "motif": "mois 03 incompatible avec la Periode (11)"
   },
   {
-   "ligne": "Zurich Marathon|MARATHON",
-   "nom_ext": "Neujahrsmarathon Zürich",
+   "ligne": "Zurich Marathon|SEMI",
+   "nom_ext": "Neujahrsmarathon Zürich - Half Marathon",
    "date": "2026-01-01",
    "source": "WA",
    "motif": "mois 01 incompatible avec la Periode (4)"
   },
   {
-   "ligne": "Zurich Marathon|SEMI",
-   "nom_ext": "Neujahrsmarathon Zürich - Half Marathon",
+   "ligne": "Zurich Marathon|MARATHON",
+   "nom_ext": "Neujahrsmarathon Zürich",
    "date": "2026-01-01",
    "source": "WA",
    "motif": "mois 01 incompatible avec la Periode (4)"
