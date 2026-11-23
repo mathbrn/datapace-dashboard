@@ -1,0 +1,1104 @@
+{
+  "date": "2026-11-22",
+  "wa_races": [
+    {
+      "name": "Yiwu Half Marathon",
+      "venue": "Yiwu (CHN)",
+      "area": "Asia",
+      "dateRange": "22 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "94th Cinque Mulini",
+      "venue": "San Vittore Olona (ITA)",
+      "area": "Europe",
+      "dateRange": "22 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "China-Asean Marathon",
+      "venue": "Fangchenggang (CHN)",
+      "area": "Asia",
+      "dateRange": "22 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Nanjing Marathon",
+      "venue": "Nanjing (CHN)",
+      "area": "Asia",
+      "dateRange": "22 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Corrida Internacional Marco Zero",
+      "venue": "Ji-Paraná (BRA)",
+      "area": "South America",
+      "dateRange": "22 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "IndianOil WNC Navy Half Marathon",
+      "venue": "Mumbai (IND)",
+      "area": "Asia",
+      "dateRange": "22 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Cross Internacional de Atapuerca",
+      "venue": "Centro de Arqueologia Experimental, Atapuerca (ESP)",
+      "area": "Europe",
+      "dateRange": "22 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Milano Half Marathon",
+      "venue": "Milano (ITA)",
+      "area": "Europe",
+      "dateRange": "22 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Manati Half Marathon",
+      "venue": "Manati (PUR)",
+      "area": "North and Central America",
+      "dateRange": "22 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Great Ethiopian Run 10km Presented by Bank of America",
+      "venue": "Addis Ababa (ETH)",
+      "area": "Africa",
+      "dateRange": "22 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Halong Bay Heritage",
+      "venue": "Ha Long (VIE)",
+      "area": "Asia",
+      "dateRange": "22 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Huangshi Half Marathon",
+      "venue": "Huangshi (CHN)",
+      "area": "Asia",
+      "dateRange": "22 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Ageo City Half Marathon",
+      "venue": "Ageo (JPN)",
+      "area": "Asia",
+      "dateRange": "22 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "MARCH Universities Championship",
+      "venue": "Machida GION Stadium, Tokyo (JPN)",
+      "area": "Asia",
+      "dateRange": "22 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Incheon Half Marathon",
+      "venue": "Incheon (KOR)",
+      "area": "Asia",
+      "dateRange": "22 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "XIV Palio Fiorentino",
+      "venue": "Sesto Fiorentino (ITA)",
+      "area": "Europe",
+      "dateRange": "22 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Incheon Marathon",
+      "venue": "Incheon (KOR)",
+      "area": "Asia",
+      "dateRange": "22 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Maratona Monumental de Brasília",
+      "venue": "Esplanada dos Ministérios, Brasilia (BRA)",
+      "area": "South America",
+      "dateRange": "22 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Croatian Half Marathon Championships",
+      "venue": "Zadar (CRO)",
+      "area": "Europe",
+      "dateRange": "22 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "7th Sava osiguranje Belgrade Half Marathon",
+      "venue": "Beograd (SRB)",
+      "area": "Europe",
+      "dateRange": "22 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "WA State Open 10,000m Championships",
+      "venue": "WA Athletics Stadium, Perth (AUS)",
+      "area": "Oceania",
+      "dateRange": "22 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "TIAA Philadelphia Marathon",
+      "venue": "Philadelphia, PA (USA)",
+      "area": "North and Central America",
+      "dateRange": "22 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Classique Héloïse",
+      "venue": "Complexe Sportif Claude-Robillard, Montréal (CAN)",
+      "area": "North and Central America",
+      "dateRange": "22 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Portuguese Cross Country Championships",
+      "venue": "Fortaleza de Valença, Valença (POR)",
+      "area": "Europe",
+      "dateRange": "22 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "8. Gazi Half Marathon",
+      "venue": "Gaziantep (TUR)",
+      "area": "Europe",
+      "dateRange": "22 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "SKN Athletics Development Meet 4",
+      "venue": "Kim Collins Athletic Stadium, Basseterre (SKN)",
+      "area": "North and Central America",
+      "dateRange": "22 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Campeonato Asociación Atlética Arica y Parinacota",
+      "venue": "Estadio Carlos Dittborn, Arica (CHI)",
+      "area": "South America",
+      "dateRange": "21 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Copa Minas de Arremesos e Lançamentos",
+      "venue": "Pista de Atletismo da USIPA, Ipatinga (BRA)",
+      "area": "South America",
+      "dateRange": "21 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Central League Teams Competition 3",
+      "venue": "Mitre10 Sports Park, Hastings (NZL)",
+      "area": "Oceania",
+      "dateRange": "21 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Northern Tasmanian Combined Events Championships",
+      "venue": "Northern Athletic Centre, St Leonards, Launceston (AUS)",
+      "area": "Oceania",
+      "dateRange": "21–22 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Northern Athletics November Indoor Open",
+      "venue": "English Institute of Sport, Sheffield (GBR)",
+      "area": "Europe",
+      "dateRange": "21 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Jornada de Lançamentos - Dardo",
+      "venue": "Estádio Municipal Fontelo, Viseu (POR)",
+      "area": "Europe",
+      "dateRange": "21 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato de Clubes de inverno S18/S20/ABS + PO",
+      "venue": "Pista de Atletismo do Estádio João Paulo II, Angra do Heroismo (POR)",
+      "area": "Europe",
+      "dateRange": "21–22 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Jornada de Velocidade e Barreiras",
+      "venue": "Estádio Municipal Fontelo, Viseu (POR)",
+      "area": "Europe",
+      "dateRange": "21 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Campeonato de Clubes de inverno de Atletismo Adaptado",
+      "venue": "Pista de Atletismo do Estádio João Paulo II, Angra do Heroismo (POR)",
+      "area": "Europe",
+      "dateRange": "21–22 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Maratona Internacional de Maringá",
+      "venue": "Maringa (BRA)",
+      "area": "South America",
+      "dateRange": "21–22 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Torneio de Abertura",
+      "venue": "Complexo Desportivo de Lousada, Lousada (POR)",
+      "area": "Europe",
+      "dateRange": "21 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Ring Running Series",
+      "venue": "Hockenheimring, Hockenheim (GER)",
+      "area": "Europe",
+      "dateRange": "21 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Danish Cross Country Championships",
+      "venue": "Tårnby (DEN)",
+      "area": "Europe",
+      "dateRange": "21 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Philadelphia Marathon - Half Marathon @ 8K",
+      "venue": "Eakins Oval, Philadelphia, PA (USA)",
+      "area": "North and Central America",
+      "dateRange": "21 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Torneo Regional de Clausura",
+      "venue": "Estadio Elias Figueroa, Valparaíso (CHI)",
+      "area": "South America",
+      "dateRange": "21 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Cyprus Cross Country Championships",
+      "venue": "Nicosia (CYP)",
+      "area": "Europe",
+      "dateRange": "21 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Clusura AACC",
+      "venue": "Pista Atlética Luis Oliva, Córdoba (ARG)",
+      "area": "South America",
+      "dateRange": "21 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Meeting Lucy López Cruz",
+      "venue": "Pista Atlética Mario Recordón, Santiago de Chile (CHI)",
+      "area": "South America",
+      "dateRange": "21 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Athletics Auckland 3000m Championships",
+      "venue": "Yvette Williams Track, Pakuranga, Auckland (NZL)",
+      "area": "Oceania",
+      "dateRange": "21 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Copyworld Toshiba Meet #4 & Adelaide Distance Series",
+      "venue": "SA Athletic Stadium, Adelaide (AUS)",
+      "area": "Oceania",
+      "dateRange": "21 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "27th NITTAIDAI Challenge Games",
+      "venue": "NITTAIDAI Athletic Stadium, Yokohama (JPN)",
+      "area": "Asia",
+      "dateRange": "21 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "WA State Combined Event Championships",
+      "venue": "WA Athletics Stadium, Perth (AUS)",
+      "area": "Oceania",
+      "dateRange": "21–22 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Adventsspelen",
+      "venue": "Friidrottens Hus, Göteborg (SWE)",
+      "area": "Europe",
+      "dateRange": "21–22 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "3rd Club ZOOM Peers PRIME Invitational",
+      "venue": "Home of Athletics, Singapore (SGP)",
+      "area": "Asia",
+      "dateRange": "21–22 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Vilnius City Athletics Cup",
+      "venue": "Lengvosios Atletikos Manieže, Vilnius (LTU)",
+      "area": "Europe",
+      "dateRange": "21 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "13th Club ZOOM Kindred Spirit Series",
+      "venue": "Home of Athletics, Singapore (SGP)",
+      "area": "Asia",
+      "dateRange": "21–22 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "AAJIPR Mile Championships",
+      "venue": "Fernando Santiago Athletic Track, Aibonito (PUR)",
+      "area": "North and Central America",
+      "dateRange": "21 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Denise Boyd Shield",
+      "venue": "QSAC Warm Up Track, Brisbane (AUS)",
+      "area": "Oceania",
+      "dateRange": "21 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "Peruvian U16 Championships",
+      "venue": "Estadio Atlético de la VIDENA, Lima (PER)",
+      "area": "South America",
+      "dateRange": "20–21 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Indonesian Championships",
+      "venue": "Stadion Atletik Rawamangun, Jakarta (INA)",
+      "area": "Asia",
+      "dateRange": "20–22 NOV 2026",
+      "hasResults": true
+    },
+    {
+      "name": "National Competitions",
+      "venue": "Arena, Abakan (RUS)",
+      "area": "Europe",
+      "dateRange": "20–21 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "Jogos Abertos do Paraná",
+      "venue": "Pista de Atletismo do CNTA, Cascavel (BRA)",
+      "area": "South America",
+      "dateRange": "19–22 NOV 2026",
+      "hasResults": false
+    },
+    {
+      "name": "National Competitions among sport schools Pamyati Yu.M. Krasilnikova",
+      "venue": "Football and athletics Arena, Kazan (RUS)",
+      "area": "Europe",
+      "dateRange": "19–21 NOV 2026",
+      "hasResults": false
+    }
+  ],
+  "matched": [
+    {
+      "wa_name": "Nanjing Marathon",
+      "our_name": "Nanjing Marathon",
+      "score": 100
+    },
+    {
+      "wa_name": "IndianOil WNC Navy Half Marathon",
+      "our_name": "IndianOil WNC Navy Half",
+      "score": 100
+    },
+    {
+      "wa_name": "Milano Half Marathon",
+      "our_name": "Powerade Milano Half Marathon",
+      "score": 100
+    },
+    {
+      "wa_name": "Great Ethiopian Run 10km Presented by Bank of America",
+      "our_name": "Great Ethiopan Run",
+      "score": 68
+    },
+    {
+      "wa_name": "Halong Bay Heritage",
+      "our_name": "Halong Bay Heritage Marathon",
+      "score": 100
+    },
+    {
+      "wa_name": "Maratona Monumental de Brasília",
+      "our_name": "Maratona Monumental Brasilia",
+      "score": 100
+    },
+    {
+      "wa_name": "7th Sava osiguranje Belgrade Half Marathon",
+      "our_name": "Belgrade Marathon",
+      "score": 82
+    },
+    {
+      "wa_name": "10K Montmartre",
+      "our_name": "10K Montmartre",
+      "score": 0
+    },
+    {
+      "wa_name": "Standard Chartered Hong Kong Marathon",
+      "our_name": "Standard Chartered Hong Kong Marathon",
+      "score": 0
+    },
+    {
+      "wa_name": "HOKA Semi de Paris",
+      "our_name": "HOKA Semi de Paris",
+      "score": 0
+    },
+    {
+      "wa_name": "EDP Lisboa Meia Maratona",
+      "our_name": "EDP Lisboa Meia Maratona",
+      "score": 0
+    },
+    {
+      "wa_name": "Cooper River Bridge Run",
+      "our_name": "Cooper River Bridge Run",
+      "score": 0
+    },
+    {
+      "wa_name": "NN CPC Loop Den Haag",
+      "our_name": "NN CPC Loop Den Haag",
+      "score": 0
+    },
+    {
+      "wa_name": "EDP Lisboa Meia Maratona",
+      "our_name": "EDP Lisboa Meia Maratona",
+      "score": 0
+    },
+    {
+      "wa_name": "Boston Marathon",
+      "our_name": "Boston Marathon",
+      "score": 0
+    },
+    {
+      "wa_name": "Adidas Manchester Marathon",
+      "our_name": "Adidas Manchester Marathon",
+      "score": 0
+    },
+    {
+      "wa_name": "London Landmarks Half Marathon",
+      "our_name": "London Landmarks Half Marathon",
+      "score": 0
+    },
+    {
+      "wa_name": "Statesman Capitol 10K",
+      "our_name": "Statesman Capitol 10K",
+      "score": 0
+    },
+    {
+      "wa_name": "NN Marathon Rotterdam",
+      "our_name": "NN Marathon Rotterdam",
+      "score": 0
+    },
+    {
+      "wa_name": "BOLDERBoulder 10K",
+      "our_name": "BOLDERBoulder 10K",
+      "score": 0
+    },
+    {
+      "wa_name": "Hoka Runaway Sydney Half Marathon",
+      "our_name": "Hoka Runaway Sydney Half Marathon",
+      "score": 0
+    },
+    {
+      "wa_name": "AJ Bell Great Manchester Run",
+      "our_name": "AJ Bell Great Manchester Run",
+      "score": 0
+    },
+    {
+      "wa_name": "AJ Bell Great Manchester Run",
+      "our_name": "AJ Bell Great Manchester Run",
+      "score": 0
+    },
+    {
+      "wa_name": "AJ Bell Great Bristol Run",
+      "our_name": "AJ Bell Great Bristol Run",
+      "score": 0
+    },
+    {
+      "wa_name": "Atlanta Journal-Constitution Peachtree Road Race",
+      "our_name": "Atlanta Journal-Constitution Peachtree Road Race",
+      "score": 0
+    },
+    {
+      "wa_name": "TCS Sydney Marathon presented by ASICS",
+      "our_name": "TCS Sydney Marathon presented by ASICS",
+      "score": 0
+    },
+    {
+      "wa_name": "AJ Bell Great North Run",
+      "our_name": "AJ Bell Great North Run",
+      "score": 0
+    },
+    {
+      "wa_name": "Transurban Bridge to Brisbane",
+      "our_name": "Transurban Bridge to Brisbane",
+      "score": 0
+    },
+    {
+      "wa_name": "Marine Corps Marathon",
+      "our_name": "Marine Corps Marathon",
+      "score": 0
+    },
+    {
+      "wa_name": "TCS Amsterdam Marathon",
+      "our_name": "TCS Amsterdam Marathon",
+      "score": 0
+    },
+    {
+      "wa_name": "TCS Amsterdam Marathon",
+      "our_name": "TCS Amsterdam Marathon",
+      "score": 0
+    },
+    {
+      "wa_name": "EDP Maratona de Lisboa",
+      "our_name": "EDP Maratona de Lisboa",
+      "score": 0
+    },
+    {
+      "wa_name": "EDP Maratona de Lisboa",
+      "our_name": "EDP Maratona de Lisboa",
+      "score": 0
+    },
+    {
+      "wa_name": "NN CPC Loop Den Haag",
+      "our_name": "NN CPC Loop Den Haag",
+      "score": 0
+    },
+    {
+      "wa_name": "Broad Street Run",
+      "our_name": "Broad Street Run",
+      "score": 0
+    },
+    {
+      "wa_name": "Flying Pig Marathon",
+      "our_name": "Flying Pig Marathon",
+      "score": 0
+    },
+    {
+      "wa_name": "Lilac Bloomsday Run",
+      "our_name": "Lilac Bloomsday Run",
+      "score": 0
+    },
+    {
+      "wa_name": "Dick's Pittsburgh Marathon",
+      "our_name": "Dick's Pittsburgh Marathon",
+      "score": 0
+    },
+    {
+      "wa_name": "Bay to Breakers",
+      "our_name": "Bay to Breakers",
+      "score": 0
+    },
+    {
+      "wa_name": "Gasparilla Distance Classic",
+      "our_name": "Gasparilla Distance Classic",
+      "score": 0
+    },
+    {
+      "wa_name": "Mainova Frankfurt Marathon",
+      "our_name": "Mainova Frankfurt Marathon",
+      "score": 0
+    },
+    {
+      "wa_name": "Dam tot Damloop",
+      "our_name": "Dam tot Damloop",
+      "score": 0
+    },
+    {
+      "wa_name": "City2Surf",
+      "our_name": "City2Surf",
+      "score": 0
+    },
+    {
+      "wa_name": "AJ Bell Great Birmingham Run",
+      "our_name": "AJ Bell Great Birmingham Run",
+      "score": 0
+    },
+    {
+      "wa_name": "AJ Bell Great Birmingham Run",
+      "our_name": "AJ Bell Great Birmingham Run",
+      "score": 0
+    },
+    {
+      "wa_name": "AJ Bell Great Bristol Run",
+      "our_name": "AJ Bell Great Bristol Run",
+      "score": 0
+    },
+    {
+      "wa_name": "AJ Bell Great South Run",
+      "our_name": "AJ Bell Great South Run",
+      "score": 0
+    },
+    {
+      "wa_name": "NN CPC Loop Den Haag",
+      "our_name": "NN CPC Loop Den Haag",
+      "score": 0
+    },
+    {
+      "wa_name": "Paris-Versailles - La grande classique",
+      "our_name": "Paris-Versailles - La grande classique",
+      "score": 0
+    },
+    {
+      "wa_name": "10km Hoka Paris centre",
+      "our_name": "10km Hoka Paris centre",
+      "score": 0
+    },
+    {
+      "wa_name": "La Parisienne",
+      "our_name": "La Parisienne",
+      "score": 0
+    },
+    {
+      "wa_name": "La Parisienne",
+      "our_name": "La Parisienne",
+      "score": 0
+    },
+    {
+      "wa_name": "La Grande Course RATP du Grand Paris",
+      "our_name": "La Grande Course RATP du Grand Paris",
+      "score": 0
+    },
+    {
+      "wa_name": "La Grande Course RATP du Grand Paris",
+      "our_name": "La Grande Course RATP du Grand Paris",
+      "score": 0
+    },
+    {
+      "wa_name": "La Grande Course RATP du Grand Paris",
+      "our_name": "La Grande Course RATP du Grand Paris",
+      "score": 0
+    },
+    {
+      "wa_name": "La Grande Course RATP du Grand Paris",
+      "our_name": "La Grande Course RATP du Grand Paris",
+      "score": 0
+    },
+    {
+      "wa_name": "10km Onatéra Paris 17",
+      "our_name": "10km Onatéra Paris 17",
+      "score": 0
+    },
+    {
+      "wa_name": "MAIF Ekiden de Paris",
+      "our_name": "MAIF Ekiden de Paris",
+      "score": 0
+    }
+  ],
+  "updates": [
+    {
+      "event": "Standard Chartered Hong Kong Marathon",
+      "year": 2026,
+      "platform": "tracx",
+      "finishers": 23645,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "EDP Lisboa Meia Maratona",
+      "year": 2026,
+      "platform": "sporthive",
+      "finishers": 16185,
+      "avg_time": "01:58:09",
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "Cooper River Bridge Run",
+      "year": 2026,
+      "platform": "athlinks",
+      "finishers": 33686,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "EDP Lisboa Meia Maratona",
+      "year": 2026,
+      "platform": "sporthive",
+      "finishers": 7968,
+      "avg_time": "01:08:55",
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "London Landmarks Half Marathon",
+      "year": 2026,
+      "platform": "tracx",
+      "finishers": 19754,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "BOLDERBoulder 10K",
+      "year": 2026,
+      "platform": "athlinks",
+      "finishers": 47508,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "Atlanta Journal-Constitution Peachtree Road Race",
+      "year": 2026,
+      "platform": "athlinks",
+      "finishers": 45299,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "TCS Amsterdam Marathon",
+      "year": 2026,
+      "platform": "sporthive",
+      "finishers": 23672,
+      "avg_time": "03:54:11",
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "TCS Amsterdam Marathon",
+      "year": 2026,
+      "platform": "sporthive",
+      "finishers": 12780,
+      "avg_time": "02:00:32",
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "EDP Maratona de Lisboa",
+      "year": 2026,
+      "platform": "sporthive",
+      "finishers": 8298,
+      "avg_time": "04:20:29",
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "EDP Maratona de Lisboa",
+      "year": 2026,
+      "platform": "sporthive",
+      "finishers": 8219,
+      "avg_time": "02:02:47",
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "Broad Street Run",
+      "year": 2026,
+      "platform": "athlinks",
+      "finishers": 34003,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "Flying Pig Marathon",
+      "year": 2026,
+      "platform": "athlinks",
+      "finishers": 5279,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "Dick's Pittsburgh Marathon",
+      "year": 2026,
+      "platform": "athlinks",
+      "finishers": 5026,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "Bay to Breakers",
+      "year": 2026,
+      "platform": "athlinks",
+      "finishers": 19814,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "Gasparilla Distance Classic",
+      "year": 2026,
+      "platform": "athlinks",
+      "finishers": 4242,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    },
+    {
+      "event": "Dam tot Damloop",
+      "year": 2026,
+      "platform": "tracx",
+      "finishers": 37133,
+      "avg_time": null,
+      "winner_men": null,
+      "winner_women": null,
+      "ecrit": null
+    }
+  ],
+  "skipped": [
+    {
+      "event": "Nanjing Marathon",
+      "reason": "no_platform_mapped",
+      "platform": null
+    },
+    {
+      "event": "IndianOil WNC Navy Half",
+      "reason": "no_platform_mapped",
+      "platform": null
+    },
+    {
+      "event": "Powerade Milano Half Marathon",
+      "reason": "no_platform_mapped",
+      "platform": null
+    },
+    {
+      "event": "Great Ethiopan Run",
+      "reason": "no_platform_mapped",
+      "platform": null
+    },
+    {
+      "event": "Halong Bay Heritage Marathon",
+      "reason": "no_platform_mapped",
+      "platform": null
+    },
+    {
+      "event": "Maratona Monumental Brasilia",
+      "reason": "no_platform_mapped",
+      "platform": null
+    },
+    {
+      "event": "Belgrade Marathon",
+      "reason": "no_platform_mapped",
+      "platform": null
+    },
+    {
+      "event": "10K Montmartre",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "HOKA Semi de Paris",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "NN CPC Loop Den Haag",
+      "reason": "fetch_returned_nothing",
+      "platform": "sporthive"
+    },
+    {
+      "event": "Boston Marathon",
+      "reason": "fetch_returned_nothing",
+      "platform": "baa"
+    },
+    {
+      "event": "Adidas Manchester Marathon",
+      "reason": "fetch_returned_nothing",
+      "platform": "tracx"
+    },
+    {
+      "event": "Statesman Capitol 10K",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
+    },
+    {
+      "event": "NN Marathon Rotterdam",
+      "reason": "fetch_returned_nothing",
+      "platform": "chronorace"
+    },
+    {
+      "event": "Hoka Runaway Sydney Half Marathon",
+      "reason": "fetch_returned_nothing",
+      "platform": "multisport"
+    },
+    {
+      "event": "AJ Bell Great Manchester Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "rtrt"
+    },
+    {
+      "event": "AJ Bell Great Manchester Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "rtrt"
+    },
+    {
+      "event": "AJ Bell Great Bristol Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "rtrt"
+    },
+    {
+      "event": "TCS Sydney Marathon presented by ASICS",
+      "reason": "fetch_returned_nothing",
+      "platform": "multisport"
+    },
+    {
+      "event": "AJ Bell Great North Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "rtrt"
+    },
+    {
+      "event": "Transurban Bridge to Brisbane",
+      "reason": "fetch_returned_nothing",
+      "platform": "multisport"
+    },
+    {
+      "event": "Marine Corps Marathon",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
+    },
+    {
+      "event": "NN CPC Loop Den Haag",
+      "reason": "fetch_returned_nothing",
+      "platform": "sporthive"
+    },
+    {
+      "event": "Lilac Bloomsday Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "athlinks"
+    },
+    {
+      "event": "Mainova Frankfurt Marathon",
+      "reason": "fetch_returned_nothing",
+      "platform": "mikatiming"
+    },
+    {
+      "event": "City2Surf",
+      "reason": "fetch_returned_nothing",
+      "platform": "multisport"
+    },
+    {
+      "event": "AJ Bell Great Birmingham Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "rtrt"
+    },
+    {
+      "event": "AJ Bell Great Birmingham Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "rtrt"
+    },
+    {
+      "event": "AJ Bell Great Bristol Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "rtrt"
+    },
+    {
+      "event": "AJ Bell Great South Run",
+      "reason": "fetch_returned_nothing",
+      "platform": "rtrt"
+    },
+    {
+      "event": "NN CPC Loop Den Haag",
+      "reason": "fetch_returned_nothing",
+      "platform": "sporthive"
+    },
+    {
+      "event": "Paris-Versailles - La grande classique",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "10km Hoka Paris centre",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "La Parisienne",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "La Parisienne",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "La Grande Course RATP du Grand Paris",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "La Grande Course RATP du Grand Paris",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "La Grande Course RATP du Grand Paris",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "La Grande Course RATP du Grand Paris",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "10km Onatéra Paris 17",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    },
+    {
+      "event": "MAIF Ekiden de Paris",
+      "reason": "fetch_returned_nothing",
+      "platform": "timeto"
+    }
+  ],
+  "errors": [],
+  "mode": "calendar+fallback",
+  "summary": {
+    "wa_races": 59,
+    "matched": 58,
+    "updated": 0,
+    "fetched": 17,
+    "skipped": 41,
+    "errors": 0,
+    "skip_reasons": {
+      "no_platform_mapped": 7,
+      "fetch_returned_nothing": 34
+    },
+    "mode": "calendar+fallback"
+  }
+}
