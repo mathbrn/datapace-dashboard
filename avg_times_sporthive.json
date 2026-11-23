@@ -2950,5 +2950,15 @@
     "avg_time": "02:26:55",
     "avg_speed_kmh": 5.31,
     "source": "timeto"
+  },
+  {
+    "label": "Powerade Milano Half Marathon 10K 2026",
+    "race": "Powerade Milano Half Marathon",
+    "dist_m": 10000,
+    "year": 2026,
+    "count": 1165,
+    "avg_time": "00:49:07",
+    "avg_speed_kmh": 12.22,
+    "source": "endu"
   }
 ]

@@ -1006,5 +1006,23 @@
   "nom_homme": null,
   "temps_femme": "00:50:59",
   "nom_femme": null
+ },
+ {
+  "course": "Powerade Milano Half Marathon",
+  "distance": "10KM",
+  "annee": 2026,
+  "temps_homme": "00:30:18",
+  "nom_homme": null,
+  "temps_femme": "00:33:57",
+  "nom_femme": null
+ },
+ {
+  "course": "Powerade Milano Half Marathon",
+  "distance": "SEMI",
+  "annee": 2026,
+  "temps_homme": "01:01:31",
+  "nom_homme": null,
+  "temps_femme": "01:08:04",
+  "nom_femme": null
  }
 ]

@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "event": "Powerade Milano Half Marathon — 10K",
+      "date": "2026-11-22",
+      "data": {
+        "finishers": 1165,
+        "avg_time": "0:49:07",
+        "winner_men": "0:30:18",
+        "winner_women": "0:33:57"
+      },
+      "timestamp": "2026-11-23T10:28:48Z"
+    },
+    {
       "event": "13km du Rhône",
       "date": "2026-11-21",
       "data": {
@@ -1688,16 +1699,6 @@
         "finishers": 22472
       },
       "timestamp": "2026-09-21T07:51:03Z"
-    },
-    {
-      "event": "Brighton Marathon Week end",
-      "date": "2026-09-18",
-      "data": {
-        "finishers": 25,
-        "winner_men": "02:25:04",
-        "winner_women": "02:49:38"
-      },
-      "timestamp": "2026-09-19T09:57:47Z"
     }
   ]
 }
