@@ -778,5 +778,12 @@
       ],
       "note": "2026 : somme des trois listes disjointes (general, anonymes, championnat de Pologne elite), compteur « Ukończyło » de chaque page ; relais exclus. Fetcher non implemente."
     }
+  },
+  "marathon du beaujolais ag2r la mondiale": {
+    "platform": "timeto",
+    "country": "FRA",
+    "distance": "MARATHON",
+    "name": "Marathon du Beaujolais AG2R LA MONDIALE",
+    "distance_m": 13000
   }
 }

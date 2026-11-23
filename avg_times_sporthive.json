@@ -2920,5 +2920,35 @@
     "count": 8219,
     "avg_time": "02:02:47",
     "avg_speed_kmh": 10.31
+  },
+  {
+    "label": "Marathon du Beaujolais AG2R LA MONDIALE 42K 2026",
+    "race": "Marathon du Beaujolais AG2R LA MONDIALE",
+    "dist_m": 42195,
+    "year": 2026,
+    "count": 4088,
+    "avg_time": "05:32:47",
+    "avg_speed_kmh": 7.607,
+    "source": "timeto"
+  },
+  {
+    "label": "Marathon du Beaujolais AG2R LA MONDIALE 21K 2026",
+    "race": "Marathon du Beaujolais AG2R LA MONDIALE",
+    "dist_m": 21100,
+    "year": 2026,
+    "count": 10557,
+    "avg_time": "03:29:06",
+    "avg_speed_kmh": 6.053,
+    "source": "timeto"
+  },
+  {
+    "label": "Marathon du Beaujolais AG2R LA MONDIALE 13K 2026",
+    "race": "Marathon du Beaujolais AG2R LA MONDIALE",
+    "dist_m": 13000,
+    "year": 2026,
+    "count": 11140,
+    "avg_time": "02:26:55",
+    "avg_speed_kmh": 5.31,
+    "source": "timeto"
   }
 ]

@@ -979,5 +979,32 @@
   "nom_homme": null,
   "temps_femme": "2:25:56",
   "nom_femme": null
+ },
+ {
+  "course": "Marathon du Beaujolais AG2R LA MONDIALE",
+  "distance": "MARATHON",
+  "annee": 2026,
+  "temps_homme": "02:19:29",
+  "nom_homme": null,
+  "temps_femme": "02:59:40",
+  "nom_femme": null
+ },
+ {
+  "course": "Marathon du Beaujolais AG2R LA MONDIALE",
+  "distance": "SEMI",
+  "annee": 2026,
+  "temps_homme": "01:10:27",
+  "nom_homme": null,
+  "temps_femme": "01:22:48",
+  "nom_femme": null
+ },
+ {
+  "course": "Marathon du Beaujolais AG2R LA MONDIALE",
+  "distance": "AUTRE",
+  "annee": 2026,
+  "temps_homme": "00:43:52",
+  "nom_homme": null,
+  "temps_femme": "00:50:59",
+  "nom_femme": null
  }
 ]

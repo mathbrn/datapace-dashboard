@@ -135,6 +135,12 @@
     },
     "Standard Chartered Hong Kong Marathon|10KM": {
       "nom": "Standard Chartered Hong Kong 10KM"
+    },
+    "Marathon du Beaujolais AG2R LA MONDIALE|SEMI": {
+      "nom": "Semi-marathon du Beaujolais"
+    },
+    "Marathon du Beaujolais AG2R LA MONDIALE|AUTRE": {
+      "nom": "13km du Rhône"
     }
   }
 }

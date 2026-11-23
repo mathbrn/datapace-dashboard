@@ -409,8 +409,12 @@ def fetch_timeto_4d(event_name, year, dist_code=None):
     """
     try:
         sess = requests.Session()
+        # Sans Origin/Referer, le catalogue /api/events repond 403 (Cloudflare,
+        # constate le 23 novembre 2026) ; les autres routes passent encore.
         sess.headers.update({"Accept": "application/json",
-                             "User-Agent": "Mozilla/5.0"})
+                             "User-Agent": "Mozilla/5.0",
+                             "Origin": "https://results.timeto.com",
+                             "Referer": "https://results.timeto.com/"})
         events = sess.get("https://sportinnovation.fr/api/events",
                           timeout=20).json()
         vise = normalize_name(event_name)
@@ -1839,7 +1843,10 @@ COURSES_ANNEXES = ("handisport", "fauteuil", "wheelchair", "handbike",
                    # Championnats nationaux courus dans l'epreuve, meme
                    # distance que la course principale (Lisbonne, Dam tot Dam)
                    "championnat", "championship", "campeonato", "kampioenschap",
-                   "walk only", "duo", "challenge entreprise")
+                   "walk only", "duo", "challenge entreprise",
+                   # Trails hors perimetre ; le Trail 43k du Beaujolais rendait
+                   # le marathon ambigu (42 195 m a 1 200 m pres)
+                   "trail")
 
 BORNES_CHRONO = {"MARATHON": (6000, 43200), "SEMI": (2700, 21600),
                  "10KM": (1500, 10800), "5KM": (720, 7200)}
