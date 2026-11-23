@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "event": "Powerade Milano Half Marathon",
+      "date": "2026-11-22",
+      "data": {
+        "finishers": 10741,
+        "avg_time": "1:51:57",
+        "winner_men": "1:01:31",
+        "winner_women": "1:08:04"
+      },
+      "timestamp": "2026-11-23T11:00:39Z"
+    },
+    {
       "event": "Powerade Milano Half Marathon — 10K",
       "date": "2026-11-22",
       "data": {
@@ -1689,14 +1700,6 @@
       "date": "2026-01-01",
       "data": {
         "finishers": 18526
-      },
-      "timestamp": "2026-09-21T07:51:03Z"
-    },
-    {
-      "event": "Copenhagen Marathon",
-      "date": "2026-01-01",
-      "data": {
-        "finishers": 22472
       },
       "timestamp": "2026-09-21T07:51:03Z"
     }

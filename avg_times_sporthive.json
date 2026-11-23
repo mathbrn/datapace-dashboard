@@ -2960,5 +2960,15 @@
     "avg_time": "00:49:07",
     "avg_speed_kmh": 12.22,
     "source": "endu"
+  },
+  {
+    "label": "Powerade Milano Half Marathon 21K 2026",
+    "race": "Powerade Milano Half Marathon",
+    "dist_m": 21097,
+    "year": 2026,
+    "count": 10741,
+    "avg_time": "01:51:57",
+    "avg_speed_kmh": 11.31,
+    "source": "endu"
   }
 ]
