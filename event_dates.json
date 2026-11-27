@@ -1,7 +1,7 @@
 {
  "_commentaire": "Genere par maj_dates_editions.py : date de l'edition de l'annee par ligne 'Evenement|DISTANCE'. Ne pas editer a la main ; corriger un rapprochement dans event_aliases.json.",
  "annee": 2026,
- "maj_le": "2026-11-20",
+ "maj_le": "2026-11-27",
  "dates": {
   "10K Night Race Prague|10KM": {
    "date": "2026-09-05",
@@ -989,12 +989,14 @@
   },
   "Indianapolis Monumental Marathon|MARATHON": {
    "date": "2026-11-07",
-   "source": "evenement"
+   "source": "WA",
+   "nom_ext": "CNO Financial Indianapolis Monumental Marathon",
+   "score": 1.0
   },
   "Indianapolis Monumental Marathon|SEMI": {
    "date": "2026-11-07",
    "source": "WA",
-   "nom_ext": "CNO Financial Indianapolis Monumental Marathon, Half Marathon, & 5K",
+   "nom_ext": "CNO Financial Indianapolis Monumental Half Marathon, & 5K",
    "score": 1.0
   },
   "International Mersin Marathon|MARATHON": {
@@ -1376,7 +1378,7 @@
   "Maraton Murcia Costa Calida|MARATHON": {
    "date": "2026-02-01",
    "source": "WA",
-   "nom_ext": "TotalEnergies Media Maratón Murcia Costa Cálida",
+   "nom_ext": "TotalEnergies Maratón Murcia Costa Cálida",
    "score": 1.0
   },
   "Maraton Murcia Costa Calida|SEMI": {
@@ -1487,7 +1489,9 @@
   },
   "Maratona Monumental Brasilia|SEMI": {
    "date": "2026-11-22",
-   "source": "evenement"
+   "source": "WA",
+   "nom_ext": "Meia Maratona Monumental de Brasília",
+   "score": 1.0
   },
   "Maratona do Porto|10KM": {
    "date": "2026-11-08",
@@ -1703,6 +1707,12 @@
    "nom_ext": "48th Warsaw Marathon",
    "score": 1.0
   },
+  "NN San Silvestre Vallecana|10KM": {
+   "date": "2026-12-31",
+   "source": "WA",
+   "nom_ext": "LXII Nationale-Nederlanden San Silvestre Vallecana",
+   "score": 0.89
+  },
   "Nagoya Women's Marathon|MARATHON": {
    "date": "2026-03-08",
    "source": "WA",
@@ -1840,6 +1850,16 @@
    "source": "WA",
    "nom_ext": "Athens Half Marathon",
    "score": 0.661
+  },
+  "Powerade Milano Half Marathon|10KM": {
+   "date": "2026-11-22",
+   "source": "evenement"
+  },
+  "Powerade Milano Half Marathon|SEMI": {
+   "date": "2026-11-22",
+   "source": "WA",
+   "nom_ext": "Milano Half Marathon",
+   "score": 1.0
   },
   "Prague International Marathon|MARATHON": {
    "date": "2026-05-03",
@@ -2745,18 +2765,18 @@
    "motif": "mois 06 incompatible avec la Periode (10)"
   },
   {
-   "ligne": "Maratona di Palermo|MARATHON",
-   "nom_ext": "Trofeo Della Legalita '' Giro pod. Int.le Città di Palermo''",
-   "date": "2026-06-07",
-   "source": "WA",
-   "motif": "mois 06 incompatible avec la Periode (11)"
-  },
-  {
    "ligne": "Life Time Chicago Half Marathon & 5K|SEMI",
    "nom_ext": "Bank of America Chicago 13.1",
    "date": "2026-06-07",
    "source": "WA",
    "motif": "mois 06 incompatible avec la Periode (9)"
+  },
+  {
+   "ligne": "Maratona di Palermo|MARATHON",
+   "nom_ext": "Trofeo Della Legalita '' Giro pod. Int.le Città di Palermo''",
+   "date": "2026-06-07",
+   "source": "WA",
+   "motif": "mois 06 incompatible avec la Periode (11)"
   },
   {
    "ligne": "Meia Maratona internacional Do Rio de Janeiro|SEMI",
@@ -2787,6 +2807,13 @@
    "motif": "mois 05 incompatible avec la Periode (9)"
   },
   {
+   "ligne": "Rimi Riga Marathon|10KM",
+   "nom_ext": "Rimi Riga Marathon - 10km",
+   "date": "2026-05-17",
+   "source": "WA",
+   "motif": "mois 05 incompatible avec la Periode (9)"
+  },
+  {
    "ligne": "TCS Sydney Marathon presented by ASICS|MARATHON",
    "nom_ext": "Sydney 10",
    "date": "2026-05-17",
@@ -2796,13 +2823,6 @@
   {
    "ligne": "Rimi Riga Marathon|MARATHON",
    "nom_ext": "Rimi Riga Marathon",
-   "date": "2026-05-17",
-   "source": "WA",
-   "motif": "mois 05 incompatible avec la Periode (9)"
-  },
-  {
-   "ligne": "Rimi Riga Marathon|10KM",
-   "nom_ext": "Rimi Riga Marathon - 10km",
    "date": "2026-05-17",
    "source": "WA",
    "motif": "mois 05 incompatible avec la Periode (9)"
